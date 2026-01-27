@@ -1,0 +1,8 @@
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema
+
+✔ Generated Prisma Client (v5.19.1) to ./src/generated/prisma in 94ms
+
+Start by importing your Prisma Client (See: http://pris.ly/d/importing-client)
+
+Tip: Curious about the SQL queries Prisma ORM generates? Optimize helps you enhance your visibility: https://pris.ly/tip-2-optimize

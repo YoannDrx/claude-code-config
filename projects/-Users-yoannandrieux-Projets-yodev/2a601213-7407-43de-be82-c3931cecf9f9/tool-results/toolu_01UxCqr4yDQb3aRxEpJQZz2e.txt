@@ -1,0 +1,286 @@
+     1→"use client";
+     2→
+     3→import { useTranslations } from "next-intl";
+     4→import { Section } from "@/components/ui/section";
+     5→import {
+     6→  HeroHome,
+     7→  ServiceCard,
+     8→  ServiceGrid,
+     9→  CaseStudyCard,
+    10→  CaseStudyGrid,
+    11→  CtaSection,
+    12→  TestimonialCard,
+    13→  ClientLogosGrid,
+    14→} from "@/components/sections";
+    15→import { Card } from "@/components/ui/card";
+    16→import { Badge } from "@/components/ui/badge";
+    17→import { ButtonLink } from "@/components/ui/button-link";
+    18→import { Link } from "@/i18n/navigation";
+    19→import { FadeIn, StaggerChildren, StaggerItem } from "@/components/motion";
+    20→
+    21→type HighlightItem = {
+    22→  title: string;
+    23→  description: string;
+    24→};
+    25→
+    26→type StoryContent = {
+    27→  eyebrow: string;
+    28→  title: string;
+    29→  subtitle: string;
+    30→  body: string[];
+    31→  highlights: HighlightItem[];
+    32→};
+    33→
+    34→
+    35→type TestimonialItem = {
+    36→  quote: string;
+    37→  author: string;
+    38→  role: string;
+    39→  company: string;
+    40→};
+    41→
+    42→type ExpertiseItem = {
+    43→  title: string;
+    44→  description: string;
+    45→};
+    46→
+    47→type CaseItem = {
+    48→  title: string;
+    49→  type: string;
+    50→  summary: string;
+    51→  result: string;
+    52→};
+    53→
+    54→type BlogPost = {
+    55→  slug: string;
+    56→  title: string;
+    57→  excerpt: string;
+    58→  category: string;
+    59→  date: string;
+    60→  readTime: string;
+    61→};
+    62→
+    63→type JobPosting = {
+    64→  slug: string;
+    65→  title: string;
+    66→  type: string;
+    67→  location: string;
+    68→  department: string;
+    69→};
+    70→
+    71→type LocationItem = {
+    72→  city: string;
+    73→  address: string;
+    74→  zip: string;
+    75→  country: string;
+    76→};
+    77→
+    78→export default function HomePage() {
+    79→  const t = useTranslations("Home");
+    80→  const nav = useTranslations("Nav");
+    81→  const blog = useTranslations("BlogPage");
+    82→  const careers = useTranslations("CareersPage");
+    83→
+    84→  const story = t.raw("story") as StoryContent;
+    85→  const testimonials = t.raw("testimonials.items") as TestimonialItem[];
+    86→  const expertise = t.raw("expertise.items") as ExpertiseItem[];
+    87→  const cases = t.raw("cases.items") as CaseItem[];
+    88→  const blogPosts = blog.raw("posts") as BlogPost[];
+    89→  const jobs = careers.raw("jobs") as JobPosting[];
+    90→  const press = t.raw("press.outlets") as string[];
+    91→  const locations = t.raw("locations.items") as LocationItem[];
+    92→
+    93→  return (
+    94→    <>
+    95→      {/* Hero Section */}
+    96→      <HeroHome />
+    97→
+    98→      {/* Story Section */}
+    99→      <Section eyebrow={story.eyebrow} title={story.title} subtitle={story.subtitle}>
+   100→        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
+   101→          <div className="space-y-4 text-sm text-muted md:text-base">
+   102→            {story.body.map((paragraph) => (
+   103→              <p key={paragraph}>{paragraph}</p>
+   104→            ))}
+   105→          </div>
+   106→          <div className="grid gap-4">
+   107→            {story.highlights.map((item) => (
+   108→              <Card key={item.title} className="p-5">
+   109→                <h3 className="text-base font-semibold text-text">
+   110→                  {item.title}
+   111→                </h3>
+   112→                <p className="mt-2 text-sm text-muted">{item.description}</p>
+   113→              </Card>
+   114→            ))}
+   115→          </div>
+   116→        </div>
+   117→      </Section>
+   118→
+   119→      {/* Testimonials Section */}
+   120→      <Section
+   121→        eyebrow={t("testimonials.eyebrow")}
+   122→        title={t("testimonials.title")}
+   123→      >
+   124→        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+   125→          {testimonials.map((testimonial) => (
+   126→            <TestimonialCard
+   127→              key={testimonial.author}
+   128→              quote={testimonial.quote}
+   129→              author={testimonial.author}
+   130→              role={testimonial.role}
+   131→              company={testimonial.company}
+   132→            />
+   133→          ))}
+   134→        </div>
+   135→      </Section>
+   136→
+   137→      {/* Cases Section */}
+   138→      <Section
+   139→        eyebrow={nav("work")}
+   140→        title={t("cases.title")}
+   141→        subtitle={t("cases.subtitle")}
+   142→      >
+   143→        <CaseStudyGrid>
+   144→          {cases.map((item, index) => (
+   145→            <FadeIn key={item.title} delay={index * 0.1}>
+   146→              <CaseStudyCard
+   147→                title={item.title}
+   148→                type={item.type}
+   149→                summary={item.summary}
+   150→                result={item.result}
+   151→              />
+   152→            </FadeIn>
+   153→          ))}
+   154→        </CaseStudyGrid>
+   155→      </Section>
+   156→
+   157→      {/* Expertise Section */}
+   158→      <Section
+   159→        eyebrow={nav("expertise")}
+   160→        title={t("expertise.title")}
+   161→        subtitle={t("expertise.subtitle")}
+   162→      >
+   163→        <ServiceGrid>
+   164→          {expertise.map((item, index) => (
+   165→            <FadeIn key={item.title} delay={index * 0.1}>
+   166→              <ServiceCard title={item.title} description={item.description} />
+   167→            </FadeIn>
+   168→          ))}
+   169→        </ServiceGrid>
+   170→      </Section>
+   171→
+   172→      {/* Blog Section */}
+   173→      <Section
+   174→        eyebrow={nav("blog")}
+   175→        title={t("blog.title")}
+   176→        subtitle={t("blog.subtitle")}
+   177→      >
+   178→        <div className="grid gap-6 md:grid-cols-3">
+   179→          {blogPosts.slice(0, 3).map((post) => (
+   180→            <Link
+   181→              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   182→              href={`/blog/${post.slug}` as any}
+   183→              key={post.slug}
+   184→              className="group"
+   185→            >
+   186→              <Card className="flex h-full flex-col p-6 transition-all group-hover:border-primary/30 group-hover:shadow-md">
+   187→                <div className="flex items-center justify-between text-xs text-muted">
+   188→                  <Badge variant="outline" className="text-[10px] uppercase tracking-[0.2em]">
+   189→                    {post.category}
+   190→                  </Badge>
+   191→                  <span>{post.date}</span>
+   192→                </div>
+   193→                <h3 className="mt-4 text-lg font-semibold text-text group-hover:text-primary">
+   194→                  {post.title}
+   195→                </h3>
+   196→                <p className="mt-3 text-sm text-muted">{post.excerpt}</p>
+   197→                <p className="mt-6 text-xs text-muted">{post.readTime}</p>
+   198→              </Card>
+   199→            </Link>
+   200→          ))}
+   201→        </div>
+   202→        <div className="mt-8 flex justify-center">
+   203→          <ButtonLink href="/blog" variant="secondary">
+   204→            {t("blog.cta")}
+   205→          </ButtonLink>
+   206→        </div>
+   207→      </Section>
+   208→
+   209→      {/* Jobs Section */}
+   210→      <Section
+   211→        eyebrow={nav("careers")}
+   212→        title={t("jobs.title")}
+   213→        subtitle={t("jobs.subtitle")}
+   214→      >
+   215→        <StaggerChildren staggerDelay={0.08}>
+   216→          <div className="grid gap-6 md:grid-cols-3">
+   217→            {jobs.slice(0, 3).map((job) => (
+   218→              <StaggerItem key={job.slug}>
+   219→                <Link
+   220→                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   221→                  href={`/careers/${job.slug}` as any}
+   222→                  className="group block h-full"
+   223→                >
+   224→                  <Card className="flex h-full flex-col p-6 transition-all group-hover:border-primary/30 group-hover:shadow-md">
+   225→                    <p className="text-xs uppercase tracking-[0.2em] text-muted">
+   226→                      {job.department}
+   227→                    </p>
+   228→                    <h3 className="mt-3 text-lg font-semibold text-text group-hover:text-primary">
+   229→                      {job.title}
+   230→                    </h3>
+   231→                    <div className="mt-4 text-sm text-muted">
+   232→                      <p>{job.location}</p>
+   233→                      <p>{job.type}</p>
+   234→                    </div>
+   235→                  </Card>
+   236→                </Link>
+   237→              </StaggerItem>
+   238→            ))}
+   239→          </div>
+   240→        </StaggerChildren>
+   241→        <div className="mt-8 flex justify-center">
+   242→          <ButtonLink href="/careers">
+   243→            {t("jobs.cta")}
+   244→          </ButtonLink>
+   245→        </div>
+   246→      </Section>
+   247→
+   248→      {/* Press Section */}
+   249→      <Section eyebrow={t("press.eyebrow")} title={t("press.title")}>
+   250→        <ClientLogosGrid
+   251→          logos={press.map((name) => ({ name }))}
+   252→        />
+   253→      </Section>
+   254→
+   255→      {/* Locations Section */}
+   256→      <Section eyebrow={t("locations.eyebrow")} title={t("locations.title")}>
+   257→        <div className="grid gap-6 md:grid-cols-3">
+   258→          {locations.map((location) => (
+   259→            <Card key={location.city} className="p-6">
+   260→              <h3 className="text-lg font-semibold text-text">{location.city}</h3>
+   261→              <p className="mt-2 text-sm text-muted">{location.address}</p>
+   262→              <p className="text-sm text-muted">
+   263→                {location.zip}, {location.country}
+   264→              </p>
+   265→            </Card>
+   266→          ))}
+   267→        </div>
+   268→      </Section>
+   269→
+   270→      {/* CTA Section */}
+   271→      <CtaSection
+   272→        eyebrow={nav("contact")}
+   273→        title={t("cta.title")}
+   274→        subtitle={t("cta.subtitle")}
+   275→        ctaLabel={t("cta.button")}
+   276→        ctaHref="/contact"
+   277→        variant="card"
+   278→      />
+   279→    </>
+   280→  );
+   281→}
+   282→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

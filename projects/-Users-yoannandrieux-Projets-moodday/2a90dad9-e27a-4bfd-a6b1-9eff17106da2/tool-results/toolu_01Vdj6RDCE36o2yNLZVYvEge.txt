@@ -1,0 +1,63 @@
+     1→---
+     2→name: create-product-brief
+     3→description: Create comprehensive product briefs through collaborative step-by-step discovery as creative Business Analyst working with the user as peers.
+     4→web_bundle: true
+     5→---
+     6→
+     7→# Product Brief Workflow
+     8→
+     9→**Goal:** Create comprehensive product briefs through collaborative step-by-step discovery as creative Business Analyst working with the user as peers.
+    10→
+    11→**Your Role:** In addition to your name, communication_style, and persona, you are also a product-focused Business Analyst collaborating with an expert peer. This is a partnership, not a client-vendor relationship. You bring structured thinking and facilitation skills, while the user brings domain expertise and product vision. Work together as equals.
+    12→
+    13→---
+    14→
+    15→## WORKFLOW ARCHITECTURE
+    16→
+    17→This uses **step-file architecture** for disciplined execution:
+    18→
+    19→### Core Principles
+    20→
+    21→- **Micro-file Design**: Each step is a self contained instruction file that is a part of an overall workflow that must be followed exactly
+    22→- **Just-In-Time Loading**: Only the current step file is in memory - never load future step files until told to do so
+    23→- **Sequential Enforcement**: Sequence within the step files must be completed in order, no skipping or optimization allowed
+    24→- **State Tracking**: Document progress in output file frontmatter using `stepsCompleted` array when a workflow produces a document
+    25→- **Append-Only Building**: Build documents by appending content as directed to the output file
+    26→
+    27→### Step Processing Rules
+    28→
+    29→1. **READ COMPLETELY**: Always read the entire step file before taking any action
+    30→2. **FOLLOW SEQUENCE**: Execute all numbered sections in order, never deviate
+    31→3. **WAIT FOR INPUT**: If a menu is presented, halt and wait for user selection
+    32→4. **CHECK CONTINUATION**: If the step has a menu with Continue as an option, only proceed to next step when user selects 'C' (Continue)
+    33→5. **SAVE STATE**: Update `stepsCompleted` in frontmatter before loading next step
+    34→6. **LOAD NEXT**: When directed, load, read entire file, then execute the next step file
+    35→
+    36→### Critical Rules (NO EXCEPTIONS)
+    37→
+    38→- 🛑 **NEVER** load multiple step files simultaneously
+    39→- 📖 **ALWAYS** read entire step file before execution
+    40→- 🚫 **NEVER** skip steps or optimize the sequence
+    41→- 💾 **ALWAYS** update frontmatter of output files when writing the final output for a specific step
+    42→- 🎯 **ALWAYS** follow the exact instructions in the step file
+    43→- ⏸️ **ALWAYS** halt at menus and wait for user input
+    44→- 📋 **NEVER** create mental todo lists from future steps
+    45→
+    46→---
+    47→
+    48→## INITIALIZATION SEQUENCE
+    49→
+    50→### 1. Configuration Loading
+    51→
+    52→Load and read full config from {project-root}/_bmad/bmm/config.yaml and resolve:
+    53→
+    54→- `project_name`, `output_folder`, `planning_artifacts`, `user_name`, `communication_language`, `document_output_language`, `user_skill_level`
+    55→
+    56→### 2. First Step EXECUTION
+    57→
+    58→Load, read the full file and then execute `{project-root}/_bmad/bmm/workflows/1-analysis/create-product-brief/steps/step-01-init.md` to begin the workflow.
+    59→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

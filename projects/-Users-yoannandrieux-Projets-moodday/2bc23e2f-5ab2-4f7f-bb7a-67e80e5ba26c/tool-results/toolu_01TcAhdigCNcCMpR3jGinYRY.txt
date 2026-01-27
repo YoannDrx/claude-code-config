@@ -1,0 +1,19 @@
+   320→      modifyPeriod: "Modifier la période",
+   321→    },
+   322→    download: {
+   323→      success: "PDF téléchargé !",
+   324→    },
+   325→  },
+   326→  debug: {
+   327→    title: "Panneau de debug",
+   328→    info: "Infos",
+   329→    actions: "Actions",
+   330→    noActions: "Aucune action enregistrée",
+   331→    user: "Utilisateur",
+   332→    session: "Session",
+   333→    notLoggedIn: "Non connecté",
+   334→    null: "null",
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

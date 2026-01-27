@@ -1,0 +1,13 @@
+The file /Users/yoannandrieux/Projets/moodday/src/lib/env.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    12→    GITHUB_CLIENT_ID: z.string().optional(),
+    13→    GITHUB_CLIENT_SECRET: z.string().optional(),
+    14→    GOOGLE_CLIENT_ID: z.string().optional(),
+    15→    GOOGLE_CLIENT_SECRET: z.string().optional(),
+    16→    RESEND_API_KEY: z.string().optional(),
+    17→    RESEND_AUDIENCE_ID: z.string().optional(),
+    18→    EMAIL_FROM: z.string().optional().default("NowTS <noreply@example.com>"),
+    19→    STRIPE_SECRET_KEY: z.string().optional(),
+    20→    NODE_ENV: z.enum(["development", "production", "test"]),
+    21→    STRIPE_WEBHOOK_SECRET: z.string().optional(),
+    22→  },
+    23→  /**

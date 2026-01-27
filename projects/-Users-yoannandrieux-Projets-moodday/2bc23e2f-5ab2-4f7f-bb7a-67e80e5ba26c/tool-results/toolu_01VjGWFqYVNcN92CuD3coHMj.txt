@@ -1,0 +1,2 @@
+/Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/bmm-workflow-status.yaml
+/Users/yoannandrieux/Projets/moodday/_bmad-output/implementation-artifacts/sprint-status.yaml

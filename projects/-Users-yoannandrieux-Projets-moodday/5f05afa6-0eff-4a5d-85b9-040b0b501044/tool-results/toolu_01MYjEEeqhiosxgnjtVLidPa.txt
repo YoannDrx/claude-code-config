@@ -1,0 +1,10 @@
+The file /Users/yoannandrieux/Projets/moodday/app/admin/_components/admin-charts-data.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    16→  const now = new Date();
+    17→  const sixMonthsAgo = new Date(now);
+    18→  sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+    19→
+    20→  const invoices = await getStripe().invoices.list({
+    21→    created: {
+    22→      gte: Math.floor(sixMonthsAgo.getTime() / 1000),
+    23→    },
+    24→    status: "paid",

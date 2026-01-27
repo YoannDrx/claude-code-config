@@ -1,0 +1,7 @@
+/Users/yoannandrieux/Projets/choosewisely/src/components/nowts/bentoo.tsx
+/Users/yoannandrieux/Projets/choosewisely/src/components/nowts/divider.tsx
+/Users/yoannandrieux/Projets/choosewisely/src/components/nowts/keyboard-shortcut.tsx
+/Users/yoannandrieux/Projets/choosewisely/src/components/nowts/loader.tsx
+/Users/yoannandrieux/Projets/choosewisely/src/components/nowts/logo.tsx
+/Users/yoannandrieux/Projets/choosewisely/src/components/nowts/typography.tsx
+/Users/yoannandrieux/Projets/choosewisely/src/components/nowts/automatic-pagination.tsx

@@ -1,0 +1,10 @@
+The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/bmm-workflow-status.yaml has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   126→        agent: "sm"
+   127→        command: "/bmad:bmm:workflows:sprint-planning"
+   128→        note: "Crée le sprint plan - suivi dans sprint-status.yaml"
+   129→
+   130→# Next Action
+   131→next_workflow: "create-ux-design"
+   132→next_agent: "ux-designer"
+   133→next_command: "/bmad:bmm:workflows:create-ux-design"
+   134→

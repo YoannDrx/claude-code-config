@@ -1,0 +1,19 @@
+   250→      success: "Exercice archivé",
+   251→    },
+   252→    unarchive: {
+   253→      success: "Exercice restauré",
+   254→    },
+   255→  },
+   256→  debug: {
+   257→    title: "Panneau de debug",
+   258→    info: "Infos",
+   259→    actions: "Actions",
+   260→    noActions: "Aucune action enregistrée",
+   261→    user: "Utilisateur",
+   262→    session: "Session",
+   263→    notLoggedIn: "Non connecté",
+   264→    null: "null",
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

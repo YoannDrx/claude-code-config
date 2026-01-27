@@ -1,0 +1,7 @@
+The file /Users/yoannandrieux/Projets/moodday/app/admin/_components/admin-charts-data.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→import { prisma } from "@/lib/prisma";
+     2→import { getStripe } from "@/lib/stripe";
+     3→
+     4→export type MrrDataPoint = {
+     5→  date: string;
+     6→  mrr: number;

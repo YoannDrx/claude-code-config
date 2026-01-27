@@ -1,0 +1,44 @@
+   260→    title: "Theme",
+   261→    dark: "Dark",
+   262→    light: "Light",
+   263→    system: "System",
+   264→  },
+   265→  sidebar: {
+   266→    title: "Sidebar",
+   267→    description: "Displays the mobile sidebar.",
+   268→    toggle: "Toggle sidebar",
+   269→  },
+   270→  breadcrumb: {
+   271→    label: "Breadcrumb",
+   272→    more: "More",
+   273→  },
+   274→  pagination: {
+   275→    label: "Pagination",
+   276→    previous: "Previous",
+   277→    next: "Next",
+   278→    previousAria: "Go to previous page",
+   279→    nextAria: "Go to next page",
+   280→    more: "More pages",
+   281→  },
+   282→  months: {
+   283→    january: "January",
+   284→    february: "February",
+   285→    march: "March",
+   286→    april: "April",
+   287→    may: "May",
+   288→    june: "June",
+   289→    july: "July",
+   290→    august: "August",
+   291→    september: "September",
+   292→    october: "October",
+   293→    november: "November",
+   294→    december: "December",
+   295→  },
+   296→  images: {
+   297→    dropHere: "Drop here",
+   298→    upload: "Upload",
+   299→    onlyAccept: "Only accepts: {types}",
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

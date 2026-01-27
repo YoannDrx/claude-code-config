@@ -1,0 +1,38 @@
+     1→"use client";
+     2→
+     3→import React from "react";
+     4→import { motion } from "framer-motion";
+     5→
+     6→interface MarqueeProps {
+     7→  items: string[];
+     8→  direction?: 1 | -1;
+     9→}
+    10→
+    11→export const Marquee: React.FC<MarqueeProps> = ({ items, direction = 1 }) => {
+    12→  const repeatedItems = React.useMemo(
+    13→    () => Array.from({ length: 6 }, () => (items.length ? items : [""])).flat(),
+    14→    [items]
+    15→  );
+    16→
+    17→  return (
+    18→    <div className="relative flex overflow-hidden border-y-4 border-neo-border bg-neo-surface py-4 select-none">
+    19→      <motion.div
+    20→        className="flex whitespace-nowrap font-black text-4xl md:text-8xl uppercase tracking-tighter text-neo-text"
+    21→        animate={{ x: direction === 1 ? [0, -1000] : [-1000, 0] }}
+    22→        transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
+    23→      >
+    24→        {repeatedItems.map((item, index) => (
+    25→          <span key={`${item}-${index}`} className="flex items-center">
+    26→            <span className="mx-4 md:mx-8">{item}</span>
+    27→            <span className="w-4 h-4 md:w-8 md:h-8 bg-neo-accent block rounded-full" />
+    28→          </span>
+    29→        ))}
+    30→      </motion.div>
+    31→    </div>
+    32→  );
+    33→};
+    34→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

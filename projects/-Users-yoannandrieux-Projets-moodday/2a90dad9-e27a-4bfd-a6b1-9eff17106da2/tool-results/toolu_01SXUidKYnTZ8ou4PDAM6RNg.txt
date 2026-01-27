@@ -1,0 +1,26 @@
+   200→- **10 000 utilisateurs actifs**
+   201→- **Conversion premium**: 5% des utilisateurs sur plan payant
+   202→- **Recommandation pro**: ≥50 psys/psychiatres recommandent l'app
+   203→
+   204→### Key Performance Indicators
+   205→
+   206→| KPI | Cible | Mesure |
+   207→|-----|-------|--------|
+   208→| **DAU/MAU** | ≥ 30% | Ratio utilisateurs actifs quotidiens/mensuels |
+   209→| **Rétention J7** | ≥ 60% | % utilisateurs revenus après 7 jours |
+   210→| **Rétention J30** | ≥ 40% | % utilisateurs revenus après 30 jours |
+   211→| **Check-ins/semaine** | ≥ 4 | Moyenne par utilisateur actif |
+   212→| **Time-to-value** | < 14 jours | Temps jusqu'au premier "aha moment" |
+   213→| **PDF exports/mois** | ≥ 1 par user actif | Preuve d'utilisation clinique |
+   214→| **NPS** | ≥ 40 | Net Promoter Score |
+   215→
+   216→### North Star Metric
+   217→
+   218→> **"Consultations préparées"** = Nombre d'utilisateurs ayant consulté leurs données ou généré un PDF dans les 48h précédant un RDV médical noté dans l'app.
+   219→
+   220→Cette métrique capture la valeur core: Moodday aide à préparer les consultations.
+   221→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

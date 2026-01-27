@@ -1,0 +1,177 @@
+     1→import { betterAuth } from "better-auth";
+     2→import { prismaAdapter } from "better-auth/adapters/prisma";
+     3→import { nextCookies } from "better-auth/next-js";
+     4→import { admin, magicLink } from "better-auth/plugins";
+     5→
+     6→import { sendEmail } from "@/lib/mail/send-email";
+     7→import { SiteConfig } from "@/site-config";
+     8→import MarkdownEmail from "@email/markdown.email";
+     9→import { setupResendCustomer } from "./auth/auth-config-setup";
+    10→import { env } from "./env";
+    11→import { logger } from "./logger";
+    12→import { prisma } from "./prisma";
+    13→import { getServerUrl } from "./server-url";
+    14→import { getStripe } from "./stripe";
+    15→
+    16→type SocialProvidersType = Parameters<typeof betterAuth>[0]["socialProviders"];
+    17→
+    18→export const SocialProviders: SocialProvidersType = {};
+    19→
+    20→if (env.GITHUB_CLIENT_ID && env.GITHUB_CLIENT_SECRET) {
+    21→  SocialProviders.github = {
+    22→    clientId: env.GITHUB_CLIENT_ID,
+    23→    clientSecret: env.GITHUB_CLIENT_SECRET,
+    24→  };
+    25→}
+    26→
+    27→if (env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET) {
+    28→  SocialProviders.google = {
+    29→    clientId: env.GOOGLE_CLIENT_ID,
+    30→    clientSecret: env.GOOGLE_CLIENT_SECRET,
+    31→  };
+    32→}
+    33→
+    34→export const auth = betterAuth({
+    35→  database: prismaAdapter(prisma, {
+    36→    provider: "postgresql",
+    37→  }),
+    38→  baseURL: getServerUrl(),
+    39→  databaseHooks: {
+    40→    user: {
+    41→      create: {
+    42→        after: async (user, _req) => {
+    43→          await setupResendCustomer(user);
+    44→
+    45→          // Create Stripe customer for the user
+    46→          try {
+    47→            const stripeCustomer = await getStripe().customers.create({
+    48→              email: user.email,
+    49→              name: user.name,
+    50→              metadata: {
+    51→                userId: user.id,
+    52→              },
+    53→            });
+    54→
+    55→            // Update user with Stripe customer ID
+    56→            await prisma.user.update({
+    57→              where: { id: user.id },
+    58→              data: { stripeCustomerId: stripeCustomer.id },
+    59→            });
+    60→          } catch (err) {
+    61→            logger.error("Failed to create Stripe customer", { err });
+    62→          }
+    63→        },
+    64→      },
+    65→    },
+    66→  },
+    67→  advanced: {
+    68→    cookiePrefix: SiteConfig.appId,
+    69→  },
+    70→  emailAndPassword: {
+    71→    enabled: true,
+    72→    async sendResetPassword({ user, url }) {
+    73→      await sendEmail({
+    74→        to: user.email,
+    75→        subject: "Reset your password",
+    76→        html: MarkdownEmail({
+    77→          preview: `Reset your password for ${SiteConfig.title}`,
+    78→          markdown: `
+    79→          Hello,
+    80→
+    81→          You requested to reset your password.
+    82→
+    83→          [Click here to reset your password](${url})
+    84→          `,
+    85→        }),
+    86→      });
+    87→    },
+    88→  },
+    89→  user: {
+    90→    changeEmail: {
+    91→      enabled: true,
+    92→      sendChangeEmailVerification: async ({ newEmail, url }) => {
+    93→        await sendEmail({
+    94→          to: newEmail,
+    95→          subject: "Change email address",
+    96→          html: MarkdownEmail({
+    97→            preview: `Change your email address for ${SiteConfig.title}`,
+    98→            markdown: `
+    99→            Hello,
+   100→
+   101→            You requested to change your email address.
+   102→
+   103→            [Click here to verify your new email address](${url})
+   104→            `,
+   105→          }),
+   106→        });
+   107→      },
+   108→    },
+   109→    deleteUser: {
+   110→      enabled: true,
+   111→      sendDeleteAccountVerification: async ({ user, token }) => {
+   112→        const url = `${getServerUrl()}/auth/confirm-delete?token=${token}&callbackUrl=/auth/goodbye`;
+   113→        await sendEmail({
+   114→          to: user.email,
+   115→          subject: "Delete your account",
+   116→          html: MarkdownEmail({
+   117→            preview: `Delete your account from ${SiteConfig.title}`,
+   118→            markdown: `
+   119→            Hello,
+   120→
+   121→            You requested to delete your account.
+   122→
+   123→            [Click here to confirm account deletion](${url})
+   124→            `,
+   125→          }),
+   126→        });
+   127→      },
+   128→    },
+   129→  },
+   130→  emailVerification: {
+   131→    sendVerificationEmail: async ({ user, url }) => {
+   132→      await sendEmail({
+   133→        to: user.email,
+   134→        subject: "Verify your email address",
+   135→        html: MarkdownEmail({
+   136→          preview: `Verify your email for ${SiteConfig.title}`,
+   137→          markdown: `
+   138→          Hello,
+   139→
+   140→          Welcome to ${SiteConfig.title}! Please verify your email address.
+   141→
+   142→          [Click here to verify your email](${url})
+   143→          `,
+   144→        }),
+   145→      });
+   146→    },
+   147→  },
+   148→  socialProviders: SocialProviders,
+   149→  plugins: [
+   150→    magicLink({
+   151→      sendMagicLink: async ({ email, url }) => {
+   152→        await sendEmail({
+   153→          to: email,
+   154→          subject: "Sign in to your account",
+   155→          html: MarkdownEmail({
+   156→            preview: `Magic link to login ${SiteConfig.title}`,
+   157→            markdown: `
+   158→            Hello,
+   159→
+   160→            You requested a magic link to sign in to your account.
+   161→
+   162→            [Click here to sign in](${url})
+   163→            `,
+   164→          }),
+   165→        });
+   166→      },
+   167→    }),
+   168→    admin({}),
+   169→    // Warning: always last plugin
+   170→    nextCookies(),
+   171→  ],
+   172→});
+   173→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,15 @@
+The file /Users/yoannandrieux/Projets/portfolio-loic/components/neo-brutalist/NeoHome.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    49→      />
+    50→
+    51→      <NeoNavbar />
+    52→
+    53→      <main className="relative z-10 pt-16 md:pt-20">
+    54→        <NeoSplitHero />
+    55→        <Marquee logos={partnerLogos} />
+    56→        <FilmBanner />
+    57→        <NeoFooter />
+    58→      </main>
+    59→    </div>
+    60→  );
+    61→}
+    62→

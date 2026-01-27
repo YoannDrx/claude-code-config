@@ -1,0 +1,69 @@
+     1→import { BentoGridSection } from "@/features/landing/bento-section";
+     2→import { FAQSection } from "@/features/landing/faq-section";
+     3→import { Hero } from "@/features/landing/hero";
+     4→import { LandingHeader } from "@/features/landing/landing-header";
+     5→import { StatsSection } from "@/features/landing/stats-section";
+     6→import { Footer } from "@/features/layout/footer";
+     7→import { Pricing } from "@/features/plans/pricing-section";
+     8→
+     9→export default function HomePage() {
+    10→  return (
+    11→    <div className="relative flex h-fit flex-col">
+    12→      <div className="mt-16" />
+    13→
+    14→      <LandingHeader />
+    15→
+    16→      <Hero />
+    17→
+    18→      <StatsSection />
+    19→
+    20→      <BentoGridSection />
+    21→
+    22→      <div id="pricing">
+    23→        <Pricing />
+    24→      </div>
+    25→
+    26→      <FAQSection
+    27→        faq={[
+    28→          {
+    29→            question: "Qu'est-ce que ChooseWisely ?",
+    30→            answer:
+    31→              "ChooseWisely est une plateforme innovante qui agrège toutes les annonces immobilières françaises et les enrichit avec les données DVF (prix de vente réels) et DPE pour vous aider à prendre les meilleures décisions d'investissement.",
+    32→          },
+    33→          {
+    34→            question: "Comment fonctionne l'analyse DVF ?",
+    35→            answer:
+    36→              "Notre système analyse automatiquement les ventes immobilières passées dans le quartier de chaque bien pour vous donner une estimation précise de sa valeur réelle et de sa marge de négociation potentielle.",
+    37→          },
+    38→          {
+    39→            question: "Les données sont-elles fiables ?",
+    40→            answer:
+    41→              "Oui, nous utilisons uniquement des données officielles : les ventes DVF proviennent des notaires et sont publiées par data.gouv.fr, les données DPE proviennent de l'ADEME.",
+    42→          },
+    43→          {
+    44→            question: "Puis-je créer des alertes ?",
+    45→            answer:
+    46→              "Absolument ! Vous pouvez sauvegarder vos recherches et recevoir des alertes par email dès qu'un nouveau bien correspondant à vos critères est publié.",
+    47→          },
+    48→          {
+    49→            question: "Quelles sont les limites du plan gratuit ?",
+    50→            answer:
+    51→              "Le plan gratuit vous permet de rechercher des biens et de consulter les analyses de base. Les fonctionnalités avancées comme les alertes illimitées, l'export des données et l'accès API sont réservées aux plans payants.",
+    52→          },
+    53→          {
+    54→            question: "Comment fonctionne l'aide à la négociation ?",
+    55→            answer:
+    56→              "Notre algorithme analyse les ventes DVF récentes, le temps moyen de vente dans le quartier et les caractéristiques du bien pour vous suggérer un prix de négociation réaliste et les arguments à utiliser.",
+    57→          },
+    58→        ]}
+    59→      />
+    60→
+    61→      <Footer />
+    62→    </div>
+    63→  );
+    64→}
+    65→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

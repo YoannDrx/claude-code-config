@@ -1,0 +1,157 @@
+     1→import { EmailFormSection } from "@/features/email/email-form-section";
+     2→import { BentoGridSection } from "@/features/landing/bento-section";
+     3→import { CTASectionCard } from "@/features/landing/cta/cta-card-section";
+     4→import { CTAImageSection } from "@/features/landing/cta/cta-image-section";
+     5→import { CtaSection } from "@/features/landing/cta/cta-section";
+     6→import { FAQSection } from "@/features/landing/faq-section";
+     7→import { FeaturesSection } from "@/features/landing/feature-section";
+     8→import { Hero } from "@/features/landing/hero";
+     9→import { LandingHeader } from "@/features/landing/landing-header";
+    10→import { PainSection } from "@/features/landing/pain";
+    11→import { ReviewGrid } from "@/features/landing/review/review-grid";
+    12→import { ReviewSingle } from "@/features/landing/review/review-single";
+    13→import { ReviewTriple } from "@/features/landing/review/review-triple";
+    14→import { SectionDivider } from "@/features/landing/section-divider";
+    15→import { StatsSection } from "@/features/landing/stats-section";
+    16→import { Footer } from "@/features/layout/footer";
+    17→import { Pricing } from "@/features/plans/pricing-section";
+    18→import Image from "next/image";
+    19→import { getI18n } from "@/i18n/server";
+    20→import type { ReactNode } from "react";
+    21→
+    22→type LandingReview = {
+    23→  image: string;
+    24→  name: string;
+    25→  review: string;
+    26→  role: string;
+    27→  compagnyImage?: string;
+    28→};
+    29→
+    30→type LandingFeature = {
+    31→  badge: string;
+    32→  title: string;
+    33→  description: string;
+    34→};
+    35→
+    36→type LandingFeatureWithComponent = LandingFeature & {
+    37→  component: ReactNode;
+    38→};
+    39→
+    40→type LandingFaq = {
+    41→  question: string;
+    42→  answer: string;
+    43→};
+    44→
+    45→export default async function HomePage() {
+    46→  const { tm } = await getI18n();
+    47→  const tripleReviews = tm<LandingReview[]>("landing.reviews.triple") ?? [];
+    48→  const singleReview = tm<LandingReview>("landing.reviews.single");
+    49→  const gridReviews = tm<LandingReview[]>("landing.reviews.grid") ?? [];
+    50→  const featureItems = tm<LandingFeature[]>("landing.features.items") ?? [];
+    51→  const faqItems = tm<LandingFaq[]>("landing.faq.items") ?? [];
+    52→  const featureComponents = [
+    53→    (item: LandingFeature) => (
+    54→      <Image
+    55→        src="/images/placeholder1.gif"
+    56→        alt={item.title}
+    57→        width={200}
+    58→        height={100}
+    59→        className="h-auto w-full object-cover"
+    60→        unoptimized
+    61→      />
+    62→    ),
+    63→    (item: LandingFeature) => (
+    64→      <Image
+    65→        src="/images/placeholder1.gif"
+    66→        alt={item.title}
+    67→        width={200}
+    68→        height={100}
+    69→        className="h-auto w-full object-cover"
+    70→      />
+    71→    ),
+    72→    (item: LandingFeature) => (
+    73→      <Image
+    74→        src="/images/placeholder1.gif"
+    75→        alt={item.title}
+    76→        width={200}
+    77→        height={100}
+    78→        className="h-auto w-full object-cover"
+    79→        unoptimized
+    80→      />
+    81→    ),
+    82→    (item: LandingFeature) => (
+    83→      <Image
+    84→        src="/images/placeholder1.gif"
+    85→        alt={item.title}
+    86→        width={200}
+    87→        height={100}
+    88→        className="h-auto w-full object-cover"
+    89→        unoptimized
+    90→      />
+    91→    ),
+    92→  ];
+    93→  const featuresWithComponents: LandingFeatureWithComponent[] =
+    94→    featureItems.map((item, index) => ({
+    95→      ...item,
+    96→      component: featureComponents[index](item),
+    97→    }));
+    98→
+    99→  return (
+   100→    <div className="bg-background text-foreground relative flex h-fit flex-col">
+   101→      <div className="mt-16"></div>
+   102→
+   103→      <LandingHeader />
+   104→
+   105→      <Hero />
+   106→
+   107→      <StatsSection />
+   108→
+   109→      <BentoGridSection />
+   110→
+   111→      <PainSection />
+   112→
+   113→      <SectionDivider />
+   114→
+   115→      <ReviewTriple reviews={tripleReviews.slice(0, 3)} />
+   116→
+   117→      <SectionDivider />
+   118→
+   119→      {singleReview && (
+   120→        <ReviewSingle
+   121→          image={singleReview.image}
+   122→          name={singleReview.name}
+   123→          review={singleReview.review}
+   124→          role={singleReview.role}
+   125→          compagnyImage={singleReview.compagnyImage}
+   126→        />
+   127→      )}
+   128→
+   129→      <FeaturesSection features={featuresWithComponents} />
+   130→
+   131→      <CTAImageSection />
+   132→
+   133→      <CTASectionCard />
+   134→
+   135→      <CtaSection />
+   136→
+   137→      <Pricing />
+   138→
+   139→      <FAQSection faq={faqItems} />
+   140→
+   141→      <SectionDivider />
+   142→
+   143→      <ReviewGrid reviews={gridReviews} />
+   144→
+   145→      <EmailFormSection />
+   146→
+   147→      <SectionDivider />
+   148→
+   149→      <Footer />
+   150→    </div>
+   151→  );
+   152→}
+   153→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

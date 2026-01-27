@@ -1,0 +1,114 @@
+     1→"use client";
+     2→
+     3→import { useTranslations } from "next-intl";
+     4→import { PageIntro } from "@/components/site/page-intro";
+     5→import { buttonClassName } from "@/components/ui/button-styles";
+     6→import { Card } from "@/components/ui/card";
+     7→import { Section } from "@/components/ui/section";
+     8→
+     9→export default function ContactPage() {
+    10→  const t = useTranslations("ContactPage");
+    11→  const info = t.raw("info") as string[];
+    12→
+    13→  return (
+    14→    <>
+    15→      <PageIntro title={t("title")} subtitle={t("subtitle")} />
+    16→      <Section eyebrow={t("title")} title={t("title")}>
+    17→        <div className="grid gap-8 md:grid-cols-[1fr_1.2fr]">
+    18→          <div className="space-y-4 text-sm text-muted">
+    19→            {info.map((item) => (
+    20→              <div key={item} className="flex items-center gap-3">
+    21→                <span className="h-2 w-2 rounded-full bg-accent" />
+    22→                {item}
+    23→              </div>
+    24→            ))}
+    25→            <Card className="p-5">
+    26→              <p className="text-xs uppercase tracking-[0.2em] text-muted">
+    27→                {t("emailTitle")}
+    28→              </p>
+    29→              <p className="mt-2 text-sm text-text">{t("email")}</p>
+    30→            </Card>
+    31→            <a
+    32→              href={`mailto:${t("email")}`}
+    33→              className={buttonClassName({ variant: "secondary", size: "lg" })}
+    34→            >
+    35→              {t("emailCta")}
+    36→            </a>
+    37→          </div>
+    38→
+    39→          <Card className="p-6">
+    40→            <form className="space-y-4">
+    41→              <div>
+    42→                <label
+    43→                  htmlFor="full-name"
+    44→                  className="text-xs uppercase tracking-[0.2em] text-muted"
+    45→                >
+    46→                  {t("form.nameLabel")}
+    47→                </label>
+    48→                <input
+    49→                  id="full-name"
+    50→                  type="text"
+    51→                  className="mt-2 w-full rounded-[var(--radius-md)] border border-border bg-surface px-4 py-3 text-sm text-text outline-none focus:border-accent/60"
+    52→                  placeholder={t("form.placeholders.name")}
+    53→                />
+    54→              </div>
+    55→              <div>
+    56→                <label
+    57→                  htmlFor="email"
+    58→                  className="text-xs uppercase tracking-[0.2em] text-muted"
+    59→                >
+    60→                  {t("form.emailLabel")}
+    61→                </label>
+    62→                <input
+    63→                  id="email"
+    64→                  type="email"
+    65→                  className="mt-2 w-full rounded-[var(--radius-md)] border border-border bg-surface px-4 py-3 text-sm text-text outline-none focus:border-accent/60"
+    66→                  placeholder={t("form.placeholders.email")}
+    67→                />
+    68→              </div>
+    69→              <div>
+    70→                <label
+    71→                  htmlFor="budget"
+    72→                  className="text-xs uppercase tracking-[0.2em] text-muted"
+    73→                >
+    74→                  {t("form.budgetLabel")}
+    75→                </label>
+    76→                <input
+    77→                  id="budget"
+    78→                  type="text"
+    79→                  className="mt-2 w-full rounded-[var(--radius-md)] border border-border bg-surface px-4 py-3 text-sm text-text outline-none focus:border-accent/60"
+    80→                  placeholder={t("form.placeholders.budget")}
+    81→                />
+    82→              </div>
+    83→              <div>
+    84→                <label
+    85→                  htmlFor="message"
+    86→                  className="text-xs uppercase tracking-[0.2em] text-muted"
+    87→                >
+    88→                  {t("form.messageLabel")}
+    89→                </label>
+    90→                <textarea
+    91→                  id="message"
+    92→                  rows={5}
+    93→                  className="mt-2 w-full resize-none rounded-[var(--radius-md)] border border-border bg-surface px-4 py-3 text-sm text-text outline-none focus:border-accent/60"
+    94→                  placeholder={t("form.placeholders.message")}
+    95→                />
+    96→              </div>
+    97→              <button
+    98→                type="submit"
+    99→                className="h-11 w-full rounded-[var(--radius-lg)] bg-accent text-sm font-semibold text-black shadow-glow transition hover:brightness-110"
+   100→              >
+   101→                {t("form.submit")}
+   102→              </button>
+   103→            </form>
+   104→          </Card>
+   105→        </div>
+   106→      </Section>
+   107→    </>
+   108→  );
+   109→}
+   110→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

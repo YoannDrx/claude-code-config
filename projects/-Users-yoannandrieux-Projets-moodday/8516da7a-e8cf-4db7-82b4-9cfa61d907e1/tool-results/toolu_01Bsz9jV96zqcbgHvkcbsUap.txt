@@ -1,0 +1,5 @@
+/Users/yoannandrieux/Projets/impulsion/src/locales/fr/auth.json
+/Users/yoannandrieux/Projets/impulsion/src/locales/en/auth.json
+/Users/yoannandrieux/Library/Application Support/com.vercel.cli/auth.json
+/Users/yoannandrieux/Library/Preferences/prisma-platform/auth.json
+/Users/yoannandrieux/.codex/auth.json

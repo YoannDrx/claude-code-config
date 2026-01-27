@@ -1,0 +1,903 @@
+     1→@import "tailwindcss";
+     2→
+     3→/* ============================================
+     4→   YODEV - Design System v3.0
+     5→   Glassmorphisme Premium - Liquid Glass Style
+     6→   ============================================ */
+     7→
+     8→:root {
+     9→  /* ========== Spacing & Layout ========== */
+    10→  --radius-sm: 8px;
+    11→  --radius-md: 12px;
+    12→  --radius-lg: 16px;
+    13→  --radius-xl: 24px;
+    14→  --radius-2xl: 32px;
+    15→  --radius-full: 9999px;
+    16→
+    17→  /* Grid & Container */
+    18→  --grid-size: 48px;
+    19→  --header-height: 72px;
+    20→  --container-max: 1280px;
+    21→  --section-gap: 120px;
+    22→  --section-gap-mobile: 80px;
+    23→
+    24→  /* ========== Typography ========== */
+    25→  --font-body: var(--font-manrope);
+    26→  --font-display: var(--font-space);
+    27→
+    28→  /* ========== Transitions ========== */
+    29→  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    30→  --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    31→  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    32→  --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    33→
+    34→  /* ========== Primary Colors - Indigo Premium ========== */
+    35→  --primary: 99 102 241;          /* #6366F1 - Indigo vibrant */
+    36→  --primary-light: 129 140 248;   /* #818CF8 - Hover state */
+    37→  --primary-dark: 79 70 229;      /* #4F46E5 - Pressed state */
+    38→  --primary-foreground: 255 255 255;
+    39→
+    40→  /* ========== Accent Colors ========== */
+    41→  --accent: 251 146 60;           /* #FB923C - Orange doux */
+    42→  --accent-secondary: 236 72 153; /* #EC4899 - Rose vif */
+    43→  --accent-cool: 34 211 238;      /* #22D3EE - Cyan lumineux */
+    44→  --accent-mint: 52 211 153;      /* #34D399 - Vert menthe */
+    45→
+    46→  /* ========== Glass System ========== */
+    47→  --glass-blur-xs: 8px;
+    48→  --glass-blur-sm: 12px;
+    49→  --glass-blur-md: 20px;
+    50→  --glass-blur-lg: 40px;
+    51→  --glass-blur-xl: 80px;
+    52→}
+    53→
+    54→/* ============================================
+    55→   THEME: DARK MODE (Default)
+    56→   ============================================ */
+    57→html[data-theme="dark"] {
+    58→  /* Backgrounds - Noir profond avec nuances bleutées */
+    59→  --bg: 9 9 11;                   /* #09090B - Noir absolu */
+    60→  --bg-2: 18 18 23;               /* #121217 - Noir bleuté */
+    61→  --surface: 24 24 32;            /* #181820 - Surface */
+    62→  --surface-2: 32 32 42;          /* #20202A - Surface élevée */
+    63→  --surface-3: 40 40 52;          /* #282834 - Surface haute */
+    64→
+    65→  /* Text */
+    66→  --text: 250 250 252;            /* #FAFAFC - Blanc chaud */
+    67→  --text-muted: 161 161 170;      /* #A1A1AA - Gris sophistiqué */
+    68→  --text-subtle: 113 113 122;     /* #71717A - Gris subtil */
+    69→
+    70→  /* Borders */
+    71→  --border: 255 255 255 / 0.06;
+    72→  --border-subtle: 255 255 255 / 0.04;
+    73→  --ring: var(--primary) / 0.5;
+    74→
+    75→  /* Shadows */
+    76→  --shadow-color: 0 0 0;
+    77→
+    78→  /* Glass - Dark mode specific */
+    79→  --glass-bg-subtle: rgba(255, 255, 255, 0.02);
+    80→  --glass-bg-light: rgba(255, 255, 255, 0.04);
+    81→  --glass-bg-medium: rgba(255, 255, 255, 0.06);
+    82→  --glass-bg-heavy: rgba(255, 255, 255, 0.10);
+    83→  --glass-bg-intense: rgba(255, 255, 255, 0.15);
+    84→  --glass-border: rgba(255, 255, 255, 0.08);
+    85→  --glass-border-hover: rgba(255, 255, 255, 0.15);
+    86→  --glass-border-active: rgba(99, 102, 241, 0.5);
+    87→
+    88→  /* Gradients */
+    89→  --gradient-start: 9 9 11;
+    90→  --gradient-end: 18 18 23;
+    91→
+    92→  color-scheme: dark;
+    93→}
+    94→
+    95→/* ============================================
+    96→   THEME: LIGHT MODE
+    97→   ============================================ */
+    98→html[data-theme="light"] {
+    99→  /* Backgrounds - Blanc pur avec touches grises froides */
+   100→  --bg: 252 252 253;              /* #FCFCFD - Blanc cassé */
+   101→  --bg-2: 244 244 246;            /* #F4F4F6 - Gris très clair */
+   102→  --surface: 255 255 255;         /* #FFFFFF - Blanc pur */
+   103→  --surface-2: 250 250 252;       /* #FAFAFC - Surface grise */
+   104→  --surface-3: 244 244 246;       /* #F4F4F6 - Surface élevée */
+   105→
+   106→  /* Text */
+   107→  --text: 24 24 27;               /* #18181B - Noir doux */
+   108→  --text-muted: 113 113 122;      /* #71717A - Gris moyen */
+   109→  --text-subtle: 161 161 170;     /* #A1A1AA - Gris clair */
+   110→
+   111→  /* Borders */
+   112→  --border: 0 0 0 / 0.06;
+   113→  --border-subtle: 0 0 0 / 0.04;
+   114→  --ring: var(--primary) / 0.4;
+   115→
+   116→  /* Shadows */
+   117→  --shadow-color: 24 24 27;
+   118→
+   119→  /* Glass - Light mode specific */
+   120→  --glass-bg-subtle: rgba(255, 255, 255, 0.5);
+   121→  --glass-bg-light: rgba(255, 255, 255, 0.6);
+   122→  --glass-bg-medium: rgba(255, 255, 255, 0.7);
+   123→  --glass-bg-heavy: rgba(255, 255, 255, 0.8);
+   124→  --glass-bg-intense: rgba(255, 255, 255, 0.9);
+   125→  --glass-border: rgba(0, 0, 0, 0.06);
+   126→  --glass-border-hover: rgba(0, 0, 0, 0.1);
+   127→  --glass-border-active: rgba(99, 102, 241, 0.4);
+   128→
+   129→  /* Gradients */
+   130→  --gradient-start: 252 252 253;
+   131→  --gradient-end: 244 244 246;
+   132→
+   133→  color-scheme: light;
+   134→}
+   135→
+   136→/* ============================================
+   137→   SHADOWS SYSTEM
+   138→   ============================================ */
+   139→:root {
+   140→  /* Standard shadows */
+   141→  --shadow-xs: 0 1px 2px rgb(var(--shadow-color) / 0.05);
+   142→  --shadow-sm: 0 2px 8px rgb(var(--shadow-color) / 0.08),
+   143→               0 1px 2px rgb(var(--shadow-color) / 0.04);
+   144→  --shadow-md: 0 8px 24px rgb(var(--shadow-color) / 0.12),
+   145→               0 4px 8px rgb(var(--shadow-color) / 0.06);
+   146→  --shadow-lg: 0 20px 48px rgb(var(--shadow-color) / 0.16),
+   147→               0 8px 16px rgb(var(--shadow-color) / 0.08);
+   148→  --shadow-xl: 0 32px 64px rgb(var(--shadow-color) / 0.20),
+   149→               0 16px 32px rgb(var(--shadow-color) / 0.10);
+   150→  --shadow-2xl: 0 48px 96px rgb(var(--shadow-color) / 0.24),
+   151→                0 24px 48px rgb(var(--shadow-color) / 0.12);
+   152→
+   153→  /* Glass shadows - avec bordure intégrée */
+   154→  --glass-shadow-sm:
+   155→    0 0 0 1px var(--glass-border),
+   156→    0 2px 8px rgb(var(--shadow-color) / 0.08),
+   157→    0 1px 2px rgb(var(--shadow-color) / 0.04);
+   158→  --glass-shadow-md:
+   159→    0 0 0 1px var(--glass-border),
+   160→    0 8px 24px rgb(var(--shadow-color) / 0.12),
+   161→    0 4px 8px rgb(var(--shadow-color) / 0.06);
+   162→  --glass-shadow-lg:
+   163→    0 0 0 1px var(--glass-border),
+   164→    0 20px 48px rgb(var(--shadow-color) / 0.16),
+   165→    0 8px 16px rgb(var(--shadow-color) / 0.08);
+   166→  --glass-shadow-xl:
+   167→    0 0 0 1px var(--glass-border),
+   168→    0 32px 64px rgb(var(--shadow-color) / 0.20),
+   169→    0 16px 32px rgb(var(--shadow-color) / 0.10);
+   170→
+   171→  /* Glow effects */
+   172→  --shadow-glow:
+   173→    0 0 0 1px rgb(var(--primary) / 0.2),
+   174→    0 0 20px rgb(var(--primary) / 0.15),
+   175→    0 8px 32px rgb(var(--primary) / 0.10);
+   176→  --shadow-glow-hover:
+   177→    0 0 0 1px rgb(var(--primary) / 0.3),
+   178→    0 0 30px rgb(var(--primary) / 0.20),
+   179→    0 12px 40px rgb(var(--primary) / 0.15);
+   180→  --shadow-glow-intense:
+   181→    0 0 0 2px rgb(var(--primary) / 0.4),
+   182→    0 0 60px rgb(var(--primary) / 0.30),
+   183→    0 20px 60px rgb(var(--primary) / 0.20);
+   184→
+   185→  /* Colored glows */
+   186→  --shadow-glow-accent:
+   187→    0 0 20px rgb(var(--accent) / 0.20),
+   188→    0 8px 32px rgb(var(--accent) / 0.10);
+   189→  --shadow-glow-cyan:
+   190→    0 0 20px rgb(var(--accent-cool) / 0.20),
+   191→    0 8px 32px rgb(var(--accent-cool) / 0.10);
+   192→}
+   193→
+   194→/* ============================================
+   195→   TAILWIND THEME INLINE
+   196→   ============================================ */
+   197→@theme inline {
+   198→  /* Colors */
+   199→  --color-bg: rgb(var(--bg));
+   200→  --color-bg-2: rgb(var(--bg-2));
+   201→  --color-surface: rgb(var(--surface));
+   202→  --color-surface-2: rgb(var(--surface-2));
+   203→  --color-surface-3: rgb(var(--surface-3));
+   204→  --color-text: rgb(var(--text));
+   205→  --color-muted: rgb(var(--text-muted));
+   206→  --color-subtle: rgb(var(--text-subtle));
+   207→  --color-border: rgb(var(--border));
+   208→  --color-primary: rgb(var(--primary));
+   209→  --color-primary-light: rgb(var(--primary-light));
+   210→  --color-primary-dark: rgb(var(--primary-dark));
+   211→  --color-primary-foreground: rgb(var(--primary-foreground));
+   212→  --color-accent: rgb(var(--accent));
+   213→  --color-accent-secondary: rgb(var(--accent-secondary));
+   214→  --color-accent-cool: rgb(var(--accent-cool));
+   215→  --color-accent-mint: rgb(var(--accent-mint));
+   216→  --color-ring: rgb(var(--ring));
+   217→
+   218→  /* Legacy aliases */
+   219→  --color-rose: rgb(var(--accent-secondary));
+   220→  --color-accent-2: rgb(var(--primary-light));
+   221→
+   222→  /* Shadows */
+   223→  --shadow-xs: var(--shadow-xs);
+   224→  --shadow-sm: var(--shadow-sm);
+   225→  --shadow-md: var(--shadow-md);
+   226→  --shadow-lg: var(--shadow-lg);
+   227→  --shadow-xl: var(--shadow-xl);
+   228→  --shadow-2xl: var(--shadow-2xl);
+   229→  --shadow-glow: var(--shadow-glow);
+   230→
+   231→  /* Radius */
+   232→  --radius-sm: var(--radius-sm);
+   233→  --radius-md: var(--radius-md);
+   234→  --radius-lg: var(--radius-lg);
+   235→  --radius-xl: var(--radius-xl);
+   236→  --radius-2xl: var(--radius-2xl);
+   237→  --radius-full: var(--radius-full);
+   238→
+   239→  /* Fonts */
+   240→  --font-body: var(--font-body);
+   241→  --font-display: var(--font-display);
+   242→}
+   243→
+   244→/* ============================================
+   245→   BASE STYLES
+   246→   ============================================ */
+   247→*,
+   248→::before,
+   249→::after {
+   250→  border-color: rgb(var(--border));
+   251→}
+   252→
+   253→html {
+   254→  scroll-behavior: smooth;
+   255→}
+   256→
+   257→body {
+   258→  background: rgb(var(--bg));
+   259→  color: rgb(var(--text));
+   260→  font-family: var(--font-body);
+   261→  min-height: 100vh;
+   262→  -webkit-font-smoothing: antialiased;
+   263→  -moz-osx-font-smoothing: grayscale;
+   264→  overflow-x: hidden;
+   265→}
+   266→
+   267→h1, h2, h3, h4, h5 {
+   268→  font-family: var(--font-display);
+   269→  letter-spacing: -0.02em;
+   270→  font-weight: 600;
+   271→}
+   272→
+   273→::selection {
+   274→  background: rgb(var(--primary) / 0.2);
+   275→  color: rgb(var(--text));
+   276→}
+   277→
+   278→:focus-visible {
+   279→  outline: 2px solid rgb(var(--primary));
+   280→  outline-offset: 2px;
+   281→}
+   282→
+   283→summary {
+   284→  list-style: none;
+   285→  cursor: pointer;
+   286→}
+   287→
+   288→summary::-webkit-details-marker {
+   289→  display: none;
+   290→}
+   291→
+   292→/* ============================================
+   293→   GLASSMORPHISM CLASSES
+   294→   ============================================ */
+   295→
+   296→/* Glass base - léger */
+   297→.glass {
+   298→  background: var(--glass-bg-light);
+   299→  backdrop-filter: blur(var(--glass-blur-md));
+   300→  -webkit-backdrop-filter: blur(var(--glass-blur-md));
+   301→  border: 1px solid var(--glass-border);
+   302→  box-shadow: var(--glass-shadow-sm);
+   303→}
+   304→
+   305→/* Glass medium */
+   306→.glass-medium {
+   307→  background: var(--glass-bg-medium);
+   308→  backdrop-filter: blur(var(--glass-blur-lg));
+   309→  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+   310→  border: 1px solid var(--glass-border);
+   311→  box-shadow: var(--glass-shadow-md);
+   312→}
+   313→
+   314→/* Glass heavy - plus opaque */
+   315→.glass-heavy {
+   316→  background: var(--glass-bg-heavy);
+   317→  backdrop-filter: blur(var(--glass-blur-xl));
+   318→  -webkit-backdrop-filter: blur(var(--glass-blur-xl));
+   319→  border: 1px solid var(--glass-border);
+   320→  box-shadow: var(--glass-shadow-lg);
+   321→}
+   322→
+   323→/* Glass intense */
+   324→.glass-intense {
+   325→  background: var(--glass-bg-intense);
+   326→  backdrop-filter: blur(var(--glass-blur-xl));
+   327→  -webkit-backdrop-filter: blur(var(--glass-blur-xl));
+   328→  border: 1px solid var(--glass-border-hover);
+   329→  box-shadow: var(--glass-shadow-xl);
+   330→}
+   331→
+   332→/* Glass avec glow */
+   333→.glass-glow {
+   334→  background: var(--glass-bg-medium);
+   335→  backdrop-filter: blur(var(--glass-blur-lg));
+   336→  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+   337→  border: 1px solid var(--glass-border);
+   338→  box-shadow: var(--glass-shadow-md), var(--shadow-glow);
+   339→}
+   340→
+   341→/* Glass interactif - avec transitions hover */
+   342→.glass-interactive {
+   343→  transition:
+   344→    background var(--transition-base),
+   345→    border-color var(--transition-base),
+   346→    box-shadow var(--transition-base),
+   347→    transform var(--transition-base);
+   348→}
+   349→
+   350→.glass-interactive:hover {
+   351→  background: var(--glass-bg-medium);
+   352→  border-color: var(--glass-border-hover);
+   353→  box-shadow: var(--glass-shadow-lg);
+   354→  transform: translateY(-2px);
+   355→}
+   356→
+   357→/* Glass avec reflet Apple-style */
+   358→.glass-reflection {
+   359→  position: relative;
+   360→  overflow: hidden;
+   361→}
+   362→
+   363→.glass-reflection::before {
+   364→  content: '';
+   365→  position: absolute;
+   366→  inset: 0;
+   367→  background: linear-gradient(
+   368→    135deg,
+   369→    rgba(255, 255, 255, 0.1) 0%,
+   370→    rgba(255, 255, 255, 0.05) 40%,
+   371→    transparent 60%
+   372→  );
+   373→  border-radius: inherit;
+   374→  pointer-events: none;
+   375→}
+   376→
+   377→/* Glass card premium */
+   378→.glass-card {
+   379→  background: var(--glass-bg-light);
+   380→  backdrop-filter: blur(var(--glass-blur-lg));
+   381→  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+   382→  border: 1px solid var(--glass-border);
+   383→  border-radius: var(--radius-2xl);
+   384→  box-shadow: var(--glass-shadow-md);
+   385→  transition:
+   386→    background var(--transition-base),
+   387→    border-color var(--transition-base),
+   388→    box-shadow var(--transition-slow),
+   389→    transform var(--transition-slow);
+   390→}
+   391→
+   392→.glass-card:hover {
+   393→  background: var(--glass-bg-medium);
+   394→  border-color: var(--glass-border-hover);
+   395→  box-shadow: var(--glass-shadow-xl);
+   396→  transform: translateY(-4px);
+   397→}
+   398→
+   399→/* ============================================
+   400→   DECORATIVE ELEMENTS
+   401→   ============================================ */
+   402→
+   403→/* Grid background - perspective style */
+   404→.bg-grid {
+   405→  background-image:
+   406→    linear-gradient(to right, rgb(var(--text) / 0.03) 1px, transparent 1px),
+   407→    linear-gradient(to bottom, rgb(var(--text) / 0.03) 1px, transparent 1px);
+   408→  background-size: var(--grid-size) var(--grid-size);
+   409→}
+   410→
+   411→/* Gradient mesh background - multi-couleurs */
+   412→.gradient-mesh {
+   413→  background:
+   414→    radial-gradient(at 0% 0%, rgb(var(--primary) / 0.15) 0%, transparent 50%),
+   415→    radial-gradient(at 100% 0%, rgb(var(--accent-cool) / 0.10) 0%, transparent 50%),
+   416→    radial-gradient(at 100% 100%, rgb(var(--accent-secondary) / 0.10) 0%, transparent 50%),
+   417→    radial-gradient(at 0% 100%, rgb(var(--accent) / 0.08) 0%, transparent 50%),
+   418→    rgb(var(--bg));
+   419→}
+   420→
+   421→/* Gradient mesh animé */
+   422→.gradient-mesh-animated {
+   423→  background:
+   424→    radial-gradient(at var(--gradient-x-1, 20%) var(--gradient-y-1, 30%), rgb(var(--primary) / 0.15) 0%, transparent 50%),
+   425→    radial-gradient(at var(--gradient-x-2, 80%) var(--gradient-y-2, 70%), rgb(var(--accent-cool) / 0.12) 0%, transparent 50%),
+   426→    radial-gradient(at var(--gradient-x-3, 50%) var(--gradient-y-3, 50%), rgb(var(--accent-secondary) / 0.08) 0%, transparent 50%),
+   427→    rgb(var(--bg));
+   428→  animation: gradient-shift 20s ease-in-out infinite;
+   429→}
+   430→
+   431→/* Gradient orbs améliorés */
+   432→.orb {
+   433→  position: absolute;
+   434→  border-radius: var(--radius-full);
+   435→  filter: blur(80px);
+   436→  opacity: 0.6;
+   437→  pointer-events: none;
+   438→  background: radial-gradient(
+   439→    circle,
+   440→    rgb(var(--primary) / 0.4),
+   441→    rgb(var(--primary) / 0.1) 50%,
+   442→    transparent 70%
+   443→  );
+   444→}
+   445→
+   446→.orb-accent {
+   447→  background: radial-gradient(
+   448→    circle,
+   449→    rgb(var(--accent) / 0.35),
+   450→    rgb(var(--accent) / 0.1) 50%,
+   451→    transparent 70%
+   452→  );
+   453→}
+   454→
+   455→.orb-cyan {
+   456→  background: radial-gradient(
+   457→    circle,
+   458→    rgb(var(--accent-cool) / 0.35),
+   459→    rgb(var(--accent-cool) / 0.1) 50%,
+   460→    transparent 70%
+   461→  );
+   462→}
+   463→
+   464→.orb-pink {
+   465→  background: radial-gradient(
+   466→    circle,
+   467→    rgb(var(--accent-secondary) / 0.30),
+   468→    rgb(var(--accent-secondary) / 0.1) 50%,
+   469→    transparent 70%
+   470→  );
+   471→}
+   472→
+   473→/* Noise texture subtile */
+   474→.noise {
+   475→  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+   476→  opacity: 0.03;
+   477→  pointer-events: none;
+   478→}
+   479→
+   480→/* ============================================
+   481→   ANIMATIONS - KEYFRAMES
+   482→   ============================================ */
+   483→
+   484→/* Float animation améliorée */
+   485→@keyframes float {
+   486→  0%, 100% {
+   487→    transform: translateY(0) translateX(0) rotate(0deg);
+   488→  }
+   489→  25% {
+   490→    transform: translateY(-15px) translateX(5px) rotate(1deg);
+   491→  }
+   492→  50% {
+   493→    transform: translateY(-25px) translateX(0) rotate(0deg);
+   494→  }
+   495→  75% {
+   496→    transform: translateY(-15px) translateX(-5px) rotate(-1deg);
+   497→  }
+   498→}
+   499→
+   500→/* Fade up */
+   501→@keyframes fade-up {
+   502→  from {
+   503→    opacity: 0;
+   504→    transform: translateY(30px);
+   505→    filter: blur(4px);
+   506→  }
+   507→  to {
+   508→    opacity: 1;
+   509→    transform: translateY(0);
+   510→    filter: blur(0);
+   511→  }
+   512→}
+   513→
+   514→/* Fade in scale */
+   515→@keyframes fade-in-scale {
+   516→  from {
+   517→    opacity: 0;
+   518→    transform: scale(0.95);
+   519→    filter: blur(4px);
+   520→  }
+   521→  to {
+   522→    opacity: 1;
+   523→    transform: scale(1);
+   524→    filter: blur(0);
+   525→  }
+   526→}
+   527→
+   528→/* Pulse glow amélioré */
+   529→@keyframes pulse-glow {
+   530→  0%, 100% {
+   531→    box-shadow: 0 0 0 0 rgb(var(--primary) / 0.4),
+   532→                0 0 20px rgb(var(--primary) / 0.1);
+   533→  }
+   534→  50% {
+   535→    box-shadow: 0 0 0 8px rgb(var(--primary) / 0),
+   536→                0 0 40px rgb(var(--primary) / 0.2);
+   537→  }
+   538→}
+   539→
+   540→/* Shimmer effect */
+   541→@keyframes shimmer {
+   542→  0% {
+   543→    background-position: 200% 0;
+   544→  }
+   545→  100% {
+   546→    background-position: -200% 0;
+   547→  }
+   548→}
+   549→
+   550→/* Gradient shift */
+   551→@keyframes gradient-shift {
+   552→  0%, 100% {
+   553→    --gradient-x-1: 20%;
+   554→    --gradient-y-1: 30%;
+   555→    --gradient-x-2: 80%;
+   556→    --gradient-y-2: 70%;
+   557→  }
+   558→  25% {
+   559→    --gradient-x-1: 30%;
+   560→    --gradient-y-1: 60%;
+   561→    --gradient-x-2: 70%;
+   562→    --gradient-y-2: 40%;
+   563→  }
+   564→  50% {
+   565→    --gradient-x-1: 70%;
+   566→    --gradient-y-1: 80%;
+   567→    --gradient-x-2: 30%;
+   568→    --gradient-y-2: 20%;
+   569→  }
+   570→  75% {
+   571→    --gradient-x-1: 50%;
+   572→    --gradient-y-1: 20%;
+   573→    --gradient-x-2: 50%;
+   574→    --gradient-y-2: 80%;
+   575→  }
+   576→}
+   577→
+   578→/* Border glow animation */
+   579→@keyframes border-glow {
+   580→  0%, 100% {
+   581→    background-position: 0% 50%;
+   582→  }
+   583→  50% {
+   584→    background-position: 100% 50%;
+   585→  }
+   586→}
+   587→
+   588→/* Spin slow */
+   589→@keyframes spin-slow {
+   590→  from {
+   591→    transform: rotate(0deg);
+   592→  }
+   593→  to {
+   594→    transform: rotate(360deg);
+   595→  }
+   596→}
+   597→
+   598→/* Breathing scale */
+   599→@keyframes breathe {
+   600→  0%, 100% {
+   601→    transform: scale(1);
+   602→    opacity: 0.8;
+   603→  }
+   604→  50% {
+   605→    transform: scale(1.05);
+   606→    opacity: 1;
+   607→  }
+   608→}
+   609→
+   610→/* ============================================
+   611→   ANIMATIONS - UTILITY CLASSES
+   612→   ============================================ */
+   613→@media (prefers-reduced-motion: no-preference) {
+   614→  .float {
+   615→    animation: float 8s ease-in-out infinite;
+   616→  }
+   617→
+   618→  .float-slow {
+   619→    animation: float 12s ease-in-out infinite;
+   620→  }
+   621→
+   622→  .float-slower {
+   623→    animation: float 18s ease-in-out infinite;
+   624→  }
+   625→
+   626→  .fade-up {
+   627→    animation: fade-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+   628→  }
+   629→
+   630→  .fade-in-scale {
+   631→    animation: fade-in-scale 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+   632→  }
+   633→
+   634→  .pulse-glow {
+   635→    animation: pulse-glow 2s ease-in-out infinite;
+   636→  }
+   637→
+   638→  .shimmer {
+   639→    animation: shimmer 2s linear infinite;
+   640→    background: linear-gradient(
+   641→      90deg,
+   642→      rgb(var(--surface)) 0%,
+   643→      rgb(var(--surface-2)) 50%,
+   644→      rgb(var(--surface)) 100%
+   645→    );
+   646→    background-size: 200% 100%;
+   647→  }
+   648→
+   649→  .spin-slow {
+   650→    animation: spin-slow 20s linear infinite;
+   651→  }
+   652→
+   653→  .breathe {
+   654→    animation: breathe 4s ease-in-out infinite;
+   655→  }
+   656→}
+   657→
+   658→/* Scroll-driven animations (modern browsers) */
+   659→@supports (animation-timeline: view()) {
+   660→  .scroll-reveal {
+   661→    animation: fade-up linear both;
+   662→    animation-timeline: view();
+   663→    animation-range: entry 0% entry 100%;
+   664→  }
+   665→
+   666→  .scroll-scale {
+   667→    animation: fade-in-scale linear both;
+   668→    animation-timeline: view();
+   669→    animation-range: entry 0% cover 40%;
+   670→  }
+   671→
+   672→  .parallax-slow {
+   673→    animation: parallax-translate linear both;
+   674→    animation-timeline: scroll();
+   675→  }
+   676→}
+   677→
+   678→@keyframes parallax-translate {
+   679→  from {
+   680→    transform: translateY(50px);
+   681→  }
+   682→  to {
+   683→    transform: translateY(-50px);
+   684→  }
+   685→}
+   686→
+   687→/* ============================================
+   688→   UTILITY CLASSES - TEXT & EFFECTS
+   689→   ============================================ */
+   690→
+   691→/* Gradient text premium */
+   692→.gradient-text {
+   693→  background: linear-gradient(
+   694→    135deg,
+   695→    rgb(var(--primary)),
+   696→    rgb(var(--primary-light)),
+   697→    rgb(var(--accent-cool))
+   698→  );
+   699→  -webkit-background-clip: text;
+   700→  -webkit-text-fill-color: transparent;
+   701→  background-clip: text;
+   702→}
+   703→
+   704→.gradient-text-animated {
+   705→  background: linear-gradient(
+   706→    90deg,
+   707→    rgb(var(--primary)),
+   708→    rgb(var(--accent-cool)),
+   709→    rgb(var(--accent-secondary)),
+   710→    rgb(var(--primary))
+   711→  );
+   712→  background-size: 300% 100%;
+   713→  -webkit-background-clip: text;
+   714→  -webkit-text-fill-color: transparent;
+   715→  background-clip: text;
+   716→  animation: gradient-shift-text 8s ease-in-out infinite;
+   717→}
+   718→
+   719→@keyframes gradient-shift-text {
+   720→  0%, 100% {
+   721→    background-position: 0% 50%;
+   722→  }
+   723→  50% {
+   724→    background-position: 100% 50%;
+   725→  }
+   726→}
+   727→
+   728→/* ============================================
+   729→   UTILITY CLASSES - INTERACTIVE
+   730→   ============================================ */
+   731→
+   732→/* Card hover effect amélioré */
+   733→.card-hover {
+   734→  transition:
+   735→    transform var(--transition-slow),
+   736→    box-shadow var(--transition-slow);
+   737→}
+   738→
+   739→.card-hover:hover {
+   740→  transform: translateY(-6px);
+   741→  box-shadow: var(--shadow-xl);
+   742→}
+   743→
+   744→/* Button glow effect */
+   745→.btn-glow {
+   746→  transition: box-shadow var(--transition-base);
+   747→}
+   748→
+   749→.btn-glow:hover {
+   750→  box-shadow: var(--shadow-glow-hover);
+   751→}
+   752→
+   753→.btn-glow-intense:hover {
+   754→  box-shadow: var(--shadow-glow-intense);
+   755→}
+   756→
+   757→/* Link underline animation améliorée */
+   758→.link-underline {
+   759→  position: relative;
+   760→}
+   761→
+   762→.link-underline::after {
+   763→  content: '';
+   764→  position: absolute;
+   765→  bottom: -2px;
+   766→  left: 0;
+   767→  width: 0;
+   768→  height: 2px;
+   769→  background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--accent-cool)));
+   770→  transition: width var(--transition-base);
+   771→  border-radius: var(--radius-full);
+   772→}
+   773→
+   774→.link-underline:hover::after {
+   775→  width: 100%;
+   776→}
+   777→
+   778→/* Bordure animée */
+   779→.animated-border {
+   780→  position: relative;
+   781→}
+   782→
+   783→.animated-border::before {
+   784→  content: '';
+   785→  position: absolute;
+   786→  inset: -2px;
+   787→  background: linear-gradient(
+   788→    90deg,
+   789→    rgb(var(--primary)),
+   790→    rgb(var(--accent-cool)),
+   791→    rgb(var(--accent-secondary)),
+   792→    rgb(var(--primary))
+   793→  );
+   794→  background-size: 300% 100%;
+   795→  border-radius: inherit;
+   796→  z-index: -1;
+   797→  opacity: 0;
+   798→  transition: opacity var(--transition-base);
+   799→  animation: border-glow 3s linear infinite;
+   800→}
+   801→
+   802→.animated-border:hover::before {
+   803→  opacity: 1;
+   804→}
+   805→
+   806→/* Effet ripple au click */
+   807→.ripple {
+   808→  position: relative;
+   809→  overflow: hidden;
+   810→}
+   811→
+   812→.ripple::after {
+   813→  content: '';
+   814→  position: absolute;
+   815→  inset: 0;
+   816→  background: radial-gradient(
+   817→    circle at var(--ripple-x, 50%) var(--ripple-y, 50%),
+   818→    rgba(255, 255, 255, 0.3) 0%,
+   819→    transparent 60%
+   820→  );
+   821→  opacity: 0;
+   822→  transition: opacity var(--transition-fast);
+   823→}
+   824→
+   825→.ripple:hover::after {
+   826→  opacity: 1;
+   827→}
+   828→
+   829→/* Magnetic effect - utilisé avec JS */
+   830→.magnetic {
+   831→  transition: transform var(--transition-spring);
+   832→}
+   833→
+   834→/* ============================================
+   835→   SCROLLBAR STYLING
+   836→   ============================================ */
+   837→::-webkit-scrollbar {
+   838→  width: 8px;
+   839→  height: 8px;
+   840→}
+   841→
+   842→::-webkit-scrollbar-track {
+   843→  background: rgb(var(--bg-2));
+   844→}
+   845→
+   846→::-webkit-scrollbar-thumb {
+   847→  background: rgb(var(--text-muted) / 0.2);
+   848→  border-radius: var(--radius-full);
+   849→  transition: background var(--transition-base);
+   850→}
+   851→
+   852→::-webkit-scrollbar-thumb:hover {
+   853→  background: rgb(var(--text-muted) / 0.4);
+   854→}
+   855→
+   856→/* ============================================
+   857→   RESPONSIVE UTILITIES
+   858→   ============================================ */
+   859→@media (max-width: 768px) {
+   860→  :root {
+   861→    --section-gap: var(--section-gap-mobile);
+   862→    --grid-size: 32px;
+   863→    --header-height: 64px;
+   864→  }
+   865→
+   866→  /* Reduce blur on mobile for performance */
+   867→  .glass,
+   868→  .glass-medium,
+   869→  .glass-heavy,
+   870→  .glass-intense {
+   871→    backdrop-filter: blur(var(--glass-blur-sm));
+   872→    -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+   873→  }
+   874→}
+   875→
+   876→/* High contrast mode support */
+   877→@media (prefers-contrast: high) {
+   878→  :root {
+   879→    --glass-border: rgba(255, 255, 255, 0.2);
+   880→    --glass-border-hover: rgba(255, 255, 255, 0.4);
+   881→  }
+   882→
+   883→  html[data-theme="light"] {
+   884→    --glass-border: rgba(0, 0, 0, 0.2);
+   885→    --glass-border-hover: rgba(0, 0, 0, 0.4);
+   886→  }
+   887→}
+   888→
+   889→/* Reduced motion support */
+   890→@media (prefers-reduced-motion: reduce) {
+   891→  *,
+   892→  ::before,
+   893→  ::after {
+   894→    animation-duration: 0.01ms !important;
+   895→    animation-iteration-count: 1 !important;
+   896→    transition-duration: 0.01ms !important;
+   897→  }
+   898→}
+   899→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,29 @@
+     1→"use client";
+     2→
+     3→import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+     4→import { toast } from "sonner";
+     5→
+     6→import { Button } from "@/components/ui/button";
+     7→import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+     8→import { Label } from "@/components/ui/label";
+     9→import { Switch } from "@/components/ui/switch";
+    10→import { Input } from "@/components/ui/input";
+    11→import {
+    12→  Select,
+    13→  SelectContent,
+    14→  SelectItem,
+    15→  SelectTrigger,
+    16→  SelectValue,
+    17→} from "@/components/ui/select";
+    18→import { Skeleton } from "@/components/ui/skeleton";
+    19→import {
+    20→  getUserPreferences,
+    21→  updateDisplayPreferences,
+    22→  updateNotificationPreferences,
+    23→} from "@/features/preferences/preferences.action";
+    24→import { useI18n } from "@/i18n/provider";
+    25→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

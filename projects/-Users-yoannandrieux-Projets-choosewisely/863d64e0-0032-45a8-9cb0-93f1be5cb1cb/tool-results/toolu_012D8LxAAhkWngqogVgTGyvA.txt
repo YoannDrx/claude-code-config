@@ -1,0 +1,69 @@
+     1→import { Slot } from "@radix-ui/react-slot";
+     2→import { cva, type VariantProps } from "class-variance-authority";
+     3→import * as React from "react";
+     4→
+     5→import { cn } from "@/lib/utils";
+     6→
+     7→const buttonVariants = cva(
+     8→  "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none transition-all focus-visible:ring disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 cursor-pointer",
+     9→  {
+    10→    variants: {
+    11→      variant: {
+    12→        default:
+    13→          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 focus-visible:ring-primary",
+    14→        destructive:
+    15→          "bg-destructive shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 text-white",
+    16→        outline:
+    17→          "bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 border",
+    18→        secondary:
+    19→          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+    20→        ghost:
+    21→          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+    22→        link: "text-primary underline-offset-4 hover:underline",
+    23→        invert: "bg-foreground text-background hover:bg-foreground/90",
+    24→        success: "bg-success text-success-foreground hover:bg-success/90",
+    25→        warning: "bg-warning text-warning-foreground hover:bg-warning/90",
+    26→      },
+    27→      size: {
+    28→        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+    29→        sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
+    30→        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+    31→        icon: "size-9",
+    32→      },
+    33→    },
+    34→    defaultVariants: {
+    35→      variant: "default",
+    36→      size: "default",
+    37→    },
+    38→  },
+    39→);
+    40→
+    41→export type ButtonProps = React.ComponentProps<"button"> &
+    42→  VariantProps<typeof buttonVariants> & {
+    43→    asChild?: boolean;
+    44→  };
+    45→
+    46→function Button({
+    47→  className,
+    48→  variant,
+    49→  size,
+    50→  asChild = false,
+    51→  ...props
+    52→}: ButtonProps) {
+    53→  const Comp = asChild ? Slot : "button";
+    54→
+    55→  return (
+    56→    <Comp
+    57→      data-slot="button"
+    58→      className={cn(buttonVariants({ variant, size, className }))}
+    59→      {...props}
+    60→    />
+    61→  );
+    62→}
+    63→
+    64→export { Button, buttonVariants };
+    65→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

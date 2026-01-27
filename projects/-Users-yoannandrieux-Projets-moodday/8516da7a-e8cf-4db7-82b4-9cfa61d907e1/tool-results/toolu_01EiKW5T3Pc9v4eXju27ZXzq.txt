@@ -1,0 +1,6 @@
+total 168
+drwxr-xr-x@ 5 yoannandrieux  staff    160 Jan  7 23:44 .
+drwxr-xr-x@ 7 yoannandrieux  staff    224 Jan  7 23:44 ..
+-rw-r--r--@ 1 yoannandrieux  staff  36911 Jan  7 23:44 en.ts
+-rw-r--r--@ 1 yoannandrieux  staff  39437 Jan  7 23:44 fr.ts
+-rw-r--r--@ 1 yoannandrieux  staff    296 Jan  7 23:44 index.ts

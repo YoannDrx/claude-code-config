@@ -1,0 +1,409 @@
+     1→@import "tailwindcss";
+     2→
+     3→/* ============================================
+     4→   YODEV - Design System
+     5→   Direction Artistique v2.0
+     6→   ============================================ */
+     7→
+     8→:root {
+     9→  /* Spacing & Layout */
+    10→  --radius-sm: 8px;
+    11→  --radius-md: 12px;
+    12→  --radius-lg: 16px;
+    13→  --radius-xl: 24px;
+    14→  --radius-full: 9999px;
+    15→
+    16→  /* Grid & Container */
+    17→  --grid-size: 48px;
+    18→  --header-height: 72px;
+    19→  --container-max: 1280px;
+    20→  --section-gap: 100px;
+    21→  --section-gap-mobile: 60px;
+    22→
+    23→  /* Typography */
+    24→  --font-body: var(--font-manrope);
+    25→  --font-display: var(--font-space);
+    26→
+    27→  /* Transitions */
+    28→  --transition-fast: 0.15s ease-out;
+    29→  --transition-base: 0.25s ease-in-out;
+    30→  --transition-slow: 0.4s ease-in-out;
+    31→
+    32→  /* Primary Colors */
+    33→  --primary-hue: 220;
+    34→  --primary: 0 102 255;         /* #0066ff - Bleu électrique */
+    35→  --primary-light: 51 133 255;  /* #3385ff - Hover */
+    36→  --primary-dark: 0 82 204;     /* #0052cc - Pressed */
+    37→  --rose: 240 0 77;             /* #f0004d - Accent secondaire */
+    38→}
+    39→
+    40→/* ============================================
+    41→   THEME: LIGHT MODE
+    42→   ============================================ */
+    43→html[data-theme="light"] {
+    44→  --bg: 250 251 252;            /* #fafbfc */
+    45→  --bg-2: 244 246 248;          /* #f4f6f8 */
+    46→  --surface: 255 255 255;       /* #ffffff */
+    47→  --surface-2: 248 250 252;     /* #f8fafc */
+    48→  --text: 10 15 26;             /* #0a0f1a */
+    49→  --text-muted: 92 107 122;     /* #5c6b7a */
+    50→  --border: 10 15 26 / 0.08;
+    51→  --ring: var(--primary) / 0.4;
+    52→  --shadow-color: 10 15 26;
+    53→  --gradient-start: 250 251 252;
+    54→  --gradient-end: 244 246 248;
+    55→  color-scheme: light;
+    56→}
+    57→
+    58→/* ============================================
+    59→   THEME: DARK MODE
+    60→   ============================================ */
+    61→html[data-theme="dark"] {
+    62→  --bg: 10 12 16;               /* #0a0c10 */
+    63→  --bg-2: 18 21 28;             /* #12151c */
+    64→  --surface: 24 28 38;          /* #181c26 */
+    65→  --surface-2: 32 36 48;        /* #202430 */
+    66→  --text: 232 236 242;          /* #e8ecf2 */
+    67→  --text-muted: 139 149 165;    /* #8b95a5 */
+    68→  --border: 255 255 255 / 0.08;
+    69→  --ring: var(--primary) / 0.5;
+    70→  --shadow-color: 0 0 0;
+    71→  --gradient-start: 10 12 16;
+    72→  --gradient-end: 18 21 28;
+    73→  color-scheme: dark;
+    74→}
+    75→
+    76→/* ============================================
+    77→   SHADOWS
+    78→   ============================================ */
+    79→:root {
+    80→  --shadow-xs: 0 1px 2px rgb(var(--shadow-color) / 0.05);
+    81→  --shadow-sm: 0 2px 8px rgb(var(--shadow-color) / 0.08);
+    82→  --shadow-md: 0 8px 24px rgb(var(--shadow-color) / 0.12);
+    83→  --shadow-lg: 0 20px 48px rgb(var(--shadow-color) / 0.16);
+    84→  --shadow-xl: 0 32px 64px rgb(var(--shadow-color) / 0.20);
+    85→  --shadow-glow: 0 0 0 1px rgb(var(--primary) / 0.2),
+    86→                 0 8px 32px rgb(var(--primary) / 0.15);
+    87→  --shadow-glow-hover: 0 0 0 1px rgb(var(--primary) / 0.3),
+    88→                       0 12px 40px rgb(var(--primary) / 0.25);
+    89→}
+    90→
+    91→/* ============================================
+    92→   TAILWIND THEME INLINE
+    93→   ============================================ */
+    94→@theme inline {
+    95→  --color-bg: rgb(var(--bg));
+    96→  --color-bg-2: rgb(var(--bg-2));
+    97→  --color-surface: rgb(var(--surface));
+    98→  --color-surface-2: rgb(var(--surface-2));
+    99→  --color-text: rgb(var(--text));
+   100→  --color-muted: rgb(var(--text-muted));
+   101→  --color-border: rgb(var(--border));
+   102→  --color-primary: rgb(var(--primary));
+   103→  --color-primary-light: rgb(var(--primary-light));
+   104→  --color-primary-dark: rgb(var(--primary-dark));
+   105→  --color-rose: rgb(var(--rose));
+   106→  --color-ring: rgb(var(--ring));
+   107→
+   108→  /* Legacy aliases for compatibility */
+   109→  --color-accent: rgb(var(--primary));
+   110→  --color-accent-2: rgb(var(--primary-light));
+   111→
+   112→  --shadow-xs: var(--shadow-xs);
+   113→  --shadow-sm: var(--shadow-sm);
+   114→  --shadow-md: var(--shadow-md);
+   115→  --shadow-lg: var(--shadow-lg);
+   116→  --shadow-xl: var(--shadow-xl);
+   117→  --shadow-glow: var(--shadow-glow);
+   118→
+   119→  --radius-sm: var(--radius-sm);
+   120→  --radius-md: var(--radius-md);
+   121→  --radius-lg: var(--radius-lg);
+   122→  --radius-xl: var(--radius-xl);
+   123→  --radius-full: var(--radius-full);
+   124→
+   125→  --font-body: var(--font-body);
+   126→  --font-display: var(--font-display);
+   127→}
+   128→
+   129→/* ============================================
+   130→   BASE STYLES
+   131→   ============================================ */
+   132→*,
+   133→::before,
+   134→::after {
+   135→  border-color: rgb(var(--border));
+   136→}
+   137→
+   138→html {
+   139→  scroll-behavior: smooth;
+   140→}
+   141→
+   142→body {
+   143→  background: rgb(var(--bg));
+   144→  color: rgb(var(--text));
+   145→  font-family: var(--font-body);
+   146→  min-height: 100vh;
+   147→  -webkit-font-smoothing: antialiased;
+   148→  -moz-osx-font-smoothing: grayscale;
+   149→}
+   150→
+   151→h1,
+   152→h2,
+   153→h3,
+   154→h4 {
+   155→  font-family: var(--font-display);
+   156→  letter-spacing: -0.02em;
+   157→  font-weight: 600;
+   158→}
+   159→
+   160→::selection {
+   161→  background: rgb(var(--primary) / 0.2);
+   162→  color: rgb(var(--text));
+   163→}
+   164→
+   165→/* Focus styles */
+   166→:focus-visible {
+   167→  outline: 2px solid rgb(var(--primary));
+   168→  outline-offset: 2px;
+   169→}
+   170→
+   171→/* Summary/Details reset */
+   172→summary {
+   173→  list-style: none;
+   174→  cursor: pointer;
+   175→}
+   176→
+   177→summary::-webkit-details-marker {
+   178→  display: none;
+   179→}
+   180→
+   181→/* ============================================
+   182→   DECORATIVE ELEMENTS
+   183→   ============================================ */
+   184→
+   185→/* Grid background */
+   186→.bg-grid {
+   187→  background-image:
+   188→    linear-gradient(to right, rgb(var(--primary) / 0.04) 1px, transparent 1px),
+   189→    linear-gradient(to bottom, rgb(var(--primary) / 0.04) 1px, transparent 1px);
+   190→  background-size: var(--grid-size) var(--grid-size);
+   191→}
+   192→
+   193→/* Gradient orbs */
+   194→.orb {
+   195→  position: absolute;
+   196→  border-radius: var(--radius-full);
+   197→  filter: blur(60px);
+   198→  opacity: 0.5;
+   199→  pointer-events: none;
+   200→  background: radial-gradient(
+   201→    circle,
+   202→    rgb(var(--primary) / 0.4),
+   203→    transparent 70%
+   204→  );
+   205→}
+   206→
+   207→.orb.secondary {
+   208→  background: radial-gradient(
+   209→    circle,
+   210→    rgb(var(--primary-light) / 0.3),
+   211→    transparent 70%
+   212→  );
+   213→}
+   214→
+   215→/* Noise texture */
+   216→.noise {
+   217→  background-image: radial-gradient(
+   218→    circle at 1px 1px,
+   219→    rgb(var(--primary) / 0.06) 1px,
+   220→    transparent 0
+   221→  );
+   222→  background-size: 20px 20px;
+   223→  opacity: 0.4;
+   224→  pointer-events: none;
+   225→}
+   226→
+   227→/* Gradient mesh background */
+   228→.gradient-mesh {
+   229→  background:
+   230→    radial-gradient(at 20% 30%, rgb(var(--primary) / 0.15) 0%, transparent 50%),
+   231→    radial-gradient(at 80% 70%, rgb(var(--primary-light) / 0.1) 0%, transparent 50%),
+   232→    rgb(var(--bg));
+   233→}
+   234→
+   235→/* ============================================
+   236→   ANIMATIONS
+   237→   ============================================ */
+   238→@media (prefers-reduced-motion: no-preference) {
+   239→  /* Floating animation */
+   240→  .float {
+   241→    animation: float 8s ease-in-out infinite;
+   242→  }
+   243→
+   244→  .float-slow {
+   245→    animation: float 12s ease-in-out infinite;
+   246→  }
+   247→
+   248→  .float-slower {
+   249→    animation: float 18s ease-in-out infinite;
+   250→  }
+   251→
+   252→  /* Fade up on load */
+   253→  .fade-up {
+   254→    animation: fade-up 0.6s ease-out both;
+   255→  }
+   256→
+   257→  /* Pulse glow */
+   258→  .pulse-glow {
+   259→    animation: pulse-glow 2s ease-in-out infinite;
+   260→  }
+   261→
+   262→  /* Shimmer effect for loading states */
+   263→  .shimmer {
+   264→    animation: shimmer 2s linear infinite;
+   265→    background: linear-gradient(
+   266→      90deg,
+   267→      rgb(var(--surface)) 0%,
+   268→      rgb(var(--surface-2)) 50%,
+   269→      rgb(var(--surface)) 100%
+   270→    );
+   271→    background-size: 200% 100%;
+   272→  }
+   273→}
+   274→
+   275→@keyframes float {
+   276→  0%, 100% {
+   277→    transform: translateY(0) translateX(0);
+   278→  }
+   279→  25% {
+   280→    transform: translateY(-12px) translateX(4px);
+   281→  }
+   282→  50% {
+   283→    transform: translateY(-20px) translateX(0);
+   284→  }
+   285→  75% {
+   286→    transform: translateY(-12px) translateX(-4px);
+   287→  }
+   288→}
+   289→
+   290→@keyframes fade-up {
+   291→  from {
+   292→    opacity: 0;
+   293→    transform: translateY(20px);
+   294→  }
+   295→  to {
+   296→    opacity: 1;
+   297→    transform: translateY(0);
+   298→  }
+   299→}
+   300→
+   301→@keyframes pulse-glow {
+   302→  0%, 100% {
+   303→    box-shadow: 0 0 0 0 rgb(var(--primary) / 0.4);
+   304→  }
+   305→  50% {
+   306→    box-shadow: 0 0 20px 4px rgb(var(--primary) / 0.2);
+   307→  }
+   308→}
+   309→
+   310→@keyframes shimmer {
+   311→  0% {
+   312→    background-position: 200% 0;
+   313→  }
+   314→  100% {
+   315→    background-position: -200% 0;
+   316→  }
+   317→}
+   318→
+   319→/* ============================================
+   320→   UTILITY CLASSES
+   321→   ============================================ */
+   322→
+   323→/* Glass effect */
+   324→.glass {
+   325→  background: rgb(var(--surface) / 0.7);
+   326→  backdrop-filter: blur(12px);
+   327→  -webkit-backdrop-filter: blur(12px);
+   328→}
+   329→
+   330→/* Gradient text */
+   331→.gradient-text {
+   332→  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary-light)));
+   333→  -webkit-background-clip: text;
+   334→  -webkit-text-fill-color: transparent;
+   335→  background-clip: text;
+   336→}
+   337→
+   338→/* Card hover effect */
+   339→.card-hover {
+   340→  transition: transform var(--transition-base), box-shadow var(--transition-base);
+   341→}
+   342→
+   343→.card-hover:hover {
+   344→  transform: translateY(-4px);
+   345→  box-shadow: var(--shadow-lg);
+   346→}
+   347→
+   348→/* Button glow effect */
+   349→.btn-glow {
+   350→  transition: box-shadow var(--transition-base);
+   351→}
+   352→
+   353→.btn-glow:hover {
+   354→  box-shadow: var(--shadow-glow-hover);
+   355→}
+   356→
+   357→/* Link underline animation */
+   358→.link-underline {
+   359→  position: relative;
+   360→}
+   361→
+   362→.link-underline::after {
+   363→  content: '';
+   364→  position: absolute;
+   365→  bottom: -2px;
+   366→  left: 0;
+   367→  width: 0;
+   368→  height: 2px;
+   369→  background: rgb(var(--primary));
+   370→  transition: width var(--transition-base);
+   371→}
+   372→
+   373→.link-underline:hover::after {
+   374→  width: 100%;
+   375→}
+   376→
+   377→/* Scrollbar styling */
+   378→::-webkit-scrollbar {
+   379→  width: 8px;
+   380→  height: 8px;
+   381→}
+   382→
+   383→::-webkit-scrollbar-track {
+   384→  background: rgb(var(--bg-2));
+   385→}
+   386→
+   387→::-webkit-scrollbar-thumb {
+   388→  background: rgb(var(--text-muted) / 0.3);
+   389→  border-radius: var(--radius-full);
+   390→}
+   391→
+   392→::-webkit-scrollbar-thumb:hover {
+   393→  background: rgb(var(--text-muted) / 0.5);
+   394→}
+   395→
+   396→/* ============================================
+   397→   RESPONSIVE UTILITIES
+   398→   ============================================ */
+   399→@media (max-width: 768px) {
+   400→  :root {
+   401→    --section-gap: var(--section-gap-mobile);
+   402→    --grid-size: 32px;
+   403→  }
+   404→}
+   405→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,102 @@
+     1→"use client";
+     2→
+     3→import {
+     4→  Collapsible,
+     5→  CollapsibleContent,
+     6→  CollapsibleTrigger,
+     7→} from "@/components/ui/collapsible";
+     8→import {
+     9→  Sidebar,
+    10→  SidebarContent,
+    11→  SidebarFooter,
+    12→  SidebarGroup,
+    13→  SidebarGroupContent,
+    14→  SidebarGroupLabel,
+    15→  SidebarHeader,
+    16→  SidebarRail,
+    17→} from "@/components/ui/sidebar";
+    18→import { SidebarNavigationMenu } from "@/components/ui/sidebar-utils";
+    19→import { ContactFeedbackPopover } from "@/features/contact/feedback/contact-feedback-popover";
+    20→import { SidebarUserButton } from "@/features/sidebar/sidebar-user-button";
+    21→import { useI18n } from "@/i18n/provider";
+    22→import { ChevronDown } from "lucide-react";
+    23→import { usePathname } from "next/navigation";
+    24→import type { PropsWithChildren } from "react";
+    25→import { useEffect, useState } from "react";
+    26→import { AppCommand } from "./app-command";
+    27→import { getAppNavigation } from "./app-navigation.links";
+    28→import { UpgradeCard } from "./upgrade-app-card";
+    29→
+    30→export function AppSidebar() {
+    31→  const { t } = useI18n();
+    32→  const links = getAppNavigation(t);
+    33→
+    34→  return (
+    35→    <Sidebar variant="inset">
+    36→      <SidebarHeader className="flex flex-col gap-2">
+    37→        <AppCommand />
+    38→      </SidebarHeader>
+    39→      <SidebarContent>
+    40→        {links.map((link) => (
+    41→          <ItemCollapsing
+    42→            defaultOpenStartPath={link.defaultOpenStartPath}
+    43→            key={link.title}
+    44→          >
+    45→            <SidebarGroup key={link.title}>
+    46→              <SidebarGroupLabel asChild>
+    47→                <CollapsibleTrigger>
+    48→                  {link.title}
+    49→                  <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+    50→                </CollapsibleTrigger>
+    51→              </SidebarGroupLabel>
+    52→              <CollapsibleContent>
+    53→                <SidebarGroupContent>
+    54→                  <SidebarNavigationMenu link={link} />
+    55→                </SidebarGroupContent>
+    56→              </CollapsibleContent>
+    57→            </SidebarGroup>
+    58→          </ItemCollapsing>
+    59→        ))}
+    60→      </SidebarContent>
+    61→      <SidebarFooter className="flex flex-col gap-2">
+    62→        <UpgradeCard />
+    63→        <ContactFeedbackPopover />
+    64→        <SidebarUserButton />
+    65→      </SidebarFooter>
+    66→      <SidebarRail />
+    67→    </Sidebar>
+    68→  );
+    69→}
+    70→
+    71→const ItemCollapsing = (
+    72→  props: PropsWithChildren<{ defaultOpenStartPath?: string }>,
+    73→) => {
+    74→  const [open, setOpen] = useState(false);
+    75→  const pathname = usePathname();
+    76→
+    77→  const isOpen = props.defaultOpenStartPath
+    78→    ? pathname.startsWith(props.defaultOpenStartPath)
+    79→    : true;
+    80→
+    81→  useEffect(() => {
+    82→    if (isOpen) {
+    83→      setOpen(isOpen);
+    84→    }
+    85→  }, [isOpen]);
+    86→
+    87→  return (
+    88→    <Collapsible
+    89→      defaultOpen={isOpen}
+    90→      onOpenChange={setOpen}
+    91→      open={open}
+    92→      className="group/collapsible"
+    93→    >
+    94→      {props.children}
+    95→    </Collapsible>
+    96→  );
+    97→};
+    98→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

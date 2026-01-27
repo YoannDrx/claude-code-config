@@ -1,0 +1,200 @@
+typescript (22.x)	UNKNOWN STEP	﻿2026-01-09T13:32:33.3223296Z Current runner version: '2.330.0'
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3298755Z ##[group]Runner Image Provisioner
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3300061Z Hosted Compute Agent
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3301047Z Version: 20251211.462
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3302045Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3303450Z Build Date: 2025-12-11T16:28:49Z
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3304557Z Worker ID: {b593fe04-ccb9-4b39-8eb8-5d70371b3b8c}
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3305642Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3306872Z ##[group]Operating System
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3307767Z Ubuntu
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3308509Z 24.04.3
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3309327Z LTS
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3310122Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3310896Z ##[group]Runner Image
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3311916Z Image: ubuntu-24.04
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3312753Z Version: 20260105.202.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3314631Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260105.202/images/ubuntu/Ubuntu2404-Readme.md
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3337952Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260105.202
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3339668Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3341569Z ##[group]GITHUB_TOKEN Permissions
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3344523Z Contents: read
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3345467Z Metadata: read
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3346332Z Packages: read
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3347382Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3350495Z Secret source: Actions
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.3351962Z Prepare workflow directory
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.4427373Z Prepare all required actions
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.4532570Z Getting action download info
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:33.9254820Z Download action repository 'pnpm/action-setup@v2' (SHA:eae0cfeb286e66ffb5155f1a79b90583a127a68b)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.1706202Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.2533573Z Download action repository 'actions/setup-node@v3' (SHA:3235b876344d2a9aa001b8d1453c930bba69e610)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.5778394Z Complete job name: typescript (22.x)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.6468695Z ##[group]Run pnpm/action-setup@v2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.6470074Z with:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.6470807Z   version: 8
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.6471574Z   dest: ~/setup-pnpm
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.6472414Z   run_install: null
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.6473279Z   package_json_file: package.json
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.6474278Z   standalone: false
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.6475299Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:35.7510149Z ##[group]Running self-installer...
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:36.5585405Z Progress: resolved 1, reused 0, downloaded 0, added 0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:36.5687714Z Packages: +1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:36.5688145Z +
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5318460Z Packages are hard linked from the content-addressable store to the virtual store.
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5320300Z   Content-addressable store is at: /home/runner/.local/share/pnpm/store/v3
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5321722Z   Virtual store is at:             node_modules/.pnpm
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5598969Z Progress: resolved 1, reused 0, downloaded 1, added 1, done
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5628164Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5632088Z dependencies:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5632613Z + pnpm 8.15.9 (10.27.0 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5632970Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5660957Z Done in 1.6s
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5800479Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.5805121Z Installation Completed!
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6009838Z ##[group]Run actions/checkout@v3
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6010164Z with:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6010400Z   repository: YoannDrx/light-ts
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6010867Z   token: ***
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6011108Z   ssh-strict: true
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6011364Z   persist-credentials: true
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6011625Z   clean: true
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6011852Z   sparse-checkout-cone-mode: true
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6012131Z   fetch-depth: 1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6012343Z   fetch-tags: false
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6012561Z   lfs: false
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6012762Z   submodules: false
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6012993Z   set-safe-directory: true
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6013232Z env:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6013512Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6014102Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6899734Z Syncing repository: YoannDrx/light-ts
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6901457Z ##[group]Getting Git version info
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6902505Z Working directory is '/home/runner/work/light-ts/light-ts'
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6903968Z [command]/usr/bin/git version
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.6976345Z git version 2.52.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7035608Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7054280Z Temporarily overriding HOME='/home/runner/work/_temp/8efd8f04-43dc-46ed-9ece-d03503cd8161' before making global git config changes
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7058423Z Adding repository directory to the temporary git global config as a safe directory
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7062290Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/light-ts/light-ts
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7094507Z Deleting the contents of '/home/runner/work/light-ts/light-ts'
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7099639Z ##[group]Initializing the repository
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7103703Z [command]/usr/bin/git init /home/runner/work/light-ts/light-ts
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7214562Z hint: Using 'master' as the name for the initial branch. This default branch name
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7215901Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7217275Z hint: to use in all of your new repositories, which will suppress this warning,
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7218168Z hint: call:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7218874Z hint:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7219604Z hint: 	git config --global init.defaultBranch <name>
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7220358Z hint:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7221294Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7222442Z hint: 'development'. The just-created branch can be renamed via this command:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7223363Z hint:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7224037Z hint: 	git branch -m <name>
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7224705Z hint:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7225508Z hint: Disable this message with "git config set advice.defaultBranchName false"
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7228555Z Initialized empty Git repository in /home/runner/work/light-ts/light-ts/.git/
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7232314Z [command]/usr/bin/git remote add origin https://github.com/YoannDrx/light-ts
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7272794Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7274469Z ##[group]Disabling automatic garbage collection
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7275745Z [command]/usr/bin/git config --local gc.auto 0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7309326Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7310752Z ##[group]Setting up auth
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7316953Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7348270Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7689715Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7720920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7958147Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.7994020Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.8004434Z ##[group]Fetching the repository
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:37.8007106Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +dda46f5f1932b6631008388100286f8a29bd2e24:refs/remotes/pull/1/merge
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0039799Z remote: Enumerating objects: 712, done.        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0041537Z remote: Counting objects:   0% (1/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0046180Z remote: Counting objects:   1% (8/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0047202Z remote: Counting objects:   2% (15/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0047956Z remote: Counting objects:   3% (22/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0049205Z remote: Counting objects:   4% (29/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0049894Z remote: Counting objects:   5% (36/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0050398Z remote: Counting objects:   6% (43/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0050965Z remote: Counting objects:   7% (50/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0051442Z remote: Counting objects:   8% (57/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0051854Z remote: Counting objects:   9% (65/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0052342Z remote: Counting objects:  10% (72/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0052750Z remote: Counting objects:  11% (79/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0053223Z remote: Counting objects:  12% (86/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0053663Z remote: Counting objects:  13% (93/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0054123Z remote: Counting objects:  14% (100/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0054562Z remote: Counting objects:  15% (107/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0054993Z remote: Counting objects:  16% (114/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0055444Z remote: Counting objects:  17% (122/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0055909Z remote: Counting objects:  18% (129/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0056400Z remote: Counting objects:  19% (136/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0057187Z remote: Counting objects:  20% (143/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0057645Z remote: Counting objects:  21% (150/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0058140Z remote: Counting objects:  22% (157/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0058563Z remote: Counting objects:  23% (164/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0059033Z remote: Counting objects:  24% (171/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0059411Z remote: Counting objects:  25% (178/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0059917Z remote: Counting objects:  26% (186/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0060404Z remote: Counting objects:  27% (193/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0060800Z remote: Counting objects:  28% (200/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0061322Z remote: Counting objects:  29% (207/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0061749Z remote: Counting objects:  30% (214/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0062178Z remote: Counting objects:  31% (221/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0062643Z remote: Counting objects:  32% (228/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0063079Z remote: Counting objects:  33% (235/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0063501Z remote: Counting objects:  34% (243/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0063966Z remote: Counting objects:  35% (250/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0064426Z remote: Counting objects:  36% (257/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0064824Z remote: Counting objects:  37% (264/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0065313Z remote: Counting objects:  38% (271/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0065712Z remote: Counting objects:  39% (278/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0066138Z remote: Counting objects:  40% (285/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0066853Z remote: Counting objects:  41% (292/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0067325Z remote: Counting objects:  42% (300/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0067759Z remote: Counting objects:  43% (307/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0068217Z remote: Counting objects:  44% (314/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0068668Z remote: Counting objects:  45% (321/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0069064Z remote: Counting objects:  46% (328/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0069694Z remote: Counting objects:  47% (335/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0070225Z remote: Counting objects:  48% (342/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0070629Z remote: Counting objects:  49% (349/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0071101Z remote: Counting objects:  50% (356/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0071516Z remote: Counting objects:  51% (364/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0071959Z remote: Counting objects:  52% (371/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0072340Z remote: Counting objects:  53% (378/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0072874Z remote: Counting objects:  54% (385/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0073309Z remote: Counting objects:  55% (392/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0073692Z remote: Counting objects:  56% (399/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0074330Z remote: Counting objects:  57% (406/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0074727Z remote: Counting objects:  58% (413/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0075137Z remote: Counting objects:  59% (421/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0075631Z remote: Counting objects:  60% (428/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0076080Z remote: Counting objects:  61% (435/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0076615Z remote: Counting objects:  62% (442/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0077094Z remote: Counting objects:  63% (449/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0077529Z remote: Counting objects:  64% (456/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0078007Z remote: Counting objects:  65% (463/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0078470Z remote: Counting objects:  66% (470/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0078906Z remote: Counting objects:  67% (478/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0079299Z remote: Counting objects:  68% (485/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0079778Z remote: Counting objects:  69% (492/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0080185Z remote: Counting objects:  70% (499/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0080654Z remote: Counting objects:  71% (506/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0081127Z remote: Counting objects:  72% (513/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0081532Z remote: Counting objects:  73% (520/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0081967Z remote: Counting objects:  74% (527/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0191098Z remote: Counting objects:  75% (534/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0192281Z remote: Counting objects:  76% (542/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0193046Z remote: Counting objects:  77% (549/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0193863Z remote: Counting objects:  78% (556/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0194493Z remote: Counting objects:  79% (563/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0194912Z remote: Counting objects:  80% (570/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0195425Z remote: Counting objects:  81% (577/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0195839Z remote: Counting objects:  82% (584/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0196302Z remote: Counting objects:  83% (591/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0197156Z remote: Counting objects:  84% (599/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0197652Z remote: Counting objects:  85% (606/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0198099Z remote: Counting objects:  86% (613/712)        
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:32:38.0198536Z remote: Counting objects:  87% (620/712)

@@ -1,0 +1,120 @@
+     1→"use client";
+     2→
+     3→import * as React from "react";
+     4→import * as TabsPrimitive from "@radix-ui/react-tabs";
+     5→
+     6→import { cn } from "@/lib/utils";
+     7→
+     8→function Tabs({
+     9→  className,
+    10→  ...props
+    11→}: React.ComponentProps<typeof TabsPrimitive.Root>) {
+    12→  return (
+    13→    <TabsPrimitive.Root
+    14→      data-slot="tabs"
+    15→      className={cn("flex flex-col gap-4", className)}
+    16→      {...props}
+    17→    />
+    18→  );
+    19→}
+    20→
+    21→function TabsList({
+    22→  className,
+    23→  ...props
+    24→}: React.ComponentProps<typeof TabsPrimitive.List>) {
+    25→  return (
+    26→    <TabsPrimitive.List
+    27→      data-slot="tabs-list"
+    28→      className={cn(
+    29→        "inline-flex h-11 w-fit items-center gap-1 rounded-xl bg-white/5 p-1 text-muted-foreground",
+    30→        className,
+    31→      )}
+    32→      {...props}
+    33→    />
+    34→  );
+    35→}
+    36→
+    37→function TabsTrigger({
+    38→  className,
+    39→  ...props
+    40→}: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
+    41→  return (
+    42→    <TabsPrimitive.Trigger
+    43→      data-slot="tabs-trigger"
+    44→      className={cn(
+    45→        "inline-flex h-full flex-1 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium whitespace-nowrap transition-all duration-200",
+    46→        "hover:text-foreground/80",
+    47→        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
+    48→        "disabled:pointer-events-none disabled:opacity-50",
+    49→        "data-[state=active]:bg-[var(--brand-surface)] data-[state=active]:text-foreground data-[state=active]:shadow-md data-[state=active]:shadow-black/20",
+    50→        "data-[state=active]:border data-[state=active]:border-[var(--border-subtle)]",
+    51→        "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    52→        className,
+    53→      )}
+    54→      {...props}
+    55→    />
+    56→  );
+    57→}
+    58→
+    59→function TabsContent({
+    60→  className,
+    61→  ...props
+    62→}: React.ComponentProps<typeof TabsPrimitive.Content>) {
+    63→  return (
+    64→    <TabsPrimitive.Content
+    65→      data-slot="tabs-content"
+    66→      className={cn(
+    67→        "flex-1 outline-none animate-fade-in",
+    68→        "focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+    69→        className,
+    70→      )}
+    71→      {...props}
+    72→    />
+    73→  );
+    74→}
+    75→
+    76→function TabsUnderline({
+    77→  className,
+    78→  ...props
+    79→}: React.ComponentProps<typeof TabsPrimitive.List>) {
+    80→  return (
+    81→    <TabsPrimitive.List
+    82→      data-slot="tabs-list"
+    83→      className={cn(
+    84→        "inline-flex w-full items-center gap-6 border-b border-[var(--border-subtle)]",
+    85→        className,
+    86→      )}
+    87→      {...props}
+    88→    />
+    89→  );
+    90→}
+    91→
+    92→function TabsTriggerUnderline({
+    93→  className,
+    94→  ...props
+    95→}: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
+    96→  return (
+    97→    <TabsPrimitive.Trigger
+    98→      data-slot="tabs-trigger"
+    99→      className={cn(
+   100→        "relative inline-flex items-center gap-2 pb-3 text-sm font-medium text-muted-foreground transition-colors duration-200",
+   101→        "hover:text-foreground",
+   102→        "focus-visible:outline-none focus-visible:text-foreground",
+   103→        "disabled:pointer-events-none disabled:opacity-50",
+   104→        "data-[state=active]:text-primary",
+   105→        "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:scale-x-0 after:bg-primary after:transition-transform after:duration-200",
+   106→        "data-[state=active]:after:scale-x-100",
+   107→        "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+   108→        className,
+   109→      )}
+   110→      {...props}
+   111→    />
+   112→  );
+   113→}
+   114→
+   115→export { Tabs, TabsList, TabsTrigger, TabsContent, TabsUnderline, TabsTriggerUnderline };
+   116→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

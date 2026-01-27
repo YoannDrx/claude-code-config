@@ -1,0 +1,22 @@
+> tokyo-nextjs@0.1.0 build
+> next build
+
+   ▲ Next.js 16.0.7 (Turbopack)
+   - Environments: .env.local, .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 8.2s
+   Running TypeScript ...
+Failed to compile.
+
+./components/neo-brutalist/NeoHome.tsx:56:10
+Type error: Property 'images' is missing in type '{}' but required in type 'FilmBannerProps'.
+
+[0m [90m 54 |[39m         [33m<[39m[33mNeoSplitHero[39m [33m/[39m[33m>[39m
+ [90m 55 |[39m         [33m<[39m[33mMarquee[39m logos[33m=[39m{partnerLogos} [33m/[39m[33m>[39m
+[31m[1m>[22m[39m[90m 56 |[39m         [33m<[39m[33mFilmBanner[39m [33m/[39m[33m>[39m
+ [90m    |[39m          [31m[1m^[22m[39m
+ [90m 57 |[39m         [33m<[39m[33mNeoFooter[39m [33m/[39m[33m>[39m
+ [90m 58 |[39m       [33m<[39m[33m/[39m[33mmain[39m[33m>[39m
+ [90m 59 |[39m     [33m<[39m[33m/[39m[33mdiv[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null

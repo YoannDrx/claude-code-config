@@ -1,0 +1,56 @@
+     1→import {
+     2→  handleRootRedirect,
+     3→  isAdminRoute,
+     4→  isAppRoute,
+     5→  redirectToSignIn,
+     6→  redirectToUnauthorized,
+     7→  validateSession,
+     8→} from "@/lib/middleware-utils";
+     9→import type { NextRequest } from "next/server";
+    10→import { NextResponse } from "next/server";
+    11→
+    12→export async function proxy(request: NextRequest) {
+    13→  const { pathname } = request.nextUrl;
+    14→
+    15→  if (pathname === "/") {
+    16→    return handleRootRedirect(request) ?? NextResponse.next();
+    17→  }
+    18→
+    19→  if (isAppRoute(pathname)) {
+    20→    const session = await validateSession(request);
+    21→    if (!session) {
+    22→      return redirectToSignIn(request);
+    23→    }
+    24→  }
+    25→
+    26→  if (isAdminRoute(pathname)) {
+    27→    const session = await validateSession(request);
+    28→    if (!session) {
+    29→      return redirectToSignIn(request);
+    30→    }
+    31→
+    32→    if (session.user.role !== "admin") {
+    33→      return redirectToUnauthorized(request);
+    34→    }
+    35→  }
+    36→
+    37→  return NextResponse.next();
+    38→}
+    39→
+    40→export const config = {
+    41→  matcher: [
+    42→    /*
+    43→     * Match all request paths except for the ones starting with:
+    44→     * - api (API routes)
+    45→     * - _next/static (static files)
+    46→     * - _next/image (image optimization files)
+    47→     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
+    48→     */
+    49→    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+    50→  ],
+    51→};
+    52→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

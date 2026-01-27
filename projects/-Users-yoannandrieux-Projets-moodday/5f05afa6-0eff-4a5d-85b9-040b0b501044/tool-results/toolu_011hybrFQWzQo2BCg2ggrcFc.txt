@@ -1,0 +1,10 @@
+The file /Users/yoannandrieux/Projets/moodday/app/admin/_components/admin-stats-section.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     2→import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+     3→import { getI18n } from "@/i18n/server";
+     4→import { AUTH_PLANS } from "@/lib/auth/stripe/auth-plans";
+     5→import { prisma } from "@/lib/prisma";
+     6→import { getStripe } from "@/lib/stripe";
+     7→import { Crown, DollarSign, Users } from "lucide-react";
+     8→import { cacheLife } from "next/dist/server/use-cache/cache-life";
+     9→
+    10→async function calculateTotalMRR() {

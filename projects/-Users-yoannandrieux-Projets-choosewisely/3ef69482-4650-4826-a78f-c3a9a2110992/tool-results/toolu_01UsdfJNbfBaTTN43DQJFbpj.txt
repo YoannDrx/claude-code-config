@@ -1,0 +1,211 @@
+     1→// This is your Prisma schema file,
+     2→// learn more about it in the docs: https://pris.ly/d/prisma-schema
+     3→
+     4→generator client {
+     5→  provider        = "prisma-client-js"
+     6→  output          = "../../src/generated/prisma"
+     7→  previewFeatures = ["postgresqlExtensions"]
+     8→}
+     9→
+    10→datasource db {
+    11→  provider   = "postgresql"
+    12→  url        = env("DATABASE_URL")
+    13→  directUrl  = env("DATABASE_URL_UNPOOLED")
+    14→  extensions = [postgis]
+    15→}
+    16→
+    17→model Feedback {
+    18→  id      String  @id @default(nanoid(11))
+    19→  review  Int
+    20→  message String
+    21→  email   String?
+    22→  userId  String?
+    23→  user    User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+    24→
+    25→  createdAt DateTime @default(now())
+    26→  updatedAt DateTime @updatedAt
+    27→}
+    28→
+    29→// ChooseWisely Models
+    30→model Property {
+    31→  id          String  @id @default(nanoid(11))
+    32→  externalId  String  @unique // ID from MoteurImmo API
+    33→  title       String
+    34→  description String?
+    35→  
+    36→  // Basic info
+    37→  type        String // "sale" | "rental"
+    38→  category    String // "apartment" | "house" | "commercial"
+    39→  price       Int
+    40→  surface     Int?
+    41→  rooms       Int?
+    42→  bedrooms    Int?
+    43→  
+    44→  // Location with PostGIS
+    45→  address     String
+    46→  city        String
+    47→  postalCode  String
+    48→  department  String
+    49→  region      String
+    50→  coordinates Unsupported("geometry(Point, 4326)")?
+    51→  
+    52→  // Additional details
+    53→  floor       Int?
+    54→  totalFloors Int?
+    55→  energyClass String? // DPE class (A, B, C, D, E, F, G)
+    56→  hasGarden   Boolean @default(false)
+    57→  hasParking  Boolean @default(false)
+    58→  hasLift     Boolean @default(false)
+    59→  hasTerrace  Boolean @default(false)
+    60→  hasBalcony  Boolean @default(false)
+    61→  
+    62→  // MoteurImmo specific
+    63→  sourceUrl   String?
+    64→  sourceId    String? // Original source (leboncoin, seloger, etc.)
+    65→  publishedAt DateTime
+    66→  updatedAt   DateTime @updatedAt
+    67→  createdAt   DateTime @default(now())
+    68→  
+    69→  // Relations
+    70→  favorites   Favorite[]
+    71→  comparisons ComparisonProperty[]
+    72→  alerts      SavedSearchProperty[]
+    73→  history     PropertyHistory[]
+    74→  
+    75→  @@index([type])
+    76→  @@index([category])
+    77→  @@index([city])
+    78→  @@index([price])
+    79→  @@index([publishedAt])
+    80→  @@map("property")
+    81→}
+    82→
+    83→model Favorite {
+    84→  id         String @id @default(nanoid(11))
+    85→  userId     String
+    86→  propertyId String
+    87→  
+    88→  // Favorite metadata
+    89→  notes      String?
+    90→  status     String @default("saved") // "saved" | "visited" | "contacted" | "rejected"
+    91→  priority   String @default("medium") // "high" | "medium" | "low"
+    92→  
+    93→  // Enriched data (calculated asynchronously)
+    94→  pricePerSqm     Int?
+    95→  marketAnalysis  Json? // DVF comparison data
+    96→  energyAnalysis  Json? // DPE data
+    97→  financialData   Json? // Loan calculations
+    98→  confidenceScore Int?  // 0-100 score
+    99→  
+   100→  // DPE specific fields
+   101→  dpeClass        String? // A, B, C, D, E, F, G
+   102→  gesClass        String? // A, B, C, D, E, F, G
+   103→  energyConsumption Float? // kWh/m²/year
+   104→  gesEmission     Float? // kgCO2/m²/year
+   105→  annualEnergyCost Int? // EUR
+   106→  rentalRestrictionRisk String? // low, medium, high, critical
+   107→  renovationRequired Boolean @default(false)
+   108→  estimatedRenovationCost Int? // EUR
+   109→  
+   110→  createdAt DateTime @default(now())
+   111→  updatedAt DateTime @updatedAt
+   112→  
+   113→  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+   114→  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+   115→  
+   116→  @@unique([userId, propertyId])
+   117→  @@map("favorite")
+   118→}
+   119→
+   120→model SavedSearch {
+   121→  id          String @id @default(nanoid(11))
+   122→  userId      String
+   123→  name        String
+   124→  
+   125→  // Search criteria
+   126→  criteria    Json // SearchCriteria from MoteurImmo
+   127→  
+   128→  // Alert settings
+   129→  isActive    Boolean @default(true)
+   130→  frequency   String  @default("daily") // "realtime" | "daily" | "weekly"
+   131→  lastRunAt   DateTime?
+   132→  webhookId   String? // MoteurImmo webhook ID
+   133→  
+   134→  createdAt DateTime @default(now())
+   135→  updatedAt DateTime @updatedAt
+   136→  
+   137→  user       User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+   138→  properties SavedSearchProperty[]
+   139→  
+   140→  @@map("saved_search")
+   141→}
+   142→
+   143→model SavedSearchProperty {
+   144→  id             String @id @default(nanoid(11))
+   145→  savedSearchId  String
+   146→  propertyId     String
+   147→  
+   148→  // Alert metadata
+   149→  alertType      String // "new" | "price_drop" | "status_change"
+   150→  notifiedAt     DateTime @default(now())
+   151→  
+   152→  savedSearch Property     @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+   153→  property    SavedSearch  @relation(fields: [savedSearchId], references: [id], onDelete: Cascade)
+   154→  
+   155→  @@unique([savedSearchId, propertyId])
+   156→  @@map("saved_search_property")
+   157→}
+   158→
+   159→model Comparison {
+   160→  id          String @id @default(nanoid(11))
+   161→  userId      String
+   162→  name        String
+   163→  
+   164→  createdAt DateTime @default(now())
+   165→  updatedAt DateTime @updatedAt
+   166→  
+   167→  user       User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+   168→  properties ComparisonProperty[]
+   169→  
+   170→  @@map("comparison")
+   171→}
+   172→
+   173→model ComparisonProperty {
+   174→  id           String @id @default(nanoid(11))
+   175→  comparisonId String
+   176→  propertyId   String
+   177→  
+   178→  // Decision
+   179→  decision     String? // "go" | "nogo" | "negotiate"
+   180→  notes        String?
+   181→  
+   182→  comparison Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+   183→  property   Comparison @relation(fields: [comparisonId], references: [id], onDelete: Cascade)
+   184→  
+   185→  @@unique([comparisonId, propertyId])
+   186→  @@map("comparison_property")
+   187→}
+   188→
+   189→model PropertyHistory {
+   190→  id         String @id @default(nanoid(11))
+   191→  propertyId String
+   192→  
+   193→  // What changed
+   194→  changeType String // "price" | "status" | "description" | "contact"
+   195→  oldValue   String?
+   196→  newValue   String?
+   197→  
+   198→  recordedAt DateTime @default(now())
+   199→  
+   200→  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+   201→  
+   202→  @@index([propertyId])
+   203→  @@index([changeType])
+   204→  @@index([recordedAt])
+   205→  @@map("property_history")
+   206→}
+   207→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,12 @@
+/Users/yoannandrieux/Projets/portfolio-loic/app/[locale]/admin/albums/new/page.tsx
+/Users/yoannandrieux/Projets/portfolio-loic/components/neo-brutalist/albums/NeoAlbumPlayer.tsx
+/Users/yoannandrieux/Projets/portfolio-loic/components/neo-brutalist/albums/NeoAlbumDetail.tsx
+/Users/yoannandrieux/Projets/portfolio-loic/app/[locale]/admin/albums/[id]/page.tsx
+/Users/yoannandrieux/Projets/portfolio-loic/app/[locale]/admin/albums/page.tsx
+/Users/yoannandrieux/Projets/portfolio-loic/app/[locale]/albums/[id]/page.tsx
+/Users/yoannandrieux/Projets/portfolio-loic/.next/dev/server/app/[locale]/albums/page.js
+/Users/yoannandrieux/Projets/portfolio-loic/.next/dev/server/app/[locale]/albums/[id]/page_client-reference-manifest.js
+/Users/yoannandrieux/Projets/portfolio-loic/.next/dev/server/app/[locale]/albums/[id]/page.js
+/Users/yoannandrieux/Projets/portfolio-loic/.next/dev/server/app/[locale]/albums/page_client-reference-manifest.js
+/Users/yoannandrieux/Projets/portfolio-loic/app/[locale]/albums/page.tsx
+/Users/yoannandrieux/Projets/portfolio-loic/components/neo-brutalist/albums/NeoAlbumsPage.tsx

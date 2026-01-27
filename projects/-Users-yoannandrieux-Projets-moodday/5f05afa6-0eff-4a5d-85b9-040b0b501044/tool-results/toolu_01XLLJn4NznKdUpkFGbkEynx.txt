@@ -1,0 +1,10 @@
+The file /Users/yoannandrieux/Projets/moodday/src/lib/auth.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    43→          await setupResendCustomer(user);
+    44→
+    45→          // Create Stripe customer for the user
+    46→          try {
+    47→            const stripeCustomer = await getStripe().customers.create({
+    48→              email: user.email,
+    49→              name: user.name,
+    50→              metadata: {
+    51→                userId: user.id,

@@ -1,0 +1,114 @@
+     1→"use client";
+     2→
+     3→import React from "react";
+     4→import Image from "next/image";
+     5→
+     6→interface FilmImage {
+     7→  src: string;
+     8→  alt: string;
+     9→}
+    10→
+    11→interface FilmBannerProps {
+    12→  images?: FilmImage[];
+    13→  speed?: number;
+    14→  pauseOnHover?: boolean;
+    15→  title?: string;
+    16→}
+    17→
+    18→// Film collages data
+    19→const filmCollages: FilmImage[] = [
+    20→  {
+    21→    src: "/img/films/collage-2022.jpg",
+    22→    alt: "Productions 2022 - America, I Want You Back, Magic for Humans, Divorce, Trust Me",
+    23→  },
+    24→  {
+    25→    src: "/img/films/collage-2023.png",
+    26→    alt: "Productions 2023 - Skandal, Shaq, Queen of Oz, Mr Inbetween, Evil, Firefly Lane",
+    27→  },
+    28→  {
+    29→    src: "/img/films/collage-2024.png",
+    30→    alt: "Productions 2024 - L'Agence, Maternelles, Project Icon, Trafficked, Tattoo Cover",
+    31→  },
+    32→  {
+    33→    src: "/img/films/collage-2025.png",
+    34→    alt: "Productions 2025 - Notes of Berlin, Mother Undercover, Mysteries of the Abandoned",
+    35→  },
+    36→];
+    37→
+    38→export const FilmBanner: React.FC<FilmBannerProps> = ({
+    39→  images = filmCollages,
+    40→  speed = 30,
+    41→  pauseOnHover = true,
+    42→  title,
+    43→}) => {
+    44→  const renderImages = (keyPrefix: string, showAlt: boolean = true) =>
+    45→    images.map((img, idx) => (
+    46→      <div
+    47→        key={`${keyPrefix}-${idx}`}
+    48→        className="h-[180px] md:h-[280px] lg:h-[350px] flex-shrink-0"
+    49→      >
+    50→        <Image
+    51→          src={img.src}
+    52→          alt={showAlt ? img.alt : ""}
+    53→          width={900}
+    54→          height={350}
+    55→          className="h-full w-auto object-cover"
+    56→          priority={idx < 2 && showAlt}
+    57→        />
+    58→      </div>
+    59→    ));
+    60→
+    61→  return (
+    62→    <section className="relative overflow-hidden bg-neo-bg border-y-4 border-neo-border">
+    63→      {/* Stamp Title */}
+    64→      {title && (
+    65→        <div className="absolute -top-5 md:-top-6 left-4 md:left-8 z-10">
+    66→          <span
+    67→            className="inline-block px-3 md:px-4 py-1.5 md:py-2 bg-neo-accent text-neo-text-inverse
+    68→              border-4 border-neo-text shadow-[4px_4px_0px_0px_var(--neo-text)] md:shadow-[6px_6px_0px_0px_var(--neo-text)]
+    69→              font-black text-xs md:text-sm uppercase tracking-wider
+    70→              transform -rotate-3"
+    71→          >
+    72→            {title}
+    73→          </span>
+    74→        </div>
+    75→      )}
+    76→      <div className={pauseOnHover ? "group" : ""}>
+    77→        <div className="flex">
+    78→          {/* First set */}
+    79→          <div
+    80→            className={`flex animate-marquee ${
+    81→              pauseOnHover ? "group-hover:[animation-play-state:paused]" : ""
+    82→            }`}
+    83→            style={{
+    84→              animationDuration: `${speed}s`,
+    85→              animationDirection: "reverse",
+    86→            }}
+    87→          >
+    88→            {renderImages("first", true)}
+    89→          </div>
+    90→          {/* Duplicate for seamless loop */}
+    91→          <div
+    92→            className={`flex animate-marquee ${
+    93→              pauseOnHover ? "group-hover:[animation-play-state:paused]" : ""
+    94→            }`}
+    95→            aria-hidden="true"
+    96→            style={{
+    97→              animationDuration: `${speed}s`,
+    98→              animationDirection: "reverse",
+    99→            }}
+   100→          >
+   101→            {renderImages("dup", false)}
+   102→          </div>
+   103→        </div>
+   104→      </div>
+   105→    </section>
+   106→  );
+   107→};
+   108→
+   109→export default FilmBanner;
+   110→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

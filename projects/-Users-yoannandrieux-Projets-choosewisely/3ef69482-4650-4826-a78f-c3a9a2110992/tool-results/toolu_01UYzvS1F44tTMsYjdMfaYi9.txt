@@ -1,0 +1,509 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Recherche Avancée | ChooseWisely - Data-Driven Real Estate</title>
+     7→    <!-- Fonts -->
+     8→    <link rel="preconnect" href="https://fonts.googleapis.com">
+     9→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    11→    
+    12→    <!-- Frameworks -->
+    13→    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    14→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    15→    
+    16→    <style>
+    17→        :root {
+    18→            --brand-deep: #050810;
+    19→            --brand-surface: #0D121F;
+    20→            --brand-accent: #34D399; 
+    21→            --brand-highlight: #6366F1;
+    22→            --brand-danger: #F43F5E;
+    23→            --brand-warning: #F59E0B;
+    24→        }
+    25→
+    26→        body {
+    27→            font-family: 'IBM Plex Sans', sans-serif;
+    28→            background-color: var(--brand-deep);
+    29→            color: #E2E8F0;
+    30→            overflow: hidden; /* Prevent body scroll, use container scroll */
+    31→        }
+    32→
+    33→        .grain {
+    34→            position: fixed;
+    35→            top: 0; left: 0; width: 100%; height: 100%;
+    36→            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    37→            opacity: 0.04;
+    38→            pointer-events: none;
+    39→            z-index: 9999;
+    40→        }
+    41→
+    42→        .mesh-gradient {
+    43→            background: 
+    44→                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.1) 0px, transparent 50%),
+    45→                radial-gradient(at 100% 0%, rgba(52, 211, 153, 0.05) 0px, transparent 50%);
+    46→        }
+    47→
+    48→        .glass {
+    49→            background: rgba(13, 18, 31, 0.8);
+    50→            backdrop-filter: blur(16px);
+    51→            border: 1px solid rgba(255, 255, 255, 0.08);
+    52→        }
+    53→
+    54→        .glass-card {
+    55→            background: rgba(255, 255, 255, 0.02);
+    56→            backdrop-filter: blur(8px);
+    57→            border: 1px solid rgba(255, 255, 255, 0.05);
+    58→            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    59→        }
+    60→
+    61→        .glass-card:hover {
+    62→            background: rgba(255, 255, 255, 0.05);
+    63→            border-color: rgba(99, 102, 241, 0.4);
+    64→            transform: translateY(-4px);
+    65→            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+    66→        }
+    67→
+    68→        .map-container {
+    69→            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+    70→            background-size: 24px 24px;
+    71→            background-color: #080c14;
+    72→        }
+    73→
+    74→        /* Marker Styles */
+    75→        .marker-pulse {
+    76→            position: relative;
+    77→            width: 12px;
+    78→            height: 12px;
+    79→            background: var(--brand-highlight);
+    80→            border-radius: 50%;
+    81→            box-shadow: 0 0 0 rgba(99, 102, 241, 0.4);
+    82→            animation: pulse 2s infinite;
+    83→        }
+    84→
+    85→        @keyframes pulse {
+    86→            0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7); }
+    87→            70% { box-shadow: 0 0 0 15px rgba(99, 102, 241, 0); }
+    88→            100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+    89→        }
+    90→
+    91→        /* Hide scrollbar but keep functionality */
+    92→        .no-scrollbar::-webkit-scrollbar { display: none; }
+    93→        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    94→
+    95→        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+    96→        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    97→        .custom-scrollbar::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 10px; }
+    98→        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--brand-highlight); }
+    99→
+   100→        [x-cloak] { display: none !important; }
+   101→
+   102→        .dpe-badge {
+   103→            clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
+   104→            padding-right: 1.2rem;
+   105→        }
+   106→    </style>
+   107→</head>
+   108→<body class="h-screen flex flex-col mesh-gradient" x-data="searchApp()">
+   109→    <div class="grain"></div>
+   110→
+   111→    <!-- Top Navigation -->
+   112→    <header class="h-16 border-b border-white/5 flex items-center px-6 glass shrink-0 z-50">
+   113→        <div class="flex items-center gap-2 mr-12">
+   114→            <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white italic">CW</div>
+   115→            <span class="text-xl font-bold tracking-tight text-white hidden md:block">ChooseWisely</span>
+   116→        </div>
+   117→
+   118→        <div class="flex-grow max-w-2xl relative group">
+   119→            <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+   120→                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+   121→                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+   122→                </svg>
+   123→            </div>
+   124→            <input type="text" x-model="searchQuery" placeholder="Rechercher par ville, quartier ou adresse..." class="w-full bg-white/5 border border-white/10 rounded-full py-2.5 pl-11 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50 transition-all">
+   125→        </div>
+   126→
+   127→        <div class="flex items-center gap-4 ml-auto">
+   128→            <button class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-medium">
+   129→                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+   130→            </button>
+   131→            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-emerald-500 p-[1px]">
+   132→                <div class="w-full h-full rounded-full bg-brand-deep flex items-center justify-center text-[10px] font-bold">JD</div>
+   133→            </div>
+   134→        </div>
+   135→    </header>
+   136→
+   137→    <!-- Sub-header Filters -->
+   138→    <div class="h-14 border-b border-white/5 bg-brand-deep/50 backdrop-blur-md flex items-center px-6 gap-3 shrink-0 z-40">
+   139→        <div class="flex items-center gap-2 bg-white/5 rounded-lg p-1 border border-white/5">
+   140→            <button @click="viewMode = 'split'" :class="viewMode === 'split' ? 'bg-indigo-600 text-white shadow-lg' : 'text-slate-500 hover:text-white'" class="p-1.5 rounded-md transition-all">
+   141→                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" /></svg>
+   142→            </button>
+   143→            <button @click="viewMode = 'list'" :class="viewMode === 'list' ? 'bg-indigo-600 text-white shadow-lg' : 'text-slate-500 hover:text-white'" class="p-1.5 rounded-md transition-all">
+   144→                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>
+   145→            </button>
+   146→        </div>
+   147→
+   148→        <div class="h-6 w-[1px] bg-white/10 mx-2"></div>
+   149→
+   150→        <div class="flex items-center gap-4 overflow-x-auto no-scrollbar py-2">
+   151→            <!-- Price Filter -->
+   152→            <div class="relative" x-data="{ open: false }" @click.away="open = false">
+   153→                <button @click="open = !open" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 text-xs font-medium bg-white/5 hover:border-indigo-500/50 transition-colors">
+   154→                    Budget
+   155→                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+   156→                </button>
+   157→                <div x-show="open" x-cloak class="absolute top-full left-0 mt-2 w-64 glass p-4 rounded-xl z-50 shadow-2xl">
+   158→                    <p class="text-[10px] uppercase font-bold text-slate-500 mb-4 tracking-widest">Fourchette de prix</p>
+   159→                    <div class="space-y-4">
+   160→                        <input type="range" class="w-full h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+   161→                        <div class="flex justify-between text-xs font-mono text-slate-400">
+   162→                            <span>0€</span>
+   163→                            <span>2.5M€</span>
+   164→                        </div>
+   165→                    </div>
+   166→                </div>
+   167→            </div>
+   168→
+   169→            <!-- DPE Filter -->
+   170→            <div class="relative" x-data="{ open: false }" @click.away="open = false">
+   171→                <button @click="open = !open" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 text-xs font-medium bg-white/5 hover:border-emerald-500/50 transition-colors">
+   172→                    DPE: <span class="text-emerald-400">Toutes classes</span>
+   173→                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+   174→                </button>
+   175→                <div x-show="open" x-cloak class="absolute top-full left-0 mt-2 w-48 glass p-2 rounded-xl z-50 shadow-2xl">
+   176→                    <template x-for="grade in ['A', 'B', 'C', 'D', 'E', 'F', 'G']">
+   177→                        <label class="flex items-center gap-3 p-2 hover:bg-white/5 rounded-lg cursor-pointer transition-colors">
+   178→                            <input type="checkbox" class="accent-indigo-500">
+   179→                            <span class="text-xs font-bold" x-text="'Classe ' + grade"></span>
+   180→                        </label>
+   181→                    </template>
+   182→                </div>
+   183→            </div>
+   184→
+   185→            <!-- Surface -->
+   186→            <button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 text-xs font-medium bg-white/5 hover:border-white/20 transition-colors">
+   187→                Surface (m²)
+   188→            </button>
+   189→
+   190→            <!-- Amenities -->
+   191→            <button class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 text-xs font-medium bg-white/5 hover:border-white/20 transition-colors">
+   192→                Équipements
+   193→            </button>
+   194→        </div>
+   195→
+   196→        <div class="ml-auto flex items-center gap-3">
+   197→            <span class="text-xs text-slate-500 font-medium">1,420 résultats</span>
+   198→            <select class="bg-transparent text-xs font-bold text-white border-none outline-none cursor-pointer focus:ring-0">
+   199→                <option>Pertinence</option>
+   200→                <option>Prix croissant</option>
+   201→                <option>Dernières pépites (DVF)</option>
+   202→                <option>Meilleur DPE</option>
+   203→            </select>
+   204→        </div>
+   205→    </div>
+   206→
+   207→    <!-- Main Content Area -->
+   208→    <main class="flex flex-grow overflow-hidden relative">
+   209→        
+   210→        <!-- Left Pane: Map View -->
+   211→        <section :class="viewMode === 'split' ? 'lg:w-1/2' : 'hidden'" class="w-full h-full relative map-container border-r border-white/5 overflow-hidden">
+   212→            <!-- Mock Map Visual -->
+   213→            <div class="absolute inset-0">
+   214→                <!-- Map UI Overlays -->
+   215→                <div class="absolute top-4 left-4 flex flex-col gap-2">
+   216→                    <button class="p-2 glass rounded-lg text-white hover:bg-indigo-600/20 transition-colors shadow-xl">
+   217→                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+   218→                    </button>
+   219→                    <button class="p-2 glass rounded-lg text-white hover:bg-indigo-600/20 transition-colors shadow-xl">
+   220→                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" /></svg>
+   221→                    </button>
+   222→                </div>
+   223→
+   224→                <div class="absolute top-4 right-4 glass px-3 py-2 rounded-xl flex items-center gap-3 shadow-2xl">
+   225→                    <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 border-r border-white/10 pr-3">
+   226→                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Sous-évalué
+   227→                    </div>
+   228→                    <div class="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+   229→                        <span class="w-2 h-2 rounded-full bg-indigo-500"></span> Marché
+   230→                    </div>
+   231→                </div>
+   232→
+   233→                <!-- Fake Property Markers -->
+   234→                <template x-for="(prop, index) in properties" :key="prop.id">
+   235→                    <div class="absolute cursor-pointer group" 
+   236→                         :style="`top: ${prop.mapY}%; left: ${prop.mapX}%;`"
+   237→                         @mouseenter="activeProperty = prop.id"
+   238→                         @mouseleave="activeProperty = null">
+   239→                        <div class="relative flex items-center justify-center">
+   240→                            <div class="marker-pulse" :class="prop.isDeal ? 'bg-emerald-500' : 'bg-indigo-500'"></div>
+   241→                            <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
+   242→                                <div class="glass p-2 rounded-lg text-xs font-bold shadow-2xl border border-white/10">
+   243→                                    <span x-text="prop.price.toLocaleString('fr-FR') + ' €'"></span>
+   244→                                    <div class="text-[9px] text-emerald-400 mt-1" x-show="prop.isDeal">🔥 Pépite DVF: -12%</div>
+   245→                                </div>
+   246→                            </div>
+   247→                        </div>
+   248→                    </div>
+   249→                </template>
+   250→
+   251→                <!-- Search This Area Button -->
+   252→                <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+   253→                    <button class="glass px-6 py-2.5 rounded-full text-xs font-bold text-white flex items-center gap-2 hover:bg-indigo-600 transition-all shadow-2xl border border-white/10">
+   254→                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+   255→                        Rechercher dans cette zone
+   256→                    </button>
+   257→                </div>
+   258→            </div>
+   259→        </section>
+   260→
+   261→        <!-- Right Pane: List View -->
+   262→        <section :class="viewMode === 'split' ? 'lg:w-1/2' : 'w-full'" class="h-full overflow-y-auto custom-scrollbar bg-brand-deep/30">
+   263→            <div class="p-6">
+   264→                <!-- Smart Insights Banner -->
+   265→                <div class="mb-8 p-4 rounded-2xl bg-gradient-to-r from-indigo-900/40 to-emerald-900/20 border border-indigo-500/20 flex items-center justify-between">
+   266→                    <div>
+   267→                        <h4 class="text-sm font-bold text-white italic">Analyse de zone : Bordeaux, Chartrons</h4>
+   268→                        <p class="text-xs text-slate-400 mt-1">Le prix médian DVF est de 5,420€/m². Le quartier affiche une tension immobilière forte (+12% vs 2023).</p>
+   269→                    </div>
+   270→                    <button class="text-xs font-bold text-indigo-400 underline decoration-indigo-500/50 hover:text-white transition-colors">Voir le rapport complet</button>
+   271→                </div>
+   272→
+   273→                <!-- Grid of Cards -->
+   274→                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" :class="viewMode === 'list' ? 'lg:grid-cols-3 xl:grid-cols-4' : ''">
+   275→                    <template x-for="prop in properties" :key="prop.id">
+   276→                        <div class="glass-card rounded-2xl overflow-hidden flex flex-col group/card"
+   277→                             :class="activeProperty === prop.id ? 'border-indigo-500/60 ring-1 ring-indigo-500/30' : ''">
+   278→                            
+   279→                            <!-- Card Image Wrapper -->
+   280→                            <div class="h-48 relative overflow-hidden">
+   281→                                <img :src="prop.image" class="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110" alt="Property Image">
+   282→                                
+   283→                                <div class="absolute top-3 left-3 flex flex-col gap-2">
+   284→                                    <div class="dpe-badge font-bold text-[10px] py-1 pl-2 text-brand-deep flex items-center gap-1"
+   285→                                         :class="prop.dpe === 'A' ? 'bg-emerald-400' : prop.dpe === 'B' ? 'bg-emerald-300' : 'bg-yellow-400'">
+   286→                                        CLASSE <span x-text="prop.dpe"></span>
+   287→                                    </div>
+   288→                                    <div x-show="prop.isDeal" class="bg-indigo-600 text-white text-[9px] font-bold px-2 py-1 rounded-sm uppercase tracking-tighter">🔥 Data-Verified Deal</div>
+   289→                                </div>
+   290→
+   291→                                <button class="absolute top-3 right-3 w-8 h-8 rounded-full glass flex items-center justify-center text-white hover:text-pink-500 transition-colors">
+   292→                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+   293→                                </button>
+   294→
+   295→                                <div class="absolute bottom-3 right-3 glass px-2 py-1 rounded-md text-[10px] font-bold text-white flex items-center gap-1">
+   296→                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+   297→                                    <span x-text="prop.imageCount"></span>
+   298→                                </div>
+   299→                            </div>
+   300→
+   301→                            <!-- Content -->
+   302→                            <div class="p-4 flex-grow flex flex-col">
+   303→                                <div class="flex justify-between items-start mb-2">
+   304→                                    <div>
+   305→                                        <h3 class="font-bold text-white text-base truncate w-48" x-text="prop.title"></h3>
+   306→                                        <p class="text-slate-500 text-[11px] font-medium" x-text="prop.location"></p>
+   307→                                    </div>
+   308→                                    <div class="text-right">
+   309→                                        <div class="text-lg font-bold text-indigo-400 tracking-tight" x-text="prop.price.toLocaleString('fr-FR') + ' €'"></div>
+   310→                                        <div class="text-[10px] font-mono text-slate-500" x-text="Math.round(prop.price/prop.surface) + ' €/m²'"></div>
+   311→                                    </div>
+   312→                                </div>
+   313→
+   314→                                <div class="flex gap-4 py-3 border-y border-white/5 my-3">
+   315→                                    <div class="flex flex-col">
+   316→                                        <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Surface</span>
+   317→                                        <span class="text-xs font-bold text-white" x-text="prop.surface + ' m²'"></span>
+   318→                                    </div>
+   319→                                    <div class="flex flex-col">
+   320→                                        <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Pièces</span>
+   321→                                        <span class="text-xs font-bold text-white" x-text="prop.rooms"></span>
+   322→                                    </div>
+   323→                                    <div class="flex flex-col">
+   324→                                        <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Énergie Est.</span>
+   325→                                        <span class="text-xs font-bold text-emerald-400" x-text="prop.energyCost + '€/an'"></span>
+   326→                                    </div>
+   327→                                </div>
+   328→
+   329→                                <!-- Data Integration Highlight -->
+   330→                                <div class="bg-indigo-500/5 rounded-lg p-2.5 mb-4 border border-indigo-500/10">
+   331→                                    <div class="flex items-center justify-between mb-1.5">
+   332→                                        <span class="text-[10px] font-bold text-slate-400 italic">Vs DVF Marché</span>
+   333→                                        <span class="text-[10px] font-bold" :class="prop.dvfDelta < 0 ? 'text-emerald-400' : 'text-pink-400'" 
+   334→                                              x-text="(prop.dvfDelta > 0 ? '+' : '') + prop.dvfDelta + '%'"></span>
+   335→                                    </div>
+   336→                                    <div class="w-full bg-white/5 h-1 rounded-full overflow-hidden">
+   337→                                        <div class="h-full bg-indigo-500" :style="`width: ${60 + prop.dvfDelta}%`"></div>
+   338→                                    </div>
+   339→                                </div>
+   340→
+   341→                                <div class="mt-auto flex gap-2">
+   342→                                    <button class="flex-grow py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-bold transition-all active:scale-95 italic">
+   343→                                        Analyse Complète
+   344→                                    </button>
+   345→                                    <button class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-slate-400 hover:text-white hover:border-white/30 transition-all">
+   346→                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+   347→                                    </button>
+   348→                                </div>
+   349→                            </div>
+   350→                        </div>
+   351→                    </template>
+   352→                </div>
+   353→
+   354→                <!-- Pagination -->
+   355→                <div class="mt-12 flex items-center justify-center gap-2">
+   356→                    <button class="w-8 h-8 rounded-lg glass flex items-center justify-center text-slate-500 hover:text-white disabled:opacity-30">
+   357→                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+   358→                    </button>
+   359→                    <button class="w-8 h-8 rounded-lg bg-indigo-600 text-white text-xs font-bold">1</button>
+   360→                    <button class="w-8 h-8 rounded-lg glass text-slate-400 text-xs font-bold hover:text-white">2</button>
+   361→                    <button class="w-8 h-8 rounded-lg glass text-slate-400 text-xs font-bold hover:text-white">3</button>
+   362→                    <span class="text-slate-600 px-2">...</span>
+   363→                    <button class="w-8 h-8 rounded-lg glass text-slate-400 text-xs font-bold hover:text-white">42</button>
+   364→                    <button class="w-8 h-8 rounded-lg glass flex items-center justify-center text-slate-500 hover:text-white">
+   365→                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+   366→                    </button>
+   367→                </div>
+   368→            </div>
+   369→        </section>
+   370→
+   371→        <!-- Floating Comparison Tray (Alpine State) -->
+   372→        <div x-show="compareList.length > 0" x-transition:enter="translate-y-full" x-transition:enter-end="translate-y-0"
+   373→             class="fixed bottom-6 left-1/2 -translate-x-1/2 glass px-6 py-4 rounded-3xl shadow-2xl flex items-center gap-8 border border-white/20 z-50">
+   374→            <div class="flex items-center gap-3">
+   375→                <div class="flex -space-x-3">
+   376→                    <template x-for="i in 3">
+   377→                        <div class="w-10 h-10 rounded-full border-2 border-brand-deep bg-slate-800 overflow-hidden">
+   378→                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=100" class="w-full h-full object-cover">
+   379→                        </div>
+   380→                    </template>
+   381→                </div>
+   382→                <div>
+   383→                    <span class="block text-xs font-bold text-white">Comparer <span x-text="compareList.length"></span> biens</span>
+   384→                    <span class="text-[10px] text-emerald-400 font-medium italic">Optimisation fiscale détectée</span>
+   385→                </div>
+   386→            </div>
+   387→            <button class="bg-white text-brand-deep px-6 py-2 rounded-xl text-xs font-bold hover:bg-indigo-500 hover:text-white transition-all shadow-lg">
+   388→                Comparer Côte à Côte
+   389→            </button>
+   390→            <button @click="compareList = []" class="text-slate-500 hover:text-white">
+   391→                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+   392→            </button>
+   393→        </div>
+   394→    </main>
+   395→
+   396→    <script>
+   397→        function searchApp() {
+   398→            return {
+   399→                viewMode: 'split',
+   400→                searchQuery: '',
+   401→                activeProperty: null,
+   402→                compareList: [1, 2, 3], // Mocked initial comparison
+   403→                properties: [
+   404→                    {
+   405→                        id: 1,
+   406→                        title: 'Appartement de Maître - Chartrons',
+   407→                        location: 'Bordeaux (33000)',
+   408→                        price: 542000,
+   409→                        surface: 82,
+   410→                        rooms: 3,
+   411→                        dpe: 'A',
+   412→                        energyCost: 310,
+   413→                        dvfDelta: -8,
+   414→                        isDeal: true,
+   415→                        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800',
+   416→                        imageCount: 12,
+   417→                        mapX: 35,
+   418→                        mapY: 42
+   419→                    },
+   420→                    {
+   421→                        id: 2,
+   422→                        title: 'Loft Industriel avec Terrasse',
+   423→                        location: 'Bordeaux - Bassins à Flot',
+   424→                        price: 685000,
+   425→                        surface: 110,
+   426→                        rooms: 4,
+   427→                        dpe: 'B',
+   428→                        energyCost: 480,
+   429→                        dvfDelta: 4,
+   430→                        isDeal: false,
+   431→                        image: 'https://images.unsplash.com/photo-1600607687940-4e2003e2095b?auto=format&fit=crop&q=80&w=800',
+   432→                        imageCount: 8,
+   433→                        mapX: 55,
+   434→                        mapY: 28
+   435→                    },
+   436→                    {
+   437→                        id: 3,
+   438→                        title: 'Maison de Ville Rénovée',
+   439→                        location: 'Bordeaux - Nansouty',
+   440→                        price: 425000,
+   441→                        surface: 75,
+   442→                        rooms: 3,
+   443→                        dpe: 'C',
+   444→                        energyCost: 620,
+   445→                        dvfDelta: -12,
+   446→                        isDeal: true,
+   447→                        image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800',
+   448→                        imageCount: 15,
+   449→                        mapX: 42,
+   450→                        mapY: 65
+   451→                    },
+   452→                    {
+   453→                        id: 4,
+   454→                        title: 'T3 Lumineux Vue Garonne',
+   455→                        location: 'Bordeaux - Bastide',
+   456→                        price: 395000,
+   457→                        surface: 68,
+   458→                        rooms: 3,
+   459→                        dpe: 'B',
+   460→                        energyCost: 390,
+   461→                        dvfDelta: -2,
+   462→                        isDeal: false,
+   463→                        image: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800',
+   464→                        imageCount: 5,
+   465→                        mapX: 72,
+   466→                        mapY: 48
+   467→                    },
+   468→                    {
+   469→                        id: 5,
+   470→                        title: 'Studio Investisseur Meublé',
+   471→                        location: 'Bordeaux - Centre',
+   472→                        price: 185000,
+   473→                        surface: 24,
+   474→                        rooms: 1,
+   475→                        dpe: 'D',
+   476→                        energyCost: 550,
+   477→                        dvfDelta: 15,
+   478→                        isDeal: false,
+   479→                        image: 'https://images.unsplash.com/photo-1536376074432-8d64216afe74?auto=format&fit=crop&q=80&w=800',
+   480→                        imageCount: 6,
+   481→                        mapX: 48,
+   482→                        mapY: 48
+   483→                    },
+   484→                    {
+   485→                        id: 6,
+   486→                        title: 'Duplex Sous Combles',
+   487→                        location: 'Bordeaux - Saint Michel',
+   488→                        price: 310000,
+   489→                        surface: 55,
+   490→                        rooms: 2,
+   491→                        dpe: 'E',
+   492→                        energyCost: 890,
+   493→                        dvfDelta: -5,
+   494→                        isDeal: false,
+   495→                        image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800',
+   496→                        imageCount: 9,
+   497→                        mapX: 46,
+   498→                        mapY: 58
+   499→                    }
+   500→                ]
+   501→            }
+   502→        }
+   503→    </script>
+   504→</body>
+   505→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

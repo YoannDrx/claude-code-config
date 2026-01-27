@@ -1,0 +1,119 @@
+### Epic 5: Insights & Visualization
+Les utilisateurs peuvent visualiser leur courbe d'humeur sur 30 jours avec les marqueurs de changement de dosage, et voir les patterns/tendances.
+
+**FRs covered:** FR28, FR29, FR30, FR31
+**Includes:** MoodChart (Recharts), Dashboard agrégé, InsightCard
+
+---
+
+### Epic 6: Export for Consultation
+Les utilisateurs peuvent générer un PDF optimisé pour montrer à leur psychiatre/psychologue lors des consultations.
+
+**FRs covered:** FR32, FR33, FR34
+**Includes:** @react-pdf/renderer, date range selector
+
+---
+
+### Epic 7: Personalization & Onboarding
+Les utilisateurs peuvent personnaliser leurs préférences (notifications, affichage) et découvrir l'app via un onboarding bienveillant avec setup médicaments.
+
+**FRs covered:** FR35, FR36, FR37, FR42, FR43, FR44
+**Includes:** Settings page, Onboarding wizard
+
+---
+
+### Epic 8: PWA & Offline Experience
+Les utilisateurs peuvent installer l'app sur leur home screen et l'utiliser complètement hors ligne avec synchronisation automatique au retour.
+
+**FRs covered:** FR38, FR39, FR40, FR41
+**Includes:** Serwist setup, Dexie.js offline store, SyncIndicator
+
+---
+
+## Stories
+
+### Epic 1: Foundation & Authentication
+
+#### Story 1.1: Project Setup from Boilerplate
+**En tant qu'** équipe de développement,
+**Je veux** initialiser le projet Moodday à partir du boilerplate light-ts existant,
+**Afin de** disposer d'une base solide avec auth, DB et design system déjà configurés.
+
+**FRs:** Prérequis pour FR1-FR6
+**Points:** 2
+
+**Acceptance Criteria:**
+- [ ] Projet cloné et renommé "moodday"
+- [ ] Variables d'environnement configurées (DATABASE_URL, AUTH secrets)
+- [ ] `pnpm install` et `pnpm dev` fonctionnent
+- [ ] Page d'accueil accessible sur localhost:3000
+- [ ] Better Auth configuré avec providers (Email, Google, GitHub)
+
+**Technical Notes:**
+- Boilerplate inclut: Next.js 16.1.1, React 19.1.1, Prisma 5.19.1, Better Auth 1.3.11
+- Vérifier que TailwindCSS v4 fonctionne correctement
+
+---
+
+#### Story 1.2: Multi-Provider Authentication
+**En tant qu'** utilisateur,
+**Je veux** pouvoir m'inscrire et me connecter via Email, Google ou GitHub,
+**Afin de** choisir la méthode la plus pratique pour moi.
+
+**FRs:** FR1, FR2
+**Points:** 3
+
+**Acceptance Criteria:**
+- [ ] Inscription email/password avec vérification email
+- [ ] Connexion Google OAuth fonctionnelle
+- [ ] Connexion GitHub OAuth fonctionnelle
+- [ ] Formulaires avec validation Zod
+- [ ] Messages d'erreur bienveillants (pas de jugement)
+- [ ] Redirection post-login vers dashboard
+
+**Technical Notes:**
+- Utiliser Better Auth existant du boilerplate
+- Schemas: `src/features/auth/auth.schema.ts`
+- Server Actions: `src/features/auth/auth.action.ts`
+
+---
+
+#### Story 1.3: Session Management & Logout
+**En tant qu'** utilisateur connecté,
+**Je veux** pouvoir me déconnecter de manière sécurisée,
+**Afin de** protéger mes données sur un appareil partagé.
+
+**FRs:** FR3
+**Points:** 1
+
+**Acceptance Criteria:**
+- [ ] Bouton de déconnexion visible dans le header/menu
+- [ ] Session invalidée côté serveur au logout
+- [ ] Redirection vers page d'accueil après logout
+- [ ] Session timeout configuré à 30 jours (NFR-S5)
+
+**Technical Notes:**
+- Utiliser `signOut()` de Better Auth
+- Nettoyer le cache local (IndexedDB) au logout
+
+---
+
+#### Story 1.4: Password Reset Flow
+**En tant qu'** utilisateur,
+**Je veux** pouvoir réinitialiser mon mot de passe si je l'oublie,
+**Afin de** retrouver l'accès à mon compte.
+
+**FRs:** FR4
+**Points:** 2
+
+**Acceptance Criteria:**
+- [ ] Lien "Mot de passe oublié" sur page de login
+- [ ] Formulaire de demande de reset avec email
+- [ ] Email de réinitialisation envoyé (Resend)
+- [ ] Page de reset avec nouveau mot de passe
+- [ ] Token de reset expire après 1h
+- [ ] Message de confirmation bienveillant
+
+**Technical Notes:**
+- Utiliser Better Auth password reset flow
+- Template email: `emails/password-reset.tsx`

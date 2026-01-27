@@ -1,0 +1,14 @@
+The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/prd.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   546→- **FR42:** Un nouvel utilisateur est guidé à travers un onboarding de configuration initiale
+   547→- **FR43:** Un utilisateur peut configurer ses médicaments actuels pendant l'onboarding
+   548→- **FR44:** Un utilisateur peut passer/reporter des étapes d'onboarding non-essentielles
+   549→
+   550→## Non-Functional Requirements
+   551→
+   552→> Cette section définit les **attributs de qualité** du système : comment le produit doit performer, pas ce qu'il doit faire. Chaque NFR est mesurable et testable.
+   553→
+   554→### Performance
+   555→
+   556→| NFR | Critère | Justification |
+   557→|-----|---------|---------------|
+   558→| **NFR-P1** | Saisie check-in humeur complète en < 30 secondes | Core loop quotidien, friction = abandon |

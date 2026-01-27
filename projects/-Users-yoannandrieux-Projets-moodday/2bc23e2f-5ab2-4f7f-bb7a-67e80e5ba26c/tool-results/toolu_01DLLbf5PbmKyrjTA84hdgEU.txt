@@ -1,0 +1,9 @@
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema
+Datasource "db": PostgreSQL database "neondb", schema "public" at "ep-ancient-tooth-agfmm0wl.c-2.eu-central-1.aws.neon.tech"
+
+🚀  Your database is now in sync with your Prisma schema. Done in 744ms
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v5.19.1) to ./src/generated/prisma in 81ms

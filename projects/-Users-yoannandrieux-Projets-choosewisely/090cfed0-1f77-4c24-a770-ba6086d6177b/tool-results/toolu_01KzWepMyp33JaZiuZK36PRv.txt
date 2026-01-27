@@ -1,0 +1,317 @@
+     1→"use client";
+     2→
+     3→import { logger } from "@/lib/logger";
+     4→import { Badge } from "@/components/ui/badge";
+     5→import { Button } from "@/components/ui/button";
+     6→import { SafeImage } from "@/components/ui/safe-image";
+     7→import type { Property } from "@/lib/moteurimmo/types";
+     8→import { useState } from "react";
+     9→import { usePathname } from "next/navigation";
+    10→import { toggleFavoriteAction } from "@/features/favorites/favorites.action";
+    11→import { ComparisonButton } from "@/features/comparison/comparison-button";
+    12→import { FinanceButton } from "@/features/finance/finance-button";
+    13→import {
+    14→  Bed,
+    15→  Calendar,
+    16→  Heart,
+    17→  Home,
+    18→  MapPin,
+    19→  Ruler,
+    20→  ExternalLink,
+    21→  ArrowRight,
+    22→} from "lucide-react";
+    23→import Link from "next/link";
+    24→import { cn } from "@/lib/utils";
+    25→
+    26→type PropertyCardProps = {
+    27→  property: Property;
+    28→  view?: "list" | "grid";
+    29→  onFavorite?: (property: Property) => void;
+    30→  isFavorite?: boolean;
+    31→};
+    32→
+    33→export function PropertyCard({
+    34→  property,
+    35→  view = "list",
+    36→  onFavorite,
+    37→  isFavorite = false,
+    38→}: PropertyCardProps) {
+    39→  const pathname = usePathname();
+    40→  const isInOrgContext = pathname.startsWith("/orgs/");
+    41→  const detailUrl = isInOrgContext
+    42→    ? `${pathname}/${property.id}`
+    43→    : `/properties/${property.id}`;
+    44→  const [isFavorited, setIsFavorited] = useState(isFavorite);
+    45→  const [isLoading, setIsLoading] = useState(false);
+    46→
+    47→  const handleFavoriteClick = async () => {
+    48→    if (isLoading) return;
+    49→
+    50→    setIsLoading(true);
+    51→    try {
+    52→      const result = await toggleFavoriteAction(property.uniqueId);
+    53→      setIsFavorited(result.isFavorite);
+    54→      onFavorite?.(property);
+    55→    } catch (error) {
+    56→      logger.debug("Erreur lors de la mise à jour du favori:", error);
+    57→    } finally {
+    58→      setIsLoading(false);
+    59→    }
+    60→  };
+    61→
+    62→  const formatPrice = (price: number) => {
+    63→    return new Intl.NumberFormat("fr-FR", {
+    64→      style: "currency",
+    65→      currency: "EUR",
+    66→      maximumFractionDigits: 0,
+    67→    }).format(price);
+    68→  };
+    69→
+    70→  const formatDate = (dateString: string) => {
+    71→    return new Intl.DateTimeFormat("fr-FR", {
+    72→      day: "numeric",
+    73→      month: "short",
+    74→    }).format(new Date(dateString));
+    75→  };
+    76→
+    77→  const getTypeLabel = (type: string) => {
+    78→    return type === "sale" ? "Vente" : "Location";
+    79→  };
+    80→
+    81→  const getCategoryLabel = (category: string) => {
+    82→    const labels = {
+    83→      flat: "Appartement",
+    84→      house: "Maison",
+    85→      land: "Terrain",
+    86→      office: "Bureau",
+    87→      shop: "Commerce",
+    88→      warehouse: "Entrepôt",
+    89→      building: "Immeuble",
+    90→      "parking/garage/box": "Parking",
+    91→    };
+    92→    return labels[category as keyof typeof labels] || category;
+    93→  };
+    94→
+    95→  const pricePerSqm = property.surface
+    96→    ? Math.round(property.price / property.surface)
+    97→    : null;
+    98→
+    99→  if (view === "grid") {
+   100→    return (
+   101→      <div className="glass-card group overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_40px_var(--glow-accent)]">
+   102→        <div className="relative aspect-[4/3] overflow-hidden">
+   103→          <SafeImage
+   104→            src={property.mainImage ?? property.images[0]}
+   105→            alt={property.title}
+   106→            fill
+   107→            className="object-cover transition-transform duration-500 group-hover:scale-110"
+   108→          />
+   109→          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+   110→          <div className="absolute top-3 left-3 flex gap-2">
+   111→            <Badge variant="glass">{getTypeLabel(property.type)}</Badge>
+   112→            <Badge variant="outline" className="border-white/20 bg-black/30 text-white">
+   113→              {getCategoryLabel(property.category)}
+   114→            </Badge>
+   115→          </div>
+   116→          <Button
+   117→            variant="ghost"
+   118→            size="icon"
+   119→            className={cn(
+   120→              "absolute top-3 right-3 rounded-xl bg-black/30 backdrop-blur-sm transition-all duration-200",
+   121→              isFavorited
+   122→                ? "text-red-500 hover:bg-red-500/20"
+   123→                : "text-white hover:bg-white/10"
+   124→            )}
+   125→            onClick={handleFavoriteClick}
+   126→          >
+   127→            <Heart
+   128→              className={cn("size-5", isFavorited && "fill-red-500")}
+   129→            />
+   130→          </Button>
+   131→          <div className="absolute bottom-3 left-3 right-3">
+   132→            <div className="text-2xl font-bold text-white drop-shadow-lg">
+   133→              {formatPrice(property.price)}
+   134→            </div>
+   135→            {pricePerSqm && (
+   136→              <div className="text-sm text-white/80">
+   137→                {formatPrice(pricePerSqm)}/m²
+   138→              </div>
+   139→            )}
+   140→          </div>
+   141→        </div>
+   142→
+   143→        <div className="p-4 space-y-3">
+   144→          <h3 className="line-clamp-2 text-lg leading-tight font-semibold text-foreground">
+   145→            {property.title}
+   146→          </h3>
+   147→          <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+   148→            <MapPin className="size-4 text-primary" />
+   149→            <span className="truncate">
+   150→              {property.city}
+   151→              {property.postalCode && ` (${property.postalCode})`}
+   152→            </span>
+   153→          </div>
+   154→
+   155→          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+   156→            {property.surface && (
+   157→              <div className="flex items-center gap-1.5">
+   158→                <Ruler className="size-4" />
+   159→                <span>{property.surface}m²</span>
+   160→              </div>
+   161→            )}
+   162→            {property.rooms && (
+   163→              <div className="flex items-center gap-1.5">
+   164→                <Home className="size-4" />
+   165→                <span>{property.rooms} pièces</span>
+   166→              </div>
+   167→            )}
+   168→            {property.bedrooms && (
+   169→              <div className="flex items-center gap-1.5">
+   170→                <Bed className="size-4" />
+   171→                <span>{property.bedrooms}</span>
+   172→              </div>
+   173→            )}
+   174→          </div>
+   175→
+   176→          <div className="flex items-center justify-between pt-2 border-t border-[var(--border-subtle)]">
+   177→            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+   178→              <Calendar className="size-3" />
+   179→              <span>{formatDate(property.createdAt)}</span>
+   180→            </div>
+   181→            <div className="flex gap-1.5">
+   182→              <ComparisonButton property={property} />
+   183→              <FinanceButton property={property} showText={false} />
+   184→              <Button size="sm" variant="accent" asChild>
+   185→                <Link href={detailUrl}>
+   186→                  Voir
+   187→                  <ArrowRight className="size-3 ml-1" />
+   188→                </Link>
+   189→              </Button>
+   190→            </div>
+   191→          </div>
+   192→        </div>
+   193→      </div>
+   194→    );
+   195→  }
+   196→
+   197→  return (
+   198→    <div className="glass-card group overflow-hidden transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3),0_0_30px_var(--glow-accent)]">
+   199→      <div className="flex">
+   200→        <div className="relative aspect-[4/3] w-56 flex-shrink-0 overflow-hidden">
+   201→          <SafeImage
+   202→            src={property.mainImage ?? property.images[0]}
+   203→            alt={property.title}
+   204→            fill
+   205→            className="object-cover transition-transform duration-500 group-hover:scale-105"
+   206→          />
+   207→          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[var(--brand-surface)]" />
+   208→          <Button
+   209→            variant="ghost"
+   210→            size="icon"
+   211→            className={cn(
+   212→              "absolute top-3 right-3 rounded-xl bg-black/30 backdrop-blur-sm transition-all duration-200",
+   213→              isFavorited
+   214→                ? "text-red-500 hover:bg-red-500/20"
+   215→                : "text-white hover:bg-white/10"
+   216→            )}
+   217→            onClick={handleFavoriteClick}
+   218→          >
+   219→            <Heart
+   220→              className={cn("size-5", isFavorited && "fill-red-500")}
+   221→            />
+   222→          </Button>
+   223→        </div>
+   224→
+   225→        <div className="flex-1 p-4">
+   226→          <div className="mb-3 flex items-start justify-between">
+   227→            <div className="flex gap-2">
+   228→              <Badge variant="accent">{getTypeLabel(property.type)}</Badge>
+   229→              <Badge variant="outline">
+   230→                {getCategoryLabel(property.category)}
+   231→              </Badge>
+   232→            </div>
+   233→            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+   234→              <Calendar className="size-3" />
+   235→              <span>{formatDate(property.createdAt)}</span>
+   236→            </div>
+   237→          </div>
+   238→
+   239→          <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-foreground">
+   240→            {property.title}
+   241→          </h3>
+   242→
+   243→          <div className="mb-3 flex items-center gap-1.5 text-sm text-muted-foreground">
+   244→            <MapPin className="size-4 text-primary" />
+   245→            <span>
+   246→              {property.city}
+   247→              {property.postalCode && ` (${property.postalCode})`}
+   248→            </span>
+   249→          </div>
+   250→
+   251→          {property.description && (
+   252→            <p className="mb-3 line-clamp-2 text-sm text-muted-foreground">
+   253→              {property.description}
+   254→            </p>
+   255→          )}
+   256→
+   257→          <div className="flex items-end justify-between">
+   258→            <div>
+   259→              <div className="text-2xl font-bold text-gradient-accent">
+   260→                {formatPrice(property.price)}
+   261→              </div>
+   262→              {pricePerSqm && (
+   263→                <div className="text-sm text-muted-foreground">
+   264→                  {formatPrice(pricePerSqm)}/m²
+   265→                </div>
+   266→              )}
+   267→            </div>
+   268→
+   269→            <div className="flex items-center gap-4 text-sm text-muted-foreground">
+   270→              {property.surface && (
+   271→                <div className="flex items-center gap-1.5">
+   272→                  <Ruler className="size-4" />
+   273→                  <span>{property.surface}m²</span>
+   274→                </div>
+   275→              )}
+   276→              {property.rooms && (
+   277→                <div className="flex items-center gap-1.5">
+   278→                  <Home className="size-4" />
+   279→                  <span>{property.rooms} pièces</span>
+   280→                </div>
+   281→              )}
+   282→              {property.bedrooms && (
+   283→                <div className="flex items-center gap-1.5">
+   284→                  <Bed className="size-4" />
+   285→                  <span>{property.bedrooms}</span>
+   286→                </div>
+   287→              )}
+   288→            </div>
+   289→
+   290→            <div className="flex gap-2">
+   291→              <ComparisonButton property={property} />
+   292→              <FinanceButton property={property} showText={false} />
+   293→              {property.url && (
+   294→                <Button variant="outline" size="sm" asChild>
+   295→                  <Link href={property.url} target="_blank">
+   296→                    <ExternalLink className="size-4" />
+   297→                  </Link>
+   298→                </Button>
+   299→              )}
+   300→              <Button size="sm" variant="accent" asChild>
+   301→                <Link href={detailUrl}>
+   302→                  Voir détails
+   303→                  <ArrowRight className="size-4 ml-1" />
+   304→                </Link>
+   305→              </Button>
+   306→            </div>
+   307→          </div>
+   308→        </div>
+   309→      </div>
+   310→    </div>
+   311→  );
+   312→}
+   313→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,10 @@
+The file /Users/yoannandrieux/Projets/moodday/src/features/plans/plans.action.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    48→
+    49→      const customerId = dbUser.stripeCustomerId;
+    50→
+    51→      // Create checkout session
+    52→      const session = await getStripe().checkout.sessions.create({
+    53→        customer: customerId,
+    54→        payment_method_types: ["card"],
+    55→        line_items: [
+    56→          {

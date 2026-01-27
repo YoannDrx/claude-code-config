@@ -1,0 +1,18 @@
+   200→      </Card>
+   201→
+   202→      {/* Account link */}
+   203→      <Card>
+   204→        <CardContent className="pt-6">
+   205→          <Button variant="outline" asChild className="w-full">
+   206→            <Link href="/account">{t("nav.account")}</Link>
+   207→          </Button>
+   208→        </CardContent>
+   209→      </Card>
+   210→    </div>
+   211→  );
+   212→}
+   213→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

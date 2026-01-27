@@ -1,0 +1,80 @@
+The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/product-brief-moodday-2026-01-20.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    86→| **Cycle thérapie** | Inexistant | Avant/Pendant/Après séance |
+    87→| **Output** | Données brutes | PDF optimisé consultation |
+    88→| **Utilisateur** | Grand public | Patient + Psy/Psychiatre en duo |
+    89→
+    90→**Valeur unique:**
+    91→- Quand le cerveau ment, l'app dit la vérité
+    92→- Quand la mémoire flanche, l'app se souvient
+    93→- Quand la séance est finie, l'app prolonge le travail
+    94→
+    95→---
+    96→
+    97→## Target Users
+    98→
+    99→### Primary Users
+   100→
+   101→#### Persona 1: Marie, 34 ans — "La patiente multi-suivis"
+   102→
+   103→**Contexte:**
+   104→Marie est en arrêt maladie depuis 6 mois suite à un burn-out qui a révélé un trouble bipolaire. Elle voit un psychiatre (1x/mois pour les médicaments) ET une psychologue (1x/semaine pour la thérapie). Elle prend 3 médicaments dont les dosages changent régulièrement.
+   105→
+   106→**Son problème:**
+   107→- Elle ne sait plus si c'est la lamotrigine à 150mg ou le travail avec sa psy sur les limites qui l'aide
+   108→- Elle oublie ce que sa psy lui a dit entre les séances
+   109→- Elle arrive en consultation en disant "ça va mieux... je crois ?"
+   110→- Son psychiatre et sa psychologue ne sont pas toujours d'accord
+   111→
+   112→**Ce qu'elle veut:**
+   113→- Savoir CE QUI fonctionne vraiment pour elle
+   114→- Arriver préparée chez le psy avec des données concrètes
+   115→- Ne pas oublier les exercices à faire entre les séances
+   116→
+   117→#### Persona 2: Lucas, 28 ans — "Le thérapie-only"
+   118→
+   119→**Contexte:**
+   120→Lucas suit une thérapie pour anxiété sociale depuis 1 an. Pas de médicaments. Son psy lui donne des exercices d'exposition progressive à faire dans sa vie quotidienne.
+   121→
+   122→**Son problème:**
+   123→- Il oublie d'appliquer les techniques quand il est dans le feu de l'action
+   124→- Il ne sait pas si les exercices "marchent" vraiment ou si c'est le temps qui passe
+   125→- Il arrive en séance en mode "euh... ça s'est bien passé je crois"
+   126→
+   127→**Ce qu'il veut:**
+   128→- Noter ses "victoires" et "échecs" d'exposition
+   129→- Voir sa progression sur le long terme
+   130→- Préparer ses séances avec des exemples concrets
+   131→
+   132→### Secondary Users
+   133→
+   134→#### Persona 3: Sophie, 45 ans — "L'aidante proche"
+   135→
+   136→**Contexte:**
+   137→Sophie est la compagne de quelqu'un avec un trouble bipolaire. Elle voit les signes avant-coureurs de phases dépressives/maniaques avant lui.
+   138→
+   139→**Son rôle:**
+   140→- Observer et noter des signaux que le patient ne voit pas
+   141→- Être alertée si ça va mal pour être plus présente
+   142→- Pas surveiller, mais RASSURER et AIDER
+   143→
+   144→#### Persona 4: Dr. Benoit — "Le psychiatre"
+   145→
+   146→**Contexte:**
+   147→Psychiatre en libéral, il voit ses patients 20-30 min par mois. Il ajuste les traitements mais manque de données objectives entre les consultations.
+   148→
+   149→**Ce qu'il veut:**
+   150→- Des données visuelles claires (pas un roman)
+   151→- Voir la corrélation entre changements de dosage et humeur
+   152→- Un PDF qu'il peut parcourir en 2 minutes
+   153→
+   154→### User Journey (Marie)
+   155→
+   156→| Étape | Description |
+   157→|-------|-------------|
+   158→| **Découverte** | Recommandation de sa psy qui cherchait un outil adapté |
+   159→| **Onboarding (5 min)** | Configure ses 3 médicaments + dosages actuels. Ton bienveillant: "Pas de pression, prends ton temps" |
+   160→| **Usage quotidien (<30 sec)** | Notification douce le soir. Slider humeur + "Médicaments pris ?" + note optionnelle |
+   161→| **Après séance psy** | Note ce qu'elle a compris. Exercice à tester cette semaine |
+   162→| **Aha Moment (semaine 3)** | "Depuis que j'ai augmenté le Lamictal, la courbe monte". "Le fait que ce soit noté, ça devient VRAI" |
+   163→| **Consultation psychiatre** | Ouvre l'app, montre le PDF. Discussion basée sur des faits, pas des souvenirs flous |
+   164→

@@ -1,0 +1,10 @@
+/Users/yoannandrieux/Projets/moodday/_bmad/bmb/workflows/agent/data/expert-agent-architecture.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmb/workflows/agent/data/simple-agent-architecture.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmb/workflows/module/data/agent-architecture.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmb/workflows/workflow/data/architecture.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmgd/workflows/3-technical/game-architecture/templates/architecture-template.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/testarch/knowledge/fixture-architecture.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/3-solutioning/create-architecture/architecture-decision-template.md
+/Users/yoannandrieux/Projets/moodday/.claude/commands/bmad/bmgd/workflows/game-architecture.md
+/Users/yoannandrieux/Projets/moodday/.claude/commands/bmad/bmm/workflows/create-architecture.md
+/Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/architecture.md

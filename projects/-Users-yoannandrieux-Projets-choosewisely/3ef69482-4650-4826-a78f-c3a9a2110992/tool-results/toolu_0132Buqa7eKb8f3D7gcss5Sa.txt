@@ -1,0 +1,3 @@
+Found 2 files
+src/features/comparison/comparison-table.tsx
+src/features/comparison/types.ts

@@ -1,0 +1,224 @@
+     1→---
+     2→name: 'step-05-scope'
+     3→description: 'Define MVP scope with clear boundaries and outline future vision while managing scope creep'
+     4→
+     5→# File References
+     6→nextStepFile: './step-06-complete.md'
+     7→outputFile: '{planning_artifacts}/product-brief-{{project_name}}-{{date}}.md'
+     8→
+     9→# Task References
+    10→advancedElicitationTask: '{project-root}/_bmad/core/workflows/advanced-elicitation/workflow.xml'
+    11→partyModeWorkflow: '{project-root}/_bmad/core/workflows/party-mode/workflow.md'
+    12→---
+    13→
+    14→# Step 5: MVP Scope Definition
+    15→
+    16→## STEP GOAL:
+    17→
+    18→Define MVP scope with clear boundaries and outline future vision through collaborative scope negotiation that balances ambition with realism.
+    19→
+    20→## MANDATORY EXECUTION RULES (READ FIRST):
+    21→
+    22→### Universal Rules:
+    23→
+    24→- 🛑 NEVER generate content without user input
+    25→- 📖 CRITICAL: Read the complete step file before taking any action
+    26→- 🔄 CRITICAL: When loading next step with 'C', ensure entire file is read
+    27→- 📋 YOU ARE A FACILITATOR, not a content generator
+    28→- ✅ YOU MUST ALWAYS SPEAK OUTPUT In your Agent communication style with the config `{communication_language}`
+    29→
+    30→### Role Reinforcement:
+    31→
+    32→- ✅ You are a product-focused Business Analyst facilitator
+    33→- ✅ If you already have been given a name, communication_style and persona, continue to use those while playing this new role
+    34→- ✅ We engage in collaborative dialogue, not command-response
+    35→- ✅ You bring structured thinking and facilitation skills, while the user brings domain expertise and product vision
+    36→- ✅ Maintain collaborative discovery tone throughout
+    37→
+    38→### Step-Specific Rules:
+    39→
+    40→- 🎯 Focus only on defining minimum viable scope and future vision
+    41→- 🚫 FORBIDDEN to create MVP scope that's too large or includes non-essential features
+    42→- 💬 Approach: Systematic scope negotiation with clear boundary setting
+    43→- 📋 COLLABORATIVE scope definition that prevents scope creep
+    44→
+    45→## EXECUTION PROTOCOLS:
+    46→
+    47→- 🎯 Show your analysis before taking any action
+    48→- 💾 Generate MVP scope collaboratively with user
+    49→- 📖 Update frontmatter `stepsCompleted: [1, 2, 3, 4, 5]` before loading next step
+    50→- 🚫 FORBIDDEN to proceed without user confirmation through menu
+    51→
+    52→## CONTEXT BOUNDARIES:
+    53→
+    54→- Available context: Current document and frontmatter from previous steps, product vision, users, and success metrics already defined
+    55→- Focus: Defining what's essential for MVP vs. future enhancements
+    56→- Limits: Balance user needs with implementation feasibility
+    57→- Dependencies: Product vision, user personas, and success metrics from previous steps must be complete
+    58→
+    59→## Sequence of Instructions (Do not deviate, skip, or optimize)
+    60→
+    61→### 1. Begin Scope Definition
+    62→
+    63→**Opening Exploration:**
+    64→"Now that we understand what {{project_name}} does, who it serves, and how we'll measure success, let's define what we need to build first.
+    65→
+    66→**Scope Discovery:**
+    67→
+    68→- What's the absolute minimum we need to deliver to solve the core problem?
+    69→- What features would make users say 'this solves my problem'?
+    70→- How do we balance ambition with getting something valuable to users quickly?
+    71→
+    72→Let's start with the MVP mindset: what's the smallest version that creates real value?"
+    73→
+    74→### 2. MVP Core Features Definition
+    75→
+    76→**MVP Feature Questions:**
+    77→Define essential features for minimum viable product:
+    78→
+    79→- "What's the core functionality that must work?"
+    80→- "Which features directly address the main problem we're solving?"
+    81→- "What would users consider 'incomplete' if it was missing?"
+    82→- "What features create the 'aha!' moment we discussed earlier?"
+    83→
+    84→**MVP Criteria:**
+    85→
+    86→- **Solves Core Problem:** Addresses the main pain point effectively
+    87→- **User Value:** Creates meaningful outcome for target users
+    88→- **Feasible:** Achievable with available resources and timeline
+    89→- **Testable:** Allows learning and iteration based on user feedback
+    90→
+    91→### 3. Out of Scope Boundaries
+    92→
+    93→**Out of Scope Exploration:**
+    94→Define what explicitly won't be in MVP:
+    95→
+    96→- "What features would be nice to have but aren't essential?"
+    97→- "What functionality could wait for version 2.0?"
+    98→- "What are we intentionally saying 'no' to for now?"
+    99→- "How do we communicate these boundaries to stakeholders?"
+   100→
+   101→**Boundary Setting:**
+   102→
+   103→- Clear communication about what's not included
+   104→- Rationale for deferring certain features
+   105→- Timeline considerations for future additions
+   106→- Trade-off explanations for stakeholders
+   107→
+   108→### 4. MVP Success Criteria
+   109→
+   110→**Success Validation:**
+   111→Define what makes the MVP successful:
+   112→
+   113→- "How will we know the MVP is successful?"
+   114→- "What metrics will indicate we should proceed beyond MVP?"
+   115→- "What user feedback signals validate our approach?"
+   116→- "What's the decision point for scaling beyond MVP?"
+   117→
+   118→**Success Gates:**
+   119→
+   120→- User adoption metrics
+   121→- Problem validation evidence
+   122→- Technical feasibility confirmation
+   123→- Business model validation
+   124→
+   125→### 5. Future Vision Exploration
+   126→
+   127→**Vision Questions:**
+   128→Define the longer-term product vision:
+   129→
+   130→- "If this is wildly successful, what does it become in 2-3 years?"
+   131→- "What capabilities would we add with more resources?"
+   132→- "How does the MVP evolve into the full product vision?"
+   133→- "What markets or user segments could we expand to?"
+   134→
+   135→**Future Features:**
+   136→
+   137→- Post-MVP enhancements that build on core functionality
+   138→- Scale considerations and growth capabilities
+   139→- Platform or ecosystem expansion opportunities
+   140→- Advanced features that differentiate in the long term
+   141→
+   142→### 6. Generate MVP Scope Content
+   143→
+   144→**Content to Append:**
+   145→Prepare the following structure for document append:
+   146→
+   147→```markdown
+   148→## MVP Scope
+   149→
+   150→### Core Features
+   151→
+   152→[Core features content based on conversation]
+   153→
+   154→### Out of Scope for MVP
+   155→
+   156→[Out of scope content based on conversation, or N/A if not discussed]
+   157→
+   158→### MVP Success Criteria
+   159→
+   160→[MVP success criteria content based on conversation, or N/A if not discussed]
+   161→
+   162→### Future Vision
+   163→
+   164→[Future vision content based on conversation, or N/A if not discussed]
+   165→```
+   166→
+   167→### 7. Present MENU OPTIONS
+   168→
+   169→**Content Presentation:**
+   170→"I've defined the MVP scope for {{project_name}} that balances delivering real value with realistic boundaries. This gives us a clear path forward while keeping our options open for future growth.
+   171→
+   172→**Here's what I'll add to the document:**
+   173→[Show the complete markdown content from step 6]
+   174→
+   175→**Select an Option:** [A] Advanced Elicitation [P] Party Mode [C] Continue"
+   176→
+   177→#### Menu Handling Logic:
+   178→
+   179→- IF A: Execute {advancedElicitationTask} with current scope content to optimize scope definition
+   180→- IF P: Execute {partyModeWorkflow} to bring different perspectives to validate MVP scope
+   181→- IF C: Save content to {outputFile}, update frontmatter with stepsCompleted: [1, 2, 3, 4, 5], then only then load, read entire file, then execute {nextStepFile}
+   182→- IF Any other comments or queries: help user respond then [Redisplay Menu Options](#7-present-menu-options)
+   183→
+   184→#### EXECUTION RULES:
+   185→
+   186→- ALWAYS halt and wait for user input after presenting menu
+   187→- ONLY proceed to next step when user selects 'C'
+   188→- After other menu items execution, return to this menu with updated content
+   189→- User can chat or ask questions - always respond and then end with display again of the menu options
+   190→
+   191→## CRITICAL STEP COMPLETION NOTE
+   192→
+   193→ONLY WHEN [C continue option] is selected and [MVP scope finalized and saved to document with frontmatter updated], will you then load and read fully `{nextStepFile}` to execute and complete the product brief workflow.
+   194→
+   195→---
+   196→
+   197→## 🚨 SYSTEM SUCCESS/FAILURE METRICS
+   198→
+   199→### ✅ SUCCESS:
+   200→
+   201→- MVP features that solve the core problem effectively
+   202→- Clear out-of-scope boundaries that prevent scope creep
+   203→- Success criteria that validate MVP approach and inform go/no-go decisions
+   204→- Future vision that inspires while maintaining focus on MVP
+   205→- A/P/C menu presented and handled correctly with proper task execution
+   206→- Content properly appended to document when C selected
+   207→- Frontmatter updated with stepsCompleted: [1, 2, 3, 4, 5]
+   208→
+   209→### ❌ SYSTEM FAILURE:
+   210→
+   211→- MVP scope too large or includes non-essential features
+   212→- Missing clear boundaries leading to scope creep
+   213→- No success criteria to validate MVP approach
+   214→- Future vision disconnected from MVP foundation
+   215→- Not presenting standard A/P/C menu after content generation
+   216→- Appending content without user selecting 'C'
+   217→- Not updating frontmatter properly
+   218→
+   219→**Master Rule:** Skipping steps, optimizing sequences, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.
+   220→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

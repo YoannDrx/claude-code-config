@@ -1,0 +1,28 @@
+The file /Users/yoannandrieux/Projets/portfolio-loic/components/neo-brutalist/ui/Marquee.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    17→  title?: string;
+    18→}
+    19→
+    20→export const Marquee: React.FC<MarqueeProps> = ({ items, logos, direction = 1, speed = 30, title }) => {
+    21→  // If logos are provided, use logo mode
+    22→  if (logos && logos.length > 0) {
+    23→    return (
+    24→      <div className="relative">
+    25→        {/* Stamp Title - Outside overflow container */}
+    26→        {title && (
+    27→          <div className="absolute -top-5 md:-top-6 left-4 md:left-8 z-10">
+    28→            <span
+    29→              className="inline-block px-3 md:px-4 py-1.5 md:py-2 bg-neo-accent text-neo-text-inverse
+    30→                border-4 border-neo-text shadow-[4px_4px_0px_0px_var(--neo-text)] md:shadow-[6px_6px_0px_0px_var(--neo-text)]
+    31→                font-black text-xs md:text-sm uppercase tracking-wider
+    32→                transform -rotate-3"
+    33→            >
+    34→              {title}
+    35→            </span>
+    36→          </div>
+    37→        )}
+    38→        <div className="flex overflow-hidden border-y-4 border-neo-border bg-neo-surface py-6 select-none">
+    39→        <div
+    40→          className="flex animate-marquee"
+    41→          style={{
+    42→            animationDirection: direction === 1 ? "normal" : "reverse",
+    43→            animationDuration: `${speed}s`,

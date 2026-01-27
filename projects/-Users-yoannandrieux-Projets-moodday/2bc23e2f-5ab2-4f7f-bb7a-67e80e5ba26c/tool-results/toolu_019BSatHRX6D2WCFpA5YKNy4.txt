@@ -1,0 +1,7 @@
+/Users/yoannandrieux/Projets/moodday/_bmad/bmgd/workflows/2-design/gdd/steps/step-12-epics.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/3-solutioning/check-implementation-readiness/steps/step-03-epic-coverage-validation.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/3-solutioning/check-implementation-readiness/steps/step-05-epic-quality-review.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/3-solutioning/create-epics-and-stories/steps/step-02-design-epics.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/3-solutioning/create-epics-and-stories/templates/epics-template.md
+/Users/yoannandrieux/Projets/moodday/.claude/commands/bmad/bmm/workflows/create-epics-and-stories.md
+/Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/epics.md

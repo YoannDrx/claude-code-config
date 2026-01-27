@@ -1,0 +1,6 @@
+/Users/yoannandrieux/Projets/choosewisely/src/lib/auth/auth-config-setup.ts
+/Users/yoannandrieux/Projets/choosewisely/src/lib/auth/auth-utils.ts
+/Users/yoannandrieux/Projets/choosewisely/src/lib/auth/auth-type.ts
+/Users/yoannandrieux/Projets/choosewisely/src/lib/auth/auth-user.ts
+/Users/yoannandrieux/Projets/choosewisely/src/lib/auth/auth-org.ts
+/Users/yoannandrieux/Projets/choosewisely/src/lib/auth/b2c-permissions.ts

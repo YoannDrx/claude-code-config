@@ -1,0 +1,21 @@
+The file /Users/yoannandrieux/Projets/moodday/src/lib/stripe.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→import Stripe from "stripe";
+     2→import { env } from "./env";
+     3→
+     4→const stripeInstance = env.STRIPE_SECRET_KEY
+     5→  ? new Stripe(env.STRIPE_SECRET_KEY, {
+     6→      typescript: true,
+     7→    })
+     8→  : null;
+     9→
+    10→export const stripe = stripeInstance;
+    11→
+    12→export function getStripe(): Stripe {
+    13→  if (!stripeInstance) {
+    14→    throw new Error(
+    15→      "Stripe is not configured. Please set STRIPE_SECRET_KEY environment variable."
+    16→    );
+    17→  }
+    18→  return stripeInstance;
+    19→}
+    20→

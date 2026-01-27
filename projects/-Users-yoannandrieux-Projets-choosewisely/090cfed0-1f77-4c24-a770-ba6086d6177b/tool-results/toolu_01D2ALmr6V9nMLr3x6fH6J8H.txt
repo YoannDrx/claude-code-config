@@ -1,0 +1,547 @@
+     1→"use client";
+     2→
+     3→import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+     4→import { Badge } from "@/components/ui/badge";
+     5→import { Button } from "@/components/ui/button";
+     6→import {
+     7→  Dialog,
+     8→  DialogContent,
+     9→  DialogHeader,
+    10→  DialogTitle,
+    11→  DialogTrigger,
+    12→} from "@/components/ui/dialog";
+    13→import { Skeleton } from "@/components/ui/skeleton";
+    14→import {
+    15→  TrendingUp,
+    16→  TrendingDown,
+    17→  Minus,
+    18→  Info,
+    19→  BarChart3,
+    20→  Calendar,
+    21→  MapPin,
+    22→} from "lucide-react";
+    23→import type { DVFAnalysis } from "@/lib/services/dvf/types";
+    24→import { useState } from "react";
+    25→import {
+    26→  LineChart,
+    27→  Line,
+    28→  BarChart,
+    29→  Bar,
+    30→  XAxis,
+    31→  YAxis,
+    32→  CartesianGrid,
+    33→  Tooltip,
+    34→  ResponsiveContainer,
+    35→  Legend,
+    36→  ReferenceLine,
+    37→} from "recharts";
+    38→
+    39→type DVFAnalysisProps = {
+    40→  analysis: DVFAnalysis | null;
+    41→  loading?: boolean;
+    42→  error?: string | null;
+    43→  propertyAddress: string;
+    44→};
+    45→
+    46→export function DVFAnalysisComponent({
+    47→  analysis,
+    48→  loading = false,
+    49→  error = null,
+    50→  propertyAddress,
+    51→}: DVFAnalysisProps) {
+    52→  const [showDetails, setShowDetails] = useState(false);
+    53→
+    54→  if (loading) {
+    55→    return <DVFAnalysisSkeleton />;
+    56→  }
+    57→
+    58→  if (error) {
+    59→    return (
+    60→      <Card className="border-destructive/20">
+    61→        <CardHeader>
+    62→          <CardTitle className="text-destructive flex items-center gap-2">
+    63→            <Info className="h-4 w-4" />
+    64→            Analyse DVF indisponible
+    65→          </CardTitle>
+    66→        </CardHeader>
+    67→        <CardContent>
+    68→          <p className="text-muted-foreground text-sm">{error}</p>
+    69→        </CardContent>
+    70→      </Card>
+    71→    );
+    72→  }
+    73→
+    74→  if (!analysis) {
+    75→    return (
+    76→      <Card>
+    77→        <CardHeader>
+    78→          <CardTitle className="flex items-center gap-2">
+    79→            <BarChart3 className="h-4 w-4" />
+    80→            Analyse du marché local
+    81→          </CardTitle>
+    82→        </CardHeader>
+    83→        <CardContent>
+    84→          <p className="text-muted-foreground text-sm">
+    85→            Aucune donnée de marché disponible pour cette zone.
+    86→          </p>
+    87→        </CardContent>
+    88→      </Card>
+    89→    );
+    90→  }
+    91→
+    92→  const formatPrice = (price: number) => {
+    93→    return new Intl.NumberFormat("fr-FR", {
+    94→      style: "currency",
+    95→      currency: "EUR",
+    96→      maximumFractionDigits: 0,
+    97→    }).format(price);
+    98→  };
+    99→
+   100→  const formatPricePerM2 = (price: number) => {
+   101→    return `${new Intl.NumberFormat("fr-FR", {
+   102→      style: "currency",
+   103→      currency: "EUR",
+   104→      maximumFractionDigits: 0,
+   105→    }).format(price)}/m²`;
+   106→  };
+   107→
+   108→  const getOverpricingColor = (percent: number) => {
+   109→    if (percent > 10) return "destructive";
+   110→    if (percent > 5) return "secondary";
+   111→    if (percent < -5) return "default";
+   112→    return "secondary";
+   113→  };
+   114→
+   115→  const getOverpricingIcon = (percent: number) => {
+   116→    if (percent > 5) return <TrendingUp className="h-4 w-4" />;
+   117→    if (percent < -5) return <TrendingDown className="h-4 w-4" />;
+   118→    return <Minus className="h-4 w-4" />;
+   119→  };
+   120→
+   121→  const getOverpricingLabel = (percent: number) => {
+   122→    if (percent > 10) return "Très surévalué";
+   123→    if (percent > 5) return "Surévalué";
+   124→    if (percent < -10) return "Très sous-évalué";
+   125→    if (percent < -5) return "Sous-évalué";
+   126→    return "Prix cohérent";
+   127→  };
+   128→
+   129→  const getConfidenceBadge = (level: string) => {
+   130→    const variants = {
+   131→      high: "default",
+   132→      medium: "secondary",
+   133→      low: "destructive",
+   134→    } as const;
+   135→
+   136→    const labels = {
+   137→      high: "Confiance élevée",
+   138→      medium: "Confiance moyenne",
+   139→      low: "Confiance faible",
+   140→    } as const;
+   141→
+   142→    return (
+   143→      <Badge variant={variants[level as keyof typeof variants]}>
+   144→        {labels[level as keyof typeof labels]}
+   145→      </Badge>
+   146→    );
+   147→  };
+   148→
+   149→  return (
+   150→    <Card>
+   151→      <CardHeader>
+   152→        <CardTitle className="flex items-center gap-2">
+   153→          <BarChart3 className="h-4 w-4" />
+   154→          Analyse du marché local
+   155→        </CardTitle>
+   156→      </CardHeader>
+   157→      <CardContent className="space-y-4">
+   158→        {/* Prix de référence */}
+   159→        <div className="space-y-2">
+   160→          <div className="flex items-center justify-between">
+   161→            <span className="text-sm font-medium">Prix demandé:</span>
+   162→            <span className="font-semibold">
+   163→              {formatPricePerM2(analysis.propertyPricePerM2)}
+   164→            </span>
+   165→          </div>
+   166→          <div className="flex items-center justify-between">
+   167→            <span className="text-sm font-medium">Marché local:</span>
+   168→            <span className="text-muted-foreground">
+   169→              {formatPricePerM2(analysis.medianPricePerM2)}
+   170→            </span>
+   171→          </div>
+   172→        </div>
+   173→
+   174→        {/* Indicateur de sur-évaluation */}
+   175→        <div className="space-y-3">
+   176→          <div className="flex items-center gap-2">
+   177→            {getOverpricingIcon(analysis.overpricingPercent)}
+   178→            <Badge variant={getOverpricingColor(analysis.overpricingPercent)}>
+   179→              {getOverpricingLabel(analysis.overpricingPercent)} (
+   180→              {analysis.overpricingPercent > 0 ? "+" : ""}
+   181→              {analysis.overpricingPercent}%)
+   182→            </Badge>
+   183→          </div>
+   184→
+   185→          {Math.abs(analysis.overpricingAmount) > 1000 && (
+   186→            <p className="text-muted-foreground text-sm">
+   187→              {analysis.overpricingAmount > 0 ? "Surcôut" : "Économie"} estimé :{" "}
+   188→              <span className="font-medium">
+   189→                {formatPrice(Math.abs(analysis.overpricingAmount))}
+   190→              </span>
+   191→            </p>
+   192→          )}
+   193→        </div>
+   194→
+   195→        {/* Contexte */}
+   196→        <div className="space-y-2 border-t pt-2">
+   197→          <div className="text-muted-foreground flex items-center gap-2 text-sm">
+   198→            <MapPin className="h-3 w-3" />
+   199→            <span>
+   200→              Basé sur {analysis.comparableCount} vente
+   201→              {analysis.comparableCount > 1 ? "s" : ""}
+   202→              dans un rayon de {analysis.radiusKm}km
+   203→            </span>
+   204→          </div>
+   205→
+   206→          <div className="text-muted-foreground flex items-center gap-2 text-sm">
+   207→            <Calendar className="h-3 w-3" />
+   208→            <span>Sur les {analysis.periodMonths} derniers mois</span>
+   209→          </div>
+   210→
+   211→          <div className="flex items-center justify-between">
+   212→            {getConfidenceBadge(analysis.confidenceLevel)}
+   213→            <span className="text-muted-foreground text-xs">
+   214→              {analysis.confidenceReason}
+   215→            </span>
+   216→          </div>
+   217→        </div>
+   218→
+   219→        {/* Actions */}
+   220→        <div className="flex gap-2 pt-2">
+   221→          <Dialog open={showDetails} onOpenChange={setShowDetails}>
+   222→            <DialogTrigger asChild>
+   223→              <Button variant="outline" size="sm" className="flex-1">
+   224→                Voir l'évolution
+   225→              </Button>
+   226→            </DialogTrigger>
+   227→            <DVFDetailsModal
+   228→              analysis={analysis}
+   229→              propertyAddress={propertyAddress}
+   230→            />
+   231→          </Dialog>
+   232→
+   233→          <Button variant="outline" size="sm" className="flex-1">
+   234→            Détail données
+   235→          </Button>
+   236→        </div>
+   237→      </CardContent>
+   238→    </Card>
+   239→  );
+   240→}
+   241→
+   242→function DVFAnalysisSkeleton() {
+   243→  return (
+   244→    <Card>
+   245→      <CardHeader>
+   246→        <CardTitle className="flex items-center gap-2">
+   247→          <BarChart3 className="h-4 w-4" />
+   248→          Analyse du marché local
+   249→        </CardTitle>
+   250→      </CardHeader>
+   251→      <CardContent className="space-y-4">
+   252→        <div className="space-y-2">
+   253→          <div className="flex items-center justify-between">
+   254→            <Skeleton className="h-4 w-20" />
+   255→            <Skeleton className="h-4 w-16" />
+   256→          </div>
+   257→          <div className="flex items-center justify-between">
+   258→            <Skeleton className="h-4 w-24" />
+   259→            <Skeleton className="h-4 w-16" />
+   260→          </div>
+   261→        </div>
+   262→
+   263→        <div className="space-y-3">
+   264→          <Skeleton className="h-6 w-48" />
+   265→          <Skeleton className="h-4 w-32" />
+   266→        </div>
+   267→
+   268→        <div className="space-y-2 border-t pt-2">
+   269→          <Skeleton className="h-4 w-full" />
+   270→          <Skeleton className="h-4 w-3/4" />
+   271→          <div className="flex justify-between">
+   272→            <Skeleton className="h-6 w-24" />
+   273→            <Skeleton className="h-4 w-32" />
+   274→          </div>
+   275→        </div>
+   276→
+   277→        <div className="flex gap-2 pt-2">
+   278→          <Skeleton className="h-8 flex-1" />
+   279→          <Skeleton className="h-8 flex-1" />
+   280→        </div>
+   281→      </CardContent>
+   282→    </Card>
+   283→  );
+   284→}
+   285→
+   286→function DVFDetailsModal({
+   287→  analysis,
+   288→  propertyAddress,
+   289→}: {
+   290→  analysis: DVFAnalysis;
+   291→  propertyAddress: string;
+   292→}) {
+   293→  const formatPrice = (price: number) => {
+   294→    return new Intl.NumberFormat("fr-FR", {
+   295→      style: "currency",
+   296→      currency: "EUR",
+   297→      maximumFractionDigits: 0,
+   298→    }).format(price);
+   299→  };
+   300→
+   301→  // Données pour le graphique de comparaison des prix
+   302→  const priceComparisonData = [
+   303→    {
+   304→      name: "Min",
+   305→      prix: analysis.minPricePerM2,
+   306→      fill: "#94a3b8",
+   307→    },
+   308→    {
+   309→      name: "Médian",
+   310→      prix: analysis.medianPricePerM2,
+   311→      fill: "#3b82f6",
+   312→    },
+   313→    {
+   314→      name: "Moyen",
+   315→      prix: analysis.averagePricePerM2,
+   316→      fill: "#8b5cf6",
+   317→    },
+   318→    {
+   319→      name: "Max",
+   320→      prix: analysis.maxPricePerM2,
+   321→      fill: "#94a3b8",
+   322→    },
+   323→    {
+   324→      name: "Ce bien",
+   325→      prix: analysis.propertyPricePerM2,
+   326→      fill: analysis.overpricingPercent > 5 ? "#ef4444" : analysis.overpricingPercent < -5 ? "#22c55e" : "#f59e0b",
+   327→    },
+   328→  ];
+   329→
+   330→  // Données pour le graphique d'évolution temporelle
+   331→  const evolutionData = analysis.priceEvolution
+   332→    ? [
+   333→        {
+   334→          period: "Il y a 12 mois",
+   335→          prix: analysis.priceEvolution.last12Months,
+   336→        },
+   337→        {
+   338→          period: "Il y a 6 mois",
+   339→          prix: analysis.priceEvolution.last6Months,
+   340→        },
+   341→        {
+   342→          period: "Aujourd'hui",
+   343→          prix: analysis.medianPricePerM2,
+   344→        },
+   345→      ]
+   346→    : [];
+   347→
+   348→  return (
+   349→    <DialogContent className="max-w-4xl">
+   350→      <DialogHeader>
+   351→        <DialogTitle>Analyse DVF - {propertyAddress}</DialogTitle>
+   352→      </DialogHeader>
+   353→
+   354→      <div className="space-y-6">
+   355→        {/* Graphique de comparaison des prix */}
+   356→        <div>
+   357→          <h3 className="mb-4 text-lg font-semibold">Comparaison des prix au m²</h3>
+   358→          <div className="h-64">
+   359→            <ResponsiveContainer width="100%" height="100%">
+   360→              <BarChart data={priceComparisonData} layout="vertical">
+   361→                <CartesianGrid strokeDasharray="3 3" />
+   362→                <XAxis
+   363→                  type="number"
+   364→                  tickFormatter={(value) => `${(value / 1000).toFixed(0)}k€`}
+   365→                />
+   366→                <YAxis dataKey="name" type="category" width={80} />
+   367→                <Tooltip
+   368→                  formatter={(value: number) => [`${formatPrice(value)  }/m²`, "Prix"]}
+   369→                  labelStyle={{ fontWeight: "bold" }}
+   370→                />
+   371→                <Bar dataKey="prix" radius={[0, 4, 4, 0]}>
+   372→                  {priceComparisonData.map((entry, index) => (
+   373→                    <rect key={`bar-${index}`} fill={entry.fill} />
+   374→                  ))}
+   375→                </Bar>
+   376→                <ReferenceLine
+   377→                  x={analysis.medianPricePerM2}
+   378→                  stroke="#3b82f6"
+   379→                  strokeDasharray="5 5"
+   380→                  label={{ value: "Médian", position: "top", fill: "#3b82f6" }}
+   381→                />
+   382→              </BarChart>
+   383→            </ResponsiveContainer>
+   384→          </div>
+   385→        </div>
+   386→
+   387→        {/* Graphique d'évolution temporelle */}
+   388→        {evolutionData.length > 0 && (
+   389→          <div>
+   390→            <h3 className="mb-4 text-lg font-semibold">Évolution des prix</h3>
+   391→            <div className="h-64">
+   392→              <ResponsiveContainer width="100%" height="100%">
+   393→                <LineChart data={evolutionData}>
+   394→                  <CartesianGrid strokeDasharray="3 3" />
+   395→                  <XAxis dataKey="period" />
+   396→                  <YAxis
+   397→                    tickFormatter={(value) => `${(value / 1000).toFixed(0)}k€`}
+   398→                    domain={["dataMin - 500", "dataMax + 500"]}
+   399→                  />
+   400→                  <Tooltip
+   401→                    formatter={(value: number) => [`${formatPrice(value)  }/m²`, "Prix médian"]}
+   402→                  />
+   403→                  <Legend />
+   404→                  <Line
+   405→                    type="monotone"
+   406→                    dataKey="prix"
+   407→                    name="Prix médian /m²"
+   408→                    stroke="#3b82f6"
+   409→                    strokeWidth={3}
+   410→                    dot={{ fill: "#3b82f6", strokeWidth: 2, r: 6 }}
+   411→                    activeDot={{ r: 8 }}
+   412→                  />
+   413→                  <ReferenceLine
+   414→                    y={analysis.propertyPricePerM2}
+   415→                    stroke="#ef4444"
+   416→                    strokeDasharray="5 5"
+   417→                    label={{
+   418→                      value: "Prix demandé",
+   419→                      position: "right",
+   420→                      fill: "#ef4444",
+   421→                    }}
+   422→                  />
+   423→                </LineChart>
+   424→              </ResponsiveContainer>
+   425→            </div>
+   426→            {analysis.priceEvolution && (
+   427→              <div className="mt-2 text-center">
+   428→                <Badge
+   429→                  variant={
+   430→                    analysis.priceEvolution.evolutionPercent > 0
+   431→                      ? "default"
+   432→                      : "destructive"
+   433→                  }
+   434→                >
+   435→                  {analysis.priceEvolution.evolutionPercent > 0 ? "+" : ""}
+   436→                  {analysis.priceEvolution.evolutionPercent}% sur 6 mois
+   437→                </Badge>
+   438→              </div>
+   439→            )}
+   440→          </div>
+   441→        )}
+   442→
+   443→        {/* Statistiques détaillées */}
+   444→        <div className="grid grid-cols-2 gap-4">
+   445→          <Card>
+   446→            <CardHeader className="pb-2">
+   447→              <CardTitle className="text-base">Prix actuels du marché</CardTitle>
+   448→            </CardHeader>
+   449→            <CardContent>
+   450→              <div className="space-y-2">
+   451→                <div className="flex justify-between">
+   452→                  <span className="text-sm">Médian:</span>
+   453→                  <span className="font-medium">
+   454→                    {formatPrice(analysis.medianPricePerM2)}/m²
+   455→                  </span>
+   456→                </div>
+   457→                <div className="flex justify-between">
+   458→                  <span className="text-sm">Moyen:</span>
+   459→                  <span className="font-medium">
+   460→                    {formatPrice(analysis.averagePricePerM2)}/m²
+   461→                  </span>
+   462→                </div>
+   463→                <div className="flex justify-between">
+   464→                  <span className="text-sm">Fourchette:</span>
+   465→                  <span className="font-medium">
+   466→                    {formatPrice(analysis.minPricePerM2)} -{" "}
+   467→                    {formatPrice(analysis.maxPricePerM2)}/m²
+   468→                  </span>
+   469→                </div>
+   470→              </div>
+   471→            </CardContent>
+   472→          </Card>
+   473→
+   474→          <Card>
+   475→            <CardHeader className="pb-2">
+   476→              <CardTitle className="text-base">Analyse du bien</CardTitle>
+   477→            </CardHeader>
+   478→            <CardContent>
+   479→              <div className="space-y-2">
+   480→                <div className="flex justify-between">
+   481→                  <span className="text-sm">Prix demandé:</span>
+   482→                  <span className="font-medium">
+   483→                    {formatPrice(analysis.propertyPricePerM2)}/m²
+   484→                  </span>
+   485→                </div>
+   486→                <div className="flex justify-between">
+   487→                  <span className="text-sm">Écart:</span>
+   488→                  <span
+   489→                    className={`font-medium ${
+   490→                      analysis.overpricingPercent > 5
+   491→                        ? "text-red-600"
+   492→                        : analysis.overpricingPercent < -5
+   493→                          ? "text-green-600"
+   494→                          : "text-yellow-600"
+   495→                    }`}
+   496→                  >
+   497→                    {analysis.overpricingPercent > 0 ? "+" : ""}
+   498→                    {analysis.overpricingPercent}%
+   499→                  </span>
+   500→                </div>
+   501→                <div className="flex justify-between">
+   502→                  <span className="text-sm">Différence:</span>
+   503→                  <span
+   504→                    className={`font-medium ${
+   505→                      analysis.overpricingAmount > 0
+   506→                        ? "text-red-600"
+   507→                        : "text-green-600"
+   508→                    }`}
+   509→                  >
+   510→                    {analysis.overpricingAmount > 0 ? "+" : ""}
+   511→                    {formatPrice(analysis.overpricingAmount)}
+   512→                  </span>
+   513→                </div>
+   514→              </div>
+   515→            </CardContent>
+   516→          </Card>
+   517→        </div>
+   518→
+   519→        {/* Métadonnées */}
+   520→        <div className="text-muted-foreground space-y-1 border-t pt-4 text-sm">
+   521→          <p>
+   522→            <strong>Source:</strong> {analysis.dataSource}
+   523→          </p>
+   524→          <p>
+   525→            <strong>Transactions analysées:</strong> {analysis.comparableCount} ventes
+   526→            dans un rayon de {analysis.radiusKm}km
+   527→          </p>
+   528→          <p>
+   529→            <strong>Période:</strong> {analysis.periodMonths} derniers mois
+   530→          </p>
+   531→          <p>
+   532→            <strong>Dernière mise à jour:</strong>{" "}
+   533→            {new Date(analysis.lastUpdated).toLocaleDateString("fr-FR")}
+   534→          </p>
+   535→          <p>
+   536→            <strong>Niveau de confiance:</strong> {analysis.confidenceReason}
+   537→          </p>
+   538→        </div>
+   539→      </div>
+   540→    </DialogContent>
+   541→  );
+   542→}
+   543→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

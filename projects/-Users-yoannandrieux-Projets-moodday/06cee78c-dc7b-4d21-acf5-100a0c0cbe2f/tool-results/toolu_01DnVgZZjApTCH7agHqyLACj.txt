@@ -1,0 +1,2 @@
+/Users/yoannandrieux/Projets/moodday/app/auth/confirm-delete/confirm-delete-page.tsx
+/Users/yoannandrieux/Projets/moodday/app/auth/confirm-delete/page.tsx

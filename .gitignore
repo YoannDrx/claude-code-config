@@ -1,0 +1,25 @@
+# Cache et données temporaires
+cache/
+paste-cache/
+stats-cache.json
+statsig/
+
+# Historique et logs (volumineux et sensibles)
+history.jsonl
+debug/
+file-history/
+shell-snapshots/
+
+# Données de session
+session-env/
+plans/
+todos/
+
+# Telemetry
+telemetry/
+
+# Downloads
+downloads/
+
+# IDE specific
+ide/

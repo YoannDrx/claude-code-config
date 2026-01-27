@@ -1,0 +1,51 @@
+718:  "TeamPage": {
+719-    "eyebrow": "QUI ON EST",
+720-    "title": "4 experts qui en avaient marre des agences classiques",
+721-    "subtitle": "Une micro-équipe de seniors complémentaires. Zéro junior sur vos projets. Zéro commercial entre vous et nous.",
+722-    "stats": [
+723-      { "value": "4", "label": "experts" },
+724-      { "value": "10+ ans", "label": "d'expérience moyenne" },
+725-      { "value": "50+", "label": "projets livrés" },
+726-      { "value": "0", "label": "juniors sur vos projets" }
+727-    ],
+728-    "valuesEyebrow": "Comment on bosse",
+729-    "valuesTitle": "Ce qu'on fait (et ce qu'on ne fait pas)",
+730-    "values": [
+731-      {
+732-        "title": "On livre. Vraiment.",
+733-        "description": "Pas de POC éternel. Des apps en prod qui marchent."
+734-      },
+735-      {
+736-        "title": "On parle direct",
+737-        "description": "Zéro bullshit. Si ça ne va pas, on le dit. Si c'est bien, aussi."
+738-      },
+739-      {
+740-        "title": "On va vite",
+741-        "description": "Première démo en 2 semaines. MVP en 6-10 semaines."
+742-      },
+743-      {
+744-        "title": "On mesure tout",
+745-        "description": "ROI, performance, adoption. Des chiffres, pas des impressions."
+746-      },
+747-      {
+748-        "title": "On reste après",
+749-        "description": "Maintenance, évolutions, support. On ne disparaît pas après le lancement."
+750-      },
+751-      {
+752-        "title": "On dit non",
+753-        "description": "Si le projet n'a pas de sens, on vous le dit. Votre succès nous intéresse plus qu'une facture."
+754-      }
+755-    ],
+756-    "ctaEyebrow": "On recrute",
+757-    "ctaTitle": "Envie de bosser avec nous ?",
+758-    "ctaSubtitle": "Remote-first, projets variés, équipe bienveillante et exigeante.",
+759-    "ctaButton": "Voir les postes ouverts"
+760-  },
+761-  "ServicesPage": {
+762-    "eyebrow": "CE QU'ON FAIT",
+763-    "title": "On code. On livre. On maintient.",
+764-    "subtitle": "Web, mobile, IA. Du brief à la prod, en passant par le design."
+765-  },
+766-  "WorkPage": {
+767-    "eyebrow": "NOS RÉALISATIONS",
+768-    "title": "Des apps qui tournent. Des clients qui recommandent.",

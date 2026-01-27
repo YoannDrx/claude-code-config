@@ -1,0 +1,64 @@
+The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/product-brief-moodday-2026-01-20.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   159→| **Onboarding (5 min)** | Configure ses 3 médicaments + dosages actuels. Ton bienveillant: "Pas de pression, prends ton temps" |
+   160→| **Usage quotidien (<30 sec)** | Notification douce le soir. Slider humeur + "Médicaments pris ?" + note optionnelle |
+   161→| **Après séance psy** | Note ce qu'elle a compris. Exercice à tester cette semaine |
+   162→| **Aha Moment (semaine 3)** | "Depuis que j'ai augmenté le Lamictal, la courbe monte". "Le fait que ce soit noté, ça devient VRAI" |
+   163→| **Consultation psychiatre** | Ouvre l'app, montre le PDF. Discussion basée sur des faits, pas des souvenirs flous |
+   164→
+   165→---
+   166→
+   167→## Success Metrics
+   168→
+   169→### User Success Metrics
+   170→
+   171→#### Pour Marie (patiente multi-suivis)
+   172→
+   173→| Métrique | Indicateur de succès |
+   174→|----------|---------------------|
+   175→| **Constance tracking** | ≥4 check-ins humeur/semaine (pas 7 - bienveillance!) |
+   176→| **Utilisation cycle séance** | Note post-séance dans les 24h après RDV psy |
+   177→| **Export PDF** | ≥1 PDF généré avant consultation psychiatre |
+   178→| **Aha moment** | Première corrélation médicament↔humeur identifiée (< 4 semaines) |
+   179→
+   180→#### Pour Lucas (thérapie-only)
+   181→
+   182→| Métrique | Indicateur de succès |
+   183→|----------|---------------------|
+   184→| **Exercices trackés** | ≥2 exercices psy notés/semaine |
+   185→| **Évaluation efficacité** | Note "bénéfique/neutre/négatif" sur 80% des exercices |
+   186→| **Préparation séance** | Consultation des données avant RDV (< 24h avant) |
+   187→
+   188→#### Moment "Worth It"
+   189→
+   190→> L'utilisateur sait que Moodday fonctionne quand il arrive en séance et dit: **"Cette semaine j'ai testé X, voici ce que j'ai observé..."** au lieu de **"Euh... ça va je crois."**
+   191→
+   192→### Business Objectives
+   193→
+   194→#### À 3 mois (MVP)
+   195→- **500 utilisateurs actifs** (≥1 check-in/semaine)
+   196→- **Validation product-market fit**: NPS ≥ 40 sur early adopters
+   197→- **Rétention J30**: ≥ 40% (difficile dans cette catégorie d'apps)
+   198→
+   199→#### À 12 mois
+   200→- **10 000 utilisateurs actifs**
+   201→- **Conversion premium**: 5% des utilisateurs sur plan payant
+   202→- **Recommandation pro**: ≥50 psys/psychiatres recommandent l'app
+   203→
+   204→### Key Performance Indicators
+   205→
+   206→| KPI | Cible | Mesure |
+   207→|-----|-------|--------|
+   208→| **DAU/MAU** | ≥ 30% | Ratio utilisateurs actifs quotidiens/mensuels |
+   209→| **Rétention J7** | ≥ 60% | % utilisateurs revenus après 7 jours |
+   210→| **Rétention J30** | ≥ 40% | % utilisateurs revenus après 30 jours |
+   211→| **Check-ins/semaine** | ≥ 4 | Moyenne par utilisateur actif |
+   212→| **Time-to-value** | < 14 jours | Temps jusqu'au premier "aha moment" |
+   213→| **PDF exports/mois** | ≥ 1 par user actif | Preuve d'utilisation clinique |
+   214→| **NPS** | ≥ 40 | Net Promoter Score |
+   215→
+   216→### North Star Metric
+   217→
+   218→> **"Consultations préparées"** = Nombre d'utilisateurs ayant consulté leurs données ou généré un PDF dans les 48h précédant un RDV médical noté dans l'app.
+   219→
+   220→Cette métrique capture la valeur core: Moodday aide à préparer les consultations.
+   221→

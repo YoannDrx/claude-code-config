@@ -1,0 +1,137 @@
+     1→"use client";
+     2→
+     3→import React from "react";
+     4→import Image from "next/image";
+     5→
+     6→interface LogoItem {
+     7→  src: string;
+     8→  alt: string;
+     9→  size?: "normal" | "large";
+    10→}
+    11→
+    12→interface MarqueeProps {
+    13→  items?: string[];
+    14→  logos?: LogoItem[];
+    15→  direction?: 1 | -1;
+    16→  speed?: number;
+    17→  title?: string;
+    18→}
+    19→
+    20→export const Marquee: React.FC<MarqueeProps> = ({ items, logos, direction = 1, speed = 30, title }) => {
+    21→  // If logos are provided, use logo mode
+    22→  if (logos && logos.length > 0) {
+    23→    return (
+    24→      <div className="relative flex overflow-hidden border-y-4 border-neo-border bg-neo-surface py-6 select-none">
+    25→        {/* Stamp Title */}
+    26→        {title && (
+    27→          <div className="absolute -top-5 md:-top-6 left-4 md:left-8 z-10">
+    28→            <span
+    29→              className="inline-block px-3 md:px-4 py-1.5 md:py-2 bg-neo-accent text-neo-text-inverse
+    30→                border-4 border-neo-text shadow-[4px_4px_0px_0px_var(--neo-text)] md:shadow-[6px_6px_0px_0px_var(--neo-text)]
+    31→                font-black text-xs md:text-sm uppercase tracking-wider
+    32→                transform -rotate-3"
+    33→            >
+    34→              {title}
+    35→            </span>
+    36→          </div>
+    37→        )}
+    38→        <div
+    39→          className="flex animate-marquee"
+    40→          style={{
+    41→            animationDirection: direction === 1 ? "normal" : "reverse",
+    42→            animationDuration: `${speed}s`,
+    43→          }}
+    44→        >
+    45→          {/* First set of logos */}
+    46→          {logos.map((logo, index) => (
+    47→            <span key={`first-${logo.alt}-${index}`} className="flex items-center shrink-0">
+    48→              <span className="mx-8 md:mx-16 flex items-center justify-center">
+    49→                <Image
+    50→                  src={logo.src}
+    51→                  alt={logo.alt}
+    52→                  width={logo.size === "large" ? 350 : 200}
+    53→                  height={logo.size === "large" ? 175 : 100}
+    54→                  className={`w-auto object-contain ${
+    55→                    logo.size === "large" ? "h-28 md:h-44" : "h-16 md:h-24"
+    56→                  }`}
+    57→                  style={{ maxWidth: logo.size === "large" ? "350px" : "220px" }}
+    58→                />
+    59→              </span>
+    60→              <span className="w-2 h-2 md:w-3 md:h-3 bg-neo-accent block rounded-full shrink-0" />
+    61→            </span>
+    62→          ))}
+    63→        </div>
+    64→        {/* Duplicate for seamless loop */}
+    65→        <div
+    66→          className="flex animate-marquee"
+    67→          aria-hidden="true"
+    68→          style={{
+    69→            animationDirection: direction === 1 ? "normal" : "reverse",
+    70→            animationDuration: `${speed}s`,
+    71→          }}
+    72→        >
+    73→          {logos.map((logo, index) => (
+    74→            <span key={`second-${logo.alt}-${index}`} className="flex items-center shrink-0">
+    75→              <span className="mx-8 md:mx-16 flex items-center justify-center">
+    76→                <Image
+    77→                  src={logo.src}
+    78→                  alt={logo.alt}
+    79→                  width={logo.size === "large" ? 350 : 200}
+    80→                  height={logo.size === "large" ? 175 : 100}
+    81→                  className={`w-auto object-contain ${
+    82→                    logo.size === "large" ? "h-28 md:h-44" : "h-16 md:h-24"
+    83→                  }`}
+    84→                  style={{ maxWidth: logo.size === "large" ? "350px" : "220px" }}
+    85→                />
+    86→              </span>
+    87→              <span className="w-2 h-2 md:w-3 md:h-3 bg-neo-accent block rounded-full shrink-0" />
+    88→            </span>
+    89→          ))}
+    90→        </div>
+    91→      </div>
+    92→    );
+    93→  }
+    94→
+    95→  // Original text mode
+    96→  const displayItems = items?.length ? items : [""];
+    97→
+    98→  return (
+    99→    <div className="relative flex overflow-hidden border-y-4 border-neo-border bg-neo-surface py-4 select-none">
+   100→      <div
+   101→        className="flex animate-marquee font-black text-4xl md:text-8xl uppercase tracking-tighter text-neo-text"
+   102→        style={{
+   103→          animationDirection: direction === 1 ? "normal" : "reverse",
+   104→          animationDuration: `${speed}s`,
+   105→        }}
+   106→      >
+   107→        {displayItems.map((item, index) => (
+   108→          <span key={`first-${item}-${index}`} className="flex items-center shrink-0">
+   109→            <span className="mx-4 md:mx-8 whitespace-nowrap">{item}</span>
+   110→            <span className="w-4 h-4 md:w-8 md:h-8 bg-neo-accent block rounded-full shrink-0" />
+   111→          </span>
+   112→        ))}
+   113→      </div>
+   114→      {/* Duplicate for seamless loop */}
+   115→      <div
+   116→        className="flex animate-marquee font-black text-4xl md:text-8xl uppercase tracking-tighter text-neo-text"
+   117→        aria-hidden="true"
+   118→        style={{
+   119→          animationDirection: direction === 1 ? "normal" : "reverse",
+   120→          animationDuration: `${speed}s`,
+   121→        }}
+   122→      >
+   123→        {displayItems.map((item, index) => (
+   124→          <span key={`second-${item}-${index}`} className="flex items-center shrink-0">
+   125→            <span className="mx-4 md:mx-8 whitespace-nowrap">{item}</span>
+   126→            <span className="w-4 h-4 md:w-8 md:h-8 bg-neo-accent block rounded-full shrink-0" />
+   127→          </span>
+   128→        ))}
+   129→      </div>
+   130→    </div>
+   131→  );
+   132→};
+   133→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

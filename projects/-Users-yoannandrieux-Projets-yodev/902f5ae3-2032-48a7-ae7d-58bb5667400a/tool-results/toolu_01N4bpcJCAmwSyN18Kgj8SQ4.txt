@@ -1,0 +1,1340 @@
+     1→{
+     2→  "Common": {
+     3→    "tagline": "Product studio web / mobile / AI",
+     4→    "cta": "Book a call",
+     5→    "menu": "Menu",
+     6→    "available": "Available",
+     7→    "readyToStart": "Kickoff within 2 weeks",
+     8→    "menuOpen": "Open menu",
+     9→    "menuClose": "Close menu",
+    10→    "watchVideo": "Watch video"
+    11→  },
+    12→  "Nav": {
+    13→    "services": "Services",
+    14→    "ai": "AI",
+    15→    "expertise": "Expertise",
+    16→    "work": "Work",
+    17→    "offers": "Offers",
+    18→    "method": "Method",
+    19→    "about": "About",
+    20→    "team": "Team",
+    21→    "contact": "Contact",
+    22→    "blog": "Blog",
+    23→    "careers": "Jobs"
+    24→  },
+    25→  "Styles": {
+    26→    "pulse": "Pulse",
+    27→    "atelier": "Atelier",
+    28→    "forge": "Forge"
+    29→  },
+    30→  "Footer": {
+    31→    "subtitle": "Web/mobile & AI studio. Fast MVPs, reliable products, full ownership.",
+    32→    "company": "Studio",
+    33→    "resourcesTitle": "Resources",
+    34→    "resources": {
+    35→      "offers": "Offers",
+    36→      "legal": "Legal Notice",
+    37→      "privacy": "Privacy"
+    38→    },
+    39→    "services": {
+    40→      "web": "Web & SaaS",
+    41→      "mobile": "Mobile iOS/Android",
+    42→      "brand": "Brand & conversion",
+    43→      "ai": "AI & automations"
+    44→    },
+    45→    "newsletter": {
+    46→      "title": "Get the playbook",
+    47→      "placeholder": "Your email",
+    48→      "submit": "Subscribe",
+    49→      "success": "Thanks! We'll send the next insights your way."
+    50→    },
+    51→    "email": "hello@yodev.fr",
+    52→    "offices": [
+    53→      {
+    54→        "city": "Paris",
+    55→        "address": "Remote-first",
+    56→        "zip": "",
+    57→        "country": "France"
+    58→      }
+    59→    ],
+    60→    "rights": "© 2025 Yodev. All rights reserved."
+    61→  },
+    62→  "Home": {
+    63→    "hero": {
+    64→      "eyebrow": "PRODUCT STUDIO FOR NO-CODE & AI FOUNDERS",
+    65→      "title": "Launch fast with AI. Ship a production-ready product.",
+    66→      "subtitle": "Yodev builds MVPs that convert, then industrializes them: architecture, security, performance, tracking.",
+    67→      "primary": "Book a 20 min call",
+    68→      "secondary": "View work",
+    69→      "chips": [
+    70→        "MVP & no-code",
+    71→        "Web & SaaS",
+    72→        "Mobile apps",
+    73→        "AI & automations",
+    74→        "Brand & conversion",
+    75→        "Tech & security"
+    76→      ],
+    77→      "proof": [
+    78→        "MVP in 2 weeks",
+    79→        "Exit plan no-code -> code",
+    80→        "Perf/SEO/Tracking included"
+    81→      ],
+    82→      "signals": {
+    83→        "studioEyebrow": "Capacity",
+    84→        "studioBody": "2 projects in parallel. Kickoff within 2 weeks.",
+    85→        "outputEyebrow": "Engagement",
+    86→        "outputBody": "You talk to the builders, not sales. Shared Slack, clear reporting."
+    87→      }
+    88→    },
+    89→    "story": {
+    90→      "eyebrow": "Positioning",
+    91→      "title": "No-code for speed, engineering for durability.",
+    92→      "subtitle": "We use AI/no-code to accelerate, then secure the product trajectory.",
+    93→      "body": [
+    94→        "AI/no-code builders are perfect to validate an idea fast. Limits come next: performance, integrations, security, costs.",
+    95→        "We step in for the next stage: architecture, quality, measurement, ownership. You keep control and margin."
+    96→      ],
+    97→      "highlights": [
+    98→        {
+    99→          "title": "Fast launch",
+   100→          "description": "MVP in 2 weeks with tracking and conversion."
+   101→        },
+   102→        {
+   103→          "title": "Production path",
+   104→          "description": "Architecture + exit plan to avoid lock-in."
+   105→        },
+   106→        {
+   107→          "title": "Measurable product",
+   108→          "description": "Perf, SEO, analytics, monitoring, tests."
+   109→        }
+   110→      ]
+   111→    },
+   112→    "forWho": {
+   113→      "eyebrow": "For who",
+   114→      "title": "We're a great fit if you...",
+   115→      "subtitle": "Founders who want speed without losing control.",
+   116→      "forLabel": "For you",
+   117→      "notForLabel": "Not for you",
+   118→      "for": [
+   119→        "You want a solid MVP fast to validate.",
+   120→        "Your no-code prototype is hitting limits (perf, integrations, data).",
+   121→        "You need a branded product that converts.",
+   122→        "You want to migrate/hybridize without debt."
+   123→      ],
+   124→      "notFor": [
+   125→        "You're looking for a €300 website.",
+   126→        "Scope is unclear or there's no decision-maker.",
+   127→        "You want to stay locked in a builder."
+   128→      ]
+   129→    },
+   130→    "paths": {
+   131→      "eyebrow": "Choose your path",
+   132→      "title": "3 entry points, one trajectory.",
+   133→      "subtitle": "We adapt to your stage and budget.",
+   134→      "items": [
+   135→        {
+   136→          "badge": "Starting from scratch",
+   137→          "title": "Launch Sprint",
+   138→          "description": "MVP web in 2 weeks: landing, onboarding, tracking, payment if needed.",
+   139→          "cta": "See Launch Sprint",
+   140→          "href": "/offers"
+   141→        },
+   142→        {
+   143→          "badge": "I have a no-code MVP",
+   144→          "title": "Audit / Rescue",
+   145→          "description": "1 week to decide: keep, hybridize or migrate. Risks + action plan.",
+   146→          "cta": "See the audit",
+   147→          "href": "/offers"
+   148→        },
+   149→        {
+   150→          "badge": "I'm scaling",
+   151→          "title": "Hybrid Build + Care",
+   152→          "description": "Keep no-code speed, code what matters: data, auth, API, perf.",
+   153→          "cta": "Talk scale",
+   154→          "href": "/contact"
+   155→        }
+   156→      ]
+   157→    },
+   158→    "expertise": {
+   159→      "eyebrow": "Services",
+   160→      "title": "Design, web, mobile, AI — the product combo.",
+   161→      "subtitle": "Everything you need to turn an MVP into a product.",
+   162→      "items": [
+   163→        {
+   164→          "title": "Web & SaaS",
+   165→          "description": "Fast sites, web apps, dashboards.",
+   166→          "bullets": ["Next.js / React", "SEO & performance", "Analytics & tracking", "Admin & back-office"]
+   167→        },
+   168→        {
+   169→          "title": "Mobile iOS/Android",
+   170→          "description": "Reliable React Native apps built for usage.",
+   171→          "bullets": ["React Native", "Mobile-first UX", "Auth & roles", "Store publishing"]
+   172→        },
+   173→        {
+   174→          "title": "Brand & conversion",
+   175→          "description": "Art direction, UI, copy, and flows that sell.",
+   176→          "bullets": ["Design system", "Landing & onboarding", "Conversion optimization", "Copywriting"]
+   177→        },
+   178→        {
+   179→          "title": "AI & automations",
+   180→          "description": "Agents, workflows, extraction, RAG.",
+   181→          "bullets": ["Automations", "Docs RAG", "Connectors", "Quality & monitoring"]
+   182→        }
+   183→      ]
+   184→    },
+   185→    "cases": {
+   186→      "eyebrow": "Work",
+   187→      "title": "Concrete projects, in production.",
+   188→      "subtitle": "No vague promises: shipped and maintained products.",
+   189→      "items": [
+   190→        {
+   191→          "title": "KLESIA",
+   192→          "type": "Mobile enterprise",
+   193→          "summary": "White-label retirement & benefits app, multi-tenant architecture.",
+   194→          "result": "100K+ downloads, 12 envs, 59 UI components.",
+   195→          "image": "/images/projects/klesia-landing.png",
+   196→          "href": "/work/klesia-mobile"
+   197→        },
+   198→        {
+   199→          "title": "Mail Certificate",
+   200→          "type": "B2B SaaS",
+   201→          "summary": "Certified digital mail SaaS with 2FA and payments.",
+   202→          "result": "2FA + Stripe + full back-office.",
+   203→          "image": "/images/projects/mail-certificate-landing.jpg",
+   204→          "href": "/work/mail-certificate"
+   205→        },
+   206→        {
+   207→          "title": "EggscuseMe",
+   208→          "type": "MVP & AI",
+   209→          "summary": "PWA that scans laying dates with AI.",
+   210→          "result": "PWA + Gemini OCR + push notifications.",
+   211→          "image": "/images/projects/eggscuseme-landing.jpg",
+   212→          "href": "/work/eggscuseme"
+   213→        },
+   214→        {
+   215→          "title": "MyCryptoPilot",
+   216→          "type": "Real-time SaaS",
+   217→          "summary": "Social trading platform with real-time signals and crypto payments.",
+   218→          "result": "Binance/Bybit APIs + 24/7 Discord bot.",
+   219→          "image": "/images/projects/mycryptopilot-landing.jpg",
+   220→          "href": "https://mycryptopilot.app/"
+   221→        },
+   222→        {
+   223→          "title": "Weil & Associés",
+   224→          "type": "Corporate",
+   225→          "summary": "Law firm website with back office.",
+   226→          "result": "Legal SEO + content management.",
+   227→          "image": "/images/projects/weil-paris-landing.jpg",
+   228→          "href": "https://www.weil-paris.fr/"
+   229→        },
+   230→        {
+   231→          "title": "Loïc Ghanem",
+   232→          "type": "Premium portfolio",
+   233→          "summary": "Immersive portfolio with audio, 3D and maps.",
+   234→          "result": "Three.js + audio player + PDF export.",
+   235→          "image": "/images/projects/loic-ghanem-landing.jpg",
+   236→          "href": "https://www.loic-ghanem.com/"
+   237→        }
+   238→      ],
+   239→      "cta": "View all work"
+   240→    },
+   241→    "services": {
+   242→      "title": "What Yodev builds for you",
+   243→      "subtitle": "Clear pillars, activated based on your stage.",
+   244→      "items": [
+   245→        {
+   246→          "id": "web",
+   247→          "title": "Web & SaaS",
+   248→          "description": "Landing pages, dashboards, web apps.",
+   249→          "bullets": ["Next.js / React", "SEO & performance", "Analytics & tracking", "Back-office & admin"]
+   250→        },
+   251→        {
+   252→          "id": "mobile",
+   253→          "title": "Mobile iOS/Android",
+   254→          "description": "Reliable apps, fast to iterate.",
+   255→          "bullets": ["React Native", "Mobile-first UX", "Auth & roles", "Store publishing"]
+   256→        },
+   257→        {
+   258→          "id": "brand",
+   259→          "title": "Brand & conversion",
+   260→          "description": "Art direction, UI, copy, flows.",
+   261→          "bullets": ["Design system", "Landing & onboarding", "Conversion optimization", "Copywriting"]
+   262→        },
+   263→        {
+   264→          "id": "ai",
+   265→          "title": "AI & automations",
+   266→          "description": "Connected agents and workflows.",
+   267→          "bullets": ["Docs RAG", "Automations", "Connectors", "Monitoring & quality"]
+   268→        }
+   269→      ]
+   270→    },
+   271→    "method": {
+   272→      "eyebrow": "Method",
+   273→      "title": "From prototype to product, without debt.",
+   274→      "subtitle": "Clear framing, fast execution, measured iterations.",
+   275→      "steps": [
+   276→        {
+   277→          "title": "Framing & goals",
+   278→          "description": "KPIs, usage, scope, no-code exit plan."
+   279→        },
+   280→        {
+   281→          "title": "Design & architecture",
+   282→          "description": "Wireframes, UI, stack, integrations."
+   283→        },
+   284→        {
+   285→          "title": "Build & quality",
+   286→          "description": "Dev, tests, performance, security, analytics."
+   287→        },
+   288→        {
+   289→          "title": "Launch & iterations",
+   290→          "description": "Release, monitoring, roadmap."
+   291→        }
+   292→      ]
+   293→    },
+   294→    "offers": {
+   295→      "eyebrow": "Offers",
+   296→      "title": "Clear packs. A fast MVP. A solid product after.",
+   297→      "subtitle": "We start with no-code/AI when it makes sense, then hybridize or migrate when it pays off.",
+   298→      "items": [
+   299→        {
+   300→          "name": "Mini Diagnostic",
+   301→          "description": "Clarify your MVP before investing",
+   302→          "price": "From €490",
+   303→          "duration": "90 min",
+   304→          "idealFor": "Validate an idea fast",
+   305→          "bullets": [
+   306→            "Quick audit + recommendations",
+   307→            "Risk checklist",
+   308→            "30-day roadmap",
+   309→            "Product & tech questions",
+   310→            "Actionable recap"
+   311→          ],
+   312→          "cta": "Book the diagnostic",
+   313→          "ctaHref": "/contact"
+   314→        },
+   315→        {
+   316→          "name": "No-code Audit / Rescue",
+   317→          "description": "Decide: keep, hybridize or migrate",
+   318→          "price": "€1,490-€2,490",
+   319→          "duration": "1 week",
+   320→          "idealFor": "No-code MVP hitting limits",
+   321→          "bullets": [
+   322→            "Perf/security/lock-in audit",
+   323→            "Integration & data review",
+   324→            "Action plan + backlog",
+   325→            "Clear recommendation",
+   326→            "Budget & timing estimate"
+   327→          ],
+   328→          "cta": "Start the audit",
+   329→          "ctaHref": "/contact"
+   330→        },
+   331→        {
+   332→          "name": "Launch Sprint",
+   333→          "description": "Launch an MVP that converts",
+   334→          "price": "€2,990-€4,990",
+   335→          "duration": "2 weeks",
+   336→          "idealFor": "Validate an idea fast",
+   337→          "badge": "Popular",
+   338→          "featured": true,
+   339→          "bullets": [
+   340→            "Landing + onboarding",
+   341→            "Tracking + analytics",
+   342→            "Payment (optional)",
+   343→            "Scale-ready stack",
+   344→            "Launch & handover"
+   345→          ],
+   346→          "cta": "Start the sprint",
+   347→          "ctaHref": "/contact"
+   348→        },
+   349→        {
+   350→          "name": "Hybrid Build",
+   351→          "description": "Stabilize and prepare to scale",
+   352→          "price": "€7,900-€19,900",
+   353→          "duration": "4-8 weeks",
+   354→          "idealFor": "Product gaining traction",
+   355→          "bullets": [
+   356→            "Auth, roles, data & API",
+   357→            "Perf, security, tests",
+   358→            "Observability & monitoring",
+   359→            "Progressive migration",
+   360→            "Documentation + ownership"
+   361→          ],
+   362→          "cta": "Discuss hybrid",
+   363→          "ctaHref": "/contact"
+   364→        },
+   365→        {
+   366→          "name": "Care",
+   367→          "description": "Continuous improvements & support",
+   368→          "price": "€690-€2,490 / month",
+   369→          "duration": "Monthly",
+   370→          "idealFor": "Regular iterations",
+   371→          "bullets": [
+   372→            "Product iterations",
+   373→            "Monitoring & alerts",
+   374→            "SEO & performance",
+   375→            "Support & bugfix",
+   376→            "Prioritized backlog"
+   377→          ],
+   378→          "cta": "Set up Care",
+   379→          "ctaHref": "/contact"
+   380→        }
+   381→      ]
+   382→    },
+   383→    "faq": {
+   384→      "eyebrow": "FAQ",
+   385→      "title": "What you want to know before starting",
+   386→      "subtitle": "Clear answers, no jargon.",
+   387→      "items": [
+   388→        {
+   389→          "question": "Do you work with Bubble/Lovable?",
+   390→          "answer": "Yes. We can audit, hybridize or migrate. The key is the product trajectory and ownership."
+   391→        },
+   392→        {
+   393→          "question": "When should we migrate to code?",
+   394→          "answer": "When performance, integrations, costs or UX become limiting. We can hybridize step by step."
+   395→        },
+   396→        {
+   397→          "question": "Who owns the code and data?",
+   398→          "answer": "You do. 100%. Source, docs and access are yours."
+   399→        },
+   400→        {
+   401→          "question": "Realistic timelines?",
+   402→          "answer": "MVP in 2 weeks. Hybrid build in 4-8 weeks depending on scope."
+   403→        },
+   404→        {
+   405→          "question": "Do you handle design and branding?",
+   406→          "answer": "Yes. UI, art direction, design system and copy that converts."
+   407→        },
+   408→        {
+   409→          "question": "Is SEO/analytics included?",
+   410→          "answer": "Yes. Tracking, events and dashboards aligned with your goals."
+   411→        },
+   412→        {
+   413→          "question": "Maintenance and evolution?",
+   414→          "answer": "Monthly care or ad-hoc work. We stay available."
+   415→        },
+   416→        {
+   417→          "question": "How do we start?",
+   418→          "answer": "A 20 min call or a mini diagnostic. Then we choose the right path."
+   419→        }
+   420→      ]
+   421→    },
+   422→    "cta": {
+   423→      "eyebrow": "Contact",
+   424→      "title": "Let's review in 20 minutes.",
+   425→      "subtitle": "You'll leave with a clear plan, even if we don't work together.",
+   426→      "button": "Book a call"
+   427→    }
+   428→  },
+   429→  "AiPage": {
+   430→    "eyebrow": "30+ AI PROJECTS IN PRODUCTION",
+   431→    "title": "AI that actually does the job",
+   432→    "subtitle": "No eternal POC. AI solutions in prod generating ROI. GPT-4, Claude, Gemini... We master the models, you get the results.",
+   433→    "cta": "Talk AI with an expert",
+   434→    "servicesEyebrow": "What we do",
+   435→    "servicesTitle": "From audit to deployment",
+   436→    "services": [
+   437→      {
+   438→        "title": "Data & AI audit",
+   439→        "description": "We analyze your processes, data, pain points. We identify high-ROI AI quick wins."
+   440→      },
+   441→      {
+   442→        "title": "AI applications",
+   443→        "description": "Chatbots, assistants, automation... AI apps that integrate with your stack and work."
+   444→      },
+   445→      {
+   446→        "title": "Custom models",
+   447→        "description": "Fine-tuning, RAG, predictive systems. Models trained on YOUR data."
+   448→      }
+   449→    ],
+   450→    "teamEyebrow": "The AI team",
+   451→    "teamTitle": "AI engineers. Not PowerPoint consultants.",
+   452→    "teamBody": "10 engineers specialized in Data & AI. Polytechnique, Mines, ENS. They've shipped 30+ AI projects in production.",
+   453→    "teamStats": [
+   454→      { "value": "30+", "label": "AI projects in prod" },
+   455→      { "value": "10", "label": "dedicated AI engineers" },
+   456→      { "value": "400K", "label": "content generated/year for 1 client" }
+   457→    ],
+   458→    "expertiseEyebrow": "Specialties",
+   459→    "expertiseTitle": "What we master",
+   460→    "expertise": {
+   461→      "items": [
+   462→        {
+   463→          "title": "Generative AI",
+   464→          "description": "GPT-4, Claude, Gemini, Mistral. Content generation, assistants, task automation.",
+   465→          "result": "400K sheets/year for Showroomprivé"
+   466→        },
+   467→        {
+   468→          "title": "Predictive systems",
+   469→          "description": "Demand forecasting, scoring, anomaly detection. Models that anticipate.",
+   470→          "result": "-30% food waste for Turboself"
+   471→        },
+   472→        {
+   473→          "title": "Computer Vision",
+   474→          "description": "OCR, image analysis, video. Automatic information extraction.",
+   475→          "result": "x10 faster processing"
+   476→        },
+   477→        {
+   478→          "title": "Data Engineering",
+   479→          "description": "Pipelines, data lakes, MLOps. The infra that runs your models.",
+   480→          "result": "99.9% availability"
+   481→        }
+   482→      ]
+   483→    },
+   484→    "casesEyebrow": "In production",
+   485→    "casesTitle": "AI projects running. Now.",
+   486→    "cases": [
+   487→      {
+   488→        "name": "Showroomprivé",
+   489→        "description": "400K product sheets generated automatically per year with multimodal LLMs.",
+   490→        "result": "+400K sheets/year"
+   491→      },
+   492→      {
+   493→        "name": "Turboself",
+   494→        "description": "Canteen attendance prediction. Less waste, better management.",
+   495→        "result": "-30% food waste"
+   496→      },
+   497→      {
+   498→        "name": "Ministry of Armed Forces",
+   499→        "description": "Automatic extraction of relational graphs from complex documents.",
+   500→        "result": "Classified project"
+   501→      },
+   502→      {
+   503→        "name": "Okantis",
+   504→        "description": "Intelligent data warehouse with LLM for healthcare. Enhanced search and analysis.",
+   505→        "result": "x5 analysis speed"
+   506→      }
+   507→    ],
+   508→    "reasonsEyebrow": "Why us",
+   509→    "reasonsTitle": "What makes us different",
+   510→    "reasons": [
+   511→      "30+ AI projects in production (not slides).",
+   512→      "We code. We deploy. We maintain.",
+   513→      "Measurable ROI from the POC.",
+   514→      "Continuous monitoring of latest models."
+   515→    ],
+   516→    "ctaEyebrow": "Ready?",
+   517→    "ctaTitle": "AI project in mind?",
+   518→    "ctaSubtitle": "From idea to prod in weeks. Start with a 30-min call?",
+   519→    "ctaButton": "Talk AI"
+   520→  },
+   521→  "ExpertisePage": {
+   522→    "title": "Expertise",
+   523→    "subtitle": "All the skills to build, launch and scale your products.",
+   524→    "eyebrow": "Know-how",
+   525→    "sectionTitle": "Our domains",
+   526→    "sectionSubtitle": "From product to infra, from design to AI.",
+   527→    "categories": [
+   528→      {
+   529→        "title": "Custom development",
+   530→        "items": [
+   531→          "Mobile applications",
+   532→          "Custom business software",
+   533→          "E-commerce sites",
+   534→          "SaaS applications"
+   535→        ]
+   536→      },
+   537→      {
+   538→        "title": "Data & AI",
+   539→        "items": [
+   540→          "Generative AI",
+   541→          "Computer Vision",
+   542→          "Predictive systems",
+   543→          "Data Engineering"
+   544→        ]
+   545→      },
+   546→      {
+   547→        "title": "Technical expertise",
+   548→        "items": [
+   549→          "React / React Native",
+   550→          "Node.js / TypeScript",
+   551→          "Angular",
+   552→          "Python",
+   553→          "PHP",
+   554→          "Flutter",
+   555→          ".NET",
+   556→          "Native mobile development"
+   557→        ]
+   558→      },
+   559→      {
+   560→        "title": "Product strategy",
+   561→        "items": [
+   562→          "Product Discovery",
+   563→          "UX Research",
+   564→          "UX/UI Design"
+   565→        ]
+   566→      },
+   567→      {
+   568→        "title": "Advisory & transformation",
+   569→        "items": [
+   570→          "Cloud & DevOps",
+   571→          "Cybersecurity",
+   572→          "Digital transformation"
+   573→        ]
+   574→      }
+   575→    ],
+   576→    "ctaEyebrow": "Contact",
+   577→    "ctaTitle": "Have a specific need?",
+   578→    "ctaSubtitle": "Let's talk and frame the best approach.",
+   579→    "ctaButton": "Contact us"
+   580→  },
+   581→  "TeamPage": {
+   582→    "eyebrow": "Studio",
+   583→    "title": "A small team, full involvement",
+   584→    "subtitle": "Senior core + expert network as needed.",
+   585→    "stats": [
+   586→      { "value": "3+ years", "label": "dev experience" },
+   587→      { "value": "15+", "label": "projects delivered" },
+   588→      { "value": "100%", "label": "senior" },
+   589→      { "value": "1", "label": "point of contact" }
+   590→    ],
+   591→    "valuesEyebrow": "How we work",
+   592→    "valuesTitle": "What really matters",
+   593→    "values": [
+   594→      {
+   595→        "title": "Direct with builders",
+   596→        "description": "No middlemen. You talk to the people shipping."
+   597→      },
+   598→      {
+   599→        "title": "Scoped and clear",
+   600→        "description": "Objectives, priorities, metrics. No drift."
+   601→      },
+   602→      {
+   603→        "title": "Product quality",
+   604→        "description": "Performance, security, analytics. A product that holds."
+   605→      },
+   606→      {
+   607→        "title": "Transparency",
+   608→        "description": "Progress, budget, decisions. Everything is clear."
+   609→      },
+   610→      {
+   611→        "title": "Fast iterations",
+   612→        "description": "Ship, measure, adjust."
+   613→      },
+   614→      {
+   615→        "title": "Expert network",
+   616→        "description": "Design, data, infra: activated when needed."
+   617→      }
+   618→    ],
+   619→    "ctaEyebrow": "Contact",
+   620→    "ctaTitle": "Let's talk about your project",
+   621→    "ctaSubtitle": "A 20 min call to scope and estimate.",
+   622→    "ctaButton": "Book a call"
+   623→  },
+   624→  "ServicesPage": {
+   625→    "eyebrow": "Services",
+   626→    "title": "Everything you need to move from MVP to product",
+   627→    "subtitle": "Web, mobile, brand, AI. We assemble the right mix."
+   628→  },
+   629→  "WorkPage": {
+   630→    "eyebrow": "Work",
+   631→    "title": "Concrete projects, measurable results.",
+   632→    "subtitle": "MVPs, production products, migrations, redesigns."
+   633→  },
+   634→  "OffersPage": {
+   635→    "eyebrow": "Offers",
+   636→    "title": "Choose the format that fits your stage.",
+   637→    "subtitle": "Clear packs, controlled budget."
+   638→  },
+   639→  "MethodPage": {
+   640→    "eyebrow": "Method",
+   641→    "title": "Fast execution, no debt.",
+   642→    "subtitle": "Framing, build, measurement. Fully documented and transferable.",
+   643→    "steps": [
+   644→      {
+   645→        "number": "00",
+   646→        "title": "The brief that changes everything",
+   647→        "duration": "1-2 days",
+   648→        "description": "Before writing a single line of code, we spend 2-4h understanding your business. Who are your users? What KPIs? What's been tried before?",
+   649→        "deliverable": "Scope document validated by you"
+   650→      },
+   651→      {
+   652→        "number": "01",
+   653→        "title": "Usage-driven design",
+   654→        "duration": "1-2 weeks",
+   655→        "description": "We don't design to look pretty. We design so your users accomplish their tasks. Wireframes, prototypes, testing if needed.",
+   656→        "deliverable": "Validated Figma mockups"
+   657→      },
+   658→      {
+   659→        "number": "02",
+   660→        "title": "Dev in sprints",
+   661→        "duration": "4-6 weeks",
+   662→        "description": "Every week, you see progress in a live demo. Every sprint delivers testable features. You can change your mind along the way.",
+   663→        "deliverable": "Functional app, weekly increments"
+   664→      },
+   665→      {
+   666→        "number": "03",
+   667→        "title": "Launch & iteration",
+   668→        "duration": "1 week + ongoing",
+   669→        "description": "Production deployment, monitoring, first user feedback. We stay available for post-launch adjustments.",
+   670→        "deliverable": "App in prod + 30 days support included"
+   671→      }
+   672→    ],
+   673→    "commitments": {
+   674→      "title": "Our concrete commitments",
+   675→      "items": [
+   676→        "First usable demo within 2 weeks max",
+   677→        "Slack response in under 4h (business days)",
+   678→        "Budget respected ±10% (or we warn you first)",
+   679→        "Documented and transferable code"
+   680→      ]
+   681→    }
+   682→  },
+   683→  "AboutPage": {
+   684→    "eyebrow": "About",
+   685→    "title": "A lean, product-oriented studio",
+   686→    "subtitle": "A senior core working directly with you.",
+   687→    "storyTitle": "Why Yodev",
+   688→    "storyBody": "I created Yodev to help founders move from idea to product without getting stuck in tech debt.\n\nAfter years in management and then web/mobile development, I kept seeing the same blockers: fast MVPs that are fragile, lock-in, and lack of measurement.\n\nYodev is a lean studio: a senior core, plus an expert network activated as needed (design, data, infra).",
+   689→    "valuesEyebrow": "What drives us",
+   690→    "valuesTitle": "Our values",
+   691→    "values": [
+   692→      {
+   693→        "title": "Clarity before speed",
+   694→        "description": "We frame scope, KPIs, and trajectory."
+   695→      },
+   696→      {
+   697→        "title": "Full ownership",
+   698→        "description": "Code, data, documentation: you keep control."
+   699→      },
+   700→      {
+   701→        "title": "Pragmatic execution",
+   702→        "description": "We ship fast, measure, iterate."
+   703→      }
+   704→    ],
+   705→    "ctaEyebrow": "Ready?",
+   706→    "ctaTitle": "Let's talk about your project",
+   707→    "ctaSubtitle": "30 minutes to understand your needs. No commitment.",
+   708→    "ctaButton": "Book a call"
+   709→  },
+   710→  "ContactPage": {
+   711→    "eyebrow": "Contact",
+   712→    "title": "Let's review in 20 minutes.",
+   713→    "subtitle": "Tell us where you are, we'll reply within 24-48h.",
+   714→    "info": [
+   715→      "Reply within 24-48 business hours",
+   716→      "Mini diagnostic available",
+   717→      "Clear quote within 72h"
+   718→    ],
+   719→    "emailTitle": "By email",
+   720→    "email": "hello@yodev.fr",
+   721→    "emailCta": "Write to us",
+   722→    "calendarTitle": "By video call",
+   723→    "calendarCta": "Book a slot",
+   724→    "form": {
+   725→      "nameLabel": "Your name",
+   726→      "emailLabel": "Work email",
+   727→      "budgetLabel": "Approximate budget (optional)",
+   728→      "messageLabel": "In one sentence, what's the project?",
+   729→      "submit": "Send",
+   730→      "placeholders": {
+   731→        "name": "Alex Smith",
+   732→        "email": "alex@company.com",
+   733→        "budget": "Select a range",
+   734→        "message": "We want to launch a mobile app for... / We're looking to automate... / We need a team for..."
+   735→      },
+   736→      "budgetOptions": [
+   737→        "< €10K",
+   738→        "€10-25K",
+   739→        "€25-50K",
+   740→        "€50-100K",
+   741→        "> €100K",
+   742→        "I don't know yet"
+   743→      ]
+   744→    }
+   745→  },
+   746→  "Services": {
+   747→    "backButton": "Back to services",
+   748→    "cta": "Start a project",
+   749→    "viewWork": "View our work",
+   750→    "featuresEyebrow": "What we offer",
+   751→    "featuresTitle": "Features",
+   752→    "benefitsEyebrow": "Why choose us",
+   753→    "benefitsTitle": "Benefits",
+   754→    "ctaTitle": "Ready to start?",
+   755→    "ctaSubtitle": "Let's discuss your project and see how we can help.",
+   756→    "ctaButton": "Contact us",
+   757→    "web": {
+   758→      "title": "Websites",
+   759→      "description": "High-performance, conversion-optimized websites from marketing sites to complex web applications.",
+   760→      "features": [
+   761→        "Custom responsive design",
+   762→        "Built-in SEO optimization",
+   763→        "Performance and Core Web Vitals",
+   764→        "Headless or custom CMS",
+   765→        "Analytics and tracking integration"
+   766→      ],
+   767→      "benefits": [
+   768→        "A site that converts visitors",
+   769→        "Better Google visibility",
+   770→        "Optimal user experience",
+   771→        "Content autonomy"
+   772→      ]
+   773→    },
+   774→    "mobile": {
+   775→      "title": "Mobile Apps",
+   776→      "description": "Native or cross-platform iOS and Android apps designed for user engagement.",
+   777→      "features": [
+   778→        "React Native / Flutter",
+   779→        "Native iOS & Android design",
+   780→        "Push notifications",
+   781→        "Offline mode",
+   782→        "API & back-office integration"
+   783→      ],
+   784→      "benefits": [
+   785→        "App store presence",
+   786→        "Enhanced user engagement",
+   787→        "Native mobile experience",
+   788→        "Unified codebase"
+   789→      ]
+   790→    },
+   791→    "saas": {
+   792→      "title": "SaaS & Web Apps",
+   793→      "description": "Robust and scalable SaaS platforms for your business model.",
+   794→      "features": [
+   795→        "Multi-tenant architecture",
+   796→        "Subscription system",
+   797→        "Analytics dashboard",
+   798→        "REST/GraphQL API",
+   799→        "Security and GDPR compliance"
+   800→      ],
+   801→      "benefits": [
+   802→        "Recurring revenue",
+   803→        "Ensured scalability",
+   804→        "Technical autonomy",
+   805→        "Optimized time-to-market"
+   806→      ]
+   807→    },
+   808→    "ecommerce": {
+   809→      "title": "E-commerce",
+   810→      "description": "High-performance online stores that maximize your sales.",
+   811→      "features": [
+   812→        "Shopify / WooCommerce / Custom",
+   813→        "Optimized conversion funnel",
+   814→        "Secure multi-currency payments",
+   815→        "Inventory and order management",
+   816→        "Logistics integration"
+   817→      ],
+   818→      "benefits": [
+   819→        "Increased average order value",
+   820→        "Reduced cart abandonment",
+   821→        "Process automation",
+   822→        "Seamless shopping experience"
+   823→      ]
+   824→    },
+   825→    "ux-design": {
+   826→      "title": "UX/UI Design",
+   827→      "description": "Intuitive and beautiful interfaces that delight your users.",
+   828→      "features": [
+   829→        "User research",
+   830→        "Wireframes and prototypes",
+   831→        "Complete design system",
+   832→        "User testing",
+   833→        "Developer handoff"
+   834→      ],
+   835→      "benefits": [
+   836→        "Better user satisfaction",
+   837→        "Reduced development time",
+   838→        "Brand consistency",
+   839→        "Data-driven decisions"
+   840→      ]
+   841→    },
+   842→    "consulting": {
+   843→      "title": "Advisory & Transformation",
+   844→      "description": "Strategic guidance for your web, mobile and AI projects.",
+   845→      "features": [
+   846→        "Technical and UX audit",
+   847→        "Product roadmap",
+   848→        "System architecture",
+   849→        "Technology choices",
+   850→        "Team support"
+   851→      ],
+   852→      "benefits": [
+   853→        "Clear project vision",
+   854→        "Anticipated risks",
+   855→        "Stack suited to your needs",
+   856→        "Skill development"
+   857→      ]
+   858→    },
+   859→    "seo": {
+   860→      "title": "SEO & Performance",
+   861→      "description": "Optimizing your visibility and web performance.",
+   862→      "features": [
+   863→        "Complete SEO audit",
+   864→        "Technical optimization",
+   865→        "Content strategy",
+   866→        "Link building",
+   867→        "Tracking and reporting"
+   868→      ],
+   869→      "benefits": [
+   870→        "Qualified organic traffic",
+   871→        "Better Google rankings",
+   872→        "Stronger domain authority",
+   873→        "Measurable ROI"
+   874→      ]
+   875→    },
+   876→    "support": {
+   877→      "title": "Support & Maintenance",
+   878→      "description": "Ongoing support for the longevity of your projects.",
+   879→      "features": [
+   880→        "24/7 monitoring",
+   881→        "Security updates",
+   882→        "Automatic backups",
+   883→        "Responsive support",
+   884→        "Continuous improvements"
+   885→      ],
+   886→      "benefits": [
+   887→        "Peace of mind",
+   888→        "Optimal availability",
+   889→        "Enhanced security",
+   890→        "Always up-to-date project"
+   891→      ]
+   892→    }
+   893→  },
+   894→  "CaseStudies": {
+   895→    "backButton": "Back to work",
+   896→    "contextEyebrow": "Context",
+   897→    "contextTitle": "The project",
+   898→    "challengeEyebrow": "Challenge",
+   899→    "challengeTitle": "The challenge",
+   900→    "solutionEyebrow": "Approach",
+   901→    "solutionTitle": "The solution",
+   902→    "resultsEyebrow": "Impact",
+   903→    "resultsTitle": "Results",
+   904→    "techTitle": "Technologies",
+   905→    "ctaTitle": "A similar project?",
+   906→    "ctaSubtitle": "Let’s discuss your goals and see how to reach them together.",
+   907→    "ctaButton": "Talk about your project",
+   908→    "klesia-mobile": {
+   909→      "title": "KLESIA — White-label mobile app",
+   910→      "type": "Mobile enterprise",
+   911→      "summary": "White-label retirement & benefits app with multi-tenant architecture.",
+   912→      "context": "KLESIA needed to maintain and evolve a multi-tenant mobile app across several entities, with legacy to stabilize and strong security requirements.",
+   913→      "challenge": "Ensure reliability, modularity and multi-environment deployments while accelerating business feature delivery.",
+   914→      "solution": "Progressive refactor with Clean Architecture/DDD, a comprehensive design system, multi-environment config, biometrics and secure token handling.",
+   915→      "results": [
+   916→        "100K+ downloads",
+   917→        "22+ business modules",
+   918→        "59 UI components",
+   919→        "12 deployment environments"
+   920→      ],
+   921→      "testimonial": {
+   922→        "quote": "The app is more stable, easier to maintain, and releases are much smoother.",
+   923→        "author": "Product team (confidential)",
+   924→        "role": "KLESIA"
+   925→      }
+   926→    },
+   927→    "mail-certificate": {
+   928→      "title": "Mail Certificate — Certified mail SaaS",
+   929→      "type": "B2B SaaS",
+   930→      "summary": "Platform for certified digital mail with payments and 2FA.",
+   931→      "context": "The goal was to offer a secure B2B service to send certified digital mail.",
+   932→      "challenge": "Combine security and compliance with a smooth user flow including payments and 2FA.",
+   933→      "solution": "React + Node/Express, Stripe integration, Twilio 2FA, WYSIWYG editor and admin back-office.",
+   934→      "results": [
+   935→        "Email/SMS 2FA integrated",
+   936→        "Stripe payments live",
+   937→        "Full back-office",
+   938→        "Simplified sending flow"
+   939→      ],
+   940→      "testimonial": {
+   941→        "quote": "A robust platform with a clear flow, without compromising security.",
+   942→        "author": "Client (confidential)",
+   943→        "role": "Founder"
+   944→      }
+   945→    },
+   946→    "eggscuseme": {
+   947→      "title": "EggscuseMe — Anti-waste PWA",
+   948→      "type": "MVP & AI",
+   949→      "summary": "PWA that tracks egg freshness with AI scanning.",
+   950→      "context": "Build a fast MVP to test usage without app stores.",
+   951→      "challenge": "Deliver a smooth mobile experience with AI OCR, push and multi-fridge features.",
+   952→      "solution": "Next.js PWA, Gemini Vision OCR, service worker, push notifications, PostgreSQL/Prisma.",
+   953→      "results": [
+   954→        "AI scanner live",
+   955→        "Installable PWA + notifications",
+   956→        "Automated CI/CD",
+   957→        "FR/EN i18n"
+   958→      ],
+   959→      "testimonial": {
+   960→        "quote": "A complete MVP, iterated fast, ready for real-world testing.",
+   961→        "author": "Yoann Andrieux",
+   962→        "role": "Founder"
+   963→      }
+   964→    }
+   965→  },
+   966→  "BlogPage": {
+   967→    "eyebrow": "Insights",
+   968→    "title": "Blog",
+   969→    "subtitle": "Insights on web, mobile, AI and product strategy.",
+   970→    "readMore": "Read article",
+   971→    "posts": [
+   972→      {
+   973→        "slug": "agrement-cii",
+   974→        "title": "Yodev approved for the Innovation Tax Credit (CII)",
+   975→        "excerpt": "Yodev is CII-certified as a subcontractor recognized by the French Ministry of Research.",
+   976→        "category": "Business",
+   977→        "date": "Dec 12, 2025",
+   978→        "readTime": "4 min"
+   979→      },
+   980→      {
+   981→        "slug": "waf-efficacite",
+   982→        "title": "How to maximize a Web Application Firewall (WAF)?",
+   983→        "excerpt": "A well-configured WAF is the difference between symbolic protection and a real barrier.",
+   984→        "category": "Tech",
+   985→        "date": "Dec 11, 2025",
+   986→        "readTime": "6 min"
+   987→      },
+   988→      {
+   989→        "slug": "integrite-logs-continu",
+   990→        "title": "Certifying the integrity of a continuous log stream",
+   991→        "excerpt": "Proving your logs were not altered is now a security and compliance must.",
+   992→        "category": "Tech",
+   993→        "date": "Dec 11, 2025",
+   994→        "readTime": "7 min"
+   995→      },
+   996→      {
+   997→        "slug": "mvp-iteration",
+   998→        "title": "MVP and Iteration: The Right Approach",
+   999→        "excerpt": "How to build an effective minimum viable product and iterate intelligently.",
+  1000→        "category": "Product",
+  1001→        "date": "December 20, 2024",
+  1002→        "readTime": "8 min"
+  1003→      },
+  1004→      {
+  1005→        "slug": "core-web-vitals",
+  1006→        "title": "Core Web Vitals: A Practical Guide",
+  1007→        "excerpt": "Everything about web performance metrics and how to optimize them.",
+  1008→        "category": "Performance",
+  1009→        "date": "December 15, 2024",
+  1010→        "readTime": "10 min"
+  1011→      },
+  1012→      {
+  1013→        "slug": "owasp-2024",
+  1014→        "title": "Web Security: OWASP Top 10 in Practice",
+  1015→        "excerpt": "The most common vulnerabilities and how to protect your applications.",
+  1016→        "category": "Security",
+  1017→        "date": "December 10, 2024",
+  1018→        "readTime": "12 min"
+  1019→      }
+  1020→    ]
+  1021→  },
+  1022→  "BlogArticles": {
+  1023→    "ctaTitle": "Need expertise?",
+  1024→    "ctaSubtitle": "Let's discuss your project and technical challenges.",
+  1025→    "ctaButton": "Contact us",
+  1026→    "agrement-cii": {
+  1027→      "title": "Yodev approved for the Innovation Tax Credit (CII)",
+  1028→      "excerpt": "Yodev is CII-certified as a subcontractor recognized by the French Ministry of Research.",
+  1029→      "category": "Business",
+  1030→      "date": "Dec 12, 2025",
+  1031→      "readTime": "4 min",
+  1032→      "author": "Jean Ashton",
+  1033→      "content": [
+  1034→        "The Innovation Tax Credit (CII) helps companies fund a portion of their R&D and innovation spend.",
+  1035→        "Yodev is CII-approved as a subcontractor recognized by the French Ministry of Research, which means our services can be included in eligible projects.",
+  1036→        "We help frame eligible work, structure deliverables, and secure technical requirements.",
+  1037→        "If you're preparing a CII file, we can support you from the framing phase to maximize delivered value."
+  1038→      ]
+  1039→    },
+  1040→    "waf-efficacite": {
+  1041→      "title": "How to maximize a Web Application Firewall (WAF)?",
+  1042→      "excerpt": "A well-configured WAF is the difference between symbolic protection and a real barrier.",
+  1043→      "category": "Tech",
+  1044→      "date": "Dec 11, 2025",
+  1045→      "readTime": "6 min",
+  1046→      "author": "Molly Allerhand",
+  1047→      "content": [
+  1048→        "A WAF blocks what it recognizes. Poor configuration leads to false positives or missed attacks.",
+  1049→        "Start with observation mode and analyze logs to understand real traffic patterns.",
+  1050→        "Tailor rules to critical routes, business use cases and your sector's attack patterns.",
+  1051→        "Automate rule updates and add security regression tests to your CI/CD pipeline.",
+  1052→        "Measure impact: block rate, latency, false positives and incidents avoided."
+  1053→      ]
+  1054→    },
+  1055→    "integrite-logs-continu": {
+  1056→      "title": "Certifying the integrity of a continuous log stream",
+  1057→      "excerpt": "Proving your logs were not altered is now a security and compliance must.",
+  1058→      "category": "Tech",
+  1059→      "date": "Dec 11, 2025",
+  1060→      "readTime": "7 min",
+  1061→      "author": "Molly Allerhand",
+  1062→      "content": [
+  1063→        "Logs are evidence. You must be able to prove they have not been modified.",
+  1064→        "The approach chains events with hashes and periodically signs the stream.",
+  1065→        "Immutable storage (WORM) and timestamping reinforce traceability.",
+  1066→        "A well-designed pipeline enables faster audits and stronger compliance (ISO, SOC2).",
+  1067→        "We implement these guarantees on modern stacks without harming performance."
+  1068→      ]
+  1069→    },
+  1070→    "mvp-iteration": {
+  1071→      "title": "MVP and Iteration: The Right Approach",
+  1072→      "excerpt": "How to build an effective minimum viable product and iterate intelligently.",
+  1073→      "category": "Product",
+  1074→      "date": "December 20, 2024",
+  1075→      "readTime": "8 min",
+  1076→      "author": "Yoann Andrieux",
+  1077→      "content": [
+  1078→        "The MVP concept is often misunderstood. It's not about delivering a sloppy product, but creating the simplest version that validates a hypothesis.",
+  1079→        "The key is identifying the core value of your product. What makes it unique and essential? This is the core feature the MVP should focus on.",
+  1080→        "Define clear metrics before launching. Without success criteria, you won't know how to interpret results and decide what's next.",
+  1081→        "Iteration should be fast and data-driven. Analyze user behaviors, gather qualitative feedback, and prioritize ruthlessly.",
+  1082→        "Don't be afraid to pivot if the data suggests it. An MVP that fails isn't a failure, it's valuable learning that brings you closer to product-market fit."
+  1083→      ]
+  1084→    },
+  1085→    "core-web-vitals": {
+  1086→      "title": "Core Web Vitals: A Practical Guide",
+  1087→      "excerpt": "Everything about web performance metrics and how to optimize them.",
+  1088→      "category": "Performance",
+  1089→      "date": "December 15, 2024",
+  1090→      "readTime": "10 min",
+  1091→      "author": "Yoann Andrieux",
+  1092→      "content": [
+  1093→        "Core Web Vitals have become a Google ranking factor. But beyond SEO, they reflect user experience quality.",
+  1094→        "LCP (Largest Contentful Paint) measures perceived loading time. Goal: under 2.5 seconds. Optimize your images, use lazy loading, and preload critical resources.",
+  1095→        "FID (First Input Delay) measures responsiveness. Goal: under 100ms. Reduce blocking JavaScript and use code splitting.",
+  1096→        "CLS (Cumulative Layout Shift) measures visual stability. Goal: under 0.1. Reserve space for images and avoid dynamic content injections.",
+  1097→        "Essential tools: Lighthouse for auditing, WebPageTest for detailed diagnostics, and Chrome DevTools for debugging. Measure in real conditions, not just locally.",
+  1098→        "Optimization is an ongoing process. Integrate performance tests into your CI/CD and monitor regressions."
+  1099→      ]
+  1100→    },
+  1101→    "owasp-2024": {
+  1102→      "title": "Web Security: OWASP Top 10 in Practice",
+  1103→      "excerpt": "The most common vulnerabilities and how to protect your applications.",
+  1104→      "category": "Security",
+  1105→      "date": "December 10, 2024",
+  1106→      "readTime": "12 min",
+  1107→      "author": "Yoann Andrieux",
+  1108→      "content": [
+  1109→        "Security is not optional. The OWASP Top 10 lists the most critical vulnerabilities every developer should know.",
+  1110→        "Injections (SQL, NoSQL, LDAP) remain at the top. Always use parameterized queries and rigorously validate user input.",
+  1111→        "Broken authentication is a classic. Implement 2FA, use proven libraries, and never reinvent the wheel with passwords.",
+  1112→        "Sensitive data exposure can be fatal. Encrypt in transit (HTTPS) and at rest, minimize stored data, and regularly audit your endpoints.",
+  1113→        "Vulnerable components are an often-neglected risk. Keep your dependencies up to date, use automated audit tools like Snyk or Dependabot.",
+  1114→        "Security is everyone's business. Train your teams, integrate security tests into your pipeline, and have critical applications audited by experts."
+  1115→      ]
+  1116→    }
+  1117→  },
+  1118→  "CareersPage": {
+  1119→    "eyebrow": "Join us",
+  1120→    "title": "Jobs",
+  1121→    "subtitle": "Build web, mobile & AI products with a passionate and demanding team.",
+  1122→    "valuesEyebrow": "Our culture",
+  1123→    "valuesTitle": "What drives us",
+  1124→    "values": [
+  1125→      {
+  1126→        "title": "Uncompromising quality",
+  1127→        "description": "We aim for excellence in every line of code and every pixel."
+  1128→      },
+  1129→      {
+  1130→        "title": "Continuous learning",
+  1131→        "description": "Curiosity and knowledge sharing are at the heart of our DNA."
+  1132→      },
+  1133→      {
+  1134→        "title": "Autonomy and trust",
+  1135→        "description": "We trust everyone to take initiatives and make decisions."
+  1136→      },
+  1137→      {
+  1138→        "title": "Work-life balance",
+  1139→        "description": "Remote-first and flexibility so everyone can give their best."
+  1140→      },
+  1141→      {
+  1142→        "title": "Real impact",
+  1143→        "description": "Every project counts, every contribution makes a difference."
+  1144→      },
+  1145→      {
+  1146→        "title": "Full transparency",
+  1147→        "description": "Open communication about goals, results, and challenges."
+  1148→      }
+  1149→    ],
+  1150→    "positionsEyebrow": "Opportunities",
+  1151→    "positionsTitle": "Open positions",
+  1152→    "jobs": [
+  1153→      {
+  1154→        "slug": "dev-fullstack",
+  1155→        "title": "Senior Fullstack Developer",
+  1156→        "type": "Full-time",
+  1157→        "location": "Remote (France)",
+  1158→        "department": "Engineering"
+  1159→      },
+  1160→      {
+  1161→        "slug": "ux-designer",
+  1162→        "title": "UX/UI Designer",
+  1163→        "type": "Full-time",
+  1164→        "location": "Remote (France)",
+  1165→        "department": "Design"
+  1166→      },
+  1167→      {
+  1168→        "slug": "chef-projet",
+  1169→        "title": "Digital Project Manager",
+  1170→        "type": "Full-time",
+  1171→        "location": "Remote (France)",
+  1172→        "department": "Delivery"
+  1173→      }
+  1174→    ],
+  1175→    "viewJob": "View position",
+  1176→    "noPositions": "No positions currently open. Feel free to send us a spontaneous application.",
+  1177→    "spontaneousTitle": "Can't find your position?",
+  1178→    "spontaneousSubtitle": "We're always looking for exceptional talent. Send us a spontaneous application.",
+  1179→    "spontaneousButton": "Spontaneous application"
+  1180→  },
+  1181→  "JobPostings": {
+  1182→    "applyButton": "Apply now",
+  1183→    "responsibilitiesEyebrow": "Your missions",
+  1184→    "responsibilitiesTitle": "What you'll do",
+  1185→    "requirementsEyebrow": "Profile sought",
+  1186→    "requirementsTitle": "What we're looking for",
+  1187→    "benefitsEyebrow": "Benefits",
+  1188→    "benefitsTitle": "What we offer",
+  1189→    "ctaTitle": "Interested in this position?",
+  1190→    "ctaSubtitle": "Send us your resume and let's talk about your background.",
+  1191→    "dev-fullstack": {
+  1192→      "title": "Senior Fullstack Developer",
+  1193→      "type": "Full-time",
+  1194→      "location": "Remote (France)",
+  1195→      "department": "Engineering",
+  1196→      "summary": "Join our technical team to design and develop modern web applications for our clients.",
+  1197→      "responsibilities": [
+  1198→        "Develop web applications with Next.js, React, and Node.js",
+  1199→        "Participate in architecture decisions and code reviews",
+  1200→        "Collaborate closely with designers and product managers",
+  1201→        "Mentor junior developers on the team",
+  1202→        "Contribute to continuous improvement of our practices"
+  1203→      ],
+  1204→      "requirements": [
+  1205→        "5+ years of web development experience",
+  1206→        "Mastery of TypeScript, React, and Node.js",
+  1207→        "Experience with SQL and NoSQL databases",
+  1208→        "Sensitivity to UX and code quality",
+  1209→        "Excellent communication skills in French"
+  1210→      ],
+  1211→      "benefits": [
+  1212→        "Remote-first with full flexibility",
+  1213→        "Premium equipment (MacBook, monitor, etc.)",
+  1214→        "Continuous learning and conferences",
+  1215→        "Varied and challenging projects",
+  1216→        "Caring and demanding team"
+  1217→      ]
+  1218→    },
+  1219→    "ux-designer": {
+  1220→      "title": "UX/UI Designer",
+  1221→      "type": "Full-time",
+  1222→      "location": "Remote (France)",
+  1223→      "department": "Design",
+  1224→      "summary": "Create exceptional user experiences for varied web and mobile projects.",
+  1225→      "responsibilities": [
+  1226→        "Conduct user research and define personas",
+  1227→        "Design wireframes, prototypes, and high-fidelity mockups",
+  1228→        "Create and maintain consistent design systems",
+  1229→        "Collaborate with developers for perfect handoff",
+  1230→        "Participate in user testing and iterate"
+  1231→      ],
+  1232→      "requirements": [
+  1233→        "3+ years of UX/UI design experience",
+  1234→        "Mastery of Figma and prototyping tools",
+  1235→        "Portfolio demonstrating a user-centered approach",
+  1236→        "Knowledge of web and mobile technical constraints",
+  1237→        "Curiosity and active watch on design trends"
+  1238→      ],
+  1239→      "benefits": [
+  1240→        "Remote-first with full flexibility",
+  1241→        "Figma license and premium tools",
+  1242→        "Access to design resources (courses, books, conferences)",
+  1243→        "Varied projects with strong autonomy",
+  1244→        "Close collaboration with passionate developers"
+  1245→      ]
+  1246→    },
+  1247→    "chef-projet": {
+  1248→      "title": "Digital Project Manager",
+  1249→      "type": "Full-time",
+  1250→      "location": "Remote (France)",
+  1251→      "department": "Delivery",
+  1252→      "summary": "Lead web and mobile projects from A to Z, from scoping to delivery.",
+  1253→      "responsibilities": [
+  1254→        "Scope projects and define roadmaps",
+  1255→        "Coordinate design and development teams",
+  1256→        "Manage client relationships and expectations",
+  1257→        "Track budgets, timelines, and deliverables",
+  1258→        "Ensure deliverable quality"
+  1259→      ],
+  1260→      "requirements": [
+  1261→        "3+ years of digital project management experience",
+  1262→        "Excellent understanding of web professions",
+  1263→        "Mastery of Agile methodologies (Scrum, Kanban)",
+  1264→        "Ability to manage multiple projects simultaneously",
+  1265→        "Natural leadership and excellent interpersonal skills"
+  1266→      ],
+  1267→      "benefits": [
+  1268→        "Remote-first with full flexibility",
+  1269→        "Premium productivity tools",
+  1270→        "Varied projects and stimulating clients",
+  1271→        "Evolution toward leadership roles",
+  1272→        "Healthy and transparent company culture"
+  1273→      ]
+  1274→    }
+  1275→  },
+  1276→  "LegalPage": {
+  1277→    "eyebrow": "Legal information",
+  1278→    "title": "Legal Notice",
+  1279→    "lastUpdated": "Last updated: January 2025",
+  1280→    "sections": [
+  1281→      {
+  1282→        "title": "Site Editor",
+  1283→        "content": "The yodev.fr website is published by Yodev, a digital studio based in France. For any questions, you can contact us via our contact page."
+  1284→      },
+  1285→      {
+  1286→        "title": "Hosting",
+  1287→        "content": "This site is hosted by Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA. The host ensures service continuity and data security."
+  1288→      },
+  1289→      {
+  1290→        "title": "Intellectual Property",
+  1291→        "content": "All content on this site (text, images, logos, code) is protected by copyright. Any reproduction without prior authorization is prohibited."
+  1292→      },
+  1293→      {
+  1294→        "title": "Liability",
+  1295→        "content": "Yodev strives to provide accurate and up-to-date information. However, we cannot guarantee the accuracy, completeness, or timeliness of information on this site."
+  1296→      },
+  1297→      {
+  1298→        "title": "External Links",
+  1299→        "content": "This site may contain links to other sites. Yodev has no control over these sites and disclaims any responsibility for their content."
+  1300→      }
+  1301→    ]
+  1302→  },
+  1303→  "PrivacyPage": {
+  1304→    "eyebrow": "Data Protection",
+  1305→    "title": "Privacy Policy",
+  1306→    "lastUpdated": "Last updated: January 2025",
+  1307→    "backToLegal": "Back to legal notice",
+  1308→    "sections": [
+  1309→      {
+  1310→        "title": "Data Collection",
+  1311→        "content": "We only collect data necessary for the proper functioning of our services: name, email, and project information when you contact us."
+  1312→      },
+  1313→      {
+  1314→        "title": "Data Use",
+  1315→        "content": "Your data is used exclusively to respond to your requests, send you relevant information if you have consented, and improve our services."
+  1316→      },
+  1317→      {
+  1318→        "title": "Data Protection",
+  1319→        "content": "We implement technical and organizational security measures to protect your data against unauthorized access, modification, or disclosure."
+  1320→      },
+  1321→      {
+  1322→        "title": "Cookies",
+  1323→        "content": "This site uses essential technical cookies for operation and analytical cookies to understand site usage. You can disable them in your browser."
+  1324→      },
+  1325→      {
+  1326→        "title": "Your Rights",
+  1327→        "content": "Under GDPR, you have the right to access, rectify, delete, and transfer your data. Contact us to exercise these rights."
+  1328→      },
+  1329→      {
+  1330→        "title": "Contact",
+  1331→        "content": "For any questions about our privacy policy or your personal data, you can contact us via our contact form."
+  1332→      }
+  1333→    ]
+  1334→  }
+  1335→}
+  1336→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

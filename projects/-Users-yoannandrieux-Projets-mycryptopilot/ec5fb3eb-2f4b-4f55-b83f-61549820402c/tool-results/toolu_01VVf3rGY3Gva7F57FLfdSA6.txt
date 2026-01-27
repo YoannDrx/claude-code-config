@@ -1,0 +1,146 @@
+     1→This documentation provides a comprehensive breakdown of the design system extracted from the **MyCryptoPilot** landing page.
+     2→
+     3→# Design System Documentation: MyCryptoPilot
+     4→
+     5→## 1. Core Principles
+     6→The design system follows a **"Cyber-Fintech Minimalist"** aesthetic. It combines the high-contrast, dark-mode look of modern trading platforms with sophisticated "Glassmorphism" and tactile textures.
+     7→
+     8→*   **Risk-First Intelligence**: The UI uses high-contrast accents (Emerald vs. Crimson) to immediately communicate market sentiment and risk.
+     9→*   **Depth & Texture**: Uses layered backgrounds (Mesh gradients + SVG Grain) to create a premium, "physical" digital space.
+    10→*   **Precision & Clarity**: High-end typography (Sora) and generous whitespace emphasize data accuracy and professional-grade tools.
+    11→
+    12→---
+    13→
+    14→## 2. Color Palette
+    15→
+    16→### Base Colors
+    17→| Name | Hex Code | Tailwind Class (Approx) | Usage |
+    18→| :--- | :--- | :--- | :--- |
+    19→| **Obsidian** | `#05070a` | `bg-[#05070a]` | Primary background color. |
+    20→| **Pure White** | `#ffffff` | `text-white` | Primary headings and body text. |
+    21→
+    22→### Accent Colors
+    23→| Name | Hex Code | Tailwind Class | Usage |
+    24→| :--- | :--- | :--- | :--- |
+    25→| **Emerald** | `#00ffaa` | `text-[#00ffaa]` | Success states, "Growth", primary CTAs, and positive indicators. |
+    26→| **Crimson** | `#ff3366` | `text-[#ff3366]` | Risk indicators, "Danger", and negative market movements. |
+    27→
+    28→### UI Accents
+    29→| Name | Value | Usage |
+    30→| :--- | :--- | :--- |
+    31→| **Glass Border** | `rgba(255, 255, 255, 0.1)` | Subtle borders for cards and navigation elements. |
+    32→| **Mesh Gradient** | Mixed Opacities | Background depth using Emerald (10%) and Crimson (8%). |
+    33→
+    34→---
+    35→
+    36→## 3. Typography
+    37→The system uses **Sora**, a geometric sans-serif designed for clarity in digital interfaces.
+    38→
+    39→*   **Primary Font**: `Sora, sans-serif`
+    40→*   **Weights**: 
+    41→    *   `300` (Light): Secondary descriptions.
+    42→    *   `400` (Regular): Body text.
+    43→    *   `600` (Semi-bold): Sub-headings and buttons.
+    44→    *   `800` (Extra-bold): Hero titles and branding.
+    45→*   **Scale**:
+    46→    *   **Hero Title**: Likely `text-5xl` to `text-7xl` with `font-extrabold`.
+    47→    *   **Body**: `text-base` (16px) with `leading-relaxed`.
+    48→
+    49→---
+    50→
+    51→## 4. Spacing & Layout
+    52→*   **Container**: Standardized centered layouts with `max-width` (likely `max-w-7xl`).
+    53→*   **Layout Engine**: Flexbox and CSS Grid are used for structural alignment.
+    54→*   **Layering Strategy (Z-Index)**:
+    55→    *   `z-[-1]`: Mesh Gradients (Background depth).
+    56→    *   `z-[0]`: Main Content.
+    57→    *   `z-[50]`: Grain Texture (Overlay for tactile feel).
+    58→*   **Scrolling**: Smooth scrolling enabled via `scroll-smooth`.
+    59→
+    60→---
+    61→
+    62→## 5. Components
+    63→
+    64→### 5.1 The "Hyper-Border" Container
+    65→A signature component used for cards and sections.
+    66→*   **Style**: Semi-transparent background with a `glass-border`.
+    67→*   **Effect**: Likely utilizes `backdrop-filter: blur()` to create a frosted glass effect over the mesh gradients.
+    68→
+    69→### 5.2 Background System
+    70→The background is a composite of three layers:
+    71→1.  **Base Layer**: Solid `#05070a`.
+    72→2.  **Atmospheric Layer**: `.mesh-gradient` using radial gradients of Emerald and Crimson at low opacity.
+    73→3.  **Texture Layer**: `.grain` using a fractal noise SVG filter at `0.04` opacity to prevent "banding" in gradients and add a premium feel.
+    74→
+    75→---
+    76→
+    77→## 6. Iconography
+    78→*   **Style**: Thin-stroke, geometric icons.
+    79→*   **Implementation**: Likely Lucide or Phosphor Icons to match the `Sora` typeface's geometric nature.
+    80→*   **Coloring**: Icons should follow the accent palette (Emerald for features, Crimson for risk alerts).
+    81→
+    82→---
+    83→
+    84→## Reference HTML
+    85→
+    86→```html
+    87→<!DOCTYPE html>
+    88→<html lang="fr" class="scroll-smooth">
+    89→<head>
+    90→    <meta charset="UTF-8">
+    91→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    92→    <title>MyCryptoPilot | Risk-First Trading Intelligence</title>
+    93→    <script src="https://cdn.tailwindcss.com"></script>
+    94→    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    95→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    96→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    97→    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+    98→    
+    99→    <style>
+   100→        :root {
+   101→            --bg-obsidian: #05070a;
+   102→            --accent-emerald: #00ffaa;
+   103→            --accent-crimson: #ff3366;
+   104→            --glass-border: rgba(255, 255, 255, 0.1);
+   105→        }
+   106→
+   107→        body {
+   108→            font-family: 'Sora', sans-serif;
+   109→            background-color: var(--bg-obsidian);
+   110→            color: #ffffff;
+   111→            overflow-x: hidden;
+   112→            min-height: 100vh;
+   113→            display: flex;
+   114→            flex-direction: column;
+   115→        }
+   116→
+   117→        .grain {
+   118→            position: fixed;
+   119→            top: 0; left: 0; width: 100%; height: 100%;
+   120→            pointer-events: none;
+   121→            z-index: 50;
+   122→            opacity: 0.04;
+   123→            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3Insight%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+   124→        }
+   125→
+   126→        .mesh-gradient {
+   127→            position: absolute;
+   128→            top: 0; left: 0; width: 100%; height: 100%;
+   129→            background: 
+   130→                radial-gradient(circle at 20% 30%, rgba(0, 255, 170, 0.1) 0%, transparent 50%),
+   131→                radial-gradient(circle at 80% 70%, rgba(255, 51, 102, 0.08) 0%, transparent 50%);
+   132→            z-index: -1;
+   133→        }
+   134→
+   135→        .hyper-border {
+   136→            position: relative;
+   137→            background: rgba(255, 255, 255, 0.03);
+   138→            border: 1px solid var(--glass-border);
+   139→        }
+   140→    </style>
+   141→</head>
+   142→```
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

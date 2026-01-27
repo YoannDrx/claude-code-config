@@ -1,0 +1,86 @@
+     1→import { Typography } from "@/components/nowts/typography";
+     2→import { NavigationWrapper } from "@/features/navigation/navigation-wrapper";
+     3→import { LoanCalculatorForm } from "@/features/finance/loan-calculator-form";
+     4→import {
+     5→  Heart,
+     6→  Search,
+     7→  TrendingUp,
+     8→  Bell,
+     9→  Scale,
+    10→  Calculator,
+    11→} from "lucide-react";
+    12→import Link from "next/link";
+    13→
+    14→export default function FinancePage() {
+    15→  return (
+    16→    <NavigationWrapper
+    17→      logoChildren={
+    18→        <Typography variant="large" className="font-semibold">
+    19→          Finance
+    20→        </Typography>
+    21→      }
+    22→      navigationChildren={
+    23→        <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
+    24→          <Link
+    25→            href="/dashboard"
+    26→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    27→          >
+    28→            <TrendingUp className="size-4" />
+    29→            Tableau de bord
+    30→          </Link>
+    31→          <Link
+    32→            href="/properties"
+    33→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    34→          >
+    35→            <Search className="size-4" />
+    36→            Recherche
+    37→          </Link>
+    38→          <Link
+    39→            href="/favorites"
+    40→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    41→          >
+    42→            <Heart className="size-4" />
+    43→            Favoris
+    44→          </Link>
+    45→          <Link
+    46→            href="/comparisons"
+    47→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    48→          >
+    49→            <Scale className="size-4" />
+    50→            Comparaisons
+    51→          </Link>
+    52→          <Link
+    53→            href="/alerts"
+    54→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    55→          >
+    56→            <Bell className="size-4" />
+    57→            Alertes
+    58→          </Link>
+    59→          <Link
+    60→            href="/finance"
+    61→            className="bg-muted text-primary hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    62→          >
+    63→            <Calculator className="size-4" />
+    64→            Finance
+    65→          </Link>
+    66→        </nav>
+    67→      }
+    68→      topBarChildren={
+    69→        <div className="flex items-center gap-2">
+    70→          <Typography variant="h2" className="text-lg font-semibold">
+    71→            Calculateur financier
+    72→          </Typography>
+    73→        </div>
+    74→      }
+    75→    >
+    76→      <div className="p-6">
+    77→        <LoanCalculatorForm />
+    78→      </div>
+    79→    </NavigationWrapper>
+    80→  );
+    81→}
+    82→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

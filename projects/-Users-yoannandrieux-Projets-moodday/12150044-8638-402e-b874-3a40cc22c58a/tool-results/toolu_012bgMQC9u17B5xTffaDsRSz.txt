@@ -1,0 +1,1457 @@
+     1→import type en from "./en";
+     2→
+     3→const fr: typeof en = {
+     4→  meta: {
+     5→    title: "Moodday",
+     6→    description: "Boilerplate Next.js moderne avec auth, paiements et plus",
+     7→  },
+     8→  language: {
+     9→    title: "Langue",
+    10→    toggleLabel: "Changer de langue",
+    11→    current: "Langue actuelle",
+    12→    fr: "Français",
+    13→    en: "English",
+    14→  },
+    15→  nav: {
+    16→    docs: "Docs",
+    17→    about: "À propos",
+    18→    contact: "Contact",
+    19→    features: "Fonctionnalités",
+    20→    pricing: "Tarifs",
+    21→    blog: "Blog",
+    22→    changelog: "Historique",
+    23→    menu: "Menu",
+    24→    toggleMenu: "Basculer le menu de navigation",
+    25→    logoAlt: "Logo de l'application",
+    26→    home: "Accueil",
+    27→    analytics: "Analyses",
+    28→    dashboard: "Tableau de bord",
+    29→    organization: "Organisation",
+    30→    account: "Compte",
+    31→    app: "App",
+    32→  },
+    33→  footer: {
+    34→    description:
+    35→      "Boilerplate Next.js moderne pour construire des applications SaaS.",
+    36→    product: "Produit",
+    37→    blog: "Blog",
+    38→    documentation: "Documentation",
+    39→    dashboard: "Tableau de bord",
+    40→    account: "Compte",
+    41→    company: "Entreprise",
+    42→    about: "À propos",
+    43→    contact: "Contact",
+    44→    legal: "Légal",
+    45→    terms: "Conditions",
+    46→    privacy: "Confidentialité",
+    47→    rights: "© {year} {company}. Tous droits réservés.",
+    48→  },
+    49→  actions: {
+    50→    close: "Fermer",
+    51→    toggleTheme: "Changer de thème",
+    52→    cancel: "Annuler",
+    53→    tryAgain: "Réessayer",
+    54→    save: "Enregistrer",
+    55→  },
+    56→  common: {
+    57→    error: "Une erreur est survenue",
+    58→    saving: "Enregistrement...",
+    59→  },
+    60→  medication: {
+    61→    add: {
+    62→      title: "Ajouter un médicament",
+    63→      description: "Ajoute un nouveau médicament à suivre",
+    64→      submit: "Ajouter le médicament",
+    65→      success: "Médicament ajouté !",
+    66→    },
+    67→    edit: {
+    68→      title: "Modifier le médicament",
+    69→      submit: "Enregistrer",
+    70→      success: "Médicament modifié !",
+    71→    },
+    72→    form: {
+    73→      name: "Nom du médicament",
+    74→      namePlaceholder: "ex: Sertraline",
+    75→      dosage: "Dosage",
+    76→      dosagePlaceholder: "ex: 50mg",
+    77→      dosageHint: "Entre le dosage tel qu'indiqué sur ton ordonnance",
+    78→      frequency: "Fréquence",
+    79→      isPRN: "Aussi pris si besoin (PRN)",
+    80→      isPRNHint:
+    81→        "Coche si tu prends parfois ce médicament en dehors du planning",
+    82→    },
+    83→    frequency: {
+    84→      daily: "Une fois par jour",
+    85→      twiceDaily: "Deux fois par jour",
+    86→      weekly: "Une fois par semaine",
+    87→      prn: "Si besoin (PRN)",
+    88→    },
+    89→    list: {
+    90→      title: "Mes médicaments",
+    91→      empty:
+    92→        "Pas encore de médicaments. Ajoute ton premier médicament pour commencer !",
+    93→      addNew: "Ajouter un médicament",
+    94→      archived: "Médicaments archivés",
+    95→      showArchived: "Voir archivés",
+    96→      hideArchived: "Masquer archivés",
+    97→      takenToday: "Pris aujourd'hui",
+    98→      notTaken: "Pas encore pris",
+    99→    },
+   100→    archive: {
+   101→      title: "Archiver ce médicament ?",
+   102→      description:
+   103→        "Le médicament sera masqué de ta liste active mais l'historique sera conservé.",
+   104→      confirm: "Archiver",
+   105→      success: "Médicament archivé",
+   106→    },
+   107→    unarchive: {
+   108→      success: "Médicament restauré",
+   109→    },
+   110→    prn: {
+   111→      badge: "PRN",
+   112→      section: "Si besoin",
+   113→      logged: "Prise PRN enregistrée !",
+   114→      takenToday: "{count}x aujourd'hui",
+   115→      logButton: "Prendre",
+   116→      logTitle: "Prendre {name}",
+   117→      logDescription:
+   118→        "Enregistre la prise de ce médicament. Ajoute une raison optionnelle.",
+   119→      reasonPlaceholder: "Pourquoi l'as-tu pris ? (optionnel)",
+   120→      confirm: "Enregistrer la prise",
+   121→      todayHistory: "Prises du jour",
+   122→    },
+   123→    detail: {
+   124→      title: "Détails du médicament",
+   125→      back: "Retour à la liste",
+   126→      edit: "Modifier",
+   127→      restore: "Restaurer",
+   128→      archived: "Archivé",
+   129→      dosageHistory: "Historique des dosages",
+   130→      previousDosage: "Précédent",
+   131→    },
+   132→    dosageHistory: {
+   133→      title: "Historique des dosages",
+   134→    },
+   135→    intake: {
+   136→      logged: "Médicament pris !",
+   137→      skipped: "Médicament sauté",
+   138→      undone: "Prise annulée",
+   139→      undo: "Annuler",
+   140→      skip: "Sauter aujourd'hui",
+   141→    },
+   142→    today: {
+   143→      title: "Médicaments du jour",
+   144→      subtitle: "Marque tes médicaments comme pris",
+   145→      empty: "Pas de médicaments réguliers. Ajoute-en un pour commencer !",
+   146→      allDone: "Tout est pris pour aujourd'hui !",
+   147→      progress: "{taken} sur {total} pris",
+   148→    },
+   149→  },
+   150→  mood: {
+   151→    entry: {
+   152→      title: "Comment te sens-tu ?",
+   153→      editTitle: "Modifier ton humeur",
+   154→      notePlaceholder: "Ajoute une note (optionnel)...",
+   155→      save: "Enregistrer mon humeur",
+   156→      saved: "Humeur enregistrée !",
+   157→      update: "Modifier",
+   158→      updated: "Humeur modifiée !",
+   159→      delete: "Supprimer",
+   160→      deleted: "Entrée supprimée",
+   161→      deleteTitle: "Supprimer cette entrée ?",
+   162→      deleteDescription:
+   163→        "Cette action est irréversible. Ton entrée d'humeur sera définitivement supprimée.",
+   164→      deleteConfirm: "Oui, supprimer",
+   165→    },
+   166→    history: {
+   167→      title: "Historique des humeurs",
+   168→      empty: "Pas encore d'entrées. Commence à suivre ton humeur !",
+   169→      filter: {
+   170→        all: "Tout",
+   171→        week: "7 derniers jours",
+   172→        month: "30 derniers jours",
+   173→        quarter: "90 derniers jours",
+   174→      },
+   175→    },
+   176→  },
+   177→  therapy: {
+   178→    add: {
+   179→      title: "Nouvelle séance de thérapie",
+   180→      description: "Note tes observations et réflexions de séance",
+   181→      submit: "Enregistrer la séance",
+   182→      success: "Séance enregistrée ! Prends soin de toi 💙",
+   183→    },
+   184→    edit: {
+   185→      title: "Modifier la séance",
+   186→      submit: "Enregistrer",
+   187→      success: "Séance modifiée !",
+   188→    },
+   189→    form: {
+   190→      date: "Date de la séance",
+   191→      selectDate: "Sélectionne une date",
+   192→      notes: "Notes de séance",
+   193→      notesPlaceholder:
+   194→        "De quoi avez-vous parlé ? Comment te sentais-tu ? Des prises de conscience ?",
+   195→      notesHint: "Écris librement, c'est ton espace privé",
+   196→      benefitRating: "Cette séance t'a-t-elle été bénéfique ?",
+   197→      benefitRatingHint: "Optionnel - note de 1 à 5 étoiles",
+   198→    },
+   199→    list: {
+   200→      title: "Séances de thérapie",
+   201→      empty: "Pas encore de séances. Note ta première séance de thérapie !",
+   202→      addNew: "Ajouter une séance",
+   203→    },
+   204→    delete: {
+   205→      title: "Supprimer cette séance ?",
+   206→      description: "Cette action est irréversible.",
+   207→      confirm: "Oui, supprimer",
+   208→      success: "Séance supprimée",
+   209→    },
+   210→  },
+   211→  exercise: {
+   212→    add: {
+   213→      title: "Nouvel exercice",
+   214→      description: "Ajoute un exercice de bien-être à suivre",
+   215→      submit: "Ajouter l'exercice",
+   216→      success: "Exercice ajouté !",
+   217→    },
+   218→    edit: {
+   219→      title: "Modifier l'exercice",
+   220→      submit: "Enregistrer",
+   221→      success: "Exercice modifié !",
+   222→    },
+   223→    form: {
+   224→      name: "Nom de l'exercice",
+   225→      namePlaceholder: "ex: Respiration profonde, Méditation, Marche",
+   226→      description: "Description (optionnel)",
+   227→      descriptionPlaceholder: "Comment faire cet exercice...",
+   228→      descriptionHint: "Optionnel - décris comment réaliser cet exercice",
+   229→    },
+   230→    list: {
+   231→      title: "Mes exercices",
+   232→      empty:
+   233→        "Pas encore d'exercices. Ajoute ton premier exercice de bien-être !",
+   234→      addNew: "Ajouter un exercice",
+   235→      archived: "Exercices archivés",
+   236→      showArchived: "Voir archivés",
+   237→      hideArchived: "Masquer archivés",
+   238→    },
+   239→    log: {
+   240→      logged: "Exercice terminé ! 🎉",
+   241→      undone: "Log annulé",
+   242→      undo: "Annuler",
+   243→      button: "Fait",
+   244→      todayCount: "{count}x aujourd'hui",
+   245→    },
+   246→    archive: {
+   247→      title: "Archiver cet exercice ?",
+   248→      description: "L'exercice sera masqué mais l'historique conservé.",
+   249→      confirm: "Archiver",
+   250→      success: "Exercice archivé",
+   251→    },
+   252→    unarchive: {
+   253→      success: "Exercice restauré",
+   254→    },
+   255→  },
+   256→  insights: {
+   257→    title: "Tableau de bord",
+   258→    chart: {
+   259→      title: "Humeur sur 30 jours",
+   260→      noData: "Pas encore de données. Commence à tracker ton humeur !",
+   261→      mood: "Humeur",
+   262→      dosageChange: "Changement de dosage",
+   263→    },
+   264→    dashboard: {
+   265→      mood: {
+   266→        title: "Humeur",
+   267→        average: "Moyenne semaine",
+   268→        noData: "Pas de données",
+   269→      },
+   270→      medications: {
+   271→        title: "Médicaments",
+   272→        taken: "{count} pris aujourd'hui",
+   273→        adherence: "{percent}% d'observance",
+   274→        noMeds: "Pas de médicaments",
+   275→      },
+   276→      therapy: {
+   277→        title: "Thérapie",
+   278→        lastSession: "Dernière séance",
+   279→        sessions: "{count} séances ce mois",
+   280→        noSessions: "Pas encore de séances",
+   281→      },
+   282→      exercises: {
+   283→        title: "Exercices",
+   284→        completed: "{count} cette semaine",
+   285→        noExercises: "Pas d'exercices",
+   286→      },
+   287→    },
+   288→    patterns: {
+   289→      title: "Insights",
+   290→      noInsights: "Continue à tracker pour voir des insights !",
+   291→    },
+   292→  },
+   293→  export: {
+   294→    title: "Export pour consultation",
+   295→    description:
+   296→      "Génère un résumé PDF à partager avec ton professionnel de santé",
+   297→    presets: {
+   298→      twoWeeks: "2 semaines",
+   299→      oneMonth: "1 mois",
+   300→      threeMonths: "3 mois",
+   301→    },
+   302→    dateRange: {
+   303→      title: "Sélectionner la période",
+   304→      start: "Date de début",
+   305→      end: "Date de fin",
+   306→      invalidRange: "La date de fin doit être après la date de début",
+   307→    },
+   308→    preview: {
+   309→      title: "Aperçu de l'export",
+   310→      moodEntries: "{count} entrées d'humeur",
+   311→      therapySessions: "{count} séances de thérapie",
+   312→      exerciseLogs: "{count} exercices",
+   313→      averageMood: "Humeur moyenne",
+   314→      adherence: "Observance",
+   315→      medications: "Médicaments",
+   316→    },
+   317→    actions: {
+   318→      preview: "Aperçu",
+   319→      download: "Télécharger PDF",
+   320→      modifyPeriod: "Modifier la période",
+   321→    },
+   322→    download: {
+   323→      success: "PDF téléchargé !",
+   324→    },
+   325→  },
+   326→  onboarding: {
+   327→    title: "Bienvenue sur Moodday",
+   328→    next: "Continuer",
+   329→    skip: "Passer pour l'instant",
+   330→    start: "Commencer",
+   331→    complete: "Bienvenue ! Tout est prêt.",
+   332→    steps: {
+   333→      welcome: {
+   334→        title: "Bienvenue sur Moodday",
+   335→        description:
+   336→          "Ton compagnon personnel pour suivre ton parcours de santé mentale. Sans jugement, juste du soutien.",
+   337→      },
+   338→      mood: {
+   339→        title: "Suis ton humeur",
+   340→        description:
+   341→          "Note comment tu te sens chaque jour pour comprendre tes patterns et voir si ton traitement fonctionne.",
+   342→      },
+   343→      medications: {
+   344→        title: "Gère tes médicaments",
+   345→        description:
+   346→          "Garde une trace de tes médicaments et dosages. Vois les corrélations entre ton traitement et ton humeur.",
+   347→      },
+   348→      ready: {
+   349→        title: "Tu es prêt(e) !",
+   350→        description:
+   351→          "Commence ton parcours aujourd'hui. Rappelle-toi, chaque pas compte et tu fais déjà bien d'être ici.",
+   352→      },
+   353→    },
+   354→  },
+   355→  settings: {
+   356→    title: "Paramètres",
+   357→    display: {
+   358→      title: "Affichage",
+   359→      chartPeriod: "Période par défaut des graphiques",
+   360→      chartPeriodHint: "Plage de temps par défaut pour les courbes d'humeur",
+   361→      days7: "7 jours",
+   362→      days30: "30 jours",
+   363→      days90: "90 jours",
+   364→    },
+   365→    notifications: {
+   366→      title: "Notifications",
+   367→      enabled: "Activer les notifications",
+   368→      enabledHint: "Recevoir des rappels et mises à jour",
+   369→      dailyCheckIn: "Rappel quotidien",
+   370→      dailyCheckInHint: "Rappel pour noter ton humeur",
+   371→      checkInTime: "Heure du rappel",
+   372→      medicationReminders: "Rappels médicaments",
+   373→      medicationRemindersHint: "Rappels pour prendre tes médicaments",
+   374→    },
+   375→    saved: "Paramètres sauvegardés !",
+   376→  },
+   377→  debug: {
+   378→    title: "Panneau de debug",
+   379→    info: "Infos",
+   380→    actions: "Actions",
+   381→    noActions: "Aucune action enregistrée",
+   382→    user: "Utilisateur",
+   383→    session: "Session",
+   384→    notLoggedIn: "Non connecté",
+   385→    null: "null",
+   386→  },
+   387→  theme: {
+   388→    title: "Thème",
+   389→    dark: "Sombre",
+   390→    light: "Clair",
+   391→    system: "Système",
+   392→  },
+   393→  sidebar: {
+   394→    title: "Barre latérale",
+   395→    description: "Affiche la barre latérale mobile.",
+   396→    toggle: "Basculer la barre latérale",
+   397→  },
+   398→  breadcrumb: {
+   399→    label: "Fil d'Ariane",
+   400→    more: "Plus",
+   401→  },
+   402→  pagination: {
+   403→    label: "Pagination",
+   404→    previous: "Précédent",
+   405→    next: "Suivant",
+   406→    previousAria: "Aller à la page précédente",
+   407→    nextAria: "Aller à la page suivante",
+   408→    more: "Plus de pages",
+   409→  },
+   410→  months: {
+   411→    january: "Janvier",
+   412→    february: "Février",
+   413→    march: "Mars",
+   414→    april: "Avril",
+   415→    may: "Mai",
+   416→    june: "Juin",
+   417→    july: "Juillet",
+   418→    august: "Août",
+   419→    september: "Septembre",
+   420→    october: "Octobre",
+   421→    november: "Novembre",
+   422→    december: "Décembre",
+   423→  },
+   424→  images: {
+   425→    dropHere: "Déposez ici",
+   426→    upload: "Téléverser",
+   427→    onlyAccept: "Accepte uniquement : {types}",
+   428→    errors: {
+   429→      uploadFailed: "Échec du téléversement",
+   430→      invalidType: "Type de fichier invalide",
+   431→      invalidTypeDescription: "Seuls png, jpg, jpeg sont autorisés",
+   432→      fileTooLarge: "Fichier trop volumineux (max 1 Mo)",
+   433→      fileTooLargeDescription:
+   434→        "Utilisez https://tinypng.com/ pour compresser l'image",
+   435→    },
+   436→  },
+   437→  feedback: {
+   438→    button: "Avis",
+   439→    message: "Message",
+   440→    send: "Envoyer",
+   441→    sent: "Avis envoyé",
+   442→  },
+   443→  support: {
+   444→    contact: "Contacter le support",
+   445→    title: "Contacter le support",
+   446→    descriptionPrefix: "Vous pouvez nous écrire à ",
+   447→    descriptionSuffix: " et nous vous répondrons dès que possible.",
+   448→    subject: "Sujet",
+   449→    message: "Message",
+   450→    send: "Envoyer",
+   451→    sent: "Message envoyé",
+   452→  },
+   453→  pricing: {
+   454→    title: "Tarifs simples et transparents",
+   455→    description: "Choisissez l'offre qui vous convient.",
+   456→    monthly: "Mensuel",
+   457→    yearly: "Annuel",
+   458→    save: "Économisez {percent}",
+   459→    footer: "Annulez à tout moment. Aucun frais caché.",
+   460→    customPlan: "Besoin d'une offre sur mesure ?",
+   461→    contact: "Contactez-nous",
+   462→    dialog: {
+   463→      title: "Choisissez une offre et lancez-vous",
+   464→      description:
+   465→        "Débloquez toutes les fonctionnalités et faites grandir votre activité.",
+   466→    },
+   467→  },
+   468→  pricingCard: {
+   469→    mostPopular: "Le plus populaire",
+   470→    perMonth: "/mois",
+   471→    save: "Économisez {percent}",
+   472→    billedYearly: "Facturé à l'année : {amount}",
+   473→    freeTrial: "Essai gratuit {days} jours",
+   474→    includes: "Inclus",
+   475→    signInRequired: "Veuillez vous connecter pour mettre à niveau",
+   476→    upgradeError: "Impossible de démarrer le paiement",
+   477→    ctaFree: "Commencer gratuitement",
+   478→    ctaMonthly: "Choisir mensuel",
+   479→    ctaYearly: "Choisir annuel",
+   480→  },
+   481→  plans: {
+   482→    names: {
+   483→      free: "Gratuit",
+   484→      pro: "Pro",
+   485→      ultra: "Ultra",
+   486→    },
+   487→    descriptions: {
+   488→      free: "Parfait pour les particuliers et les petits projets",
+   489→      pro: "Idéal pour les équipes en croissance avec des besoins avancés",
+   490→      ultra: "Offre entreprise pour grandes équipes et workflows complexes",
+   491→    },
+   492→    limits: {
+   493→      projects: {
+   494→        label: "{value} projets",
+   495→        description: "Créer et gérer des projets",
+   496→      },
+   497→      storage: {
+   498→        label: "{value} Go de stockage",
+   499→        description: "Stockage cloud pour vos fichiers",
+   500→      },
+   501→      members: {
+   502→        label: "{value} membres d'équipe",
+   503→        description: "Inviter des membres pour collaborer",
+   504→      },
+   505→    },
+   506→    additionalFeatures: {
+   507→      free: [
+   508→        {
+   509→          label: "Sécurité de base",
+   510→          description: "Protection standard pour vos données",
+   511→        },
+   512→      ],
+   513→      pro: [
+   514→        {
+   515→          label: "Support prioritaire",
+   516→          description: "Obtenez de l'aide quand vous en avez besoin",
+   517→        },
+   518→        {
+   519→          label: "Service client 24/7",
+   520→          description: "Assistance disponible à toute heure",
+   521→        },
+   522→        {
+   523→          label: "Analyses avancées",
+   524→          description: "Insights détaillés et rapports",
+   525→        },
+   526→      ],
+   527→      ultra: [
+   528→        {
+   529→          label: "Support prioritaire",
+   530→          description: "Obtenez de l'aide quand vous en avez besoin",
+   531→        },
+   532→      ],
+   533→    },
+   534→  },
+   535→  app: {
+   536→    searchPlaceholder: "Rechercher...",
+   537→    commandTitle: "Palette de commandes",
+   538→    commandDescription: "Recherchez une commande à exécuter...",
+   539→    commandPlaceholder: "Tapez une commande ou recherchez...",
+   540→    commandEmpty: "Aucun résultat trouvé.",
+   541→    analytics: {
+   542→      title: "Vue d'ensemble des analyses",
+   543→      description: "Suivez vos performances et comprenez votre audience.",
+   544→    },
+   545→    cards: {
+   546→      totalLikes: "Total des likes",
+   547→      totalLikesDelta: "+12 % vs le mois dernier",
+   548→      totalThreads: "Total des threads",
+   549→      totalThreadsDelta: "+8 % vs le mois dernier",
+   550→      newSubscribers: "Nouveaux abonnés",
+   551→      newSubscribersDelta: "+5 % vs le mois dernier",
+   552→      impressions: "Impressions",
+   553→      impressionsDelta: "+18 % vs le mois dernier",
+   554→    },
+   555→    subscribers: {
+   556→      title: "Abonnés",
+   557→      description: "Nouveaux abonnés dans le temps",
+   558→      trending: "En hausse de {value} ce mois-ci",
+   559→      range: "Janvier - Juin {year}",
+   560→    },
+   561→    upgrade: {
+   562→      title: "Passez à l'offre supérieure",
+   563→      description: "Débloquez plus de fonctionnalités pour votre compte.",
+   564→      cta: "Mettre à niveau",
+   565→    },
+   566→  },
+   567→  admin: {
+   568→    panel: "Panneau d'administration",
+   569→    nav: {
+   570→      section: "Admin",
+   571→    },
+   572→    dashboard: {
+   573→      title: "Tableau de bord admin",
+   574→    },
+   575→    stats: {
+   576→      totalUsers: "Utilisateurs totaux",
+   577→      totalUsersDescription: "Tous les comptes enregistrés",
+   578→      premiumUsers: "Utilisateurs premium",
+   579→      premiumUsersDescription: "Abonnements payants actifs",
+   580→      mrr: "Revenu récurrent mensuel",
+   581→      mrrDescription: "Revenu mensuel estimé",
+   582→      newUsersThisMonth: "+{count} ce mois-ci",
+   583→    },
+   584→    feedback: {
+   585→      title: "Retours",
+   586→      description: "Consultez les retours des utilisateurs.",
+   587→      searchPlaceholder: "Rechercher des retours...",
+   588→      empty: "Aucun retour trouvé.",
+   589→      detailTitle: "Détails du retour",
+   590→      submitted: "Envoyé",
+   591→      viewDetails: "Voir les détails",
+   592→      noRating: "Aucune note",
+   593→      ratings: {
+   594→        extremelyDissatisfied: "Très insatisfait",
+   595→        somewhatDissatisfied: "Plutôt insatisfait",
+   596→        neutral: "Neutre",
+   597→        satisfied: "Satisfait",
+   598→      },
+   599→      reply: {
+   600→        button: "Répondre",
+   601→        title: "Répondre au retour",
+   602→        description: "Envoyer une réponse à {name}.",
+   603→        message: "Message",
+   604→        placeholder: "Écrivez votre réponse...",
+   605→        send: "Envoyer la réponse",
+   606→        sent: "Réponse envoyée",
+   607→        failed: "Échec de l'envoi",
+   608→      },
+   609→    },
+   610→    users: {
+   611→      title: "Utilisateurs",
+   612→      searchPlaceholder: "Rechercher des utilisateurs...",
+   613→      empty: "Aucun utilisateur trouvé.",
+   614→      actionsMenu: "Ouvrir le menu d'actions",
+   615→      actions: {
+   616→        impersonate: "Usurper",
+   617→        makeAdmin: "Passer admin",
+   618→        makeUser: "Passer utilisateur",
+   619→        unban: "Débannir",
+   620→        ban: "Bannir",
+   621→      },
+   622→      status: {
+   623→        active: "Actif",
+   624→        banned: "Banni",
+   625→      },
+   626→      roles: {
+   627→        admin: "Admin",
+   628→        user: "Utilisateur",
+   629→      },
+   630→      banReason: "Violation des conditions",
+   631→      banConfirm: "Bannir {name} ?",
+   632→      banFailed: "Échec du bannissement : {error}",
+   633→      banned: "Utilisateur banni",
+   634→      unbanFailed: "Échec du débannissement : {error}",
+   635→      unbanned: "Utilisateur débanni",
+   636→      impersonating: "Usurpation en cours",
+   637→      impersonateFailed: "Échec de l'usurpation : {error}",
+   638→      roleUpdated: "Rôle mis à jour",
+   639→      roleUpdateFailed: "Échec de la mise à jour du rôle : {error}",
+   640→      stopImpersonating: "Arrêter l'usurpation",
+   641→      anonymous: "Anonyme",
+   642→      noEmail: "Aucun email",
+   643→      unverified: "Non vérifié",
+   644→      table: {
+   645→        user: "Utilisateur",
+   646→        role: "Rôle",
+   647→        status: "Statut",
+   648→        joined: "Inscrit",
+   649→        created: "Créé",
+   650→        actions: "Actions",
+   651→      },
+   652→    },
+   653→    userDetails: {
+   654→      title: "Détails utilisateur",
+   655→      description: "Gérez les informations du compte et les sessions.",
+   656→      subscriptionTitle: "Abonnement",
+   657→      subscriptionStatus: {
+   658→        active: "Actif",
+   659→        canceled: "Annulé",
+   660→        trialing: "Essai",
+   661→        past_due: "En retard",
+   662→        unpaid: "Impayé",
+   663→        incomplete: "Incomplet",
+   664→      },
+   665→      noSubscription: "Aucun abonnement.",
+   666→      noName: "Utilisateur sans nom",
+   667→      created: "Créé",
+   668→      providers: {
+   669→        title: "Fournisseurs connectés",
+   670→        description: "Comptes externes liés à cet utilisateur.",
+   671→        empty: "Aucun fournisseur connecté.",
+   672→        emailPassword: "Email/mot de passe",
+   673→        status: {
+   674→          active: "Actif",
+   675→          connected: "Connecté",
+   676→          inactive: "Inactif",
+   677→        },
+   678→        table: {
+   679→          provider: "Fournisseur",
+   680→          status: "Statut",
+   681→          connected: "Connecté le",
+   682→          accountId: "ID du compte",
+   683→        },
+   684→      },
+   685→      sessions: {
+   686→        title: "Sessions",
+   687→        description: "Sessions actives pour cet utilisateur.",
+   688→        loading: "Chargement des sessions...",
+   689→        loadFailed: "Échec du chargement des sessions : {error}",
+   690→        empty: "Aucune session.",
+   691→        revokeAllTitle: "Révoquer toutes les sessions",
+   692→        revokeAllDescription: "Cela déconnectera l'utilisateur partout.",
+   693→        revokeAllAction: "Révoquer tout",
+   694→        revokeAllFailed: "Échec de la révocation : {error}",
+   695→        revokedAll: "Toutes les sessions ont été révoquées",
+   696→        revokeFailed: "Échec de la révocation de la session : {error}",
+   697→        revoked: "Session révoquée",
+   698→        table: {
+   699→          device: "Appareil",
+   700→          ip: "Adresse IP",
+   701→          status: "Statut",
+   702→          created: "Créé",
+   703→          expires: "Expire",
+   704→          actions: "Actions",
+   705→        },
+   706→        status: {
+   707→          active: "Active",
+   708→          expired: "Expirée",
+   709→          impersonated: "Usurpée",
+   710→        },
+   711→        unknownDevice: "Appareil inconnu",
+   712→        unknownBrowser: "Navigateur inconnu",
+   713→        unknownOs: "OS inconnu",
+   714→        unknownIp: "IP inconnue",
+   715→        deviceFormat: "{browser} sur {os}",
+   716→      },
+   717→    },
+   718→  },
+   719→  account: {
+   720→    title: "Compte",
+   721→    metaTitle: "Compte",
+   722→    metaDescription: "Gérez les paramètres de votre compte",
+   723→    settings: {
+   724→      title: "Paramètres du compte",
+   725→      signOut: "Se déconnecter",
+   726→    },
+   727→    profile: {
+   728→      section: "Votre profil",
+   729→      profile: "Profil",
+   730→      mail: "Email",
+   731→      danger: "Danger",
+   732→      updated: "Profil mis à jour",
+   733→      verifySent: "Email de vérification envoyé",
+   734→      verifyEmail: "Vérifier l'email",
+   735→      verifiedTooltip: "Email vérifié",
+   736→      changeEmail: "Modifier l'email",
+   737→      changePassword: "Modifier le mot de passe",
+   738→      editTitle: "Paramètres",
+   739→      editDescription: "Mettez à jour votre profil.",
+   740→    },
+   741→    password: {
+   742→      title: "Changer le mot de passe",
+   743→      description:
+   744→        "Mettez à jour votre mot de passe pour sécuriser votre compte.",
+   745→      currentRequired: "Le mot de passe actuel est requis",
+   746→      minLength: "Le mot de passe doit contenir au moins 8 caractères",
+   747→      mismatch: "Les mots de passe ne correspondent pas",
+   748→      currentLabel: "Mot de passe actuel",
+   749→      newLabel: "Nouveau mot de passe",
+   750→      confirmLabel: "Confirmer le mot de passe",
+   751→      revokeLabel: "Se déconnecter des autres appareils",
+   752→      revokeDescription: "Fermer toutes les autres sessions actives.",
+   753→      submit: "Mettre à jour",
+   754→      success: "Mot de passe mis à jour",
+   755→    },
+   756→    email: {
+   757→      metaTitle: "Préférences email",
+   758→      metaDescription: "Gérez vos préférences email.",
+   759→      title: "Préférences email",
+   760→      description: "Choisissez les emails que vous souhaitez recevoir.",
+   761→      changeTitle: "Modifier l'email",
+   762→      changeDescription: "Mettez à jour votre adresse email.",
+   763→      newLabel: "Nouvel email",
+   764→      newPlaceholder: "vous@exemple.com",
+   765→      changeSubmit: "Envoyer le lien de vérification",
+   766→      invalid: "Saisissez un email valide",
+   767→      verifySent: "Email de vérification envoyé",
+   768→      unsubscribeLabel: "Se désabonner",
+   769→      unsubscribeDescription: "Ne plus recevoir les mises à jour.",
+   770→      updated: "Préférences mises à jour",
+   771→      errorTitle: "Paramètres email indisponibles",
+   772→      errorDescription: "Impossible de charger vos préférences email.",
+   773→    },
+   774→    billing: {
+   775→      metaTitle: "Facturation",
+   776→      metaDescription:
+   777→        "Gérez votre abonnement et vos informations de facturation.",
+   778→      title: "Facturation",
+   779→      freeTitle: "Vous êtes sur l'offre gratuite",
+   780→      freeDescription:
+   781→        "Passez à une offre supérieure pour débloquer les fonctionnalités premium.",
+   782→      manage: "Gérer l'abonnement",
+   783→      cancel: "Annuler l'abonnement",
+   784→      reactivate: "Réactiver",
+   785→      cancelTitle: "Annuler l'abonnement",
+   786→      cancelDescription:
+   787→        "Dites-nous pourquoi vous partez pour nous aider à améliorer.",
+   788→      cancelReasonLabel: "Raison de l'annulation",
+   789→      cancelDetailsLabel: "Détails supplémentaires",
+   790→      cancelDetailsPlaceholder: "Dites-nous en plus...",
+   791→      cancelDetailsMin: "Merci d'ajouter plus de détails",
+   792→      cancelConfirm: "Confirmer l'annulation",
+   793→      cancelBack: "Conserver l'abonnement",
+   794→      cancelError: "Impossible d'annuler l'abonnement",
+   795→      cancelRedirect: "Redirection vers le portail de facturation...",
+   796→      cancelReasons: {
+   797→        tooExpensive: "Trop cher",
+   798→        notUsing: "Pas assez utilisé",
+   799→        missingFeatures: "Fonctionnalités manquantes",
+   800→        bugs: "Trop de bugs",
+   801→        competitor: "Passage à un concurrent",
+   802→        other: "Autre",
+   803→      },
+   804→      detailsTitle: "Détails de facturation",
+   805→      limitsTitle: "Limites du plan",
+   806→      plan: "Plan",
+   807→      startDate: "Date de début",
+   808→      renewAt: "Renouvelle le",
+   809→      endsOn: "Se termine le",
+   810→      trialRemaining: "{days} jours restants d'essai",
+   811→      noStripeCustomer: "ID client Stripe manquant",
+   812→      success: {
+   813→        metaTitle: "Paiement réussi",
+   814→        metaDescription: "Votre abonnement est actif.",
+   815→        title: "Paiement réussi",
+   816→        description: "Votre abonnement est désormais actif. Merci !",
+   817→      },
+   818→      goDashboard: "Aller au tableau de bord",
+   819→      status: {
+   820→        trialing: "Essai",
+   821→        trialingDescription: "Essai en cours",
+   822→        active: "Actif",
+   823→        activeDescription: "Abonnement actif",
+   824→        canceled: "Annulé",
+   825→        canceledDescription: "Abonnement annulé",
+   826→        pastDue: "En retard",
+   827→        pastDueDescription: "Paiement en retard",
+   828→        unpaid: "Impayé",
+   829→        unpaidDescription: "Paiement échoué",
+   830→        incomplete: "Incomplet",
+   831→        incompleteDescription: "Paiement incomplet",
+   832→      },
+   833→    },
+   834→    danger: {
+   835→      title: "Supprimer le compte",
+   836→      description:
+   837→        "Supprime définitivement votre compte et toutes les données associées.",
+   838→      personalTitle: "Compte personnel",
+   839→      personalDescription:
+   840→        "Supprimez vos données personnelles et votre profil.",
+   841→      orgTitle: "Données d'organisation",
+   842→      orgDescription: "Supprimez les données partagées.",
+   843→      confirmTitle: "Confirmer la suppression",
+   844→      confirmDescription: "Cette action est irréversible.",
+   845→      confirmText: "Supprimer le compte",
+   846→      requestedTitle: "Suppression demandée",
+   847→      requestedDescription: "Nous avons reçu votre demande.",
+   848→      delete: "Supprimer le compte",
+   849→    },
+   850→    export: {
+   851→      title: "Exporter mes données",
+   852→      description:
+   853→        "Téléchargez toutes vos données personnelles au format JSON (RGPD).",
+   854→      dataIncludedTitle: "Données incluses",
+   855→      dataIncludedDescription:
+   856→        "Profil, humeurs, médicaments, sessions de thérapie et exercices.",
+   857→      button: "Télécharger mes données",
+   858→      success: "Vos données ont été téléchargées",
+   859→    },
+   860→  },
+   861→  auth: {
+   862→    form: {
+   863→      name: "Nom",
+   864→      email: "Email",
+   865→      emailPlaceholder: "vous@exemple.com",
+   866→      password: "Mot de passe",
+   867→    },
+   868→    signIn: {
+   869→      metaTitle: "Se connecter à {app}",
+   870→      metaDescription: "Accédez à votre compte pour gérer vos témoignages.",
+   871→      description: "Connectez-vous pour accéder à votre tableau de bord.",
+   872→      emailPlaceholder: "vous@exemple.com",
+   873→      forgotPassword: "Mot de passe oublié ?",
+   874→      submit: "Se connecter",
+   875→      magicLinkSubmit: "Envoyer le lien magique",
+   876→      magicLinkPrompt: "Préférez un lien magique ?",
+   877→      magicLinkAction: "Utiliser un lien magique",
+   878→      passwordPrompt: "Préférez un mot de passe ?",
+   879→      passwordAction: "Utiliser un mot de passe",
+   880→      noAccount: "Pas encore de compte ?",
+   881→      signUp: "Créer un compte",
+   882→      or: "ou",
+   883→      lastUsed: "Dernier utilisé",
+   884→      provider: "Continuer avec {provider}",
+   885→    },
+   886→    signUp: {
+   887→      metaTitle: "Créer votre compte {app}",
+   888→      metaDescription: "Commencez à collecter des témoignages dès aujourd'hui.",
+   889→      title: "Créer votre compte {app}",
+   890→      description: "Commencez en quelques minutes avec un compte gratuit.",
+   891→      namePlaceholder: "Votre nom",
+   892→      emailPlaceholder: "vous@exemple.com",
+   893→      verifyPassword: "Confirmer le mot de passe",
+   894→      passwordMismatch: "Les mots de passe ne correspondent pas",
+   895→      submit: "Créer un compte",
+   896→      hasAccount: "Vous avez déjà un compte ?",
+   897→      signIn: "Se connecter",
+   898→    },
+   899→    forgetPassword: {
+   900→      metaTitle: "Réinitialiser votre mot de passe {app}",
+   901→      metaDescription: "Nous vous enverrons un lien de réinitialisation.",
+   902→      title: "Mot de passe oublié ?",
+   903→      description:
+   904→        "Saisissez votre email pour recevoir un lien de réinitialisation.",
+   905→      submit: "Envoyer le lien",
+   906→    },
+   907→    resetPassword: {
+   908→      metaTitle: "Choisir un nouveau mot de passe",
+   909→      metaDescription: "Définissez un nouveau mot de passe pour votre compte.",
+   910→      title: "Définir un nouveau mot de passe",
+   911→      description: "Choisissez un mot de passe sécurisé.",
+   912→      newPassword: "Nouveau mot de passe",
+   913→      passwordPlaceholder: "Au moins 8 caractères",
+   914→      passwordMin: "Le mot de passe doit contenir au moins 8 caractères",
+   915→      submit: "Mettre à jour",
+   916→      success: "Mot de passe mis à jour",
+   917→    },
+   918→    confirmDelete: {
+   919→      metaTitle: "Confirmer la suppression du compte",
+   920→      metaDescription: "Confirmez la suppression de votre compte.",
+   921→      title: "Confirmer la suppression du compte",
+   922→      description: "Cette action est irréversible.",
+   923→      confirm: "Supprimer le compte",
+   924→      invalidToken: "Jeton invalide ou expiré",
+   925→    },
+   926→    newUser: {
+   927→      metaTitle: "Bienvenue sur {app}",
+   928→      metaDescription: "Votre compte est prêt.",
+   929→      title: "Tout est prêt !",
+   930→      description: "Votre compte est prêt à être utilisé.",
+   931→      cta: "Aller au tableau de bord",
+   932→    },
+   933→    goodbye: {
+   934→      metaTitle: "Déconnecté de {app}",
+   935→      metaDescription: "Vous avez été déconnecté.",
+   936→      title: "Vous êtes déconnecté",
+   937→      description: "Nous espérons vous revoir bientôt.",
+   938→      detailOne: "Vous pouvez vous reconnecter à tout moment.",
+   939→      detailTwo: "Besoin d'un nouveau compte ? Créez-en un en quelques clics.",
+   940→      cta: "Créer un compte",
+   941→    },
+   942→    verify: {
+   943→      metaTitle: "Vérifiez votre email",
+   944→      metaDescription:
+   945→        "Consultez votre boîte de réception pour vérifier votre email.",
+   946→      title: "Vérifiez votre email",
+   947→      description: "Nous vous avons envoyé un lien de vérification.",
+   948→      checkInbox: "Vérifiez votre boîte de réception",
+   949→      instructions:
+   950→        "Cliquez sur le lien dans l'email pour vérifier votre adresse.",
+   951→      spamHelp: "Si vous ne le voyez pas, vérifiez les spams.",
+   952→      support: "Besoin d'aide ? Contactez le support.",
+   953→    },
+   954→    error: {
+   955→      message: "Une erreur est survenue",
+   956→    },
+   957→    logout: "Se déconnecter",
+   958→  },
+   959→  landing: {
+   960→    hero: {
+   961→      titlePrefix: "Lancez votre SaaS",
+   962→      titleHighlight: "en jours, pas en mois",
+   963→      description:
+   964→        "Un boilerplate Next.js moderne avec authentification, paiements, emails et base de données - tout ce qu'il faut pour lancer rapidement.",
+   965→      ctaPrimary: "Commencer",
+   966→      ctaSecondary: "Voir les fonctionnalités",
+   967→      imageAlt: "Capture d'écran du tableau de bord",
+   968→    },
+   969→    stats: {
+   970→      one: "Heures économisées",
+   971→      two: "Développeurs actifs",
+   972→      three: "Projets lancés",
+   973→      four: "Temps de setup",
+   974→    },
+   975→    bento: {
+   976→      avatarAlt: "Avatar",
+   977→      items: {
+   978→        ai: {
+   979→          title: "Authentification",
+   980→          description:
+   981→            "Auth multi-provider avec GitHub, Google et magic links.",
+   982→        },
+   983→        schedule: {
+   984→          title: "Paiements",
+   985→          description:
+   986→            "Intégration Stripe avec abonnements et portail de facturation.",
+   987→        },
+   988→        calendar: {
+   989→          title: "Base de données",
+   990→          description: "PostgreSQL avec Prisma ORM et support multi-tenant.",
+   991→        },
+   992→        analytics: {
+   993→          title: "Email",
+   994→          description: "Emails transactionnels avec React Email et Resend.",
+   995→        },
+   996→        research: {
+   997→          title: "Organisations",
+   998→          description: "Support multi-tenant avec rôles et permissions.",
+   999→        },
+  1000→      },
+  1001→      skeleton: {
+  1002→        threadPrompt: "Créer votre premier projet",
+  1003→        threadResponse:
+  1004→          "Votre projet Moodday est prêt ! Commencez à construire votre SaaS en minutes.",
+  1005→        schedulePending: "Configuration de votre environnement...",
+  1006→        scheduleSuccess:
+  1007→          "Votre serveur de développement tourne sur localhost:3000",
+  1008→        researchQuestion: "Quelle stack utilise Moodday ?",
+  1009→        searching: "Chargement...",
+  1010→        researchAnswer:
+  1011→          "Next.js 16, TypeScript, TailwindCSS, Prisma, Better Auth et Stripe.",
+  1012→      },
+  1013→      stats: {
+  1014→        followers: "+{count} fonctionnalités",
+  1015→        views: "+{count} composants",
+  1016→        likes: "{count} téléchargements",
+  1017→        replies: "{count} étoiles",
+  1018→        last30Days: "Inclus par défaut",
+  1019→      },
+  1020→    },
+  1021→    features: {
+  1022→      badge: "Tout est inclus.",
+  1023→      title: "Construisez plus vite avec une stack",
+  1024→      titleEmphasis: "complète",
+  1025→      description:
+  1026→        "Tout ce qu'il faut pour lancer une application SaaS prête pour la production.",
+  1027→      items: [
+  1028→        {
+  1029→          badge: "Auth",
+  1030→          title: "Authentification prête",
+  1031→          description: "Connexion via GitHub, Google ou magic links incluse.",
+  1032→        },
+  1033→        {
+  1034→          badge: "Paiements",
+  1035→          title: "Intégration Stripe",
+  1036→          description:
+  1037→            "Abonnements, webhooks et portail client déjà configurés.",
+  1038→        },
+  1039→        {
+  1040→          badge: "Database",
+  1041→          title: "PostgreSQL + Prisma",
+  1042→          description:
+  1043→            "Accès base de données type-safe avec migrations et scripts de seed.",
+  1044→        },
+  1045→        {
+  1046→          badge: "Email",
+  1047→          title: "Emails transactionnels",
+  1048→          description:
+  1049→            "Templates d'emails avec React Email et intégration Resend.",
+  1050→        },
+  1051→      ],
+  1052→    },
+  1053→    pain: {
+  1054→      title: "J'adore construire des produits SaaS...",
+  1055→      subtitle: "Mais la mise en place prend une éternité",
+  1056→      without: {
+  1057→        title: "Construire from scratch",
+  1058→        items: [
+  1059→          "Des semaines sur la configuration de l'auth",
+  1060→          "Intégration des paiements complexe",
+  1061→          "Conception du schéma de base de données",
+  1062→          "Patterns de code incohérents",
+  1063→        ],
+  1064→      },
+  1065→      with: {
+  1066→        title: "Construire avec Moodday",
+  1067→        items: [
+  1068→          "Auth prête en minutes",
+  1069→          "Stripe pré-configuré",
+  1070→          "Patterns de base de données éprouvés",
+  1071→          "Architecture cohérente et scalable",
+  1072→        ],
+  1073→      },
+  1074→    },
+  1075→    cta: {
+  1076→      title: "Prêt à livrer plus vite ?",
+  1077→      subtitle: "Commencez à construire aujourd'hui.",
+  1078→      button: "Commencer",
+  1079→    },
+  1080→    ctaCard: {
+  1081→      title: "Lancez votre SaaS aujourd'hui",
+  1082→      description: "Clonez le repo et commencez à construire en minutes.",
+  1083→      primaryCta: "Commencer",
+  1084→      secondaryCta: "Voir la doc",
+  1085→    },
+  1086→    ctaImage: {
+  1087→      title: "Livrez votre produit plus vite",
+  1088→      description:
+  1089→        "Concentrez-vous sur vos fonctionnalités, pas le boilerplate.",
+  1090→      cta: "Commencer",
+  1091→    },
+  1092→    faq: {
+  1093→      titleShort: "FAQ",
+  1094→      title: "Questions fréquentes",
+  1095→      items: [
+  1096→        {
+  1097→          question: "Qu'est-ce que Moodday ?",
+  1098→          answer:
+  1099→            "Moodday est un boilerplate Next.js moderne qui inclut authentification, paiements, base de données et emails - tout ce qu'il faut pour lancer un SaaS rapidement.",
+  1100→        },
+  1101→        {
+  1102→          question: "Quelle stack technique utilise Moodday ?",
+  1103→          answer:
+  1104→            "Next.js 16, TypeScript, TailwindCSS v4, Prisma ORM, Better Auth, Stripe, React Email et Resend.",
+  1105→        },
+  1106→        {
+  1107→          question: "Le code est-il prêt pour la production ?",
+  1108→          answer:
+  1109→            "Oui, Moodday suit les bonnes pratiques avec TypeScript en mode strict, gestion d'erreurs appropriée et patterns d'architecture scalables.",
+  1110→        },
+  1111→        {
+  1112→          question: "Puis-je l'utiliser pour des projets commerciaux ?",
+  1113→          answer:
+  1114→            "Absolument ! Moodday est conçu pour construire des applications SaaS commerciales.",
+  1115→        },
+  1116→        {
+  1117→          question: "Comment démarrer ?",
+  1118→          answer:
+  1119→            "Clonez le repository, lancez pnpm setup pour configurer votre environnement, et vous êtes prêt à construire.",
+  1120→        },
+  1121→        {
+  1122→          question: "Quelle base de données supporte-t-il ?",
+  1123→          answer:
+  1124→            "Moodday utilise PostgreSQL avec Prisma ORM. NeonDB est recommandé pour les déploiements serverless.",
+  1125→        },
+  1126→        {
+  1127→          question: "L'authentification est-elle incluse ?",
+  1128→          answer:
+  1129→            "Oui, l'authentification multi-provider avec GitHub, Google, email/mot de passe et magic links est pré-configurée avec Better Auth.",
+  1130→        },
+  1131→      ],
+  1132→    },
+  1133→    reviews: {
+  1134→      at: "chez",
+  1135→      avatarAlt: "Avatar de {name}",
+  1136→      avatarAltGeneric: "Avatar",
+  1137→      triple: [
+  1138→        {
+  1139→          image: "https://i.pravatar.cc/300?u=a1",
+  1140→          name: "Sophie",
+  1141→          review:
+  1142→            "Threader **a complètement transformé ma façon de gérer mes réseaux sociaux**. La planification et l'IA me font gagner des heures chaque semaine.",
+  1143→          role: "Responsable marketing digital",
+  1144→        },
+  1145→        {
+  1146→          image: "https://i.pravatar.cc/300?u=a2",
+  1147→          name: "Alex",
+  1148→          review:
+  1149→            "Threader a boosté mon engagement. **L'outil d'analyse m'aide à comprendre ce qui fonctionne**, et à affiner ma stratégie.",
+  1150→          role: "Influenceur réseaux sociaux",
+  1151→        },
+  1152→        {
+  1153→          image: "https://i.pravatar.cc/300?u=a3",
+  1154→          name: "Jordan",
+  1155→          review:
+  1156→            "La planification et l'IA sont des atouts majeurs. **L'interface est ultra intuitive** pour développer sa présence en ligne.",
+  1157→          role: "Entrepreneur",
+  1158→        },
+  1159→      ],
+  1160→      single: {
+  1161→        image: "https://i.pravatar.cc/300?u=5",
+  1162→        name: "Michel",
+  1163→        review:
+  1164→          "Threader **a complètement transformé** ma façon de gérer mes réseaux sociaux. La planification et l'IA **m'ont fait gagner des heures chaque semaine.**",
+  1165→        role: "Responsable marketing digital",
+  1166→        compagnyImage:
+  1167→          "https://1000logos.net/wp-content/uploads/2017/03/McDonalds-Logo-2003.png",
+  1168→      },
+  1169→      grid: [
+  1170→        {
+  1171→          image: "https://i.pravatar.cc/300?u=b1",
+  1172→          name: "Eva",
+  1173→          review:
+  1174→            "Depuis Threader, mon process de création est plus fluide. Les suggestions IA sont pertinentes et m'aident à mieux connecter avec mon audience.",
+  1175→          role: "Créatrice de contenu",
+  1176→        },
+  1177→        {
+  1178→          image: "https://i.pravatar.cc/300?u=b2",
+  1179→          name: "Lucas",
+  1180→          review:
+  1181→            "La planification est un vrai gain de temps. Je peux organiser mon calendrier et publier aux meilleurs moments sans stress.",
+  1182→          role: "Social media manager",
+  1183→        },
+  1184→        {
+  1185→          image: "https://i.pravatar.cc/300?u=b3",
+  1186→          name: "Mia",
+  1187→          review:
+  1188→            "Les analytics de Threader sont précieux. J'ai doublé mon taux d'engagement en quelques mois.",
+  1189→          role: "Responsable marketing digital",
+  1190→        },
+  1191→        {
+  1192→          image: "https://i.pravatar.cc/300?u=b4",
+  1193→          name: "Noah",
+  1194→          review:
+  1195→            "J'étais sceptique sur l'IA, mais Threader m'a convaincu. Le contenu reste humain et booste les interactions.",
+  1196→          role: "Blogueur",
+  1197→        },
+  1198→        {
+  1199→          image: "https://i.pravatar.cc/300?u=b5",
+  1200→          name: "Isabella",
+  1201→          review:
+  1202→            "L'interface est très simple. Mon équipe a été opérationnelle rapidement et nos résultats se sont améliorés.",
+  1203→          role: "Team leader",
+  1204→        },
+  1205→        {
+  1206→          image: "https://i.pravatar.cc/300?u=b6",
+  1207→          name: "Oliver",
+  1208→          review:
+  1209→            "Le repost automatique est devenu indispensable. Je maximise mes meilleurs contenus sans effort.",
+  1210→          role: "Freelance",
+  1211→        },
+  1212→        {
+  1213→          image: "https://i.pravatar.cc/300?u=b7",
+  1214→          name: "Sophia",
+  1215→          review:
+  1216→            "La communauté Threader offre de vraies opportunités de réseau. C'est plus qu'un outil.",
+  1217→          role: "Influenceuse",
+  1218→        },
+  1219→        {
+  1220→          image: "https://i.pravatar.cc/300?u=b8",
+  1221→          name: "Elijah",
+  1222→          review:
+  1223→            "La vue calendrier me permet de visualiser ma stratégie mensuelle. Un vrai game changer.",
+  1224→          role: "Stratège",
+  1225→        },
+  1226→        {
+  1227→          image: "https://i.pravatar.cc/300?u=b9",
+  1228→          name: "Charlotte",
+  1229→          review:
+  1230→            "Les tarifs sont flexibles et adaptés à tous les niveaux, des débutants aux créateurs établis.",
+  1231→          role: "Entrepreneuse",
+  1232→        },
+  1233→        {
+  1234→          image: "https://i.pravatar.cc/300?u=b10",
+  1235→          name: "James",
+  1236→          review:
+  1237→            "Le support client est top. Réponses rapides et utiles à chaque fois.",
+  1238→          role: "Client",
+  1239→        },
+  1240→      ],
+  1241→    },
+  1242→  },
+  1243→  email: {
+  1244→    section: {
+  1245→      title: "Restez informé",
+  1246→      description:
+  1247→        "Recevez les dernières nouvelles sur les fonctionnalités, mises à jour et bonnes pratiques SaaS.",
+  1248→      submit: "S'abonner",
+  1249→      success: "Merci de votre inscription",
+  1250→    },
+  1251→    submit: "S'abonner",
+  1252→    success: "Vous êtes inscrit à notre newsletter.",
+  1253→    placeholder: "Votre email",
+  1254→    invalid: "Saisissez un email valide",
+  1255→    errorDescription: "Essayez un autre email ou contactez-nous.",
+  1256→  },
+  1257→  form: {
+  1258→    unsavedWarning:
+  1259→      "Vous avez des modifications non enregistrées. Voulez-vous vraiment quitter ?",
+  1260→  },
+  1261→  docs: {
+  1262→    metaTitle: "Documentation | {app}",
+  1263→    metaDescription: "Tout ce qu'il faut savoir pour utiliser {app}",
+  1264→    title: "Documentation",
+  1265→    description: "Tout ce qu'il faut savoir sur {app}",
+  1266→    readMore: "Lire plus",
+  1267→    onThisPage: "Sur cette page",
+  1268→    requestExamples: "Exemples de requête",
+  1269→    responseExamples: "Exemples de réponse",
+  1270→    general: "Général",
+  1271→    copy: {
+  1272→      copyPage: "Copier la page",
+  1273→      viewMarkdown: "Voir en Markdown",
+  1274→      openV0: "Ouvrir dans v0",
+  1275→      openChatGpt: "Ouvrir dans ChatGPT",
+  1276→      openClaude: "Ouvrir dans Claude",
+  1277→      prompt:
+  1278→        "Je consulte la documentation {app} : {url}.\nAidez-moi à l'utiliser. Soyez prêt à expliquer les concepts, donner des exemples ou aider au debug.",
+  1279→    },
+  1280→  },
+  1281→  posts: {
+  1282→    metaTitle: "Blog {app}",
+  1283→    metaDescription: "Actualités, conseils et histoires de l'équipe.",
+  1284→    title: "Blog",
+  1285→    emptyTitle: "Aucun article trouvé",
+  1286→    viewAll: "Voir tous les articles",
+  1287→    back: "Retour",
+  1288→    draft: "Brouillon",
+  1289→    publishedBy: "Publié {date}",
+  1290→    readingTime: "Temps de lecture {minutes} min",
+  1291→    createdBy: "Créé par",
+  1292→    category: {
+  1293→      title: "Articles de blog sur {category}",
+  1294→      metaTitle: "Blog {app} sur {category}",
+  1295→    },
+  1296→    notFound: {
+  1297→      title: "404 - Introuvable",
+  1298→      description: "L'article demandé n'existe pas.",
+  1299→    },
+  1300→    error: {
+  1301→      title: "Erreur avec l'article",
+  1302→      description:
+  1303→        "Désolé, l'article ne fonctionne pas comme prévu. Veuillez réessayer plus tard.",
+  1304→    },
+  1305→  },
+  1306→  changelog: {
+  1307→    metaTitle: "Journal des modifications - {app}",
+  1308→    metaDescription:
+  1309→      "Restez informé des dernières fonctionnalités, améliorations et corrections.",
+  1310→    title: "Journal des modifications",
+  1311→    description:
+  1312→      "Restez informé des dernières fonctionnalités, améliorations et corrections.",
+  1313→    emptyTitle: "Aucune entrée pour le moment",
+  1314→    emptyDescription: "Revenez bientôt pour les mises à jour.",
+  1315→    latest: "Dernière",
+  1316→    newUpdate: "Nouvelle mise à jour",
+  1317→    backToChangelog: "Retour au journal",
+  1318→    detail: {
+  1319→      metaTitle: "{title} - Journal des modifications - {app}",
+  1320→      metaTitleShort: "{title} - Journal des modifications",
+  1321→      metaDescription: "Notes de version pour {title}",
+  1322→    },
+  1323→  },
+  1324→  payment: {
+  1325→    success: {
+  1326→      title: "Merci pour votre achat !",
+  1327→      description:
+  1328→        "Votre paiement a été effectué avec succès. Vous avez maintenant accès aux ressources premium. Nous sommes là pour vous aider si besoin.",
+  1329→      cta: "Commencer",
+  1330→    },
+  1331→    cancel: {
+  1332→      badge: "Paiement échoué",
+  1333→      title: "Nous n'avons pas pu traiter votre paiement",
+  1334→      lineOne: "Un problème est survenu lors du traitement du paiement.",
+  1335→      lineTwo: "Vérifiez vos informations et réessayez.",
+  1336→      lineThree:
+  1337→        "Si le problème persiste, n'hésitez pas à nous contacter pour obtenir de l'aide.",
+  1338→      lineFour: "Nous sommes là pour vous aider à résoudre cela.",
+  1339→    },
+  1340→  },
+  1341→  about: {
+  1342→    metaTitle: "À propos de {app}",
+  1343→    metaDescription:
+  1344→      "Découvrez Moodday, le boilerplate Next.js moderne conçu pour aider les développeurs à livrer des produits SaaS plus rapidement.",
+  1345→    hero: {
+  1346→      kicker: "À propos",
+  1347→      title: "Livrez plus vite avec une base solide",
+  1348→      description:
+  1349→        "Un boilerplate de confiance, construit par des développeurs pour des développeurs, avec des mises à jour continues et un focus sur les bonnes pratiques modernes.",
+  1350→    },
+  1351→    commitment: {
+  1352→      title: "Notre engagement envers vous",
+  1353→      paragraphOne:
+  1354→        "Moodday est construit avec une vision long terme et un engagement envers la communauté des développeurs. Choisir un boilerplate, c'est lui faire confiance comme fondation de votre produit.",
+  1355→      paragraphTwo:
+  1356→        "C'est pourquoi nous garantissons des mises à jour régulières, des améliorations continues et une documentation claire. Vous aurez toujours accès aux derniers patterns et bonnes pratiques.",
+  1357→    },
+  1358→    gallery: {
+  1359→      altOne: "Créateur enregistrant un témoignage",
+  1360→      altTwo: "Collaboration d'équipe sur des témoignages",
+  1361→      altThree: "Vitrine numérique de témoignages",
+  1362→      altFour: "Succès d'un créateur",
+  1363→    },
+  1364→    reliability: {
+  1365→      title: "Notre promesse de fiabilité",
+  1366→      items: [
+  1367→        {
+  1368→          label: "Mises à jour hebdomadaires",
+  1369→          value: "100",
+  1370→          suffix: "%",
+  1371→        },
+  1372→        {
+  1373→          label: "Disponibilité garantie",
+  1374→          value: "99.9",
+  1375→          suffix: "%",
+  1376→        },
+  1377→        {
+  1378→          label: "Temps de réponse",
+  1379→          value: "<24",
+  1380→          suffix: "h",
+  1381→        },
+  1382→        {
+  1383→          label: "Années d'engagement",
+  1384→          value: "10",
+  1385→          suffix: "+",
+  1386→        },
+  1387→      ],
+  1388→    },
+  1389→  },
+  1390→  contact: {
+  1391→    metaTitle: "Contact {app}",
+  1392→    metaDescription:
+  1393→      "Contactez l'équipe Moodday. Nous sommes là pour répondre à vos questions sur le boilerplate, les fonctionnalités ou le support technique.",
+  1394→    title: "Contactez-nous",
+  1395→    description:
+  1396→      "Des questions sur Moodday ? Besoin d'aide pour la configuration ou envie de partager un retour ? Nous sommes là pour vous aider.",
+  1397→    details: {
+  1398→      location: "Localisation",
+  1399→      email: "Email",
+  1400→      responseTime: "Temps de réponse",
+  1401→      responseLineOne: "Réponse sous 24 heures en général",
+  1402→      responseLineTwo: "Lundi - Vendredi, 9h - 18h ICT",
+  1403→    },
+  1404→    form: {
+  1405→      firstName: "Prénom",
+  1406→      lastName: "Nom",
+  1407→      email: "Email",
+  1408→      subject: "Sujet",
+  1409→      message: "Message",
+  1410→      submit: "Envoyer le message",
+  1411→      success: "Votre message a été envoyé",
+  1412→      invalid: "Entrée invalide",
+  1413→    },
+  1414→  },
+  1415→  legal: {
+  1416→    terms: {
+  1417→      metaTitle: "{app} - Conditions",
+  1418→      metaDescription: "Conditions d'utilisation",
+  1419→      title: "Conditions",
+  1420→      content: "Démo des conditions",
+  1421→    },
+  1422→    privacy: {
+  1423→      metaTitle: "{app} - Confidentialité",
+  1424→      metaDescription: "Politique de confidentialité",
+  1425→      title: "Confidentialité",
+  1426→      content: "Démo de confidentialité",
+  1427→    },
+  1428→  },
+  1429→  error: {
+  1430→    notFound: {
+  1431→      title: "Page introuvable",
+  1432→      description: "Désolé, nous n'avons pas trouvé la page recherchée.",
+  1433→      explainerTitle: "Que s'est-il passé ?",
+  1434→      explainerDescription:
+  1435→        "La page a peut-être été déplacée, supprimée ou l'URL est incorrecte. Si vous pensez devoir y accéder, contactez votre administrateur.",
+  1436→      cta: "Retour à l'accueil",
+  1437→    },
+  1438→    badRequest: {
+  1439→      title: "Requête invalide",
+  1440→      description:
+  1441→        "Nous rencontrons des difficultés techniques. Notre équipe s'en occupe. Essayez d'actualiser la page ou de revenir plus tard.",
+  1442→      cta: "Retour à l'accueil",
+  1443→    },
+  1444→    unauthorized: {
+  1445→      title: "Non autorisé",
+  1446→      description:
+  1447→        "Vous n'avez pas la permission d'accéder à cette ressource. Veuillez vous connecter ou contacter votre administrateur si besoin.",
+  1448→    },
+  1449→  },
+  1450→};
+  1451→
+  1452→export default fr;
+  1453→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

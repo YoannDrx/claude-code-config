@@ -1,0 +1,537 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Yodev | Agence Digitale 360° - Web, Mobile & IA</title>
+     7→    <meta name="description" content="Expert en modernisation IT et intégration IA pour PME/ETI. Du MVP au scaling, nous transformons vos systèmes critiques.">
+     8→    
+     9→    <!-- Tailwind CSS -->
+    10→    <script src="https://cdn.tailwindcss.com"></script>
+    11→    <!-- Alpine.js -->
+    12→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    13→    <!-- Google Fonts -->
+    14→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    15→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    16→    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    17→
+    18→    <script>
+    19→        tailwind.config = {
+    20→            theme: {
+    21→                extend: {
+    22→                    colors: {
+    23→                        primary: '#1BA896', // Teal
+    24→                        secondary: '#FF6B35', // Orange
+    25→                        dark: '#0F1111', // Deep Charcoal
+    26→                        card: 'rgba(31, 33, 33, 0.6)',
+    27→                        border: 'rgba(167, 169, 169, 0.2)',
+    28→                    },
+    29→                    fontFamily: {
+    30→                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+    31→                        display: ['DM Sans', 'sans-serif'],
+    32→                        mono: ['Fira Code', 'monospace'],
+    33→                    },
+    34→                    animation: {
+    35→                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+    36→                        'float': 'float 3s ease-in-out infinite',
+    37→                    },
+    38→                    keyframes: {
+    39→                        float: {
+    40→                            '0%, 100%': { transform: 'translateY(0)' },
+    41→                            '50%': { transform: 'translateY(-10px)' },
+    42→                        }
+    43→                    }
+    44→                }
+    45→            }
+    46→        }
+    47→    </script>
+    48→
+    49→    <style>
+    50→        [x-cloak] { display: none !important; }
+    51→        
+    52→        body {
+    53→            background-color: #0F1111;
+    54→            color: #FFFBF8;
+    55→            overflow-x: hidden;
+    56→        }
+    57→
+    58→        .mesh-gradient {
+    59→            background: radial-gradient(at 0% 0%, rgba(27, 168, 150, 0.15) 0px, transparent 50%),
+    60→                        radial-gradient(at 100% 100%, rgba(255, 107, 53, 0.1) 0px, transparent 50%),
+    61→                        radial-gradient(at 50% 50%, rgba(15, 17, 17, 1) 0px, transparent 100%);
+    62→        }
+    63→
+    64→        .glass-panel {
+    65→            background: rgba(255, 255, 255, 0.03);
+    66→            backdrop-filter: blur(12px);
+    67→            border: 1px solid rgba(255, 255, 255, 0.08);
+    68→            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    69→        }
+    70→
+    71→        .text-gradient {
+    72→            background: linear-gradient(135deg, #FFF 0%, rgba(255,255,255,0.7) 100%);
+    73→            -webkit-background-clip: text;
+    74→            -webkit-text-fill-color: transparent;
+    75→        }
+    76→
+    77→        .hero-glow {
+    78→            position: absolute;
+    79→            width: 600px;
+    80→            height: 600px;
+    81→            background: radial-gradient(circle, rgba(27, 168, 150, 0.2) 0%, transparent 70%);
+    82→            filter: blur(60px);
+    83→            z-index: -1;
+    84→        }
+    85→
+    86→        .step-active {
+    87→            color: #1BA896;
+    88→            border-left-color: #1BA896;
+    89→        }
+    90→
+    91→        /* Technical Schema Connector Animation */
+    92→        .line-draw {
+    93→            stroke-dasharray: 100;
+    94→            stroke-dashoffset: 100;
+    95→            animation: dash 3s linear infinite;
+    96→        }
+    97→        @keyframes dash {
+    98→            to { stroke-dashoffset: 0; }
+    99→        }
+   100→
+   101→        /* Hide scrollbar for Chrome, Safari and Opera */
+   102→        .no-scrollbar::-webkit-scrollbar { display: none; }
+   103→    </style>
+   104→</head>
+   105→<body class="min-height-screen flex flex-col font-sans selection:bg-primary selection:text-white" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+   106→
+   107→    <!-- Navigation -->
+   108→    <header :class="scrolled ? 'glass-panel py-3' : 'bg-transparent py-6'" class="fixed top-0 w-full z-50 transition-all duration-300">
+   109→        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+   110→            <a href="/" class="flex items-center space-x-2 group">
+   111→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform duration-300">
+   112→                    <span class="text-dark font-black text-xl">Y</span>
+   113→                </div>
+   114→                <span class="text-2xl font-display font-bold tracking-tight">yodev</span>
+   115→            </a>
+   116→
+   117→            <!-- Desktop Nav -->
+   118→            <nav class="hidden md:flex items-center space-x-8">
+   119→                <div class="relative group" x-data="{ open: false }">
+   120→                    <button @mouseenter="open = true" @mouseleave="open = false" class="flex items-center space-x-1 hover:text-primary transition-colors py-2">
+   121→                        <span>Services</span>
+   122→                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+   123→                    </button>
+   124→                    <div x-show="open" x-cloak @mouseenter="open = true" @mouseleave="open = false" class="absolute top-full -left-4 w-64 glass-panel rounded-2xl p-4 space-y-2 mt-2">
+   125→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   126→                            <p class="font-semibold text-sm">Développement Web & Mobile</p>
+   127→                            <p class="text-xs text-gray-400">Applications haute performance Next.js</p>
+   128→                        </a>
+   129→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   130→                            <p class="font-semibold text-sm text-primary">Intelligence Artificielle & LLM</p>
+   131→                            <p class="text-xs text-gray-400">RAG, Chatbots & Automatisation IA</p>
+   132→                        </a>
+   133→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   134→                            <p class="font-semibold text-sm text-secondary">Modernisation Legacy</p>
+   135→                            <p class="text-xs text-gray-400">Migration Cloud & Refonte architecture</p>
+   136→                        </a>
+   137→                    </div>
+   138→                </div>
+   139→                <a href="#expertise" class="hover:text-primary transition-colors">Expertise</a>
+   140→                <a href="#projets" class="hover:text-primary transition-colors">Projets</a>
+   141→                <a href="#blog" class="hover:text-primary transition-colors">Blog</a>
+   142→            </nav>
+   143→
+   144→            <div class="hidden md:flex items-center space-x-4">
+   145→                <a href="/contact" class="px-6 py-2.5 bg-primary text-dark font-bold rounded-full hover:bg-white hover:scale-105 transition-all duration-300">
+   146→                    Consultation Stratégique
+   147→                </a>
+   148→            </div>
+   149→
+   150→            <!-- Mobile Toggle -->
+   151→            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white">
+   152→                <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+   153→                <svg x-show="mobileMenuOpen" x-cloak class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+   154→            </button>
+   155→        </div>
+   156→
+   157→        <!-- Mobile Menu -->
+   158→        <div x-show="mobileMenuOpen" x-cloak class="md:hidden glass-panel fixed inset-0 top-20 z-40 p-6 flex flex-col space-y-6">
+   159→            <a href="#" class="text-2xl font-bold">Services</a>
+   160→            <a href="#" class="text-2xl font-bold">Expertise</a>
+   161→            <a href="#" class="text-2xl font-bold">Projets</a>
+   162→            <a href="#" class="text-2xl font-bold">Contact</a>
+   163→            <div class="pt-6 border-t border-white/10">
+   164→                <button class="w-full py-4 bg-primary text-dark font-bold rounded-xl">Prendre RDV</button>
+   165→            </div>
+   166→        </div>
+   167→    </header>
+   168→
+   169→    <main class="flex-grow">
+   170→        <!-- Hero Section -->
+   171→        <section class="relative min-h-screen pt-32 pb-20 flex items-center mesh-gradient overflow-hidden">
+   172→            <div class="hero-glow -top-20 -left-20"></div>
+   173→            <div class="hero-glow bottom-0 right-0" style="background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);"></div>
+   174→
+   175→            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+   176→                <div class="space-y-8 relative z-10">
+   177→                    <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+   178→                        <span class="relative flex h-2 w-2">
+   179→                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+   180→                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+   181→                        </span>
+   182→                        <span class="text-xs font-bold uppercase tracking-widest text-primary">Spécialiste IA & Modernisation IT</span>
+   183→                    </div>
+   184→
+   185→                    <h1 class="text-5xl lg:text-7xl font-display font-extrabold leading-[1.1] text-gradient">
+   186→                        Modernisation IT & IA <br>
+   187→                        <span class="text-primary italic">pour PME/ETI</span>
+   188→                    </h1>
+   189→
+   190→                    <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+   191→                        Du legacy au futur. Nous transformons vos systèmes critiques en moteurs d'innovation IA. Performance, Sécurité et ROI garantis sous 12 semaines.
+   192→                    </p>
+   193→
+   194→                    <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+   195→                        <a href="#schema" class="group px-8 py-4 bg-primary text-dark font-bold rounded-full flex items-center space-x-2 hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(27,168,150,0.3)]">
+   196→                            <span>Consultation Stratégique</span>
+   197→                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+   198→                        </a>
+   199→                        <div class="flex items-center -space-x-3">
+   200→                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-dark object-cover" alt="Expert 1">
+   201→                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-dark object-cover" alt="Expert 2">
+   202→                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" class="w-10 h-10 rounded-full border-2 border-dark object-cover" alt="Expert 3">
+   203→                            <div class="pl-6">
+   204→                                <p class="text-sm font-bold">+15 Experts IA</p>
+   205→                                <p class="text-xs text-gray-500">Disponibles pour audit</p>
+   206→                            </div>
+   207→                        </div>
+   208→                    </div>
+   209→
+   210→                    <div class="pt-8 flex items-center space-x-8 opacity-60">
+   211→                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/SOC2_Type_II.png" class="h-12 grayscale brightness-200 invert" alt="SOC2 Compliance" title="Conformité SOC2">
+   212→                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/GDPR_Logo.svg/2560px-GDPR_Logo.svg.png" class="h-8 grayscale brightness-200 invert" alt="GDPR Compliance">
+   213→                        <div class="h-10 w-px bg-white/10"></div>
+   214→                        <div class="flex items-center space-x-1">
+   215→                            <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+   216→                            <span class="font-bold">4.9/5</span>
+   217→                            <span class="text-xs text-gray-400">Clutch Reviews</span>
+   218→                        </div>
+   219→                    </div>
+   220→                </div>
+   221→
+   222→                <!-- Hero Visual / Technical Teaser -->
+   223→                <div class="relative hidden lg:block">
+   224→                    <div class="glass-panel p-8 rounded-3xl relative z-10 overflow-hidden group">
+   225→                        <!-- Code Header -->
+   226→                        <div class="flex items-center justify-between mb-6">
+   227→                            <div class="flex space-x-2">
+   228→                                <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+   229→                                <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+   230→                                <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+   231→                            </div>
+   232→                            <div class="text-xs font-mono text-gray-500">pipeline-ia.config.ts</div>
+   233→                        </div>
+   234→                        
+   235→                        <!-- Visual representation of AI node -->
+   236→                        <div class="space-y-4 font-mono text-sm">
+   237→                            <div class="flex items-center space-x-2 text-primary">
+   238→                                <span class="text-gray-600">01</span>
+   239→                                <span>import { Modernizer } from '@yodev/core';</span>
+   240→                            </div>
+   241→                            <div class="flex items-center space-x-2 text-white/80">
+   242→                                <span class="text-gray-600">02</span>
+   243→                                <span>const legacySystem = await fetchInventory('on-prem');</span>
+   244→                            </div>
+   245→                            <div class="flex items-center space-x-2 text-white/80">
+   246→                                <span class="text-gray-600">03</span>
+   247→                                <span>const aiAgent = new Modernizer({</span>
+   248→                            </div>
+   249→                            <div class="flex items-center space-x-2 text-secondary">
+   250→                                <span class="text-gray-600">04</span>
+   251→                                <span class="ml-4">model: "GPT-4o-secure",</span>
+   252→                            </div>
+   253→                            <div class="flex items-center space-x-2 text-white/80">
+   254→                                <span class="text-gray-600">05</span>
+   255→                                <span class="ml-4">optimization: "cost-and-security"</span>
+   256→                            </div>
+   257→                            <div class="flex items-center space-x-2 text-white/80">
+   258→                                <span class="text-gray-600">06</span>
+   259→                                <span>});</span>
+   260→                            </div>
+   261→                        </div>
+   262→
+   263→                        <!-- Floating Status UI -->
+   264→                        <div class="absolute bottom-6 right-6 bg-dark/80 backdrop-blur border border-white/10 p-4 rounded-2xl animate-float shadow-2xl">
+   265→                            <div class="flex items-center space-x-3">
+   266→                                <div class="p-2 bg-primary/20 rounded-lg">
+   267→                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+   268→                                </div>
+   269→                                <div>
+   270→                                    <p class="text-xs text-gray-400">Migration Status</p>
+   271→                                    <p class="text-sm font-bold text-white">94% Completed</p>
+   272→                                </div>
+   273→                            </div>
+   274→                        </div>
+   275→                    </div>
+   276→                    
+   277→                    <!-- Back decorative cards -->
+   278→                    <div class="absolute -top-6 -right-6 w-full h-full border border-primary/20 rounded-3xl -z-10"></div>
+   279→                    <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -z-10 animate-pulse-slow"></div>
+   280→                </div>
+   281→            </div>
+   282→        </section>
+   283→
+   284→        <!-- Technical Schema Section -->
+   285→        <section id="schema" class="py-24 bg-dark relative border-y border-white/5">
+   286→            <div class="max-w-7xl mx-auto px-6">
+   287→                <div class="text-center mb-20">
+   288→                    <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">Notre Architecture de Modernisation</h2>
+   289→                    <p class="text-gray-400 max-w-2xl mx-auto">Nous ne faisons pas que réécrire du code. Nous créons une couche d'abstraction moderne pour injecter l'IA dans vos flux de travail existants.</p>
+   290→                </div>
+   291→
+   292→                <div class="grid lg:grid-cols-12 gap-8 items-center" x-data="{ currentStep: 1 }">
+   293→                    <!-- Steps Description -->
+   294→                    <div class="lg:col-span-4 space-y-4">
+   295→                        <button @click="currentStep = 1" :class="currentStep === 1 ? 'step-active glass-panel scale-[1.02]' : 'border-transparent opacity-50'" class="w-full text-left p-6 border-l-4 transition-all duration-300 rounded-r-2xl">
+   296→                            <h3 class="text-xl font-bold mb-2">1. Audit & Extraction Legacy</h3>
+   297→                            <p class="text-sm text-gray-400">Mapping des APIs, DBs et processus critiques sans interruption de service.</p>
+   298→                        </button>
+   299→                        <button @click="currentStep = 2" :class="currentStep === 2 ? 'step-active glass-panel scale-[1.02]' : 'border-transparent opacity-50'" class="w-full text-left p-6 border-l-4 transition-all duration-300 rounded-r-2xl">
+   300→                            <h3 class="text-xl font-bold mb-2">2. Middleware IA Sécurisé</h3>
+   301→                            <p class="text-sm text-gray-400">Intégration d'un Vector Store (RAG) et d'agents LLM avec filtrage de confidentialité.</p>
+   302→                        </button>
+   303→                        <button @click="currentStep = 3" :class="currentStep === 3 ? 'step-active glass-panel scale-[1.02]' : 'border-transparent opacity-50'" class="w-full text-left p-6 border-l-4 transition-all duration-300 rounded-r-2xl">
+   304→                            <h3 class="text-xl font-bold mb-2">3. Scaling & Performance</h3>
+   305→                            <p class="text-sm text-gray-400">Déploiement auto-scalable sur Cloud moderne (AWS/Azure) avec monitoring temps réel.</p>
+   306→                        </button>
+   307→                    </div>
+   308→
+   309→                    <!-- Visual Schema Display -->
+   310→                    <div class="lg:col-span-8 bg-black/40 rounded-[2.5rem] border border-white/10 p-12 relative overflow-hidden h-[500px] flex items-center justify-center">
+   311→                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#1BA896 1px, transparent 1px); background-size: 20px 20px;"></div>
+   312→                        
+   313→                        <div class="relative w-full h-full flex items-center justify-between px-12">
+   314→                            <!-- Legacy Box -->
+   315→                            <div class="z-10 group cursor-help">
+   316→                                <div class="w-32 h-32 glass-panel flex flex-col items-center justify-center rounded-2xl group-hover:border-primary/50 transition-all duration-500">
+   317→                                    <svg class="w-10 h-10 text-gray-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+   318→                                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-gray-400">LEGACY IT</span>
+   319→                                </div>
+   320→                            </div>
+   321→
+   322→                            <!-- Connector 1 -->
+   323→                            <div class="flex-grow mx-4 relative h-px bg-gradient-to-r from-gray-500/50 via-primary/50 to-primary">
+   324→                                <div class="absolute top-1/2 left-0 w-2 h-2 -translate-y-1/2 bg-primary rounded-full animate-ping"></div>
+   325→                                <svg class="absolute inset-0 w-full h-20 -top-10" overflow="visible">
+   326→                                    <path d="M0 40 Q 150 0, 300 40" stroke="url(#line-grad)" stroke-width="2" fill="none" class="line-draw" />
+   327→                                    <defs>
+   328→                                        <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+   329→                                            <stop offset="0%" stop-color="#1BA896" stop-opacity="0" />
+   330→                                            <stop offset="100%" stop-color="#1BA896" stop-opacity="1" />
+   331→                                        </linearGradient>
+   332→                                    </defs>
+   333→                                </svg>
+   334→                            </div>
+   335→
+   336→                            <!-- Yodev Engine / Core -->
+   337→                            <div class="z-20 relative">
+   338→                                <div class="w-48 h-48 bg-primary rounded-3xl flex items-center justify-center shadow-[0_0_60px_rgba(27,168,150,0.4)] animate-pulse">
+   339→                                    <div class="w-40 h-40 border-2 border-white/20 rounded-2xl flex flex-col items-center justify-center p-4 text-center">
+   340→                                        <span class="text-dark font-black text-2xl mb-1">YODEV IA</span>
+   341→                                        <div class="flex space-x-1">
+   342→                                            <div class="w-1.5 h-1.5 bg-dark rounded-full"></div>
+   343→                                            <div class="w-1.5 h-1.5 bg-dark rounded-full"></div>
+   344→                                            <div class="w-1.5 h-1.5 bg-dark rounded-full"></div>
+   345→                                        </div>
+   346→                                    </div>
+   347→                                </div>
+   348→                            </div>
+   349→
+   350→                            <!-- Connector 2 -->
+   351→                            <div class="flex-grow mx-4 h-px bg-gradient-to-r from-primary to-secondary/50 relative">
+   352→                                <div class="absolute top-1/2 right-0 w-2 h-2 -translate-y-1/2 bg-secondary rounded-full"></div>
+   353→                            </div>
+   354→
+   355→                            <!-- Cloud/Modern UI Box -->
+   356→                            <div class="z-10 group">
+   357→                                <div class="w-32 h-32 glass-panel flex flex-col items-center justify-center rounded-2xl group-hover:border-secondary transition-all">
+   358→                                    <svg class="w-10 h-10 text-secondary mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+   359→                                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-secondary">MODERN CLOUD</span>
+   360→                                </div>
+   361→                            </div>
+   362→                        </div>
+   363→                    </div>
+   364→                </div>
+   365→            </div>
+   366→        </section>
+   367→
+   368→        <!-- Use Cases / Cibles Segmentées -->
+   369→        <section class="py-24 max-w-7xl mx-auto px-6" x-data="{ activeTab: 'pme' }">
+   370→            <div class="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+   371→                <div class="max-w-xl">
+   372→                    <h2 class="text-4xl font-display font-bold mb-4">À chaque enjeu, sa solution.</h2>
+   373→                    <p class="text-gray-400">Nous adaptons nos processus selon la maturité de votre structure.</p>
+   374→                </div>
+   375→                <div class="flex bg-white/5 p-1.5 rounded-2xl border border-white/10 no-scrollbar overflow-x-auto whitespace-nowrap">
+   376→                    <button @click="activeTab = 'startup'" :class="activeTab === 'startup' ? 'bg-primary text-dark font-bold' : 'text-gray-400'" class="px-6 py-3 rounded-xl transition-all">Startups</button>
+   377→                    <button @click="activeTab = 'pme'" :class="activeTab === 'pme' ? 'bg-primary text-dark font-bold' : 'text-gray-400'" class="px-6 py-3 rounded-xl transition-all">PME / ETI</button>
+   378→                    <button @click="activeTab = 'enterprise'" :class="activeTab === 'enterprise' ? 'bg-primary text-dark font-bold' : 'text-gray-400'" class="px-6 py-3 rounded-xl transition-all">Grand Groupe</button>
+   379→                </div>
+   380→            </div>
+   381→
+   382→            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+   383→                <!-- Tab PME/ETI Content -->
+   384→                <template x-if="activeTab === 'pme'">
+   385→                    <div class="contents">
+   386→                        <div class="glass-panel p-10 rounded-[2rem] hover:border-primary/50 transition-all duration-300 group">
+   387→                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+   388→                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path></svg>
+   389→                            </div>
+   390→                            <h3 class="text-2xl font-bold mb-4">Migration Base de Données</h3>
+   391→                            <p class="text-gray-400 mb-6 leading-relaxed">Passage de SQL Server on-prem vers Cloud hybride avec zéro downtime garanti via CDC.</p>
+   392→                            <ul class="space-y-3 mb-8 text-sm">
+   393→                                <li class="flex items-center space-x-2"><svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>Sécurité AES-256</span></li>
+   394→                                <li class="flex items-center space-x-2"><svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>Performance +300%</span></li>
+   395→                            </ul>
+   396→                            <a href="#" class="text-primary font-bold inline-flex items-center group-hover:underline">Découvrir le cas client <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+   397→                        </div>
+   398→
+   399→                        <div class="glass-panel p-10 rounded-[2rem] hover:border-primary/50 transition-all duration-300 group">
+   400→                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+   401→                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+   402→                            </div>
+   403→                            <h3 class="text-2xl font-bold mb-4">Chatbot Support Intelligent</h3>
+   404→                            <p class="text-gray-400 mb-6 leading-relaxed">Implémentation d'un RAG connecté à votre documentation interne pour automatiser 60% du N1.</p>
+   405→                            <ul class="space-y-3 mb-8 text-sm">
+   406→                                <li class="flex items-center space-x-2"><svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>ROI sous 6 mois</span></li>
+   407→                                <li class="flex items-center space-x-2"><svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>RGPD & Souveraineté</span></li>
+   408→                            </ul>
+   409→                            <a href="#" class="text-primary font-bold inline-flex items-center group-hover:underline">Découvrir le cas client <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+   410→                        </div>
+   411→
+   412→                        <div class="glass-panel p-10 rounded-[2rem] hover:border-primary/50 transition-all duration-300 group">
+   413→                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+   414→                                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+   415→                            </div>
+   416→                            <h3 class="text-2xl font-bold mb-4">Audit de Sécurité IT</h3>
+   417→                            <p class="text-gray-400 mb-6 leading-relaxed">Pentesting et mise en conformité SOC2 / ISO 27001 pour vos infrastructures critiques.</p>
+   418→                            <ul class="space-y-3 mb-8 text-sm">
+   419→                                <li class="flex items-center space-x-2"><svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>Zero Trust Framework</span></li>
+   420→                                <li class="flex items-center space-x-2"><svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg> <span>Monitoring 24/7</span></li>
+   421→                            </ul>
+   422→                            <a href="#" class="text-primary font-bold inline-flex items-center group-hover:underline">Découvrir le cas client <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+   423→                        </div>
+   424→                    </div>
+   425→                </template>
+   426→                <!-- Other templates would go here for Startups/Enterprise -->
+   427→            </div>
+   428→        </section>
+   429→
+   430→        <!-- Proof / Trust Section -->
+   431→        <section class="py-24 bg-dark border-t border-white/5 overflow-hidden">
+   432→            <div class="max-w-7xl mx-auto px-6">
+   433→                <p class="text-center text-sm font-bold uppercase tracking-[0.3em] text-gray-500 mb-12">Ils font confiance à notre expertise technique</p>
+   434→                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+   435→                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="h-8 md:h-10 invert" alt="Amazon">
+   436→                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tesla_logo.png" class="h-8 md:h-10 invert" alt="Tesla">
+   437→                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" class="h-8 md:h-10 invert" alt="Meta">
+   438→                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="h-8 md:h-10 invert" alt="Google">
+   439→                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="h-8 md:h-10 invert" alt="IBM">
+   440→                </div>
+   441→            </div>
+   442→        </section>
+   443→
+   444→        <!-- CTA Section -->
+   445→        <section class="py-32 relative">
+   446→            <div class="max-w-5xl mx-auto px-6">
+   447→                <div class="glass-panel p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden">
+   448→                    <div class="hero-glow -top-40 -left-40 opacity-30"></div>
+   449→                    <div class="hero-glow -bottom-40 -right-40 opacity-30" style="background: radial-gradient(circle, #FF6B35 0%, transparent 70%);"></div>
+   450→                    
+   451→                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-8 relative z-10">Prêt à moderniser <br> votre stack technique ?</h2>
+   452→                    <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto relative z-10">Nos experts réalisent un audit gracieux de 45 minutes pour identifier vos opportunités de croissance via l'IA.</p>
+   453→                    
+   454→                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 relative z-10">
+   455→                        <a href="/contact" class="px-10 py-5 bg-white text-dark font-black text-lg rounded-full hover:bg-primary hover:text-white transition-all transform hover:scale-105">
+   456→                            Réserver mon audit gratuit
+   457→                        </a>
+   458→                        <a href="#" class="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-all">
+   459→                            Voir nos réalisations
+   460→                        </a>
+   461→                    </div>
+   462→                </div>
+   463→            </div>
+   464→        </section>
+   465→    </main>
+   466→
+   467→    <!-- Footer -->
+   468→    <footer class="bg-dark border-t border-white/5 pt-20 pb-10">
+   469→        <div class="max-w-7xl mx-auto px-6">
+   470→            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+   471→                <div class="space-y-6">
+   472→                    <a href="/" class="flex items-center space-x-2 group">
+   473→                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform">
+   474→                            <span class="text-dark font-black text-lg">Y</span>
+   475→                        </div>
+   476→                        <span class="text-xl font-display font-bold tracking-tight">yodev</span>
+   477→                    </a>
+   478→                    <p class="text-gray-500 text-sm leading-relaxed">
+   479→                        Agence de transformation digitale 360°. <br> Spécialiste Web, Mobile & IA basée à Paris.
+   480→                    </p>
+   481→                    <div class="flex space-x-4">
+   482→                        <a href="#" class="w-10 h-10 glass-panel rounded-lg flex items-center justify-center hover:text-primary transition-colors">
+   483→                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+   484→                        </a>
+   485→                        <a href="#" class="w-10 h-10 glass-panel rounded-lg flex items-center justify-center hover:text-primary transition-colors">
+   486→                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+   487→                        </a>
+   488→                    </div>
+   489→                </div>
+   490→
+   491→                <div>
+   492→                    <h4 class="font-bold mb-6">Services</h4>
+   493→                    <ul class="space-y-4 text-sm text-gray-500">
+   494→                        <li><a href="#" class="hover:text-primary transition-colors">Modernisation IT</a></li>
+   495→                        <li><a href="#" class="hover:text-primary transition-colors">Intégration LLM / IA</a></li>
+   496→                        <li><a href="#" class="hover:text-primary transition-colors">Audit & Stratégie</a></li>
+   497→                        <li><a href="#" class="hover:text-primary transition-colors">Développement SaaS</a></li>
+   498→                    </ul>
+   499→                </div>
+   500→
+   501→                <div>
+   502→                    <h4 class="font-bold mb-6">Agence</h4>
+   503→                    <ul class="space-y-4 text-sm text-gray-500">
+   504→                        <li><a href="#" class="hover:text-primary transition-colors">Nos Réalisations</a></li>
+   505→                        <li><a href="#" class="hover:text-primary transition-colors">Équipe & Culture</a></li>
+   506→                        <li><a href="#" class="hover:text-primary transition-colors">Carrières</a></li>
+   507→                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+   508→                    </ul>
+   509→                </div>
+   510→
+   511→                <div>
+   512→                    <h4 class="font-bold mb-6">Newsletter Tech</h4>
+   513→                    <p class="text-sm text-gray-500 mb-4">Recevez nos insights sur l'IA et le scaling tous les mardis.</p>
+   514→                    <form class="flex flex-col space-y-2">
+   515→                        <input type="email" placeholder="email@exemple.fr" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary">
+   516→                        <button class="bg-primary text-dark font-bold py-3 rounded-xl hover:bg-white transition-colors">S'abonner</button>
+   517→                    </form>
+   518→                </div>
+   519→            </div>
+   520→
+   521→            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500">
+   522→                <p>© 2026 YODEV SAS - Tous droits réservés.</p>
+   523→                <div class="flex space-x-6">
+   524→                    <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+   525→                    <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+   526→                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
+   527→                </div>
+   528→            </div>
+   529→        </div>
+   530→    </footer>
+   531→
+   532→</body>
+   533→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

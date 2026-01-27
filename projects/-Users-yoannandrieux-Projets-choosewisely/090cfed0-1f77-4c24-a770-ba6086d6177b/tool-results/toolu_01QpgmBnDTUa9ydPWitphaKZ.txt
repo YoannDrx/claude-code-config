@@ -1,0 +1,211 @@
+     1→"use client";
+     2→
+     3→import { logger } from "@/lib/logger";
+     4→import { useEffect, useState } from "react";
+     5→import { FavoriteCard } from "./favorite-card";
+     6→import { getFavoritesAction } from "./favorites.action";
+     7→import { Heart, Search, Filter } from "lucide-react";
+     8→import { Button } from "@/components/ui/button";
+     9→import {
+    10→  Select,
+    11→  SelectContent,
+    12→  SelectItem,
+    13→  SelectTrigger,
+    14→  SelectValue,
+    15→} from "@/components/ui/select";
+    16→import Link from "next/link";
+    17→import type { Favorite, Property } from "@/generated/prisma";
+    18→
+    19→type FavoriteWithProperty = Favorite & {
+    20→  property: Property;
+    21→};
+    22→
+    23→export function FavoritesList() {
+    24→  const [favorites, setFavorites] = useState<FavoriteWithProperty[]>([]);
+    25→  const [filteredFavorites, setFilteredFavorites] = useState<
+    26→    FavoriteWithProperty[]
+    27→  >([]);
+    28→  const [isLoading, setIsLoading] = useState(true);
+    29→  const [statusFilter, setStatusFilter] = useState<string>("all");
+    30→  const [priorityFilter, setPriorityFilter] = useState<string>("all");
+    31→
+    32→  const loadFavorites = async () => {
+    33→    try {
+    34→      const data = await getFavoritesAction();
+    35→      setFavorites(data);
+    36→      setFilteredFavorites(data);
+    37→    } catch (error) {
+    38→      logger.debug("Erreur lors du chargement des favoris:", error);
+    39→    } finally {
+    40→      setIsLoading(false);
+    41→    }
+    42→  };
+    43→
+    44→  useEffect(() => {
+    45→    void loadFavorites();
+    46→  }, []);
+    47→
+    48→  useEffect(() => {
+    49→    let filtered = [...favorites];
+    50→
+    51→    if (statusFilter !== "all") {
+    52→      filtered = filtered.filter((fav) => fav.status === statusFilter);
+    53→    }
+    54→
+    55→    if (priorityFilter !== "all") {
+    56→      filtered = filtered.filter((fav) => fav.priority === priorityFilter);
+    57→    }
+    58→
+    59→    setFilteredFavorites(filtered);
+    60→  }, [favorites, statusFilter, priorityFilter]);
+    61→
+    62→  if (isLoading) {
+    63→    return (
+    64→      <div className="space-y-4">
+    65→        {[...Array(3)].map((_, index) => (
+    66→          <div key={index} className="bg-muted h-48 animate-pulse rounded-lg" />
+    67→        ))}
+    68→      </div>
+    69→    );
+    70→  }
+    71→
+    72→  if (favorites.length === 0) {
+    73→    return (
+    74→      <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
+    75→        <Heart className="text-muted-foreground mb-4 size-16" />
+    76→        <h3 className="mb-2 text-lg font-semibold">
+    77→          Aucun favori pour le moment
+    78→        </h3>
+    79→        <p className="text-muted-foreground mb-6 max-w-md">
+    80→          Commencez par rechercher des biens et ajoutez-les à vos favoris pour
+    81→          les retrouver facilement ici.
+    82→        </p>
+    83→        <Link href="/properties">
+    84→          <Button>
+    85→            <Search className="mr-2 h-4 w-4" />
+    86→            Rechercher des biens
+    87→          </Button>
+    88→        </Link>
+    89→      </div>
+    90→    );
+    91→  }
+    92→
+    93→  const statusCounts = {
+    94→    saved: favorites.filter((f) => f.status === "saved").length,
+    95→    visited: favorites.filter((f) => f.status === "visited").length,
+    96→    contacted: favorites.filter((f) => f.status === "contacted").length,
+    97→    rejected: favorites.filter((f) => f.status === "rejected").length,
+    98→  };
+    99→
+   100→  const priorityCounts = {
+   101→    high: favorites.filter((f) => f.priority === "high").length,
+   102→    medium: favorites.filter((f) => f.priority === "medium").length,
+   103→    low: favorites.filter((f) => f.priority === "low").length,
+   104→  };
+   105→
+   106→  return (
+   107→    <div className="space-y-6">
+   108→      {/* Stats and Filters */}
+   109→      <div className="space-y-4">
+   110→        <div className="text-muted-foreground flex items-center gap-4 text-sm">
+   111→          <span>{favorites.length} bien(s) en favori</span>
+   112→          <span>•</span>
+   113→          <span>{statusCounts.saved} sauvegardé(s)</span>
+   114→          <span>•</span>
+   115→          <span>{statusCounts.visited} visité(s)</span>
+   116→        </div>
+   117→
+   118→        <div className="flex items-center gap-4">
+   119→          <div className="flex items-center gap-2">
+   120→            <Filter className="h-4 w-4" />
+   121→            <span className="text-sm font-medium">Filtres :</span>
+   122→          </div>
+   123→
+   124→          <Select value={statusFilter} onValueChange={setStatusFilter}>
+   125→            <SelectTrigger className="w-[160px]">
+   126→              <SelectValue placeholder="Statut" />
+   127→            </SelectTrigger>
+   128→            <SelectContent>
+   129→              <SelectItem value="all">Tous les statuts</SelectItem>
+   130→              <SelectItem value="saved">
+   131→                Sauvegardés ({statusCounts.saved})
+   132→              </SelectItem>
+   133→              <SelectItem value="visited">
+   134→                Visités ({statusCounts.visited})
+   135→              </SelectItem>
+   136→              <SelectItem value="contacted">
+   137→                Contactés ({statusCounts.contacted})
+   138→              </SelectItem>
+   139→              <SelectItem value="rejected">
+   140→                Rejetés ({statusCounts.rejected})
+   141→              </SelectItem>
+   142→            </SelectContent>
+   143→          </Select>
+   144→
+   145→          <Select value={priorityFilter} onValueChange={setPriorityFilter}>
+   146→            <SelectTrigger className="w-[160px]">
+   147→              <SelectValue placeholder="Priorité" />
+   148→            </SelectTrigger>
+   149→            <SelectContent>
+   150→              <SelectItem value="all">Toutes priorités</SelectItem>
+   151→              <SelectItem value="high">
+   152→                Priorité élevée ({priorityCounts.high})
+   153→              </SelectItem>
+   154→              <SelectItem value="medium">
+   155→                Priorité normale ({priorityCounts.medium})
+   156→              </SelectItem>
+   157→              <SelectItem value="low">
+   158→                Priorité faible ({priorityCounts.low})
+   159→              </SelectItem>
+   160→            </SelectContent>
+   161→          </Select>
+   162→
+   163→          {(statusFilter !== "all" || priorityFilter !== "all") && (
+   164→            <Button
+   165→              variant="outline"
+   166→              size="sm"
+   167→              onClick={() => {
+   168→                setStatusFilter("all");
+   169→                setPriorityFilter("all");
+   170→              }}
+   171→            >
+   172→              Réinitialiser
+   173→            </Button>
+   174→          )}
+   175→        </div>
+   176→      </div>
+   177→
+   178→      {/* Results */}
+   179→      {filteredFavorites.length === 0 ? (
+   180→        <div className="flex min-h-[200px] flex-col items-center justify-center text-center">
+   181→          <Filter className="text-muted-foreground mb-4 size-12" />
+   182→          <h3 className="mb-2 text-lg font-semibold">Aucun résultat</h3>
+   183→          <p className="text-muted-foreground">
+   184→            Aucun favori ne correspond aux filtres sélectionnés.
+   185→          </p>
+   186→        </div>
+   187→      ) : (
+   188→        <div className="space-y-4">
+   189→          <div className="text-muted-foreground text-sm">
+   190→            {filteredFavorites.length} résultat(s) affiché(s)
+   191→          </div>
+   192→
+   193→          <div className="grid gap-4">
+   194→            {filteredFavorites.map((favorite) => (
+   195→              <FavoriteCard
+   196→                key={favorite.id}
+   197→                favorite={favorite}
+   198→                onUpdate={loadFavorites}
+   199→              />
+   200→            ))}
+   201→          </div>
+   202→        </div>
+   203→      )}
+   204→    </div>
+   205→  );
+   206→}
+   207→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

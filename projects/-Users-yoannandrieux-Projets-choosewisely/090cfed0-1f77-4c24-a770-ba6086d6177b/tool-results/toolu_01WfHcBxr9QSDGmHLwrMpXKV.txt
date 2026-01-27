@@ -1,0 +1,201 @@
+     1→"use client";
+     2→
+     3→import { SiteConfig } from "@/site-config";
+     4→import Image from "next/image";
+     5→import Link from "next/link";
+     6→import { usePathname } from "next/navigation";
+     7→import {
+     8→  Bell,
+     9→  Calculator,
+    10→  GitCompare,
+    11→  Heart,
+    12→  Home,
+    13→  LogOut,
+    14→  Search,
+    15→  Settings,
+    16→  User,
+    17→} from "lucide-react";
+    18→import {
+    19→  Sidebar,
+    20→  SidebarContent,
+    21→  SidebarFooter,
+    22→  SidebarGroup,
+    23→  SidebarGroupContent,
+    24→  SidebarGroupLabel,
+    25→  SidebarHeader,
+    26→  SidebarMenu,
+    27→  SidebarMenuButton,
+    28→  SidebarMenuItem,
+    29→  SidebarSeparator,
+    30→} from "@/components/ui/sidebar";
+    31→
+    32→const mainNavItems = [
+    33→  {
+    34→    title: "Dashboard",
+    35→    href: "/dashboard",
+    36→    icon: Home,
+    37→  },
+    38→  {
+    39→    title: "Rechercher",
+    40→    href: "/properties",
+    41→    icon: Search,
+    42→  },
+    43→  {
+    44→    title: "Favoris",
+    45→    href: "/favorites",
+    46→    icon: Heart,
+    47→  },
+    48→  {
+    49→    title: "Comparaison",
+    50→    href: "/comparisons",
+    51→    icon: GitCompare,
+    52→  },
+    53→];
+    54→
+    55→const toolsNavItems = [
+    56→  {
+    57→    title: "Financement",
+    58→    href: "/finance",
+    59→    icon: Calculator,
+    60→  },
+    61→  {
+    62→    title: "Alertes",
+    63→    href: "/alerts",
+    64→    icon: Bell,
+    65→  },
+    66→];
+    67→
+    68→const accountNavItems = [
+    69→  {
+    70→    title: "Mon compte",
+    71→    href: "/account",
+    72→    icon: User,
+    73→  },
+    74→  {
+    75→    title: "Paramètres",
+    76→    href: "/settings",
+    77→    icon: Settings,
+    78→  },
+    79→];
+    80→
+    81→export function AppSidebar() {
+    82→  const pathname = usePathname();
+    83→
+    84→  const isActive = (href: string) => {
+    85→    if (href === "/dashboard") {
+    86→      return pathname === "/dashboard" || pathname === "/";
+    87→    }
+    88→    return pathname.startsWith(href);
+    89→  };
+    90→
+    91→  return (
+    92→    <Sidebar variant="floating" collapsible="icon">
+    93→      <SidebarHeader className="p-4">
+    94→        <Link
+    95→          href="/"
+    96→          className="flex items-center gap-3 rounded-xl px-2 py-1.5 transition-colors duration-200 hover:bg-white/5"
+    97→        >
+    98→          <Image
+    99→            src={SiteConfig.appIcon}
+   100→            alt="Logo"
+   101→            width={32}
+   102→            height={32}
+   103→            className="rounded-lg"
+   104→          />
+   105→          <span className="text-lg font-semibold text-foreground group-data-[collapsible=icon]:hidden">
+   106→            {SiteConfig.title}
+   107→          </span>
+   108→        </Link>
+   109→      </SidebarHeader>
+   110→
+   111→      <SidebarContent>
+   112→        <SidebarGroup>
+   113→          <SidebarGroupLabel className="text-xs uppercase tracking-wider text-muted-foreground">
+   114→            Navigation
+   115→          </SidebarGroupLabel>
+   116→          <SidebarGroupContent>
+   117→            <SidebarMenu>
+   118→              {mainNavItems.map((item) => (
+   119→                <SidebarMenuItem key={item.href}>
+   120→                  <SidebarMenuButton
+   121→                    asChild
+   122→                    isActive={isActive(item.href)}
+   123→                    tooltip={item.title}
+   124→                  >
+   125→                    <Link href={item.href}>
+   126→                      <item.icon className="size-4" />
+   127→                      <span>{item.title}</span>
+   128→                    </Link>
+   129→                  </SidebarMenuButton>
+   130→                </SidebarMenuItem>
+   131→              ))}
+   132→            </SidebarMenu>
+   133→          </SidebarGroupContent>
+   134→        </SidebarGroup>
+   135→
+   136→        <SidebarSeparator />
+   137→
+   138→        <SidebarGroup>
+   139→          <SidebarGroupLabel className="text-xs uppercase tracking-wider text-muted-foreground">
+   140→            Outils
+   141→          </SidebarGroupLabel>
+   142→          <SidebarGroupContent>
+   143→            <SidebarMenu>
+   144→              {toolsNavItems.map((item) => (
+   145→                <SidebarMenuItem key={item.href}>
+   146→                  <SidebarMenuButton
+   147→                    asChild
+   148→                    isActive={isActive(item.href)}
+   149→                    tooltip={item.title}
+   150→                  >
+   151→                    <Link href={item.href}>
+   152→                      <item.icon className="size-4" />
+   153→                      <span>{item.title}</span>
+   154→                    </Link>
+   155→                  </SidebarMenuButton>
+   156→                </SidebarMenuItem>
+   157→              ))}
+   158→            </SidebarMenu>
+   159→          </SidebarGroupContent>
+   160→        </SidebarGroup>
+   161→      </SidebarContent>
+   162→
+   163→      <SidebarFooter className="p-2">
+   164→        <SidebarSeparator className="mb-2" />
+   165→        <SidebarMenu>
+   166→          {accountNavItems.map((item) => (
+   167→            <SidebarMenuItem key={item.href}>
+   168→              <SidebarMenuButton
+   169→                asChild
+   170→                isActive={isActive(item.href)}
+   171→                tooltip={item.title}
+   172→              >
+   173→                <Link href={item.href}>
+   174→                  <item.icon className="size-4" />
+   175→                  <span>{item.title}</span>
+   176→                </Link>
+   177→              </SidebarMenuButton>
+   178→            </SidebarMenuItem>
+   179→          ))}
+   180→          <SidebarMenuItem>
+   181→            <SidebarMenuButton
+   182→              asChild
+   183→              tooltip="Déconnexion"
+   184→              className="text-muted-foreground hover:text-destructive"
+   185→            >
+   186→              <Link href="/api/auth/signout">
+   187→                <LogOut className="size-4" />
+   188→                <span>Déconnexion</span>
+   189→              </Link>
+   190→            </SidebarMenuButton>
+   191→          </SidebarMenuItem>
+   192→        </SidebarMenu>
+   193→      </SidebarFooter>
+   194→    </Sidebar>
+   195→  );
+   196→}
+   197→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,14 @@
+     1→import { jsPDF } from "jspdf";
+     2→import autoTable from "jspdf-autotable";
+     3→import type { ComparisonProperty } from "../types";
+     4→
+     5→type ComparisonPDFOptions = {
+     6→  title?: string;
+     7→  includeImages?: boolean;
+     8→};
+     9→
+    10→class ComparisonPDFExportService {
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,13 @@
+The file /Users/yoannandrieux/Projets/moodday/src/lib/env.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    23→  /**
+    24→   * If you add `client` environment variables, you need to add them to
+    25→   * `experimental__runtimeEnv` as well.
+    26→   */
+    27→  client: {
+    28→    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().optional(),
+    29→    NEXT_PUBLIC_EMAIL_CONTACT: z.string().optional().default("contact@example.com"),
+    30→  },
+    31→  experimental__runtimeEnv: {
+    32→    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:
+    33→      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
+    34→    NEXT_PUBLIC_EMAIL_CONTACT: process.env.NEXT_PUBLIC_EMAIL_CONTACT,

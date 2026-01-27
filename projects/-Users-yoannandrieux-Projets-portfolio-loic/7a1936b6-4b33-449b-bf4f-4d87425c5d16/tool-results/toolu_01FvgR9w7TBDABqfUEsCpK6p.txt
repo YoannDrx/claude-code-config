@@ -1,0 +1,2 @@
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json

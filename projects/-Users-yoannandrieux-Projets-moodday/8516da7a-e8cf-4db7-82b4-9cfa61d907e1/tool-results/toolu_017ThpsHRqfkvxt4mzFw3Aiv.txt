@@ -1,0 +1,3 @@
+Vercel CLI 46.0.2
+Error: unknown or unexpected option: --yes
+Projet non supprimé

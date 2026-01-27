@@ -1,0 +1,2 @@
+> nowts@0.1.0 lint /Users/yoannandrieux/Projets/choosewisely
+> eslint . --fix

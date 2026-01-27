@@ -1,0 +1,6 @@
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/2-plan-workflows/prd/data/prd-purpose.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/2-plan-workflows/prd/templates/prd-template.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/2-plan-workflows/prd/validation-report-prd-workflow.md
+/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/3-solutioning/check-implementation-readiness/steps/step-02-prd-analysis.md
+/Users/yoannandrieux/Projets/moodday/.claude/commands/bmad/bmm/workflows/prd.md
+/Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/prd.md

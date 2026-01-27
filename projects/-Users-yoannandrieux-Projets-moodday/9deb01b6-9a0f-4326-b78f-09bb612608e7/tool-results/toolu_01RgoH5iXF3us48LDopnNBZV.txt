@@ -1,0 +1,30 @@
+Playwright Tests	Install dependencies	2026-01-09T18:30:59.0254907Z .../node_modules/@prisma/client postinstall: Prisma schema loaded from prisma/schema
+Playwright Tests	Install dependencies	2026-01-09T18:30:59.4154392Z .../node_modules/@prisma/client postinstall: ✔ Generated Prisma Client (v5.19.1) to ./src/generated/prisma in 129ms
+Playwright Tests	Install dependencies	2026-01-09T18:30:59.4162194Z .../node_modules/@prisma/client postinstall: Start by importing your Prisma Client (See: http://pris.ly/d/importing-client)
+Playwright Tests	Install dependencies	2026-01-09T18:31:00.2879446Z Prisma schema loaded from prisma/schema
+Playwright Tests	Install dependencies	2026-01-09T18:31:00.6680760Z ✔ Generated Prisma Client (v5.19.1) to ./src/generated/prisma in 133ms
+Playwright Tests	Install dependencies	2026-01-09T18:31:00.6681954Z Start by importing your Prisma Client (See: http://pris.ly/d/importing-client)
+Playwright Tests	Generate Prisma client	﻿2026-01-09T18:31:00.9236189Z ##[group]Run pnpm prisma generate
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9236494Z [36;1mpnpm prisma generate[0m
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9256554Z shell: /usr/bin/bash -e {0}
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9256791Z env:
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9257255Z   DATABASE_URL: ***localhost:5432/nowts_test
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9257670Z   DATABASE_URL_UNPOOLED: ***localhost:5432/nowts_test
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9258249Z   BETTER_AUTH_SECRET: test-secret-key-for-ci-testing-only-not-production
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9258645Z   BETTER_AUTH_URL: http://localhost:3000
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9258885Z   NODE_ENV: production
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9259071Z   RESEND_API_KEY: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9259265Z   EMAIL_FROM: NowTS <contact@nowts.app>
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9259525Z   NEXT_PUBLIC_EMAIL_CONTACT: contact@nowts.app
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9259765Z   STRIPE_SECRET_KEY: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9259980Z   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9260216Z   STRIPE_WEBHOOK_SECRET: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9260423Z   STRIPE_PRO_PLAN_ID: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9260612Z   STRIPE_PRO_YEARLY_PLAN_ID: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9260862Z   STRIPE_ULTRA_PLAN_ID: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9261227Z   STRIPE_ULTRA_YEARLY_PLAN_ID: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9261429Z   GITHUB_CLIENT_ID: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9261620Z   GITHUB_CLIENT_SECRET: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9261804Z   GOOGLE_CLIENT_ID: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9261982Z   GOOGLE_CLIENT_SECRET: 
+Playwright Tests	Generate Prisma client	2026-01-09T18:31:00.9262176Z   NEXT_PUBLIC_POSTHOG_KEY:

@@ -1,0 +1,120 @@
+     1→import { prisma } from "@/lib/prisma";
+     2→import { stripe } from "@/lib/stripe";
+     3→
+     4→export type MrrDataPoint = {
+     5→  date: string;
+     6→  mrr: number;
+     7→};
+     8→
+     9→export type UserGrowthDataPoint = {
+    10→  date: string;
+    11→  count: number;
+    12→  total: number;
+    13→};
+    14→
+    15→export async function getMrrHistory(): Promise<MrrDataPoint[]> {
+    16→  const now = new Date();
+    17→  const sixMonthsAgo = new Date(now);
+    18→  sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+    19→
+    20→  const invoices = await stripe.invoices.list({
+    21→    created: {
+    22→      gte: Math.floor(sixMonthsAgo.getTime() / 1000),
+    23→    },
+    24→    status: "paid",
+    25→    limit: 100,
+    26→    expand: ["data.subscription"],
+    27→  });
+    28→
+    29→  const monthlyMrr: Record<string, number> = {};
+    30→
+    31→  for (let i = 0; i < 6; i++) {
+    32→    const date = new Date(now);
+    33→    date.setMonth(date.getMonth() - i);
+    34→    const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+    35→    monthlyMrr[key] = 0;
+    36→  }
+    37→
+    38→  for (const invoice of invoices.data) {
+    39→    if (!invoice.amount_paid || !invoice.created) continue;
+    40→
+    41→    const date = new Date(invoice.created * 1000);
+    42→    const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+    43→
+    44→    if (key in monthlyMrr) {
+    45→      monthlyMrr[key] += invoice.amount_paid;
+    46→    }
+    47→  }
+    48→
+    49→  return Object.entries(monthlyMrr)
+    50→    .map(([date, mrr]) => ({
+    51→      date,
+    52→      mrr: mrr / 100,
+    53→    }))
+    54→    .sort((a, b) => a.date.localeCompare(b.date));
+    55→}
+    56→
+    57→export async function getUserGrowth(): Promise<UserGrowthDataPoint[]> {
+    58→  const now = new Date();
+    59→  const sixMonthsAgo = new Date(now);
+    60→  sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
+    61→  sixMonthsAgo.setDate(1);
+    62→  sixMonthsAgo.setHours(0, 0, 0, 0);
+    63→
+    64→  const users = await prisma.user.findMany({
+    65→    where: {
+    66→      createdAt: {
+    67→        gte: sixMonthsAgo,
+    68→      },
+    69→    },
+    70→    select: {
+    71→      createdAt: true,
+    72→    },
+    73→    orderBy: {
+    74→      createdAt: "asc",
+    75→    },
+    76→  });
+    77→
+    78→  const existingUsersCount = await prisma.user.count({
+    79→    where: {
+    80→      createdAt: {
+    81→        lt: sixMonthsAgo,
+    82→      },
+    83→    },
+    84→  });
+    85→
+    86→  const monthlyData: Record<string, number> = {};
+    87→
+    88→  for (let i = 0; i < 6; i++) {
+    89→    const date = new Date(now);
+    90→    date.setMonth(date.getMonth() - i);
+    91→    const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+    92→    monthlyData[key] = 0;
+    93→  }
+    94→
+    95→  for (const user of users) {
+    96→    const date = user.createdAt;
+    97→    const key = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+    98→    if (key in monthlyData) {
+    99→      monthlyData[key]++;
+   100→    }
+   101→  }
+   102→
+   103→  const sortedKeys = Object.keys(monthlyData).sort();
+   104→  let runningTotal = existingUsersCount;
+   105→
+   106→  return sortedKeys.map((date) => {
+   107→    const count = monthlyData[date];
+   108→    runningTotal += count;
+   109→    return {
+   110→      date,
+   111→      count,
+   112→      total: runningTotal,
+   113→    };
+   114→  });
+   115→}
+   116→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,24 @@
+   285→  },
+   286→  debug: {
+   287→    title: "Debug Panel",
+   288→    info: "Info",
+   289→    actions: "Actions",
+   290→    noActions: "No actions registered",
+   291→    user: "User",
+   292→    session: "Session",
+   293→    notLoggedIn: "Not logged in",
+   294→    null: "null",
+   295→  },
+   296→  theme: {
+   297→    title: "Theme",
+   298→    dark: "Dark",
+   299→    light: "Light",
+   300→    system: "System",
+   301→  },
+   302→  sidebar: {
+   303→    title: "Sidebar",
+   304→    description: "Displays the mobile sidebar.",
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,546 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Services | Yodev - Agence Digitale Web, Mobile & IA</title>
+     7→    <meta name="description" content="Découvrez nos piliers d'expertise : du développement sur mesure à l'intégration d'IA générative. Solutions scalables pour startups, PME et Grands Groupes.">
+     8→    
+     9→    <!-- Tailwind CSS -->
+    10→    <script src="https://cdn.tailwindcss.com"></script>
+    11→    <!-- Alpine.js -->
+    12→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    13→    <!-- Google Fonts -->
+    14→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    15→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    16→    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    17→
+    18→    <script>
+    19→        tailwind.config = {
+    20→            theme: {
+    21→                extend: {
+    22→                    colors: {
+    23→                        primary: '#1BA896', // Teal
+    24→                        secondary: '#FF6B35', // Orange
+    25→                        dark: '#0F1111', // Deep Charcoal
+    26→                        card: 'rgba(31, 33, 33, 0.6)',
+    27→                        border: 'rgba(167, 169, 169, 0.2)',
+    28→                    },
+    29→                    fontFamily: {
+    30→                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+    31→                        display: ['DM Sans', 'sans-serif'],
+    32→                        mono: ['Fira Code', 'monospace'],
+    33→                    },
+    34→                    animation: {
+    35→                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+    36→                        'float': 'float 3s ease-in-out infinite',
+    37→                        'glow': 'glow 4s ease-in-out infinite',
+    38→                    },
+    39→                    keyframes: {
+    40→                        float: {
+    41→                            '0%, 100%': { transform: 'translateY(0)' },
+    42→                            '50%': { transform: 'translateY(-10px)' },
+    43→                        },
+    44→                        glow: {
+    45→                            '0%, 100%': { opacity: 0.3, transform: 'scale(1)' },
+    46→                            '50%': { opacity: 0.6, transform: 'scale(1.1)' },
+    47→                        }
+    48→                    }
+    49→                }
+    50→            }
+    51→        }
+    52→    </script>
+    53→
+    54→    <style>
+    55→        [x-cloak] { display: none !important; }
+    56→        
+    57→        body {
+    58→            background-color: #0F1111;
+    59→            color: #FFFBF8;
+    60→            overflow-x: hidden;
+    61→            min-height: 100vh;
+    62→        }
+    63→
+    64→        .mesh-gradient {
+    65→            background: radial-gradient(at 0% 0%, rgba(27, 168, 150, 0.12) 0px, transparent 50%),
+    66→                        radial-gradient(at 100% 0%, rgba(255, 107, 53, 0.08) 0px, transparent 50%),
+    67→                        radial-gradient(at 50% 50%, rgba(15, 17, 17, 1) 0px, transparent 100%);
+    68→        }
+    69→
+    70→        .glass-panel {
+    71→            background: rgba(255, 255, 255, 0.03);
+    72→            backdrop-filter: blur(12px);
+    73→            border: 1px solid rgba(255, 255, 255, 0.08);
+    74→            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    75→        }
+    76→
+    77→        .service-card {
+    78→            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    79→        }
+    80→        .service-card:hover {
+    81→            background: rgba(255, 255, 255, 0.05);
+    82→            transform: translateY(-8px);
+    83→            border-color: rgba(27, 168, 150, 0.4);
+    84→        }
+    85→
+    86→        .text-gradient {
+    87→            background: linear-gradient(135deg, #FFF 0%, rgba(255,255,255,0.7) 100%);
+    88→            -webkit-background-clip: text;
+    89→            -webkit-text-fill-color: transparent;
+    90→        }
+    91→
+    92→        .ai-special-border {
+    93→            position: relative;
+    94→            z-index: 1;
+    95→        }
+    96→        .ai-special-border::before {
+    97→            content: '';
+    98→            position: absolute;
+    99→            inset: -1px;
+   100→            background: linear-gradient(45deg, #1BA896, #FF6B35, #1BA896);
+   101→            border-radius: inherit;
+   102→            z-index: -1;
+   103→            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+   104→            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+   105→            mask-composite: exclude;
+   106→            -webkit-mask-composite: destination-out;
+   107→            opacity: 0.5;
+   108→        }
+   109→
+   110→        /* Technical Line */
+   111→        .tech-line {
+   112→            height: 1px;
+   113→            background: linear-gradient(90deg, transparent, rgba(27, 168, 150, 0.3), transparent);
+   114→        }
+   115→
+   116→        .no-scrollbar::-webkit-scrollbar { display: none; }
+   117→    </style>
+   118→</head>
+   119→<body class="flex flex-col font-sans selection:bg-primary selection:text-white" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+   120→
+   121→    <!-- Navigation (Copied from Brand Guidelines) -->
+   122→    <header :class="scrolled ? 'glass-panel py-3' : 'bg-transparent py-6'" class="fixed top-0 w-full z-50 transition-all duration-300">
+   123→        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+   124→            <a href="/" class="flex items-center space-x-2 group">
+   125→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform duration-300">
+   126→                    <span class="text-dark font-black text-xl">Y</span>
+   127→                </div>
+   128→                <span class="text-2xl font-display font-bold tracking-tight">yodev</span>
+   129→            </a>
+   130→
+   131→            <!-- Desktop Nav -->
+   132→            <nav class="hidden md:flex items-center space-x-8">
+   133→                <div class="relative group" x-data="{ open: false }">
+   134→                    <button @mouseenter="open = true" @mouseleave="open = false" class="flex items-center space-x-1 text-primary transition-colors py-2 font-bold">
+   135→                        <span>Services</span>
+   136→                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+   137→                    </button>
+   138→                    <div x-show="open" x-cloak @mouseenter="open = true" @mouseleave="open = false" class="absolute top-full -left-4 w-64 glass-panel rounded-2xl p-4 space-y-2 mt-2">
+   139→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   140→                            <p class="font-semibold text-sm">Développement Web & Mobile</p>
+   141→                            <p class="text-xs text-gray-400">Next.js & Native Apps</p>
+   142→                        </a>
+   143→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   144→                            <p class="font-semibold text-sm text-primary font-bold">Intelligence Artificielle</p>
+   145→                            <p class="text-xs text-gray-400">Intégration LLM & RAG</p>
+   146→                        </a>
+   147→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   148→                            <p class="font-semibold text-sm">Consulting & Audit</p>
+   149→                            <p class="text-xs text-gray-400">Stratégie 360°</p>
+   150→                        </a>
+   151→                    </div>
+   152→                </div>
+   153→                <a href="/expertise" class="hover:text-primary transition-colors">Expertise</a>
+   154→                <a href="/projets" class="hover:text-primary transition-colors">Projets</a>
+   155→                <a href="/blog" class="hover:text-primary transition-colors">Blog</a>
+   156→            </nav>
+   157→
+   158→            <div class="hidden md:flex items-center space-x-4">
+   159→                <a href="/contact" class="px-6 py-2.5 bg-primary text-dark font-bold rounded-full hover:bg-white hover:scale-105 transition-all duration-300">
+   160→                    Lancer mon projet
+   161→                </a>
+   162→            </div>
+   163→
+   164→            <!-- Mobile Toggle -->
+   165→            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white">
+   166→                <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+   167→                <svg x-show="mobileMenuOpen" x-cloak class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+   168→            </button>
+   169→        </div>
+   170→    </header>
+   171→
+   172→    <main class="flex-grow pt-32 mesh-gradient">
+   173→        
+   174→        <!-- Hero Section -->
+   175→        <section class="max-w-7xl mx-auto px-6 mb-24 text-center lg:text-left">
+   176→            <div class="grid lg:grid-cols-2 gap-12 items-center">
+   177→                <div class="space-y-6">
+   178→                    <div class="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full mb-4">
+   179→                        <span class="text-xs font-bold uppercase tracking-widest text-primary">Nos piliers d'excellence</span>
+   180→                    </div>
+   181→                    <h1 class="text-5xl lg:text-7xl font-display font-extrabold leading-[1.1] text-gradient">
+   182→                        Services Digitaux <br> <span class="text-primary italic">Complets.</span>
+   183→                    </h1>
+   184→                    <p class="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+   185→                        De la conception à la maintenance. Tout ce qu'il faut pour dominer votre marché grâce à une ingénierie de pointe et une approche centrée sur le ROI.
+   186→                    </p>
+   187→                </div>
+   188→                <div class="hidden lg:block">
+   189→                    <div class="glass-panel p-6 rounded-3xl relative overflow-hidden border-primary/20">
+   190→                        <div class="flex items-center space-x-4 mb-4">
+   191→                            <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+   192→                            <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+   193→                            <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+   194→                            <span class="text-[10px] font-mono text-gray-500">yodev-stack-navigator.sh</span>
+   195→                        </div>
+   196→                        <div class="grid grid-cols-2 gap-3">
+   197→                            <div class="bg-dark/50 p-3 rounded-xl border border-white/5 text-[11px] font-mono">
+   198→                                <span class="text-primary font-bold">FE:</span> Next.js 14, React, Tailwind
+   199→                            </div>
+   200→                            <div class="bg-dark/50 p-3 rounded-xl border border-white/5 text-[11px] font-mono">
+   201→                                <span class="text-secondary font-bold">BE:</span> Node.js, Python, Go
+   202→                            </div>
+   203→                            <div class="bg-dark/50 p-3 rounded-xl border border-white/5 text-[11px] font-mono">
+   204→                                <span class="text-blue-400 font-bold">AI:</span> OpenAI, Claude, Llama 3
+   205→                            </div>
+   206→                            <div class="bg-dark/50 p-3 rounded-xl border border-white/5 text-[11px] font-mono">
+   207→                                <span class="text-purple-400 font-bold">OPS:</span> AWS, Vercel, Docker
+   208→                            </div>
+   209→                        </div>
+   210→                    </div>
+   211→                </div>
+   212→            </div>
+   213→        </section>
+   214→
+   215→        <!-- Services Grid -->
+   216→        <section class="max-w-7xl mx-auto px-6 pb-24">
+   217→            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+   218→                
+   219→                <!-- 1. Développement Web -->
+   220→                <div class="service-card glass-panel p-8 rounded-[2rem] flex flex-col group">
+   221→                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+   222→                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+   223→                    </div>
+   224→                    <h3 class="text-xl font-bold mb-3">Développement Web</h3>
+   225→                    <p class="text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Applications haute performance avec Next.js & architectures scalables par défaut.</p>
+   226→                    <ul class="space-y-2 mb-8 text-xs text-gray-500 font-medium">
+   227→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>SPA & SSR Apps</span></li>
+   228→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>SEO & Performance</span></li>
+   229→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>APIs & Intégrations</span></li>
+   230→                    </ul>
+   231→                    <a href="#" class="inline-flex items-center text-primary text-sm font-bold group-hover:translate-x-1 transition-transform">
+   232→                        Découvrir <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+   233→                    </a>
+   234→                </div>
+   235→
+   236→                <!-- 2. Développement Mobile -->
+   237→                <div class="service-card glass-panel p-8 rounded-[2rem] flex flex-col group">
+   238→                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+   239→                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+   240→                    </div>
+   241→                    <h3 class="text-xl font-bold mb-3">Développement Mobile</h3>
+   242→                    <p class="text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Expériences fluides et natives sur iOS & Android pour une rétention maximale.</p>
+   243→                    <ul class="space-y-2 mb-8 text-xs text-gray-500 font-medium">
+   244→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>React Native / Flutter</span></li>
+   245→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Swift & Kotlin Native</span></li>
+   246→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>PWA à forte valeur</span></li>
+   247→                    </ul>
+   248→                    <a href="#" class="inline-flex items-center text-primary text-sm font-bold group-hover:translate-x-1 transition-transform">
+   249→                        Découvrir <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+   250→                    </a>
+   251→                </div>
+   252→
+   253→                <!-- 3. Solutions SaaS -->
+   254→                <div class="service-card glass-panel p-8 rounded-[2rem] flex flex-col group">
+   255→                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+   256→                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+   257→                    </div>
+   258→                    <h3 class="text-xl font-bold mb-3">Solutions SaaS</h3>
+   259→                    <p class="text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Conception de plateformes multi-tenant avec gestion complexe d'abonnements.</p>
+   260→                    <ul class="space-y-2 mb-8 text-xs text-gray-500 font-medium">
+   261→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Stripe Integration</span></li>
+   262→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Infrastructure Multi-tenant</span></li>
+   263→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Dashboard Analytic</span></li>
+   264→                    </ul>
+   265→                    <a href="#" class="inline-flex items-center text-primary text-sm font-bold group-hover:translate-x-1 transition-transform">
+   266→                        Découvrir <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+   267→                    </a>
+   268→                </div>
+   269→
+   270→                <!-- 4. E-Commerce Headless -->
+   271→                <div class="service-card glass-panel p-8 rounded-[2rem] flex flex-col group">
+   272→                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+   273→                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+   274→                    </div>
+   275→                    <h3 class="text-xl font-bold mb-3">E-Commerce</h3>
+   276→                    <p class="text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Boutiques ultra-rapides via Headless Commerce pour un taux de conversion record.</p>
+   277→                    <ul class="space-y-2 mb-8 text-xs text-gray-500 font-medium">
+   278→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Shopify Headless / Medusa</span></li>
+   279→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Optimisation Core Web Vitals</span></li>
+   280→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Checkout Personnalisé</span></li>
+   281→                    </ul>
+   282→                    <a href="#" class="inline-flex items-center text-primary text-sm font-bold group-hover:translate-x-1 transition-transform">
+   283→                        Découvrir <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+   284→                    </a>
+   285→                </div>
+   286→
+   287→                <!-- 5. IA & LLM (Strategic Highlight) -->
+   288→                <div class="service-card ai-special-border glass-panel p-8 rounded-[2rem] flex flex-col group lg:col-span-2 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 border-primary/30">
+   289→                    <div class="flex justify-between items-start mb-6">
+   290→                        <div class="w-14 h-14 bg-primary text-dark rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(27,168,150,0.4)] animate-pulse">
+   291→                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+   292→                        </div>
+   293→                        <span class="bg-secondary/20 text-secondary text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-secondary/30">Expertise 2026</span>
+   294→                    </div>
+   295→                    <h3 class="text-3xl font-display font-bold mb-4">IA & LLM Integration</h3>
+   296→                    <p class="text-gray-300 mb-8 text-lg leading-relaxed max-w-lg">Donnez des super-pouvoirs à votre infrastructure. Nous intégrons les derniers modèles (OpenAI, Claude, Llama 3) via RAG pour des agents IA métier performants et sécurisés.</p>
+   297→                    <div class="grid md:grid-cols-2 gap-4 mb-8">
+   298→                        <div class="space-y-3">
+   299→                            <div class="flex items-center space-x-3">
+   300→                                <div class="w-2 h-2 rounded-full bg-primary"></div>
+   301→                                <span class="text-xs font-bold">Chatbots & Agents RAG</span>
+   302→                            </div>
+   303→                            <div class="flex items-center space-x-3">
+   304→                                <div class="w-2 h-2 rounded-full bg-primary"></div>
+   305→                                <span class="text-xs font-bold">Automatisation de workflow</span>
+   306→                            </div>
+   307→                        </div>
+   308→                        <div class="space-y-3">
+   309→                            <div class="flex items-center space-x-3">
+   310→                                <div class="w-2 h-2 rounded-full bg-primary"></div>
+   311→                                <span class="text-xs font-bold">Analyse prédictive & Data</span>
+   312→                            </div>
+   313→                            <div class="flex items-center space-x-3">
+   314→                                <div class="w-2 h-2 rounded-full bg-primary"></div>
+   315→                                <span class="text-xs font-bold">Computer Vision & OCR</span>
+   316→                            </div>
+   317→                        </div>
+   318→                    </div>
+   319→                    <a href="/services/ai-llm" class="mt-auto px-8 py-4 bg-primary text-dark font-black rounded-full text-center hover:bg-white transition-all transform hover:scale-105 duration-300">
+   320→                        Voir nos solutions IA
+   321→                    </a>
+   322→                </div>
+   323→
+   324→                <!-- 6. UX/UI Design -->
+   325→                <div class="service-card glass-panel p-8 rounded-[2rem] flex flex-col group">
+   326→                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+   327→                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+   328→                    </div>
+   329→                    <h3 class="text-xl font-bold mb-3">UX/UI Design</h3>
+   330→                    <p class="text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Interfaces intuitives basées sur la psychologie utilisateur et l'accessibilité.</p>
+   331→                    <ul class="space-y-2 mb-8 text-xs text-gray-500 font-medium">
+   332→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Audit UX & Heatmaps</span></li>
+   333→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Design System Scalable</span></li>
+   334→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Prototypes Haute-Fidélité</span></li>
+   335→                    </ul>
+   336→                    <a href="#" class="inline-flex items-center text-primary text-sm font-bold group-hover:translate-x-1 transition-transform">
+   337→                        Découvrir <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+   338→                    </a>
+   339→                </div>
+   340→
+   341→                <!-- 7. Cybersécurité -->
+   342→                <div class="service-card glass-panel p-8 rounded-[2rem] flex flex-col group">
+   343→                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+   344→                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+   345→                    </div>
+   346→                    <h3 class="text-xl font-bold mb-3">Cybersécurité</h3>
+   347→                    <p class="text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Blindage de vos actifs numériques contre les vulnérabilités OWASP et conformité RGPD.</p>
+   348→                    <ul class="space-y-2 mb-8 text-xs text-gray-500 font-medium">
+   349→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Pentesting & Audits</span></li>
+   350→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Hardening Serveur</span></li>
+   351→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Compliance (SOC2)</span></li>
+   352→                    </ul>
+   353→                    <a href="#" class="inline-flex items-center text-primary text-sm font-bold group-hover:translate-x-1 transition-transform">
+   354→                        Découvrir <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+   355→                    </a>
+   356→                </div>
+   357→
+   358→                <!-- 8. Consulting & Stratégie -->
+   359→                <div class="service-card glass-panel p-8 rounded-[2rem] flex flex-col group">
+   360→                    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-dark transition-all">
+   361→                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+   362→                    </div>
+   363→                    <h3 class="text-xl font-bold mb-3">Consulting & Stratégie</h3>
+   364→                    <p class="text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Audit de votre stack technique et roadmap de transformation digitale sur 12-24 mois.</p>
+   365→                    <ul class="space-y-2 mb-8 text-xs text-gray-500 font-medium">
+   366→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Modernisation Legacy</span></li>
+   367→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>Cloud Migration (AWS)</span></li>
+   368→                        <li class="flex items-center space-x-2"><svg class="w-3 h-3 text-primary" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg><span>CTO as a Service</span></li>
+   369→                    </ul>
+   370→                    <a href="#" class="inline-flex items-center text-primary text-sm font-bold group-hover:translate-x-1 transition-transform">
+   371→                        Découvrir <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+   372→                    </a>
+   373→                </div>
+   374→
+   375→            </div>
+   376→        </section>
+   377→
+   378→        <!-- Technical Stats Bar -->
+   379→        <section class="max-w-7xl mx-auto px-6 mb-24">
+   380→            <div class="glass-panel rounded-3xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-8 border-white/5">
+   381→                <div class="text-center">
+   382→                    <p class="text-4xl font-display font-black text-white mb-1">200+</p>
+   383→                    <p class="text-xs font-bold uppercase tracking-widest text-primary">Projets Livrés</p>
+   384→                </div>
+   385→                <div class="w-px h-12 bg-white/10 hidden md:block"></div>
+   386→                <div class="text-center">
+   387→                    <p class="text-4xl font-display font-black text-white mb-1">98%</p>
+   388→                    <p class="text-xs font-bold uppercase tracking-widest text-primary">Client Satisfaction</p>
+   389→                </div>
+   390→                <div class="w-px h-12 bg-white/10 hidden md:block"></div>
+   391→                <div class="text-center">
+   392→                    <p class="text-4xl font-display font-black text-white mb-1">12 sem.</p>
+   393→                    <p class="text-xs font-bold uppercase tracking-widest text-primary">Délai Moyen MVP</p>
+   394→                </div>
+   395→                <div class="w-px h-12 bg-white/10 hidden md:block"></div>
+   396→                <div class="text-center">
+   397→                    <p class="text-4xl font-display font-black text-white mb-1">15+</p>
+   398→                    <p class="text-xs font-bold uppercase tracking-widest text-primary">Experts Seniors</p>
+   399→                </div>
+   400→            </div>
+   401→        </section>
+   402→
+   403→        <!-- FAQ Section -->
+   404→        <section class="max-w-4xl mx-auto px-6 pb-32" x-data="{ selected: 1 }">
+   405→            <div class="text-center mb-16">
+   406→                <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">Questions Fréquentes</h2>
+   407→                <p class="text-gray-400">Tout ce qu'il faut savoir avant de démarrer notre partenariat.</p>
+   408→            </div>
+   409→
+   410→            <div class="space-y-4">
+   411→                <!-- FAQ 1 -->
+   412→                <div class="glass-panel rounded-2xl overflow-hidden border-white/5 transition-all" :class="selected === 1 ? 'border-primary/30 ring-1 ring-primary/20' : ''">
+   413→                    <button @click="selected = (selected === 1 ? null : 1)" class="w-full flex items-center justify-between p-6 text-left">
+   414→                        <span class="font-bold text-lg">Quel est votre processus de développement ?</span>
+   415→                        <svg class="w-5 h-5 transition-transform duration-300" :class="selected === 1 ? 'rotate-180 text-primary' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+   416→                    </button>
+   417→                    <div x-show="selected === 1" x-collapse x-cloak>
+   418→                        <div class="p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5 bg-white/5">
+   419→                            Nous fonctionnons en cycle Agile (Scrum). Nous divisons le projet en Sprints de 2 semaines avec des livrables testables à chaque fin de cycle. Vous avez accès à un environnement de staging et un dashboard de suivi en temps réel.
+   420→                        </div>
+   421→                    </div>
+   422→                </div>
+   423→
+   424→                <!-- FAQ 2 -->
+   425→                <div class="glass-panel rounded-2xl overflow-hidden border-white/5 transition-all" :class="selected === 2 ? 'border-primary/30 ring-1 ring-primary/20' : ''">
+   426→                    <button @click="selected = (selected === 2 ? null : 2)" class="w-full flex items-center justify-between p-6 text-left">
+   427→                        <span class="font-bold text-lg">Combien de temps faut-il pour un projet ?</span>
+   428→                        <svg class="w-5 h-5 transition-transform duration-300" :class="selected === 2 ? 'rotate-180 text-primary' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+   429→                    </button>
+   430→                    <div x-show="selected === 2" x-collapse x-cloak>
+   431→                        <div class="p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5 bg-white/5">
+   432→                            Un MVP (Minimum Viable Product) robuste prend généralement entre 8 et 14 semaines. Les audits stratégiques ou missions d'intégration IA peuvent varier de 2 à 6 semaines selon la complexité des données.
+   433→                        </div>
+   434→                    </div>
+   435→                </div>
+   436→
+   437→                <!-- FAQ 3 -->
+   438→                <div class="glass-panel rounded-2xl overflow-hidden border-white/5 transition-all" :class="selected === 3 ? 'border-primary/30 ring-1 ring-primary/20' : ''">
+   439→                    <button @click="selected = (selected === 3 ? null : 3)" class="w-full flex items-center justify-between p-6 text-left">
+   440→                        <span class="font-bold text-lg">Travaillez-vous avec des startups early-stage ?</span>
+   441→                        <svg class="w-5 h-5 transition-transform duration-300" :class="selected === 3 ? 'rotate-180 text-primary' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+   442→                    </button>
+   443→                    <div x-show="selected === 3" x-collapse x-cloak>
+   444→                        <div class="p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5 bg-white/5">
+   445→                            Oui, nous avons un framework dédié aux startups pour valider le Product-Market Fit rapidement sans sacrifier la qualité technique nécessaire pour les levées de fonds futures.
+   446→                        </div>
+   447→                    </div>
+   448→                </div>
+   449→
+   450→                <!-- FAQ 4 -->
+   451→                <div class="glass-panel rounded-2xl overflow-hidden border-white/5 transition-all" :class="selected === 4 ? 'border-primary/30 ring-1 ring-primary/20' : ''">
+   452→                    <button @click="selected = (selected === 4 ? null : 4)" class="w-full flex items-center justify-between p-6 text-left">
+   453→                        <span class="font-bold text-lg">Faites-vous du Staff Augmentation ?</span>
+   454→                        <svg class="w-5 h-5 transition-transform duration-300" :class="selected === 4 ? 'rotate-180 text-primary' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+   455→                    </button>
+   456→                    <div x-show="selected === 4" x-collapse x-cloak>
+   457→                        <div class="p-6 pt-0 text-gray-400 text-sm leading-relaxed border-t border-white/5 bg-white/5">
+   458→                            Tout à fait. Nous pouvons intégrer un ou plusieurs experts (Dev, IA, Product) directement dans vos squads existantes pour accélérer vos roadmaps internes.
+   459→                        </div>
+   460→                    </div>
+   461→                </div>
+   462→            </div>
+   463→        </section>
+   464→
+   465→        <!-- Final CTA -->
+   466→        <section class="max-w-7xl mx-auto px-6 mb-32">
+   467→            <div class="glass-panel p-12 md:p-24 rounded-[4rem] text-center relative overflow-hidden bg-gradient-to-tr from-primary/10 via-dark to-secondary/10">
+   468→                <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#1BA896 1px, transparent 1px); background-size: 40px 40px;"></div>
+   469→                
+   470→                <h2 class="text-4xl md:text-6xl font-display font-bold mb-8 relative z-10">Une vision technique <br> sans compromis.</h2>
+   471→                <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto relative z-10">Nos experts sont prêts à auditer votre projet et proposer une roadmap d'accélération sous 48h.</p>
+   472→                
+   473→                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 relative z-10">
+   474→                    <a href="/contact" class="px-12 py-5 bg-primary text-dark font-black text-lg rounded-full hover:bg-white hover:scale-105 transition-all shadow-[0_0_30px_rgba(27,168,150,0.3)]">
+   475→                        Discutons de votre projet
+   476→                    </a>
+   477→                    <a href="/expertise" class="px-12 py-5 bg-white/5 border border-white/10 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-all">
+   478→                        Notre Tech Stack
+   479→                    </a>
+   480→                </div>
+   481→            </div>
+   482→        </section>
+   483→
+   484→    </main>
+   485→
+   486→    <!-- Footer (Copied from Brand Guidelines) -->
+   487→    <footer class="bg-dark border-t border-white/5 pt-20 pb-10">
+   488→        <div class="max-w-7xl mx-auto px-6">
+   489→            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+   490→                <div class="space-y-6">
+   491→                    <a href="/" class="flex items-center space-x-2 group">
+   492→                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform">
+   493→                            <span class="text-dark font-black text-lg">Y</span>
+   494→                        </div>
+   495→                        <span class="text-xl font-display font-bold tracking-tight">yodev</span>
+   496→                    </a>
+   497→                    <p class="text-gray-500 text-sm leading-relaxed">
+   498→                        Agence de transformation digitale 360°. <br> Spécialiste Web, Mobile & IA basée à Paris.
+   499→                    </p>
+   500→                </div>
+   501→
+   502→                <div>
+   503→                    <h4 class="font-bold mb-6">Services</h4>
+   504→                    <ul class="space-y-4 text-sm text-gray-500">
+   505→                        <li><a href="#" class="hover:text-primary transition-colors">Modernisation IT</a></li>
+   506→                        <li><a href="#" class="hover:text-primary transition-colors">Intégration LLM / IA</a></li>
+   507→                        <li><a href="#" class="hover:text-primary transition-colors">Audit & Stratégie</a></li>
+   508→                        <li><a href="#" class="hover:text-primary transition-colors">Développement SaaS</a></li>
+   509→                    </ul>
+   510→                </div>
+   511→
+   512→                <div>
+   513→                    <h4 class="font-bold mb-6">Agence</h4>
+   514→                    <ul class="space-y-4 text-sm text-gray-500">
+   515→                        <li><a href="#" class="hover:text-primary transition-colors">Nos Réalisations</a></li>
+   516→                        <li><a href="#" class="hover:text-primary transition-colors">Équipe & Culture</a></li>
+   517→                        <li><a href="#" class="hover:text-primary transition-colors">Carrières</a></li>
+   518→                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+   519→                    </ul>
+   520→                </div>
+   521→
+   522→                <div>
+   523→                    <h4 class="font-bold mb-6">Newsletter Tech</h4>
+   524→                    <form class="flex flex-col space-y-2">
+   525→                        <input type="email" placeholder="votre@email.com" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary">
+   526→                        <button class="bg-primary text-dark font-bold py-3 rounded-xl hover:bg-white transition-colors">S'abonner</button>
+   527→                    </form>
+   528→                </div>
+   529→            </div>
+   530→
+   531→            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500">
+   532→                <p>© 2026 YODEV SAS - Expertise IT & Intelligence Artificielle.</p>
+   533→                <div class="flex space-x-6">
+   534→                    <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+   535→                    <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+   536→                </div>
+   537→            </div>
+   538→        </div>
+   539→    </footer>
+   540→
+   541→</body>
+   542→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

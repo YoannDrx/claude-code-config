@@ -1,0 +1,151 @@
+     1→name: E2E Playwright Tests
+     2→
+     3→on:
+     4→  pull_request:
+     5→    branches: [main]
+     6→    paths:
+     7→      - "src/**"
+     8→      - "app/**"
+     9→      - "prisma/**"
+    10→      - "e2e/**"
+    11→      - ".github/workflows/playwright.yml"
+    12→  push:
+    13→    branches: [main]
+    14→    paths:
+    15→      - "src/**"
+    16→      - "app/**"
+    17→      - "prisma/**"
+    18→      - "e2e/**"
+    19→
+    20→# Cancel previous runs on the same PR/branch
+    21→concurrency:
+    22→  group: ${{ github.workflow }}-${{ github.ref }}
+    23→  cancel-in-progress: true
+    24→
+    25→jobs:
+    26→  test:
+    27→    name: Playwright Tests
+    28→    timeout-minutes: 60
+    29→    runs-on: ubuntu-latest
+    30→
+    31→    # Common environment variables for all steps
+    32→    env:
+    33→      # Core
+    34→      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/nowts_test"
+    35→      DATABASE_URL_UNPOOLED: "postgresql://postgres:postgres@localhost:5432/nowts_test"
+    36→      BETTER_AUTH_SECRET: "test-secret-key-for-ci-testing-only-not-production"
+    37→      BETTER_AUTH_URL: "http://localhost:3000"
+    38→      NODE_ENV: "production"
+    39→      # Email
+    40→      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+    41→      EMAIL_FROM: "NowTS <contact@nowts.app>"
+    42→      NEXT_PUBLIC_EMAIL_CONTACT: "contact@nowts.app"
+    43→      # Stripe
+    44→      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+    45→      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY }}
+    46→      STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+    47→      STRIPE_PRO_PLAN_ID: ${{ secrets.STRIPE_PRO_PLAN_ID }}
+    48→      STRIPE_PRO_YEARLY_PLAN_ID: ${{ secrets.STRIPE_PRO_YEARLY_PLAN_ID }}
+    49→      STRIPE_ULTRA_PLAN_ID: ${{ secrets.STRIPE_ULTRA_PLAN_ID }}
+    50→      STRIPE_ULTRA_YEARLY_PLAN_ID: ${{ secrets.STRIPE_ULTRA_YEARLY_PLAN_ID }}
+    51→      # OAuth
+    52→      GITHUB_CLIENT_ID: ${{ secrets.OAUTH_GITHUB_CLIENT_ID }}
+    53→      GITHUB_CLIENT_SECRET: ${{ secrets.OAUTH_GITHUB_CLIENT_SECRET }}
+    54→      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+    55→      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+    56→      # Analytics
+    57→      NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
+    58→      NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
+    59→      # Playwright specific
+    60→      PLAYWRIGHT_TEST_BASE_URL: "http://localhost:3000"
+    61→      HEADLESS: "true"
+    62→      CI: "true"
+    63→      PORT: 3000
+    64→
+    65→    services:
+    66→      postgres:
+    67→        image: postgres:15
+    68→        env:
+    69→          POSTGRES_PASSWORD: postgres
+    70→          POSTGRES_USER: postgres
+    71→          POSTGRES_DB: nowts_test
+    72→        options: >-
+    73→          --health-cmd pg_isready
+    74→          --health-interval 10s
+    75→          --health-timeout 5s
+    76→          --health-retries 5
+    77→        ports:
+    78→          - 5432:5432
+    79→
+    80→    steps:
+    81→      - name: Checkout
+    82→        uses: actions/checkout@v4
+    83→
+    84→      - name: Setup pnpm
+    85→        uses: pnpm/action-setup@v2
+    86→        with:
+    87→          version: 9
+    88→
+    89→      - name: Setup Node.js
+    90→        uses: actions/setup-node@v4
+    91→        with:
+    92→          node-version: lts/*
+    93→          cache: "pnpm"
+    94→
+    95→      - name: Cache Next.js build
+    96→        uses: actions/cache@v4
+    97→        with:
+    98→          path: |
+    99→            ~/.npm
+   100→            ${{ github.workspace }}/.next/cache
+   101→          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+   102→          restore-keys: |
+   103→            ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+   104→
+   105→      - name: Install dependencies
+   106→        run: pnpm install --prod=false
+   107→
+   108→      - name: Generate Prisma client
+   109→        run: pnpm prisma generate
+   110→
+   111→      - name: Reset database (clean slate)
+   112→        run: pnpm prisma migrate reset --force --skip-seed
+   113→
+   114→      - name: Verify database schema
+   115→        run: pnpm prisma migrate status
+   116→
+   117→      - name: Build application
+   118→        run: pnpm build
+   119→
+   120→      - name: Install Playwright browsers
+   121→        run: pnpm exec playwright install chromium --with-deps
+   122→
+   123→      - name: Start application
+   124→        run: pnpm start &
+   125→
+   126→      - name: Wait for application to be ready
+   127→        run: pnpm dlx wait-on@latest http://localhost:3000 --timeout 60000
+   128→
+   129→      - name: Run Playwright tests
+   130→        run: pnpm test:e2e:ci
+   131→
+   132→      - name: Upload Playwright report
+   133→        uses: actions/upload-artifact@v4
+   134→        if: ${{ !cancelled() }}
+   135→        with:
+   136→          name: playwright-report
+   137→          path: playwright-report/
+   138→          retention-days: 30
+   139→
+   140→      - name: Upload test results
+   141→        uses: actions/upload-artifact@v4
+   142→        if: ${{ !cancelled() }}
+   143→        with:
+   144→          name: test-results
+   145→          path: test-results/
+   146→          retention-days: 30
+   147→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,22 @@
+The file /Users/yoannandrieux/Projets/portfolio-loic/tailwind.config.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   404→        "marquee-left": "marquee-left linear infinite",
+   405→        "marquee-right": "marquee-right linear infinite",
+   406→      },
+   407→
+   408→      keyframes: {
+   409→        marquee: {
+   410→          "0%": { transform: "translateX(0)" },
+   411→          "100%": { transform: "translateX(-100%)" },
+   412→        },
+   413→        "marquee-left": {
+   414→          "0%": { transform: "translateX(0)" },
+   415→          "100%": { transform: "translateX(-50%)" },
+   416→        },
+   417→        "marquee-right": {
+   418→          "0%": { transform: "translateX(-50%)" },
+   419→          "100%": { transform: "translateX(0)" },
+   420→        },
+   421→        morph: {
+   422→          "0%, 100%": { borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" },
+   423→          "50%": { borderRadius: "30% 60% 70% 40% / 50% 60% 30% 60%" },
+   424→        },

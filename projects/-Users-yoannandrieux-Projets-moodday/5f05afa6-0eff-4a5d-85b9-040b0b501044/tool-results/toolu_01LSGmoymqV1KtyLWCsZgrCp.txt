@@ -1,0 +1,18 @@
+The validation variables for the environment related to RESEND\_API\_KEY and STRIPE are:
+
+**RESEND\_API\_KEY:**
+*   It is a server environment variable that is required (minimum length of 1).<cite i="0"/>
+*   It is listed as an optional variable for the "Resend" feature.<cite i="1"/><cite i="2"/><cite i="3"/><cite i="4"/><cite i="5"/><cite i="6"/>
+
+**STRIPE:**
+*   **STRIPE\_SECRET\_KEY:** A server environment variable that is required (minimum length of 1).<cite i="0"/> It is also listed as an optional variable for the "Stripe" feature.<cite i="1"/><cite i="2"/><cite i="3"/><cite i="4"/><cite i="5"/><cite i="6"/>
+*   **STRIPE\_WEBHOOK\_SECRET:** A server environment variable that is optional.<cite i="0"/>
+*   **NEXT\_PUBLIC\_STRIPE\_PUBLISHABLE\_KEY:** A client environment variable that is required (minimum length of 1).<cite i="0"/> It is also listed as an optional variable for the "Stripe" feature.<cite i="1"/><cite i="2"/><cite i="3"/><cite i="4"/><cite i="5"/><cite i="6"/>
+
+0: ./src/lib/env.ts:1-38 (96.59% match)
+1: ./scripts/doctor.ts:133-173 (96.38% match)
+2: ./scripts/doctor.ts:135-175 (96.38% match)
+3: ./scripts/doctor.ts:135-175 (96.38% match)
+4: ./scripts/doctor.ts:135-175 (96.38% match)
+5: ./scripts/doctor.ts:140-180 (96.38% match)
+6: ./scripts/doctor.ts:140-180 (96.38% match)

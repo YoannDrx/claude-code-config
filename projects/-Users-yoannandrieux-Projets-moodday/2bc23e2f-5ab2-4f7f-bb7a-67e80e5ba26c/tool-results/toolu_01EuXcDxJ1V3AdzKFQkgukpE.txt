@@ -1,0 +1,84 @@
+   867→### Epic 6: Export for Consultation
+   868→
+   869→#### Story 6.1: Date Range Selector
+   870→**En tant qu'** utilisateur,
+   871→**Je veux** sélectionner une période pour mon export PDF,
+   872→**Afin de** choisir les données pertinentes pour ma consultation.
+   873→
+   874→**FRs:** FR33
+   875→**Points:** 1
+   876→
+   877→**Acceptance Criteria:**
+   878→- [ ] Sélecteur date début / date fin
+   879→- [ ] Presets: 2 semaines, 1 mois, 3 mois
+   880→- [ ] Preview du nombre d'entrées dans la période
+   881→- [ ] Validation: fin > début
+   882→
+   883→**Technical Notes:**
+   884→- Composant: DateRangePicker
+   885→- Utiliser date-fns pour manipulations
+   886→
+   887→---
+   888→
+   889→#### Story 6.2: PDF Generation
+   890→**En tant qu'** utilisateur,
+   891→**Je veux** générer un PDF avec mes données de la période sélectionnée,
+   892→**Afin de** le montrer à mon psychiatre/psychologue.
+   893→
+   894→**FRs:** FR32, FR34
+   895→**Points:** 5
+   896→
+   897→**Acceptance Criteria:**
+   898→- [ ] Génération client-side avec @react-pdf/renderer
+   899→- [ ] Format 1 page optimisé (ou 2 max si beaucoup de données)
+   900→- [ ] Sections: Résumé humeur, Courbe, Médicaments, Thérapie
+   901→- [ ] Design professionnel mais lisible
+   902→- [ ] Nom patient et période en header
+   903→- [ ] Téléchargement automatique du fichier
+   904→
+   905→**Technical Notes:**
+   906→- Composant: `src/features/export/pdf-document.tsx`
+   907→- Library: @react-pdf/renderer
+   908→- Pas de génération serveur pour éviter les limites serverless
+   909→
+   910→---
+   911→
+   912→#### Story 6.3: Export Preview
+   913→**En tant qu'** utilisateur,
+   914→**Je veux** prévisualiser mon PDF avant de le télécharger,
+   915→**Afin de** vérifier qu'il contient les bonnes informations.
+   916→
+   917→**FRs:** FR32 (amélioration UX)
+   918→**Points:** 2
+   919→
+   920→**Acceptance Criteria:**
+   921→- [ ] Preview dans un modal ou page dédiée
+   922→- [ ] Rendu identique au PDF final
+   923→- [ ] Boutons: "Télécharger" / "Modifier période"
+   924→- [ ] Loading state pendant génération
+   925→
+   926→---
+   927→
+   928→### Epic 7: Personalization & Onboarding
+   929→
+   930→#### Story 7.1: Onboarding Welcome Flow
+   931→**En tant que** nouvel utilisateur,
+   932→**Je veux** un onboarding bienveillant qui m'accueille,
+   933→**Afin de** comprendre comment utiliser l'app sans pression.
+   934→
+   935→**FRs:** FR42
+   936→**Points:** 2
+   937→
+   938→**Acceptance Criteria:**
+   939→- [ ] 3-4 écrans d'introduction maximum
+   940→- [ ] Ton chaleureux et rassurant
+   941→- [ ] Explication de la valeur: "Voir si votre traitement fonctionne"
+   942→- [ ] Pas de promesses médicales
+   943→- [ ] Navigation: Next / Skip
+   944→
+   945→**Technical Notes:**
+   946→- Pages: `app/(auth)/onboarding/[step]/page.tsx`
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

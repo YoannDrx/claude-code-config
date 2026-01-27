@@ -1,0 +1,236 @@
+     1→---
+     2→name: 'step-09-functional'
+     3→description: 'Synthesize all discovery into comprehensive functional requirements'
+     4→
+     5→# File References
+     6→nextStepFile: './step-10-nonfunctional.md'
+     7→outputFile: '{planning_artifacts}/prd.md'
+     8→
+     9→# Task References
+    10→advancedElicitationTask: '{project-root}/_bmad/core/workflows/advanced-elicitation/workflow.xml'
+    11→partyModeWorkflow: '{project-root}/_bmad/core/workflows/party-mode/workflow.md'
+    12→---
+    13→
+    14→# Step 9: Functional Requirements Synthesis
+    15→
+    16→**Progress: Step 9 of 11** - Next: Non-Functional Requirements
+    17→
+    18→## MANDATORY EXECUTION RULES (READ FIRST):
+    19→
+    20→- 🛑 NEVER generate content without user input
+    21→
+    22→- 📖 CRITICAL: ALWAYS read the complete step file before taking any action - partial understanding leads to incomplete decisions
+    23→- 🔄 CRITICAL: When loading next step with 'C', ensure the entire file is read and understood before proceeding
+    24→- ✅ ALWAYS treat this as collaborative discovery between PM peers
+    25→- 📋 YOU ARE A FACILITATOR, not a content generator
+    26→- 💬 FOCUS on creating comprehensive capability inventory for the product
+    27→- 🎯 CRITICAL: This is THE CAPABILITY CONTRACT for all downstream work
+    28→- ✅ YOU MUST ALWAYS SPEAK OUTPUT In your Agent communication style with the config `{communication_language}`
+    29→
+    30→## EXECUTION PROTOCOLS:
+    31→
+    32→- 🎯 Show your analysis before taking any action
+    33→- ⚠️ Present A/P/C menu after generating functional requirements
+    34→- 💾 ONLY save when user chooses C (Continue)
+    35→- 📖 Update output file frontmatter, adding this step name to the end of the list of stepsCompleted
+    36→- 🚫 FORBIDDEN to load next step until C is selected
+    37→
+    38→
+    39→## CONTEXT BOUNDARIES:
+    40→
+    41→- Current document and frontmatter from previous steps are available
+    42→- ALL previous content (executive summary, success criteria, journeys, domain, innovation, project-type) must be referenced
+    43→- No additional data files needed for this step
+    44→- Focus on capabilities, not implementation details
+    45→
+    46→## CRITICAL IMPORTANCE:
+    47→
+    48→**This section defines THE CAPABILITY CONTRACT for the entire product:**
+    49→
+    50→- UX designers will ONLY design what's listed here
+    51→- Architects will ONLY support what's listed here
+    52→- Epic breakdown will ONLY implement what's listed here
+    53→- If a capability is missing from FRs, it will NOT exist in the final product
+    54→
+    55→## FUNCTIONAL REQUIREMENTS SYNTHESIS SEQUENCE:
+    56→
+    57→### 1. Understand FR Purpose and Usage
+    58→
+    59→Start by explaining the critical role of functional requirements:
+    60→
+    61→**Purpose:**
+    62→FRs define WHAT capabilities the product must have. They are the complete inventory of user-facing and system capabilities that deliver the product vision.
+    63→
+    64→**Critical Properties:**
+    65→✅ Each FR is a testable capability
+    66→✅ Each FR is implementation-agnostic (could be built many ways)
+    67→✅ Each FR specifies WHO and WHAT, not HOW
+    68→✅ No UI details, no performance numbers, no technology choices
+    69→✅ Comprehensive coverage of capability areas
+    70→
+    71→**How They Will Be Used:**
+    72→
+    73→1. UX Designer reads FRs → designs interactions for each capability
+    74→2. Architect reads FRs → designs systems to support each capability
+    75→3. PM reads FRs → creates epics and stories to implement each capability
+    76→
+    77→### 2. Review Existing Content for Capability Extraction
+    78→
+    79→Systematically review all previous sections to extract capabilities:
+    80→
+    81→**Extract From:**
+    82→
+    83→- Executive Summary → Core product differentiator capabilities
+    84→- Success Criteria → Success-enabling capabilities
+    85→- User Journeys → Journey-revealed capabilities
+    86→- Domain Requirements → Compliance and regulatory capabilities
+    87→- Innovation Patterns → Innovative feature capabilities
+    88→- Project-Type Requirements → Technical capability needs
+    89→
+    90→### 3. Organize Requirements by Capability Area
+    91→
+    92→Group FRs by logical capability areas (NOT by technology or layer):
+    93→
+    94→**Good Grouping Examples:**
+    95→
+    96→- ✅ "User Management" (not "Authentication System")
+    97→- ✅ "Content Discovery" (not "Search Algorithm")
+    98→- ✅ "Team Collaboration" (not "WebSocket Infrastructure")
+    99→
+   100→**Target 5-8 Capability Areas** for typical projects.
+   101→
+   102→### 4. Generate Comprehensive FR List
+   103→
+   104→Create complete functional requirements using this format:
+   105→
+   106→**Format:**
+   107→
+   108→- FR#: [Actor] can [capability] [context/constraint if needed]
+   109→- Number sequentially (FR1, FR2, FR3...)
+   110→- Aim for 20-50 FRs for typical projects
+   111→
+   112→**Altitude Check:**
+   113→Each FR should answer "WHAT capability exists?" NOT "HOW it's implemented?"
+   114→
+   115→**Examples:**
+   116→
+   117→- ✅ "Users can customize appearance settings"
+   118→- ❌ "Users can toggle light/dark theme with 3 font size options stored in LocalStorage"
+   119→
+   120→### 5. Self-Validation Process
+   121→
+   122→Before presenting to user, validate the FR list:
+   123→
+   124→**Completeness Check:**
+   125→
+   126→1. "Did I cover EVERY capability mentioned in the MVP scope section?"
+   127→2. "Did I include domain-specific requirements as FRs?"
+   128→3. "Did I cover the project-type specific needs?"
+   129→4. "Could a UX designer read ONLY the FRs and know what to design?"
+   130→5. "Could an Architect read ONLY the FRs and know what to support?"
+   131→6. "Are there any user actions or system behaviors we discussed that have no FR?"
+   132→
+   133→**Altitude Check:**
+   134→
+   135→1. "Am I stating capabilities (WHAT) or implementation (HOW)?"
+   136→2. "Am I listing acceptance criteria or UI specifics?" (Remove if yes)
+   137→3. "Could this FR be implemented 5 different ways?" (Good - means it's not prescriptive)
+   138→
+   139→**Quality Check:**
+   140→
+   141→1. "Is each FR clear enough that someone could test whether it exists?"
+   142→2. "Is each FR independent (not dependent on reading other FRs to understand)?"
+   143→3. "Did I avoid vague terms like 'good', 'fast', 'easy'?" (Use NFRs for quality attributes)
+   144→
+   145→### 6. Generate Functional Requirements Content
+   146→
+   147→Prepare the content to append to the document:
+   148→
+   149→#### Content Structure:
+   150→
+   151→When saving to document, append these Level 2 and Level 3 sections:
+   152→
+   153→```markdown
+   154→## Functional Requirements
+   155→
+   156→### [Capability Area Name]
+   157→
+   158→- FR1: [Specific Actor] can [specific capability]
+   159→- FR2: [Specific Actor] can [specific capability]
+   160→- FR3: [Specific Actor] can [specific capability]
+   161→
+   162→### [Another Capability Area]
+   163→
+   164→- FR4: [Specific Actor] can [specific capability]
+   165→- FR5: [Specific Actor] can [specific capability]
+   166→
+   167→[Continue for all capability areas discovered in conversation]
+   168→```
+   169→
+   170→### 7. Present MENU OPTIONS
+   171→
+   172→Present the functional requirements for review, then display menu:
+   173→- Show synthesized functional requirements (using structure from step 6)
+   174→- Emphasize this is the capability contract for all downstream work
+   175→- Highlight that every feature must trace back to these requirements
+   176→- Ask if they'd like to refine further, get other perspectives, or proceed
+   177→- Present menu options naturally as part of conversation
+   178→
+   179→**What would you like to do?**"
+   180→
+   181→Display: "**Select:** [A] Advanced Elicitation [P] Party Mode [C] Continue to Non-Functional Requirements (Step 10 of 11)"
+   182→
+   183→#### Menu Handling Logic:
+   184→- IF A: Execute {advancedElicitationTask} with the current FR list, process the enhanced capability coverage that comes back, ask user if they accept the additions, if yes update content then redisplay menu, if no keep original content then redisplay menu
+   185→- IF P: Execute {partyModeWorkflow} with the current FR list, process the collaborative capability validation and additions, ask user if they accept the changes, if yes update content then redisplay menu, if no keep original content then redisplay menu
+   186→- IF C: Append the final content to {outputFile}, update frontmatter by adding this step name to the end of the stepsCompleted array, then load, read entire file, then execute {nextStepFile}
+   187→- IF Any other: help user respond, then redisplay menu
+   188→
+   189→#### EXECUTION RULES:
+   190→- ALWAYS halt and wait for user input after presenting menu
+   191→- ONLY proceed to next step when user selects 'C'
+   192→- After other menu items execution, return to this menu
+   193→
+   194→## APPEND TO DOCUMENT:
+   195→
+   196→When user selects 'C', append the content directly to the document using the structure from step 6.
+   197→
+   198→## SUCCESS METRICS:
+   199→
+   200→✅ All previous discovery content synthesized into FRs
+   201→✅ FRs organized by capability areas (not technology)
+   202→✅ Each FR states WHAT capability exists, not HOW to implement
+   203→✅ Comprehensive coverage with 20-50 FRs typical
+   204→✅ Altitude validation ensures implementation-agnostic requirements
+   205→✅ Completeness check validates coverage of all discussed capabilities
+   206→✅ A/P/C menu presented and handled correctly
+   207→✅ Content properly appended to document when C selected
+   208→
+   209→## FAILURE MODES:
+   210→
+   211→❌ Missing capabilities from previous discovery sections
+   212→❌ Organizing FRs by technology instead of capability areas
+   213→❌ Including implementation details or UI specifics in FRs
+   214→❌ Not achieving comprehensive coverage of discussed capabilities
+   215→❌ Using vague terms instead of testable capabilities
+   216→❌ Not presenting A/P/C menu after content generation
+   217→❌ Appending content without user selecting 'C'
+   218→
+   219→❌ **CRITICAL**: Reading only partial step file - leads to incomplete understanding and poor decisions
+   220→❌ **CRITICAL**: Proceeding with 'C' without fully reading and understanding the next step file
+   221→❌ **CRITICAL**: Making decisions without complete understanding of step requirements and protocols
+   222→
+   223→## CAPABILITY CONTRACT REMINDER:
+   224→
+   225→Emphasize to user: "This FR list is now binding. Any feature not listed here will not exist in the final product unless we explicitly add it. This is why it's critical to ensure completeness now."
+   226→
+   227→## NEXT STEP:
+   228→
+   229→After user selects 'C' and content is saved to document, load {nextStepFile} to define non-functional requirements.
+   230→
+   231→Remember: Do NOT proceed to step-10 until user explicitly selects 'C' from the A/P/C menu and content is saved!
+   232→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

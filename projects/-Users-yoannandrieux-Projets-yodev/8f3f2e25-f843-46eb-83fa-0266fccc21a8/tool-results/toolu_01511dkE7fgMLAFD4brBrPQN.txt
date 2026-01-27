@@ -1,0 +1,42 @@
+> yodev@0.1.0 build /Users/yoannandrieux/Projets/yodev
+> next build
+
+▲ Next.js 16.1.0 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.3s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/76) ...
+  Generating static pages using 7 workers (19/76) 
+  Generating static pages using 7 workers (38/76) 
+  Generating static pages using 7 workers (57/76) 
+✓ Generating static pages using 7 workers (76/76) in 173.4ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /[locale]
+├ ƒ /[locale]/about
+├ ƒ /[locale]/ai
+├ ƒ /[locale]/blog
+├ ƒ /[locale]/blog/[slug]
+├ ƒ /[locale]/careers
+├ ƒ /[locale]/careers/[slug]
+├ ƒ /[locale]/contact
+├ ƒ /[locale]/expertise
+├ ƒ /[locale]/legal
+├ ƒ /[locale]/legal/privacy
+├ ƒ /[locale]/method
+├ ƒ /[locale]/offers
+├ ƒ /[locale]/services
+├ ƒ /[locale]/services/[service]
+├ ƒ /[locale]/team
+├ ƒ /[locale]/work
+└ ƒ /[locale]/work/[slug]
+
+
+ƒ Proxy (Middleware)
+
+ƒ  (Dynamic)  server-rendered on demand

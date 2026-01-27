@@ -1,0 +1,30 @@
+The file /Users/yoannandrieux/Projets/yodev/src/components/ui/button-styles.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    60→  xl: "h-14 px-8 text-base gap-3 rounded-2xl",
+    61→  icon: "h-10 w-10 p-0 rounded-xl",
+    62→};
+    63→
+    64→export function buttonClassName({
+    65→  variant = "primary",
+    66→  size = "md",
+    67→  className,
+    68→}: {
+    69→  variant?: ButtonVariant;
+    70→  size?: ButtonSize;
+    71→  className?: string;
+    72→}) {
+    73→  return cn(
+    74→    // Base styles
+    75→    "inline-flex items-center justify-center",
+    76→    "font-medium whitespace-nowrap",
+    77→    // Transitions
+    78→    "transition-all duration-300 ease-out",
+    79→    // States
+    80→    "focus-visible:outline-none",
+    81→    "disabled:pointer-events-none disabled:opacity-50",
+    82→    // Variant and size
+    83→    variantStyles[variant],
+    84→    sizeStyles[size],
+    85→    className
+    86→  );
+    87→}
+    88→

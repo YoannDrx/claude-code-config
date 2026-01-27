@@ -1,0 +1,972 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ralph Frontend CI YoannDrx/moodday#1 · 21295614091
+Triggered via pull_request less than a minute ago
+
+JOBS
+* unit-test (22.x) (ID 61300428314)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  * Install
+  * Test
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* typescript (22.x) (ID 61300428335)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  * Install
+  * Run TypeScript check
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 61300428336)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  * Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ralph Frontend CI YoannDrx/moodday#1 · 21295614091
+Triggered via pull_request less than a minute ago
+
+JOBS
+* unit-test (22.x) (ID 61300428314)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Test
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* typescript (22.x) (ID 61300428335)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  * Install
+  * Run TypeScript check
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 61300428336)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ralph Frontend CI YoannDrx/moodday#1 · 21295614091
+Triggered via pull_request less than a minute ago
+
+JOBS
+* unit-test (22.x) (ID 61300428314)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Test
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* typescript (22.x) (ID 61300428335)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run TypeScript check
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 61300428336)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ralph Frontend CI YoannDrx/moodday#1 · 21295614091
+Triggered via pull_request less than a minute ago
+
+JOBS
+* unit-test (22.x) (ID 61300428314)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Test
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* typescript (22.x) (ID 61300428335)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run TypeScript check
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 61300428336)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ralph Frontend CI YoannDrx/moodday#1 · 21295614091
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* unit-test (22.x) (ID 61300428314)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Test
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* typescript (22.x) (ID 61300428335)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run TypeScript check
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 61300428336)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ralph Frontend CI YoannDrx/moodday#1 · 21295614091
+Triggered via pull_request about 1 minute ago
+
+JOBS
+X unit-test (22.x) in 56s (ID 61300428314)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  X Test
+  - Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+* typescript (22.x) (ID 61300428335)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run TypeScript check
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 61300428336)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+
+ANNOTATIONS
+X Process completed with exit code 1.
+unit-test (22.x): .github#1140
+
+X AssertionError: expected 'http://localhost:3000/dashboard' to be 'http://localhost:3000/app' // Object.is equality
+
+Expected: "http://localhost:3000/app"
+Received: "http://localhost:3000/dashboard"
+
+ ❯ __tests__/signup-form.test.tsx:87:34
+
+
+unit-test (22.x): __tests__/signup-form.test.tsx#87
+
+X TestingLibraryElementError: Unable to find an element with the text: /password does not match/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <form
+      class="max-w-lg space-y-4"
+    >
+      <fieldset
+        class="max-w-lg space-y-4"
+      >
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r4»-form-item"
+          >
+            Name
+          </label>
+          <input
+            aria-describedby="«r4»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+            data-slot="form-control"
+            id="«r4»-form-item"
+            name="name"
+            placeholder="Your name"
+            value="John Doe"
+          />
+        </div>
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r5»-form-item"
+          >
+            Email
+          </label>
+          <input
+            aria-describedby="«r5»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+            data-slot="form-control"
+            id="«r5»-form-item"
+            name="email"
+            placeholder="you@example.com"
+            value="john@example.com"
+          />
+        </div>
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r6»-form-item"
+          >
+            Password
+          </label>
+          <input
+            aria-describedby="«r6»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary s
+unit-test (22.x): __tests__/signup-form.test.tsx#56
+
+X AssertionError: expected "spy" to be called with arguments: [ { email: 'test@example.com', …(1) } ]
+
+Received: 
+
+  1st spy call:
+
+  [
+    {
+-     "callbackURL": "/app",
++     "callbackURL": "/dashboard",
+      "email": "test@example.com",
+    },
+  ]
+
+
+Number of calls: 1
+
+
+Ignored nodes: comments, script, style
+<html>
+  <head />
+  <body>
+    <div>
+      <form
+        class="max-w-lg space-y-4"
+      >
+        <fieldset
+          class="max-w-lg space-y-4"
+        >
+          <div
+            class="grid gap-2"
+            data-slot="form-item"
+          >
+            <label
+              class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+              data-error="false"
+              data-slot="form-label"
+              for="«r6»-form-item"
+            >
+              Email
+            </label>
+            <input
+              aria-describedby="«r6»-form-item-description"
+              aria-invalid="false"
+              class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+              data-slot="form-control"
+              id="«r6»-form-item"
+              name="email"
+              placeholder="you@example.com"
+              value="test@example.com"
+            />
+          </div>
+          <button
+            class="focus-visible:border-ring aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none transition-all focus-visible:ring disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 cursor-pointer bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 focus-visible:ring-primary h-9 px-4 py-2 has-[>svg]:px-3 ring-offset-card w-full ring-offset-2 relative"
+            data-slot="button"
+            type="submit"
+          >
+            <span
+              class="flex items-center gap-1"
+              style="opacity: 1; transform: none;"
+            >
+              Sign in with magic link
+            </span>
+            <span
+              class="absolute inset-0 flex items-center justify-center"
+              style="opacity: 0; transform: translateY(10px);"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-loader-circle animate-spin"
+                fill="none"
+                height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 12a9 9 0 1 1-6.219-8.56"
+                />
+              </svg>
+            </span>
+          </button>
+          <p
+            class="text-muted-foreground text-xs"
+          >
+            Prefer a password?
+             
+            <button
+              class="dark:text-primary font-medium text-cyan-600 hover:underline"
+              type="button"
+            >
+              Use password
+            </button>
+          </p>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
+ ❯ __tests__/signin-providers.test.tsx:127:
+unit-test (22.x): __tests__/signin-providers.test.tsx#127
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ralph Frontend CI YoannDrx/moodday#1 · 21295614091
+Triggered via pull_request about 1 minute ago
+
+JOBS
+X unit-test (22.x) in 56s (ID 61300428314)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  X Test
+  - Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+* typescript (22.x) (ID 61300428335)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  X Run TypeScript check
+  - Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 61300428336)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  X Run linter
+  - Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+
+ANNOTATIONS
+X Process completed with exit code 1.
+unit-test (22.x): .github#1140
+
+X AssertionError: expected 'http://localhost:3000/dashboard' to be 'http://localhost:3000/app' // Object.is equality
+
+Expected: "http://localhost:3000/app"
+Received: "http://localhost:3000/dashboard"
+
+ ❯ __tests__/signup-form.test.tsx:87:34
+
+
+unit-test (22.x): __tests__/signup-form.test.tsx#87
+
+X TestingLibraryElementError: Unable to find an element with the text: /password does not match/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <form
+      class="max-w-lg space-y-4"
+    >
+      <fieldset
+        class="max-w-lg space-y-4"
+      >
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r4»-form-item"
+          >
+            Name
+          </label>
+          <input
+            aria-describedby="«r4»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+            data-slot="form-control"
+            id="«r4»-form-item"
+            name="name"
+            placeholder="Your name"
+            value="John Doe"
+          />
+        </div>
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r5»-form-item"
+          >
+            Email
+          </label>
+          <input
+            aria-describedby="«r5»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+            data-slot="form-control"
+            id="«r5»-form-item"
+            name="email"
+            placeholder="you@example.com"
+            value="john@example.com"
+          />
+        </div>
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r6»-form-item"
+          >
+            Password
+          </label>
+          <input
+            aria-describedby="«r6»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary s
+unit-test (22.x): __tests__/signup-form.test.tsx#56
+
+X AssertionError: expected "spy" to be called with arguments: [ { email: 'test@example.com', …(1) } ]
+
+Received: 
+
+  1st spy call:
+
+  [
+    {
+-     "callbackURL": "/app",
++     "callbackURL": "/dashboard",
+      "email": "test@example.com",
+    },
+  ]
+
+
+Number of calls: 1
+
+
+Ignored nodes: comments, script, style
+<html>
+  <head />
+  <body>
+    <div>
+      <form
+        class="max-w-lg space-y-4"
+      >
+        <fieldset
+          class="max-w-lg space-y-4"
+        >
+          <div
+            class="grid gap-2"
+            data-slot="form-item"
+          >
+            <label
+              class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+              data-error="false"
+              data-slot="form-label"
+              for="«r6»-form-item"
+            >
+              Email
+            </label>
+            <input
+              aria-describedby="«r6»-form-item-description"
+              aria-invalid="false"
+              class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+              data-slot="form-control"
+              id="«r6»-form-item"
+              name="email"
+              placeholder="you@example.com"
+              value="test@example.com"
+            />
+          </div>
+          <button
+            class="focus-visible:border-ring aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none transition-all focus-visible:ring disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 cursor-pointer bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 focus-visible:ring-primary h-9 px-4 py-2 has-[>svg]:px-3 ring-offset-card w-full ring-offset-2 relative"
+            data-slot="button"
+            type="submit"
+          >
+            <span
+              class="flex items-center gap-1"
+              style="opacity: 1; transform: none;"
+            >
+              Sign in with magic link
+            </span>
+            <span
+              class="absolute inset-0 flex items-center justify-center"
+              style="opacity: 0; transform: translateY(10px);"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-loader-circle animate-spin"
+                fill="none"
+                height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 12a9 9 0 1 1-6.219-8.56"
+                />
+              </svg>
+            </span>
+          </button>
+          <p
+            class="text-muted-foreground text-xs"
+          >
+            Prefer a password?
+             
+            <button
+              class="dark:text-primary font-medium text-cyan-600 hover:underline"
+              type="button"
+            >
+              Use password
+            </button>
+          </p>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
+ ❯ __tests__/signin-providers.test.tsx:127:
+unit-test (22.x): __tests__/signin-providers.test.tsx#127
+
+! Unexpected console statement
+eslint (22.x): src/lib/mail/resend.ts#21
+
+! Unexpected console statement
+eslint (22.x): scripts/mgrep-watch.ts#14
+
+X Unnecessary optional chain on a non-nullish value
+eslint (22.x): app/(logged-in)/(patient-layout)/medications/today/_components/today-content.tsx#117
+
+X Unnecessary optional chain on a non-nullish value
+eslint (22.x): app/(logged-in)/(patient-layout)/medications/today/_components/today-content.tsx#94
+
+X Unnecessary optional chain on a non-nullish value
+eslint (22.x): app/(logged-in)/(patient-layout)/medications/_components/medications-content.tsx#84
+
+X Unnecessary optional chain on a non-nullish value
+eslint (22.x): app/(logged-in)/(patient-layout)/exercises/_components/exercise-list.tsx#97
+
+X Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator
+eslint (22.x): app/(logged-in)/(patient-layout)/dashboard/_components/dashboard-content.tsx#580
+
+X Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator
+eslint (22.x): app/(logged-in)/(patient-layout)/dashboard/_components/dashboard-content.tsx#579
+
+X Unnecessary optional chain on a non-nullish value                                                 
+eslint (22.x): app/(logged-in)/(patient-layout)/caregiver/observe/page.tsx#107
+
+X Unnecessary conditional, expected left-hand side of `??` operator to be possibly null or undefined
+eslint (22.x): app/(logged-in)/(patient-layout)/caregiver/observe/page.tsx#107
+
+X Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator
+eslint (22.x): app/(logged-in)/(patient-layout)/caregiver/_components/caregiver-content.tsx#632
+
+X Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator
+eslint (22.x): app/(logged-in)/(patient-layout)/caregiver/_components/caregiver-content.tsx#631
+
+X ralph Frontend CI YoannDrx/moodday#1 · 21295614091
+Triggered via pull_request about 1 minute ago
+
+JOBS
+X unit-test (22.x) in 56s (ID 61300428314)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  X Test
+  - Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+X typescript (22.x) in 1m7s (ID 61300428335)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  X Run TypeScript check
+  - Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+X eslint (22.x) in 1m6s (ID 61300428336)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  X Run linter
+  - Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+
+ANNOTATIONS
+X Process completed with exit code 1.
+unit-test (22.x): .github#1140
+
+X AssertionError: expected 'http://localhost:3000/dashboard' to be 'http://localhost:3000/app' // Object.is equality
+
+Expected: "http://localhost:3000/app"
+Received: "http://localhost:3000/dashboard"
+
+ ❯ __tests__/signup-form.test.tsx:87:34
+
+
+unit-test (22.x): __tests__/signup-form.test.tsx#87
+
+X TestingLibraryElementError: Unable to find an element with the text: /password does not match/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <form
+      class="max-w-lg space-y-4"
+    >
+      <fieldset
+        class="max-w-lg space-y-4"
+      >
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r4»-form-item"
+          >
+            Name
+          </label>
+          <input
+            aria-describedby="«r4»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+            data-slot="form-control"
+            id="«r4»-form-item"
+            name="name"
+            placeholder="Your name"
+            value="John Doe"
+          />
+        </div>
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r5»-form-item"
+          >
+            Email
+          </label>
+          <input
+            aria-describedby="«r5»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+            data-slot="form-control"
+            id="«r5»-form-item"
+            name="email"
+            placeholder="you@example.com"
+            value="john@example.com"
+          />
+        </div>
+        <div
+          class="grid gap-2"
+          data-slot="form-item"
+        >
+          <label
+            class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+            data-error="false"
+            data-slot="form-label"
+            for="«r6»-form-item"
+          >
+            Password
+          </label>
+          <input
+            aria-describedby="«r6»-form-item-description"
+            aria-invalid="false"
+            class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary s
+unit-test (22.x): __tests__/signup-form.test.tsx#56
+
+X AssertionError: expected "spy" to be called with arguments: [ { email: 'test@example.com', …(1) } ]
+
+Received: 
+
+  1st spy call:
+
+  [
+    {
+-     "callbackURL": "/app",
++     "callbackURL": "/dashboard",
+      "email": "test@example.com",
+    },
+  ]
+
+
+Number of calls: 1
+
+
+Ignored nodes: comments, script, style
+<html>
+  <head />
+  <body>
+    <div>
+      <form
+        class="max-w-lg space-y-4"
+      >
+        <fieldset
+          class="max-w-lg space-y-4"
+        >
+          <div
+            class="grid gap-2"
+            data-slot="form-item"
+          >
+            <label
+              class="flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[error=true]:text-destructive"
+              data-error="false"
+              data-slot="form-label"
+              for="«r6»-form-item"
+            >
+              Email
+            </label>
+            <input
+              aria-describedby="«r6»-form-item-description"
+              aria-invalid="false"
+              class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive"
+              data-slot="form-control"
+              id="«r6»-form-item"
+              name="email"
+              placeholder="you@example.com"
+              value="test@example.com"
+            />
+          </div>
+          <button
+            class="focus-visible:border-ring aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium outline-none transition-all focus-visible:ring disabled:pointer-events-none disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0 cursor-pointer bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 focus-visible:ring-primary h-9 px-4 py-2 has-[>svg]:px-3 ring-offset-card w-full ring-offset-2 relative"
+            data-slot="button"
+            type="submit"
+          >
+            <span
+              class="flex items-center gap-1"
+              style="opacity: 1; transform: none;"
+            >
+              Sign in with magic link
+            </span>
+            <span
+              class="absolute inset-0 flex items-center justify-center"
+              style="opacity: 0; transform: translateY(10px);"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-loader-circle animate-spin"
+                fill="none"
+                height="20"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 12a9 9 0 1 1-6.219-8.56"
+                />
+              </svg>
+            </span>
+          </button>
+          <p
+            class="text-muted-foreground text-xs"
+          >
+            Prefer a password?
+             
+            <button
+              class="dark:text-primary font-medium text-cyan-600 hover:underline"
+              type="button"
+            >
+              Use password
+            </button>
+          </p>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
+ ❯ __tests__/signin-providers.test.tsx:127:
+unit-test (22.x): __tests__/signin-providers.test.tsx#127
+
+X Process completed with exit code 2.
+typescript (22.x): .github#26
+
+X Object literal may only specify known properties, and 'maxTokens' does not exist in type 'CallSettings & { system?: string | undefined; } & { prompt: string | ModelMessage[]; messages?: undefined; } & { model: LanguageModel; tools?: ToolSet | undefined; ... 13 more ...; _internal?: { ...; } | undefined; }'.
+typescript (22.x): src/features/insights/ai-insight.action.ts#80
+
+X Argument of type 'number[][]' is not assignable to parameter of type '[number, number][]'.
+typescript (22.x): app/(logged-in)/(patient-layout)/trends/_components/trends-content.tsx#160
+
+X Argument of type 'number[][]' is not assignable to parameter of type '[number, number][]'.
+typescript (22.x): app/(logged-in)/(patient-layout)/trends/_components/trends-content.tsx#157
+
+X Argument of type '{ name: string; timezone?: string | undefined; image?: string | null | undefined; }' is not assignable to parameter of type '{ name?: string | undefined; timezone?: string | undefined; image?: string | undefined; }'.
+typescript (22.x): app/(logged-in)/(patient-layout)/settings/_components/settings-content.tsx#232
+
+X Property 'children' is missing in type '{ padding: "md"; variant: "elevated"; className: string; }' but required in type 'GlassCardProps'.
+typescript (22.x): app/(logged-in)/(patient-layout)/mood/_components/journal-wizard.tsx#573
+
+X Property 'children' is missing in type '{ padding: "md"; variant: "elevated"; className: string; }' but required in type 'GlassCardProps'.
+typescript (22.x): app/(logged-in)/(patient-layout)/mood/_components/journal-wizard.tsx#572
+
+! Unexpected console statement
+eslint (22.x): src/lib/mail/resend.ts#21
+
+! Unexpected console statement
+eslint (22.x): scripts/mgrep-watch.ts#14
+
+X Unnecessary optional chain on a non-nullish value
+eslint (22.x): app/(logged-in)/(patient-layout)/medications/today/_components/today-content.tsx#117
+
+X Unnecessary optional chain on a non-nullish value
+eslint (22.x): app/(logged-in)/(patient-layout)/medications/today/_components/today-content.tsx#94
+
+X Unnecessary optional chain on a non-nullish value
+eslint (22.x): app/(logged-in)/(patient-layout)/medications/_components/medications-content.tsx#84
+
+X Unnecessary optional chain on a non-nullish value
+eslint (22.x): app/(logged-in)/(patient-layout)/exercises/_components/exercise-list.tsx#97
+
+X Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator
+eslint (22.x): app/(logged-in)/(patient-layout)/dashboard/_components/dashboard-content.tsx#580
+
+X Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator
+eslint (22.x): app/(logged-in)/(patient-layout)/dashboard/_components/dashboard-content.tsx#579
+
+X Unnecessary optional chain on a non-nullish value                                                 
+eslint (22.x): app/(logged-in)/(patient-layout)/caregiver/observe/page.tsx#107
+
+X Unnecessary conditional, expected left-hand side of `??` operator to be possibly null or undefined
+eslint (22.x): app/(logged-in)/(patient-layout)/caregiver/observe/page.tsx#107
+
+X Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator
+eslint (22.x): app/(logged-in)/(patient-layout)/caregiver/_components/caregiver-content.tsx#632
+
+X Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator
+eslint (22.x): app/(logged-in)/(patient-layout)/caregiver/_components/caregiver-content.tsx#631

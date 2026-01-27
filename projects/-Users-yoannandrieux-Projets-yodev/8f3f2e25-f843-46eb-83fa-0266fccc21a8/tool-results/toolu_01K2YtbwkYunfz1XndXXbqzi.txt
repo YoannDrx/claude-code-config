@@ -1,0 +1,70 @@
+The file /Users/yoannandrieux/Projets/yodev/src/app/layout.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→import type { Metadata } from "next";
+     2→import { Plus_Jakarta_Sans, DM_Sans, Fira_Code } from "next/font/google";
+     3→import { getLocale } from "next-intl/server";
+     4→import { ThemeProvider } from "@/components/providers/theme-provider";
+     5→import "./globals.css";
+     6→
+     7→// Body font - Plus Jakarta Sans
+     8→const plusJakartaSans = Plus_Jakarta_Sans({
+     9→  variable: "--font-jakarta",
+    10→  subsets: ["latin"],
+    11→  display: "swap",
+    12→});
+    13→
+    14→// Display font - DM Sans
+    15→const dmSans = DM_Sans({
+    16→  variable: "--font-dm-sans",
+    17→  subsets: ["latin"],
+    18→  display: "swap",
+    19→});
+    20→
+    21→// Mono font - Fira Code
+    22→const firaCode = Fira_Code({
+    23→  variable: "--font-fira",
+    24→  subsets: ["latin"],
+    25→  display: "swap",
+    26→});
+    27→
+    28→export const metadata: Metadata = {
+    29→  title: "Yodev — Agence IA & Transformation Digitale",
+    30→  description:
+    31→    "Yodev accélère votre transformation digitale avec l'IA, la modernisation legacy et le développement web/mobile haute performance. Expert Next.js, React, LLM & Cloud.",
+    32→  keywords: [
+    33→    "agence IA",
+    34→    "transformation digitale",
+    35→    "développement web",
+    36→    "Next.js",
+    37→    "React",
+    38→    "LLM",
+    39→    "modernisation legacy",
+    40→    "cloud",
+    41→    "cybersécurité",
+    42→  ],
+    43→  authors: [{ name: "Yodev" }],
+    44→  openGraph: {
+    45→    title: "Yodev — Agence IA & Transformation Digitale",
+    46→    description:
+    47→      "Accélérez votre transformation digitale avec l'IA et le développement web haute performance.",
+    48→    type: "website",
+    49→  },
+    50→};
+    51→
+    52→export default async function RootLayout({
+    53→  children,
+    54→}: Readonly<{
+    55→  children: React.ReactNode;
+    56→}>) {
+    57→  const locale = await getLocale();
+    58→
+    59→  return (
+    60→    <html lang={locale} suppressHydrationWarning data-theme="dark">
+    61→      <body
+    62→        className={`${plusJakartaSans.variable} ${dmSans.variable} ${firaCode.variable} antialiased`}
+    63→      >
+    64→        <ThemeProvider>{children}</ThemeProvider>
+    65→      </body>
+    66→    </html>
+    67→  );
+    68→}
+    69→

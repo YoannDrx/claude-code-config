@@ -1,0 +1,1548 @@
+     1→# CAHIER DES CHARGES - SITE WEB YODEV
+     2→## Agence Digitale 360° - Développement Web, Mobile & IA
+     3→
+     4→---
+     5→
+     6→## 📋 DOCUMENT VERSION
+     7→
+     8→- **Version:** 1.0
+     9→- **Date:** Janvier 2026
+    10→- **Statut:** Cahier des Charges - Prêt pour développement UI/UX
+    11→- **Dernière mise à jour:** 02/01/2026
+    12→
+    13→---
+    14→
+    15→# 1. EXECUTIVE SUMMARY
+    16→
+    17→## 1.1 Contexte du Projet
+    18→
+    19→Yodev est une **agence digitale spécialisée** dans le développement de solutions web, mobile et IA sur mesure. Face à une concurrence accrue (notamment Galadrim), nous avons besoin d'un site web qui reflète notre excellence technique, notre approche pragmatique et notre capacité à servir des clients variés - des startups aux grands groupes.
+    20→
+    21→### Positionnement actuel vs cibles concurrentielles
+    22→
+    23→**Galadrim** (principal concurrent):
+    24→- ✅ Design moderne et épuré
+    25→- ✅ Storytelling clair (3 piliers: équipe, passion, excellence)
+    26→- ✅ Cas d'études détaillés
+    27→- ✅ Expertise technique visible
+    28→- ⚠️ Manque de créativité visuelle
+    29→- ⚠️ Navigation un peu standard
+    30→- ⚠️ Peu de focus sur l'IA/LLM
+    31→
+    32→**Notre avantage Yodev:**
+    33→- ✨ Design créatif et moderne (pas juste corporat)
+    34→- ✨ Focus spécial sur l'IA et l'intégration LLM
+    35→- ✨ Cibles multiples claires (startup, PME, grands groupes, solo-preneurs)
+    36→- ✨ Approche consultative (pas juste dev)
+    37→- ✨ Transparence radicale (processus, prix, risques)
+    38→
+    39→## 1.2 Objectifs Généraux
+    40→
+    41→**Court terme (3-6 mois post-launch):**
+    42→- Générer 150+ leads/mois
+    43→- Augmenter brand awareness de 300%
+    44→- Convertir 15-20% de leads en projets (€800K ARR cible)
+    45→- Positionner Yodev comme expert en IA/LLM
+    46→
+    47→**Moyen terme (6-12 mois):**
+    48→- Devenir la #1 agence digitale pour IA en France
+    49→- 500+ leads/mois
+    50→- 30% de conversion rate
+    51→- Doubler l'équipe
+    52→
+    53→---
+    54→
+    55→# 2. ANALYSE CIBLES & PERSONAS
+    56→
+    57→## 2.1 Cibles Principales
+    58→
+    59→### Cible 1: Startup & PME Innovantes
+    60→**Profil:** Co-fondateur/CTO d'une startup 2-50 personnes
+    61→- **Enjeux:** Valider product-market fit, lever des fonds, scaler rapidement
+    62→- **Budget:** €20K-100K
+    63→- **Timeline:** Court terme (1-3 mois)
+    64→- **Décideurs:** Founder + tech lead
+    65→- **Pain points:** 
+    66→  - Besoin rapide MVP
+    67→  - Pas d'équipe tech interne
+    68→  - Besoin d'expertise en scaling
+    69→  - Budget limité mais flexible
+    70→- **Motivations:**
+    71→  - Time-to-market
+    72→  - Qualité tech
+    73→  - Partenariat long-terme
+    74→  - Support après launch
+    75→
+    76→### Cible 2: PME/ETI Traditionnel
+    77→**Profil:** Directeur digital/CTO d'une PME 50-500 personnes
+    78→- **Enjeux:** Transformation digitale, modernisation legacy, compétitivité
+    79→- **Budget:** €100K-500K
+    80→- **Timeline:** Moyen terme (3-9 mois)
+    81→- **Décideurs:** Directeur + comité IT
+    82→- **Pain points:**
+    83→  - Legacy systems qui ralentissent
+    84→  - Équipe IT surchargée
+    85→  - Besoin de migration zéro-downtime
+    86→  - Coûts infra trop élevés
+    87→- **Motivations:**
+    88→  - ROI clair
+    89→  - Stabilité et sécurité
+    90→  - Support continu
+    91→  - Renfort d'équipe
+    92→
+    93→### Cible 3: Grand Groupe / Groupe Fortune
+    94→**Profil:** VP Engineering/Digital d'un grand groupe 500+ personnes
+    95→- **Enjeux:** Innovation, agilité, intégration IA, new ventures
+    96→- **Budget:** €500K+
+    97→- **Timeline:** Long terme (6-18 mois)
+    98→- **Décideurs:** VP + steering committee
+    99→- **Pain points:**
+   100→  - Bureaucratie interne
+   101→  - Besoin d'agilité
+   102→  - Intégration IA critique
+   103→  - Staff augmentation pour new projects
+   104→- **Motivations:**
+   105→  - Innovation rapide
+   106→  - Proven track record
+   107→  - Partenariat stratégique
+   108→  - Transfert de compétences
+   109→
+   110→### Cible 4: Solo-preneurs & Consultants
+   111→**Profil:** Consultant/Coach indépendant
+   112→- **Enjeux:** Lancer une app/SaaS sans bloquer sur la tech
+   113→- **Budget:** €10K-50K
+   114→- **Timeline:** Very short (1-2 mois)
+   115→- **Décideurs:** Eux-mêmes
+   116→- **Pain points:**
+   117→  - Lovable/no-code limité pour custom
+   118→  - Besoin d'intégrations spécifiques
+   119→  - Scaling limitations
+   120→  - Pas de tech co-founder
+   121→- **Motivations:**
+   122→  - Rapidité
+   123→  - Support/maintenance
+   124→  - Customisation possible
+   125→  - Créateur d'entreprise
+   126→
+   127→### Cible 5: Responsable de Transformation IA
+   128→**Profil:** Chief Digital Officer / CTO cherchant intégration IA
+   129→- **Enjeux:** Intégrer IA/LLM dans stack existant
+   130→- **Budget:** €50K-300K
+   131→- **Timeline:** Moyen terme (2-4 mois)
+   132→- **Décideurs:** CDO + tech team
+   133→- **Pain points:**
+   134→  - Peu d'expertise LLM interne
+   135→  - Intégration complexe
+   136→  - Risques de sécurité/conformité
+   137→  - ROI incertain
+   138→- **Motivations:**
+   139→  - Expertise IA
+   140→  - Cas d'usage clairs
+   141→  - Security & compliance
+   142→  - Training & knowledge transfer
+   143→
+   144→---
+   145→
+   146→# 3. ARCHITECTURE & NAVIGATION DU SITE
+   147→
+   148→## 3.1 Sitemap Complet
+   149→
+   150→```
+   151→yodev.fr/
+   152→├── 🏠 / (Landing Page Accueil)
+   153→│
+   154→├── 📱 /services (Page Services - Vue d'ensemble)
+   155→│   ├── /services/developpement-web
+   156→│   ├── /services/developpement-mobile
+   157→│   ├── /services/solutions-saas
+   158→│   ├── /services/ecommerce
+   159→│   ├── /services/ai-llm (⭐ NEW - Focus IA)
+   160→│   ├── /services/ux-ui-design
+   161→│   ├── /services/cybersecurite
+   162→│   └── /services/consulting-strategie
+   163→│
+   164→├── 💡 /expertise (Deep Dive - Expertise détaillée)
+   165→│   ├── /expertise/react-nextjs
+   166→│   ├── /expertise/node-python
+   167→│   ├── /expertise/mobile-native
+   168→│   ├── /expertise/architecture-scalable
+   169→│   ├── /expertise/ai-llm-integration (⭐ NEW)
+   170→│   ├── /expertise/infrastructure-cloud
+   171→│   └── /expertise/security-compliance
+   172→│
+   173→├── 📊 /projets (Cas d'études & Réalisations)
+   174→│   ├── /projets (Liste avec filtres)
+   175→│   ├── /projets/saas-plateforme-collab
+   176→│   ├── /projets/ecommerce-refonte
+   177→│   ├── /projets/app-mobile-fitness
+   178→│   ├── /projets/ia-llm-integration (⭐ NEW)
+   179→│   └── /projets/[dynamique - chaque cas d'étude]
+   180→│
+   181→├── 🎯 /secteurs (Par Industries - NEW SECTION)
+   182→│   ├── /secteurs
+   183→│   ├── /secteurs/fintech
+   184→│   ├── /secteurs/healthtech
+   185→│   ├── /secteurs/retail-ecommerce
+   186→│   ├── /secteurs/saas-b2b
+   187→│   └── /secteurs/marketplace
+   188→│
+   189→├── 👥 /a-propos
+   190→│   ├── /a-propos (Histoire + Valeurs)
+   191→│   ├── /a-propos/equipe
+   192→│   ├── /a-propos/culture
+   193→│   └── /a-propos/carriere
+   194→│
+   195→├── 📝 /blog (Blog & Resources)
+   196→│   ├── /blog (Homepage)
+   197→│   ├── /blog/[slug] (Articles dynamiques)
+   198→│   ├── /blog/categorie/tech
+   199→│   ├── /blog/categorie/business
+   200→│   ├── /blog/categorie/ai
+   201→│   ├── /blog/categorie/design
+   202→│   └── /blog/categorie/performance
+   203→│
+   204→├── 🤔 /faq (Questions Fréquentes)
+   205→│
+   206→├── 📞 /contact (Contact & CTA)
+   207→│   ├── /contact (Formulaire principal)
+   208→│   └── /contact/success (Confirmation)
+   209→│
+   210→└── 🔒 Légal & Privacy
+   211→    ├── /politique-confidentialite
+   212→    ├── /conditions-generales
+   213→    ├── /mentions-legales
+   214→    └── /cookies
+   215→```
+   216→
+   217→## 3.2 Structure de Navigation
+   218→
+   219→### Header Navigation (Sticky)
+   220→```
+   221→Logo Yodev | Services ▼ | Expertise ▼ | Projets | À propos | Blog | Contact | [CTA Button]
+   222→```
+   223→
+   224→**Dropdown Services:**
+   225→- Développement Web
+   226→- Développement Mobile
+   227→- Solutions SaaS
+   228→- E-Commerce
+   229→- ⭐ IA & LLM Integration (highlighted)
+   230→- UX/UI Design
+   231→- Cybersécurité
+   232→- Consulting & Stratégie
+   233→
+   234→**Dropdown Expertise:**
+   235→- React & Next.js
+   236→- Node.js & Python
+   237→- Architecture Scalable
+   238→- ⭐ AI & LLM (highlighted)
+   239→- Infrastructure Cloud
+   240→- Security & Compliance
+   241→
+   242→### Mobile Navigation
+   243→- Hamburger menu
+   244→- Simplified categories
+   245→- CTA prominent
+   246→
+   247→---
+   248→
+   249→# 4. PAGES DÉTAILLÉES - SPÉCIFICATIONS
+   250→
+   251→## 4.1 PAGE ACCUEIL (Landing Page)
+   252→
+   253→**Durée de scroll:** 45-60 secondes (5-7 sections visibles)
+   254→
+   255→### Section 1: Hero (Above the fold)
+   256→**Height:** 100vh viewport
+   257→
+   258→**Éléments:**
+   259→- **Headline:** "Agence Digitale 360° | Web, Mobile & IA"
+   260→- **Subheadline:** "Du MVP au scaling. De la conception à l'IA intégrée."
+   261→- **Visual:** 
+   262→  - Fond dynamique (gradient anim ou coded visuals)
+   263→  - Illustrations de cas d'usage (startup, PME, LLM)
+   264→- **CTA Primaire:** "Discutons de votre projet" (Call/Form)
+   265→- **CTA Secondaire:** "Voir nos réalisations" (Scroll/Link)
+   266→- **Éléments contextuels:**
+   267→  - Badges: "+200 projets livrés" | "500+ clients" | "15+ ans expérience cumulée"
+   268→  - Hero copy doit parler aux 5 cibles (startup, PME, grand groupe, solo, IA)
+   269→
+   270→**Design notes:**
+   271→- Asimetric layout (texte à gauche, visuel droite)
+   272→- Couleurs: Primary (teal/green), Accent (orange/purple)
+   273→- Typography: Bold headline (60-72px), modern sans-serif
+   274→
+   275→### Section 2: Pourquoi Yodev? (Value Prop)
+   276→**Height:** 600px
+   277→
+   278→**Contenu:**
+   279→- 3 piliers = 3 colonnes
+   280→  1. **Excellence Technique** - Architecture scalable, code quality
+   281→  2. **Design Utilisateur** - UX qui convertit, accessibility
+   282→  3. **Partenariat Long-terme** - Support, croissance ensemble
+   283→- Chaque pilier: icon + titre + description (2-3 lignes)
+   284→- Visual: Subtle animation au scroll
+   285→
+   286→### Section 3: Cibles & Cas d'usage (Segmentation)
+   287→**Height:** 700px
+   288→
+   289→**Layout:** 2x2 grid → 5 cards
+   290→- **Startup innovante** - MVP rapide, scaling préparer
+   291→- **PME en transformation** - Migration, modernisation
+   292→- **Grand groupe** - Innovation, staff augmentation
+   293→- **Solo-preneur** - De no-code à custom
+   294→- **⭐ Chef de projet IA** - Intégration LLM, expertise
+   295→
+   296→Chaque card:
+   297→- Icon/illustration
+   298→- Titre cible
+   299→- 2-3 pain points
+   300→- CTA "Discover solution"
+   301→
+   302→### Section 4: Expertise IA (Differentiator)
+   303→**Height:** 600px
+   304→
+   305→**Message clé:** "IA n'est pas juste du hype. C'est transformatif quand c'est bien fait."
+   306→
+   307→**Contenu:**
+   308→- Stat: "47% de nos projets 2025 incluent IA/LLM"
+   309→- 3 use cases IA:
+   310→  1. LLM Chatbots & Content Gen
+   311→  2. Computer Vision & Automation
+   312→  3. Predictive Analytics & Personalization
+   313→- Visuals: Code snippets + animated diagrams
+   314→- CTA: "Découvrir nos solutions IA"
+   315→
+   316→### Section 5: Réalisations (Social Proof)
+   317→**Height:** 500px
+   318→
+   319→**Format:** Carousel 3 case studies + Testimonials
+   320→- Case 1: SaaS B2B (10K downloads, Series A)
+   321→- Case 2: E-Commerce (42% conversion boost)
+   322→- Case 3: ⭐ IA Integration (custom LLM chatbot)
+   323→
+   324→Pour chaque:
+   325→- Thumbnail image
+   326→- Titre + métrique clé
+   327→- Client name + title
+   328→- Mini testimonial (1-2 lignes)
+   329→- "Voir l'étude complet" link
+   330→
+   331→### Section 6: Blog & Insights
+   332→**Height:** 400px
+   333→
+   334→**Format:** 3 featured articles + "Voir tous les articles" link
+   335→- Article 1: Tech - "Scaling avec microservices"
+   336→- Article 2: Business - "MVP vs MVP+ framework"
+   337→- Article 3: ⭐ AI - "LLM dans votre app: guide pratique"
+   338→
+   339→Chaque article:
+   340→- Featured image
+   341→- Title
+   342→- Author + date
+   343→- 1-line excerpt
+   344→- "Lire" link
+   345→
+   346→### Section 7: CTA Principal (Before Footer)
+   347→**Height:** 300px
+   348→
+   349→**Copy:** "Prêt à transformer votre idée en produit qui crée de la valeur?"
+   350→
+   351→**Options:**
+   352→- CTA 1: "Programmer une consultation" (Calendly)
+   353→- CTA 2: "Télécharger notre guide complet"
+   354→- CTA 3: "Envoyer un email" (Contact form)
+   355→
+   356→### Footer
+   357→**Height:** 500px
+   358→
+   359→**Sections:**
+   360→1. **Contacts**
+   361→   - Email: contact@yodev.fr
+   362→   - Tél: +33 X XX XX XX XX
+   363→   - Adresse: 2 Rue Pasteur, 75011 Paris
+   364→   - Social icons: LinkedIn, GitHub, Twitter
+   365→
+   366→2. **Quick Links**
+   367→   - Services (8 items)
+   368→   - Expertise (6 items)
+   369→   - Resources (Blog, FAQ, Whitepaper)
+   370→
+   371→3. **Newsletter**
+   372→   - "Insights & tendances"
+   373→   - Email input + CTA
+   374→
+   375→4. **Legal**
+   376→   - Politique de confidentialité
+   377→   - Mentions légales
+   378→   - Conditions générales
+   379→   - Cookies policy
+   380→
+   381→---
+   382→
+   383→## 4.2 PAGE SERVICES (Overview)
+   384→
+   385→**Purpose:** Présenter les 8 services + guidage vers pages détaillées
+   386→
+   387→**Layout:** Hero + Service grid + FAQ + CTA
+   388→
+   389→### Hero
+   390→```
+   391→Titre: "Services Digitaux Complets"
+   392→Sous-titre: "De la conception à la maintenance. Tout ce qu'il faut pour dominer votre marché."
+   393→```
+   394→
+   395→### Service Grid (2x4)
+   396→Chaque service = Card avec:
+   397→- Icon (SVG)
+   398→- Titre du service
+   399→- Description courte (2-3 lignes)
+   400→- 3-4 bullet points (ce qu'on livre)
+   401→- "Découvrir" link vers page détaillée
+   402→- Hover state: elevation + highlight
+   403→
+   404→**Services:**
+   405→1. **Développement Web** - React, Next.js, architecture scalable
+   406→2. **Développement Mobile** - Native + cross-platform
+   407→3. **Solutions SaaS** - Multi-tenant, B2B complex
+   408→4. **E-Commerce** - Headless, high-conversion
+   409→5. **⭐ IA & LLM Integration** - Chatbots, automation, predictions
+   410→6. **UX/UI Design** - Discovery → haut-fidelity
+   411→7. **Cybersécurité** - OWASP, RGPD, SOC 2
+   412→8. **Consulting & Stratégie** - Audit, transformation, roadmap
+   413→
+   414→### Section FAQ
+   415→Répondre aux questions récurrentes:
+   416→- "Quel est votre processus?"
+   417→- "Combien de temps?"
+   418→- "Quel budget?"
+   419→- "Pouvez-vous faire du staff augmentation?"
+   420→- "Acceptez-vous les startups?"
+   421→
+   422→---
+   423→
+   424→## 4.3 PAGE SERVICES DÉTAILLÉES (Template x8)
+   425→
+   426→**Pattern:** Hero + 6-8 sections + CTA + Related services
+   427→
+   428→### Template Structure
+   429→
+   430→**Section 1: Hero**
+   431→- Titre du service
+   432→- Sous-titre (1 ligne)
+   433→- Description (2-3 lignes)
+   434→- Hero image/illustration
+   435→
+   436→**Section 2: Qu'est-ce qu'on construit?**
+   437→- 4-5 use cases spécifiques
+   438→- Format: Icon + titre + description
+   439→- Visuals: Screenshots/mockups réalistes
+   440→
+   441→**Section 3: Notre approche & Stack Tech**
+   442→- Stack détaillé (frontend, backend, infra)
+   443→- Why each choice
+   444→- Format: Collapsible/tabs par catégorie
+   445→- Code snippets exemples
+   446→
+   447→**Section 4: Cas d'usage & Industries**
+   448→- 5-6 industries où s'applique
+   449→- Format: Grid avec icons + titrés
+   450→
+   451→**Section 5: Notre processus**
+   452→- Phase-by-phase breakdown (5-6 phases)
+   453→- Timeline realistic
+   454→- Format: Vertical timeline ou kanban visual
+   455→- Deliverables pour chaque phase
+   456→
+   457→**Section 6: Pricing & Models**
+   458→- Project-based range (ex: €30K-200K)
+   459→- Time & materials (€80-150/hour)
+   460→- Staff augmentation (€50-100/hour)
+   461→- Retainer (€5K-20K/month)
+   462→- Comparison table
+   463→
+   464→**Section 7: FAQ Service-spécific**
+   465→- 4-5 questions clés
+   466→- Format: Accordion
+   467→
+   468→**Section 8: Related Services**
+   469→- 2-3 services complémentaires
+   470→- Format: Mini cards
+   471→
+   472→**CTA:** "Discutons de votre [Service] project"
+   473→
+   474→---
+   475→
+   476→## 4.4 PAGE IA & LLM (⭐ NEW - Strategic)
+   477→
+   478→**Importance:** Position Yodev comme expert IA (differentiator vs Galadrim)
+   479→
+   480→### Structure
+   481→
+   482→**Section 1: Hero**
+   483→```
+   484→Titre: "IA & LLM Integration | Donnez des super-pouvoirs à votre app"
+   485→Subheadline: "Chatbots, Automation, Recommendations, Content Gen...
+   486→Du concept à la production, nous intégrons l'IA de manière responsable."
+   487→```
+   488→
+   489→**Section 2: Pourquoi maintenant?**
+   490→- Stats: 47% de croissance AI projects
+   491→- Risques: Security, costs, quality
+   492→- Opportunités: 10x productivity, new features
+   493→
+   494→**Section 3: Nos Services IA**
+   495→4 piliers:
+   496→1. **LLM Chatbots & Agents**
+   497→   - OpenAI, Claude, open-source models
+   498→   - RAG (Retrieval-Augmented Generation)
+   499→   - Fine-tuning & custom models
+   500→
+   501→2. **Computer Vision**
+   502→   - Image recognition
+   503→   - Document processing
+   504→   - Real-time video analysis
+   505→
+   506→3. **Predictive Analytics**
+   507→   - Recommendations
+   508→   - Churn prediction
+   509→   - Demand forecasting
+   510→
+   511→4. **Content & Code Generation**
+   512→   - AI-powered copywriting
+   513→   - Code assistance
+   514→   - Image generation
+   515→
+   516→**Section 4: Use Cases & Examples**
+   517→- 6 real examples:
+   518→  1. Chatbot support (30% ticket reduction)
+   519→  2. Email automation (80% faster)
+   520→  3. Recommendation engine (15% revenue lift)
+   521→  4. Document processing (95% accuracy)
+   522→  5. Image tagging (10K images/day)
+   523→  6. Custom code generation
+   524→
+   525→**Section 5: Technical Architecture**
+   526→- MLOps pipeline diagram
+   527→- Model deployment options (cloud, edge)
+   528→- Cost optimization strategies
+   529→- Performance benchmarks
+   530→
+   531→**Section 6: Safety & Ethics**
+   532→- Security & privacy (encrypted data)
+   533→- Bias mitigation
+   534→- Audit trails
+   535→- Compliance (GDPR-ready)
+   536→
+   537→**Section 7: Pricing**
+   538→- Integration audit: €5K-15K
+   539→- Development: €30K-150K
+   540→- Ongoing optimization: €2K-5K/month
+   541→
+   542→**Section 8: Case Study (Detailed)**
+   543→- AI chatbot implementation
+   544→- Before/after metrics
+   545→- Full testimonial
+   546→
+   547→---
+   548→
+   549→## 4.5 PAGE PROJETS (Case Studies)
+   550→
+   551→### Listing Page (/projets)
+   552→
+   553→**Hero:**
+   554→```
+   555→Titre: "Projets qui ont fait la différence"
+   556→Filter options: Industry, Service, Budget, Timeline
+   557→```
+   558→
+   559→**Grid Layout:** 3-4 colonnes (responsive)
+   560→
+   561→Chaque project card:
+   562→- Featured image/screenshot
+   563→- Project title
+   564→- Client name + industry
+   565→- 2-3 key metrics (ex: +40% conversion)
+   566→- Services used (badges)
+   567→- "Voir l'étude" link
+   568→
+   569→**Total projects to display:** 8-12 (mix of different types)
+   570→
+   571→### Detailed Case Study Page (Template)
+   572→
+   573→**Structure:**
+   574→1. **Hero** - Project title + visual
+   575→2. **Client Context** - Who, industry, size
+   576→3. **The Challenge** - 3-4 pain points détaillés
+   577→4. **Our Approach** - Solution architecture, technology
+   578→5. **Process & Timeline** - Phases, deliverables
+   579→6. **Results & Metrics** - KPIs, before/after
+   580→7. **Technical Highlights** - Architecture diagram, tech stack
+   581→8. **Testimonial** - Full quote + signature
+   582→9. **Related Projects** - 2-3 similar projects link
+   583→
+   584→---
+   585→
+   586→## 4.6 PAGE EXPERTISE (Deep Dives)
+   587→
+   588→### Listing Page (/expertise)
+   589→
+   590→**Purpose:** Montrer notre profondeur technique
+   591→
+   592→**Format:** 3x2 grid de topics
+   593→1. React & Next.js
+   594→2. Node.js & Python
+   595→3. Mobile Native (Swift/Kotlin)
+   596→4. Architecture Scalable
+   597→5. ⭐ AI & LLM Integration
+   598→6. Infrastructure Cloud & DevOps
+   599→7. Security & Compliance
+   600→8. Database & Performance
+   601→
+   602→Chaque topic card:
+   603→- Icon
+   604→- Title
+   605→- 3-4 key points
+   606→- "Lire plus" link
+   607→
+   608→### Detailed Expertise Page (Template)
+   609→
+   610→**Structure:**
+   611→1. **Hero** - Technology name + why it matters
+   612→2. **Overview** - What it is, why we use it
+   613→3. **Use Cases** - When to use, when not to
+   614→4. **Deep Dive** - Technical details
+   615→5. **Best Practices** - Our approach
+   616→6. **Tools & Libraries** - What we use
+   617→7. **Performance Benchmarks** - Real numbers
+   618→8. **Code Examples** - Snippets (copy-pasteable)
+   619→9. **Common Mistakes** - What to avoid
+   620→10. **Resources** - Documentation links
+   621→
+   622→---
+   623→
+   624→## 4.7 PAGE À PROPOS
+   625→
+   626→### Structure
+   627→
+   628→**Section 1: Notre Histoire**
+   629→- Founded 2018 (adapt)
+   630→- 3 founders + backgrounds
+   631→- Milestone timeline
+   632→- Vision & mission
+   633→
+   634→**Section 2: Pourquoi nous**
+   635→- 5 reasons (Résultats, Transparence, Expertise, Partenariat, Croissance)
+   636→- Format: 2-column layout
+   637→
+   638→**Section 3: Nos Valeurs**
+   639→- Pragmatisme
+   640→- Partenariat
+   641→- Transparence
+   642→- Excellence technique
+   643→- Apprentissage continu
+   644→
+   645→**Section 4: L'Équipe**
+   646→- Founders bios (photos + backgrounds)
+   647→- Team breakdown (Developers, Designers, Managers)
+   648→- Culture highlights
+   649→- Hiring info
+   650→
+   651→**Section 5: Culture & Life**
+   652→- Autonomy
+   653→- Growth
+   654→- Impact
+   655→- Team & community
+   656→- Benefits
+   657→
+   658→**Section 6: Social Proof**
+   659→- Number of projects
+   660→- Number of employees
+   661→- Years in business
+   662→- Client satisfaction %
+   663→
+   664→---
+   665→
+   666→## 4.8 PAGE BLOG
+   667→
+   668→### Blog Listing (/blog)
+   669→
+   670→**Layout:**
+   671→- Featured article (large card)
+   672→- 6-8 article grid
+   673→- Categories filter
+   674→- Search functionality
+   675→- Newsletter signup
+   676→
+   677→**Article Card:**
+   678→- Featured image
+   679→- Title
+   680→- Author + date + reading time
+   681→- Excerpt (1-2 lignes)
+   682→- Category badge
+   683→- "Lire" link
+   684→
+   685→### Blog Article Template
+   686→
+   687→**Structure:**
+   688→1. **Hero Section**
+   689→   - Featured image (wide)
+   690→   - Title (h1)
+   691→   - Metadata: author, date, reading time, category
+   692→   - Table of contents (sticky on desktop)
+   693→
+   694→2. **Body**
+   695→   - Rich formatted content
+   696→   - Inline code blocks (syntax highlight)
+   697→   - Callout boxes (tips, warnings)
+   698→   - Embedded images/diagrams
+   699→   - Quotes (formatted)
+   700→
+   701→3. **Author Bio**
+   702→   - Photo
+   703→   - Name + title
+   704→   - Bio (2-3 lignes)
+   705→   - Social links
+   706→
+   707→4. **Related Articles**
+   708→   - 3 related articles grid
+   709→   - "Lire plus d'articles" link
+   710→
+   711→5. **Newsletter CTA**
+   712→   - Copy: "Ne manquez pas nos prochains articles"
+   713→   - Email input
+   714→   - CTA button
+   715→
+   716→6. **Comments/Discussion**
+   717→   - Disqus or similar
+   718→   - Enable discussions
+   719→
+   720→### Blog Strategy
+   721→
+   722→**Target:** 3 new articles/month
+   723→
+   724→**Categories:**
+   725→- **Tech** (40%) - Architecture, frameworks, best practices
+   726→- **AI** (25%) - LLM integration, use cases, tutorials
+   727→- **Business** (20%) - Strategy, startup insights, GTM
+   728→- **Design** (15%) - UX, conversion, accessibility
+   729→
+   730→---
+   731→
+   732→## 4.9 PAGE CONTACT
+   733→
+   734→**Hero:**
+   735→```
+   736→Titre: "Parlons de votre projet"
+   737→Subheadline: "Première conversation gratuite. Pas d'engagement."
+   738→```
+   739→
+   740→**Layout:** 2-column (form left, contact info right)
+   741→
+   742→### Colonne 1: Formulaire
+   743→Fields:
+   744→- Nom & Prénom *
+   745→- Email *
+   746→- Entreprise *
+   747→- Type de projet * (dropdown)
+   748→- Budget estimé (dropdown)
+   749→- Timeline/Urgence (dropdown)
+   750→- Message * (textarea min 50 chars)
+   751→- File upload (optional - brief, wireframes)
+   752→- Checkbox consent
+   753→- Submit button
+   754→
+   755→### Colonne 2: Contact Info
+   756→- Email (bold)
+   757→- Phone
+   758→- Address
+   759→- Hours
+   760→- Response time: "24h max"
+   761→- Social links
+   762→
+   763→### Alternative Contact Methods
+   764→- Calendly (15 min discovery call)
+   765→- Live chat
+   766→- WhatsApp
+   767→- Zoom call option
+   768→
+   769→### Success Page (/contact/success)
+   770→```
+   771→Titre: "Message reçu! ✓"
+   772→Copy: "Nous vous revenons dans 24h. En attendant, découvrez nos derniers articles."
+   773→Next steps: 3 recent blog articles grid
+   774→```
+   775→
+   776→---
+   777→
+   778→## 4.10 PAGE SECTEURS (NEW - Industry-specific)
+   779→
+   780→**Purpose:** Montrer expertise par industries (better for SEO & relevance)
+   781→
+   782→### Listing Page (/secteurs)
+   783→
+   784→**Hero:**
+   785→```
+   786→Titre: "Solutions adaptées à votre industrie"
+   787→Copy: "Finance, santé, retail, SaaS, marketplace... nous comprenons vos enjeux."
+   788→```
+   789→
+   790→**Grid: 5-6 industries**
+   791→1. **Fintech** - Payment, trading, banking
+   792→2. **HealthTech** - Telemedicine, apps, compliance
+   793→3. **Retail & E-Commerce** - Ecommerce, inventory, POS
+   794→4. **SaaS B2B** - Multi-tenant, collaboration
+   795→5. **Marketplace** - P2P platforms, escrow
+   796→6. **InsurTech** - Policy management, automation
+   797→
+   798→Chaque industry card:
+   799→- Icon
+   800→- Title
+   801→- Industry challenges (3)
+   802→- "Découvrir solutions" link
+   803→
+   804→### Industry Detail Page (Template)
+   805→
+   806→**Structure:**
+   807→1. **Hero** - Industry name + visual
+   808→2. **Industry Context** - Market size, trends, challenges
+   809→3. **Our Expertise** - Services we offer for this industry
+   810→4. **Use Cases** - 3-4 specific use cases
+   811→5. **Case Study** - 1 relevant case study (full)
+   812→6. **Compliance & Security** - Industry-specific requirements
+   813→7. **Tech Stack** - Recommended tech for this industry
+   814→8. **Competition** - How we help you win
+   815→9. **Resources** - Industry insights + whitepapers
+   816→
+   817→---
+   818→
+   819→# 5. DESIGN & BRANDING
+   820→
+   821→## 5.1 Color Palette
+   822→
+   823→**Primary Colors:**
+   824→- **Primary:** #1BA896 (Teal/Turquoise) - Trust, Tech, Modern
+   825→- **Secondary:** #FF6B35 (Orange) - Energy, Action, Innovation
+   826→
+   827→**Neutral Colors:**
+   828→- **Dark:** #1F2121 (Charcoal) - Text, primary contrast
+   829→- **Light:** #FFFBF8 (Cream) - Background, readability
+   830→- **Gray:** #A7A9A9 (Medium gray) - Secondary text
+   831→
+   832→**Semantic:**
+   833→- **Success:** #22C55E (Green)
+   834→- **Error:** #EF4444 (Red)
+   835→- **Warning:** #F59E0B (Amber)
+   836→- **Info:** #3B82F6 (Blue)
+   837→
+   838→**Usage:**
+   839→- Primary (Teal) for CTAs, borders, highlights
+   840→- Secondary (Orange) for accents, badges
+   841→- Gray for secondary info, dividers
+   842→- Dark for text, headers
+   843→- Light for backgrounds
+   844→
+   845→## 5.2 Typography
+   846→
+   847→**Font Stack (Modern, Clean):**
+   848→- **Headings:** "Inter" or "DM Sans" (sans-serif, bold weights)
+   849→- **Body:** "Inter" or "Plus Jakarta Sans" (sans-serif, readable)
+   850→- **Code:** "Fira Code" or "Monaco" (monospace)
+   851→
+   852→**Size Scale:**
+   853→- H1: 48-60px (hero titles)
+   854→- H2: 36-48px (section titles)
+   855→- H3: 24-32px (subsection)
+   856→- Body: 14-16px (readable)
+   857→- Small: 12-14px (captions, metadata)
+   858→
+   859→**Weight Usage:**
+   860→- Headers: Bold (600-700)
+   861→- Body: Regular (400)
+   862→- Emphasis: Semibold (500)
+   863→- Light: 300 (secondary text)
+   864→
+   865→## 5.3 Component Library (Design System)
+   866→
+   867→**Core Components:**
+   868→- Button (Primary, Secondary, Outline, Ghost)
+   869→- Card (Standard, elevated, hover states)
+   870→- Form inputs (Text, email, textarea, select)
+   871→- Alert/Callout boxes (Info, success, warning, error)
+   872→- Badges (Service tags, status)
+   873→- Pills (Category, technology)
+   874→- Breadcrumbs (Navigation)
+   875→- Accordion (FAQ, collapsible)
+   876→- Carousel (Projects, testimonials)
+   877→- Modal/Dialog (Forms, confirmations)
+   878→- Testimonial card (Quote, author, company)
+   879→- Case study card (Featured, grid)
+   880→
+   881→**Interactive States:**
+   882→- Hover (all clickables)
+   883→- Focus (accessibility)
+   884→- Active (current page/state)
+   885→- Disabled (unavailable)
+   886→- Loading (spinners, skeletons)
+   887→
+   888→## 5.4 Layout & Spacing
+   889→
+   890→**Grid System:** 12-column grid (8px base)
+   891→
+   892→**Common Spacing:**
+   893→- 8px (xs - small gaps)
+   894→- 16px (sm - standard gap)
+   895→- 24px (md - larger gaps)
+   896→- 32px (lg - section spacing)
+   897→- 48px (xl - major section breaks)
+   898→
+   899→**Responsive Breakpoints:**
+   900→- Mobile: < 640px (1 column)
+   901→- Tablet: 640px - 1024px (2 columns)
+   902→- Desktop: > 1024px (3+ columns)
+   903→
+   904→## 5.5 Visual Elements
+   905→
+   906→**Icons:**
+   907→- Heroicons or similar (consistent style)
+   908→- All custom services get unique icons
+   909→- 24x24px standard size
+   910→- Color: Primary or Dark
+   911→
+   912→**Illustrations:**
+   913→- Hand-drawn / custom style (not stock illustrations)
+   914→- Consistent character/style
+   915→- 3-4 illustration styles for variety
+   916→
+   917→**Photography:**
+   918→- Real projects (screenshots/mockups) preferred
+   919→- Lifestyle/team photos (real people, diverse)
+   920→- No stock photos (generic look)
+   921→
+   922→**Animations:**
+   923→- Subtle (not distracting)
+   924→- Micro-interactions (button hover, scroll reveals)
+   925→- Page transitions (fade, slide)
+   926→- Loading states (smooth spinners)
+   927→
+   928→---
+   929→
+   930→# 6. TECHNICAL SPECIFICATIONS
+   931→
+   932→## 6.1 Platform & Infrastructure
+   933→
+   934→**CMS & Framework Options:**
+   935→1. **Next.js 14+** (Recommended)
+   936→   - Pros: Full-stack, SSR, optimal performance
+   937→   - Cons: Needs dev to maintain
+   938→   
+   939→2. **Webflow**
+   940→   - Pros: Designer-friendly, visual builder
+   941→   - Cons: Limited customization, pricing
+   942→   
+   943→3. **Custom Headless** (Contentful + Frontend)
+   944→   - Pros: Maximum flexibility, custom code
+   945→   - Cons: Highest cost, most complex
+   946→
+   947→**Recommendation:** Next.js 14+ avec Contentful CMS pour content management
+   948→
+   949→**Hosting:**
+   950→- Vercel (Next.js native, automatic deployment)
+   951→- AWS + CloudFront (maximum control)
+   952→- Cloudflare Pages (edge computing, global)
+   953→
+   954→**Database & CMS:**
+   955→- Contentful (headless CMS, JSON API)
+   956→- Alternative: Strapi (self-hosted, open-source)
+   957→
+   958→## 6.2 Performance Requirements
+   959→
+   960→**Core Web Vitals (Google PageSpeed Standards):**
+   961→- **LCP** (Largest Contentful Paint): < 2.5s ✓
+   962→- **FID** (First Input Delay): < 100ms ✓
+   963→- **CLS** (Cumulative Layout Shift): < 0.1 ✓
+   964→- **Lighthouse Score:** 90+ ✓
+   965→
+   966→**Targets:**
+   967→- Page load: < 2 seconds
+   968→- Time to Interactive (TTI): < 3.5s
+   969→- First Contentful Paint: < 1.5s
+   970→- Mobile performance: Grade A
+   971→- Desktop performance: Grade A
+   972→
+   973→**Optimization Strategies:**
+   974→- Image optimization (WebP, lazy loading)
+   975→- Code splitting & async loading
+   976→- CSS/JS minification
+   977→- CDN distribution (global)
+   978→- Cache strategies (browser + server)
+   979→- Critical rendering path optimization
+   980→
+   981→## 6.3 SEO Requirements
+   982→
+   983→**On-Page SEO:**
+   984→- Meta titles (50-60 chars)
+   985→- Meta descriptions (150-160 chars)
+   986→- H1 per page (unique)
+   987→- H2/H3 hierarchy
+   988→- Schema markup (JSON-LD)
+   989→  - Organization schema
+   990→  - BreadcrumbList
+   991→  - Article (blog posts)
+   992→  - FAQPage (FAQ sections)
+   993→
+   994→**Technical SEO:**
+   995→- XML sitemap
+   996→- Robots.txt configuration
+   997→- Canonical tags
+   998→- Internal linking strategy
+   999→- Mobile-friendly verification
+  1000→- SSL/HTTPS enforcement
+  1001→- Page speed optimization
+  1002→
+  1003→**Content SEO:**
+  1004→- Target keywords research
+  1005→- Content optimization (keyword placement)
+  1006→- Long-form content (2000+ words for pillar pages)
+  1007→- Regular content updates (2-3 articles/month)
+  1008→- Internal linking (contextual)
+  1009→
+  1010→**Target Keywords (Estimated, adapt based on research):**
+  1011→- High-volume: "agence développement web", "développement app mobile", "développement SaaS"
+  1012→- Medium: "intégration IA dans app", "migration legacy", "optimization e-commerce"
+  1013→- Long-tail: "développement web startup Paris", "agence mobile cross-platform", "LLM chatbot customisé"
+  1014→
+  1015→## 6.4 Analytics & Tracking
+  1016→
+  1017→**Goals:**
+  1018→1. Lead generation (contact form submissions)
+  1019→2. Content engagement (blog time, shares)
+  1020→3. Navigation behavior (service page visits)
+  1021→4. Conversion tracking (contact → project)
+  1022→
+  1023→**Tools:**
+  1024→- **Google Analytics 4** (main analytics)
+  1025→- **Google Search Console** (SEO monitoring)
+  1026→- **Hotjar** (session recording, heatmaps)
+  1027→- **Segment** (event tracking, data warehouse)
+  1028→- **Sentry** (error tracking, monitoring)
+  1029→
+  1030→**Key Events to Track:**
+  1031→- Form submission (contact form)
+  1032→- CTA clicks (all buttons)
+  1033→- Download (resources, PDFs)
+  1034→- Page views (by type)
+  1035→- Time on page
+  1036→- Scroll depth
+  1037→- External link clicks
+  1038→- Blog article reads
+  1039→- Video plays (if applicable)
+  1040→
+  1041→## 6.5 Accessibility (WCAG 2.1 AA)
+  1042→
+  1043→**Requirements:**
+  1044→- Color contrast ratio 4.5:1 (normal text), 3:1 (large text)
+  1045→- Keyboard navigation (tab-through all interactive elements)
+  1046→- Focus indicators (visible, 3px outline)
+  1047→- Alt text on images (descriptive)
+  1048→- Video captions & transcripts
+  1049→- Form labels properly associated
+  1050→- Semantic HTML (headings, lists, buttons)
+  1051→- Skip to content link
+  1052→- ARIA labels where needed
+  1053→
+  1054→**Testing:**
+  1055→- WAVE accessibility audit
+  1056→- axe DevTools
+  1057→- Keyboard-only navigation test
+  1058→- Screen reader testing (NVDA, JAWS)
+  1059→
+  1060→## 6.6 Security
+  1061→
+  1062→**SSL/HTTPS:**
+  1063→- SSL certificate (Letsencrypt or premium)
+  1064→- HTTP→HTTPS redirect
+  1065→- HSTS header
+  1066→
+  1067→**Data Protection:**
+  1068→- Contact form encryption (SSL/TLS)
+  1069→- No sensitive data storage on frontend
+  1070→- GDPR compliance (privacy policy, consent)
+  1071→- CCPA compliance (if US visitors)
+  1072→
+  1073→**Common Vulnerabilities:**
+  1074→- XSS protection (sanitize inputs)
+  1075→- CSRF protection (token on forms)
+  1076→- SQLi protection (if database)
+  1077→- Rate limiting (contact form)
+  1078→
+  1079→**Best Practices:**
+  1080→- Content Security Policy (CSP) header
+  1081→- X-Frame-Options header
+  1082→- X-Content-Type-Options header
+  1083→- Regular security audits
+  1084→
+  1085→---
+  1086→
+  1087→# 7. CONTENU & MESSAGING
+  1088→
+  1089→## 7.1 Tone of Voice
+  1090→
+  1091→**Brand Voice:**
+  1092→- Professional but approachable (pas stuffy)
+  1093→- Transparent & honest (no hype)
+  1094→- Pragmatic (focus on results)
+  1095→- Passionate about technology
+  1096→- Down-to-earth (use "nous", "on")
+  1097→
+  1098→**Examples:**
+  1099→- ❌ "Revolutionary AI-powered solutions that will transform your business"
+  1100→- ✅ "We integrate AI where it actually matters - with clear ROI and minimal risk"
+  1101→
+  1102→- ❌ "Best-in-class experts delivering world-class solutions"
+  1103→- ✅ "Developers, designers, and strategists who know how to build stuff that works"
+  1104→
+  1105→## 7.2 Key Messages
+  1106→
+  1107→**Master Message:** "De la conception à la maintenance. Techno excellente, équipe pragmatique, résultats mesurés."
+  1108→
+  1109→**Supporting Messages:**
+  1110→1. **Excellence Technique** - "Architecture scalable, code quality, security by default"
+  1111→2. **Partenariat** - "Nous grandissons avec vous. Pas de relation prestataire/client."
+  1112→3. **Transparence** - "Pas de jargon. Vous savez toujours où vous en êtes."
+  1113→4. **Expertise IA** - "IA n'est pas du hype. Nous l'intégrons de manière responsable."
+  1114→5. **Multi-cibles** - "Startups, PME, grands groupes, solo-preneurs - nous savons adapter."
+  1115→
+  1116→## 7.3 Copy Guidelines
+  1117→
+  1118→**Headlines:**
+  1119→- Start with benefit or challenge
+  1120→- Specific beats generic
+  1121→- Avoid superlatives (best, amazing, revolutionary)
+  1122→- Include keyword when relevant
+  1123→
+  1124→**Body Copy:**
+  1125→- Short paragraphs (2-3 sentences max)
+  1126→- Active voice
+  1127→- Data/proof points
+  1128→- Conversational language
+  1129→- "You" perspective when possible
+  1130→
+  1131→**CTAs:**
+  1132→- Action-oriented verbs (Discover, Explore, Learn, Get)
+  1133→- Specific beats generic ("Voir nos services IA" > "En savoir plus")
+  1134→- Create urgency (optional): "Book before Friday"
+  1135→
+  1136→---
+  1137→
+  1138→# 8. CONTENT CALENDAR & ROADMAP
+  1139→
+  1140→## 8.1 Blog Strategy
+  1141→
+  1142→**Frequency:** 3 articles/month (12 per quarter)
+  1143→
+  1144→**Distribution by Category:**
+  1145→- Tech: 40% (4-5 articles/month)
+  1146→- AI: 25% (3 articles/month)
+  1147→- Business: 20% (2-3 articles/month)
+  1148→- Design: 15% (2 articles/month)
+  1149→
+  1150→**Topics (First 6 Months):**
+  1151→
+  1152→**Month 1:**
+  1153→1. "React 18 Server Components Deep Dive" (Tech)
+  1154→2. "LLM Chatbots: From Concept to Production" (AI)
+  1155→3. "MVP vs MVP+: Decision Framework" (Business)
+  1156→
+  1157→**Month 2:**
+  1158→1. "Architecture Patterns for Scaling" (Tech)
+  1159→2. "Computer Vision Use Cases 2025" (AI)
+  1160→3. "UX Mistakes That Cost Conversion" (Design)
+  1161→
+  1162→**Month 3:**
+  1163→1. "TypeScript Best Practices 2025" (Tech)
+  1164→2. "RAG: Retrieval-Augmented Generation Explained" (AI)
+  1165→3. "Go-to-Market Strategy for Startups" (Business)
+  1166→
+  1167→[Continue for 6 months...]
+  1168→
+  1169→---
+  1170→
+  1171→# 9. DEPLOYMENT & LAUNCH
+  1172→
+  1173→## 9.1 Development Phases
+  1174→
+  1175→**Phase 1: Design & Strategy (2-3 weeks)**
+  1176→- Design system creation
+  1177→- Homepage design
+  1178→- Services pages design
+  1179→- Component library
+  1180→
+  1181→**Phase 2: Development (4-6 weeks)**
+  1182→- Frontend development (all pages)
+  1183→- CMS integration
+  1184→- Form setup
+  1185→- Analytics setup
+  1186→- Performance optimization
+  1187→
+  1188→**Phase 3: Content & Testing (2 weeks)**
+  1189→- Content production (blog, case studies, expertise pages)
+  1190→- QA testing (cross-browser, mobile)
+  1191→- Performance testing
+  1192→- SEO audit
+  1193→- Security audit
+  1194→
+  1195→**Phase 4: Launch & Optimization (1 week)**
+  1196→- DNS migration
+  1197→- Monitoring setup
+  1198→- Alert configuration
+  1199→- Launch coordination
+  1200→- Post-launch monitoring
+  1201→
+  1202→**Total Timeline:** 9-12 weeks (optimistic) to 16-20 weeks (realistic with revisions)
+  1203→
+  1204→## 9.2 Pre-Launch Checklist
+  1205→
+  1206→**Technical:**
+  1207→- ✅ All pages responsive (mobile, tablet, desktop)
+  1208→- ✅ Core Web Vitals passing (90+)
+  1209→- ✅ Forms functioning + email notifications
+  1210→- ✅ Analytics tracking implemented
+  1211→- ✅ Search console verified
+  1212→- ✅ Sitemap submitted
+  1213→- ✅ SSL certificate installed
+  1214→- ✅ 404 page designed
+  1215→- ✅ Redirects configured (if migrating)
+  1216→- ✅ CDN configured
+  1217→
+  1218→**Content:**
+  1219→- ✅ All page copy finalized
+  1220→- ✅ All images optimized
+  1221→- ✅ All links tested (no broken links)
+  1222→- ✅ Meta titles/descriptions finalized
+  1223→- ✅ Schema markup verified
+  1224→- ✅ Blog articles published (minimum 3-5)
+  1225→- ✅ Case studies live
+  1226→
+  1227→**Legal:**
+  1228→- ✅ Privacy policy
+  1229→- ✅ Terms of service
+  1230→- ✅ Cookies policy
+  1231→- ✅ Mentions légales
+  1232→
+  1233→**Marketing:**
+  1234→- ✅ Social media graphics prepared
+  1235→- ✅ Email campaign drafted
+  1236→- ✅ Press release (optional)
+  1237→- ✅ Internal announcement
+  1238→- ✅ Team trained on new site
+  1239→
+  1240→---
+  1241→
+  1242→# 10. MAINTENANCE & EVOLUTION
+  1243→
+  1244→## 10.1 Post-Launch (Months 1-3)
+  1245→
+  1246→**Weekly:**
+  1247→- Monitor analytics
+  1248→- Fix any bugs reported
+  1249→- Respond to contact form leads
+  1250→- Monitor Core Web Vitals
+  1251→
+  1252→**Monthly:**
+  1253→- Publish 3 new articles
+  1254→- Update case studies/testimonials
+  1255→- Review analytics & optimize
+  1256→- Technical maintenance
+  1257→
+  1258→## 10.2 Medium-term (Months 3-12)
+  1259→
+  1260→**Quarterly:**
+  1261→- A/B test major CTAs
+  1262→- Update service pages based on market feedback
+  1263→- Publish industry research
+  1264→- Expand case studies
+  1265→
+  1266→**Annual:**
+  1267→- Full website audit
+  1268→- Design refresh (if needed)
+  1269→- New feature development (interactive tools, calculators)
+  1270→- Competitive analysis
+  1271→
+  1272→## 10.3 Continuous Improvements
+  1273→
+  1274→**Optimization Areas:**
+  1275→- Conversion rate optimization (CRO)
+  1276→- Page speed optimization
+  1277→- SEO improvements (keyword expansion)
+  1278→- Content depth (longer articles, guides)
+  1279→- Interactive elements (quiz, calculator, ROI tool)
+  1280→
+  1281→**Potential Future Features:**
+  1282→- Interactive project calculator (estimate budget/timeline)
+  1283→- Live chat support (Intercom or similar)
+  1284→- Webinar/demo booking system
+  1285→- Resource library (whitepapers, guides)
+  1286→- Testimonial/review section with video
+  1287→- Team hiring showcase
+  1288→- Open source projects showcase
+  1289→
+  1290→---
+  1291→
+  1292→# 11. ESTIMATIONS & BUDGET
+  1293→
+  1294→## 11.1 Resource Requirements
+  1295→
+  1296→**Design (UI/UX):** 4-6 weeks
+  1297→- 1-2 senior designers
+  1298→- Design system + all pages
+  1299→- Design file documentation
+  1300→
+  1301→**Development (Frontend):** 6-8 weeks
+  1302→- 1 senior frontend dev
+  1303→- 1 mid-level frontend dev
+  1304→- All pages + components + performance optimization
+  1305→
+  1306→**Backend/CMS Setup:** 2-3 weeks
+  1307→- CMS configuration (Contentful)
+  1308→- API setup
+  1309→- Form handling
+  1310→- Analytics integration
+  1311→
+  1312→**Content Production:** 3-4 weeks (parallel)
+  1313→- Homepage copy
+  1314→- Service pages copy
+  1315→- 5-8 case studies
+  1316→- 5-8 blog articles
+  1317→- Meta/SEO optimization
+  1318→
+  1319→**Testing & QA:** 2 weeks
+  1320→- Cross-browser testing
+  1321→- Mobile testing
+  1322→- Performance testing
+  1323→- Security audit
+  1324→
+  1325→**Total:** 16-24 weeks (with team of 4-5 people working in parallel)
+  1326→
+  1327→## 11.2 Estimated Budget Ranges
+  1328→
+  1329→**Option 1: Agency/Professional Build**
+  1330→- Design: €8K-15K
+  1331→- Frontend Development: €15K-30K
+  1332→- Backend/CMS: €5K-10K
+  1333→- Content Production: €5K-10K
+  1334→- Testing & QA: €3K-5K
+  1335→- **Total: €36K-70K**
+  1336→
+  1337→**Option 2: Freelancer-based**
+  1338→- Design: €5K-8K
+  1339→- Development: €12K-20K
+  1340→- Content: €3K-5K
+  1341→- **Total: €20K-33K**
+  1342→
+  1343→**Option 3: DIY with Tool (Webflow, Framer)**
+  1344→- Design/Dev combined: €8K-15K
+  1345→- Content: €3K-5K
+  1346→- **Total: €11K-20K**
+  1347→
+  1348→**Recommendation:** Option 1 (Agency) for quality & long-term support
+  1349→
+  1350→## 11.3 Ongoing Costs (Annual)
+  1351→
+  1352→- Hosting (Vercel/AWS): €2K-5K/year
+  1353→- CMS (Contentful): €3K-8K/year
+  1354→- Analytics tools: €1K-3K/year
+  1355→- Security monitoring: €1K-2K/year
+  1356→- Maintenance/updates: €5K-15K/year
+  1357→- **Total: €12K-33K/year**
+  1358→
+  1359→---
+  1360→
+  1361→# 12. SUCCESS METRICS & KPIs
+  1362→
+  1363→## 12.1 Traffic Metrics
+  1364→
+  1365→**Targets (6 months post-launch):**
+  1366→- 10K+ monthly visitors
+  1367→- 2K+ organic traffic/month
+  1368→- 500+ monthly newsletter subscribers
+  1369→- 100+ blog article shares/month
+  1370→
+  1371→**Tracking:**
+  1372→- Google Analytics 4 (GA4)
+  1373→- Google Search Console
+  1374→- Social media analytics
+  1375→
+  1376→## 12.2 Conversion Metrics
+  1377→
+  1378→**Targets:**
+  1379→- 3-5% contact form conversion rate (visitors → leads)
+  1380→- 15-20% lead-to-project conversion rate
+  1381→- 50% email open rate (newsletter)
+  1382→- 10% email click-through rate
+  1383→
+  1384→**Tracking:**
+  1385→- Form submission tracking
+  1386→- CRM integration
+  1387→- Lead scoring
+  1388→- Deal tracking
+  1389→
+  1390→## 12.3 Content Metrics
+  1391→
+  1392→**Targets:**
+  1393→- 2K+ average article views
+  1394→- 3:00+ average read time
+  1395→- 10+ blog article shares (social)
+  1396→- 30% click-through to services pages
+  1397→
+  1398→**Tracking:**
+  1399→- Google Analytics
+  1400→- Medium time on page
+  1401→- Social media shares
+  1402→- Heatmapping (Hotjar)
+  1403→
+  1404→## 12.4 SEO Metrics
+  1405→
+  1406→**Targets:**
+  1407→- 100+ ranking keywords
+  1408→- 10+ keywords in top 10
+  1409→- 500+ organic visitors/month
+  1410→- 0.8 avg CTR from search
+  1411→
+  1412→**Tracking:**
+  1413→- Google Search Console
+  1414→- SEMrush or Ahrefs
+  1415→- Monthly rankings report
+  1416→
+  1417→## 12.5 Business Metrics
+  1418→
+  1419→**Targets (Annual):**
+  1420→- €800K ARR from web leads (our goal)
+  1421→- 50-100 qualified leads
+  1422→- 10-15 new projects won (€50K-100K average)
+  1423→- 30%+ margin on digital marketing
+  1424→- 25% increase in brand awareness
+  1425→
+  1426→**Tracking:**
+  1427→- CRM (pipeline, won deals)
+  1428→- Revenue attribution
+  1429→- Customer acquisition cost (CAC)
+  1430→- Lifetime value (LTV)
+  1431→- Marketing ROI
+  1432→
+  1433→---
+  1434→
+  1435→# 13. APPENDICES
+  1436→
+  1437→## 13.1 Competitive Analysis Summary
+  1438→
+  1439→| Aspect | Galadrim | Yodev (Planned) |
+  1440→|--------|----------|-----------------|
+  1441→| **Design** | Modern, clean | Modern, creative, playful |
+  1442→| **AI Focus** | Minimal mention | Central to narrative |
+  1443→| **Target Clarity** | General (all clients) | Segmented (5 types) |
+  1444→| **Case Studies** | 5-6 visible | 8-12 comprehensive |
+  1445→| **Content** | Basic blog | Deep expertise content |
+  1446→| **Pricing Transparency** | Hidden | Visible (ranges) |
+  1447→| **Industries** | Not segmented | Dedicated industry pages |
+  1448→| **Personality** | Corporate | Pragmatic + passionate |
+  1449→
+  1450→## 13.2 Reference Sites (Inspiration)
+  1451→
+  1452→**Design & UX:**
+  1453→- https://www.vercel.com (modern, clear messaging)
+  1454→- https://stripe.com (premium, confident)
+  1455→- https://webflow.com (creative, detailed)
+  1456→
+  1457→**Content & Expertise:**
+  1458→- https://www.smashingmagazine.com (deep content)
+  1459→- https://rauchg.com (personal brand, thought leadership)
+  1460→
+  1461→**Technical Implementation:**
+  1462→- https://nextjs.org (framework docs, excellent design)
+  1463→- https://tailwindcss.com (component showcase)
+  1464→
+  1465→## 13.3 Tools & Platforms
+  1466→
+  1467→**Design:**
+  1468→- Figma (design system, prototyping)
+  1469→- Adobe XD or Sketch (alternative)
+  1470→
+  1471→**Development:**
+  1472→- Next.js 14+
+  1473→- TypeScript
+  1474→- TailwindCSS (styling)
+  1475→- Contentful (CMS)
+  1476→
+  1477→**Testing:**
+  1478→- Playwright (E2E testing)
+  1479→- Lighthouse CI (performance)
+  1480→- WAVE (accessibility)
+  1481→
+  1482→**Analytics:**
+  1483→- Google Analytics 4
+  1484→- Google Search Console
+  1485→- Hotjar
+  1486→- Sentry
+  1487→
+  1488→---
+  1489→
+  1490→# 14. SIGN-OFF & APPROVALS
+  1491→
+  1492→**Document Owner:** [Your Name]
+  1493→**Date Created:** 02/01/2026
+  1494→**Last Updated:** 02/01/2026
+  1495→**Version:** 1.0
+  1496→
+  1497→**Approvals:**
+  1498→- [ ] CEO/Founder Sign-off
+  1499→- [ ] Design Lead Sign-off
+  1500→- [ ] Tech Lead Sign-off
+  1501→- [ ] Marketing Lead Sign-off
+  1502→- [ ] Client/Stakeholder Sign-off
+  1503→
+  1504→---
+  1505→
+  1506→**FIN DU CAHIER DES CHARGES**
+  1507→
+  1508→---
+  1509→
+  1510→## ANNEXE: TIMELINE DE PRODUCTION
+  1511→
+  1512→```
+  1513→Week 1-2 | Design System + Homepage Design
+  1514→Week 3-4 | Services Pages Design + Expertise Pages Design
+  1515→Week 5-6 | Projects Pages + À Propos + Contact Design
+  1516→
+  1517→Week 7   | Development Setup + Homepage Dev
+  1518→Week 8-9 | Services Pages Dev + Routing
+  1519→Week 10-11 | Blog Setup + All Pages Implementation
+  1520→Week 12   | CMS Integration + Forms Setup
+  1521→Week 13   | Performance Optimization + SEO
+  1522→
+  1523→Week 14-15 | Content Production (parallel) + Copy Writing
+  1524→Week 15-16 | Testing (QA, Performance, Security)
+  1525→
+  1526→Week 17   | Launch Preparation + Final Checks
+  1527→Week 18   | GO LIVE + Monitoring Setup
+  1528→
+  1529→TOTAL: 18 weeks (4.5 months) avec équipe dédiée
+  1530→```
+  1531→
+  1532→---
+  1533→
+  1534→**Prochaines étapes:**
+  1535→1. ✅ Valider ce cahier des charges
+  1536→2. ⬜ Sélectionner agency/freelancers
+  1537→3. ⬜ Lancer phase design
+  1538→4. ⬜ Valider designs
+  1539→5. ⬜ Commencer développement
+  1540→6. ⬜ Produire contenu
+  1541→7. ⬜ Tester
+  1542→8. ⬜ Lancer
+  1543→
+  1544→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

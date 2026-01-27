@@ -1,0 +1,2 @@
+[i18 07eccbb] fix(e2e): update tests for i18n and fix middleware route patterns
+ 3 files changed, 15 insertions(+), 4 deletions(-)

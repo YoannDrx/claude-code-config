@@ -1,0 +1,19 @@
+   163→              {t("export.dateRange.invalidRange")}
+   164→            </p>
+   165→          )}
+   166→
+   167→          {isValidRange && preview && !previewLoading && (
+   168→            <div className="flex flex-wrap gap-2">
+   169→              <Badge variant="secondary">
+   170→                {t("export.preview.moodEntries", {
+   171→                  count: preview.moodEntries,
+   172→                })}
+   173→              </Badge>
+   174→              <Badge variant="secondary">
+   175→                {t("export.preview.therapySessions", {
+   176→                  count: preview.therapySessions,
+   177→                })}
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

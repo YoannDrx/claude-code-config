@@ -1,0 +1,138 @@
+     1→"use client";
+     2→
+     3→import * as React from "react";
+     4→import { motion, type HTMLMotionProps } from "framer-motion";
+     5→import { cn } from "@/lib/utils";
+     6→
+     7→type CardVariant = "default" | "elevated" | "outlined" | "ghost";
+     8→
+     9→interface CardProps extends HTMLMotionProps<"div"> {
+    10→  variant?: CardVariant;
+    11→  hover?: boolean;
+    12→  as?: "div" | "article" | "section";
+    13→}
+    14→
+    15→const variantStyles: Record<CardVariant, string> = {
+    16→  default: cn(
+    17→    "bg-surface/80 backdrop-blur-sm",
+    18→    "border border-border",
+    19→    "shadow-sm"
+    20→  ),
+    21→  elevated: cn(
+    22→    "bg-surface",
+    23→    "border border-border/50",
+    24→    "shadow-md"
+    25→  ),
+    26→  outlined: cn(
+    27→    "bg-transparent",
+    28→    "border-2 border-border"
+    29→  ),
+    30→  ghost: cn(
+    31→    "bg-surface-2/50",
+    32→    "border border-transparent"
+    33→  ),
+    34→};
+    35→
+    36→export const Card = React.forwardRef<HTMLDivElement, CardProps>(
+    37→  (
+    38→    {
+    39→      className,
+    40→      variant = "default",
+    41→      hover = true,
+    42→      children,
+    43→      ...props
+    44→    },
+    45→    ref
+    46→  ) => {
+    47→    return (
+    48→      <motion.div
+    49→        ref={ref}
+    50→        className={cn(
+    51→          "rounded-[var(--radius-lg)]",
+    52→          "transition-all duration-300",
+    53→          variantStyles[variant],
+    54→          hover && [
+    55→            "hover:border-primary/20",
+    56→            "hover:shadow-lg",
+    57→            "hover:-translate-y-1",
+    58→          ],
+    59→          className
+    60→        )}
+    61→        {...props}
+    62→      >
+    63→        {children}
+    64→      </motion.div>
+    65→    );
+    66→  }
+    67→);
+    68→
+    69→Card.displayName = "Card";
+    70→
+    71→// Card Header
+    72→interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
+    73→
+    74→export function CardHeader({ className, ...props }: CardHeaderProps) {
+    75→  return (
+    76→    <div
+    77→      className={cn("flex flex-col space-y-1.5 p-6", className)}
+    78→      {...props}
+    79→    />
+    80→  );
+    81→}
+    82→
+    83→// Card Title
+    84→interface CardTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+    85→  as?: "h1" | "h2" | "h3" | "h4";
+    86→}
+    87→
+    88→export function CardTitle({
+    89→  className,
+    90→  as: Component = "h3",
+    91→  ...props
+    92→}: CardTitleProps) {
+    93→  return (
+    94→    <Component
+    95→      className={cn(
+    96→        "text-xl font-semibold leading-tight tracking-tight text-text",
+    97→        className
+    98→      )}
+    99→      {...props}
+   100→    />
+   101→  );
+   102→}
+   103→
+   104→// Card Description
+   105→interface CardDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+   106→
+   107→export function CardDescription({ className, ...props }: CardDescriptionProps) {
+   108→  return (
+   109→    <p
+   110→      className={cn("text-sm text-muted", className)}
+   111→      {...props}
+   112→    />
+   113→  );
+   114→}
+   115→
+   116→// Card Content
+   117→interface CardContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+   118→
+   119→export function CardContent({ className, ...props }: CardContentProps) {
+   120→  return <div className={cn("p-6 pt-0", className)} {...props} />;
+   121→}
+   122→
+   123→// Card Footer
+   124→interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
+   125→
+   126→export function CardFooter({ className, ...props }: CardFooterProps) {
+   127→  return (
+   128→    <div
+   129→      className={cn("flex items-center p-6 pt-0", className)}
+   130→      {...props}
+   131→    />
+   132→  );
+   133→}
+   134→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

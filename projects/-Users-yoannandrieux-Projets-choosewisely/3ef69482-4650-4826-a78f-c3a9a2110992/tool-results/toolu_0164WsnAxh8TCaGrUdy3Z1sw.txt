@@ -1,0 +1,803 @@
+     1→import { logger } from "@/lib/logger";
+     2→import type {
+     3→  Alert,
+     4→  AlertCriteria,
+     5→  Property,
+     6→  SearchCriteria,
+     7→  SearchResult,
+     8→  MoteurImmoSearchCriteria,
+     9→  MoteurImmoProperty,
+    10→  MoteurImmoSearchResponse,
+    11→  MoteurImmoAlertCriteria,
+    12→  MoteurImmoAlert,
+    13→  MoteurImmoCity,
+    14→  MoteurImmoCitySearchResponse,
+    15→} from "./types";
+    16→import {
+    17→  APIErrorSchema,
+    18→  SearchCriteriaSchema,
+    19→  AlertCriteriaSchema,
+    20→  MoteurImmoPropertySchema,
+    21→  MoteurImmoSearchResponseSchema,
+    22→  MoteurImmoAlertSchema,
+    23→  MoteurImmoCitySearchResponseSchema,
+    24→} from "./types";
+    25→import {
+    26→  MoteurImmoError,
+    27→  MoteurImmoRateLimitError,
+    28→  MoteurImmoAuthError,
+    29→  MoteurImmoNetworkError,
+    30→  MoteurImmoValidationError,
+    31→} from "./errors";
+    32→import { RateLimiter } from "./rate-limiter";
+    33→import { MemoryCache } from "./cache";
+    34→
+    35→type MoteurImmoClientConfig = {
+    36→  apiKey: string;
+    37→  baseUrl?: string;
+    38→  timeout?: number;
+    39→  maxRetries?: number;
+    40→  rateLimitConfig?: {
+    41→    maxRequests: number;
+    42→    windowMs: number;
+    43→  };
+    44→  cacheConfig?: {
+    45→    defaultTtlMs: number;
+    46→    enabled: boolean;
+    47→  };
+    48→};
+    49→
+    50→export class MoteurImmoClient {
+    51→  private readonly apiKey: string;
+    52→  private readonly baseUrl: string;
+    53→  private readonly timeout: number;
+    54→  private readonly maxRetries: number;
+    55→  private readonly rateLimiter: RateLimiter;
+    56→  private readonly cache: MemoryCache;
+    57→  private readonly cacheEnabled: boolean;
+    58→
+    59→  constructor(config: MoteurImmoClientConfig) {
+    60→    this.apiKey = config.apiKey;
+    61→    this.baseUrl = config.baseUrl ?? "https://moteurimmo.fr/api";
+    62→    this.timeout = config.timeout ?? 30000;
+    63→    this.maxRetries = config.maxRetries ?? 3;
+    64→
+    65→    // Rate limiter (300 requests/minute as per MoteurImmo limits)
+    66→    this.rateLimiter = new RateLimiter(
+    67→      config.rateLimitConfig ?? {
+    68→        maxRequests: 300,
+    69→        windowMs: 60000, // 1 minute
+    70→      },
+    71→    );
+    72→
+    73→    // Cache setup
+    74→    this.cache = new MemoryCache(
+    75→      config.cacheConfig?.defaultTtlMs ?? 300000, // 5 minutes default
+    76→    );
+    77→    this.cacheEnabled = config.cacheConfig?.enabled ?? true;
+    78→  }
+    79→
+    80→  // Public methods
+    81→  async searchListings(criteria: SearchCriteria): Promise<SearchResult> {
+    82→    // Validate internal criteria
+    83→    const validatedCriteria = SearchCriteriaSchema.parse(criteria);
+    84→
+    85→    // Convert to MoteurImmo API format
+    86→    const apiCriteria =
+    87→      this.convertToMoteurImmoSearchCriteria(validatedCriteria);
+    88→
+    89→    const cacheKey = this.cache.generateKey("search", apiCriteria);
+    90→
+    91→    try {
+    92→      const result = await this.makeRequest<MoteurImmoSearchResponse>("/ads", {
+    93→        method: "POST",
+    94→        body: apiCriteria,
+    95→        cacheKey,
+    96→        cacheTtl: 300000, // 5 minute cache for search results
+    97→      });
+    98→
+    99→      // Validate MoteurImmo response
+   100→      const validatedResponse = MoteurImmoSearchResponseSchema.parse(result);
+   101→
+   102→      // Convert to internal format
+   103→      return this.convertToInternalSearchResult(
+   104→        validatedResponse,
+   105→        validatedCriteria,
+   106→      );
+   107→    } catch (error) {
+   108→      if (error instanceof Error && error.name === "ZodError") {
+   109→        throw new MoteurImmoValidationError(
+   110→          "Invalid search criteria or API response",
+   111→          error,
+   112→        );
+   113→      }
+   114→      throw error;
+   115→    }
+   116→  }
+   117→
+   118→  async getListingById(id: string): Promise<Property> {
+   119→    if (!id || typeof id !== "string") {
+   120→      throw new MoteurImmoValidationError("Invalid listing ID", { id });
+   121→    }
+   122→
+   123→    const cacheKey = `property:${id}`;
+   124→
+   125→    try {
+   126→      const result = await this.makeRequest<MoteurImmoProperty>(
+   127→        `/ad/${encodeURIComponent(id)}`,
+   128→        {
+   129→          method: "GET",
+   130→          cacheKey,
+   131→          cacheTtl: 600000, // 10 minutes cache for individual properties
+   132→        },
+   133→      );
+   134→
+   135→      // Extract the ad from the response (API returns { ad: property })
+   136→
+   137→      const adData =
+   138→        typeof result === "object" && "ad" in result ? result.ad : result;
+   139→
+   140→      // Validate MoteurImmo response
+   141→      const validatedProperty = MoteurImmoPropertySchema.parse(adData);
+   142→
+   143→      // Convert to internal format
+   144→      return this.convertToInternalProperty(validatedProperty);
+   145→    } catch (error) {
+   146→      if (error instanceof Error && error.name === "ZodError") {
+   147→        throw new MoteurImmoValidationError(
+   148→          "Invalid API response for property",
+   149→          error,
+   150→        );
+   151→      }
+   152→      throw error;
+   153→    }
+   154→  }
+   155→
+   156→  async createAlert(criteria: AlertCriteria): Promise<Alert> {
+   157→    // Validate input
+   158→    const validatedCriteria = AlertCriteriaSchema.parse(criteria);
+   159→
+   160→    // Convert to MoteurImmo API format
+   161→    const apiCriteria =
+   162→      this.convertToMoteurImmoAlertCriteria(validatedCriteria);
+   163→
+   164→    try {
+   165→      const result = await this.makeRequest<MoteurImmoAlert>("/alert", {
+   166→        method: "PUT",
+   167→        body: apiCriteria,
+   168→      });
+   169→
+   170→      // Validate MoteurImmo response
+   171→      const validatedAlert = MoteurImmoAlertSchema.parse(result);
+   172→
+   173→      // Convert to internal format and return
+   174→      return this.convertToInternalAlert(validatedAlert, validatedCriteria);
+   175→    } catch (error) {
+   176→      if (error instanceof Error && error.name === "ZodError") {
+   177→        throw new MoteurImmoValidationError(
+   178→          "Invalid alert criteria or API response",
+   179→          error,
+   180→        );
+   181→      }
+   182→      throw error;
+   183→    }
+   184→  }
+   185→
+   186→  async deleteAlert(alertId: string): Promise<void> {
+   187→    if (!alertId || typeof alertId !== "string") {
+   188→      throw new MoteurImmoValidationError("Invalid alert ID", { alertId });
+   189→    }
+   190→
+   191→    await this.makeRequest(`/alert/${encodeURIComponent(alertId)}`, {
+   192→      method: "DELETE",
+   193→    });
+   194→
+   195→    // Clear any cached data related to this alert
+   196→    this.cache.delete(`alert:${alertId}`);
+   197→  }
+   198→
+   199→  async listAlerts(): Promise<Alert[]> {
+   200→    const cacheKey = "alerts:list";
+   201→
+   202→    try {
+   203→      const result = await this.makeRequest<MoteurImmoAlert[]>(`/alerts`, {
+   204→        method: "GET",
+   205→        cacheKey,
+   206→        cacheTtl: 60000, // 1 minute cache for alerts list
+   207→      });
+   208→
+   209→      // Validate response
+   210→      if (!Array.isArray(result)) {
+   211→        throw new MoteurImmoValidationError(
+   212→          "Invalid alerts list response",
+   213→          result,
+   214→        );
+   215→      }
+   216→
+   217→      return result.map((alert) => {
+   218→        const validatedAlert = MoteurImmoAlertSchema.parse(alert);
+   219→        return this.convertToInternalAlert(validatedAlert);
+   220→      });
+   221→    } catch (error) {
+   222→      if (error instanceof Error && error.name === "ZodError") {
+   223→        throw new MoteurImmoValidationError(
+   224→          "Invalid API response for alerts list",
+   225→          error,
+   226→        );
+   227→      }
+   228→      throw error;
+   229→    }
+   230→  }
+   231→
+   232→  async searchCities(query: string): Promise<MoteurImmoCity[]> {
+   233→    if (!query.trim() || query.length < 2) {
+   234→      return [];
+   235→    }
+   236→
+   237→    const cacheKey = this.cache.generateKey("cities", {
+   238→      query: query.toLowerCase(),
+   239→    });
+   240→
+   241→    try {
+   242→      const result = await this.makeRequest<MoteurImmoCitySearchResponse>(
+   243→        "/cities/search",
+   244→        {
+   245→          method: "GET",
+   246→          cacheKey,
+   247→          cacheTtl: 3600000, // 1 hour cache for cities
+   248→        },
+   249→        { query },
+   250→      );
+   251→
+   252→      // Validate response
+   253→      const validatedResult = MoteurImmoCitySearchResponseSchema.parse(result);
+   254→
+   255→      logger.debug(
+   256→        `🏙️ [MoteurImmo] Found ${validatedResult.length} cities for query "${query}"`,
+   257→      );
+   258→
+   259→      return validatedResult;
+   260→    } catch (error) {
+   261→      if (error instanceof Error && error.name === "ZodError") {
+   262→        throw new MoteurImmoValidationError(
+   263→          "Invalid API response for cities search",
+   264→          error,
+   265→        );
+   266→      }
+   267→      throw error;
+   268→    }
+   269→  }
+   270→
+   271→  // Utility methods
+   272→  getRateLimiterStats() {
+   273→    return this.rateLimiter.getStats();
+   274→  }
+   275→
+   276→  getCacheStats() {
+   277→    return {
+   278→      size: this.cache.size(),
+   279→      enabled: this.cacheEnabled,
+   280→    };
+   281→  }
+   282→
+   283→  clearCache() {
+   284→    this.cache.clear();
+   285→  }
+   286→
+   287→  cleanupCache() {
+   288→    return this.cache.cleanup();
+   289→  }
+   290→
+   291→  // Private methods
+   292→  private async makeRequest<T>(
+   293→    endpoint: string,
+   294→    options: {
+   295→      method?: "GET" | "POST" | "PUT" | "DELETE";
+   296→      body?: unknown;
+   297→      headers?: Record<string, string>;
+   298→      skipRateLimit?: boolean;
+   299→      cacheTtl?: number;
+   300→      cacheKey?: string;
+   301→    } = {},
+   302→    queryParams?: Record<string, string>,
+   303→  ): Promise<T> {
+   304→    const {
+   305→      method = "GET",
+   306→      body,
+   307→      headers = {},
+   308→      skipRateLimit = false,
+   309→      cacheTtl,
+   310→      cacheKey,
+   311→    } = options;
+   312→
+   313→    // Check cache first (for GET requests)
+   314→    if (method === "GET" && this.cacheEnabled && cacheKey) {
+   315→      const cachedResult = this.cache.get<T>(cacheKey);
+   316→      if (cachedResult) {
+   317→        logger.debug(`[MoteurImmo] Cache hit for ${cacheKey}`);
+   318→        return cachedResult;
+   319→      }
+   320→    }
+   321→
+   322→    // Rate limiting check
+   323→    if (!skipRateLimit) {
+   324→      const rateLimitCheck = await this.rateLimiter.checkLimit();
+   325→      if (!rateLimitCheck.allowed) {
+   326→        throw new MoteurImmoRateLimitError(
+   327→          `Rate limit exceeded. Retry after ${rateLimitCheck.retryAfter} seconds`,
+   328→          rateLimitCheck.retryAfter,
+   329→        );
+   330→      }
+   331→    }
+   332→
+   333→    // Build URL with query parameters for GET requests
+   334→    let url = `${this.baseUrl}${endpoint}`;
+   335→    if (method === "GET" || method === "DELETE") {
+   336→      const searchParams = new URLSearchParams();
+   337→      searchParams.append("apiKey", this.apiKey);
+   338→
+   339→      // Add additional query parameters if provided
+   340→      if (queryParams) {
+   341→        Object.entries(queryParams).forEach(([key, value]) => {
+   342→          searchParams.append(key, value);
+   343→        });
+   344→      }
+   345→
+   346→      url += `?${searchParams.toString()}`;
+   347→    }
+   348→
+   349→    const requestOptions: RequestInit = {
+   350→      method,
+   351→      headers: {
+   352→        "Content-Type": "application/json",
+   353→        "User-Agent": "ChooseWisely/1.0",
+   354→        ...headers,
+   355→      },
+   356→      signal: AbortSignal.timeout(this.timeout),
+   357→    };
+   358→
+   359→    // MoteurImmo uses apiKey in body for POST/PUT, and query param for GET/DELETE
+   360→    if (body) {
+   361→      // Add apiKey to body for POST/PUT requests
+   362→      const bodyWithApiKey = {
+   363→        apiKey: this.apiKey,
+   364→        ...body,
+   365→      };
+   366→      requestOptions.body = JSON.stringify(bodyWithApiKey);
+   367→    }
+   368→
+   369→    // Recursive function to handle retries
+   370→    const executeRequest = async (attempt: number): Promise<T> => {
+   371→      try {
+   372→        logger.debug(`[MoteurImmo] ${method} ${url} (attempt ${attempt})`);
+   373→
+   374→        const response = await fetch(url, requestOptions);
+   375→
+   376→        // Handle different HTTP status codes
+   377→        if (response.status === 429) {
+   378→          const retryAfter = response.headers.get("Retry-After");
+   379→          const retryAfterSeconds = retryAfter
+   380→            ? parseInt(retryAfter)
+   381→            : undefined;
+   382→          throw new MoteurImmoRateLimitError(
+   383→            "Rate limit exceeded by API",
+   384→            retryAfterSeconds,
+   385→          );
+   386→        }
+   387→
+   388→        if (response.status === 401 || response.status === 403) {
+   389→          throw new MoteurImmoAuthError("Authentication failed");
+   390→        }
+   391→
+   392→        if (!response.ok) {
+   393→          const errorData = await response.json().catch(() => ({}));
+   394→          const apiError = APIErrorSchema.safeParse(errorData);
+   395→
+   396→          const errorMessage = apiError.success
+   397→            ? apiError.data.message
+   398→            : `HTTP ${response.status}: ${response.statusText}`;
+   399→
+   400→          throw new MoteurImmoError(
+   401→            errorMessage,
+   402→            apiError.success
+   403→              ? (apiError.data.code ?? "API_ERROR")
+   404→              : "HTTP_ERROR",
+   405→            response.status,
+   406→            errorData,
+   407→          );
+   408→        }
+   409→
+   410→        const data = await response.json();
+   411→
+   412→        // Cache successful GET responses
+   413→        if (method === "GET" && this.cacheEnabled && cacheKey) {
+   414→          this.cache.set(cacheKey, data, cacheTtl);
+   415→          logger.debug(`[MoteurImmo] Cached response for ${cacheKey}`);
+   416→        }
+   417→
+   418→        return data;
+   419→      } catch (error) {
+   420→        // Don't retry on certain errors
+   421→        if (
+   422→          error instanceof MoteurImmoAuthError ||
+   423→          error instanceof MoteurImmoValidationError ||
+   424→          (error instanceof MoteurImmoError && error.statusCode === 404)
+   425→        ) {
+   426→          throw error;
+   427→        }
+   428→
+   429→        // If we've exhausted retries, throw the error
+   430→        if (attempt >= this.maxRetries) {
+   431→          // Convert fetch errors to our custom errors
+   432→          if (error instanceof Error && error.name === "AbortError") {
+   433→            throw new MoteurImmoNetworkError("Request timeout", error);
+   434→          }
+   435→
+   436→          if (error instanceof TypeError && error.message.includes("fetch")) {
+   437→            throw new MoteurImmoNetworkError("Network error", error);
+   438→          }
+   439→
+   440→          throw error;
+   441→        }
+   442→
+   443→        // For rate limit errors, wait before retrying
+   444→        if (error instanceof MoteurImmoRateLimitError && error.retryAfter) {
+   445→          logger.debug(
+   446→            `[MoteurImmo] Rate limited, waiting ${error.retryAfter}s`,
+   447→          );
+   448→          const retryAfterMs = error.retryAfter * 1000;
+   449→          return new Promise((resolve) => {
+   450→            setTimeout(() => {
+   451→              resolve(executeRequest(attempt + 1));
+   452→            }, retryAfterMs);
+   453→          });
+   454→        }
+   455→
+   456→        // Exponential backoff for network errors
+   457→        const delay = Math.min(1000 * Math.pow(2, attempt - 1), 10000);
+   458→        logger.debug(`[MoteurImmo] Request failed, retrying in ${delay}ms`);
+   459→        return new Promise((resolve) => {
+   460→          setTimeout(() => {
+   461→            resolve(executeRequest(attempt + 1));
+   462→          }, delay);
+   463→        });
+   464→      }
+   465→    };
+   466→
+   467→    return executeRequest(1);
+   468→  }
+   469→
+   470→  // Data conversion methods
+   471→  private convertToMoteurImmoSearchCriteria(
+   472→    criteria: SearchCriteria,
+   473→  ): MoteurImmoSearchCriteria {
+   474→    const moteurImmoSearch: MoteurImmoSearchCriteria = {
+   475→      apiKey: this.apiKey,
+   476→      page: criteria.page,
+   477→      maxLength: criteria.limit,
+   478→      withCount: true, // Always get count for pagination
+   479→      keywordsOperator: "and", // Default to 'and' operator
+   480→    };
+   481→
+   482→    // Convert type
+   483→    if (criteria.type) {
+   484→      moteurImmoSearch.types = [criteria.type];
+   485→    }
+   486→
+   487→    // Convert category
+   488→    if (criteria.category) {
+   489→      const categoryMap: Record<
+   490→        string,
+   491→        | "house"
+   492→        | "flat"
+   493→        | "land"
+   494→        | "parking/garage/box"
+   495→        | "office"
+   496→        | "shop"
+   497→        | "warehouse"
+   498→        | "building"
+   499→      > = {
+   500→        house: "house",
+   501→        flat: "flat",
+   502→        land: "land",
+   503→        parking: "parking/garage/box",
+   504→      };
+   505→      moteurImmoSearch.categories = [categoryMap[criteria.category]];
+   506→    }
+   507→
+   508→    // Price filters
+   509→    if (criteria.priceMin) moteurImmoSearch.priceMin = criteria.priceMin;
+   510→    if (criteria.priceMax) moteurImmoSearch.priceMax = criteria.priceMax;
+   511→
+   512→    // Surface filters
+   513→    if (criteria.surfaceMin) moteurImmoSearch.surfaceMin = criteria.surfaceMin;
+   514→    if (criteria.surfaceMax) moteurImmoSearch.surfaceMax = criteria.surfaceMax;
+   515→
+   516→    // Rooms filters
+   517→    if (criteria.roomsMin) moteurImmoSearch.roomsMin = criteria.roomsMin;
+   518→    if (criteria.roomsMax) moteurImmoSearch.roomsMax = criteria.roomsMax;
+   519→
+   520→    // Location
+   521→    if (criteria.city || criteria.postalCode) {
+   522→      const location: { postalCode?: string } = {};
+   523→
+   524→      if (criteria.postalCode) {
+   525→        location.postalCode = criteria.postalCode;
+   526→      }
+   527→
+   528→      // If we have a city name, try to detect if it's a postal code or city name
+   529→      if (criteria.city) {
+   530→        const cityValue = criteria.city.trim();
+   531→
+   532→        // Check if it looks like a postal code (5 digits)
+   533→        if (/^\d{5}$/.test(cityValue)) {
+   534→          location.postalCode = cityValue;
+   535→        } else {
+   536→          // For city names, we'll use keywords instead of locations for better search
+   537→          if (!criteria.search) {
+   538→            moteurImmoSearch.keywords = [cityValue];
+   539→            moteurImmoSearch.keywordsOperator = "and";
+   540→          }
+   541→        }
+   542→      }
+   543→
+   544→      // Only add locations if we have a postal code
+   545→      if (location.postalCode) {
+   546→        moteurImmoSearch.locations = [location];
+   547→
+   548→        if (criteria.radius) {
+   549→          moteurImmoSearch.radius = criteria.radius;
+   550→        }
+   551→      }
+   552→    }
+   553→
+   554→    // Energy grades
+   555→    if (criteria.energyGradeMin)
+   556→      moteurImmoSearch.energyGradeMin = criteria.energyGradeMin;
+   557→    if (criteria.energyGradeMax)
+   558→      moteurImmoSearch.energyGradeMax = criteria.energyGradeMax;
+   559→
+   560→    // Options
+   561→    if (criteria.options && criteria.options.length > 0) {
+   562→      moteurImmoSearch.options = criteria.options;
+   563→    }
+   564→
+   565→    // Keywords from search query
+   566→    if (criteria.search) {
+   567→      const searchKeywords = criteria.search.split(/\s+/).filter(Boolean);
+   568→
+   569→      // If we already have keywords from city processing, merge them
+   570→      if (moteurImmoSearch.keywords) {
+   571→        moteurImmoSearch.keywords = [
+   572→          ...moteurImmoSearch.keywords,
+   573→          ...searchKeywords,
+   574→        ];
+   575→      } else {
+   576→        moteurImmoSearch.keywords = searchKeywords;
+   577→      }
+   578→      moteurImmoSearch.keywordsOperator = "and";
+   579→    }
+   580→
+   581→    // Sorting
+   582→    if (criteria.sortBy !== undefined) {
+   583→      const sortMap: Record<
+   584→        string,
+   585→        | "creationDate-desc"
+   586→        | "creationDate-asc"
+   587→        | "price-asc"
+   588→        | "price-desc"
+   589→        | "pricePerSquareMeter-asc"
+   590→        | "pricePerSquareMeter-desc"
+   591→        | "lastPriceChangeDate-desc"
+   592→        | "lastPriceChangeDate-asc"
+   593→        | "lastEventDate-desc"
+   594→        | "lastEventDate-asc"
+   595→      > = {
+   596→        price: criteria.sortOrder === "asc" ? "price-asc" : "price-desc",
+   597→        date:
+   598→          criteria.sortOrder === "asc"
+   599→            ? "creationDate-asc"
+   600→            : "creationDate-desc",
+   601→        surface: criteria.sortOrder === "asc" ? "price-asc" : "price-desc", // Fallback to price as surface sort not available
+   602→        pricePerM2:
+   603→          criteria.sortOrder === "asc"
+   604→            ? "pricePerSquareMeter-asc"
+   605→            : "pricePerSquareMeter-desc",
+   606→      };
+   607→      moteurImmoSearch.sortBy = sortMap[criteria.sortBy] ?? "creationDate-desc";
+   608→    }
+   609→
+   610→    return moteurImmoSearch;
+   611→  }
+   612→
+   613→  private convertToInternalSearchResult(
+   614→    response: MoteurImmoSearchResponse,
+   615→    originalCriteria: SearchCriteria,
+   616→  ): SearchResult {
+   617→    const properties = response.ads.map((prop) =>
+   618→      this.convertToInternalProperty(prop),
+   619→    );
+   620→
+   621→    const page = originalCriteria.page;
+   622→    const limit = originalCriteria.limit;
+   623→    const total = response.count; // MoteurImmo returns total count in response
+   624→    const totalPages = Math.ceil(total / limit);
+   625→
+   626→    return {
+   627→      properties,
+   628→      pagination: {
+   629→        page,
+   630→        limit,
+   631→        total,
+   632→        totalPages,
+   633→        hasNext: page < totalPages,
+   634→        hasPrev: page > 1,
+   635→      },
+   636→      filters: {
+   637→        appliedFilters: originalCriteria,
+   638→        availableTypes: ["sale", "rental"],
+   639→        availableCategories: ["house", "flat", "land", "parking/garage/box"],
+   640→        priceMin: 0,
+   641→        priceMax: 10000000,
+   642→        surfaceMin: 0,
+   643→        surfaceMax: 1000,
+   644→      },
+   645→    };
+   646→  }
+   647→
+   648→  // Helper to convert null to undefined
+   649→  private nullToUndefined<T>(value: T | null): T | undefined {
+   650→    return value ?? undefined;
+   651→  }
+   652→
+   653→  private convertToInternalProperty(
+   654→    moteurImmoProperty: MoteurImmoProperty,
+   655→  ): Property {
+   656→    return {
+   657→      id: moteurImmoProperty.uniqueId,
+   658→      uniqueId: moteurImmoProperty.uniqueId,
+   659→      externalId: moteurImmoProperty.adId,
+   660→      origin: moteurImmoProperty.origin,
+   661→
+   662→      title: moteurImmoProperty.title,
+   663→      description: moteurImmoProperty.description,
+   664→      type: moteurImmoProperty.type,
+   665→      category: this.convertCategory(moteurImmoProperty.category),
+   666→      url: moteurImmoProperty.url,
+   667→
+   668→      price: moteurImmoProperty.price ?? 0, // Use 0 if price is null
+   669→      originalPrice: this.nullToUndefined(moteurImmoProperty.originalPrice),
+   670→      pricePerM2: this.nullToUndefined(moteurImmoProperty.pricePerSquareMeter),
+   671→      priceDrop: this.nullToUndefined(moteurImmoProperty.priceDrop),
+   672→
+   673→      surface: this.nullToUndefined(moteurImmoProperty.surface),
+   674→      landSurface: this.nullToUndefined(moteurImmoProperty.landSurface),
+   675→      rooms: this.nullToUndefined(moteurImmoProperty.rooms),
+   676→      bedrooms: this.nullToUndefined(moteurImmoProperty.bedrooms),
+   677→      floor: this.nullToUndefined(moteurImmoProperty.floor),
+   678→      totalFloors: this.nullToUndefined(moteurImmoProperty.buildingFloors),
+   679→      constructionYear: this.nullToUndefined(
+   680→        moteurImmoProperty.constructionYear,
+   681→      ),
+   682→
+   683→      city: moteurImmoProperty.location.city,
+   684→      postalCode: this.nullToUndefined(moteurImmoProperty.location.postalCode),
+   685→      address: `${moteurImmoProperty.location.city}${moteurImmoProperty.location.postalCode ? ` ${moteurImmoProperty.location.postalCode}` : ""}`,
+   686→      coordinates: moteurImmoProperty.location.coordinates
+   687→        ? {
+   688→            lat: moteurImmoProperty.location.coordinates[1],
+   689→            lng: moteurImmoProperty.location.coordinates[0],
+   690→          }
+   691→        : undefined,
+   692→
+   693→      energyClass: this.nullToUndefined(moteurImmoProperty.energyGrade),
+   694→      energyValue: this.nullToUndefined(moteurImmoProperty.energyValue),
+   695→      gasClass: this.nullToUndefined(moteurImmoProperty.gasGrade),
+   696→      gasValue: this.nullToUndefined(moteurImmoProperty.gasValue),
+   697→
+   698→      hasGarden: moteurImmoProperty.options?.includes("hasGarden") ?? false,
+   699→      hasParking: moteurImmoProperty.options?.includes("hasParking") ?? false,
+   700→      hasLift: moteurImmoProperty.options?.includes("hasLift") ?? false,
+   701→      hasTerrace: moteurImmoProperty.options?.includes("hasTerrace") ?? false,
+   702→      hasBalcony: moteurImmoProperty.options?.includes("hasBalcony") ?? false,
+   703→
+   704→      images: moteurImmoProperty.pictureUrls ?? [],
+   705→      mainImage: this.nullToUndefined(moteurImmoProperty.pictureUrl),
+   706→
+   707→      publisher: moteurImmoProperty.publisher
+   708→        ? {
+   709→            type: moteurImmoProperty.publisher.type,
+   710→            name: this.nullToUndefined(moteurImmoProperty.publisher.name),
+   711→            phone: this.nullToUndefined(moteurImmoProperty.publisher.phone),
+   712→          }
+   713→        : undefined,
+   714→
+   715→      publishedAt: moteurImmoProperty.creationDate,
+   716→      updatedAt:
+   717→        moteurImmoProperty.lastChangeDate ?? moteurImmoProperty.creationDate,
+   718→      createdAt: new Date().toISOString(),
+   719→    };
+   720→  }
+   721→
+   722→  private convertCategory(moteurImmoCategory: string): Property["category"] {
+   723→    const categoryMap: Record<string, Property["category"]> = {
+   724→      house: "house",
+   725→      flat: "flat",
+   726→      land: "land",
+   727→      "parking/garage/box": "office", // Map parking to office category
+   728→      office: "office",
+   729→      shop: "shop",
+   730→      warehouse: "warehouse",
+   731→      building: "building",
+   732→      premises: "office", // Map premises to office category
+   733→    };
+   734→    return categoryMap[moteurImmoCategory] ?? "flat";
+   735→  }
+   736→
+   737→  private convertToMoteurImmoAlertCriteria(
+   738→    criteria: AlertCriteria,
+   739→  ): MoteurImmoAlertCriteria {
+   740→    // Convert internal alert criteria to MoteurImmo format
+   741→    // Extract search criteria from alert criteria (exclude alert-specific fields)
+   742→    const {
+   743→      name,
+   744→      frequency,
+   745→      watchedEvents,
+   746→      webhookUrl,
+   747→      email,
+   748→      ...searchFields
+   749→    } = criteria;
+   750→    const searchCriteria = this.convertToMoteurImmoSearchCriteria({
+   751→      ...searchFields,
+   752→      page: 1,
+   753→      limit: 20,
+   754→      sortOrder: "desc" as const,
+   755→    });
+   756→
+   757→    return {
+   758→      apiKey: this.apiKey,
+   759→      name: criteria.name,
+   760→      email: criteria.email,
+   761→      webhookUrl: criteria.webhookUrl,
+   762→      watchedEvents: criteria.watchedEvents.map((event) => {
+   763→        const eventMap: Record<
+   764→          string,
+   765→          "creation" | "price change" | "republication" | "update" | "deletion"
+   766→        > = {
+   767→          creation: "creation",
+   768→          price_change: "price change",
+   769→          republication: "republication",
+   770→          update: "update",
+   771→          deletion: "deletion",
+   772→        };
+   773→        return eventMap[event] ?? "creation";
+   774→      }),
+   775→      query: searchCriteria,
+   776→    };
+   777→  }
+   778→
+   779→  private convertToInternalAlert(
+   780→    moteurImmoAlert: MoteurImmoAlert,
+   781→    originalCriteria?: AlertCriteria,
+   782→  ): Alert {
+   783→    return {
+   784→      id: moteurImmoAlert.alertId,
+   785→      moteurImmoAlertId: moteurImmoAlert.alertId,
+   786→      criteria: originalCriteria ?? {
+   787→        name: moteurImmoAlert.name,
+   788→        frequency: "daily",
+   789→        watchedEvents: ["creation"],
+   790→      },
+   791→      isActive: moteurImmoAlert.isActive,
+   792→      lastTriggered: undefined,
+   793→      propertiesFound: 0,
+   794→      createdAt: moteurImmoAlert.createdAt,
+   795→      updatedAt: moteurImmoAlert.updatedAt,
+   796→    };
+   797→  }
+   798→}
+   799→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

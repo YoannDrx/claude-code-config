@@ -1,0 +1,37 @@
+The file /Users/yoannandrieux/Projets/moodday/e2e/utils/auth-test.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    47→      timeout: 30000,
+    48→    });
+    49→  }
+    50→
+    51→  if (options.admin) {
+    52→    const user = await retry(
+    53→      async () =>
+    54→        prisma.user.findUniqueOrThrow({
+    55→          where: { email: userData.email },
+    56→        }),
+    57→      {
+    58→        maxAttempts: 5,
+    59→        delayMs: 1000,
+    60→        backoff: true,
+    61→      },
+    62→    );
+    63→    logger.info("Creating admin user", user);
+    64→    await prisma.user.update({
+    65→      where: { id: user.id },
+    66→      data: { role: "admin" },
+    67→    });
+    68→
+    69→    // Sign out and sign back in to refresh session with admin role
+    70→    await signOutAccount({ page: options.page });
+    71→    await signInAccount({
+    72→      page: options.page,
+    73→      userData: { email: userData.email, password: userData.password },
+    74→      callbackURL: options.callbackURL,
+    75→    });
+    76→  }
+    77→
+    78→  return userData;
+    79→}
+    80→
+    81→/**
+    82→ * Helper function to sign in with an existing account

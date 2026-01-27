@@ -1,0 +1,368 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Devenir Trader | MyCryptoPilot</title>
+     7→    <script src="https://cdn.tailwindcss.com"></script>
+     8→    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     9→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    10→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    11→    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+    12→    
+    13→    <style>
+    14→        :root {
+    15→            --bg-obsidian: #05070a;
+    16→            --accent-emerald: #00ffaa;
+    17→            --accent-crimson: #ff3366;
+    18→            --glass-border: rgba(255, 255, 255, 0.1);
+    19→        }
+    20→
+    21→        body {
+    22→            font-family: 'Sora', sans-serif;
+    23→            background-color: var(--bg-obsidian);
+    24→            color: #ffffff;
+    25→            overflow-x: hidden;
+    26→            min-height: 100vh;
+    27→            display: flex;
+    28→            flex-direction: column;
+    29→        }
+    30→
+    31→        .grain {
+    32→            position: fixed;
+    33→            top: 0; left: 0; width: 100%; height: 100%;
+    34→            pointer-events: none;
+    35→            z-index: 50;
+    36→            opacity: 0.04;
+    37→            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    38→        }
+    39→
+    40→        .mesh-gradient {
+    41→            position: absolute;
+    42→            top: 0; left: 0; width: 100%; height: 100%;
+    43→            background: 
+    44→                radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.05) 0%, transparent 40%),
+    45→                radial-gradient(circle at 90% 80%, rgba(255, 51, 102, 0.05) 0%, transparent 40%);
+    46→            z-index: -1;
+    47→        }
+    48→
+    49→        .hyper-border {
+    50→            position: relative;
+    51→            background: rgba(255, 255, 255, 0.02);
+    52→            backdrop-filter: blur(12px);
+    53→            border: 1px solid var(--glass-border);
+    54→            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    55→        }
+    56→
+    57→        .input-glow:focus {
+    58→            outline: none;
+    59→            border-color: var(--accent-emerald);
+    60→            box-shadow: 0 0 15px rgba(0, 255, 170, 0.15);
+    61→        }
+    62→
+    63→        .specialty-card {
+    64→            cursor: pointer;
+    65→            transition: all 0.3s ease;
+    66→        }
+    67→
+    68→        .specialty-card.active {
+    69→            background: rgba(0, 255, 170, 0.1);
+    70→            border-color: var(--accent-emerald);
+    71→        }
+    72→
+    73→        .scanline {
+    74→            width: 100%;
+    75→            height: 1px;
+    76→            background: linear-gradient(90deg, transparent, var(--accent-emerald), transparent);
+    77→            position: absolute;
+    78→            animation: scan 6s linear infinite;
+    79→            opacity: 0.2;
+    80→            pointer-events: none;
+    81→        }
+    82→
+    83→        @keyframes scan {
+    84→            0% { top: 0; }
+    85→            100% { top: 100%; }
+    86→        }
+    87→
+    88→        [x-cloak] { display: none !important; }
+    89→
+    90→        .step-dot.active {
+    91→            background-color: var(--accent-emerald);
+    92→            box-shadow: 0 0 10px var(--accent-emerald);
+    93→        }
+    94→    </style>
+    95→</head>
+    96→<body x-data="{ 
+    97→    mobileMenu: false, 
+    98→    form: {
+    99→        displayName: '',
+   100→        bio: '',
+   101→        specialty: 'BOTH',
+   102→        twitter: '',
+   103→        telegram: '',
+   104→        youtube: ''
+   105→    },
+   106→    isSubmitting: false,
+   107→    showSuccess: false
+   108→}">
+   109→    <div class="grain"></div>
+   110→    <div class="mesh-gradient"></div>
+   111→
+   112→    <!-- Navigation -->
+   113→    <nav class="sticky top-0 z-[100] border-b border-white/5 bg-black/60 backdrop-blur-xl">
+   114→        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+   115→            <div class="flex items-center gap-3 group cursor-pointer" onclick="window.location.href='#'">
+   116→                <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+   117→                    <svg viewBox="0 0 24 24" class="w-6 h-6 text-black fill-current"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.31.17-.69.17-1 0L3.53 17.38c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.43c.31-.17.69-.17 1 0l7.97 4.43c.32.17.53.5.53.88v9z"/></svg>
+   118→                </div>
+   119→                <span class="text-xl font-extrabold tracking-tighter uppercase italic">MyCryptoPilot</span>
+   120→            </div>
+   121→
+   122→            <div class="hidden md:flex items-center gap-8">
+   123→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Marketplace</a>
+   124→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Signaux</a>
+   125→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors underline decoration-emerald-500/50 underline-offset-4">Devenir Trader</a>
+   126→            </div>
+   127→
+   128→            <div class="flex items-center gap-4">
+   129→                <div class="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-full border border-white/10">
+   130→                    <img src="https://i.pravatar.cc/100?u=user123" class="w-6 h-6 rounded-full" alt="Avatar">
+   131→                    <span class="text-xs font-bold tracking-tight">0x7a...d2f</span>
+   132→                </div>
+   133→            </div>
+   134→        </div>
+   135→    </nav>
+   136→
+   137→    <main class="flex-grow flex items-center justify-center py-12 px-6">
+   138→        <div class="max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-start" x-show="!showSuccess" x-transition>
+   139→            
+   140→            <!-- Form Section -->
+   141→            <div class="space-y-8">
+   142→                <div>
+   143→                    <h1 class="text-5xl font-black italic uppercase tracking-tighter mb-4">Initialiser <br><span class="text-emerald-500">Votre Profil Pilot</span></h1>
+   144→                    <p class="text-gray-400 leading-relaxed">Prêt à monétiser votre expertise ? Remplissez ces informations pour apparaître dans la marketplace. Le badge <span class="text-emerald-400 font-bold italic">Vérifié</span> sera activé après connexion de votre exchange.</p>
+   145→                </div>
+   146→
+   147→                <form @submit.prevent="isSubmitting = true; setTimeout(() => { isSubmitting = false; showSuccess = true }, 2000)" class="space-y-6">
+   148→                    <!-- Display Name -->
+   149→                    <div class="space-y-2">
+   150→                        <label class="text-[10px] uppercase tracking-[0.2em] font-black text-gray-500 ml-1">Nom d'affichage public</label>
+   151→                        <input type="text" x-model="form.displayName" placeholder="ex: AlphaWhale_Trade" required
+   152→                            class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-lg font-bold input-glow transition-all placeholder:text-gray-700">
+   153→                    </div>
+   154→
+   155→                    <!-- Bio -->
+   156→                    <div class="space-y-2">
+   157→                        <label class="text-[10px] uppercase tracking-[0.2em] font-black text-gray-500 ml-1">Bio & Expertise (Max 160 car.)</label>
+   158→                        <textarea x-model="form.bio" maxlength="160" rows="3" placeholder="Décrivez votre style de trading, vos actifs préférés et votre gestion du risque..." required
+   159→                            class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-sm font-medium input-glow transition-all placeholder:text-gray-700 resize-none"></textarea>
+   160→                    </div>
+   161→
+   162→                    <!-- Specialty Selector -->
+   163→                    <div class="space-y-2">
+   164→                        <label class="text-[10px] uppercase tracking-[0.2em] font-black text-gray-500 ml-1">Spécialité Trading</label>
+   165→                        <div class="grid grid-cols-3 gap-3">
+   166→                            <div @click="form.specialty = 'SPOT'" :class="form.specialty === 'SPOT' ? 'active' : ''" 
+   167→                                class="specialty-card hyper-border p-4 rounded-xl text-center group">
+   168→                                <div class="text-[10px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-emerald-400 transition-colors">Spot</div>
+   169→                            </div>
+   170→                            <div @click="form.specialty = 'FUTURES'" :class="form.specialty === 'FUTURES' ? 'active' : ''" 
+   171→                                class="specialty-card hyper-border p-4 rounded-xl text-center group">
+   172→                                <div class="text-[10px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-emerald-400 transition-colors">Futures</div>
+   173→                            </div>
+   174→                            <div @click="form.specialty = 'BOTH'" :class="form.specialty === 'BOTH' ? 'active' : ''" 
+   175→                                class="specialty-card hyper-border p-4 rounded-xl text-center group">
+   176→                                <div class="text-[10px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-emerald-400 transition-colors">Hybride</div>
+   177→                            </div>
+   178→                        </div>
+   179→                    </div>
+   180→
+   181→                    <!-- Social Links -->
+   182→                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+   183→                        <div class="space-y-2">
+   184→                            <label class="text-[10px] uppercase tracking-[0.2em] font-black text-gray-500 ml-1">X (Twitter)</label>
+   185→                            <div class="relative">
+   186→                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm">@</span>
+   187→                                <input type="text" x-model="form.twitter" class="w-full bg-white/5 border border-white/10 rounded-xl pl-9 pr-4 py-3 text-sm font-bold input-glow transition-all">
+   188→                            </div>
+   189→                        </div>
+   190→                        <div class="space-y-2">
+   191→                            <label class="text-[10px] uppercase tracking-[0.2em] font-black text-gray-500 ml-1">Telegram</label>
+   192→                            <div class="relative">
+   193→                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm">t.me/</span>
+   194→                                <input type="text" x-model="form.telegram" class="w-full bg-white/5 border border-white/10 rounded-xl pl-14 pr-4 py-3 text-sm font-bold input-glow transition-all">
+   195→                            </div>
+   196→                        </div>
+   197→                    </div>
+   198→
+   199→                    <!-- Submit Button -->
+   200→                    <button type="submit" :disabled="isSubmitting"
+   201→                        class="w-full py-5 bg-emerald-500 text-black font-black uppercase tracking-widest text-lg rounded-2xl hover:bg-emerald-400 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_20px_50px_rgba(16,185,129,0.2)] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3">
+   202→                        <span x-show="!isSubmitting">Créer mon profil de Trader</span>
+   203→                        <template x-if="isSubmitting">
+   204→                            <svg class="animate-spin h-6 w-6 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+   205→                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+   206→                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+   207→                            </svg>
+   208→                        </template>
+   209→                    </button>
+   210→                </form>
+   211→            </div>
+   212→
+   213→            <!-- Preview Section -->
+   214→            <div class="sticky top-32 lg:block">
+   215→                <div class="mb-6 flex items-center gap-4">
+   216→                    <div class="h-px flex-grow bg-white/10"></div>
+   217→                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500/50">Aperçu Marketplace</span>
+   218→                    <div class="h-px flex-grow bg-white/10"></div>
+   219→                </div>
+   220→
+   221→                <div class="relative group">
+   222→                    <div class="absolute -inset-1 bg-emerald-500/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+   223→                    
+   224→                    <div class="hyper-border rounded-[2rem] p-8 relative overflow-hidden">
+   225→                        <div class="scanline"></div>
+   226→                        
+   227→                        <!-- Header with unverified badge -->
+   228→                        <div class="flex items-start justify-between mb-8">
+   229→                            <div class="flex items-center gap-5">
+   230→                                <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-gray-800 to-gray-900 border border-white/10 flex items-center justify-center overflow-hidden">
+   231→                                    <template x-if="form.displayName">
+   232→                                        <img :src="`https://api.dicebear.com/7.x/shapes/svg?seed=${form.displayName}`" class="w-full h-full object-cover">
+   233→                                    </template>
+   234→                                    <template x-if="!form.displayName">
+   235→                                        <svg class="w-10 h-10 text-white/10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+   236→                                    </template>
+   237→                                </div>
+   238→                                <div>
+   239→                                    <div class="flex items-center gap-2 mb-1">
+   240→                                        <h3 class="text-2xl font-black italic uppercase tracking-tighter" x-text="form.displayName || 'VOTRE NOM ICI'"></h3>
+   241→                                        <!-- Not Verified Badge -->
+   242→                                        <div class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[8px] text-gray-500 uppercase font-black tracking-tighter">Unverified</div>
+   243→                                    </div>
+   244→                                    <div class="flex gap-3">
+   245→                                        <span class="text-[10px] text-emerald-400 font-bold uppercase tracking-widest" x-text="form.specialty"></span>
+   246→                                        <div class="flex gap-2">
+   247→                                            <template x-if="form.twitter"><div class="w-3 h-3 bg-white/20 rounded-full"></div></template>
+   248→                                            <template x-if="form.telegram"><div class="w-3 h-3 bg-white/20 rounded-full"></div></template>
+   249→                                        </div>
+   250→                                    </div>
+   251→                                </div>
+   252→                            </div>
+   253→                        </div>
+   254→
+   255→                        <!-- Bio Content -->
+   256→                        <div class="mb-8">
+   257→                            <p class="text-gray-400 text-sm leading-relaxed italic" x-text="form.bio || 'Votre bio apparaîtra ici. Donnez envie aux followers de vous suivre en expliquant votre stratégie...'"></p>
+   258→                        </div>
+   259→
+   260→                        <!-- Placeholder Stats (Locked/Zero) -->
+   261→                        <div class="grid grid-cols-2 gap-4 mb-8 opacity-40 grayscale">
+   262→                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+   263→                                <div class="text-[10px] text-gray-500 uppercase mb-1">Winrate</div>
+   264→                                <div class="text-xl font-bold">--%</div>
+   265→                            </div>
+   266→                            <div class="p-4 bg-white/5 rounded-xl border border-white/5">
+   267→                                <div class="text-[10px] text-gray-500 uppercase mb-1">Net PnL</div>
+   268→                                <div class="text-xl font-bold">+$0.00</div>
+   269→                            </div>
+   270→                        </div>
+   271→
+   272→                        <!-- Bottom Action -->
+   273→                        <div class="pt-6 border-t border-white/5 flex items-center justify-between">
+   274→                            <div class="flex -space-x-2">
+   275→                                <div class="w-8 h-8 rounded-full bg-gray-800 border-2 border-obsidian"></div>
+   276→                                <div class="w-8 h-8 rounded-full bg-gray-700 border-2 border-obsidian"></div>
+   277→                                <div class="w-8 h-8 rounded-full border-2 border-obsidian bg-emerald-500/20 flex items-center justify-center text-[10px] font-bold">+0</div>
+   278→                            </div>
+   279→                            <div class="text-[10px] uppercase font-bold text-gray-500 tracking-widest">0 Followers</div>
+   280→                        </div>
+   281→                    </div>
+   282→                </div>
+   283→
+   284→                <!-- Info Box -->
+   285→                <div class="mt-8 p-6 rounded-2xl bg-emerald-500/5 border border-emerald-500/20">
+   286→                    <h4 class="text-xs font-black uppercase text-emerald-400 mb-2 flex items-center gap-2">
+   287→                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+   288→                        Prochaine Étape
+   289→                    </h4>
+   290→                    <p class="text-[11px] text-gray-400 leading-relaxed">
+   291→                        Après la création, vous devrez connecter une <span class="text-white font-bold">API Key Read-Only</span> de Binance ou Bybit. Notre système synchronisera vos 30 derniers jours de trades pour valider vos statistiques.
+   292→                    </p>
+   293→                </div>
+   294→            </div>
+   295→        </div>
+   296→
+   297→        <!-- Success Screen -->
+   298→        <div class="max-w-xl w-full text-center space-y-8" x-show="showSuccess" x-transition x-cloak>
+   299→            <div class="w-24 h-24 bg-emerald-500 text-black rounded-full flex items-center justify-center mx-auto shadow-[0_0_50px_rgba(16,185,129,0.4)]">
+   300→                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+   301→            </div>
+   302→            <div class="space-y-4">
+   303→                <h2 class="text-5xl font-black italic uppercase tracking-tighter">Profil Créé !</h2>
+   304→                <p class="text-xl text-gray-400">Bienvenue dans l'équipage, Pilot. Votre profil est prêt mais reste invisible dans la marketplace pour le moment.</p>
+   305→            </div>
+   306→            
+   307→            <div class="hyper-border p-8 rounded-3xl space-y-6">
+   308→                <p class="text-sm font-bold text-emerald-400 uppercase tracking-widest">Connectez un Exchange pour devenir "Vérifié"</p>
+   309→                <div class="grid grid-cols-2 gap-4">
+   310→                    <button class="flex flex-col items-center gap-3 p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition-all group">
+   311→                        <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+   312→                            <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=029" class="w-6 h-6">
+   313→                        </div>
+   314→                        <span class="text-xs font-black uppercase">Binance</span>
+   315→                    </button>
+   316→                    <button class="flex flex-col items-center gap-3 p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-emerald-500/50 transition-all group">
+   317→                        <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+   318→                            <img src="https://cryptologos.cc/logos/bybit-logo.svg?v=029" class="w-6 h-6">
+   319→                        </div>
+   320→                        <span class="text-xs font-black uppercase">Bybit</span>
+   321→                    </button>
+   322→                </div>
+   323→            </div>
+   324→
+   325→            <button class="text-gray-500 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">
+   326→                Plus tard, aller au Dashboard →
+   327→            </button>
+   328→        </div>
+   329→    </main>
+   330→
+   331→    <footer class="mt-auto border-t border-white/5 py-10 px-6 bg-black/40">
+   332→        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+   333→            <div class="flex items-center gap-3 opacity-50">
+   334→                <div class="w-6 h-6 bg-emerald-500 rounded flex items-center justify-center">
+   335→                    <svg viewBox="0 0 24 24" class="w-4 h-4 text-black fill-current"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.31.17-.69.17-1 0L3.53 17.38c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.43c.31-.17.69-.17 1 0l7.97 4.43c.32.17.53.5.53.88v9z"/></svg>
+   336→                </div>
+   337→                <span class="text-sm font-extrabold uppercase italic tracking-tighter">MyCryptoPilot</span>
+   338→            </div>
+   339→            <div class="text-[10px] text-gray-600 font-bold uppercase tracking-[0.2em]">
+   340→                &copy; 2026 MyCryptoPilot. Risk-First Logic Enabled.
+   341→            </div>
+   342→            <div class="flex gap-6">
+   343→                <a href="#" class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Politique de Confidentialité</a>
+   344→                <a href="#" class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Support</a>
+   345→            </div>
+   346→        </div>
+   347→    </footer>
+   348→
+   349→    <!-- Mobile Menu Toggle (Consistency with Ref) -->
+   350→    <div x-show="mobileMenu" class="fixed inset-0 z-[200] bg-black p-8 md:hidden" x-cloak>
+   351→        <div class="flex justify-between items-center mb-12">
+   352→            <span class="text-xl font-extrabold tracking-tighter italic uppercase">Menu</span>
+   353→            <button @click="mobileMenu = false" class="text-white">
+   354→                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+   355→            </button>
+   356→        </div>
+   357→        <div class="flex flex-col gap-8 text-3xl font-black italic uppercase">
+   358→            <a href="#" @click="mobileMenu = false">Marketplace</a>
+   359→            <a href="#" @click="mobileMenu = false">Signaux</a>
+   360→            <a href="#" @click="mobileMenu = false">Console</a>
+   361→        </div>
+   362→    </div>
+   363→</body>
+   364→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

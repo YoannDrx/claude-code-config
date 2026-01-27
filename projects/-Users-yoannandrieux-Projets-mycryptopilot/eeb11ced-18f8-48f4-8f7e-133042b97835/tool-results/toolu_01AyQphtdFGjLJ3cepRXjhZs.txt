@@ -1,0 +1,404 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Risk Console | MyCryptoPilot - Professional Risk Intelligence</title>
+     7→    <script src="https://cdn.tailwindcss.com"></script>
+     8→    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     9→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    10→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    11→    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+    12→    
+    13→    <style>
+    14→        :root {
+    15→            --bg-obsidian: #05070a;
+    16→            --accent-emerald: #00ffaa;
+    17→            --accent-crimson: #ff3366;
+    18→            --glass-border: rgba(255, 255, 255, 0.1);
+    19→        }
+    20→
+    21→        body {
+    22→            font-family: 'Sora', sans-serif;
+    23→            background-color: var(--bg-obsidian);
+    24→            color: #ffffff;
+    25→            overflow-x: hidden;
+    26→            min-height: 100vh;
+    27→            display: flex;
+    28→            flex-direction: column;
+    29→        }
+    30→
+    31→        .grain {
+    32→            position: fixed;
+    33→            top: 0; left: 0; width: 100%; height: 100%;
+    34→            pointer-events: none;
+    35→            z-index: 50;
+    36→            opacity: 0.04;
+    37→            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    38→        }
+    39→
+    40→        .mesh-gradient {
+    41→            position: fixed;
+    42→            top: 0; left: 0; width: 100%; height: 100%;
+    43→            background: 
+    44→                radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.05) 0%, transparent 40%),
+    45→                radial-gradient(circle at 90% 80%, rgba(255, 51, 102, 0.05) 0%, transparent 40%);
+    46→            z-index: -1;
+    47→        }
+    48→
+    49→        .hyper-border {
+    50→            position: relative;
+    51→            background: rgba(255, 255, 255, 0.02);
+    52→            backdrop-filter: blur(20px);
+    53→            border: 1px solid var(--glass-border);
+    54→            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    55→        }
+    56→
+    57→        .hyper-border:hover {
+    58→            border-color: rgba(0, 255, 170, 0.3);
+    59→            box-shadow: 0 0 40px rgba(0, 255, 170, 0.05);
+    60→        }
+    61→
+    62→        .glow-text {
+    63→            text-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+    64→        }
+    65→
+    66→        .input-glow:focus {
+    67→            box-shadow: 0 0 15px rgba(0, 255, 170, 0.1);
+    68→            border-color: var(--accent-emerald);
+    69→        }
+    70→
+    71→        .scanline {
+    72→            width: 100%;
+    73→            height: 1px;
+    74→            background: linear-gradient(90deg, transparent, var(--accent-emerald), transparent);
+    75→            position: absolute;
+    76→            animation: scan 8s linear infinite;
+    77→            opacity: 0.2;
+    78→            pointer-events: none;
+    79→        }
+    80→
+    81→        @keyframes scan {
+    82→            0% { top: 0; }
+    83→            100% { top: 100%; }
+    84→        }
+    85→
+    86→        [x-cloak] { display: none !important; }
+    87→
+    88→        input::-webkit-outer-spin-button,
+    89→        input::-webkit-inner-spin-button {
+    90→            -webkit-appearance: none;
+    91→            margin: 0;
+    92→        }
+    93→
+    94→        .progress-bar {
+    95→            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    96→        }
+    97→    </style>
+    98→</head>
+    99→<body x-data="{ 
+   100→    mobileMenu: false, 
+   101→    risk: {
+   102→        capital: 50000,
+   103→        pct: 2,
+   104→        entry: 62500,
+   105→        stop: 61000,
+   106→        tp: 68000,
+   107→        mode: 'standard'
+   108→    },
+   109→    calculate() {
+   110→        const amount = this.risk.capital * (this.risk.pct / 100);
+   111→        const distance = Math.abs(this.risk.entry - this.risk.stop);
+   112→        const distancePct = distance / this.risk.entry;
+   113→        const posSize = distancePct > 0 ? amount / distancePct : 0;
+   114→        const contracts = posSize / this.risk.entry;
+   115→        const rr = distance > 0 ? Math.abs(this.risk.tp - this.risk.entry) / distance : 0;
+   116→        
+   117→        return {
+   118→            amount: amount.toFixed(2),
+   119→            posSize: posSize.toFixed(2),
+   120→            contracts: contracts.toFixed(4),
+   121→            rr: rr.toFixed(2),
+   122→            distancePct: (distancePct * 100).toFixed(2)
+   123→        }
+   124→    }
+   125→}">
+   126→    <div class="grain"></div>
+   127→    <div class="mesh-gradient"></div>
+   128→
+   129→    <!-- Navigation (Identical to reference) -->
+   130→    <nav class="sticky top-0 z-[100] border-b border-white/5 bg-black/60 backdrop-blur-xl">
+   131→        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+   132→            <div class="flex items-center gap-3 group cursor-pointer" onclick="window.location.reload()">
+   133→                <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+   134→                    <svg viewBox="0 0 24 24" class="w-6 h-6 text-black fill-current"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.31.17-.69.17-1 0L3.53 17.38c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.43c.31-.17.69-.17 1 0l7.97 4.43c.32.17.53.5.53.88v9z"/></svg>
+   135→                </div>
+   136→                <span class="text-xl font-extrabold tracking-tighter uppercase italic">MyCryptoPilot</span>
+   137→            </div>
+   138→
+   139→            <div class="hidden md:flex items-center gap-8">
+   140→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Marketplace</a>
+   141→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Signaux</a>
+   142→                <a href="#" class="text-sm font-medium text-emerald-400 font-bold italic tracking-wide underline decoration-emerald-500/30">Console de Risque</a>
+   143→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Pricing</a>
+   144→            </div>
+   145→
+   146→            <div class="flex items-center gap-4">
+   147→                <button class="hidden sm:block text-sm font-semibold hover:opacity-70 transition-opacity">Compte PRO</button>
+   148→                <div class="w-10 h-10 rounded-full border border-emerald-500/50 p-0.5">
+   149→                    <img src="https://i.pravatar.cc/100?u=trader_id_99" class="w-full h-full rounded-full object-cover" alt="Avatar">
+   150→                </div>
+   151→            </div>
+   152→        </div>
+   153→    </nav>
+   154→
+   155→    <main class="flex-grow py-12 px-6">
+   156→        <div class="max-w-7xl mx-auto">
+   157→            <!-- Header Section -->
+   158→            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+   159→                <div>
+   160→                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+   161→                        Professional Terminal
+   162→                    </div>
+   163→                    <h1 class="text-4xl md:text-6xl font-black italic uppercase tracking-tighter">Console de <span class="text-emerald-400 glow-text">Risque.</span></h1>
+   164→                    <p class="text-gray-400 mt-2 max-w-xl">Appliquez la règle des 2%. Calculez vos positions avec une précision chirurgicale avant de cliquer sur "Order".</p>
+   165→                </div>
+   166→                
+   167→                <div class="flex bg-white/5 p-1 rounded-xl border border-white/10">
+   168→                    <button @click="risk.pct = 1; risk.mode = 'conservative'" :class="risk.mode === 'conservative' ? 'bg-white text-black' : 'text-gray-400 hover:text-white'" class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all">Conservative (1%)</button>
+   169→                    <button @click="risk.pct = 2; risk.mode = 'standard'" :class="risk.mode === 'standard' ? 'bg-emerald-500 text-black' : 'text-gray-400 hover:text-white'" class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all">Standard (2%)</button>
+   170→                    <button @click="risk.pct = 5; risk.mode = 'aggressive'" :class="risk.mode === 'aggressive' ? 'bg-rose-500 text-white' : 'text-gray-400 hover:text-white'" class="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all">Aggressive (5%)</button>
+   171→                </div>
+   172→            </div>
+   173→
+   174→            <div class="grid lg:grid-cols-12 gap-8 items-start">
+   175→                
+   176→                <!-- Left: Control Panel -->
+   177→                <div class="lg:col-span-4 space-y-6">
+   178→                    <div class="hyper-border p-8 rounded-[2rem] relative overflow-hidden">
+   179→                        <div class="scanline"></div>
+   180→                        <h3 class="text-xs font-black uppercase tracking-[0.3em] text-gray-500 mb-8 flex items-center gap-2">
+   181→                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+   182→                            Inputs Stratégiques
+   183→                        </h3>
+   184→
+   185→                        <div class="space-y-8">
+   186→                            <!-- Capital Input -->
+   187→                            <div class="group">
+   188→                                <div class="flex justify-between text-xs mb-3">
+   189→                                    <label class="text-gray-400 uppercase tracking-widest font-bold">Capital Total ($)</label>
+   190→                                    <span class="text-emerald-400 font-black" x-text="new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(risk.capital)"></span>
+   191→                                </div>
+   192→                                <div class="relative">
+   193→                                    <input type="number" x-model="risk.capital" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 font-bold text-xl outline-none input-glow transition-all">
+   194→                                    <div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 font-bold">USD</div>
+   195→                                </div>
+   196→                                <input type="range" x-model="risk.capital" min="1000" max="500000" step="1000" class="w-full accent-emerald-500 h-1 bg-white/5 rounded-lg appearance-none cursor-pointer mt-4">
+   197→                            </div>
+   198→
+   199→                            <!-- Risk Pct Input -->
+   200→                            <div class="group">
+   201→                                <div class="flex justify-between text-xs mb-3">
+   202→                                    <label class="text-gray-400 uppercase tracking-widest font-bold">Risque par Trade (%)</label>
+   203→                                    <span class="font-black" :class="risk.pct > 3 ? 'text-rose-500' : 'text-emerald-400'" x-text="risk.pct + '%'"></span>
+   204→                                </div>
+   205→                                <div class="relative">
+   206→                                    <input type="number" x-model="risk.pct" step="0.1" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 font-bold text-xl outline-none input-glow transition-all">
+   207→                                    <div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 font-bold">%</div>
+   208→                                </div>
+   209→                            </div>
+   210→
+   211→                            <div class="h-px bg-white/5"></div>
+   212→
+   213→                            <!-- Price Levels -->
+   214→                            <div class="grid grid-cols-1 gap-6">
+   215→                                <div>
+   216→                                    <label class="block text-[10px] text-gray-500 uppercase font-black tracking-widest mb-2">Prix d'Entrée</label>
+   217→                                    <input type="number" x-model="risk.entry" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 font-bold text-xl outline-none input-glow transition-all">
+   218→                                </div>
+   219→                                <div>
+   220→                                    <label class="block text-[10px] text-rose-500 uppercase font-black tracking-widest mb-2 italic">Stop Loss</label>
+   221→                                    <input type="number" x-model="risk.stop" class="w-full bg-rose-500/5 border border-rose-500/20 rounded-xl px-4 py-4 font-bold text-xl outline-none focus:border-rose-500 transition-all text-rose-500">
+   222→                                </div>
+   223→                                <div>
+   224→                                    <label class="block text-[10px] text-emerald-500 uppercase font-black tracking-widest mb-2">Take Profit</label>
+   225→                                    <input type="number" x-model="risk.tp" class="w-full bg-emerald-500/5 border border-emerald-500/20 rounded-xl px-4 py-4 font-bold text-xl outline-none focus:border-emerald-500 transition-all text-emerald-400">
+   226→                                </div>
+   227→                            </div>
+   228→                        </div>
+   229→                    </div>
+   230→
+   231→                    <button class="w-full py-5 rounded-2xl bg-white text-black font-black uppercase tracking-[0.2em] text-sm hover:bg-emerald-400 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-[0_20px_40px_rgba(255,255,255,0.05)]">
+   232→                        Sauvegarder Stratégie
+   233→                    </button>
+   234→                </div>
+   235→
+   236→                <!-- Right: Analysis Display -->
+   237→                <div class="lg:col-span-8 grid md:grid-cols-2 gap-8">
+   238→                    
+   239→                    <!-- Main Calculation Result -->
+   240→                    <div class="md:col-span-2 hyper-border rounded-[2.5rem] p-10 bg-gradient-to-br from-emerald-500/5 to-transparent relative overflow-hidden group">
+   241→                        <div class="absolute top-0 right-0 p-8">
+   242→                            <svg class="w-16 h-16 text-emerald-500/10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+   243→                        </div>
+   244→                        
+   245→                        <div class="relative z-10">
+   246→                            <h4 class="text-xs font-black uppercase tracking-[0.4em] text-emerald-400 mb-2">Position Sizing</h4>
+   247→                            <div class="text-6xl md:text-8xl font-black italic tracking-tighter mb-4" x-text="'$' + new Intl.NumberFormat('en-US').format(Math.round(calculate().posSize))"></div>
+   248→                            <div class="flex items-center gap-4 text-gray-400 font-bold uppercase tracking-widest text-sm">
+   249→                                <span x-text="calculate().contracts + ' Contracts'"></span>
+   250→                                <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+   251→                                <span x-text="calculate().distancePct + '% Stop Loss'"></span>
+   252→                            </div>
+   253→                        </div>
+   254→
+   255→                        <!-- Progress indicator for leverage context -->
+   256→                        <div class="mt-12">
+   257→                            <div class="flex justify-between text-[10px] uppercase font-bold tracking-widest text-gray-500 mb-2">
+   258→                                <span>Risk Exposure vs Capital</span>
+   259→                                <span x-text="((calculate().posSize / risk.capital) * 100).toFixed(1) + '% of Wallet'"></span>
+   260→                            </div>
+   261→                            <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+   262→                                <div class="h-full bg-emerald-500 progress-bar shadow-[0_0_15px_rgba(16,185,129,0.5)]" :style="'width: ' + Math.min((calculate().posSize / risk.capital) * 100, 100) + '%'"></div>
+   263→                            </div>
+   264→                        </div>
+   265→                    </div>
+   266→
+   267→                    <!-- Risk/Reward Card -->
+   268→                    <div class="hyper-border rounded-[2rem] p-8 flex flex-col justify-between">
+   269→                        <div>
+   270→                            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+   271→                                <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+   272→                            </div>
+   273→                            <h4 class="text-xs font-black uppercase tracking-[0.2em] text-gray-500 mb-1">Risk / Reward Ratio</h4>
+   274→                            <div class="text-4xl font-black italic" x-text="'1 : ' + calculate().rr"></div>
+   275→                        </div>
+   276→                        <div class="mt-8 p-4 rounded-xl" :class="calculate().rr >= 2 ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-rose-500/10 text-rose-500 border border-rose-500/20'">
+   277→                            <p class="text-[10px] font-black uppercase tracking-widest" x-text="calculate().rr >= 2 ? 'Setup Validé : Ratio Optimal' : 'Ratio Faible : Risque Élevé'"></p>
+   278→                        </div>
+   279→                    </div>
+   280→
+   281→                    <!-- Risk Amount Card -->
+   282→                    <div class="hyper-border rounded-[2rem] p-8 flex flex-col justify-between">
+   283→                        <div>
+   284→                            <div class="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center mb-6 border border-rose-500/20">
+   285→                                <svg class="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+   286→                            </div>
+   287→                            <h4 class="text-xs font-black uppercase tracking-[0.2em] text-gray-500 mb-1">Montant Risqué</h4>
+   288→                            <div class="text-4xl font-black italic text-rose-500" x-text="'$' + new Intl.NumberFormat('en-US').format(calculate().amount)"></div>
+   289→                        </div>
+   290→                        <p class="mt-8 text-xs text-gray-500 leading-relaxed font-medium">
+   291→                            Si le Stop Loss est touché, vous perdrez exactement <span class="text-white" x-text="risk.pct + '%'"></span> de votre capital total.
+   292→                        </p>
+   293→                    </div>
+   294→
+   295→                    <!-- Strategy Survival Table -->
+   296→                    <div class="md:col-span-2 hyper-border rounded-[2rem] p-8 overflow-hidden relative">
+   297→                        <div class="flex items-center justify-between mb-8">
+   298→                            <h4 class="text-xs font-black uppercase tracking-[0.2em] text-gray-400">Survival Odds Analysis</h4>
+   299→                            <span class="text-[10px] px-2 py-1 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 font-bold uppercase tracking-widest">Algorithmic Check</span>
+   300→                        </div>
+   301→
+   302→                        <div class="grid md:grid-cols-3 gap-6">
+   303→                            <div class="space-y-1">
+   304→                                <div class="text-[10px] text-gray-600 uppercase font-black">Successive Losses to Ruin</div>
+   305→                                <div class="text-2xl font-black italic" x-text="Math.floor(100 / risk.pct)"></div>
+   306→                                <div class="text-[10px] text-emerald-500 font-bold">Excellent Survival</div>
+   307→                            </div>
+   308→                            <div class="space-y-1">
+   309→                                <div class="text-[10px] text-gray-600 uppercase font-black">Breakeven Winrate</div>
+   310→                                <div class="text-2xl font-black italic" x-text="(100 / (1 + parseFloat(calculate().rr))).toFixed(1) + '%'"></div>
+   311→                                <div class="text-[10px] text-gray-500 font-bold">Required to stay flat</div>
+   312→                            </div>
+   313→                            <div class="space-y-1">
+   314→                                <div class="text-[10px] text-gray-600 uppercase font-black">Max Leveraged Size</div>
+   315→                                <div class="text-2xl font-black italic" x-text="Math.round(calculate().posSize / risk.entry * 100) / 100 + ' BTC'"></div>
+   316→                                <div class="text-[10px] text-gray-500 font-bold">Based on current price</div>
+   317→                            </div>
+   318→                        </div>
+   319→
+   320→                        <!-- Mini Chart Visualization -->
+   321→                        <div class="mt-10 flex items-end gap-1 h-12">
+   322→                            <template x-for="i in 20">
+   323→                                <div class="flex-grow rounded-sm bg-white/5 hover:bg-emerald-500/40 transition-colors" :style="'height: ' + (Math.random() * 80 + 20) + '%'"></div>
+   324→                            </template>
+   325→                        </div>
+   326→                    </div>
+   327→                </div>
+   328→            </div>
+   329→
+   330→            <!-- Footer Quote/Tip -->
+   331→            <div class="mt-12 text-center">
+   332→                <p class="text-xs font-bold uppercase tracking-[0.5em] text-white/20">
+   333→                    "Amateurs hope to win. Professionals manage how much they can afford to lose."
+   334→                </p>
+   335→            </div>
+   336→        </div>
+   337→    </main>
+   338→
+   339→    <!-- Footer (Identical to reference) -->
+   340→    <footer class="bg-black border-t border-white/5 py-20 px-6 mt-12">
+   341→        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+   342→            <div class="col-span-2">
+   343→                <div class="flex items-center gap-3 mb-6">
+   344→                    <div class="w-8 h-8 bg-emerald-500 rounded flex items-center justify-center">
+   345→                        <svg viewBox="0 0 24 24" class="w-5 h-5 text-black fill-current"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.31.17-.69.17-1 0L3.53 17.38c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.43c.31-.17.69-.17 1 0l7.97 4.43c.32.17.53.5.53.88v9z"/></svg>
+   346→                    </div>
+   347→                    <span class="text-xl font-extrabold uppercase italic tracking-tighter">MyCryptoPilot</span>
+   348→                </div>
+   349→                <p class="text-gray-500 max-w-sm leading-relaxed mb-8">
+   350→                    La première plateforme "Risk-First" dédiée au trading social crypto. Basée sur la transparence totale et le contrôle du risque algorithmique.
+   351→                </p>
+   352→            </div>
+   353→            
+   354→            <div>
+   355→                <h4 class="font-bold mb-6 italic uppercase tracking-widest text-sm text-emerald-400">Outils</h4>
+   356→                <ul class="space-y-4 text-gray-500 text-sm">
+   357→                    <li><a href="#" class="hover:text-white transition-colors">Risk Console</a></li>
+   358→                    <li><a href="#" class="hover:text-white transition-colors">Position Sizer</a></li>
+   359→                    <li><a href="#" class="hover:text-white transition-colors">R/R Calculator</a></li>
+   360→                </ul>
+   361→            </div>
+   362→
+   363→            <div>
+   364→                <h4 class="font-bold mb-6 italic uppercase tracking-widest text-sm text-emerald-400">Support</h4>
+   365→                <ul class="space-y-4 text-gray-500 text-sm">
+   366→                    <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+   367→                    <li><a href="#" class="hover:text-white transition-colors">Discord Community</a></li>
+   368→                    <li><a href="#" class="hover:text-white transition-colors">Audit Stats</a></li>
+   369→                </ul>
+   370→            </div>
+   371→        </div>
+   372→        <div class="max-w-7xl mx-auto border-t border-white/5 mt-16 pt-8 text-center text-xs text-gray-600">
+   373→            &copy; 2026 MyCryptoPilot. Created for elite traders. Precision over Emotion.
+   374→        </div>
+   375→    </footer>
+   376→
+   377→    <!-- Mobile Menu Overlay -->
+   378→    <div x-show="mobileMenu" 
+   379→         x-transition:enter="transition ease-out duration-300"
+   380→         x-transition:enter-start="opacity-0 translate-x-full"
+   381→         x-transition:enter-end="opacity-100 translate-x-0"
+   382→         x-transition:leave="transition ease-in duration-200"
+   383→         x-transition:leave-start="opacity-100 translate-x-0"
+   384→         x-transition:leave-end="opacity-0 translate-x-full"
+   385→         class="fixed inset-0 z-[200] bg-black p-8 md:hidden" x-cloak>
+   386→        <div class="flex justify-between items-center mb-12">
+   387→            <span class="text-xl font-extrabold tracking-tighter italic uppercase">Menu</span>
+   388→            <button @click="mobileMenu = false" class="text-white">
+   389→                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+   390→            </button>
+   391→        </div>
+   392→        <div class="flex flex-col gap-8 text-3xl font-black italic uppercase">
+   393→            <a href="#">Marketplace</a>
+   394→            <a href="#">Signaux</a>
+   395→            <a href="#">Console</a>
+   396→            <a href="#">Pricing</a>
+   397→        </div>
+   398→    </div>
+   399→</body>
+   400→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,51 @@
+     1→"use client";
+     2→
+     3→import * as ProgressPrimitive from "@radix-ui/react-progress";
+     4→import * as React from "react";
+     5→
+     6→import { cn } from "@/lib/utils";
+     7→
+     8→type ProgressProps = React.ComponentProps<typeof ProgressPrimitive.Root> & {
+     9→  variant?: "default" | "accent" | "highlight" | "gradient";
+    10→};
+    11→
+    12→function Progress({
+    13→  className,
+    14→  value,
+    15→  variant = "default",
+    16→  ...props
+    17→}: ProgressProps) {
+    18→  const variantStyles = {
+    19→    default: "bg-primary",
+    20→    accent: "bg-[var(--brand-accent)] shadow-[0_0_15px_var(--glow-accent)]",
+    21→    highlight: "bg-[var(--brand-highlight)] shadow-[0_0_15px_var(--glow-highlight)]",
+    22→    gradient: "bg-gradient-to-r from-[var(--brand-accent)] to-[var(--brand-highlight)] shadow-[0_0_15px_var(--glow-accent)]",
+    23→  };
+    24→
+    25→  return (
+    26→    <ProgressPrimitive.Root
+    27→      data-slot="progress"
+    28→      className={cn(
+    29→        "relative h-2.5 w-full overflow-hidden rounded-full bg-white/5",
+    30→        className,
+    31→      )}
+    32→      {...props}
+    33→    >
+    34→      <ProgressPrimitive.Indicator
+    35→        data-slot="progress-indicator"
+    36→        className={cn(
+    37→          "size-full flex-1 rounded-full transition-all duration-500 ease-out",
+    38→          variantStyles[variant],
+    39→        )}
+    40→        style={{ transform: `translateX(-${100 - (value ?? 0)}%)` }}
+    41→      />
+    42→    </ProgressPrimitive.Root>
+    43→  );
+    44→}
+    45→
+    46→export { Progress };
+    47→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,204 @@
+     1→{
+     2→  "Common": {
+     3→    "tagline": "Studio digital artisan",
+     4→    "cta": "Démarrer la discussion",
+     5→    "menu": "Menu",
+     6→    "available": "Disponible",
+     7→    "readyToStart": "Démarrage rapide, équipe dédiée",
+     8→    "menuOpen": "Ouvrir le menu",
+     9→    "menuClose": "Fermer le menu",
+    10→    "watchVideo": "Voir la vidéo"
+    11→  },
+    12→  "Nav": {
+    13→    "services": "Services",
+    14→    "ai": "IA",
+    15→    "expertise": "Expertises",
+    16→    "work": "Réalisations",
+    17→    "offers": "Offres & tarifs",
+    18→    "method": "Méthode",
+    19→    "about": "À propos",
+    20→    "team": "L'équipe",
+    21→    "contact": "Contact",
+    22→    "blog": "Blog",
+    23→    "careers": "Jobs",
+    24→    "webMobile": "Web & Mobile",
+    25→    "webMobileDesc": "Sites web, applications, e-commerce",
+    26→    "iaLegacy": "IA & Legacy",
+    27→    "iaLegacyDesc": "Modernisation et intégration IA",
+    28→    "cybersecurity": "Cybersécurité",
+    29→    "cybersecurityDesc": "Audits, pentests, conformité",
+    30→    "allServices": "Voir tous nos services"
+    31→  },
+    32→  "Styles": {
+    33→    "pulse": "Pulse",
+    34→    "atelier": "Atelier",
+    35→    "forge": "Forge"
+    36→  },
+    37→  "Footer": {
+    38→    "subtitle": "Agence IA & transformation digitale. Modernisation legacy, cybersécurité et développement haute performance.",
+    39→    "company": "Agence",
+    40→    "resourcesTitle": "Ressources",
+    41→    "resources": {
+    42→      "offers": "Offres",
+    43→      "legal": "Mentions légales",
+    44→      "privacy": "Confidentialité",
+    45→      "cookies": "Cookies"
+    46→    },
+    47→    "services": {
+    48→      "ai": "Intelligence artificielle",
+    49→      "web": "Plateformes web",
+    50→      "customSoftware": "Logiciels métier",
+    51→      "mobile": "Apps mobiles",
+    52→      "ecommerce": "E-commerce",
+    53→      "uxDesign": "UX/UI Design",
+    54→      "cybersecurity": "Cybersécurité",
+    55→      "iaLegacy": "IA & Transformation Legacy",
+    56→      "webMobile": "Développement Web & Mobile",
+    57→      "expertise": "Expertise Technique"
+    58→    },
+    59→    "newsletter": {
+    60→      "title": "Newsletter",
+    61→      "description": "Recevez nos insights tech et IA",
+    62→      "placeholder": "Votre email",
+    63→      "submit": "S'inscrire",
+    64→      "success": "Merci ! Vous êtes inscrit à notre newsletter."
+    65→    },
+    66→    "email": "hello@yodev.fr",
+    67→    "offices": [
+    68→      {
+    69→        "city": "Paris",
+    70→        "address": "117 avenue des Champs-Élysées",
+    71→        "zip": "75008",
+    72→        "country": "France"
+    73→      }
+    74→    ],
+    75→    "rights": "© 2025 Yodev. Tous droits réservés."
+    76→  },
+    77→  "Home": {
+    78→    "hero": {
+    79→      "eyebrow": "Spécialiste IA & Modernisation IT",
+    80→      "titleLine1": "Modernisation IT & IA",
+    81→      "titleLine2": "pour PME/ETI",
+    82→      "title": "Modernisation IT & IA pour PME/ETI",
+    83→      "subtitle": "Du legacy au futur. Nous transformons vos systèmes critiques en moteurs d'innovation IA. Performance, Sécurité et ROI garantis sous 12 semaines.",
+    84→      "primary": "Consultation Stratégique",
+    85→      "secondary": "Voir nos réalisations",
+    86→      "experts": {
+    87→        "count": "+15 Experts IA",
+    88→        "label": "Disponibles pour audit"
+    89→      },
+    90→      "status": {
+    91→        "label": "Migration Status",
+    92→        "value": "94% Completed"
+    93→      },
+    94→      "chips": [
+    95→        "IA & Automation",
+    96→        "Architecture Cloud",
+    97→        "Legacy Modernization",
+    98→        "Cybersécurité"
+    99→      ],
+   100→      "signals": {
+   101→        "studioEyebrow": "Format",
+   102→        "studioBody": "4 experts complémentaires. Vous parlez directement à ceux qui font.",
+   103→        "outputEyebrow": "Promesse",
+   104→        "outputBody": "Pas d'usine, pas de junior caché. Un interlocuteur unique qui comprend votre métier."
+   105→      }
+   106→    },
+   107→    "architecture": {
+   108→      "title": "Notre Architecture de Modernisation",
+   109→      "description": "Nous ne faisons pas que réécrire du code. Nous créons une couche d'abstraction moderne pour injecter l'IA dans vos flux de travail existants.",
+   110→      "steps": [
+   111→        {
+   112→          "title": "1. Audit & Extraction Legacy",
+   113→          "description": "Mapping des APIs, DBs et processus critiques sans interruption de service."
+   114→        },
+   115→        {
+   116→          "title": "2. Middleware IA Sécurisé",
+   117→          "description": "Intégration d'un Vector Store (RAG) et d'agents LLM avec filtrage de confidentialité."
+   118→        },
+   119→        {
+   120→          "title": "3. Scaling & Performance",
+   121→          "description": "Déploiement auto-scalable sur Cloud moderne (AWS/Azure) avec monitoring temps réel."
+   122→        }
+   123→      ]
+   124→    },
+   125→    "useCases": {
+   126→      "title": "À chaque enjeu, sa solution.",
+   127→      "subtitle": "Nous adaptons nos processus selon la maturité de votre structure.",
+   128→      "tabs": {
+   129→        "startup": "Startups",
+   130→        "pme": "PME / ETI",
+   131→        "enterprise": "Grand Groupe"
+   132→      },
+   133→      "pme": [
+   134→        {
+   135→          "icon": "Database",
+   136→          "title": "Migration Base de Données",
+   137→          "description": "Passage de SQL Server on-prem vers Cloud hybride avec zéro downtime garanti via CDC.",
+   138→          "features": ["Sécurité AES-256", "Performance +300%"]
+   139→        },
+   140→        {
+   141→          "icon": "MessageSquare",
+   142→          "title": "Chatbot Support Intelligent",
+   143→          "description": "Implémentation d'un RAG connecté à votre documentation interne pour automatiser 60% du N1.",
+   144→          "features": ["ROI sous 6 mois", "RGPD & Souveraineté"]
+   145→        },
+   146→        {
+   147→          "icon": "Shield",
+   148→          "title": "Audit de Sécurité IT",
+   149→          "description": "Pentesting et mise en conformité SOC2 / ISO 27001 pour vos infrastructures critiques.",
+   150→          "features": ["Zero Trust Framework", "Monitoring 24/7"]
+   151→        }
+   152→      ]
+   153→    },
+   154→    "trust": {
+   155→      "title": "Ils font confiance à notre expertise technique"
+   156→    },
+   157→    "story": {
+   158→      "eyebrow": "Notre philosophie",
+   159→      "title": "Petit par choix. Excellent par exigence.",
+   160→      "subtitle": "On a refusé de grossir. On a préféré rester une équipe resserrée où chacun maîtrise son domaine.",
+   161→      "body": [
+   162→        "Depuis 2018, les plus grands nous font confiance pour leurs projets stratégiques. Pas parce qu'on est gros, mais parce qu'on est bons.",
+   163→        "Notre secret ? 4 profils complémentaires seniors. Pas de dilution, pas de délégation. Vous parlez aux experts."
+   164→      ],
+   165→      "highlights": [
+   166→        {
+   167→          "title": "Relation directe",
+   168→          "description": "Zéro commercial, zéro chef de projet. L'expert qui fait est celui qui vous répond."
+   169→        },
+   170→        {
+   171→          "title": "Expertise pointue",
+   172→          "description": "IA, Architecture, UX/UI, Growth. 4 domaines, 4 seniors."
+   173→        },
+   174→        {
+   175→          "title": "Tarif premium assumé",
+   176→          "description": "On ne brade pas. Notre prix reflète notre expertise. Nos résultats le justifient."
+   177→        }
+   178→      ]
+   179→    },
+   180→    "paths": {
+   181→      "eyebrow": "Par où commencer ?",
+   182→      "title": "Trois façons de travailler avec nous",
+   183→      "items": [
+   184→        {
+   185→          "icon": "Rocket",
+   186→          "title": "Lancer un nouveau produit",
+   187→          "description": "Site, app, SaaS... Vous partez de zéro ou presque. On vous accompagne du cadrage au lancement.",
+   188→          "cta": "Créer mon produit",
+   189→          "href": "/contact?type=nouveau"
+   190→        },
+   191→        {
+   192→          "icon": "Wrench",
+   193→          "title": "Améliorer l'existant",
+   194→          "description": "Votre produit existe mais ne performe pas. On diagnostique, on optimise, on fait décoller.",
+   195→          "cta": "Optimiser mon produit",
+   196→          "href": "/contact?type=optimisation"
+   197→        },
+   198→        {
+   199→          "icon": "Brain",
+   200→          "title": "Explorer l'IA",
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

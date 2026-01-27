@@ -1,0 +1,27 @@
+The file /Users/yoannandrieux/Projets/choosewisely/src/site-config.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→export const SiteConfig = {
+     2→  title: "Choose Wisely",
+     3→  description:
+     4→    "Trouvez le bien idéal - Agrégation, analyse DVF, DPE et négociation",
+     5→  prodUrl: "https://choosewisely.fr",
+     6→  appId: "choosewisely",
+     7→  domain: "choosewisely.fr",
+     8→  appIcon: "/images/icon.png",
+     9→  company: {
+    10→    name: "Choose Wisely",
+    11→    address: "Paris, France",
+    12→  },
+    13→  brand: {
+    14→    primary: "#00C896", // Vert moderne
+    15→  },
+    16→  features: {
+    17→    /**
+    18→     * If enable, you need to specify the logic of upload here : src/features/images/uploadImageAction.tsx
+    19→     * You can use Vercel Blob Storage : https://vercel.com/docs/storage/vercel-blob
+    20→     * Or you can use Cloudflare R2 : https://mlv.sh/cloudflare-r2-tutorial
+    21→     * Or you can use AWS S3 : https://mlv.sh/aws-s3-tutorial
+    22→     */
+    23→    enableImageUpload: false as boolean,
+    24→  },
+    25→};
+    26→

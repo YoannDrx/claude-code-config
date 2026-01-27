@@ -1,0 +1,10 @@
+The file /Users/yoannandrieux/Projets/moodday/app/api/webhooks/stripe/route.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    24→  const stripeSignature = headerList.get("stripe-signature");
+    25→
+    26→  let event: Stripe.Event | null = null;
+    27→  try {
+    28→    event = getStripe().webhooks.constructEvent(
+    29→      body,
+    30→      stripeSignature ?? "",
+    31→      env.STRIPE_WEBHOOK_SECRET ?? "",
+    32→    );

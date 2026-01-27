@@ -1,0 +1,4 @@
+[i18 9372ea5] fix(auth): use correct Better Auth API method for password reset
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To github.com:YoannDrx/light-ts.git
+   e8533c4..9372ea5  i18 -> i18

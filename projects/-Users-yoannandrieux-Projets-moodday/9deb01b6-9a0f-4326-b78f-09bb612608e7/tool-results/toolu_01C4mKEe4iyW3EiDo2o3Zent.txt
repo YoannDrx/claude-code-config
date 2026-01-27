@@ -1,0 +1,11 @@
+The file /Users/yoannandrieux/Projets/moodday/.github/workflows/playwright.yml has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   107→
+   108→      - name: Generate Prisma client
+   109→        run: pnpm prisma generate
+   110→
+   111→      - name: Setup database schema
+   112→        run: pnpm prisma db push --force-reset --accept-data-loss
+   113→
+   114→      - name: Build application
+   115→        run: pnpm build
+   116→

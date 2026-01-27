@@ -1,0 +1,310 @@
+     1→"use server";
+     2→
+     3→import { auth } from "@/lib/auth";
+     4→import { headers } from "next/headers";
+     5→import { redirect } from "next/navigation";
+     6→import { prisma } from "@/lib/prisma";
+     7→import { revalidatePath } from "next/cache";
+     8→import { moteurImmoClient } from "@/lib/moteurimmo";
+     9→import { logger } from "@/lib/logger";
+    10→
+    11→export type CreateFavoriteRequest = {
+    12→  propertyId: string;
+    13→  notes?: string;
+    14→  priority?: "high" | "medium" | "low";
+    15→};
+    16→
+    17→export type UpdateFavoriteRequest = {
+    18→  id: string;
+    19→  notes?: string;
+    20→  status?: "saved" | "visited" | "contacted" | "rejected";
+    21→  priority?: "high" | "medium" | "low";
+    22→};
+    23→
+    24→export async function getFavoritesAction() {
+    25→  const session = await auth.api.getSession({
+    26→    headers: await headers(),
+    27→  });
+    28→
+    29→  if (!session?.user.id) {
+    30→    redirect("/auth/signin");
+    31→  }
+    32→
+    33→  const favorites = await prisma.favorite.findMany({
+    34→    where: {
+    35→      userId: session.user.id,
+    36→    },
+    37→    include: {
+    38→      property: true,
+    39→    },
+    40→    orderBy: {
+    41→      createdAt: "desc",
+    42→    },
+    43→  });
+    44→
+    45→  return favorites;
+    46→}
+    47→
+    48→export async function createFavoriteAction(request: CreateFavoriteRequest) {
+    49→  logger.debug(
+    50→    "🔍 [Favorites] Creating favorite for property:",
+    51→    request.propertyId,
+    52→  );
+    53→
+    54→  const session = await auth.api.getSession({
+    55→    headers: await headers(),
+    56→  });
+    57→
+    58→  if (!session?.user.id) {
+    59→    redirect("/auth/signin");
+    60→  }
+    61→
+    62→  logger.debug("🔍 [Favorites] User ID:", session.user.id);
+    63→
+    64→  // Check if property exists, if not create it
+    65→  let property = await prisma.property.findUnique({
+    66→    where: { externalId: request.propertyId },
+    67→  });
+    68→
+    69→  logger.debug("🔍 [Favorites] Property exists:", property ? "YES" : "NO");
+    70→
+    71→  if (!property) {
+    72→    try {
+    73→      logger.debug("🔍 [Favorites] Creating new property in database...");
+    74→      logger.debug(
+    75→        "🔍 [Favorites] Fetching property data from MoteurImmo API...",
+    76→      );
+    77→
+    78→      // Récupérer les vraies données du bien via MoteurImmo API
+    79→      const moteurImmoProperty = await moteurImmoClient.getListingById(
+    80→        request.propertyId,
+    81→      );
+    82→      logger.debug(
+    83→        "✅ [Favorites] Property data fetched from MoteurImmo:",
+    84→        moteurImmoProperty.title,
+    85→      );
+    86→
+    87→      property = await prisma.property.create({
+    88→        data: {
+    89→          externalId: request.propertyId,
+    90→          title: moteurImmoProperty.title,
+    91→          description: moteurImmoProperty.description,
+    92→          type: moteurImmoProperty.type,
+    93→          category: moteurImmoProperty.category,
+    94→          price: moteurImmoProperty.price,
+    95→          surface: moteurImmoProperty.surface,
+    96→          rooms: moteurImmoProperty.rooms,
+    97→          bedrooms: moteurImmoProperty.bedrooms,
+    98→          floor: moteurImmoProperty.floor,
+    99→          totalFloors: moteurImmoProperty.totalFloors,
+   100→          address: moteurImmoProperty.address ?? "",
+   101→          city: moteurImmoProperty.city,
+   102→          postalCode: moteurImmoProperty.postalCode ?? "",
+   103→          department: "", // Required by Prisma schema
+   104→          region: "", // Required by Prisma schema
+   105→          energyClass: moteurImmoProperty.energyClass,
+   106→          hasGarden: moteurImmoProperty.hasGarden,
+   107→          hasParking: moteurImmoProperty.hasParking,
+   108→          hasLift: moteurImmoProperty.hasLift,
+   109→          hasTerrace: moteurImmoProperty.hasTerrace,
+   110→          hasBalcony: moteurImmoProperty.hasBalcony,
+   111→          sourceUrl: moteurImmoProperty.url,
+   112→          sourceId: moteurImmoProperty.origin,
+   113→          publishedAt: new Date(moteurImmoProperty.publishedAt),
+   114→        },
+   115→      });
+   116→      logger.debug("✅ [Favorites] Property created with ID:", property.id);
+   117→    } catch (error) {
+   118→      logger.debug("❌ [Favorites] Error creating property:", error);
+   119→      // Si l'API MoteurImmo échoue, créer un placeholder comme avant
+   120→      logger.debug("🔍 [Favorites] Fallback: Creating placeholder property...");
+   121→      property = await prisma.property.create({
+   122→        data: {
+   123→          externalId: request.propertyId,
+   124→          title: "Bien immobilier - Données en cours de chargement",
+   125→          type: "sale",
+   126→          category: "flat",
+   127→          price: 0,
+   128→          address: "Adresse en cours de chargement...",
+   129→          city: "Ville inconnue",
+   130→          postalCode: "00000",
+   131→          department: "Département",
+   132→          region: "Région",
+   133→          publishedAt: new Date(),
+   134→        },
+   135→      });
+   136→    }
+   137→  }
+   138→
+   139→  // Check if already in favorites
+   140→  const existingFavorite = await prisma.favorite.findUnique({
+   141→    where: {
+   142→      userId_propertyId: {
+   143→        userId: session.user.id,
+   144→        propertyId: property.id,
+   145→      },
+   146→    },
+   147→  });
+   148→
+   149→  if (existingFavorite) {
+   150→    throw new Error("Ce bien est déjà dans vos favoris");
+   151→  }
+   152→
+   153→  const favorite = await prisma.favorite.create({
+   154→    data: {
+   155→      userId: session.user.id,
+   156→      propertyId: property.id,
+   157→      notes: request.notes,
+   158→      priority: request.priority ?? "medium",
+   159→    },
+   160→    include: {
+   161→      property: true,
+   162→    },
+   163→  });
+   164→
+   165→  logger.debug(
+   166→    `✅ [Favorites] Added property ${property.id} to favorites for user ${session.user.id}`,
+   167→  );
+   168→
+   169→  revalidatePath("/favorites");
+   170→  revalidatePath("/properties");
+   171→  revalidatePath("/orgs", "layout");
+   172→
+   173→  return favorite;
+   174→}
+   175→
+   176→export async function updateFavoriteAction(request: UpdateFavoriteRequest) {
+   177→  const session = await auth.api.getSession({
+   178→    headers: await headers(),
+   179→  });
+   180→
+   181→  if (!session?.user.id) {
+   182→    redirect("/auth/signin");
+   183→  }
+   184→
+   185→  const favorite = await prisma.favorite.findFirst({
+   186→    where: {
+   187→      id: request.id,
+   188→      userId: session.user.id,
+   189→    },
+   190→  });
+   191→
+   192→  if (!favorite) {
+   193→    throw new Error("Favori non trouvé");
+   194→  }
+   195→
+   196→  const updatedFavorite = await prisma.favorite.update({
+   197→    where: {
+   198→      id: request.id,
+   199→    },
+   200→    data: {
+   201→      ...(request.notes !== undefined && { notes: request.notes }),
+   202→      ...(request.status && { status: request.status }),
+   203→      ...(request.priority && { priority: request.priority }),
+   204→    },
+   205→    include: {
+   206→      property: true,
+   207→    },
+   208→  });
+   209→
+   210→  logger.debug(
+   211→    `✅ [Favorites] Updated favorite ${request.id} for user ${session.user.id}`,
+   212→  );
+   213→
+   214→  revalidatePath("/favorites");
+   215→
+   216→  return updatedFavorite;
+   217→}
+   218→
+   219→export async function deleteFavoriteAction(id: string) {
+   220→  const session = await auth.api.getSession({
+   221→    headers: await headers(),
+   222→  });
+   223→
+   224→  if (!session?.user.id) {
+   225→    redirect("/auth/signin");
+   226→  }
+   227→
+   228→  const favorite = await prisma.favorite.findFirst({
+   229→    where: {
+   230→      id,
+   231→      userId: session.user.id,
+   232→    },
+   233→  });
+   234→
+   235→  if (!favorite) {
+   236→    throw new Error("Favori non trouvé");
+   237→  }
+   238→
+   239→  await prisma.favorite.delete({
+   240→    where: {
+   241→      id,
+   242→    },
+   243→  });
+   244→
+   245→  logger.debug(
+   246→    `✅ [Favorites] Deleted favorite ${id} for user ${session.user.id}`,
+   247→  );
+   248→
+   249→  revalidatePath("/favorites");
+   250→  revalidatePath("/properties");
+   251→  revalidatePath("/orgs", "layout");
+   252→}
+   253→
+   254→export async function toggleFavoriteAction(
+   255→  propertyExternalId: string,
+   256→): Promise<{ isFavorite: boolean }> {
+   257→  logger.debug(
+   258→    "🔍 [Favorites] Toggle favorite for property:",
+   259→    propertyExternalId,
+   260→  );
+   261→
+   262→  const session = await auth.api.getSession({
+   263→    headers: await headers(),
+   264→  });
+   265→
+   266→  if (!session?.user.id) {
+   267→    redirect("/auth/signin");
+   268→  }
+   269→
+   270→  logger.debug("🔍 [Favorites] User ID:", session.user.id);
+   271→
+   272→  const property = await prisma.property.findUnique({
+   273→    where: { externalId: propertyExternalId },
+   274→  });
+   275→
+   276→  logger.debug(
+   277→    "🔍 [Favorites] Found existing property:",
+   278→    property ? "YES" : "NO",
+   279→  );
+   280→
+   281→  if (!property) {
+   282→    // Create favorite for new property
+   283→    await createFavoriteAction({ propertyId: propertyExternalId });
+   284→    return { isFavorite: true };
+   285→  }
+   286→
+   287→  const existingFavorite = await prisma.favorite.findUnique({
+   288→    where: {
+   289→      userId_propertyId: {
+   290→        userId: session.user.id,
+   291→        propertyId: property.id,
+   292→      },
+   293→    },
+   294→  });
+   295→
+   296→  if (existingFavorite) {
+   297→    // Remove from favorites
+   298→    await deleteFavoriteAction(existingFavorite.id);
+   299→    return { isFavorite: false };
+   300→  } else {
+   301→    // Add to favorites
+   302→    await createFavoriteAction({ propertyId: propertyExternalId });
+   303→    return { isFavorite: true };
+   304→  }
+   305→}
+   306→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

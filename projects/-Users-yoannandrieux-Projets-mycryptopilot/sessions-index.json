@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "sessionId": "f483ee66-540e-49ca-9fec-c9f15c46faab",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux-Projets-mycryptopilot/f483ee66-540e-49ca-9fec-c9f15c46faab.jsonl",
+      "fileMtime": 1769444169569,
+      "firstPrompt": "J'ai des erreurs de CI : Skip to content yoanndrx's projects yoanndrx's projects  Hobby  mycryptopilot  Ho8YdZic2   Find… F  Deployment Details Build Failed Command \"pnpm run vercel-build\" exited with…",
+      "summary": "PR conflict resolution and CI fixes",
+      "messageCount": 62,
+      "created": "2026-01-26T14:15:13.209Z",
+      "modified": "2026-01-26T16:09:11.579Z",
+      "gitBranch": "feature/portfolio-tracking-refactor",
+      "projectPath": "/Users/yoannandrieux/Projets/mycryptopilot",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "3512570b-06b8-4e0f-bcbd-5608c29b28db",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux-Projets-mycryptopilot/3512570b-06b8-4e0f-bcbd-5608c29b28db.jsonl",
+      "fileMtime": 1769444170186,
+      "firstPrompt": "Tu peux me faire dans ce cas un autre fichier markdown que tu pourrais appeler par exemple   spec-projet ou quelque chose comme ça qui remet toutes les infos du projet, toutes les specs que   fait le…",
+      "summary": "Project Specification Document Creation",
+      "messageCount": 4,
+      "created": "2026-01-26T15:40:53.977Z",
+      "modified": "2026-01-26T15:45:41.972Z",
+      "gitBranch": "feature/portfolio-tracking-refactor",
+      "projectPath": "/Users/yoannandrieux/Projets/mycryptopilot",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "ec5fb3eb-2f4b-4f55-b83f-61549820402c",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux-Projets-mycryptopilot/ec5fb3eb-2f4b-4f55-b83f-61549820402c.jsonl",
+      "fileMtime": 1769455469577,
+      "firstPrompt": "tu peux continuer ton plan",
+      "summary": "MyCryptoPilot UI/UX Redesign Implementation Plan",
+      "messageCount": 7,
+      "created": "2026-01-26T16:19:27.074Z",
+      "modified": "2026-01-26T18:20:31.547Z",
+      "gitBranch": "ui",
+      "projectPath": "/Users/yoannandrieux/Projets/mycryptopilot",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "e2f48f3b-5328-4569-8674-5ce9b0c6aea8",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux-Projets-mycryptopilot/e2f48f3b-5328-4569-8674-5ce9b0c6aea8.jsonl",
+      "fileMtime": 1769455471697,
+      "firstPrompt": "Implement the following plan:  # Plan de Refonte UI/UX - MyCryptoPilot  ## Résumé  Refonte complète de l'interface utilisateur vers un design system **\"Cyber-Fintech Minimalist\"** dark-only avec glass…",
+      "summary": "MyCryptoPilot UI/UX Cyber-Fintech Refonte",
+      "messageCount": 16,
+      "created": "2026-01-26T18:28:21.818Z",
+      "modified": "2026-01-26T19:10:28.172Z",
+      "gitBranch": "ui",
+      "projectPath": "/Users/yoannandrieux/Projets/mycryptopilot",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "eeb11ced-18f8-48f4-8f7e-133042b97835",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux-Projets-mycryptopilot/eeb11ced-18f8-48f4-8f7e-133042b97835.jsonl",
+      "fileMtime": 1769514207239,
+      "firstPrompt": "No prompt",
+      "summary": "MyCryptoPilot UI/UX redesign 9-phase implementation plan",
+      "messageCount": 6,
+      "created": "2026-01-26T19:25:50.146Z",
+      "modified": "2026-01-26T19:31:52.479Z",
+      "gitBranch": "ui",
+      "projectPath": "/Users/yoannandrieux/Projets/mycryptopilot",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "1902749e-cad8-4a7a-a989-0c57f2ded066",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux-Projets-mycryptopilot/1902749e-cad8-4a7a-a989-0c57f2ded066.jsonl",
+      "fileMtime": 1769514208301,
+      "firstPrompt": "J'ai des erreurs pour le log : tUI, Xcode, iOS, macOS    ppd                                                                                                                                   130 ↵ ──(…",
+      "summary": "MyCryptoPilot UI Refonte - Design System Implementation",
+      "messageCount": 21,
+      "created": "2026-01-26T23:29:50.163Z",
+      "modified": "2026-01-27T11:42:22.538Z",
+      "gitBranch": "ui",
+      "projectPath": "/Users/yoannandrieux/Projets/mycryptopilot",
+      "isSidechain": false
+    }
+  ],
+  "originalPath": "/Users/yoannandrieux/Projets/mycryptopilot"
+}

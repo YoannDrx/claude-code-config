@@ -1,0 +1,150 @@
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.3234587Z Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.3235158Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.3247813Z Tip: Easily identify and fix slow SQL queries in your app. Optimize helps you enhance your visibility: https://pris.ly/--optimize
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.3248681Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5375362Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5377340Z dependencies:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5383042Z + @ai-sdk/openai 2.0.89 (3.0.7 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5383617Z + @hookform/resolvers 5.2.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5384139Z + @prisma/client 5.22.0 (7.2.0 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5384677Z + @radix-ui/react-accordion 1.2.12
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5385192Z + @radix-ui/react-alert-dialog 1.1.15
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5385942Z + @radix-ui/react-aspect-ratio 1.1.8
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5386699Z + @radix-ui/react-avatar 1.1.11
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5387208Z + @radix-ui/react-checkbox 1.3.3
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5407071Z + @radix-ui/react-collapsible 1.1.12
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5407591Z + @radix-ui/react-dialog 1.1.15
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5408061Z + @radix-ui/react-dropdown-menu 2.1.16
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5408504Z + @radix-ui/react-icons 1.3.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5408873Z + @radix-ui/react-label 2.1.8
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5409295Z + @radix-ui/react-popover 1.1.15
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5409734Z + @radix-ui/react-progress 1.1.8
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5410179Z + @radix-ui/react-radio-group 1.3.8
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5410615Z + @radix-ui/react-select 2.2.6
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5411029Z + @radix-ui/react-separator 1.1.8
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5411427Z + @radix-ui/react-slot 1.2.4
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5411801Z + @radix-ui/react-switch 1.2.6
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5412139Z + @radix-ui/react-tabs 1.1.13
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5412528Z + @radix-ui/react-toggle 1.1.10
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5412945Z + @radix-ui/react-tooltip 1.2.8
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5413458Z + @react-email/components 0.5.3 (1.0.4 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5414082Z + @react-email/render 1.2.3 (2.0.2 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5414664Z + @react-email/tailwind 1.2.2 (2.0.3 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5415157Z + @shikijs/rehype 3.21.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5415551Z + @t3-oss/env-nextjs 0.13.10
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5415939Z + @tailwindcss/postcss 4.1.18
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5416383Z + @tanstack/react-query 5.90.16
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5417044Z + @tanstack/react-query-devtools 5.91.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5417582Z + @types/react <- types-react 19.0.0-rc.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5418190Z + @types/react-dom <- types-react-dom 19.0.0-rc.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5418781Z + @types/react-syntax-highlighter 15.5.13
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5419311Z + ai 5.0.118 (6.0.24 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5419731Z + better-auth 1.4.10
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5420164Z + class-variance-authority 0.7.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5420553Z + clsx 2.1.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5420827Z + cmdk 1.1.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5421107Z + date-fns 4.1.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5421397Z + dayjs 1.11.19
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5422161Z + front-matter 4.0.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5422496Z + ioredis 5.9.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5422907Z + lucide-react 0.544.0 (0.562.0 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5423449Z + markdown-to-jsx 7.7.17 (9.5.1 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5423856Z + motion 12.25.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5424135Z + nanoid 5.1.6
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5424416Z + next 16.1.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5424776Z + next-mdx-remote-client 2.1.7
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5425190Z + next-safe-action 8.0.11
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5425767Z + next-themes 0.4.6
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5426174Z + next-zod-route 1.0.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5430290Z + nprogress 0.2.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5430703Z + nuqs 2.8.6
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5431083Z + react 19.1.1 (19.2.3 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5431573Z + react-dom 19.1.1 (19.2.3 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5432066Z + react-email 4.2.11 (5.2.1 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5432512Z + react-hook-form 7.70.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5432889Z + react-hotkeys-hook 5.2.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5433239Z + react-use 17.6.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5433639Z + recharts 2.15.4 (3.6.0 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5434118Z + rehype-autolink-headings 7.1.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5434520Z + rehype-slug 6.0.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5434838Z + remark-gfm 4.0.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5435210Z + resend 6.1.0 (6.7.0 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5435572Z + sass 1.97.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5435843Z + sonner 2.0.7
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5436208Z + stripe 18.5.0 (20.1.2 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5436855Z + tailwind-merge 3.4.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5437218Z + tailwindcss-animate 1.0.7
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5437550Z + tslog 4.10.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5437829Z + up-fetch 2.5.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5438108Z + zod 4.3.5
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5438374Z + zustand 5.0.9
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5438550Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5438673Z devDependencies:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5439077Z + @eslint/compat 1.4.1 (2.0.0 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5439508Z + @eslint/eslintrc 3.3.3
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5439853Z + @eslint/js 9.39.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5440186Z + @faker-js/faker 10.2.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5440604Z + @next/eslint-plugin-next 16.1.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5441030Z + @playwright/test 1.57.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5441420Z + @testing-library/dom 10.4.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5441856Z + @testing-library/jest-dom 6.9.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5442313Z + @testing-library/react 16.3.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5442763Z + @testing-library/user-event 14.6.1
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5443223Z + @types/ioredis 5.0.0 deprecated
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5443708Z + @types/node 24.10.4 (25.0.3 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5444140Z + @types/nprogress 0.2.3
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5444594Z + @typescript-eslint/eslint-plugin 8.52.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5445100Z + @typescript-eslint/parser 8.52.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5445539Z + @vitejs/plugin-react 5.1.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5445914Z + cross-fetch 4.1.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5446209Z + dotenv 17.2.3
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5446655Z + eslint 9.39.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5446987Z + eslint-plugin-react 7.37.5
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5447525Z + eslint-plugin-react-hooks 5.2.0 (7.0.1 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5448093Z + globals 16.5.0 (17.0.0 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5448495Z + happy-dom 20.1.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5448794Z + jsdom 27.4.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5449074Z + knip 5.80.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5449349Z + postcss 8.5.6
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5449642Z + prettier 3.7.4
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5450156Z + prettier-plugin-tailwindcss 0.6.14 (0.7.2 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5450747Z + prisma 5.22.0 (7.2.0 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5451154Z + tailwindcss 4.1.18
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5451463Z + ts-node 10.9.2
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5451751Z + tsx 4.21.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5452045Z + typescript 5.9.3
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5452390Z + typescript-eslint 8.52.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5452737Z + unified 11.0.5
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5453095Z + vitest 3.2.4 (4.0.16 is available)
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5453533Z + vitest-mock-extended 3.1.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5453777Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.5453926Z Done in 28.1s
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.6620848Z ##[group]Run pnpm ts
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.6642295Z [36;1mpnpm ts[0m
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.6675918Z shell: /usr/bin/bash -e {0}
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.6676150Z env:
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.6676393Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.6676961Z   CI: true
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:09.6677122Z ##[endgroup]
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:10.1073046Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:10.1075039Z > light-ts@1.0.0 ts /home/runner/work/light-ts/light-ts
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:10.1076217Z > tsc --noEmit
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:10.1078489Z 
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.7550681Z ##[error]app/auth/forget-password/forget-password-page.tsx(45,20): error TS2551: Property 'forgetPassword' does not exist on type '{ signIn: { magicLink: <FetchOptions extends ClientFetchOption<Partial<{ email: string; name?: string | undefined; callbackURL?: string | undefined; newUserCallbackURL?: string | undefined; errorCallbackURL?: string | undefined; }> & Record<...>, Partial<...> & Record<...>, Record<...> | undefined>>(data_0: Prettify...'. Did you mean 'resetPassword'?
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.8388425Z  ELIFECYCLE  Command failed with exit code 2.
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.8574358Z ##[error]Process completed with exit code 2.
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.8652696Z Post job cleanup.
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9409793Z [command]/usr/bin/git version
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9448839Z git version 2.52.0
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9499221Z Temporarily overriding HOME='/home/runner/work/_temp/2a261b2c-1cf2-4180-be76-2c3a437ca7b4' before making global git config changes
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9501804Z Adding repository directory to the temporary git global config as a safe directory
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9505726Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/light-ts/light-ts
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9544537Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9580327Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9830741Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9857334Z http.https://github.com/.extraheader
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9870188Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:25.9903534Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:26.0242482Z Post job cleanup.
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:26.1433124Z Pruning is unnecessary.
+typescript (22.x)	UNKNOWN STEP	2026-01-09T13:33:26.1525462Z Cleaning up orphan processes

@@ -1,0 +1,1661 @@
+messages/fr.json:5:    "services": "Services",
+messages/fr.json-6-    "albums": "Albums",
+messages/fr.json-7-    "videos": "Vidéos",
+messages/fr.json-8-    "contact": "Contact",
+messages/fr.json-9-    "subtitle": "Compositeur et producteur de musique",
+messages/fr.json-10-    "admin": "Admin",
+messages/fr.json-11-    "dashboard": "Tableau de bord",
+messages/fr.json-12-    "logout": "Déconnexion",
+messages/fr.json-13-    "close": "Fermer"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-14-  },
+messages/fr.json-15-  "home": {
+messages/fr.json-16-    "title": "Loïc Ghanem",
+messages/fr.json-17-    "subtitle": "Compositeur & Producteur Musical",
+messages/fr.json-18-    "description": "Compositeur et producteur musical passionné, créant des univers sonores uniques pour vos projets audiovisuels depuis",
+messages/fr.json-19-    "yearsExperience": "plus de {years} ans",
+messages/fr.json-20-    "stats": {
+messages/fr.json-21-      "albums": "Albums",
+messages/fr.json-22-      "audiovisualProjects": "Projets Audiovisuels",
+messages/fr.json-23-      "collaborations": "Collaborations"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-24-    },
+messages/fr.json-25-    "cta": {
+messages/fr.json-26-      "listenAlbums": "Écouter mes albums",
+messages/fr.json-27-      "workTogether": "Travailler ensemble"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-28-    },
+messages/fr.json-29-    "scroll": "Scroll",
+messages/fr.json-30-    "marquee": {
+messages/fr.json-31-      "items": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-32-        "BANDE-SON",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-33-        "MUSIQUE ORIGINALE",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-34-        "IDENTITÉ SONORE",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-35-        "MIXAGE",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-36-        "MASTERING",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-37-        "SOUND DESIGN",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-38-        "DIRECTION VOIX",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-39-        "SUPERVISION MUSICALE",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-40-        "POST-PRODUCTION AUDIO",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-41-        "PRODUCTION PODCAST",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-42-        "ORCHESTRATION",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-43-        "BRUITAGES FOLEY",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-44-        "MONTAGE MUSICAL"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-45-      ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-46-    },
+messages/fr.json-47-    "featuredAlbums": {
+messages/fr.json-48-      "title": "Derniers Albums",
+messages/fr.json-49-      "description": "Découvrez mes dernières créations musicales couvrant différents genres, du Metal au Hip-Hop en passant par l'Ambient et l'Electronic.",
+messages/fr.json-50-      "viewAll": "Voir tous les albums ({count})"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-51-    },
+messages/fr.json-52-    "latestVideos": {
+messages/fr.json-53-      "badge": "Sync Placements",
+messages/fr.json-54-      "title": "Dernières Vidéos",
+messages/fr.json-55-      "description": "Mes compositions utilisées dans des productions professionnelles : sports, TV, publicités et plus encore.",
+--
+messages/fr.json:96:      "services": "SERVICES <span class=\"text-neon-purple\">SONORES</span>",
+messages/fr.json:97:      "servicesSubtitle": "04 / EXPERTISE",
+messages/fr.json:98:      "servicesTitle": "Expertise",
+messages/fr.json:99:      "servicesSection": "Services Sonores",
+messages/fr.json:100:      "viewAllServices": "Voir tous les services",
+messages/fr.json-101-      "learnMore": "En savoir plus",
+messages/fr.json-102-      "contact": "CRÉONS <br/><span class=\"text-neon-lime\">ENSEMBLE</span>",
+messages/fr.json-103-      "contactText": "Une idée ? Un projet musical ? Transformons votre vision en réalité sonore.",
+messages/fr.json-104-      "getInTouch": "Me Contacter"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-105-    },
+messages/fr.json-106-    "soundcloud": {
+messages/fr.json-107-      "title": "ÉCOUTEZ <span class=\"text-neon-green\">MES PRODS</span>",
+messages/fr.json-108-      "subtitle": "02 / STREAMING",
+messages/fr.json-109-      "follow": "Suivre sur SoundCloud"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-110-    },
+messages/fr.json-111-    "streaming": {
+messages/fr.json-112-      "title": "STREAMING",
+messages/fr.json-113-      "subtitle": "ÉCOUTEZ MES PRODS",
+messages/fr.json-114-      "playerTitle": "LOÏC GHANEM PRODUCTIONS",
+messages/fr.json-115-      "soundcloud": "Suivre sur SoundCloud",
+messages/fr.json-116-      "spotify": "Écouter sur Spotify",
+messages/fr.json-117-      "description": "Retrouvez toutes mes productions sur les plateformes de streaming. De la composition orchestrale au Metal en passant par l'Electronic et l'Ambient."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-118-    },
+messages/fr.json-119-    "banners": {
+messages/fr.json-120-      "partners": "Ils m'ont fait confiance",
+messages/fr.json-121-      "productions": "Mes productions"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-122-    },
+messages/fr.json-123-    "splitHero": {
+messages/fr.json-124-      "basedIn": "BASÉ À PARIS",
+messages/fr.json-125-      "title": {
+messages/fr.json-126-        "line1": "Compositeur",
+messages/fr.json-127-        "line2": "& Producteur",
+messages/fr.json-128-        "line3": "Musical"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-129-      },
+messages/fr.json-130-      "tagline": "Compositeur primé. Je crée des univers sonores immersifs pour l'audio visuel, les artistes et la librairie musicale.",
+messages/fr.json-131-      "scrollDown": "Défiler",
+messages/fr.json-132-      "player": {
+messages/fr.json-133-        "title": "LOÏC GHANEM PRODUCTIONS",
+messages/fr.json-134-        "soundcloud": "SoundCloud",
+messages/fr.json-135-        "spotify": "Spotify",
+messages/fr.json-136-        "appleMusic": "Apple Music",
+messages/fr.json-137-        "deezer": "Deezer",
+messages/fr.json-138-        "tidal": "Tidal",
+messages/fr.json-139-        "youtube": "YouTube",
+messages/fr.json-140-        "followSoundcloud": "Suivre sur SoundCloud",
+messages/fr.json-141-        "listenSpotify": "Écouter sur Spotify"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-142-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-143-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-144-  },
+messages/fr.json-145-  "about": {
+messages/fr.json-146-    "pageTitle": "À Propos",
+messages/fr.json-147-    "pageDescription": "Compositeur et producteur musical passionné, créant des univers sonores uniques pour vos projets audiovisuels depuis plus de 15 ans.",
+messages/fr.json-148-    "title": "À propos",
+messages/fr.json-149-    "intro": "Hello !",
+messages/fr.json-150-    "bio": {
+--
+messages/fr.json:374:  "services": {
+messages/fr.json-375-    "detail": {
+messages/fr.json-376-      "notFound": "Service non trouvé",
+messages/fr.json-377-      "about": "À propos",
+messages/fr.json-378-      "offeredOn": "Service offert le",
+messages/fr.json-379-      "relatedServices": "Autres Services",
+messages/fr.json-380-      "whatYouGet": "Ce que vous obtenez",
+messages/fr.json-381-      "process": "Processus",
+messages/fr.json-382-      "examples": "Exemples",
+messages/fr.json-383-      "listen": "Écouter",
+messages/fr.json:384:      "backToServices": "Retour aux services",
+messages/fr.json-385-      "requestQuote": "Demander un devis",
+messages/fr.json-386-      "step": "Étape",
+messages/fr.json-387-      "pricing": "Tarification",
+messages/fr.json-388-      "startingFrom": "À partir de",
+messages/fr.json-389-      "onQuote": "Sur devis",
+messages/fr.json-390-      "customizable": "Chaque projet est unique. Discutons de vos besoins pour une offre personnalisée.",
+messages/fr.json-391-      "contact": "Contact",
+messages/fr.json-392-      "responseTime": "Réponse",
+messages/fr.json-393-      "readyToStart": "Prêt ?",
+messages/fr.json-394-      "also": "AUSSI",
+messages/fr.json-395-      "examplesDescription": "Découvrez mes réalisations dans la section albums et vidéos.",
+messages/fr.json-396-      "viewAlbums": "Voir les albums",
+messages/fr.json-397-      "viewVideos": "Voir les vidéos",
+messages/fr.json-398-      "discoverWork": "Découvrir mon travail",
+messages/fr.json-399-      "discoverWorkDescription": "Explorez mes compositions à travers mes albums et vidéos de synchronisation.",
+messages/fr.json-400-      "previousService": "Service précédent",
+messages/fr.json-401-      "nextService": "Service suivant",
+messages/fr.json-402-      "whatYouGetItems": {
+messages/fr.json-403-        "item1": "Musique originale 100% sur mesure",
+messages/fr.json-404-        "item2": "Livraison rapide",
+messages/fr.json-405-        "item3": "Révisions illimitées",
+messages/fr.json-406-        "item4": "Qualité professionnelle",
+messages/fr.json-407-        "item5": "Droits complets inclus"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-408-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-409-    },
+messages/fr.json-410-    "pageTitle": "Services",
+messages/fr.json-411-    "pageDescription": "De la composition à la post-production, je vous accompagne à chaque étape de votre projet musical avec expertise et passion.",
+messages/fr.json-412-    "noServices": "Aucun service disponible pour le moment",
+messages/fr.json-413-    "totalServices": "Services",
+messages/fr.json-414-    "satisfaction": "Satisfaction Client",
+messages/fr.json-415-    "availability": "Disponibilité",
+messages/fr.json-416-    "seeMore": "En savoir plus",
+messages/fr.json-417-    "writtenBy": "Écrit par",
+messages/fr.json-418-    "hero": {
+messages/fr.json-419-      "badge": "EXPERTISE SONORE",
+messages/fr.json-420-      "title": "L'Univers de la Création Musicale",
+messages/fr.json:421:      "description": "De la composition à la post-production, explorez mes services pour donner vie à vos projets audiovisuels avec créativité et professionnalisme.",
+messages/fr.json:422:      "cta": "Explorer mes services",
+messages/fr.json-423-      "ctaSecondary": "Me contacter"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-424-    },
+messages/fr.json-425-    "stats": {
+messages/fr.json:426:      "services": "Services",
+messages/fr.json-427-      "experience": "Années d'expérience",
+messages/fr.json-428-      "projects": "Projets réalisés",
+messages/fr.json-429-      "satisfaction": "Satisfaction"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-430-    },
+messages/fr.json-431-    "process": {
+messages/fr.json-432-      "title": "Comment je travaille",
+messages/fr.json-433-      "subtitle": "PROCESSUS",
+messages/fr.json-434-      "brief": {
+messages/fr.json-435-        "title": "Brief",
+messages/fr.json-436-        "description": "Comprendre votre vision et vos objectifs"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-437-      },
+messages/fr.json-438-      "composition": {
+messages/fr.json-439-        "title": "Composition",
+messages/fr.json-440-        "description": "Créer l'univers sonore unique"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-441-      },
+messages/fr.json-442-      "production": {
+messages/fr.json-443-        "title": "Production",
+messages/fr.json-444-        "description": "Donner vie à la musique"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-445-      },
+messages/fr.json-446-      "mixing": {
+messages/fr.json-447-        "title": "Mix & Master",
+messages/fr.json-448-        "description": "Peaufiner chaque détail"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-449-      },
+messages/fr.json-450-      "delivery": {
+messages/fr.json-451-        "title": "Livraison",
+messages/fr.json-452-        "description": "Votre projet finalisé"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-453-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-454-    },
+messages/fr.json-455-    "cosmicCta": {
+messages/fr.json-456-      "title": "Prêt à créer ensemble ?",
+messages/fr.json-457-      "description": "Chaque projet mérite une identité sonore unique. Transformons votre vision en musique.",
+messages/fr.json-458-      "button": "Parlons de votre projet"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-459-    },
+messages/fr.json-460-    "cta": {
+messages/fr.json-461-      "title": "Prêt à démarrer votre projet ?",
+messages/fr.json-462-      "description": "Contactez-moi pour discuter de votre vision musicale et découvrir comment je peux donner vie à vos idées.",
+messages/fr.json-463-      "button": "Contactez-moi",
+messages/fr.json-464-      "discuss": "Discutons de votre projet"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-465-    },
+messages/fr.json-466-    "composition": {
+messages/fr.json-467-      "title": "Composition",
+messages/fr.json-468-      "description": "Création de musiques originales sur mesure pour vos projets de film, TV, publicités et jeux vidéo.",
+messages/fr.json-469-      "largeTitle": "Composition : Créer des Mélodies Uniques et Captivantes",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-470-[Omitted long context line]
+messages/fr.json-471-      "details": {
+messages/fr.json-472-        "intro": "Je crée des **musiques originales** pour donner vie à vos projets audiovisuels. Que ce soit pour un film, une série TV, une publicité ou un jeu vidéo, je compose des bandes originales qui racontent votre histoire.",
+messages/fr.json-473-        "approach": "Mon approche allie **sensibilité artistique** et **vision narrative**, en créant des univers sonores uniques adaptés à chaque projet, du Metal au Hip-Hop, en passant par l'Ambient et l'Electronic.",
+messages/fr.json:474:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-475-          "Composition orchestrale et hybride",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-476-          "Thèmes musicaux sur mesure",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-477-          "Direction artistique sonore",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-478-          "Adaptation tous genres musicaux"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-479-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-480-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-481-    },
+messages/fr.json-482-    "production": {
+messages/fr.json-483-      "title": "Production",
+messages/fr.json-484-      "description": "Production musicale complète de A à Z, de l'arrangement à la post-production.",
+messages/fr.json-485-      "largeTitle": "Production Musicale : Du Concept au Mix Final",
+messages/fr.json:486:      "fullDescription": "Mes services de production musicale englobent chaque étape du processus. Avec une compréhension approfondie de la théorie musicale, une oreille attentive aux détails, et une maîtrise des derniers logiciels de production, je suis équipé pour concrétiser vos idées musicales. Que vous ayez besoin d'aide pour l'arrangement, l'enregistrement, le mixage ou le mastering, je fournis une solution complète adaptée aux besoins de votre projet.",
+messages/fr.json-487-      "details": {
+messages/fr.json-488-        "intro": "Je prends en charge la **production complète** de vos projets musicaux, de la conception à la réalisation finale. Mon expertise couvre tous les aspects de la production moderne.",
+messages/fr.json-489-        "approach": "Avec un studio équipé des dernières technologies et une connaissance approfondie de multiples genres musicaux, je transforme vos idées en productions professionnelles prêtes pour la diffusion.",
+messages/fr.json:490:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-491-          "Production multi-genres (Metal, Hip-Hop, Electronic, Ambient)",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-492-          "Programmation et sound design",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-493-          "Enregistrement et direction artistique",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-494-          "Mastering pour tous supports"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-495-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-496-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-497-    },
+messages/fr.json-498-    "arranging": {
+messages/fr.json-499-      "title": "Arranging",
+messages/fr.json-500-      "description": "Arrangements orchestraux et instrumentaux pour sublimer vos compositions.",
+messages/fr.json-501-      "largeTitle": "Arrangement : Sublimer Vos Compositions",
+messages/fr.json-502-      "fullDescription": "Mes compétences en arrangement ajouteront profondeur et complexité à votre musique. Avec ma connaissance approfondie de l'orchestration et de l'harmonie, je créerai des arrangements qui révèlent le meilleur de vos compositions. Que vous ayez une composition complète ou une simple mélodie, je peux la transformer en un morceau riche et pleinement réalisé.",
+messages/fr.json-503-      "details": {
+messages/fr.json-504-        "intro": "L'**arrangement** est l'art de structurer et d'habiller une composition pour en révéler tout le potentiel. Je travaille sur l'orchestration, l'harmonie et la texture sonore pour créer des arrangements riches et cohérents.",
+messages/fr.json-505-        "approach": "De l'orchestration symphonique aux arrangements électroniques modernes, je maîtrise une large palette de techniques pour donner vie à vos idées musicales.",
+messages/fr.json:506:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-507-          "Orchestration symphonique et moderne",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-508-          "Arrangements pour ensembles acoustiques",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-509-          "Réharmonisation et adaptation",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-510-          "Création de textures hybrides"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-511-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-512-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-513-    },
+messages/fr.json-514-    "vocalProducer": {
+messages/fr.json-515-      "title": "Vocal Producer",
+messages/fr.json-516-      "description": "Direction et production vocale pour des performances exceptionnelles.",
+messages/fr.json-517-      "largeTitle": "Production Vocale : Sublimer Vos Performances Vocales",
+messages/fr.json:518:[Omitted long matching line]
+messages/fr.json-519-      "details": {
+messages/fr.json-520-        "intro": "En tant que **vocal producer**, je guide les artistes pour capturer les meilleures performances vocales. Mon rôle est d'extraire l'émotion et la puissance de chaque voix.",
+messages/fr.json-521-        "approach": "De la préproduction à l'enregistrement, j'accompagne les chanteurs dans leur processus créatif, en apportant une direction artistique précise et bienveillante.",
+messages/fr.json:522:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-523-          "Direction artistique vocale",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-524-          "Préparation et coaching avant session",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-525-          "Enregistrement et editing vocal",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-526-          "Traitement et production des voix"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-527-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-528-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-529-    },
+messages/fr.json-530-    "mixing": {
+messages/fr.json-531-      "title": "Mixing",
+messages/fr.json-532-      "description": "Mixage professionnel pour un son équilibré et percutant.",
+messages/fr.json-533-      "largeTitle": "Mixage : Peaufiner Votre Musique à la Perfection",
+messages/fr.json-534-      "fullDescription": "Le mixage est une étape critique du processus de production musicale, et c'est un domaine dans lequel j'excelle. Je vais équilibrer les éléments de votre morceau, m'assurant qu'aucun instrument ou voix n'est trop fort ou trop doux. Mes techniques de mixage ajouteront également profondeur et dimension à votre musique, créant un paysage sonore riche et engageant.",
+messages/fr.json-535-      "details": {
+messages/fr.json-536-        "intro": "Le **mixage** est l'étape cruciale qui transforme des pistes brutes en une production cohérente et professionnelle. Je balance, équilibre et façonne chaque élément pour créer un mix impactant.",
+messages/fr.json-537-        "approach": "Avec une approche analytique et créative, j'optimise la clarté, la profondeur et la dynamique de vos morceaux pour qu'ils sonnent parfaitement sur tous les supports d'écoute.",
+messages/fr.json:538:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-539-          "Mixage stéréo et surround",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-540-          "Traitement dynamique et fréquentiel",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-541-          "Spatialisation et effets créatifs",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-542-          "Optimisation pour streaming et broadcast"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-543-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-544-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-545-    },
+messages/fr.json-546-    "mastering": {
+messages/fr.json-547-      "title": "Mastering",
+messages/fr.json-548-      "description": "Mastering de haute qualité pour une finalisation optimale de vos productions.",
+messages/fr.json-549-      "largeTitle": "Mastering : La Touche Finale pour Votre Musique",
+messages/fr.json:550:      "fullDescription": "Le mastering est la dernière étape du processus de production musicale, et c'est une étape que je prends très au sérieux. Je m'assurerai que vos morceaux sont prêts pour la distribution, en les optimisant pour tous les systèmes de lecture. Mes services de mastering donneront à votre musique le polish final dont elle a besoin, garantissant qu'elle sonne professionnelle et rivalise avec les autres sorties commerciales.",
+messages/fr.json-551-      "details": {
+messages/fr.json-552-        "intro": "Le **mastering** est la touche finale qui donne à votre musique son éclat professionnel. Je prépare vos morceaux pour la diffusion en optimisant le niveau, la balance spectrale et la cohérence entre les pistes.",
+messages/fr.json-553-        "approach": "Mon approche du mastering garantit que votre musique sonne de manière optimale sur tous les systèmes d'écoute, des écouteurs aux systèmes hi-fi, en respectant les standards de l'industrie.",
+messages/fr.json:554:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-555-          "Mastering pour tous formats (streaming, CD, vinyl)",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-556-          "Optimisation spectrale et dynamique",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-557-          "Cohérence entre les morceaux d'un album",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-558-          "Préparation pour distribution digitale"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-559-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-560-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-561-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-562-  },
+messages/fr.json-563-  "albums": {
+messages/fr.json-564-    "pageTitle": "Albums & Projets",
+messages/fr.json-565-    "pageDescription": "Découvrez ma discographie complète, des productions Metal et Metalcore aux créations Hip-Hop, Electronic et Ambient.",
+messages/fr.json-566-    "filterAll": "Tous les Albums",
+messages/fr.json-567-    "sortBy": "Trier par",
+messages/fr.json-568-    "sortNewest": "Plus récent",
+messages/fr.json-569-    "sortOldest": "Plus ancien",
+messages/fr.json-570-    "listen": "Écouter",
+messages/fr.json-571-    "collaboration": "En collaboration avec",
+messages/fr.json-572-    "releaseDate": "Date de sortie",
+messages/fr.json-573-    "genre": "Genre",
+messages/fr.json-574-    "hero": {
+messages/fr.json-575-      "badge": "DISCOGRAPHIE",
+messages/fr.json-576-      "title": "Mes Créations Musicales",
+messages/fr.json-577-      "description": "Explorez ma discographie complète : productions Metal, Hip-Hop, Ambient, Electronic et bien plus. Chaque album raconte une histoire unique.",
+messages/fr.json-578-      "cta": "Explorer les albums",
+messages/fr.json-579-      "ctaSecondary": "Me contacter"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-580-    },
+messages/fr.json-581-    "stats": {
+messages/fr.json-582-      "total": "Albums",
+messages/fr.json-583-      "genres": "Genres",
+messages/fr.json-584-      "collaborations": "Collaborations",
+messages/fr.json-585-      "period": "Période"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-586-    },
+messages/fr.json-587-    "albumsCta": {
+messages/fr.json-588-      "title": "Envie d'écouter ?",
+messages/fr.json-589-      "description": "Découvrez l'ensemble de ma discographie sur les plateformes de streaming. Chaque album est une nouvelle aventure sonore.",
+messages/fr.json-590-      "button": "Écouter sur Spotify",
+messages/fr.json-591-      "buttonSecondary": "Me contacter"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-592-    },
+messages/fr.json-593-    "card": {
+messages/fr.json-594-      "listen": "Écouter",
+messages/fr.json-595-      "viewMore": "Voir plus"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-596-    },
+messages/fr.json-597-    "noAlbums": "Aucun album ne correspond à vos filtres.",
+messages/fr.json-598-    "featured": "Favori",
+messages/fr.json-599-    "detail": {
+messages/fr.json-600-      "notFound": "Album non trouvé",
+messages/fr.json-601-      "listen": "Écouter l'album",
+messages/fr.json-602-      "about": "À propos de l'album",
+messages/fr.json-603-      "ctaTitle": "Prêt à découvrir cet album ?",
+messages/fr.json-604-      "ctaText": "Écoutez \"{title}\" sur toutes les plateformes de streaming.",
+--
+messages/fr.json:679:      "ctaSecondary": "Voir mes services"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-680-    },
+messages/fr.json-681-    "stats": {
+messages/fr.json-682-      "responseTime": "Temps de réponse",
+messages/fr.json-683-      "satisfaction": "Satisfaction",
+messages/fr.json-684-      "projects": "Projets réalisés"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-685-    },
+messages/fr.json-686-    "directContact": {
+messages/fr.json-687-      "title": "Contact Direct",
+messages/fr.json-688-      "tagline": "Pas de formulaire, pas de blabla. On s'appelle, on en parle, on crée !",
+messages/fr.json-689-      "callMe": "Appelez-moi direct",
+messages/fr.json-690-      "emailMe": "Ou par email",
+messages/fr.json-691-      "footer": "Promis, je décroche (sauf si je suis en studio... mais je rappelle vite !)"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-692-    },
+messages/fr.json-693-    "form": {
+messages/fr.json-694-      "name": "Nom",
+messages/fr.json-695-      "namePlaceholder": "Votre nom",
+messages/fr.json-696-      "email": "Email",
+messages/fr.json-697-      "emailPlaceholder": "votre@email.com",
+messages/fr.json-698-      "subject": "Sujet",
+messages/fr.json-699-      "subjectPlaceholder": "Sujet de votre message",
+messages/fr.json-700-      "message": "Message",
+messages/fr.json-701-      "messagePlaceholder": "Parlez-moi de votre projet...",
+messages/fr.json-702-      "submit": "Envoyer le message",
+messages/fr.json-703-      "sending": "Envoi en cours...",
+messages/fr.json-704-      "success": "Message envoyé avec succès !",
+messages/fr.json-705-      "error": "Une erreur s'est produite. Veuillez réessayer."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-706-    },
+messages/fr.json-707-    "info": {
+messages/fr.json-708-      "title": "Informations de Contact",
+messages/fr.json-709-      "email": "Email",
+messages/fr.json-710-      "phone": "Téléphone",
+messages/fr.json-711-      "location": "Localisation",
+messages/fr.json-712-      "locationValue": "Paris, France",
+messages/fr.json-713-      "social": "Réseaux Sociaux",
+messages/fr.json-714-      "availability": "Pour les projets urgents, n'hésitez pas à me contacter par téléphone.",
+messages/fr.json-715-      "findMe": "Retrouvez-moi"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-716-    },
+messages/fr.json-717-    "cta": {
+messages/fr.json:718:      "text": "Vous préférez découvrir mes services avant de me contacter ?",
+messages/fr.json:719:      "button": "Voir mes services"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-720-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-721-  },
+messages/fr.json-722-  "footer": {
+messages/fr.json-723-    "copyright": "© {year} Loïc Ghanem. Tous droits réservés.",
+messages/fr.json-724-    "quickLinks": "Liens Rapides",
+messages/fr.json-725-    "followMe": "Parlons de votre projet",
+messages/fr.json-726-    "tagline": "Compositeur & Producteur Musical basé à Paris",
+messages/fr.json-727-    "letsCreate": "Créons",
+messages/fr.json-728-    "together": "Ensemble.",
+messages/fr.json-729-    "location": "PARIS, FRANCE",
+messages/fr.json-730-    "streaming": "Streaming",
+messages/fr.json-731-    "social": "Social",
+messages/fr.json-732-    "listen": "Écouter",
+messages/fr.json-733-    "role": "Compositeur et producteur de musique",
+messages/fr.json-734-    "ctaTitle1": "Créons",
+messages/fr.json-735-    "ctaTitle2": "Quelque Chose d'Unique",
+messages/fr.json-736-    "startProject": "Lancer un projet",
+messages/fr.json-737-    "basedIn": "Basé à",
+messages/fr.json-738-    "navigation": "Navigation",
+messages/fr.json-739-    "streamNow": "Écouter maintenant",
+messages/fr.json-740-    "privacyPolicy": "POLITIQUE DE CONFIDENTIALITÉ",
+messages/fr.json-741-    "termsOfUse": "CONDITIONS D'UTILISATION",
+messages/fr.json-742-    "noForm": {
+messages/fr.json-743-      "title": "Un projet ? Parlons-en !",
+messages/fr.json-744-      "description": "Pas de formulaire ici, juste un coup de fil et on démarre l'aventure sonore.",
+messages/fr.json-745-      "callButton": "On s'appelle ?"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-746-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-747-  },
+messages/fr.json-748-  "legal": {
+messages/fr.json-749-    "common": {
+messages/fr.json-750-      "summaryTitle": "L'essentiel à retenir",
+messages/fr.json-751-      "highlightsTitle": "Principes clés",
+messages/fr.json-752-      "sectionsTitle": "Détails complets",
+messages/fr.json-753-      "contactTitle": "Contact direct",
+messages/fr.json-754-      "lastUpdatedLabel": "Dernière mise à jour"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-755-    },
+messages/fr.json-756-    "privacy": {
+messages/fr.json-757-      "pageTitle": "Politique de confidentialité",
+messages/fr.json-758-      "pageDescription": "Comment vos données sont collectées, utilisées et protégées lorsque vous utilisez ce site ou me contactez.",
+messages/fr.json-759-      "lastUpdated": "10 décembre 2025",
+messages/fr.json-760-      "hero": {
+messages/fr.json-761-        "badge": "Confidentialité",
+messages/fr.json-762-        "title": "Politique de confidentialité",
+messages/fr.json-763-        "description": "Je ne collecte que ce qui est nécessaire pour répondre à vos demandes et je traite vos données avec transparence."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-764-      },
+messages/fr.json-765-      "summary": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-766-        "Données limitées au formulaire de contact, aux échanges et à des statistiques d'audience anonymisées.",
+messages/fr.json-767-        "Aucune vente ni cession commerciale de vos données : elles servent uniquement à l'échange autour de vos projets.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-768-        "Vos droits (accès, rectification, suppression, opposition) sont activables à tout moment par simple demande."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-769-      ],
+--
+messages/fr.json:881:        "Site vitrine présentant mes services de composition, production et sound design.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-882-        "Toute prestation est formalisée par un devis ou un contrat avant de démarrer.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-883-        "Aucune utilisation commerciale ou reproduction des contenus sans autorisation écrite."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-884-      ],
+messages/fr.json-885-      "highlights": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-886-        {
+messages/fr.json-887-          "title": "Transparence",
+messages/fr.json-888-          "description": "Les conditions couvrent l'accès au site, la propriété intellectuelle, les demandes de prestations et les responsabilités."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-889-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-890-        {
+messages/fr.json-891-          "title": "Cadre de collaboration",
+messages/fr.json-892-          "description": "Chaque projet suit un devis ou contrat précisant périmètre, délais, tarifs, droits et livrables."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-893-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-894-        {
+messages/fr.json-895-          "title": "Droit applicable",
+messages/fr.json-896-          "description": "Le droit français s'applique. Nous privilégions un règlement amiable avant tout recours judiciaire."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-897-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-898-      ],
+messages/fr.json-899-      "sections": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-900-        {
+messages/fr.json-901-          "title": "Éditeur et responsable de la publication",
+messages/fr.json-902-          "description": "Le site est administré par Yoann Andrieux (Yodev) qui assure la maintenance et la conformité éditoriale.",
+messages/fr.json-903-          "bullets": [
+messages/fr.json-904-            "Webmaster / responsable de la publication : Yoann Andrieux - Yodev.",
+messages/fr.json-905-            "Contact pour tout sujet légal ou technique lié au site : yoann.andrieux@gmail.com.",
+messages/fr.json:906:            "Les contenus et services présentés concernent l'activité de Loïc Ghanem ; la maintenance est assurée par Yodev."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-907-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-908-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-909-        {
+messages/fr.json-910-          "title": "Objet du site",
+messages/fr.json-911-          "description": "Ce site présente mon activité et permet d'entrer en contact pour discuter d'un projet.",
+messages/fr.json-912-          "bullets": [
+messages/fr.json:913:            "Présentation des services de composition, production, mix/mastering et supervision musicale.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-914-            "Mise à disposition d'exemples (albums, vidéos, références) pour illustrer mon travail.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-915-            "Formulaire de contact pour obtenir des informations ou un devis."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-916-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-917-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-918-        {
+messages/fr.json-919-          "title": "Accès et disponibilité",
+messages/fr.json-920-          "description": "J'œuvre pour maintenir le site accessible mais certaines interruptions peuvent survenir.",
+messages/fr.json-921-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-922-            "Accès possible 24/7 sous réserve de maintenance ou de mise à jour.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-923-            "Modification, suspension ou retrait temporaire possible sans préavis en cas d'évolution du service.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-924-            "Aucune garantie d'absence d'erreur ; signalez tout dysfonctionnement pour correction."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-925-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-926-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-927-        {
+messages/fr.json-928-          "title": "Propriété intellectuelle",
+messages/fr.json-929-          "description": "Les contenus du site sont protégés par le droit d'auteur et autres droits applicables.",
+messages/fr.json-930-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-931-            "Textes, images, logos, maquettes et extraits audio restent ma propriété ou celle de mes partenaires.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-932-            "Toute reproduction, diffusion ou adaptation sans autorisation écrite est interdite.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-933-            "Les licences d'utilisation des œuvres sont définies dans le devis ou le contrat associé au projet."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-934-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-935-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-936-        {
+messages/fr.json-937-          "title": "Utilisation acceptable",
+messages/fr.json-938-          "description": "Vous vous engagez à utiliser le site dans le respect des lois et des droits des tiers.",
+messages/fr.json-939-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-940-            "Ne pas tenter d'accéder aux zones non publiques ni perturber le fonctionnement du site.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-941-            "Ne pas extraire, indexer ou réutiliser massivement les contenus sans accord.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-942-            "Respecter les droits de propriété intellectuelle et la confidentialité des informations échangées."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-943-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-944-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-945-        {
+messages/fr.json-946-          "title": "Demandes de prestations",
+messages/fr.json-947-          "description": "Toute collaboration est cadrée contractuellement.",
+messages/fr.json-948-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-949-            "Validation d'un devis/contrat précisant périmètre, calendrier, tarifs, droits et livrables avant démarrage.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-950-            "Blocage des dates uniquement après confirmation écrite et, le cas échéant, versement d'un acompte.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-951-            "Cession ou licence des droits d'utilisation des œuvres limitée aux usages définis contractuellement."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-952-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-953-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-954-        {
+messages/fr.json-955-          "title": "Tarifs et paiements",
+messages/fr.json-956-          "description": "Les conditions financières sont communiquées par écrit.",
+messages/fr.json-957-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-958-            "Les tarifs figurent dans les devis ou bons de commande acceptés.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-959-            "Les modalités de paiement (acompte, échéances, pénalités) sont précisées et acceptées avant lancement.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-960-            "En cas de retard de paiement, la prestation peut être suspendue après notification."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-961-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-962-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-963-        {
+--
+messages/fr.json:974:          "description": "Le site peut contenir des liens vers des services tiers.",
+messages/fr.json-975-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-976-            "Je ne contrôle pas le contenu ou les pratiques de ces sites externes.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-977-            "Consultez leurs politiques et conditions avant utilisation.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-978-            "Je ne saurais être tenu responsable des dommages résultant de ces sites tiers."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-979-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-980-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-981-        {
+messages/fr.json-982-          "title": "Protection des données",
+messages/fr.json-983-          "description": "Le traitement des données personnelles est détaillé dans la Politique de confidentialité.",
+messages/fr.json-984-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-985-            "En utilisant le site ou en me contactant, vous acceptez les principes décrits dans ce document.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-986-            "Vous pouvez exercer vos droits à tout moment via les modalités précisées dans la Politique de confidentialité."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-987-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-988-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-989-        {
+messages/fr.json-990-          "title": "Modifications des conditions",
+messages/fr.json-991-          "description": "Ces conditions peuvent évoluer pour refléter les mises à jour du site ou les exigences légales.",
+messages/fr.json-992-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-993-            "La date de dernière mise à jour figure en haut de page.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-994-            "En continuant à utiliser le site après modification, vous acceptez les nouvelles conditions."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-995-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-996-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-997-        {
+messages/fr.json-998-          "title": "Loi applicable et litiges",
+messages/fr.json-999-          "description": "Le cadre juridique applicable est la loi française.",
+messages/fr.json-1000-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1001-            "Nous chercherons d'abord une solution amiable en cas de désaccord.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1002-            "À défaut, les tribunaux compétents de Paris pourront être saisis.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1003-            "Si une clause est jugée invalide, les autres continuent de s'appliquer."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1004-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1005-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1006-      ],
+messages/fr.json-1007-      "contactIntro": "Pour toute question juridique ou contractuelle, utilisez les coordonnées habituelles de Loïc. Pour un sujet technique lié au site, contactez l'agence de développement",
+messages/fr.json-1008-      "contactChannels": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1009-        {
+messages/fr.json-1010-          "label": "Yodev",
+messages/fr.json-1011-          "subtitle": "Agence de développement",
+messages/fr.json-1012-          "value": "yoann.andrieux@gmail.com",
+messages/fr.json-1013-          "href": "mailto:yoann.andrieux@gmail.com"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1014-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1015-      ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1016-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1017-  },
+messages/fr.json-1018-  "consent": {
+messages/fr.json-1019-    "badge": "Confidentialité",
+messages/fr.json-1020-    "title": "Gestion des cookies",
+messages/fr.json:1021:    "description": "J'utilise des cookies et services tiers pour faire fonctionner le site, lire les médias externes (YouTube, players) et, si vous l'autorisez, mesurer l'audience.",
+messages/fr.json-1022-    "lastUpdated": "10 décembre 2025",
+messages/fr.json-1023-    "lastUpdatedLabel": "Mise à jour : {date}",
+messages/fr.json-1024-    "categoriesTitle": "Choix par catégorie",
+messages/fr.json-1025-    "manageCookies": "Gérer les cookies",
+messages/fr.json-1026-    "actions": {
+messages/fr.json-1027-      "acceptAll": "Tout accepter",
+messages/fr.json-1028-      "rejectAll": "Tout refuser",
+messages/fr.json-1029-      "customize": "Personnaliser",
+messages/fr.json-1030-      "save": "Enregistrer",
+messages/fr.json-1031-      "close": "Fermer"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1032-    },
+messages/fr.json-1033-    "categories": {
+messages/fr.json-1034-      "essential": {
+messages/fr.json-1035-        "title": "Essentiels",
+messages/fr.json-1036-        "description": "Indispensables au fonctionnement du site (sécurité, préférences de langue/thème)."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1037-      },
+messages/fr.json-1038-      "media": {
+messages/fr.json-1039-        "title": "Médias (YouTube & players)",
+messages/fr.json-1040-        "description": "Active les lecteurs externes (YouTube, SoundCloud, Spotify, etc.) susceptibles de déposer des cookies."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1041-      },
+messages/fr.json-1042-      "analytics": {
+messages/fr.json-1043-        "title": "Analytics",
+messages/fr.json-1044-        "description": "Mesure d'audience sobre pour améliorer le site (désactivé par défaut)."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1045-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1046-    },
+messages/fr.json-1047-    "gate": {
+messages/fr.json-1048-      "badge": "Consentement",
+messages/fr.json-1049-      "mediaTitle": "Activer les médias",
+messages/fr.json-1050-      "mediaDescription": "Le player charge un service tiers qui nécessite l'acceptation des cookies.",
+messages/fr.json-1051-      "mediaDescriptionShort": "Ce lecteur charge un service tiers nécessitant l'acceptation des cookies.",
+messages/fr.json-1052-      "mediaCta": "Autoriser les médias",
+messages/fr.json-1053-      "manage": "Gérer mes choix"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1054-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1055-  },
+messages/fr.json-1056-  "cv": {
+messages/fr.json-1057-    "pageTitle": "CV",
+messages/fr.json-1058-    "pageDescription": "Découvrez mon parcours professionnel et mes compétences en tant que compositeur et producteur musical.",
+messages/fr.json-1059-    "download": "Télécharger le CV",
+messages/fr.json-1060-    "profile": "Profil",
+messages/fr.json-1061-    "experience": "Expériences",
+messages/fr.json-1062-    "skills": "Compétences",
+messages/fr.json-1063-    "tools": "Logiciels",
+messages/fr.json-1064-    "awards": "Récompenses",
+messages/fr.json-1065-    "languages": "Langues",
+messages/fr.json-1066-    "contact": "Me Contacter"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1067-  },
+messages/fr.json-1068-  "common": {
+messages/fr.json-1069-    "loading": "Chargement...",
+messages/fr.json-1070-    "error": "Erreur",
+messages/fr.json-1071-    "close": "Fermer",
+--
+messages/fr.json:1078:    "backToServices": "Retour aux services",
+messages/fr.json-1079-    "genre": "Genre",
+messages/fr.json-1080-    "releaseDate": "Date de sortie",
+messages/fr.json-1081-    "artist": "Artiste",
+messages/fr.json-1082-    "collaborators": "Collaborateurs",
+messages/fr.json-1083-    "author": "Auteur",
+messages/fr.json-1084-    "contact": "Me contacter",
+messages/fr.json:1085:    "seeAllServices": "Voir tous les services",
+messages/fr.json-1086-    "notFound": "Page Non Trouvée",
+messages/fr.json-1087-    "pageNotFoundDescription": "La page que vous recherchez n'existe pas ou a été déplacée."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1088-  },
+messages/fr.json-1089-  "login": {
+messages/fr.json-1090-    "title": "Connexion Admin",
+messages/fr.json-1091-    "subtitle": "Accédez à l'interface d'administration",
+messages/fr.json-1092-    "emailPlaceholder": "Votre email",
+messages/fr.json-1093-    "passwordPlaceholder": "Votre mot de passe",
+messages/fr.json-1094-    "email": "Email",
+messages/fr.json-1095-    "password": "Mot de passe",
+messages/fr.json-1096-    "submit": "Se connecter",
+messages/fr.json-1097-    "loading": "Connexion en cours...",
+messages/fr.json-1098-    "error": "Erreur de connexion",
+messages/fr.json-1099-    "adminOnly": "Espace réservé aux administrateurs"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1100-  },
+messages/fr.json-1101-  "admin": {
+messages/fr.json-1102-    "sidebar": {
+messages/fr.json-1103-      "dashboard": "Tableau de bord",
+messages/fr.json-1104-      "albums": "Albums",
+messages/fr.json-1105-      "videos": "Vidéos",
+messages/fr.json:1106:      "services": "Services",
+messages/fr.json-1107-      "settings": "Paramètres",
+messages/fr.json-1108-      "viewSite": "Voir le site",
+messages/fr.json-1109-      "viewsToday": "Vues aujourd'hui",
+messages/fr.json-1110-      "published": "Publié"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1111-    },
+messages/fr.json-1112-    "header": {
+messages/fr.json-1113-      "profile": "Profil",
+messages/fr.json-1114-      "settings": "Paramètres",
+messages/fr.json-1115-      "signOut": "Déconnexion",
+messages/fr.json-1116-      "searchPlaceholder": "Rechercher..."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1117-    },
+messages/fr.json-1118-    "table": {
+messages/fr.json-1119-      "preview": "Aperçu",
+messages/fr.json-1120-      "title": "Titre",
+messages/fr.json-1121-      "type": "Type",
+messages/fr.json-1122-      "date": "Date",
+messages/fr.json-1123-      "status": "Statut",
+messages/fr.json-1124-      "actions": "Actions",
+messages/fr.json-1125-      "number": "N°"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1126-    },
+messages/fr.json-1127-    "common": {
+messages/fr.json-1128-      "save": "Enregistrer",
+messages/fr.json-1129-      "saving": "Sauvegarde...",
+messages/fr.json-1130-      "saved": "Sauvegardé",
+messages/fr.json-1131-      "cancel": "Annuler",
+messages/fr.json-1132-      "delete": "Supprimer",
+messages/fr.json-1133-      "error": "Erreur",
+messages/fr.json-1134-      "success": "Succès",
+messages/fr.json-1135-      "loading": "Chargement...",
+messages/fr.json-1136-      "actions": "Actions",
+messages/fr.json-1137-      "back": "Retour",
+messages/fr.json-1138-      "preview": "Prévisualiser",
+messages/fr.json-1139-      "upload": "Upload",
+messages/fr.json-1140-      "dirtyWarning": "Vous avez des modifications non enregistrées.",
+messages/fr.json-1141-      "created": "créé",
+messages/fr.json-1142-      "updated": "modifié"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1143-    },
+messages/fr.json-1144-    "settings": {
+messages/fr.json-1145-      "title": "Paramètres",
+messages/fr.json-1146-      "description": "Gérez les paramètres et les exports de votre portfolio",
+messages/fr.json-1147-      "tabs": {
+messages/fr.json-1148-        "profile": "Profil",
+messages/fr.json-1149-        "general": "Général",
+messages/fr.json-1150-        "social": "Réseaux",
+messages/fr.json-1151-        "content": "Contenu",
+messages/fr.json-1152-        "export": "Export"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1153-      },
+messages/fr.json-1154-      "export": {
+messages/fr.json-1155-        "title": "Export de Données",
+messages/fr.json-1156-        "description": "Téléchargez vos données dans différents formats pour backup ou analyse",
+--
+messages/fr.json:1196:          "showServices": "Afficher les services"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1197-        },
+messages/fr.json-1198-        "pagination": "Pagination",
+messages/fr.json-1199-        "perPage": {
+messages/fr.json-1200-          "albums": "Albums par page",
+messages/fr.json-1201-          "videos": "Vidéos par page",
+messages/fr.json:1202:          "services": "Services par page"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1203-        },
+messages/fr.json-1204-        "sorting": "Tri par défaut",
+messages/fr.json-1205-        "sortLabel": {
+messages/fr.json-1206-          "albums": "Albums",
+messages/fr.json-1207-          "videos": "Vidéos"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1208-        },
+messages/fr.json-1209-        "sortOptions": {
+messages/fr.json-1210-          "date_desc": "Plus récent d'abord",
+messages/fr.json-1211-          "date_asc": "Plus ancien d'abord",
+messages/fr.json-1212-          "title_asc": "Titre A-Z",
+messages/fr.json-1213-          "title_desc": "Titre Z-A"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1214-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1215-      },
+messages/fr.json-1216-      "profile": {
+messages/fr.json-1217-        "title": "Profil Administrateur",
+messages/fr.json-1218-        "description": "Informations de votre compte admin",
+messages/fr.json-1219-        "name": "Nom",
+messages/fr.json-1220-        "currentEmail": "Email actuel",
+messages/fr.json-1221-        "role": "Rôle",
+messages/fr.json-1222-        "newEmail": "Nouvel email",
+messages/fr.json-1223-        "currentPassword": "Mot de passe actuel",
+messages/fr.json-1224-        "newPassword": "Nouveau mot de passe",
+messages/fr.json-1225-        "confirmPassword": "Confirmer le nouveau mot de passe",
+messages/fr.json-1226-        "updateEmail": "Mettre à jour l'email",
+messages/fr.json-1227-        "updatePassword": "Mettre à jour le mot de passe",
+messages/fr.json-1228-        "successEmail": "Votre email a été mis à jour avec succès",
+messages/fr.json-1229-        "successPassword": "Votre mot de passe a été mis à jour avec succès",
+messages/fr.json-1230-        "errorEmail": "Erreur lors du changement d'email",
+messages/fr.json-1231-        "errorPassword": "Erreur lors du changement de mot de passe",
+messages/fr.json-1232-        "changeEmail": "Changer l'Email",
+messages/fr.json-1233-        "changeEmailDesc": "Modifiez l'adresse email de connexion",
+messages/fr.json-1234-        "changePassword": "Changer le Mot de Passe",
+messages/fr.json-1235-        "changePasswordDesc": "Modifiez votre mot de passe de connexion",
+messages/fr.json-1236-        "updating": "Modification...",
+messages/fr.json-1237-        "minChars": "Minimum 8 caractères",
+messages/fr.json-1238-        "invalidEmail": "Email invalide",
+messages/fr.json-1239-        "enterValidEmail": "Veuillez entrer un email valide",
+messages/fr.json-1240-        "enterDifferentEmail": "Veuillez entrer un nouvel email différent",
+messages/fr.json-1241-        "requiredFields": "Champs requis",
+messages/fr.json-1242-        "fillAllFields": "Veuillez remplir tous les champs",
+messages/fr.json-1243-        "passwordTooShort": "Mot de passe trop court",
+messages/fr.json-1244-        "passwordShortDesc": "Le mot de passe doit contenir au moins 8 caractères",
+messages/fr.json-1245-        "passwordMismatch": "Mots de passe différents",
+messages/fr.json-1246-        "passwordMismatchDesc": "Les nouveaux mots de passe ne correspondent pas"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1247-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1248-    },
+messages/fr.json-1249-    "media": {
+messages/fr.json-1250-      "dropzone": "Glissez-déposez une image ou cliquez pour sélectionner",
+messages/fr.json-1251-      "dropzoneDrag": "Déposez l'image ici",
+messages/fr.json-1252-      "maxSize": "max 5MB",
+--
+messages/fr.json:1322:    "services": {
+messages/fr.json-1323-      "create": "Créer un service",
+messages/fr.json-1324-      "edit": "Modifier le service",
+messages/fr.json-1325-      "listTitle": "Services",
+messages/fr.json-1326-      "delete": {
+messages/fr.json-1327-        "title": "Supprimer le service",
+messages/fr.json-1328-        "confirm": "Êtes-vous sûr de vouloir supprimer le service \"{title}\" ? Cette action est irréversible.",
+messages/fr.json-1329-        "success": "Service supprimé"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1330-      },
+messages/fr.json-1331-      "form": {
+messages/fr.json-1332-        "generalInfo": "Informations générales",
+messages/fr.json-1333-        "number": "Numéro",
+messages/fr.json-1334-        "numberPlaceholder": "01",
+messages/fr.json-1335-        "title": "Titre",
+messages/fr.json-1336-        "titlePlaceholder": "Nom du service",
+messages/fr.json-1337-        "largeTitle": "Titre large",
+messages/fr.json-1338-        "largeTitlePlaceholder": "Titre de la section",
+messages/fr.json-1339-        "shortDesc": "Description courte",
+messages/fr.json-1340-        "shortDescPlaceholder": "Description courte visible sur la carte",
+messages/fr.json-1341-        "fullDesc": "Description complète",
+messages/fr.json-1342-        "fullDescPlaceholder": "Description détaillée du service",
+messages/fr.json-1343-        "author": "Auteur",
+messages/fr.json-1344-        "authorPlaceholder": "Nom de l'auteur",
+messages/fr.json-1345-        "date": "Date",
+messages/fr.json-1346-        "datePlaceholder": "Ex: Janvier 2024",
+messages/fr.json-1347-        "order": "Ordre d'affichage",
+messages/fr.json-1348-        "published": "Statut",
+messages/fr.json-1349-        "descFr": "Description détaillée en français",
+messages/fr.json-1350-        "descFrPlaceholder": "Description détaillée en français...",
+messages/fr.json-1351-        "descEn": "Description détaillée en anglais",
+messages/fr.json-1352-        "descEnPlaceholder": "Detailed description in English...",
+messages/fr.json-1353-        "successCreate": "Service créé",
+messages/fr.json-1354-        "successUpdate": "Service modifié",
+messages/fr.json-1355-        "successDesc": "Le service \"{title}\" a été {action} avec succès."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1356-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1357-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/fr.json-1358-  },
+messages/fr.json-1359-  "musicPlayer": {
+messages/fr.json-1360-    "controls": {
+messages/fr.json-1361-      "play": "Lecture",
+messages/fr.json-1362-      "pause": "Pause",
+messages/fr.json-1363-      "previous": "Précédent",
+messages/fr.json-1364-      "next": "Suivant",
+messages/fr.json-1365-      "volume": "Volume",
+messages/fr.json-1366-      "mute": "Couper le son",
+messages/fr.json-1367-      "unmute": "Rétablir le son",
+messages/fr.json-1368-      "openOnSoundcloud": "Ouvrir sur SoundCloud",
+messages/fr.json-1369-      "open": "Ouvrir",
+messages/fr.json-1370-      "collapse": "Réduire",
+messages/fr.json-1371-      "expand": "Agrandir",
+messages/fr.json-1372-      "close": "Fermer le player",
+--
+messages/en.json:5:    "services": "Services",
+messages/en.json-6-    "albums": "Albums",
+messages/en.json-7-    "videos": "Videos",
+messages/en.json-8-    "contact": "Contact",
+messages/en.json-9-    "subtitle": "Music composer & producer",
+messages/en.json-10-    "admin": "Admin",
+messages/en.json-11-    "dashboard": "Dashboard",
+messages/en.json-12-    "logout": "Logout",
+messages/en.json-13-    "close": "Close"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-14-  },
+messages/en.json-15-  "home": {
+messages/en.json-16-    "title": "Loïc Ghanem",
+messages/en.json-17-    "subtitle": "Music Composer & Producer",
+messages/en.json-18-    "description": "Passionate music composer and producer, creating unique sonic universes for your audiovisual projects for over",
+messages/en.json-19-    "yearsExperience": "{years} years",
+messages/en.json-20-    "stats": {
+messages/en.json-21-      "albums": "Albums",
+messages/en.json-22-      "audiovisualProjects": "Audiovisual Projects",
+messages/en.json-23-      "collaborations": "Collaborations"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-24-    },
+messages/en.json-25-    "cta": {
+messages/en.json-26-      "listenAlbums": "Listen to my albums",
+messages/en.json-27-      "workTogether": "Work together"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-28-    },
+messages/en.json-29-    "scroll": "Scroll",
+messages/en.json-30-    "marquee": {
+messages/en.json-31-      "items": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-32-        "SOUNDTRACK",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-33-        "ORIGINAL SCORE",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-34-        "AUDIO BRANDING",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-35-        "MIXING",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-36-        "MASTERING",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-37-        "SOUND DESIGN",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-38-        "VOICEOVER DIRECTION",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-39-        "MUSIC SUPERVISION",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-40-        "AUDIO POST-PRODUCTION",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-41-        "PODCAST PRODUCTION",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-42-        "ORCHESTRATION",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-43-        "FOLEY",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-44-        "MUSIC EDITING"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-45-      ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-46-    },
+messages/en.json-47-    "featuredAlbums": {
+messages/en.json-48-      "title": "Latest Albums",
+messages/en.json-49-      "description": "Discover my latest musical creations covering different genres, from Metal to Hip-Hop through Ambient and Electronic.",
+messages/en.json-50-      "viewAll": "View all albums ({count})"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-51-    },
+messages/en.json-52-    "latestVideos": {
+messages/en.json-53-      "badge": "Sync Placements",
+messages/en.json-54-      "title": "Latest Videos",
+messages/en.json-55-      "description": "My compositions used in professional productions: sports, TV, commercials and more.",
+--
+messages/en.json:96:      "services": "SONIC <span class=\"text-neon-purple\">SERVICES</span>",
+messages/en.json:97:      "servicesSubtitle": "04 / EXPERTISE",
+messages/en.json:98:      "servicesTitle": "Expertise",
+messages/en.json:99:      "servicesSection": "Sound Services",
+messages/en.json-100-      "viewAllServices": "View All Services",
+messages/en.json-101-      "learnMore": "Learn more",
+messages/en.json-102-      "contact": "LET'S CREATE <br/><span class=\"text-neon-lime\">TOGETHER</span>",
+messages/en.json-103-      "contactText": "An idea? A musical project? Let's transform your vision into sonic reality.",
+messages/en.json-104-      "getInTouch": "Get In Touch"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-105-    },
+messages/en.json-106-    "soundcloud": {
+messages/en.json-107-      "title": "LISTEN TO <span class=\"text-neon-green\">MY PRODS</span>",
+messages/en.json-108-      "subtitle": "02 / STREAMING",
+messages/en.json-109-      "follow": "Follow on SoundCloud"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-110-    },
+messages/en.json-111-    "streaming": {
+messages/en.json-112-      "title": "STREAMING",
+messages/en.json-113-      "subtitle": "LISTEN TO MY PRODS",
+messages/en.json-114-      "playerTitle": "LOÏC GHANEM PRODUCTIONS",
+messages/en.json-115-      "soundcloud": "Follow on SoundCloud",
+messages/en.json-116-      "spotify": "Listen on Spotify",
+messages/en.json-117-      "description": "Find all my productions on streaming platforms. From orchestral composition to Metal through Electronic and Ambient."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-118-    },
+messages/en.json-119-    "banners": {
+messages/en.json-120-      "partners": "They trusted me",
+messages/en.json-121-      "productions": "My productions"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-122-    },
+messages/en.json-123-    "splitHero": {
+messages/en.json-124-      "basedIn": "BASED IN PARIS",
+messages/en.json-125-      "title": {
+messages/en.json-126-        "line1": "Music",
+messages/en.json-127-        "line2": "Composer",
+messages/en.json-128-        "line3": "& Producer"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-129-      },
+messages/en.json-130-      "tagline": "Award-winning composer. I create immersive sonic universes for audiovisual, artists and music library.",
+messages/en.json-131-      "scrollDown": "Scroll Down",
+messages/en.json-132-      "player": {
+messages/en.json-133-        "title": "LOÏC GHANEM PRODUCTIONS",
+messages/en.json-134-        "soundcloud": "SoundCloud",
+messages/en.json-135-        "spotify": "Spotify",
+messages/en.json-136-        "appleMusic": "Apple Music",
+messages/en.json-137-        "deezer": "Deezer",
+messages/en.json-138-        "tidal": "Tidal",
+messages/en.json-139-        "youtube": "YouTube",
+messages/en.json-140-        "followSoundcloud": "Follow on SoundCloud",
+messages/en.json-141-        "listenSpotify": "Listen on Spotify"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-142-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-143-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-144-  },
+messages/en.json-145-  "about": {
+messages/en.json-146-    "pageTitle": "About",
+messages/en.json-147-    "pageDescription": "Passionate music composer and producer, creating unique sonic universes for your audiovisual projects for over 15 years.",
+messages/en.json-148-    "title": "About",
+messages/en.json-149-    "intro": "Hello!",
+--
+messages/en.json:363:  "services": {
+messages/en.json-364-    "detail": {
+messages/en.json-365-      "notFound": "Service not found",
+messages/en.json-366-      "about": "About",
+messages/en.json-367-      "offeredOn": "Service offered on",
+messages/en.json-368-      "relatedServices": "Related Services",
+messages/en.json-369-      "whatYouGet": "What you get",
+messages/en.json-370-      "process": "Process",
+messages/en.json-371-      "examples": "Examples",
+messages/en.json-372-      "listen": "Listen",
+messages/en.json:373:      "backToServices": "Back to services",
+messages/en.json-374-      "requestQuote": "Request a quote",
+messages/en.json-375-      "step": "Step",
+messages/en.json-376-      "pricing": "Pricing",
+messages/en.json-377-      "startingFrom": "Starting from",
+messages/en.json-378-      "onQuote": "On quote",
+messages/en.json-379-      "customizable": "Every project is unique. Let's discuss your needs for a personalized offer.",
+messages/en.json-380-      "contact": "Contact",
+messages/en.json-381-      "responseTime": "Response",
+messages/en.json-382-      "readyToStart": "Ready?",
+messages/en.json-383-      "also": "ALSO",
+messages/en.json-384-      "examplesDescription": "Discover my work in the albums and videos sections.",
+messages/en.json-385-      "viewAlbums": "View albums",
+messages/en.json-386-      "viewVideos": "View videos",
+messages/en.json-387-      "discoverWork": "Discover my work",
+messages/en.json-388-      "discoverWorkDescription": "Explore my compositions through my albums and sync placement videos.",
+messages/en.json-389-      "previousService": "Previous service",
+messages/en.json-390-      "nextService": "Next service",
+messages/en.json-391-      "whatYouGetItems": {
+messages/en.json-392-        "item1": "100% custom original music",
+messages/en.json-393-        "item2": "Fast delivery",
+messages/en.json-394-        "item3": "Unlimited revisions",
+messages/en.json-395-        "item4": "Professional quality",
+messages/en.json-396-        "item5": "Full rights included"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-397-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-398-    },
+messages/en.json-399-    "pageTitle": "Services",
+messages/en.json-400-    "pageDescription": "From composition to post-production, I support you at every stage of your musical project with expertise and passion.",
+messages/en.json:401:    "noServices": "No services available at the moment",
+messages/en.json-402-    "totalServices": "Services",
+messages/en.json-403-    "satisfaction": "Client Satisfaction",
+messages/en.json-404-    "availability": "Availability",
+messages/en.json-405-    "seeMore": "See more",
+messages/en.json-406-    "writtenBy": "Written by",
+messages/en.json-407-    "hero": {
+messages/en.json-408-      "badge": "SONIC EXPERTISE",
+messages/en.json-409-      "title": "The Universe of Musical Creation",
+messages/en.json:410:      "description": "From composition to post-production, explore my services to bring your audiovisual projects to life with creativity and professionalism.",
+messages/en.json:411:      "cta": "Explore my services",
+messages/en.json-412-      "ctaSecondary": "Contact me"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-413-    },
+messages/en.json-414-    "stats": {
+messages/en.json:415:      "services": "Services",
+messages/en.json-416-      "experience": "Years of experience",
+messages/en.json-417-      "projects": "Projects completed",
+messages/en.json-418-      "satisfaction": "Satisfaction"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-419-    },
+messages/en.json-420-    "process": {
+messages/en.json-421-      "title": "How I Work",
+messages/en.json-422-      "subtitle": "PROCESS",
+messages/en.json-423-      "brief": {
+messages/en.json-424-        "title": "Brief",
+messages/en.json-425-        "description": "Understanding your vision and goals"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-426-      },
+messages/en.json-427-      "composition": {
+messages/en.json-428-        "title": "Composition",
+messages/en.json-429-        "description": "Creating the unique sonic universe"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-430-      },
+messages/en.json-431-      "production": {
+messages/en.json-432-        "title": "Production",
+messages/en.json-433-        "description": "Bringing the music to life"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-434-      },
+messages/en.json-435-      "mixing": {
+messages/en.json-436-        "title": "Mix & Master",
+messages/en.json-437-        "description": "Perfecting every detail"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-438-      },
+messages/en.json-439-      "delivery": {
+messages/en.json-440-        "title": "Delivery",
+messages/en.json-441-        "description": "Your finalized project"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-442-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-443-    },
+messages/en.json-444-    "cosmicCta": {
+messages/en.json-445-      "title": "Ready to create together?",
+messages/en.json-446-      "description": "Every project deserves a unique sonic identity. Let's turn your vision into music.",
+messages/en.json-447-      "button": "Let's talk about your project"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-448-    },
+messages/en.json-449-    "cta": {
+messages/en.json-450-      "title": "Ready to start your project?",
+messages/en.json-451-      "description": "Contact me to discuss your musical vision and discover how I can bring your ideas to life.",
+messages/en.json-452-      "button": "Contact me",
+messages/en.json-453-      "discuss": "Let's discuss your project"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-454-    },
+messages/en.json-455-    "composition": {
+messages/en.json-456-      "title": "Composition",
+messages/en.json-457-      "description": "Custom original music creation for your film, TV, advertising and video game projects.",
+messages/en.json-458-      "largeTitle": "Composition: Crafting Unique and Captivating Melodies",
+messages/en.json-459-      "fullDescription": "As a professional composer, I have a deep passion for creating unique and captivating melodies. My expertise spans various genres, ensuring a wide range of possibilities for your project. I approach each project with a fresh perspective, dedicating time and effort to understand your needs and preferences. This attention to detail allows me to create compositions that are truly bespoke and aligned with your creative vision.",
+messages/en.json-460-      "details": {
+messages/en.json-461-        "intro": "I create **original music** to bring your audiovisual projects to life. Whether for a film, TV series, commercial, or video game, I compose original soundtracks that tell your story.",
+messages/en.json-462-        "approach": "My approach combines **artistic sensitivity** and **narrative vision**, creating unique sonic universes adapted to each project, from Metal to Hip-Hop, through Ambient and Electronic.",
+messages/en.json:463:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-464-          "Orchestral and hybrid composition",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-465-          "Custom musical themes",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-466-          "Sonic artistic direction",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-467-          "Adaptation to all musical genres"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-468-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-469-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-470-    },
+messages/en.json-471-    "production": {
+messages/en.json-472-      "title": "Production",
+messages/en.json-473-      "description": "Complete music production from A to Z, from arrangement to post-production.",
+messages/en.json-474-      "largeTitle": "Music Production: From Concept to Final Mix",
+messages/en.json:475:      "fullDescription": "My music production services encompass every stage of the process. With a deep understanding of music theory, a keen ear for detail, and proficiency in the latest production software, I am equipped to bring your musical ideas to fruition. Whether you need help with arranging, recording, mixing, or mastering, I provide a comprehensive solution tailored to your project's needs.",
+messages/en.json-476-      "details": {
+messages/en.json-477-        "intro": "I handle the **complete production** of your musical projects, from conception to final realization. My expertise covers all aspects of modern production.",
+messages/en.json-478-        "approach": "With a studio equipped with the latest technologies and in-depth knowledge of multiple musical genres, I transform your ideas into professional productions ready for distribution.",
+messages/en.json:479:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-480-          "Multi-genre production (Metal, Hip-Hop, Electronic, Ambient)",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-481-          "Programming and sound design",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-482-          "Recording and artistic direction",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-483-          "Mastering for all formats"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-484-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-485-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-486-    },
+messages/en.json-487-    "arranging": {
+messages/en.json-488-      "title": "Arranging",
+messages/en.json-489-      "description": "Orchestral and instrumental arrangements to enhance your compositions.",
+messages/en.json-490-      "largeTitle": "Arranging: Enhancing Your Compositions",
+messages/en.json-491-      "fullDescription": "My arranging skills will add depth and complexity to your music. With my extensive knowledge of orchestration and harmony, I will craft arrangements that bring out the best in your compositions. Whether you have a fully formed composition or a simple melody, I can transform it into a rich, fully realized piece of music.",
+messages/en.json-492-      "details": {
+messages/en.json-493-        "intro": "**Arranging** is the art of structuring and dressing a composition to reveal its full potential. I work on orchestration, harmony, and sonic texture to create rich and coherent arrangements.",
+messages/en.json-494-        "approach": "From symphonic orchestration to modern electronic arrangements, I master a wide range of techniques to bring your musical ideas to life.",
+messages/en.json:495:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-496-          "Symphonic and modern orchestration",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-497-          "Arrangements for acoustic ensembles",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-498-          "Reharmonization and adaptation",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-499-          "Creation of hybrid textures"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-500-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-501-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-502-    },
+messages/en.json-503-    "vocalProducer": {
+messages/en.json-504-      "title": "Vocal Producer",
+messages/en.json-505-      "description": "Vocal direction and production for exceptional performances.",
+messages/en.json-506-      "largeTitle": "Vocal Production: Elevating Your Vocal Performances",
+messages/en.json:507:[Omitted long matching line]
+messages/en.json-508-      "details": {
+messages/en.json-509-        "intro": "As a **vocal producer**, I guide artists to capture the best vocal performances. My role is to extract the emotion and power from each voice.",
+messages/en.json-510-        "approach": "From pre-production to recording, I accompany singers through their creative process, providing precise and caring artistic direction.",
+messages/en.json:511:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-512-          "Vocal artistic direction",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-513-          "Pre-session preparation and coaching",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-514-          "Vocal recording and editing",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-515-          "Voice processing and production"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-516-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-517-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-518-    },
+messages/en.json-519-    "mixing": {
+messages/en.json-520-      "title": "Mixing",
+messages/en.json-521-      "description": "Professional mixing for balanced and punchy sound.",
+messages/en.json-522-      "largeTitle": "Mixing: Polishing Your Music to Perfection",
+messages/en.json-523-      "fullDescription": "Mixing is a critical step in the music production process, and one that I excel in. I will balance the elements of your track, ensuring that no instrument or voice is too loud or too soft. My mixing techniques will also add depth and dimension to your music, creating a soundscape that is rich and engaging.",
+messages/en.json-524-      "details": {
+messages/en.json-525-        "intro": "**Mixing** is the crucial step that transforms raw tracks into a cohesive and professional production. I balance, equalize, and shape each element to create an impactful mix.",
+messages/en.json-526-        "approach": "With an analytical and creative approach, I optimize the clarity, depth, and dynamics of your tracks so they sound perfect on all playback systems.",
+messages/en.json:527:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-528-          "Stereo and surround mixing",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-529-          "Dynamic and frequency processing",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-530-          "Spatialization and creative effects",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-531-          "Optimization for streaming and broadcast"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-532-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-533-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-534-    },
+messages/en.json-535-    "mastering": {
+messages/en.json-536-      "title": "Mastering",
+messages/en.json-537-      "description": "High-quality mastering for optimal finalization of your productions.",
+messages/en.json-538-      "largeTitle": "Mastering: The Final Touch for Your Music",
+messages/en.json:539:      "fullDescription": "Mastering is the final step in the music production process, and it's one that I take very seriously. I will ensure your tracks are ready for distribution, optimizing them for all playback systems. My mastering services will give your music the final polish it needs, ensuring it sounds professional and stands up against other commercial releases.",
+messages/en.json-540-      "details": {
+messages/en.json-541-        "intro": "**Mastering** is the final touch that gives your music its professional shine. I prepare your tracks for distribution by optimizing the level, spectral balance, and consistency between tracks.",
+messages/en.json-542-        "approach": "My approach to mastering ensures your music sounds optimal on all listening systems, from headphones to hi-fi systems, while respecting industry standards.",
+messages/en.json:543:        "services": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-544-          "Mastering for all formats (streaming, CD, vinyl)",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-545-          "Spectral and dynamic optimization",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-546-          "Consistency between album tracks",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-547-          "Preparation for digital distribution"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-548-        ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-549-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-550-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-551-  },
+messages/en.json-552-  "albums": {
+messages/en.json-553-    "pageTitle": "Albums & Projects",
+messages/en.json-554-    "pageDescription": "Discover my complete discography, from Metal and Metalcore productions to Hip-Hop, Electronic, and Ambient creations.",
+messages/en.json-555-    "filterAll": "All Albums",
+messages/en.json-556-    "sortBy": "Sort by",
+messages/en.json-557-    "sortNewest": "Newest",
+messages/en.json-558-    "sortOldest": "Oldest",
+messages/en.json-559-    "listen": "Listen",
+messages/en.json-560-    "collaboration": "In collaboration with",
+messages/en.json-561-    "releaseDate": "Release Date",
+messages/en.json-562-    "genre": "Genre",
+messages/en.json-563-    "hero": {
+messages/en.json-564-      "badge": "DISCOGRAPHY",
+messages/en.json-565-      "title": "My Musical Creations",
+messages/en.json-566-      "description": "Explore my complete discography: Metal, Hip-Hop, Ambient, Electronic productions and more. Each album tells a unique story.",
+messages/en.json-567-      "cta": "Explore albums",
+messages/en.json-568-      "ctaSecondary": "Contact me"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-569-    },
+messages/en.json-570-    "stats": {
+messages/en.json-571-      "total": "Albums",
+messages/en.json-572-      "genres": "Genres",
+messages/en.json-573-      "collaborations": "Collaborations",
+messages/en.json-574-      "period": "Period"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-575-    },
+messages/en.json-576-    "albumsCta": {
+messages/en.json-577-      "title": "Ready to listen?",
+messages/en.json-578-      "description": "Discover my complete discography on streaming platforms. Each album is a new sonic adventure.",
+messages/en.json-579-      "button": "Listen on Spotify",
+messages/en.json-580-      "buttonSecondary": "Contact me"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-581-    },
+messages/en.json-582-    "card": {
+messages/en.json-583-      "listen": "Listen",
+messages/en.json-584-      "viewMore": "View more"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-585-    },
+messages/en.json-586-    "noAlbums": "No albums match your filters.",
+messages/en.json-587-    "featured": "Featured",
+messages/en.json-588-    "detail": {
+messages/en.json-589-      "notFound": "Album not found",
+messages/en.json-590-      "listen": "Listen to album",
+messages/en.json-591-      "about": "About the album",
+messages/en.json-592-      "ctaTitle": "Ready to discover this album?",
+messages/en.json-593-      "ctaText": "Listen to \"{title}\" on all streaming platforms.",
+--
+messages/en.json:668:      "ctaSecondary": "View my services"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-669-    },
+messages/en.json-670-    "stats": {
+messages/en.json-671-      "responseTime": "Response Time",
+messages/en.json-672-      "satisfaction": "Satisfaction",
+messages/en.json-673-      "projects": "Projects Completed"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-674-    },
+messages/en.json-675-    "directContact": {
+messages/en.json-676-      "title": "Direct Contact",
+messages/en.json-677-      "tagline": "No forms, no fuss. Just call me, let's chat, and create together!",
+messages/en.json-678-      "callMe": "Call me directly",
+messages/en.json-679-      "emailMe": "Or email me",
+messages/en.json-680-      "footer": "I promise I'll pick up (unless I'm in the studio... but I'll call back quickly!)"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-681-    },
+messages/en.json-682-    "form": {
+messages/en.json-683-      "name": "Name",
+messages/en.json-684-      "namePlaceholder": "Your name",
+messages/en.json-685-      "email": "Email",
+messages/en.json-686-      "emailPlaceholder": "your@email.com",
+messages/en.json-687-      "subject": "Subject",
+messages/en.json-688-      "subjectPlaceholder": "Subject of your message",
+messages/en.json-689-      "message": "Message",
+messages/en.json-690-      "messagePlaceholder": "Tell me about your project...",
+messages/en.json-691-      "submit": "Send message",
+messages/en.json-692-      "sending": "Sending...",
+messages/en.json-693-      "success": "Message sent successfully!",
+messages/en.json-694-      "error": "An error occurred. Please try again."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-695-    },
+messages/en.json-696-    "info": {
+messages/en.json-697-      "title": "Contact Information",
+messages/en.json-698-      "email": "Email",
+messages/en.json-699-      "phone": "Phone",
+messages/en.json-700-      "location": "Location",
+messages/en.json-701-      "locationValue": "Paris, France",
+messages/en.json-702-      "social": "Social Media",
+messages/en.json-703-      "availability": "For urgent projects, feel free to contact me by phone.",
+messages/en.json-704-      "findMe": "Find me"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-705-    },
+messages/en.json-706-    "cta": {
+messages/en.json:707:      "text": "Would you like to discover my services before contacting me?",
+messages/en.json:708:      "button": "View my services"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-709-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-710-  },
+messages/en.json-711-  "footer": {
+messages/en.json-712-    "copyright": "© {year} Loïc Ghanem. All rights reserved.",
+messages/en.json-713-    "quickLinks": "Quick Links",
+messages/en.json-714-    "followMe": "Let's talk",
+messages/en.json-715-    "tagline": "Music Composer & Producer based in Paris",
+messages/en.json-716-    "letsCreate": "Let's",
+messages/en.json-717-    "together": "Create.",
+messages/en.json-718-    "location": "PARIS, FRANCE",
+messages/en.json-719-    "streaming": "Streaming",
+messages/en.json-720-    "social": "Social",
+messages/en.json-721-    "listen": "Listen",
+messages/en.json-722-    "role": "Music composer & producer",
+messages/en.json-723-    "ctaTitle1": "Let's Create",
+messages/en.json-724-    "ctaTitle2": "Something Unique",
+messages/en.json-725-    "startProject": "Start a Project",
+messages/en.json-726-    "basedIn": "Based in",
+messages/en.json-727-    "navigation": "Navigation",
+messages/en.json-728-    "streamNow": "Stream Now",
+messages/en.json-729-    "privacyPolicy": "PRIVACY POLICY",
+messages/en.json-730-    "termsOfUse": "TERMS OF USE",
+messages/en.json-731-    "noForm": {
+messages/en.json-732-      "title": "Got a project? Let's talk!",
+messages/en.json-733-      "description": "No forms here, just a quick call and let's start the sonic adventure.",
+messages/en.json-734-      "callButton": "Let's chat?"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-735-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-736-  },
+messages/en.json-737-  "legal": {
+messages/en.json-738-    "common": {
+messages/en.json-739-      "summaryTitle": "Key points",
+messages/en.json-740-      "highlightsTitle": "Core principles",
+messages/en.json-741-      "sectionsTitle": "Full details",
+messages/en.json-742-      "contactTitle": "Direct contact",
+messages/en.json-743-      "lastUpdatedLabel": "Last updated"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-744-    },
+messages/en.json-745-    "privacy": {
+messages/en.json-746-      "pageTitle": "Privacy Policy",
+messages/en.json-747-      "pageDescription": "How your data is collected, used, and protected when you browse this site or contact me.",
+messages/en.json-748-      "lastUpdated": "December 10, 2025",
+messages/en.json-749-      "hero": {
+messages/en.json-750-        "badge": "Privacy",
+messages/en.json-751-        "title": "Privacy Policy",
+messages/en.json-752-        "description": "I only collect what I need to reply to you and handle your requests transparently."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-753-      },
+messages/en.json-754-      "summary": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-755-        "Data is limited to the contact form, our exchanges, and anonymized audience analytics.",
+messages/en.json-756-        "No sale or commercial transfer of your data: it is used solely to discuss and deliver your projects.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-757-        "You can exercise your rights (access, rectification, deletion, objection) at any time by request."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-758-      ],
+--
+messages/en.json:815:            "Hosting and database services required for the site to operate.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-816-            "Emailing tools or analytics when you agree to them.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-817-            "Confidentiality-bound professionals (accounting, advisory) if needed."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-818-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-819-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-820-        {
+messages/en.json-821-          "title": "Your rights",
+messages/en.json-822-          "description": "You can exercise your rights at any time via email.",
+messages/en.json-823-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-824-            "Access, rectification, update, or deletion of your data.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-825-            "Withdrawal of consent and restriction of processing where applicable.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-826-            "Portability of data you provided when the law allows it.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-827-            "Objection to processing based on legitimate interest.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-828-            "Right to lodge a complaint with the supervisory authority."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-829-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-830-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-831-        {
+messages/en.json-832-          "title": "Cookies and analytics",
+messages/en.json-833-          "description": "The site uses strictly necessary cookies and, with your consent, measurement tools.",
+messages/en.json-834-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-835-            "Essential cookies for security and navigation.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-836-            "Anonymized audience measurement; you can configure your browser to block trackers.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-837-            "No advertising cookies or commercial resale of data."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-838-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-839-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-840-        {
+messages/en.json-841-          "title": "Security",
+messages/en.json-842-          "description": "Technical and organizational measures protect your data.",
+messages/en.json-843-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-844-            "Encrypted connections (HTTPS/TLS) and limited access controls.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-845-            "Secure backups and regular checks to mitigate risks.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-846-            "Incident response procedure to inform you if required."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-847-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-848-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-849-      ],
+messages/en.json-850-      "contactIntro": "For any question or to exercise your rights, reach out directly. For legal or technical matters about the site, you can also contact the webmaster (Yodev).",
+messages/en.json-851-      "contactChannels": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-852-        {
+messages/en.json-853-          "label": "Email",
+messages/en.json-854-          "value": "loic.ghanem@outlook.com",
+messages/en.json-855-          "href": "mailto:loic.ghanem@outlook.com"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-856-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-857-        {
+messages/en.json-858-          "label": "Phone",
+messages/en.json-859-          "value": "+33 6 14 51 75 92",
+messages/en.json-860-          "href": "tel:+33614517592"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-861-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-862-        {
+messages/en.json-863-          "label": "Webmaster email (Yodev)",
+messages/en.json-864-          "value": "yoann.andrieux@gmail.com",
+messages/en.json-865-          "href": "mailto:yoann.andrieux@gmail.com"
+--
+messages/en.json:879:        "Showcase site presenting my composition, production, and sound design services.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-880-        "Every engagement is formalized with a quote or contract before work begins.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-881-        "No commercial use or reproduction of content without written approval."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-882-      ],
+messages/en.json-883-      "highlights": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-884-        {
+messages/en.json-885-          "title": "Transparency",
+messages/en.json-886-          "description": "These terms cover site access, intellectual property, project requests, and responsibilities."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-887-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-888-        {
+messages/en.json-889-          "title": "Collaboration framework",
+messages/en.json-890-          "description": "Each project follows a quote or contract detailing scope, timing, pricing, rights, and deliverables."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-891-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-892-        {
+messages/en.json-893-          "title": "Governing law",
+messages/en.json-894-          "description": "French law applies. We favor amicable resolution before any court action."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-895-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-896-      ],
+messages/en.json-897-      "sections": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-898-        {
+messages/en.json-899-          "title": "Publisher and publication director",
+messages/en.json-900-          "description": "The site is administered by Yoann Andrieux (Yodev), who oversees maintenance and editorial compliance.",
+messages/en.json-901-          "bullets": [
+messages/en.json-902-            "Webmaster / publication director: Yoann Andrieux - Yodev.",
+messages/en.json-903-            "Contact for any legal or technical matter about the site: yoann.andrieux@gmail.com.",
+messages/en.json:904:            "The content and services showcased relate to Loïc Ghanem's activity; upkeep is handled by Yodev."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-905-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-906-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-907-        {
+messages/en.json-908-          "title": "Purpose of the site",
+messages/en.json-909-          "description": "This site presents my activity and lets you get in touch to discuss a project.",
+messages/en.json-910-          "bullets": [
+messages/en.json:911:            "Showcase of composition, production, mixing/mastering, and music supervision services.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-912-            "Examples (albums, videos, references) to illustrate my work.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-913-            "Contact form to request information or a quote."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-914-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-915-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-916-        {
+messages/en.json-917-          "title": "Access and availability",
+messages/en.json-918-          "description": "I work to keep the site accessible, but interruptions may occur.",
+messages/en.json-919-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-920-            "Access intended 24/7 subject to maintenance or updates.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-921-            "Service may be modified, suspended, or temporarily removed without notice when needed.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-922-            "No guarantee of error-free operation; please report issues so I can fix them."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-923-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-924-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-925-        {
+messages/en.json-926-          "title": "Intellectual property",
+messages/en.json-927-          "description": "Site content is protected by copyright and other applicable rights.",
+messages/en.json-928-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-929-            "Texts, images, logos, layouts, and audio excerpts remain my property or that of my partners.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-930-            "Any reproduction, distribution, or adaptation without written consent is prohibited.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-931-            "Usage rights for works are defined in the quote or contract associated with the project."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-932-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-933-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-934-        {
+messages/en.json-935-          "title": "Acceptable use",
+messages/en.json-936-          "description": "You agree to use the site lawfully and respect third-party rights.",
+messages/en.json-937-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-938-            "Do not try to access non-public areas or disrupt site operation.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-939-            "Do not extract, index, or massively reuse content without agreement.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-940-            "Respect intellectual property and keep exchanged information confidential."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-941-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-942-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-943-        {
+messages/en.json-944-          "title": "Project requests",
+messages/en.json-945-          "description": "Every collaboration is contractually framed.",
+messages/en.json-946-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-947-            "A quote/contract detailing scope, schedule, pricing, rights, and deliverables is validated before work starts.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-948-            "Dates are blocked only after written confirmation and, when applicable, agreed deposits.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-949-            "Transfer or license of usage rights for the works is limited to the uses defined in the contract."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-950-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-951-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-952-        {
+messages/en.json-953-          "title": "Pricing and payments",
+messages/en.json-954-          "description": "Financial terms are shared in writing.",
+messages/en.json-955-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-956-            "Prices are stated in accepted quotes or purchase orders.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-957-            "Payment terms (deposit, milestones, late fees) are defined and accepted before kickoff.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-958-            "If payment is late, work may be paused after notification."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-959-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-960-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-961-        {
+--
+messages/en.json:972:          "description": "The site may contain links to third-party services.",
+messages/en.json-973-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-974-            "I do not control the content or practices of those external sites.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-975-            "Review their policies and terms before using them.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-976-            "I cannot be held responsible for damages arising from those third-party sites."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-977-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-978-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-979-        {
+messages/en.json-980-          "title": "Data protection",
+messages/en.json-981-          "description": "Data processing is described in the Privacy Policy.",
+messages/en.json-982-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-983-            "By using the site or contacting me, you agree to the principles described there.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-984-            "You can exercise your rights at any time via the methods listed in the Privacy Policy."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-985-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-986-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-987-        {
+messages/en.json-988-          "title": "Changes to these terms",
+messages/en.json-989-          "description": "These terms may evolve to reflect site updates or legal requirements.",
+messages/en.json-990-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-991-            "The last updated date appears at the top of the page.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-992-            "By continuing to use the site after changes, you accept the new terms."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-993-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-994-        },
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-995-        {
+messages/en.json-996-          "title": "Governing law and disputes",
+messages/en.json-997-          "description": "French law applies to these terms.",
+messages/en.json-998-          "bullets": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-999-            "We will first seek an amicable solution to any disagreement.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1000-            "Failing that, the competent courts of Paris may be seized.",
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1001-            "If one clause is invalid, the others remain in force."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1002-          ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1003-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1004-      ],
+messages/en.json-1005-      "contactIntro": "For legal questions or contract requests, use Loïc's usual contact details. For technical matters about the site, reach the Yodev development agency below.",
+messages/en.json-1006-      "contactChannels": [
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1007-        {
+messages/en.json-1008-          "label": "Yodev",
+messages/en.json-1009-          "subtitle": "Development agency",
+messages/en.json-1010-          "value": "yoann.andrieux@gmail.com",
+messages/en.json-1011-          "href": "mailto:yoann.andrieux@gmail.com"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1012-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1013-      ]
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1014-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1015-  },
+messages/en.json-1016-  "consent": {
+messages/en.json-1017-    "badge": "Privacy",
+messages/en.json-1018-    "title": "Cookie & media consent",
+messages/en.json:1019:    "description": "I use cookies and third-party services to run the site, play external media (YouTube players) and, if you allow, measure audience.",
+messages/en.json-1020-    "lastUpdated": "December 10, 2025",
+messages/en.json-1021-    "lastUpdatedLabel": "Updated: {date}",
+messages/en.json-1022-    "categoriesTitle": "Category choices",
+messages/en.json-1023-    "manageCookies": "Manage cookies",
+messages/en.json-1024-    "actions": {
+messages/en.json-1025-      "acceptAll": "Accept all",
+messages/en.json-1026-      "rejectAll": "Reject all",
+messages/en.json-1027-      "customize": "Customize",
+messages/en.json-1028-      "save": "Save",
+messages/en.json-1029-      "close": "Close"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1030-    },
+messages/en.json-1031-    "categories": {
+messages/en.json-1032-      "essential": {
+messages/en.json-1033-        "title": "Essential",
+messages/en.json-1034-        "description": "Required for the site to work (security, language/theme preferences)."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1035-      },
+messages/en.json-1036-      "media": {
+messages/en.json-1037-        "title": "Media (YouTube & players)",
+messages/en.json-1038-        "description": "Enables external players (YouTube, SoundCloud, Spotify, etc.) that may set cookies."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1039-      },
+messages/en.json-1040-      "analytics": {
+messages/en.json-1041-        "title": "Analytics",
+messages/en.json-1042-        "description": "Lightweight audience measurement to improve the site (off by default)."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1043-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1044-    },
+messages/en.json-1045-    "gate": {
+messages/en.json-1046-      "badge": "Consent",
+messages/en.json-1047-      "mediaTitle": "Enable media",
+messages/en.json-1048-      "mediaDescription": "This player loads a third-party service that requires cookie consent.",
+messages/en.json-1049-      "mediaDescriptionShort": "This player needs third-party cookies to load.",
+messages/en.json-1050-      "mediaCta": "Allow media",
+messages/en.json-1051-      "manage": "Manage choices"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1052-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1053-  },
+messages/en.json-1054-  "cv": {
+messages/en.json-1055-    "pageTitle": "Resume",
+messages/en.json-1056-    "pageDescription": "Discover my professional journey and skills as a music composer and producer.",
+messages/en.json-1057-    "download": "Download Resume",
+messages/en.json-1058-    "profile": "Profile",
+messages/en.json-1059-    "experience": "Experience",
+messages/en.json-1060-    "skills": "Skills",
+messages/en.json-1061-    "tools": "Tools",
+messages/en.json-1062-    "awards": "Awards",
+messages/en.json-1063-    "languages": "Languages",
+messages/en.json-1064-    "contact": "Contact Me"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1065-  },
+messages/en.json-1066-  "common": {
+messages/en.json-1067-    "loading": "Loading...",
+messages/en.json-1068-    "error": "Error",
+messages/en.json-1069-    "close": "Close",
+--
+messages/en.json:1075:    "backToServices": "Back to services",
+messages/en.json-1076-    "genre": "Genre",
+messages/en.json-1077-    "releaseDate": "Release Date",
+messages/en.json-1078-    "artist": "Artist",
+messages/en.json-1079-    "collaborators": "Collaborators",
+messages/en.json-1080-    "author": "Author",
+messages/en.json-1081-    "contact": "Contact me",
+messages/en.json:1082:    "seeAllServices": "See all services",
+messages/en.json-1083-    "notFound": "Page Not Found",
+messages/en.json-1084-    "pageNotFoundDescription": "The page you're looking for doesn't exist or has been moved.",
+messages/en.json-1085-    "backToAlbums": "Back to albums"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1086-  },
+messages/en.json-1087-  "login": {
+messages/en.json-1088-    "title": "Admin Login",
+messages/en.json-1089-    "subtitle": "Access the administration interface",
+messages/en.json-1090-    "emailPlaceholder": "Your email",
+messages/en.json-1091-    "passwordPlaceholder": "Your password",
+messages/en.json-1092-    "email": "Email",
+messages/en.json-1093-    "password": "Password",
+messages/en.json-1094-    "submit": "Login",
+messages/en.json-1095-    "loading": "Logging in...",
+messages/en.json-1096-    "error": "Login failed",
+messages/en.json-1097-    "adminOnly": "Reserved for administrators"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1098-  },
+messages/en.json-1099-  "admin": {
+messages/en.json-1100-    "sidebar": {
+messages/en.json-1101-      "dashboard": "Dashboard",
+messages/en.json-1102-      "albums": "Albums",
+messages/en.json-1103-      "videos": "Videos",
+messages/en.json:1104:      "services": "Services",
+messages/en.json-1105-      "settings": "Settings",
+messages/en.json-1106-      "viewSite": "View Site",
+messages/en.json-1107-      "viewsToday": "Views Today",
+messages/en.json-1108-      "published": "Published"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1109-    },
+messages/en.json-1110-    "header": {
+messages/en.json-1111-      "profile": "Profile",
+messages/en.json-1112-      "settings": "Settings",
+messages/en.json-1113-      "signOut": "Sign Out",
+messages/en.json-1114-      "searchPlaceholder": "Search database..."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1115-    },
+messages/en.json-1116-    "table": {
+messages/en.json-1117-      "preview": "Preview",
+messages/en.json-1118-      "title": "Title",
+messages/en.json-1119-      "type": "Type",
+messages/en.json-1120-      "date": "Date",
+messages/en.json-1121-      "status": "Status",
+messages/en.json-1122-      "actions": "Actions",
+messages/en.json-1123-      "number": "No."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1124-    },
+messages/en.json-1125-    "common": {
+messages/en.json-1126-      "save": "Save",
+messages/en.json-1127-      "saving": "Saving...",
+messages/en.json-1128-      "saved": "Saved",
+messages/en.json-1129-      "cancel": "Cancel",
+messages/en.json-1130-      "delete": "Delete",
+messages/en.json-1131-      "error": "Error",
+messages/en.json-1132-      "success": "Success",
+messages/en.json-1133-      "loading": "Loading...",
+messages/en.json-1134-      "actions": "Actions",
+messages/en.json-1135-      "back": "Back",
+messages/en.json-1136-      "preview": "Preview",
+messages/en.json-1137-      "upload": "Upload",
+messages/en.json-1138-      "dirtyWarning": "You have unsaved changes.",
+messages/en.json-1139-      "created": "created",
+messages/en.json-1140-      "updated": "updated"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1141-    },
+messages/en.json-1142-    "settings": {
+messages/en.json-1143-      "title": "Settings",
+messages/en.json-1144-      "description": "Manage your portfolio settings and exports",
+messages/en.json-1145-      "tabs": {
+messages/en.json-1146-        "profile": "Profile",
+messages/en.json-1147-        "general": "General",
+messages/en.json-1148-        "social": "Social",
+messages/en.json-1149-        "content": "Content",
+messages/en.json-1150-        "export": "Export"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1151-      },
+messages/en.json-1152-      "export": {
+messages/en.json-1153-        "title": "Data Export",
+messages/en.json-1154-        "description": "Download your data in different formats for backup or analysis",
+--
+messages/en.json:1194:          "showServices": "Show services"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1195-        },
+messages/en.json-1196-        "pagination": "Pagination",
+messages/en.json-1197-        "perPage": {
+messages/en.json-1198-          "albums": "Albums per page",
+messages/en.json-1199-          "videos": "Videos per page",
+messages/en.json:1200:          "services": "Services per page"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1201-        },
+messages/en.json-1202-        "sorting": "Default Sorting",
+messages/en.json-1203-        "sortLabel": {
+messages/en.json-1204-          "albums": "Albums",
+messages/en.json-1205-          "videos": "Videos"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1206-        },
+messages/en.json-1207-        "sortOptions": {
+messages/en.json-1208-          "date_desc": "Newest first",
+messages/en.json-1209-          "date_asc": "Oldest first",
+messages/en.json-1210-          "title_asc": "Title A-Z",
+messages/en.json-1211-          "title_desc": "Title Z-A"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1212-        }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1213-      },
+messages/en.json-1214-      "profile": {
+messages/en.json-1215-        "title": "Admin Profile",
+messages/en.json-1216-        "description": "Your admin account information",
+messages/en.json-1217-        "name": "Name",
+messages/en.json-1218-        "currentEmail": "Current Email",
+messages/en.json-1219-        "role": "Role",
+messages/en.json-1220-        "newEmail": "New Email",
+messages/en.json-1221-        "currentPassword": "Current Password",
+messages/en.json-1222-        "newPassword": "New Password",
+messages/en.json-1223-        "confirmPassword": "Confirm New Password",
+messages/en.json-1224-        "updateEmail": "Update Email",
+messages/en.json-1225-        "updatePassword": "Update Password",
+messages/en.json-1226-        "successEmail": "Your email has been updated successfully",
+messages/en.json-1227-        "successPassword": "Your password has been updated successfully",
+messages/en.json-1228-        "errorEmail": "Error changing email",
+messages/en.json-1229-        "errorPassword": "Error changing password",
+messages/en.json-1230-        "changeEmail": "Change Email",
+messages/en.json-1231-        "changeEmailDesc": "Update your login email address",
+messages/en.json-1232-        "changePassword": "Change Password",
+messages/en.json-1233-        "changePasswordDesc": "Update your login password",
+messages/en.json-1234-        "updating": "Updating...",
+messages/en.json-1235-        "minChars": "Minimum 8 characters",
+messages/en.json-1236-        "invalidEmail": "Invalid email",
+messages/en.json-1237-        "enterValidEmail": "Please enter a valid email",
+messages/en.json-1238-        "enterDifferentEmail": "Please enter a different email",
+messages/en.json-1239-        "requiredFields": "Required fields",
+messages/en.json-1240-        "fillAllFields": "Please fill all fields",
+messages/en.json-1241-        "passwordTooShort": "Password too short",
+messages/en.json-1242-        "passwordShortDesc": "Password must be at least 8 characters long",
+messages/en.json-1243-        "passwordMismatch": "Passwords do not match",
+messages/en.json-1244-        "passwordMismatchDesc": "New passwords do not match"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1245-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1246-    },
+messages/en.json-1247-    "media": {
+messages/en.json-1248-      "dropzone": "Drag and drop an image or click to select",
+messages/en.json-1249-      "dropzoneDrag": "Drop image here",
+messages/en.json-1250-      "maxSize": "max 5MB",
+--
+messages/en.json:1320:    "services": {
+messages/en.json-1321-      "create": "Create Service",
+messages/en.json-1322-      "edit": "Edit Service",
+messages/en.json-1323-      "listTitle": "Services",
+messages/en.json-1324-      "delete": {
+messages/en.json-1325-        "title": "Delete Service",
+messages/en.json-1326-        "confirm": "Are you sure you want to delete the service \"{title}\"? This action is irreversible.",
+messages/en.json-1327-        "success": "Service deleted"
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1328-      },
+messages/en.json-1329-      "form": {
+messages/en.json-1330-        "generalInfo": "General Information",
+messages/en.json-1331-        "number": "Number",
+messages/en.json-1332-        "numberPlaceholder": "01",
+messages/en.json-1333-        "title": "Title",
+messages/en.json-1334-        "titlePlaceholder": "Service Name",
+messages/en.json-1335-        "largeTitle": "Large Title",
+messages/en.json-1336-        "largeTitlePlaceholder": "Section Title",
+messages/en.json-1337-        "shortDesc": "Short Description",
+messages/en.json-1338-        "shortDescPlaceholder": "Short description visible on card",
+messages/en.json-1339-        "fullDesc": "Full Description",
+messages/en.json-1340-        "fullDescPlaceholder": "Detailed service description",
+messages/en.json-1341-        "author": "Author",
+messages/en.json-1342-        "authorPlaceholder": "Author Name",
+messages/en.json-1343-        "date": "Date",
+messages/en.json-1344-        "datePlaceholder": "Ex: January 2024",
+messages/en.json-1345-        "order": "Display Order",
+messages/en.json-1346-        "published": "Status",
+messages/en.json-1347-        "descFr": "Detailed Description (FR)",
+messages/en.json-1348-        "descFrPlaceholder": "Detailed description in French...",
+messages/en.json-1349-        "descEn": "Detailed Description (EN)",
+messages/en.json-1350-        "descEnPlaceholder": "Detailed description in English...",
+messages/en.json-1351-        "successCreate": "Service created",
+messages/en.json-1352-        "successUpdate": "Service modified",
+messages/en.json-1353-        "successDesc": "Service \"{title}\" was {action} successfully."
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1354-      }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1355-    }
+/Users/yoannandrieux/Projets/portfolio-loic/messages/en.json-1356-  },
+messages/en.json-1357-  "musicPlayer": {
+messages/en.json-1358-    "controls": {
+messages/en.json-1359-      "play": "Play",
+messages/en.json-1360-      "pause": "Pause",
+messages/en.json-1361-      "previous": "Previous",
+messages/en.json-1362-      "next": "Next",
+messages/en.json-1363-      "volume": "Volume",
+messages/en.json-1364-      "mute": "Mute",
+messages/en.json-1365-      "unmute": "Unmute",
+messages/en.json-1366-      "openOnSoundcloud": "Open on SoundCloud",
+messages/en.json-1367-      "open": "Open",
+messages/en.json-1368-      "collapse": "Collapse",
+messages/en.json-1369-      "expand": "Expand",
+messages/en.json-1370-      "close": "Close player",

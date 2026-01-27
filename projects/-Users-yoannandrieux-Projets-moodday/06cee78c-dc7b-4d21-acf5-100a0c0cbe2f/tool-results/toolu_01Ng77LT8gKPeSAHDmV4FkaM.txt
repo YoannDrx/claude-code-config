@@ -1,0 +1,3 @@
+in_progress		I18	E2E Playwright Tests	i18	pull_request	20932269976	31s	2026-01-12T19:28:41Z
+in_progress		I18	Frontend CI	i18	pull_request	20932269988	31s	2026-01-12T19:28:41Z
+completed	success	I18	Frontend CI	i18	pull_request	20862200709	1m12s	2026-01-09T18:51:57Z

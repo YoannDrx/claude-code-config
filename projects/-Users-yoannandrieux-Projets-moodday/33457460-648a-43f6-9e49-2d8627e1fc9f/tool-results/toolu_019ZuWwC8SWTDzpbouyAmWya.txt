@@ -1,0 +1,17 @@
+/Users/yoannandrieux/Projets/moodday/src/features/landing/bento-section.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/cta/cta-card-section.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/cta/cta-image-section.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/cta/cta-section.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/faq-section.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/feature-section.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/hero.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/landing-header.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/pain.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/review/review-grid.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/review/review-item.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/review/review-single.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/review/review-small.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/review/review-triple.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/section-divider.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/section-layout.tsx
+/Users/yoannandrieux/Projets/moodday/src/features/landing/stats-section.tsx

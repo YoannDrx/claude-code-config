@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "sessionId": "04413834-e39c-429e-9ebc-bdef63e0a0cc",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux-Projets-whisper/04413834-e39c-429e-9ebc-bdef63e0a0cc.jsonl",
+      "fileMtime": 1769101398120,
+      "firstPrompt": "Je viens de clone ce repo, j'ai fais ce qui est indiqué dans le readme, mais je n'arrive pas à lancer lancer whisper automatiquement au demarrage du mac : Skip to content Navigation Menu Paseru whispe…",
+      "summary": "Whisper macOS app startup automation issue",
+      "messageCount": 4,
+      "created": "2026-01-07T11:25:16.314Z",
+      "modified": "2026-01-07T11:26:05.150Z",
+      "gitBranch": "main",
+      "projectPath": "/Users/yoannandrieux/Projets/whisper",
+      "isSidechain": false
+    }
+  ],
+  "originalPath": "/Users/yoannandrieux/Projets/whisper"
+}

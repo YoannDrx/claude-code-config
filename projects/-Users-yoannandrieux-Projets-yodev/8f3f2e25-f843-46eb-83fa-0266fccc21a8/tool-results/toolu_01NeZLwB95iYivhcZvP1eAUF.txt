@@ -1,0 +1,578 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Yodev | IA & Modernisation Legacy - Transformation des Systèmes Critiques</title>
+     7→    <meta name="description" content="Modernisez vos systèmes legacy avec l'IA. Refactoring automatisé, documentation intelligente et migration sécurisée pour PME et ETI.">
+     8→    
+     9→    <!-- Tailwind CSS -->
+    10→    <script src="https://cdn.tailwindcss.com"></script>
+    11→    <!-- Alpine.js -->
+    12→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    13→    <!-- Google Fonts -->
+    14→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    15→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    16→    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    17→
+    18→    <script>
+    19→        tailwind.config = {
+    20→            theme: {
+    21→                extend: {
+    22→                    colors: {
+    23→                        primary: '#1BA896', // Teal
+    24→                        secondary: '#FF6B35', // Orange
+    25→                        dark: '#0F1111', // Deep Charcoal
+    26→                        card: 'rgba(31, 33, 33, 0.6)',
+    27→                        border: 'rgba(167, 169, 169, 0.2)',
+    28→                    },
+    29→                    fontFamily: {
+    30→                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+    31→                        display: ['DM Sans', 'sans-serif'],
+    32→                        mono: ['Fira Code', 'monospace'],
+    33→                    },
+    34→                    animation: {
+    35→                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+    36→                        'float': 'float 3s ease-in-out infinite',
+    37→                        'scan': 'scan 4s linear infinite',
+    38→                    },
+    39→                    keyframes: {
+    40→                        float: {
+    41→                            '0%, 100%': { transform: 'translateY(0)' },
+    42→                            '50%': { transform: 'translateY(-10px)' },
+    43→                        },
+    44→                        scan: {
+    45→                            '0%': { top: '0%' },
+    46→                            '100%': { top: '100%' }
+    47→                        }
+    48→                    }
+    49→                }
+    50→            }
+    51→        }
+    52→    </script>
+    53→
+    54→    <style>
+    55→        [x-cloak] { display: none !important; }
+    56→        
+    57→        body {
+    58→            background-color: #0F1111;
+    59→            color: #FFFBF8;
+    60→            overflow-x: hidden;
+    61→        }
+    62→
+    63→        .mesh-gradient {
+    64→            background: radial-gradient(at 0% 0%, rgba(27, 168, 150, 0.15) 0px, transparent 50%),
+    65→                        radial-gradient(at 100% 100%, rgba(255, 107, 53, 0.1) 0px, transparent 50%),
+    66→                        radial-gradient(at 50% 50%, rgba(15, 17, 17, 1) 0px, transparent 100%);
+    67→        }
+    68→
+    69→        .glass-panel {
+    70→            background: rgba(255, 255, 255, 0.03);
+    71→            backdrop-filter: blur(12px);
+    72→            border: 1px solid rgba(255, 255, 255, 0.08);
+    73→            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    74→        }
+    75→
+    76→        .text-gradient {
+    77→            background: linear-gradient(135deg, #FFF 0%, rgba(255,255,255,0.7) 100%);
+    78→            -webkit-background-clip: text;
+    79→            -webkit-text-fill-color: transparent;
+    80→        }
+    81→
+    82→        .hero-glow {
+    83→            position: absolute;
+    84→            width: 600px;
+    85→            height: 600px;
+    86→            background: radial-gradient(circle, rgba(27, 168, 150, 0.2) 0%, transparent 70%);
+    87→            filter: blur(60px);
+    88→            z-index: -1;
+    89→        }
+    90→
+    91→        .code-comparison-legacy {
+    92→            border-left: 4px solid #EF4444;
+    93→            background: rgba(239, 68, 68, 0.05);
+    94→        }
+    95→
+    96→        .code-comparison-modern {
+    97→            border-left: 4px solid #1BA896;
+    98→            background: rgba(27, 168, 150, 0.05);
+    99→        }
+   100→
+   101→        .no-scrollbar::-webkit-scrollbar { display: none; }
+   102→        
+   103→        .glow-line {
+   104→            background: linear-gradient(90deg, transparent, #1BA896, transparent);
+   105→            height: 1px;
+   106→            width: 100%;
+   107→        }
+   108→    </style>
+   109→</head>
+   110→<body class="min-h-screen flex flex-col font-sans selection:bg-primary selection:text-white" x-data="{ mobileMenuOpen: false, scrolled: false, activeTab: 'refactor' }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+   111→
+   112→    <!-- Navigation -->
+   113→    <header :class="scrolled ? 'glass-panel py-3' : 'bg-transparent py-6'" class="fixed top-0 w-full z-50 transition-all duration-300">
+   114→        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+   115→            <a href="/" class="flex items-center space-x-2 group">
+   116→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform duration-300">
+   117→                    <span class="text-dark font-black text-xl">Y</span>
+   118→                </div>
+   119→                <span class="text-2xl font-display font-bold tracking-tight">yodev</span>
+   120→            </a>
+   121→
+   122→            <!-- Desktop Nav -->
+   123→            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+   124→                <div class="relative group" x-data="{ open: false }">
+   125→                    <button @mouseenter="open = true" @mouseleave="open = false" class="flex items-center space-x-1 hover:text-primary transition-colors py-2">
+   126→                        <span>Services</span>
+   127→                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+   128→                    </button>
+   129→                    <div x-show="open" x-cloak @mouseenter="open = true" @mouseleave="open = false" class="absolute top-full -left-4 w-72 glass-panel rounded-2xl p-4 space-y-2 mt-2">
+   130→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   131→                            <p class="font-semibold text-sm">Développement Web & Mobile</p>
+   132→                            <p class="text-xs text-gray-400">Applications haute performance Next.js</p>
+   133→                        </a>
+   134→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all border border-primary/20 bg-primary/5">
+   135→                            <p class="font-semibold text-sm text-primary">Intelligence Artificielle & LLM</p>
+   136→                            <p class="text-xs text-gray-400">RAG, Chatbots & Automatisation IA</p>
+   137→                        </a>
+   138→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all border border-secondary/20 bg-secondary/5">
+   139→                            <p class="font-semibold text-sm text-secondary">Modernisation Legacy</p>
+   140→                            <p class="text-xs text-gray-400">Migration Cloud & Refonte architecture</p>
+   141→                        </a>
+   142→                    </div>
+   143→                </div>
+   144→                <a href="#expertise" class="hover:text-primary transition-colors">Expertise</a>
+   145→                <a href="#projets" class="hover:text-primary transition-colors">Projets</a>
+   146→                <a href="#blog" class="hover:text-primary transition-colors">Blog</a>
+   147→            </nav>
+   148→
+   149→            <div class="hidden md:flex items-center space-x-4">
+   150→                <a href="/contact" class="px-6 py-2.5 bg-primary text-dark font-bold rounded-full hover:bg-white hover:scale-105 transition-all duration-300">
+   151→                    Audit Legacy IA
+   152→                </a>
+   153→            </div>
+   154→
+   155→            <!-- Mobile Toggle -->
+   156→            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white">
+   157→                <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+   158→                <svg x-show="mobileMenuOpen" x-cloak class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+   159→            </button>
+   160→        </div>
+   161→
+   162→        <!-- Mobile Menu -->
+   163→        <div x-show="mobileMenuOpen" x-cloak class="md:hidden glass-panel fixed inset-0 top-20 z-40 p-6 flex flex-col space-y-6">
+   164→            <a href="#" class="text-2xl font-bold">Services</a>
+   165→            <a href="#" class="text-2xl font-bold">Expertise</a>
+   166→            <a href="#" class="text-2xl font-bold">Projets</a>
+   167→            <a href="/contact" class="text-2xl font-bold text-primary">Prendre RDV</a>
+   168→        </div>
+   169→    </header>
+   170→
+   171→    <main class="flex-grow">
+   172→        <!-- Hero Section -->
+   173→        <section class="relative min-h-screen pt-32 pb-20 flex items-center mesh-gradient overflow-hidden">
+   174→            <div class="hero-glow -top-20 -left-20"></div>
+   175→            <div class="hero-glow bottom-0 right-0" style="background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);"></div>
+   176→
+   177→            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+   178→                <div class="space-y-8 relative z-10">
+   179→                    <div class="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full backdrop-blur-sm">
+   180→                        <span class="text-xs font-bold uppercase tracking-widest text-primary">SERVICE EXCLUSIF PME/ETI</span>
+   181→                    </div>
+   182→
+   183→                    <h1 class="text-5xl lg:text-7xl font-display font-extrabold leading-[1.1] text-gradient">
+   184→                        Modernisez votre <br>
+   185→                        <span class="text-primary italic">Legacy par l'IA</span>
+   186→                    </h1>
+   187→
+   188→                    <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+   189→                        Ne laissez plus votre dette technique freiner votre croissance. Nous utilisons les LLM de pointe pour refactorer vos bases de code, automatiser la documentation et migrer vers le Cloud sans risque opérationnel.
+   190→                    </p>
+   191→
+   192→                    <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+   193→                        <a href="#audit" class="group px-8 py-4 bg-primary text-dark font-bold rounded-full flex items-center space-x-2 hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(27,168,150,0.3)]">
+   194→                            <span>Lancer un Audit Technique</span>
+   195→                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+   196→                        </a>
+   197→                        <div class="text-sm font-mono text-gray-400">
+   198→                            <span class="text-secondary font-bold">> 40%</span> de réduction des coûts de maintenance
+   199→                        </div>
+   200→                    </div>
+   201→
+   202→                    <!-- Metrics Grid -->
+   203→                    <div class="pt-12 grid grid-cols-2 md:grid-cols-3 gap-8 border-t border-white/10">
+   204→                        <div>
+   205→                            <p class="text-3xl font-display font-bold text-white">0%</p>
+   206→                            <p class="text-xs text-gray-500 uppercase tracking-wider">Interruption Service</p>
+   207→                        </div>
+   208→                        <div>
+   209→                            <p class="text-3xl font-display font-bold text-white">10x</p>
+   210→                            <p class="text-xs text-gray-500 uppercase tracking-wider">Vitesse Documentation</p>
+   211→                        </div>
+   212→                        <div class="hidden md:block">
+   213→                            <p class="text-3xl font-display font-bold text-white">12 Sem.</p>
+   214→                            <p class="text-xs text-gray-500 uppercase tracking-wider">Time-to-Modernity</p>
+   215→                        </div>
+   216→                    </div>
+   217→                </div>
+   218→
+   219→                <!-- Hero Visual: AI Code Refactor UI -->
+   220→                <div class="relative lg:block">
+   221→                    <div class="glass-panel rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+   222→                        <div class="bg-white/5 px-6 py-4 border-b border-white/10 flex items-center justify-between">
+   223→                            <div class="flex space-x-2">
+   224→                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+   225→                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+   226→                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+   227→                            </div>
+   228→                            <div class="flex items-center space-x-3">
+   229→                                <span class="px-3 py-1 bg-primary/20 text-primary text-[10px] font-bold rounded-full uppercase">AI Refactoring Active</span>
+   230→                                <span class="text-xs font-mono text-gray-500">legacy_v4.php</span>
+   231→                            </div>
+   232→                        </div>
+   233→                        
+   234→                        <div class="p-8 font-mono text-sm leading-relaxed relative">
+   235→                            <!-- Animated Scan Line -->
+   236→                            <div class="absolute left-0 w-full h-8 bg-primary/5 border-y border-primary/20 animate-scan z-10 pointer-events-none"></div>
+   237→
+   238→                            <div class="space-y-4">
+   239→                                <div class="code-comparison-legacy p-4 rounded-lg opacity-40">
+   240→                                    <p class="text-red-400 mb-2">// Legacy Spaguetti Code (2012)</p>
+   241→                                    <p class="text-gray-400">function process_order_old($d) {</p>
+   242→                                    <p class="text-gray-400 ml-4">if ($d['status'] == 1) { mysql_query("UPDATE..."); }</p>
+   243→                                    <p class="text-gray-400">}</p>
+   244→                                </div>
+   245→                                <div class="flex justify-center py-2">
+   246→                                    <svg class="w-6 h-6 text-primary animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+   247→                                </div>
+   248→                                <div class="code-comparison-modern p-4 rounded-lg border border-primary/30">
+   249→                                    <p class="text-primary mb-2">// AI-Optimized Clean Code (2026)</p>
+   250→                                    <p class="text-white">export const processOrder = async (order: Order): Promise&lt;void&gt; => {</p>
+   251→                                    <p class="text-white ml-4">const updated = await prisma.order.update({</p>
+   252→                                    <p class="text-white ml-8">where: { id: order.id }, data: { status: 'PAID' }</p>
+   253→                                    <p class="text-white ml-4">});</p>
+   254→                                    <p class="text-white">};</p>
+   255→                                </div>
+   256→                            </div>
+   257→                            
+   258→                            <!-- Status Overlay -->
+   259→                            <div class="absolute bottom-6 right-6 p-4 glass-panel rounded-xl animate-float">
+   260→                                <div class="flex items-center space-x-3">
+   261→                                    <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+   262→                                    <span class="text-xs font-bold">Analysis: 98% Security Match</span>
+   263→                                </div>
+   264→                            </div>
+   265→                        </div>
+   266→                    </div>
+   267→                </div>
+   268→            </div>
+   269→        </section>
+   270→
+   271→        <!-- Use Cases / Focus Section -->
+   272→        <section class="py-24 bg-dark relative border-y border-white/5 overflow-hidden">
+   273→            <div class="max-w-7xl mx-auto px-6">
+   274→                <div class="grid lg:grid-cols-2 gap-20 items-center">
+   275→                    <div>
+   276→                        <h2 class="text-4xl md:text-5xl font-display font-bold mb-8 leading-tight">
+   277→                            L'IA n'est plus une option, <br>
+   278→                            <span class="text-primary">c'est votre bouclier.</span>
+   279→                        </h2>
+   280→                        <div class="space-y-8" x-data="{ current: 'refactor' }">
+   281→                            <div @click="current = 'refactor'" :class="current === 'refactor' ? 'bg-white/5 border-primary/40 shadow-lg' : 'border-transparent opacity-60'" class="p-6 border rounded-3xl cursor-pointer transition-all duration-500 group">
+   282→                                <div class="flex items-start space-x-5">
+   283→                                    <div class="p-3 bg-primary/20 rounded-2xl group-hover:scale-110 transition-transform">
+   284→                                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+   285→                                    </div>
+   286→                                    <div>
+   287→                                        <h3 class="text-xl font-bold mb-2">Refactoring Contextuel</h3>
+   288→                                        <p class="text-sm text-gray-400">Extraction automatique de la logique métier enfouie pour une réécriture vers des frameworks modernes (Next.js, FastAPI, Go).</p>
+   289→                                    </div>
+   290→                                </div>
+   291→                            </div>
+   292→
+   293→                            <div @click="current = 'doc'" :class="current === 'doc' ? 'bg-white/5 border-secondary/40 shadow-lg' : 'border-transparent opacity-60'" class="p-6 border rounded-3xl cursor-pointer transition-all duration-500 group">
+   294→                                <div class="flex items-start space-x-5">
+   295→                                    <div class="p-3 bg-secondary/20 rounded-2xl group-hover:scale-110 transition-transform">
+   296→                                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+   297→                                    </div>
+   298→                                    <div>
+   299→                                        <h3 class="text-xl font-bold mb-2">Documentation Vivante</h3>
+   300→                                        <p class="text-sm text-gray-400">Génération automatique de doc technique et fonctionnelle. Plus besoin de "se souvenir" de comment fonctionne le code de 2015.</p>
+   301→                                    </div>
+   302→                                </div>
+   303→                            </div>
+   304→
+   305→                            <div @click="current = 'security'" :class="current === 'security' ? 'bg-white/5 border-white/20 shadow-lg' : 'border-transparent opacity-60'" class="p-6 border rounded-3xl cursor-pointer transition-all duration-500 group">
+   306→                                <div class="flex items-start space-x-5">
+   307→                                    <div class="p-3 bg-white/10 rounded-2xl group-hover:scale-110 transition-transform">
+   308→                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+   309→                                    </div>
+   310→                                    <div>
+   311→                                        <h3 class="text-xl font-bold mb-2">Sécurité Post-Migration</h3>
+   312→                                        <p class="text-sm text-gray-400">Identification et correction des vulnérabilités critiques via des agents IA formés aux standards OWASP 2026.</p>
+   313→                                    </div>
+   314→                                </div>
+   315→                            </div>
+   316→                        </div>
+   317→                    </div>
+   318→
+   319→                    <div class="relative">
+   320→                        <div class="glass-panel p-10 rounded-[3rem] relative z-10">
+   321→                            <h4 class="text-2xl font-bold mb-8 flex items-center space-x-3">
+   322→                                <span class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-dark font-bold text-xs">ROI</span>
+   323→                                <span>Impact PME Mesurable</span>
+   324→                            </h4>
+   325→                            <div class="space-y-10">
+   326→                                <div class="relative">
+   327→                                    <div class="flex justify-between mb-2">
+   328→                                        <span class="text-sm font-medium text-gray-400">Dette technique résorbée</span>
+   329→                                        <span class="text-sm font-bold text-primary">85%</span>
+   330→                                    </div>
+   331→                                    <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+   332→                                        <div class="bg-primary h-full w-[85%] rounded-full shadow-[0_0_15px_rgba(27,168,150,0.5)]"></div>
+   333→                                    </div>
+   334→                                </div>
+   335→                                <div class="relative">
+   336→                                    <div class="flex justify-between mb-2">
+   337→                                        <span class="text-sm font-medium text-gray-400">Agilité de déploiement</span>
+   338→                                        <span class="text-sm font-bold text-secondary">x4</span>
+   339→                                    </div>
+   340→                                    <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+   341→                                        <div class="bg-secondary h-full w-[65%] rounded-full shadow-[0_0_15px_rgba(255,107,53,0.5)]"></div>
+   342→                                    </div>
+   343→                                </div>
+   344→                                <div class="relative">
+   345→                                    <div class="flex justify-between mb-2">
+   346→                                        <span class="text-sm font-medium text-gray-400">Satisfaction équipe Tech</span>
+   347→                                        <span class="text-sm font-bold text-white">92%</span>
+   348→                                    </div>
+   349→                                    <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+   350→                                        <div class="bg-white h-full w-[92%] rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)]"></div>
+   351→                                    </div>
+   352→                                </div>
+   353→                            </div>
+   354→                            
+   355→                            <div class="mt-12 p-6 bg-primary/5 border border-primary/20 rounded-2xl italic text-gray-400 text-sm leading-relaxed">
+   356→                                "En 3 mois, Yodev a transformé notre ERP monolithique en une architecture micro-services pilotable par IA. Nos coûts d'infra ont chuté de 35%."
+   357→                                <div class="mt-4 flex items-center space-x-3 not-italic">
+   358→                                    <div class="w-8 h-8 rounded-full bg-gray-600"></div>
+   359→                                    <div>
+   360→                                        <p class="text-xs font-bold text-white">Marc D.</p>
+   361→                                        <p class="text-[10px] uppercase text-gray-500 tracking-wider">CTO @ Industrie-Tech ETI</p>
+   362→                                    </div>
+   363→                                </div>
+   364→                            </div>
+   365→                        </div>
+   366→                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+   367→                    </div>
+   368→                </div>
+   369→            </div>
+   370→        </section>
+   371→
+   372→        <!-- Technical Process Section -->
+   373→        <section id="process" class="py-24 max-w-7xl mx-auto px-6">
+   374→            <div class="text-center mb-16">
+   375→                <h2 class="text-3xl md:text-5xl font-display font-bold mb-4">Notre Méthodologie "Zero-Risk"</h2>
+   376→                <p class="text-gray-500 max-w-2xl mx-auto">Une approche structurée pour garantir la continuité de votre business pendant la mutation.</p>
+   377→            </div>
+   378→
+   379→            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+   380→                <!-- Step 1 -->
+   381→                <div class="group relative">
+   382→                    <div class="absolute -inset-2 bg-gradient-to-b from-primary/20 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+   383→                    <div class="relative glass-panel p-8 h-full rounded-[2rem] border border-white/5 group-hover:border-primary/30 transition-all">
+   384→                        <span class="text-5xl font-display font-black text-white/5 absolute top-4 right-6">01</span>
+   385→                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+   386→                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+   387→                        </div>
+   388→                        <h3 class="text-xl font-bold mb-4">Discovery IA</h3>
+   389→                        <p class="text-sm text-gray-500 leading-relaxed">Analyse statique et dynamique de votre code par nos agents IA pour mapper les points de friction et dépendances critiques.</p>
+   390→                    </div>
+   391→                </div>
+   392→
+   393→                <!-- Step 2 -->
+   394→                <div class="group relative">
+   395→                    <div class="absolute -inset-2 bg-gradient-to-b from-secondary/20 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+   396→                    <div class="relative glass-panel p-8 h-full rounded-[2rem] border border-white/5 group-hover:border-secondary/30 transition-all">
+   397→                        <span class="text-5xl font-display font-black text-white/5 absolute top-4 right-6">02</span>
+   398→                        <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+   399→                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+   400→                        </div>
+   401→                        <h3 class="text-xl font-bold mb-4">Isolation & Tests</h3>
+   402→                        <p class="text-sm text-gray-500 leading-relaxed">Création automatique d'une suite de tests E2E pour geler le comportement actuel avant toute modification.</p>
+   403→                    </div>
+   404→                </div>
+   405→
+   406→                <!-- Step 3 -->
+   407→                <div class="group relative">
+   408→                    <div class="absolute -inset-2 bg-gradient-to-b from-primary/20 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+   409→                    <div class="relative glass-panel p-8 h-full rounded-[2rem] border border-white/5 group-hover:border-primary/30 transition-all">
+   410→                        <span class="text-5xl font-display font-black text-white/5 absolute top-4 right-6">03</span>
+   411→                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+   412→                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+   413→                        </div>
+   414→                        <h3 class="text-xl font-bold mb-4">Refactoring IA</h3>
+   415→                        <p class="text-sm text-gray-500 leading-relaxed">Refactoring assisté par LLM vers une stack moderne. Le code est audité par un expert senior humain à chaque étape.</p>
+   416→                    </div>
+   417→                </div>
+   418→
+   419→                <!-- Step 4 -->
+   420→                <div class="group relative">
+   421→                    <div class="absolute -inset-2 bg-gradient-to-b from-white/20 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+   422→                    <div class="relative glass-panel p-8 h-full rounded-[2rem] border border-white/5 group-hover:border-white/30 transition-all">
+   423→                        <span class="text-5xl font-display font-black text-white/5 absolute top-4 right-6">04</span>
+   424→                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
+   425→                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+   426→                        </div>
+   427→                        <h3 class="text-xl font-bold mb-4">Cloud Native</h3>
+   428→                        <p class="text-sm text-gray-500 leading-relaxed">Déploiement sur infra scalable (AWS/Azure) avec CI/CD sécurisée et monitoring temps réel.</p>
+   429→                    </div>
+   430→                </div>
+   431→            </div>
+   432→        </section>
+   433→
+   434→        <!-- Compliance Section -->
+   435→        <section class="py-24 bg-white/5 border-y border-white/10">
+   436→            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+   437→                <div class="md:w-1/2">
+   438→                    <h2 class="text-3xl font-display font-bold mb-6 italic text-primary">Sécurité & Souveraineté</h2>
+   439→                    <p class="text-gray-400 mb-8 leading-relaxed">
+   440→                        Parce que vos données legacy sont le cœur de votre entreprise, nous utilisons des instances LLM isolées (Private Endpoints) pour garantir qu'aucune donnée ne quitte votre périmètre de conformité RGPD / SOC2.
+   441→                    </p>
+   442→                    <div class="flex flex-wrap gap-4">
+   443→                        <div class="flex items-center space-x-2 bg-dark border border-white/10 px-4 py-2 rounded-xl">
+   444→                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/GDPR_Logo.svg/2560px-GDPR_Logo.svg.png" class="h-4" alt="GDPR">
+   445→                            <span class="text-xs font-bold uppercase tracking-wider">Conforme RGPD</span>
+   446→                        </div>
+   447→                        <div class="flex items-center space-x-2 bg-dark border border-white/10 px-4 py-2 rounded-xl">
+   448→                            <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/></svg>
+   449→                            <span class="text-xs font-bold uppercase tracking-wider">Encryption AES-256</span>
+   450→                        </div>
+   451→                    </div>
+   452→                </div>
+   453→                <div class="md:w-1/3 grid grid-cols-2 gap-4">
+   454→                    <div class="p-6 glass-panel rounded-2xl text-center flex flex-col items-center">
+   455→                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mb-3">
+   456→                            <span class="text-primary font-bold">L</span>
+   457→                        </div>
+   458→                        <p class="text-[10px] text-gray-500 uppercase font-bold">LLM Privé</p>
+   459→                    </div>
+   460→                    <div class="p-6 glass-panel rounded-2xl text-center flex flex-col items-center">
+   461→                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mb-3">
+   462→                            <span class="text-primary font-bold">V</span>
+   463→                        </div>
+   464→                        <p class="text-[10px] text-gray-500 uppercase font-bold">VPC Isolé</p>
+   465→                    </div>
+   466→                    <div class="p-6 glass-panel rounded-2xl text-center flex flex-col items-center">
+   467→                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mb-3">
+   468→                            <span class="text-primary font-bold">A</span>
+   469→                        </div>
+   470→                        <p class="text-[10px] text-gray-500 uppercase font-bold">Audit Logs</p>
+   471→                    </div>
+   472→                    <div class="p-6 glass-panel rounded-2xl text-center flex flex-col items-center">
+   473→                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mb-3">
+   474→                            <span class="text-primary font-bold">S</span>
+   475→                        </div>
+   476→                        <p class="text-[10px] text-gray-500 uppercase font-bold">SOC2 Ready</p>
+   477→                    </div>
+   478→                </div>
+   479→            </div>
+   480→        </section>
+   481→
+   482→        <!-- CTA Section -->
+   483→        <section class="py-32 relative overflow-hidden" id="audit">
+   484→            <div class="max-w-5xl mx-auto px-6">
+   485→                <div class="glass-panel p-12 md:p-20 rounded-[3rem] text-center relative overflow-hidden group">
+   486→                    <div class="hero-glow -top-40 -left-40 opacity-20"></div>
+   487→                    <div class="hero-glow -bottom-40 -right-40 opacity-20" style="background: radial-gradient(circle, #FF6B35 0%, transparent 70%);"></div>
+   488→                    
+   489→                    <h2 class="text-4xl md:text-6xl font-display font-bold mb-8 relative z-10">Stoppez l'hémorragie <br> de votre dette technique.</h2>
+   490→                    <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto relative z-10">Nos experts IA réalisent un pré-diagnostic de votre base de code sous 48h. Déterminez votre potentiel de modernisation gratuitement.</p>
+   491→                    
+   492→                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 relative z-10">
+   493→                        <a href="/contact" class="px-10 py-5 bg-primary text-dark font-black text-lg rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(27,168,150,0.4)]">
+   494→                            Réserver mon audit gratuit
+   495→                        </a>
+   496→                        <a href="#" class="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-all">
+   497→                            Études de cas Legacy
+   498→                        </a>
+   499→                    </div>
+   500→                    
+   501→                    <div class="mt-12 flex items-center justify-center space-x-8 opacity-50 relative z-10">
+   502→                        <div class="flex items-center space-x-2">
+   503→                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+   504→                            <span class="text-xs font-bold uppercase tracking-wider">NDA Systématique</span>
+   505→                        </div>
+   506→                        <div class="flex items-center space-x-2">
+   507→                            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+   508→                            <span class="text-xs font-bold uppercase tracking-wider">Expertise Senior 15ans+</span>
+   509→                        </div>
+   510→                    </div>
+   511→                </div>
+   512→            </div>
+   513→        </section>
+   514→    </main>
+   515→
+   516→    <!-- Footer -->
+   517→    <footer class="bg-dark border-t border-white/5 pt-20 pb-10">
+   518→        <div class="max-w-7xl mx-auto px-6">
+   519→            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+   520→                <div class="space-y-6">
+   521→                    <a href="/" class="flex items-center space-x-2 group">
+   522→                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform">
+   523→                            <span class="text-dark font-black text-lg">Y</span>
+   524→                        </div>
+   525→                        <span class="text-xl font-display font-bold tracking-tight text-white">yodev</span>
+   526→                    </a>
+   527→                    <p class="text-gray-500 text-sm leading-relaxed">
+   528→                        Agence de transformation digitale 360°. <br> Spécialiste Web, Mobile & IA basée à Paris.
+   529→                    </p>
+   530→                </div>
+   531→
+   532→                <div>
+   533→                    <h4 class="font-bold text-white mb-6">Expertise IA</h4>
+   534→                    <ul class="space-y-4 text-sm text-gray-500">
+   535→                        <li><a href="#" class="hover:text-primary transition-colors">Refactoring LLM</a></li>
+   536→                        <li><a href="#" class="hover:text-primary transition-colors">Documentation Auto</a></li>
+   537→                        <li><a href="#" class="hover:text-primary transition-colors">Agents de Test</a></li>
+   538→                        <li><a href="#" class="hover:text-primary transition-colors">RAG Interne</a></li>
+   539→                    </ul>
+   540→                </div>
+   541→
+   542→                <div>
+   543→                    <h4 class="font-bold text-white mb-6">Société</h4>
+   544→                    <ul class="space-y-4 text-sm text-gray-500">
+   545→                        <li><a href="#" class="hover:text-primary transition-colors">À Propos</a></li>
+   546→                        <li><a href="#" class="hover:text-primary transition-colors">Nos Projets</a></li>
+   547→                        <li><a href="#" class="hover:text-primary transition-colors">Blog Tech</a></li>
+   548→                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+   549→                    </ul>
+   550→                </div>
+   551→
+   552→                <div>
+   553→                    <h4 class="font-bold text-white mb-6">Restez à jour</h4>
+   554→                    <p class="text-sm text-gray-500 mb-4">Rejoignez 2000+ décideurs tech.</p>
+   555→                    <form class="flex flex-col space-y-2">
+   556→                        <input type="email" placeholder="email@votre-pme.fr" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary text-white">
+   557→                        <button class="bg-primary text-dark font-bold py-3 rounded-xl hover:bg-white transition-colors">S'abonner</button>
+   558→                    </form>
+   559→                </div>
+   560→            </div>
+   561→
+   562→            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+   563→                <p>© 2026 YODEV SAS - BUILDING THE FUTURE OF LEGACY</p>
+   564→                <div class="flex space-x-6">
+   565→                    <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+   566→                    <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+   567→                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
+   568→                </div>
+   569→            </div>
+   570→        </div>
+   571→    </footer>
+   572→
+   573→</body>
+   574→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

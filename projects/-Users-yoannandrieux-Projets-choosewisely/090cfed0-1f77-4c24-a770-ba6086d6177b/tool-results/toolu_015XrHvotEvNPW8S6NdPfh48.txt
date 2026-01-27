@@ -1,0 +1,85 @@
+     1→import { Typography } from "@/components/nowts/typography";
+     2→import { Layout, LayoutContent } from "@/features/page/layout";
+     3→import { SiteConfig } from "@/site-config";
+     4→import Link from "next/link";
+     5→
+     6→export const Footer = () => {
+     7→  return (
+     8→    <footer className="border-t border-[var(--border-subtle)] bg-[var(--brand-surface)]">
+     9→      <Layout className="py-16 lg:py-24">
+    10→        <LayoutContent className="flex justify-between gap-8 max-lg:flex-col">
+    11→          <div className="flex flex-col gap-4">
+    12→            <div className="space-y-2">
+    13→              <Typography variant="h3" className="text-foreground">
+    14→                {SiteConfig.title}
+    15→              </Typography>
+    16→              <Typography variant="muted">{SiteConfig.company.name}</Typography>
+    17→              <Typography variant="muted">
+    18→                {SiteConfig.company.address}
+    19→              </Typography>
+    20→            </div>
+    21→            <Typography variant="muted" className="text-sm">
+    22→              © {new Date().getFullYear()} {SiteConfig.company.name} - Tous
+    23→              droits réservés.
+    24→            </Typography>
+    25→          </div>
+    26→          <div className="flex flex-col items-start gap-3 lg:items-end">
+    27→            <Typography variant="large" className="text-foreground font-semibold">
+    28→              Légal
+    29→            </Typography>
+    30→            <Typography
+    31→              as={Link}
+    32→              variant="muted"
+    33→              className="transition-colors duration-200 hover:text-primary"
+    34→              href="/legal/terms"
+    35→            >
+    36→              Conditions d&apos;utilisation
+    37→            </Typography>
+    38→            <Typography
+    39→              as={Link}
+    40→              variant="muted"
+    41→              className="transition-colors duration-200 hover:text-primary"
+    42→              href="/legal/privacy"
+    43→            >
+    44→              Politique de confidentialité
+    45→            </Typography>
+    46→          </div>
+    47→          <div className="flex flex-col items-start gap-3 lg:items-end">
+    48→            <Typography variant="large" className="text-foreground font-semibold">
+    49→              Ressources
+    50→            </Typography>
+    51→            <Typography
+    52→              as={Link}
+    53→              variant="muted"
+    54→              className="transition-colors duration-200 hover:text-primary"
+    55→              href="/posts"
+    56→            >
+    57→              Blog
+    58→            </Typography>
+    59→            <Typography
+    60→              as={Link}
+    61→              variant="muted"
+    62→              className="transition-colors duration-200 hover:text-primary"
+    63→              href="/orgs"
+    64→            >
+    65→              Dashboard
+    66→            </Typography>
+    67→            <Typography
+    68→              as={Link}
+    69→              variant="muted"
+    70→              className="transition-colors duration-200 hover:text-primary"
+    71→              href="/account"
+    72→            >
+    73→              Mon compte
+    74→            </Typography>
+    75→          </div>
+    76→        </LayoutContent>
+    77→      </Layout>
+    78→    </footer>
+    79→  );
+    80→};
+    81→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,77 @@
+The file /Users/yoannandrieux/Projets/choosewisely/src/components/svg/logo-svg.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→import type { ComponentPropsWithoutRef } from "react";
+     2→
+     3→type LogoSvgProps = ComponentPropsWithoutRef<"svg"> & { size?: number };
+     4→
+     5→export const LogoSvg = ({ size = 32, ...props }: LogoSvgProps) => {
+     6→  return (
+     7→    <svg
+     8→      width={size}
+     9→      height={size}
+    10→      viewBox="0 0 32 32"
+    11→      fill="none"
+    12→      xmlns="http://www.w3.org/2000/svg"
+    13→      {...props}
+    14→    >
+    15→      {/* House roof */}
+    16→      <path
+    17→        d="M16 3L3 14H7V27H25V14H29L16 3Z"
+    18→        fill="currentColor"
+    19→      />
+    20→      {/* Checkmark */}
+    21→      <path
+    22→        d="M11 16L14.5 19.5L21 12"
+    23→        stroke="white"
+    24→        strokeWidth="2.5"
+    25→        strokeLinecap="round"
+    26→        strokeLinejoin="round"
+    27→        fill="none"
+    28→      />
+    29→    </svg>
+    30→  );
+    31→};
+    32→
+    33→type LogoWithTextProps = ComponentPropsWithoutRef<"svg"> & {
+    34→  height?: number;
+    35→};
+    36→
+    37→export const LogoWithText = ({ height = 32, ...props }: LogoWithTextProps) => {
+    38→  const width = height * 5;
+    39→  return (
+    40→    <svg
+    41→      width={width}
+    42→      height={height}
+    43→      viewBox="0 0 160 32"
+    44→      fill="none"
+    45→      xmlns="http://www.w3.org/2000/svg"
+    46→      {...props}
+    47→    >
+    48→      {/* House roof */}
+    49→      <path
+    50→        d="M16 3L3 14H7V27H25V14H29L16 3Z"
+    51→        fill="currentColor"
+    52→      />
+    53→      {/* Checkmark */}
+    54→      <path
+    55→        d="M11 16L14.5 19.5L21 12"
+    56→        stroke="white"
+    57→        strokeWidth="2.5"
+    58→        strokeLinecap="round"
+    59→        strokeLinejoin="round"
+    60→        fill="none"
+    61→      />
+    62→      {/* Text "Choose Wisely" */}
+    63→      <text
+    64→        x="38"
+    65→        y="21"
+    66→        fill="currentColor"
+    67→        fontFamily="system-ui, -apple-system, sans-serif"
+    68→        fontWeight="600"
+    69→        fontSize="14"
+    70→      >
+    71→        Choose Wisely
+    72→      </text>
+    73→    </svg>
+    74→  );
+    75→};
+    76→

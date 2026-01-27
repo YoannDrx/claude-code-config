@@ -1,0 +1,269 @@
+     1→# Step 13: Responsive Design & Accessibility
+     2→
+     3→## MANDATORY EXECUTION RULES (READ FIRST):
+     4→
+     5→- 🛑 NEVER generate content without user input
+     6→
+     7→- 📖 CRITICAL: ALWAYS read the complete step file before taking any action - partial understanding leads to incomplete decisions
+     8→- 🔄 CRITICAL: When loading next step with 'C', ensure the entire file is read and understood before proceeding
+     9→- ✅ ALWAYS treat this as collaborative discovery between UX facilitator and stakeholder
+    10→- 📋 YOU ARE A UX FACILITATOR, not a content generator
+    11→- 💬 FOCUS on responsive design strategy and accessibility compliance
+    12→- 🎯 COLLABORATIVE strategy definition, not assumption-based design
+    13→- ✅ YOU MUST ALWAYS SPEAK OUTPUT In your Agent communication style with the config `{communication_language}`
+    14→
+    15→## EXECUTION PROTOCOLS:
+    16→
+    17→- 🎯 Show your analysis before taking any action
+    18→- ⚠️ Present A/P/C menu after generating responsive/accessibility content
+    19→- 💾 ONLY save when user chooses C (Continue)
+    20→- 📖 Update output file frontmatter, adding this step to the end of the list of stepsCompleted.
+    21→- 🚫 FORBIDDEN to load next step until C is selected
+    22→
+    23→## COLLABORATION MENUS (A/P/C):
+    24→
+    25→This step will generate content and present choices:
+    26→
+    27→- **A (Advanced Elicitation)**: Use discovery protocols to develop deeper responsive/accessibility insights
+    28→- **P (Party Mode)**: Bring multiple perspectives to define responsive/accessibility strategy
+    29→- **C (Continue)**: Save the content to the document and proceed to final step
+    30→
+    31→## PROTOCOL INTEGRATION:
+    32→
+    33→- When 'A' selected: Execute {project-root}/_bmad/core/workflows/advanced-elicitation/workflow.xml
+    34→- When 'P' selected: Execute {project-root}/_bmad/core/workflows/party-mode/workflow.md
+    35→- PROTOCOLS always return to this step's A/P/C menu
+    36→- User accepts/rejects protocol changes before proceeding
+    37→
+    38→## CONTEXT BOUNDARIES:
+    39→
+    40→- Current document and frontmatter from previous steps are available
+    41→- Platform requirements from step 3 inform responsive design
+    42→- Design direction from step 9 influences responsive layout choices
+    43→- Focus on cross-device adaptation and accessibility compliance
+    44→
+    45→## YOUR TASK:
+    46→
+    47→Define responsive design strategy and accessibility requirements for the product.
+    48→
+    49→## RESPONSIVE & ACCESSIBILITY SEQUENCE:
+    50→
+    51→### 1. Define Responsive Strategy
+    52→
+    53→Establish how the design adapts across devices:
+    54→"Let's define how {{project_name}} adapts across different screen sizes and devices.
+    55→
+    56→**Responsive Design Questions:**
+    57→
+    58→**Desktop Strategy:**
+    59→
+    60→- How should we use extra screen real estate?
+    61→- Multi-column layouts, side navigation, or content density?
+    62→- What desktop-specific features can we include?
+    63→
+    64→**Tablet Strategy:**
+    65→
+    66→- Should we use simplified layouts or touch-optimized interfaces?
+    67→- How do gestures and touch interactions work on tablets?
+    68→- What's the optimal information density for tablet screens?
+    69→
+    70→**Mobile Strategy:**
+    71→
+    72→- Bottom navigation or hamburger menu?
+    73→- How do layouts collapse on small screens?
+    74→- What's the most critical information to show mobile-first?"
+    75→
+    76→### 2. Establish Breakpoint Strategy
+    77→
+    78→Define when and how layouts change:
+    79→"**Breakpoint Strategy:**
+    80→We need to define screen size breakpoints where layouts adapt.
+    81→
+    82→**Common Breakpoints:**
+    83→
+    84→- Mobile: 320px - 767px
+    85→- Tablet: 768px - 1023px
+    86→- Desktop: 1024px+
+    87→
+    88→**For {{project_name}}, should we:**
+    89→
+    90→- Use standard breakpoints or custom ones?
+    91→- Focus on mobile-first or desktop-first design?
+    92→- Have specific breakpoints for your key use cases?"
+    93→
+    94→### 3. Design Accessibility Strategy
+    95→
+    96→Define accessibility requirements and compliance level:
+    97→"**Accessibility Strategy:**
+    98→What level of WCAG compliance does {{project_name}} need?
+    99→
+   100→**WCAG Levels:**
+   101→
+   102→- **Level A (Basic)** - Essential accessibility for legal compliance
+   103→- **Level AA (Recommended)** - Industry standard for good UX
+   104→- **Level AAA (Highest)** - Exceptional accessibility (rarely needed)
+   105→
+   106→**Based on your product:**
+   107→
+   108→- [Recommendation based on user base, legal requirements, etc.]
+   109→
+   110→**Key Accessibility Considerations:**
+   111→
+   112→- Color contrast ratios (4.5:1 for normal text)
+   113→- Keyboard navigation support
+   114→- Screen reader compatibility
+   115→- Touch target sizes (minimum 44x44px)
+   116→- Focus indicators and skip links"
+   117→
+   118→### 4. Define Testing Strategy
+   119→
+   120→Plan how to ensure responsive design and accessibility:
+   121→"**Testing Strategy:**
+   122→
+   123→**Responsive Testing:**
+   124→
+   125→- Device testing on actual phones/tablets
+   126→- Browser testing across Chrome, Firefox, Safari, Edge
+   127→- Real device network performance testing
+   128→
+   129→**Accessibility Testing:**
+   130→
+   131→- Automated accessibility testing tools
+   132→- Screen reader testing (VoiceOver, NVDA, JAWS)
+   133→- Keyboard-only navigation testing
+   134→- Color blindness simulation testing
+   135→
+   136→**User Testing:**
+   137→
+   138→- Include users with disabilities in testing
+   139→- Test with diverse assistive technologies
+   140→- Validate with actual target devices"
+   141→
+   142→### 5. Document Implementation Guidelines
+   143→
+   144→Create specific guidelines for developers:
+   145→"**Implementation Guidelines:**
+   146→
+   147→**Responsive Development:**
+   148→
+   149→- Use relative units (rem, %, vw, vh) over fixed pixels
+   150→- Implement mobile-first media queries
+   151→- Test touch targets and gesture areas
+   152→- Optimize images and assets for different devices
+   153→
+   154→**Accessibility Development:**
+   155→
+   156→- Semantic HTML structure
+   157→- ARIA labels and roles
+   158→- Keyboard navigation implementation
+   159→- Focus management and skip links
+   160→- High contrast mode support"
+   161→
+   162→### 6. Generate Responsive & Accessibility Content
+   163→
+   164→Prepare the content to append to the document:
+   165→
+   166→#### Content Structure:
+   167→
+   168→When saving to document, append these Level 2 and Level 3 sections:
+   169→
+   170→```markdown
+   171→## Responsive Design & Accessibility
+   172→
+   173→### Responsive Strategy
+   174→
+   175→[Responsive strategy based on conversation]
+   176→
+   177→### Breakpoint Strategy
+   178→
+   179→[Breakpoint strategy based on conversation]
+   180→
+   181→### Accessibility Strategy
+   182→
+   183→[Accessibility strategy based on conversation]
+   184→
+   185→### Testing Strategy
+   186→
+   187→[Testing strategy based on conversation]
+   188→
+   189→### Implementation Guidelines
+   190→
+   191→[Implementation guidelines based on conversation]
+   192→```
+   193→
+   194→### 7. Present Content and Menu
+   195→
+   196→Show the generated responsive and accessibility content and present choices:
+   197→"I've defined the responsive design and accessibility strategy for {{project_name}}. This ensures your product works beautifully across all devices and is accessible to all users.
+   198→
+   199→**Here's what I'll add to the document:**
+   200→
+   201→[Show the complete markdown content from step 6]
+   202→
+   203→**What would you like to do?**
+   204→[A] Advanced Elicitation - Let's refine our responsive/accessibility strategy
+   205→[P] Party Mode - Bring different perspectives on inclusive design
+   206→[C] Continue - Save this to the document and complete the workflow
+   207→
+   208→### 8. Handle Menu Selection
+   209→
+   210→#### If 'A' (Advanced Elicitation):
+   211→
+   212→- Execute {project-root}/_bmad/core/workflows/advanced-elicitation/workflow.xml with the current responsive/accessibility content
+   213→- Process the enhanced insights that come back
+   214→- Ask user: "Accept these improvements to the responsive/accessibility strategy? (y/n)"
+   215→- If yes: Update content with improvements, then return to A/P/C menu
+   216→- If no: Keep original content, then return to A/P/C menu
+   217→
+   218→#### If 'P' (Party Mode):
+   219→
+   220→- Execute {project-root}/_bmad/core/workflows/party-mode/workflow.md with the current responsive/accessibility strategy
+   221→- Process the collaborative insights that come back
+   222→- Ask user: "Accept these changes to the responsive/accessibility strategy? (y/n)"
+   223→- If yes: Update content with improvements, then return to A/P/C menu
+   224→- If no: Keep original content, then return to A/P/C menu
+   225→
+   226→#### If 'C' (Continue):
+   227→
+   228→- Append the final content to `{planning_artifacts}/ux-design-specification.md`
+   229→- Update frontmatter: append step to end of stepsCompleted array
+   230→- Load `./step-14-complete.md`
+   231→
+   232→## APPEND TO DOCUMENT:
+   233→
+   234→When user selects 'C', append the content directly to the document using the structure from step 6.
+   235→
+   236→## SUCCESS METRICS:
+   237→
+   238→✅ Responsive strategy clearly defined for all device types
+   239→✅ Appropriate breakpoint strategy established
+   240→✅ Accessibility requirements determined and documented
+   241→✅ Comprehensive testing strategy planned
+   242→✅ Implementation guidelines provided for development team
+   243→✅ A/P/C menu presented and handled correctly
+   244→✅ Content properly appended to document when C selected
+   245→
+   246→## FAILURE MODES:
+   247→
+   248→❌ Not considering all device types and screen sizes
+   249→❌ Accessibility requirements not properly researched
+   250→❌ Testing strategy not comprehensive enough
+   251→❌ Implementation guidelines too generic or unclear
+   252→❌ Not addressing specific accessibility challenges for your product
+   253→❌ Not presenting A/P/C menu after content generation
+   254→❌ Appending content without user selecting 'C'
+   255→
+   256→❌ **CRITICAL**: Reading only partial step file - leads to incomplete understanding and poor decisions
+   257→❌ **CRITICAL**: Proceeding with 'C' without fully reading and understanding the next step file
+   258→❌ **CRITICAL**: Making decisions without complete understanding of step requirements and protocols
+   259→
+   260→## NEXT STEP:
+   261→
+   262→After user selects 'C' and content is saved to document, load `./step-14-complete.md` to finalize the UX design workflow.
+   263→
+   264→Remember: Do NOT proceed to step-14 until user explicitly selects 'C' from the A/P/C menu and content is saved!
+   265→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

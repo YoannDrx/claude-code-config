@@ -1,0 +1,29 @@
+├ ƒ /api/admin/resume
+├ ƒ /api/admin/resume/[id]
+├ ƒ /api/admin/resume/profile
+├ ƒ /api/admin/resume/sections
+├ ƒ /api/admin/resume/sections/[id]
+├ ƒ /api/admin/resume/theme
+├ ƒ /api/admin/services
+├ ƒ /api/admin/services/[id]
+├ ƒ /api/admin/settings
+├ ƒ /api/admin/upload
+├ ƒ /api/admin/versions
+├ ƒ /api/admin/versions/restore
+├ ƒ /api/admin/videos
+├ ƒ /api/admin/videos/[id]
+├ ƒ /api/auth/[...all]
+├ ƒ /api/contact/notify
+├ ƒ /api/cv
+├ ƒ /api/cv/download
+├ ƒ /api/cv/versions
+├ ƒ /api/soundcloud/tracks
+├ ƒ /api/testimonials
+└ ○ /login
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

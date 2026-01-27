@@ -1,0 +1,478 @@
+     1→---
+     2→stepsCompleted: ["step-01-init", "step-02-discovery", "step-03-success", "step-04-journeys", "step-05-domain", "step-06-innovation", "step-07-project-type", "step-08-scoping"]
+     3→inputDocuments:
+     4→  - "_bmad-output/planning-artifacts/product-brief-moodday-2026-01-20.md"
+     5→  - "_bmad-output/analysis/brainstorming-session-2026-01-20.md"
+     6→workflowType: 'prd'
+     7→documentCounts:
+     8→  briefs: 1
+     9→  research: 0
+    10→  brainstorming: 1
+    11→  projectDocs: 0
+    12→classification:
+    13→  projectType: "web_app"
+    14→  projectTypeDetail: "PWA (Progressive Web App)"
+    15→  domain: "healthcare"
+    16→  domainDetail: "wellness/mental health tracking"
+    17→  complexity: "medium"
+    18→  projectContext: "greenfield"
+    19→---
+    20→
+    21→# Product Requirements Document - Moodday
+    22→
+    23→**Author:** Yoannandrieux
+    24→**Date:** 2026-01-20
+    25→
+    26→## Success Criteria
+    27→
+    28→### User Success
+    29→
+    30→**Pour Marie (patiente multi-suivis):**
+    31→- ≥4 check-ins humeur/semaine (pas 7 - bienveillance)
+    32→- Note post-séance dans les 24h après RDV psy
+    33→- ≥1 PDF généré avant consultation psychiatre
+    34→- Première corrélation médicament↔humeur identifiée en < 4 semaines
+    35→
+    36→**Pour Lucas (thérapie-only):**
+    37→- ≥2 exercices psy notés/semaine
+    38→- Évaluation "bénéfique/neutre/négatif" sur 80% des exercices
+    39→- Consultation des données avant RDV (< 24h avant)
+    40→
+    41→**Moment "Worth It":**
+    42→> L'utilisateur arrive en séance et dit: "Cette semaine j'ai testé X, voici ce que j'ai observé..." au lieu de "Euh... ça va je crois."
+    43→
+    44→### Business Success
+    45→
+    46→**À 3 mois (MVP):**
+    47→- 500 utilisateurs actifs (≥1 check-in/semaine)
+    48→- NPS ≥ 40 sur early adopters
+    49→- Rétention J30 ≥ 40%
+    50→
+    51→**À 12 mois:**
+    52→- 10 000 utilisateurs actifs
+    53→- 5% conversion premium
+    54→- ≥50 psys/psychiatres recommandent l'app
+    55→
+    56→### Technical Success
+    57→
+    58→- Time-to-value < 14 jours (premier "aha moment")
+    59→- Saisie quotidienne < 30 secondes
+    60→- Export PDF générable en < 5 secondes
+    61→- App utilisable offline (PWA)
+    62→
+    63→### Measurable Outcomes
+    64→
+    65→**North Star Metric:**
+    66→> **"Consultations préparées"** = Utilisateurs ayant consulté leurs données ou généré un PDF dans les 48h précédant un RDV médical.
+    67→
+    68→**KPIs secondaires:**
+    69→
+    70→| KPI | Cible |
+    71→|-----|-------|
+    72→| DAU/MAU | ≥ 30% |
+    73→| Rétention J7 | ≥ 60% |
+    74→| Rétention J30 | ≥ 40% |
+    75→| Check-ins/semaine | ≥ 4 |
+    76→| Time-to-value | < 14 jours |
+    77→| PDF exports/mois | ≥ 1 par user actif |
+    78→
+    79→## Product Scope
+    80→
+    81→### MVP - Minimum Viable Product
+    82→
+    83→| Feature | Description |
+    84→|---------|-------------|
+    85→| Quick Mood Check | Slider 0-10 + note (<30 sec) |
+    86→| Medication Tracker | Liste meds + dosages + pris aujourd'hui |
+    87→| Therapy Notes | Notes post-séance + exercices |
+    88→| Exercise Tracker | Exercices psy + évaluation efficacité |
+    89→| Timeline Courbe 30j | Graphe unifié humeur + meds + séances |
+    90→| Export PDF | 1 page pour consultation |
+    91→| Onboarding bienveillant | Setup meds + ton rassurant |
+    92→
+    93→**Screens MVP (10-12):**
+    94→1. Landing/Marketing
+    95→2. Sign Up / Login
+    96→3. Onboarding (3 sous-étapes)
+    97→4. Dashboard (hub central)
+    98→5. Quick Entry Modal (humeur + meds)
+    99→6. Medication List
+   100→7. Add/Edit Medication
+   101→8. Therapy Notes (post-séance)
+   102→9. Exercise List + Add
+   103→10. Courbe 30j
+   104→11. Export PDF
+   105→12. Settings
+   106→
+   107→### Growth Features (Post-MVP)
+   108→
+   109→- Système Aidants avec permissions granulaires
+   110→- Tracking énergie + sommeil
+   111→- Tags événements personnalisés
+   112→- Calendrier RDV psy intégré
+   113→- Notifications rappel séance
+   114→
+   115→### Vision (Future)
+   116→
+   117→- IA détection patterns (sans diagnostic)
+   118→- Signaux passifs (Strava, Apple Health)
+   119→- Mode Pro pour psychiatres
+   120→- Corrélations multi-variables automatiques
+   121→- Intégration Doctolib
+   122→
+   123→## User Journeys
+   124→
+   125→### Journey 1: Marie - "Reprendre le contrôle"
+   126→
+   127→**Persona:** Marie, 34 ans, patiente multi-suivis (psychiatre + psychologue), trouble bipolaire, 3 médicaments
+   128→
+   129→**Opening Scene:**
+   130→Marie est assise dans la salle d'attente de son psychiatre. Elle feuillette nerveusement son carnet papier où elle a griffonné quelques notes. "Comment ça s'est passé ce mois-ci ?" va lui demander le Dr. Martin. Et comme d'habitude, elle va répondre "Euh... plutôt bien je crois ?" alors qu'elle sait que c'est plus compliqué que ça.
+   131→
+   132→**Rising Action:**
+   133→1. Marie découvre Moodday via sa psychologue qui cherchait un outil pour ses patients
+   134→2. Elle installe l'app, configure ses 3 médicaments actuels (Lamictal 150mg, Xanax PRN, Stilnox)
+   135→3. L'onboarding la rassure: "Pas de pression, prends ton temps"
+   136→4. Chaque soir, notification douce → slider humeur (4 secondes) + "Médicaments pris ?" (2 taps)
+   137→5. Après sa séance psy du mercredi, elle note: "Travaillé sur poser mes limites. Exercice: dire non une fois cette semaine"
+   138→6. Vendredi, elle dit non à un collègue → note dans l'app: "Dit non. Stressant mais fière"
+   139→
+   140→**Climax (Semaine 3):**
+   141→Marie ouvre l'app et voit sa courbe 30 jours. Elle remarque que depuis l'augmentation de Lamictal il y a 2 semaines, sa moyenne humeur est passée de 4.2 à 5.8. "Le fait que ce soit noté, ça devient VRAI." Pour la première fois, elle VOIT que le traitement fonctionne.
+   142→
+   143→**Resolution:**
+   144→Consultation psychiatre. Marie ouvre l'app, génère le PDF. Le Dr. Martin regarde les données: "Je vois que l'augmentation du Lamictal a eu un effet positif. Et vous avez noté moins de prises de Xanax PRN. On continue comme ça." Pour la première fois, la consultation est basée sur des FAITS, pas des souvenirs flous.
+   145→
+   146→---
+   147→
+   148→### Journey 2: Lucas - "Les petites victoires"
+   149→
+   150→**Persona:** Lucas, 28 ans, thérapie seule (anxiété sociale), pas de médicaments
+   151→
+   152→**Opening Scene:**
+   153→Lucas évite la machine à café du bureau. Il y a toujours du monde, et l'idée de faire la conversation le paralyse. Son psy lui a donné des "exercices d'exposition progressive" mais il n'arrive pas à les appliquer. En séance, il dit "ça va" alors qu'il sait qu'il stagne.
+   154→
+   155→**Rising Action:**
+   156→1. Lucas installe Moodday (pas de médicaments à configurer)
+   157→2. Il crée ses premiers exercices d'exposition: "Aller à la machine à café quand il y a 1 personne"
+   158→3. Lundi, il y va. Une collègue lui dit bonjour. Il répond. Note dans l'app: "Machine café - 1 personne - Anxiété 7/10 avant, 4/10 après. Bénéfique."
+   159→4. Mercredi, il retente. "2 personnes - Anxiété 6/10 avant, 3/10 après. Plus facile."
+   160→5. Avant sa séance psy, il consulte ses données des 2 semaines
+   161→
+   162→**Climax:**
+   163→En séance, Lucas ouvre l'app: "J'ai fait la machine à café 6 fois en 2 semaines. Au début anxiété 7, maintenant 4. J'ai des preuves que ça marche." Son psy sourit: "C'est exactement ce qu'on cherchait - voir ta progression."
+   164→
+   165→**Resolution:**
+   166→Lucas a un nouvel objectif: "Déjeuner avec un collègue." Il sait qu'il pourra tracker ses petites victoires et les montrer à son psy. L'introspection est devenue tangible.
+   167→
+   168→---
+   169→
+   170→### Journey 3: Sophie - "Veiller sans surveiller" (V1)
+   171→
+   172→**Persona:** Sophie, 45 ans, aidante proche de Paul (bipolaire)
+   173→
+   174→**Opening Scene:**
+   175→Sophie remarque que son compagnon Paul dort plus que d'habitude et a annulé deux sorties cette semaine. Elle s'inquiète mais ne veut pas paraître intrusive. La dernière fois qu'elle a dit "Tu as l'air déprimé", il s'est braqué.
+   176→
+   177→**Rising Action:**
+   178→1. Paul utilise Moodday depuis 2 mois et a invité Sophie comme "aidante"
+   179→2. Sophie reçoit une notification: "Paul a eu 3 jours consécutifs sous 4/10"
+   180→3. Elle ne dit rien directement, mais propose: "Et si on allait marcher ce weekend ?"
+   181→4. Elle peut ajouter une observation (optionnel): "Paul semble plus fatigué, a annulé 2 sorties"
+   182→
+   183→**Climax:**
+   184→Paul consulte ses données avant son RDV psychiatre et voit l'observation de Sophie: "Ah oui, c'est vrai que j'ai annulé des trucs..." Il n'avait pas remarqué le pattern lui-même.
+   185→
+   186→**Resolution:**
+   187→Sophie se sent utile sans être intrusive. Paul apprécie d'avoir un "témoin bienveillant" qui voit ce qu'il ne voit pas. L'app permet la collaboration sans le conflit.
+   188→
+   189→---
+   190→
+   191→### Journey 4: Dr. Benoit - "Des données, enfin"
+   192→
+   193→**Persona:** Dr. Benoit, psychiatre libéral, 40 patients/semaine
+   194→
+   195→**Opening Scene:**
+   196→Dr. Benoit voit 40 patients par semaine, 20 minutes chacun. Quand il demande "Comment ça s'est passé depuis la dernière fois ?", il obtient des réponses vagues. Il ajuste les traitements un peu à l'aveugle.
+   197→
+   198→**Rising Action:**
+   199→1. Un de ses patients arrive avec un PDF Moodday
+   200→2. Dr. Benoit scanne le document en 30 secondes: courbe humeur, changements de dosage marqués, notes importantes
+   201→3. Il voit immédiatement: "L'augmentation de Lamictal au 15/01 → amélioration visible à partir du 22/01"
+   202→
+   203→**Climax:**
+   204→"C'est exactement ce dont j'ai besoin. Des données objectives, pas des impressions." Il recommande Moodday à ses autres patients.
+   205→
+   206→**Resolution:**
+   207→Ses consultations sont plus efficaces. Il peut ajuster les traitements avec des données concrètes. Il devient un "ambassadeur" de l'app.
+   208→
+   209→---
+   210→
+   211→### Journey Requirements Summary
+   212→
+   213→| Journey | Capabilities révélées |
+   214→|---------|----------------------|
+   215→| **Marie** | Quick entry, medication tracking, therapy notes, courbe 30j, PDF export, onboarding bienveillant |
+   216→| **Lucas** | Exercise tracking, évaluation efficacité, consultation pré-séance, progression visible |
+   217→| **Sophie** | Système aidant, alertes, observations aidant (V1) |
+   218→| **Dr. Benoit** | PDF export optimisé, visualisation rapide |
+   219→
+   220→**MVP Focus:** Marie & Lucas journeys (patient autonome)
+   221→**V1 Addition:** Sophie journey (système aidants)
+   222→
+   223→## Domain-Specific Requirements
+   224→
+   225→### Compliance & Regulatory
+   226→
+   227→**RGPD (Europe) - Applicable:**
+   228→- Consentement explicite pour collecte données santé
+   229→- Droit à l'effacement (suppression compte = suppression données)
+   230→- Portabilité des données (export JSON/CSV)
+   231→- Base légale: consentement utilisateur
+   232→
+   233→**HIPAA (US) - Non applicable:**
+   234→- Moodday = journal personnel, pas "covered entity"
+   235→- PDF généré par l'utilisateur qui choisit de le montrer
+   236→- Disclaimer: "Non-medical app, personal use only"
+   237→
+   238→**Données de Santé (France):**
+   239→- Hébergement HDS recommandé si B2B, pas obligatoire pour app grand public
+   240→
+   241→### Technical Constraints
+   242→
+   243→**Sécurité:**
+   244→- Chiffrement at rest (données stockées)
+   245→- Chiffrement in transit (HTTPS)
+   246→- Authentification sécurisée
+   247→- Pas de données santé dans les logs/analytics
+   248→
+   249→**Privacy by Design:**
+   250→- Données minimales collectées
+   251→- Pas de tracking tiers sur données santé
+   252→- Analytics anonymisées uniquement
+   253→- Pas de vente/partage de données
+   254→
+   255→**Offline & Résilience:**
+   256→- PWA fonctionnelle offline
+   257→- Sync automatique quand connexion revient
+   258→- Données locales sécurisées
+   259→
+   260→### Considérations Éthiques
+   261→
+   262→**Tone & Messaging:**
+   263→- Jamais de langage culpabilisant
+   264→- Pas de gamification agressive (streaks)
+   265→- Pas de diagnostic médical
+   266→- Disclaimers: "Consultez un professionnel de santé"
+   267→
+   268→**Vulnérabilité utilisateurs:**
+   269→- Population fragile
+   270→- Pas de contenu anxiogène
+   271→- Ressources d'aide optionnelles (V1)
+   272→
+   273→### Risk Mitigations
+   274→
+   275→| Risque | Mitigation |
+   276→|--------|------------|
+   277→| Fuite données santé | Chiffrement + audit sécurité |
+   278→| Utilisateur en crise | Disclaimer + ressources d'aide |
+   279→| Mauvaise interprétation | "Ne remplace pas un professionnel" |
+   280→| Dépendance app | Pas de notifications agressives |
+   281→
+   282→## Innovation & Novel Patterns
+   283→
+   284→### Detected Innovation Areas
+   285→
+   286→**1. Corrélation Multi-Variables**
+   287→- Lien explicite: humeur ↔ médicaments ↔ dosages ↔ exercices thérapie
+   288→- Visualisation timeline unifiée (pas vue ailleurs dans les apps grand public)
+   289→
+   290→**2. Cycle de Séance Psy**
+   291→- Avant: préparer la consultation avec données
+   292→- Après: noter ce qu'on a compris, exercices à faire
+   293→- Entre: tracker l'application des exercices
+   294→- = "Carnet de psy digital" - approche originale
+   295→
+   296→**3. Philosophie Bienveillante**
+   297→- Zéro streak guilt (pas de gamification culpabilisante)
+   298→- Notifications douces, pas agressives
+   299→- Microcopy rassurant adapté à population fragile
+   300→- Design éthique pour santé mentale
+   301→
+   302→### Market Context
+   303→
+   304→**Positionnement unique:** "Journal clinique pour consultation psy" vs "Wellness tracker général"
+   305→
+   306→| Concurrent | Focus | Manque |
+   307→|------------|-------|--------|
+   308→| Daylio | Mood tracking général | Pas de meds, pas de psy |
+   309→| Bearable | Symptômes + triggers | Complexe, pas focus psy |
+   310→| MindDoc | CBT exercices | Pas de suivi meds |
+   311→| **Moodday** | Meds + Thérapie + Export psy | - |
+   312→
+   313→### Validation Approach
+   314→
+   315→| Innovation | Méthode de validation |
+   316→|------------|----------------------|
+   317→| Corrélation meds↔humeur | User interviews: "Avez-vous identifié une corrélation?" |
+   318→| Cycle séance psy | Taux de notes post-séance dans les 24h |
+   319→| Bienveillance | NPS + feedback qualitatif + rétention |
+   320→
+   321→### Innovation Risks & Mitigation
+   322→
+   323→| Risque | Mitigation |
+   324→|--------|------------|
+   325→| Trop de features = complexité | MVP ultra-simple, ajouts progressifs |
+   326→| Innovation copiable facilement | Exécution rapide, communauté fidèle |
+   327→| Pas assez innovant pour buzz | Focus product-market fit, pas buzz |
+   328→
+   329→## Web App Specific Requirements
+   330→
+   331→### Project-Type Overview
+   332→
+   333→Moodday est une **Progressive Web App (PWA)** construite avec Next.js 15+, optimisée pour mobile-first avec capacités offline.
+   334→
+   335→**Stack technique (boilerplate existant):**
+   336→- Framework: Next.js 15 avec App Router
+   337→- Styling: TailwindCSS v4 + Shadcn/UI
+   338→- Database: PostgreSQL (NeonDB) + Prisma
+   339→- Auth: Better Auth
+   340→- Hosting: Vercel
+   341→
+   342→### Technical Architecture Considerations
+   343→
+   344→**PWA Requirements:**
+   345→- Service Worker pour cache offline
+   346→- Web App Manifest pour installation
+   347→- Push notifications (iOS 16.4+ limité)
+   348→- IndexedDB pour stockage local
+   349→
+   350→**Offline-First Strategy:**
+   351→- Check-in humeur fonctionne offline
+   352→- Sync automatique au retour de connexion
+   353→- Indicateur visuel état connexion
+   354→- Conflict resolution: "last write wins"
+   355→
+   356→### Browser & Platform Support
+   357→
+   358→| Platform | Browser | Support Level |
+   359→|----------|---------|---------------|
+   360→| iOS | Safari | Primary (PWA limitations) |
+   361→| Android | Chrome | Primary |
+   362→| Desktop | Chrome/Edge/Firefox | Secondary |
+   363→
+   364→**iOS PWA Limitations:**
+   365→- Push notifications limitées (iOS 16.4+)
+   366→- Pas de background sync
+   367→- Storage limité (quota)
+   368→
+   369→### Responsive Design
+   370→
+   371→**Breakpoints:**
+   372→- Mobile: 375px (iPhone SE) - PRIMARY
+   373→- Tablet: 768px - Secondary
+   374→- Desktop: 1024px+ - Tertiary
+   375→
+   376→**Mobile-First Approach:**
+   377→- Touch-friendly targets (min 44px)
+   378→- Thumb-zone optimization pour check-in rapide
+   379→- Pas de hover-dependent interactions
+   380→
+   381→### Performance Targets
+   382→
+   383→| Metric | Target | Justification |
+   384→|--------|--------|---------------|
+   385→| LCP | < 2.5s | Core Web Vitals |
+   386→| FID | < 100ms | Réactivité slider humeur |
+   387→| CLS | < 0.1 | Stabilité visuelle |
+   388→| TTI | < 3s | Check-in rapide |
+   389→| Bundle size | < 200KB (initial) | Mobile data |
+   390→
+   391→### Accessibility (WCAG 2.1 AA)
+   392→
+   393→- Contraste couleurs suffisant
+   394→- Navigation clavier complète
+   395→- Labels ARIA pour screen readers
+   396→- Focus indicators visibles
+   397→- Texte redimensionnable
+   398→
+   399→### Implementation Stack
+   400→
+   401→```
+   402→Frontend: Next.js 15 + React 19 + TailwindCSS v4
+   403→Backend: Next.js API Routes + Prisma + PostgreSQL
+   404→Auth: Better Auth (multi-provider)
+   405→Hosting: Vercel (edge functions)
+   406→PWA: next-pwa ou workbox
+   407→PDF: react-pdf ou jspdf
+   408→Charts: recharts ou chart.js
+   409→```
+   410→
+   411→## Project Scoping & Phased Development
+   412→
+   413→### MVP Strategy & Philosophy
+   414→
+   415→**MVP Approach:** Problem-Solving MVP
+   416→> Minimum viable pour que Marie dise "Je vois que mon traitement marche" et que Lucas dise "J'ai des preuves de ma progression"
+   417→
+   418→**Scope Classification:** Medium (10-12 screens, 7 features core)
+   419→
+   420→### MVP Feature Set (Phase 1)
+   421→
+   422→**Core User Journeys Supported:**
+   423→- ✅ Marie - Check-in quotidien + Export PDF consultation
+   424→- ✅ Lucas - Exercices thérapie + Évaluation efficacité
+   425→
+   426→**Must-Have Capabilities:**
+   427→
+   428→| Feature | Justification |
+   429→|---------|---------------|
+   430→| Quick Mood Check (slider 0-10) | Core loop quotidien |
+   431→| Medication Tracker | Corrélation meds↔humeur (différenciateur) |
+   432→| Therapy Notes | Carnet de psy (différenciateur) |
+   433→| Exercise Tracker | Suivi exercices psy |
+   434→| Courbe 30j | Visualisation patterns |
+   435→| Export PDF | Valeur clinique immédiate |
+   436→| Onboarding bienveillant | Première impression = rétention |
+   437→
+   438→**Explicitly OUT of MVP:**
+   439→- ❌ Système Aidants (complexité permissions)
+   440→- ❌ Tracking énergie/sommeil (scope creep)
+   441→- ❌ Tags événements
+   442→- ❌ IA corrélations
+   443→- ❌ Intégrations externes
+   444→
+   445→### Post-MVP Features
+   446→
+   447→**Phase 2 - Growth (V1, +2-3 mois post-MVP):**
+   448→- Système Aidants avec permissions granulaires
+   449→- Tracking énergie + sommeil
+   450→- Tags événements personnalisés
+   451→- Calendrier RDV psy intégré
+   452→- Notifications rappel séance
+   453→
+   454→**Phase 3 - Expansion (V2, +6 mois):**
+   455→- IA détection patterns (sans diagnostic)
+   456→- Signaux passifs (Strava, Apple Health)
+   457→- Mode Pro pour psychiatres
+   458→- Corrélations multi-variables automatiques
+   459→
+   460→### Risk Mitigation Strategy
+   461→
+   462→| Type | Risque | Mitigation |
+   463→|------|--------|------------|
+   464→| **Technique** | PWA offline sync complexe | "Last write wins" simple pour MVP |
+   465→| **Technique** | PDF generation | Libs éprouvées (jspdf/react-pdf) |
+   466→| **Marché** | Rétention faible (apps santé mentale) | Bienveillance UX, pas de streak guilt |
+   467→| **Marché** | Concurrence (Daylio, Bearable) | Focus niche psychiatrique/psy |
+   468→| **Ressource** | Dev solo | MVP ultra-lean, boilerplate existant |
+   469→
+   470→### Resource Requirements
+   471→
+   472→**MVP Team:** 1 développeur full-stack + boilerplate existant
+   473→**Timeline:** 8 semaines
+   474→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

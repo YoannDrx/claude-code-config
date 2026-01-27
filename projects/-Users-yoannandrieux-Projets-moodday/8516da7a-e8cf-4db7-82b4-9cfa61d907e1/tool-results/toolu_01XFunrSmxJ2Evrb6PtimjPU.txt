@@ -1,0 +1,2 @@
+/Users/yoannandrieux/Projets/moodday/node_modules/.pnpm/zod@4.1.8/node_modules/zod/locales/package.json
+/Users/yoannandrieux/Projets/moodday/node_modules/.pnpm/zod@4.1.8/node_modules/zod/v4/locales/package.json

@@ -1,0 +1,1 @@
+Command running in background with ID: b35adb9. Output is being written to: /var/folders/9h/sbxl7zl90j9_wc743xft5j8h0000gn/T/claude/-Users-yoannandrieux-Projets-portfolio-loic/tasks/b35adb9.output

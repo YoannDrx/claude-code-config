@@ -1,0 +1,87 @@
+The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/product-brief-moodday-2026-01-20.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   216→### North Star Metric
+   217→
+   218→> **"Consultations préparées"** = Nombre d'utilisateurs ayant consulté leurs données ou généré un PDF dans les 48h précédant un RDV médical noté dans l'app.
+   219→
+   220→Cette métrique capture la valeur core: Moodday aide à préparer les consultations.
+   221→
+   222→---
+   223→
+   224→## MVP Scope
+   225→
+   226→### Core Features
+   227→
+   228→| Feature | Description | Justification |
+   229→|---------|-------------|---------------|
+   230→| **Quick Mood Check** | Slider humeur 0-10 + note optionnelle (<30 sec) | Core loop quotidien |
+   231→| **Medication Tracker** | Liste médicaments + dosages + "pris aujourd'hui ?" | Corrélation traitement↔humeur |
+   232→| **Therapy Notes** | Notes post-séance psy + exercices à tester | Carnet de psy |
+   233→| **Exercise Tracker** | Exercices du psy + évaluation "bénéfique/neutre/négatif" | Suivi thérapeutique |
+   234→| **Timeline Courbe 30j** | Graphe humeur + marqueurs dosage + marqueurs séances | Visualisation patterns |
+   235→| **Export PDF** | PDF 1 page pour consultation | Valeur clinique immédiate |
+   236→| **Onboarding bienveillant** | Setup médicaments + ton rassurant | Première impression |
+   237→
+   238→### Screens MVP (10-12)
+   239→
+   240→1. Landing/Marketing
+   241→2. Sign Up / Login
+   242→3. Onboarding (3 sous-étapes)
+   243→4. Dashboard (hub central)
+   244→5. Quick Entry Modal (humeur + meds)
+   245→6. Medication List
+   246→7. Add/Edit Medication
+   247→8. Therapy Notes (post-séance)
+   248→9. Exercise List + Add
+   249→10. Courbe 30j
+   250→11. Export PDF
+   251→12. Settings
+   252→
+   253→### Out of Scope for MVP
+   254→
+   255→| Feature | Pourquoi reporté | Version cible |
+   256→|---------|------------------|---------------|
+   257→| **Système Aidants** | Complexité permissions + notifications | V1 |
+   258→| **Tracking Énergie/Sommeil** | Focus sur humeur + meds d'abord | V1 |
+   259→| **Tags Événements** | Nice-to-have, pas essentiel | V1 |
+   260→| **Scanner Ordonnance** | Complexité OCR | V1 |
+   261→| **Corrélations IA** | Besoin de data d'abord | V2 |
+   262→| **Intégration Strava/Health** | Signaux passifs = V2 | V2 |
+   263→| **Calendrier séances psy** | Synchro calendrier complexe | V1 |
+   264→| **Mode Pro (psychiatre)** | Focus patient d'abord | V2 |
+   265→
+   266→### MVP Success Criteria
+   267→
+   268→**Go/No-Go à 3 mois:**
+   269→
+   270→| Critère | Seuil de validation |
+   271→|---------|---------------------|
+   272→| **Utilisateurs actifs** | ≥ 300 (≥1 check-in/semaine) |
+   273→| **Rétention J30** | ≥ 35% |
+   274→| **NPS early adopters** | ≥ 30 |
+   275→| **PDF exports** | ≥ 50 exports générés |
+   276→| **Feedback qualitatif** | ≥ 10 témoignages "ça m'a aidé en consultation" |
+   277→
+   278→**Signal fort de PMF:**
+   279→> Un utilisateur dit: "J'ai montré le PDF à mon psychiatre, on a pu voir que depuis le changement de dosage ça allait mieux."
+   280→
+   281→### Future Vision
+   282→
+   283→#### V1 (Post-MVP, +2-3 mois)
+   284→- Système Aidants avec permissions granulaires
+   285→- Tracking énergie + sommeil
+   286→- Tags événements personnalisés
+   287→- Calendrier des RDV psy intégré
+   288→- Notifications rappel séance
+   289→
+   290→#### V2 (+6 mois)
+   291→- IA détection patterns (sans diagnostic)
+   292→- Signaux passifs (Strava, Apple Health)
+   293→- Mode Pro pour psychiatres
+   294→- Corrélations multi-variables automatiques
+   295→
+   296→#### Vision 2 ans
+   297→- Moodday devient le standard pour le suivi psychiatrique/thérapeutique
+   298→- Recommandé par les psychiatres à leurs patients
+   299→- Intégration possible avec logiciels médicaux (Doctolib, etc.)
+   300→- Études cliniques sur l'efficacité du self-tracking
+   301→

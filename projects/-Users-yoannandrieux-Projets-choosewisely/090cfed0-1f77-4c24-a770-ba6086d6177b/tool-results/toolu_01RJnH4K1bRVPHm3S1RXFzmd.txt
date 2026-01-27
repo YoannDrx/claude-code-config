@@ -1,0 +1,132 @@
+     1→import * as React from "react";
+     2→import { cn } from "@/lib/utils";
+     3→
+     4→const DPE_GRADES = [
+     5→  { grade: "A", color: "#059669", bgColor: "bg-emerald-600", label: "A" },
+     6→  { grade: "B", color: "#10b981", bgColor: "bg-emerald-500", label: "B" },
+     7→  { grade: "C", color: "#84cc16", bgColor: "bg-lime-500", label: "C" },
+     8→  { grade: "D", color: "#eab308", bgColor: "bg-yellow-500", label: "D" },
+     9→  { grade: "E", color: "#f97316", bgColor: "bg-orange-500", label: "E" },
+    10→  { grade: "F", color: "#ef4444", bgColor: "bg-red-500", label: "F" },
+    11→  { grade: "G", color: "#dc2626", bgColor: "bg-red-600", label: "G" },
+    12→] as const;
+    13→
+    14→type DPEGrade = (typeof DPE_GRADES)[number]["grade"];
+    15→
+    16→type DPEScaleProps = {
+    17→  grade?: DPEGrade | string | null;
+    18→  showLabel?: boolean;
+    19→  size?: "sm" | "md" | "lg";
+    20→  className?: string;
+    21→};
+    22→
+    23→function DPEScale({
+    24→  grade,
+    25→  showLabel = true,
+    26→  size = "md",
+    27→  className,
+    28→}: DPEScaleProps) {
+    29→  const normalizedGrade = grade?.toUpperCase() as DPEGrade;
+    30→  const activeIndex = DPE_GRADES.findIndex((g) => g.grade === normalizedGrade);
+    31→
+    32→  const sizeClasses = {
+    33→    sm: "h-4 text-xs",
+    34→    md: "h-6 text-sm",
+    35→    lg: "h-8 text-base",
+    36→  };
+    37→
+    38→  const widthClasses = {
+    39→    sm: ["w-6", "w-7", "w-8", "w-9", "w-10", "w-11", "w-12"],
+    40→    md: ["w-8", "w-10", "w-12", "w-14", "w-16", "w-18", "w-20"],
+    41→    lg: ["w-10", "w-12", "w-14", "w-16", "w-18", "w-20", "w-22"],
+    42→  };
+    43→
+    44→  return (
+    45→    <div className={cn("flex flex-col gap-0.5", className)}>
+    46→      {DPE_GRADES.map((dpe, index) => {
+    47→        const isActive = index === activeIndex;
+    48→        return (
+    49→          <div
+    50→            key={dpe.grade}
+    51→            className={cn(
+    52→              "flex items-center transition-all duration-300",
+    53→              sizeClasses[size],
+    54→              widthClasses[size][index],
+    55→              isActive ? "scale-105" : "opacity-60",
+    56→            )}
+    57→          >
+    58→            <div
+    59→              className={cn(
+    60→                "flex h-full w-full items-center justify-between rounded-r-md px-2 font-semibold text-white",
+    61→                isActive && "shadow-lg",
+    62→              )}
+    63→              style={{
+    64→                backgroundColor: dpe.color,
+    65→                boxShadow: isActive ? `0 0 20px ${dpe.color}50` : undefined,
+    66→              }}
+    67→            >
+    68→              <span>{dpe.label}</span>
+    69→              {isActive && showLabel && (
+    70→                <span className="ml-2 text-white/90">
+    71→                  {normalizedGrade}
+    72→                </span>
+    73→              )}
+    74→            </div>
+    75→          </div>
+    76→        );
+    77→      })}
+    78→    </div>
+    79→  );
+    80→}
+    81→
+    82→type DPEBadgeProps = {
+    83→  grade?: DPEGrade | string | null;
+    84→  size?: "sm" | "md" | "lg";
+    85→  className?: string;
+    86→};
+    87→
+    88→function DPEBadge({ grade, size = "md", className }: DPEBadgeProps) {
+    89→  const normalizedGrade = grade?.toUpperCase() as DPEGrade;
+    90→  const dpe = DPE_GRADES.find((g) => g.grade === normalizedGrade);
+    91→
+    92→  if (!dpe) {
+    93→    return (
+    94→      <div
+    95→        className={cn(
+    96→          "inline-flex items-center justify-center rounded-lg bg-muted text-muted-foreground font-semibold",
+    97→          size === "sm" && "h-6 w-6 text-xs",
+    98→          size === "md" && "h-8 w-8 text-sm",
+    99→          size === "lg" && "h-10 w-10 text-base",
+   100→          className,
+   101→        )}
+   102→      >
+   103→        ?
+   104→      </div>
+   105→    );
+   106→  }
+   107→
+   108→  return (
+   109→    <div
+   110→      className={cn(
+   111→        "inline-flex items-center justify-center rounded-lg font-bold text-white transition-all duration-200",
+   112→        size === "sm" && "h-6 w-6 text-xs",
+   113→        size === "md" && "h-8 w-8 text-sm",
+   114→        size === "lg" && "h-10 w-10 text-base",
+   115→        className,
+   116→      )}
+   117→      style={{
+   118→        backgroundColor: dpe.color,
+   119→        boxShadow: `0 0 15px ${dpe.color}40`,
+   120→      }}
+   121→    >
+   122→      {dpe.grade}
+   123→    </div>
+   124→  );
+   125→}
+   126→
+   127→export { DPEScale, DPEBadge, DPE_GRADES, type DPEGrade };
+   128→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

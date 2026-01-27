@@ -1,0 +1,1 @@
+The file /Users/yoannandrieux/Projets/portfolio-loic/components/neo-brutalist/albums/NeoAlbumDetail.tsx has been updated successfully.

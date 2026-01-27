@@ -1,0 +1,343 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Accès Sécurisé | ChooseWisely</title>
+     7→    <!-- Fonts -->
+     8→    <link rel="preconnect" href="https://fonts.googleapis.com">
+     9→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    11→    
+    12→    <!-- Frameworks -->
+    13→    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    14→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    15→    
+    16→    <style>
+    17→        :root {
+    18→            --brand-deep: #050810;
+    19→            --brand-surface: #0D121F;
+    20→            --brand-accent: #34D399; 
+    21→            --brand-highlight: #6366F1;
+    22→            --brand-danger: #F43F5E;
+    23→        }
+    24→
+    25→        body {
+    26→            font-family: 'IBM Plex Sans', sans-serif;
+    27→            background-color: var(--brand-deep);
+    28→            color: #E2E8F0;
+    29→            overflow-x: hidden;
+    30→            min-height: 100vh;
+    31→        }
+    32→
+    33→        .grain {
+    34→            position: fixed;
+    35→            top: 0; left: 0; width: 100%; height: 100%;
+    36→            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    37→            opacity: 0.04;
+    38→            pointer-events: none;
+    39→            z-index: 9999;
+    40→        }
+    41→
+    42→        .mesh-gradient {
+    43→            background: 
+    44→                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+    45→                radial-gradient(at 100% 100%, rgba(52, 211, 153, 0.08) 0px, transparent 50%),
+    46→                radial-gradient(at 50% 50%, rgba(13, 18, 31, 1) 0px, transparent 100%);
+    47→        }
+    48→
+    49→        .glass {
+    50→            background: rgba(13, 18, 31, 0.6);
+    51→            backdrop-filter: blur(16px);
+    52→            border: 1px solid rgba(255, 255, 255, 0.06);
+    53→        }
+    54→
+    55→        .hyper-border-box {
+    56→            position: relative;
+    57→            background: var(--brand-surface);
+    58→            border-radius: 24px;
+    59→            z-index: 1;
+    60→        }
+    61→
+    62→        .hyper-border-box::before {
+    63→            content: '';
+    64→            position: absolute;
+    65→            inset: -1.5px;
+    66→            background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), transparent, rgba(52, 211, 153, 0.4));
+    67→            border-radius: 25px;
+    68→            z-index: -1;
+    69→        }
+    70→
+    71→        .input-glow:focus-within {
+    72→            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+    73→            border-color: rgba(99, 102, 241, 0.5);
+    74→        }
+    75→
+    76→        .scanline {
+    77→            width: 100%;
+    78→            height: 1px;
+    79→            background: linear-gradient(90deg, transparent, var(--brand-highlight), transparent);
+    80→            position: absolute;
+    81→            top: 0;
+    82→            animation: scan 4s linear infinite;
+    83→            opacity: 0.5;
+    84→        }
+    85→
+    86→        @keyframes scan {
+    87→            0% { top: 0%; }
+    88→            100% { top: 100%; }
+    89→        }
+    90→
+    91→        .shimmer {
+    92→            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    93→            background-size: 200% 100%;
+    94→            animation: shimmer 3s infinite;
+    95→        }
+    96→
+    97→        @keyframes shimmer {
+    98→            0% { background-position: -200% 0; }
+    99→            100% { background-position: 200% 0; }
+   100→        }
+   101→
+   102→        [x-cloak] { display: none !important; }
+   103→    </style>
+   104→</head>
+   105→<body class="flex flex-col mesh-gradient" x-data="{ 
+   106→    mode: 'login', 
+   107→    accountType: 'individual', 
+   108→    loading: false,
+   109→    email: '',
+   110→    submitForm() {
+   111→        this.loading = true;
+   112→        setTimeout(() => { this.loading = false; alert('Simulation: Requête envoyée à Better Auth'); }, 1500);
+   113→    }
+   114→}">
+   115→    <div class="grain"></div>
+   116→
+   117→    <!-- Minimal Header -->
+   118→    <header class="fixed w-full z-50 py-8">
+   119→        <div class="container mx-auto px-6 flex justify-between items-center">
+   120→            <a href="/" class="flex items-center gap-2 group">
+   121→                <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center font-bold text-white italic transition-transform group-hover:rotate-12">CW</div>
+   122→                <span class="text-2xl font-bold tracking-tighter text-white">ChooseWisely</span>
+   123→            </a>
+   124→            <div class="flex items-center gap-6">
+   125→                <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Sécurisé par Better Auth</span>
+   126→                <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+   127→            </div>
+   128→        </div>
+   129→    </header>
+   130→
+   131→    <main class="flex-grow flex items-center justify-center pt-24 pb-12 px-6">
+   132→        <div class="w-full max-w-5xl grid lg:grid-cols-2 gap-0 hyper-border-box overflow-hidden shadow-2xl">
+   133→            
+   134→            <!-- Left Side: Dynamic Visual / Value Prop -->
+   135→            <div class="hidden lg:flex flex-col justify-between p-12 bg-slate-900/40 relative overflow-hidden border-r border-white/5">
+   136→                <div class="scanline"></div>
+   137→                
+   138→                <div class="relative z-10">
+   139→                    <div class="mb-12">
+   140→                        <template x-if="mode === 'login'">
+   141→                            <h2 class="text-4xl font-bold text-white leading-tight italic" x-transition>
+   142→                                Heureux de vous <br> <span class="text-indigo-400 underline decoration-emerald-500/30">revoir</span>.
+   143→                            </h2>
+   144→                        </template>
+   145→                        <template x-if="mode === 'register'">
+   146→                            <h2 class="text-4xl font-bold text-white leading-tight italic" x-transition>
+   147→                                Commencez votre <br> <span class="text-emerald-400 underline decoration-indigo-500/30">acquisition</span>.
+   148→                            </h2>
+   149→                        </template>
+   150→                    </div>
+   151→
+   152→                    <!-- Interactive Data Widget -->
+   153→                    <div class="glass p-6 rounded-2xl space-y-4 shadow-xl border-white/10 hover:translate-x-2 transition-transform duration-500">
+   154→                        <div class="flex items-center justify-between">
+   155→                            <span class="text-[10px] font-black uppercase tracking-widest text-indigo-400">Flux de Données Temps Réel</span>
+   156→                            <span class="text-[10px] text-slate-500 italic">MoteurImmo v2.1</span>
+   157→                        </div>
+   158→                        <div class="space-y-2">
+   159→                            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+   160→                                <div class="h-full bg-indigo-500 w-2/3 shimmer"></div>
+   161→                            </div>
+   162→                            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+   163→                                <div class="h-full bg-emerald-500 w-1/2 shimmer"></div>
+   164→                            </div>
+   165→                        </div>
+   166→                        <p class="text-xs text-slate-400 leading-relaxed italic">
+   167→                            "L'accès aux données DVF et DPE est activé dès la connexion. Prenez des décisions basées sur des faits, pas des promesses."
+   168→                        </p>
+   169→                    </div>
+   170→                </div>
+   171→
+   172→                <div class="relative z-10">
+   173→                    <div class="flex -space-x-3 mb-4">
+   174→                        <img class="w-10 h-10 rounded-full border-2 border-brand-surface object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" alt="User">
+   175→                        <img class="w-10 h-10 rounded-full border-2 border-brand-surface object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100" alt="User">
+   176→                        <img class="w-10 h-10 rounded-full border-2 border-brand-surface object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="User">
+   177→                        <div class="w-10 h-10 rounded-full border-2 border-brand-surface bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-400">+1.2k</div>
+   178→                    </div>
+   179→                    <p class="text-sm text-slate-500">Rejoignez une communauté de futurs propriétaires éclairés.</p>
+   180→                </div>
+   181→
+   182→                <!-- Abstract Deco -->
+   183→                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl"></div>
+   184→            </div>
+   185→
+   186→            <!-- Right Side: Auth Forms -->
+   187→            <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-brand-surface">
+   188→                
+   189→                <!-- Toggle Mode -->
+   190→                <div class="flex p-1 bg-brand-deep rounded-xl mb-10 w-fit">
+   191→                    <button 
+   192→                        @click="mode = 'login'"
+   193→                        :class="mode === 'login' ? 'bg-slate-800 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'"
+   194→                        class="px-6 py-2 rounded-lg text-sm font-bold transition-all italic">
+   195→                        Connexion
+   196→                    </button>
+   197→                    <button 
+   198→                        @click="mode = 'register'"
+   199→                        :class="mode === 'register' ? 'bg-slate-800 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'"
+   200→                        class="px-6 py-2 rounded-lg text-sm font-bold transition-all italic">
+   201→                        Inscription
+   202→                    </button>
+   203→                </div>
+   204→
+   205→                <div x-show="mode === 'login'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4">
+   206→                    <h3 class="text-2xl font-bold text-white mb-2">Bon retour parmi nous.</h3>
+   207→                    <p class="text-slate-400 text-sm mb-8 italic">Entrez vos identifiants pour accéder à vos recherches sauvegardées.</p>
+   208→                    
+   209→                    <form @submit.prevent="submitForm" class="space-y-5">
+   210→                        <div class="space-y-2">
+   211→                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Email professionnel ou personnel</label>
+   212→                            <div class="relative group">
+   213→                                <input type="email" required x-model="email" placeholder="nom@exemple.fr" 
+   214→                                    class="w-full bg-brand-deep border border-white/5 rounded-xl px-4 py-4 text-white outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-700">
+   215→                            </div>
+   216→                        </div>
+   217→
+   218→                        <div class="space-y-2" x-show="!magicLink">
+   219→                            <div class="flex justify-between items-center px-1">
+   220→                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-500">Mot de passe</label>
+   221→                                <a href="#" class="text-[10px] font-bold text-indigo-400 hover:text-indigo-300 uppercase tracking-widest">Oublié ?</a>
+   222→                            </div>
+   223→                            <input type="password" placeholder="••••••••" 
+   224→                                class="w-full bg-brand-deep border border-white/5 rounded-xl px-4 py-4 text-white outline-none focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 transition-all placeholder:text-slate-700">
+   225→                        </div>
+   226→
+   227→                        <button type="submit" :disabled="loading" 
+   228→                            class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-3 group active:scale-[0.98]">
+   229→                            <span x-show="!loading" class="italic">Se connecter</span>
+   230→                            <span x-show="loading" class="flex gap-1">
+   231→                                <span class="w-1.5 h-1.5 bg-white rounded-full animate-bounce"></span>
+   232→                                <span class="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.2s]"></span>
+   233→                                <span class="w-1.5 h-1.5 bg-white rounded-full animate-bounce [animation-delay:0.4s]"></span>
+   234→                            </span>
+   235→                            <svg x-show="!loading" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+   236→                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+   237→                            </svg>
+   238→                        </button>
+   239→                    </form>
+   240→                </div>
+   241→
+   242→                <div x-show="mode === 'register'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4">
+   243→                    <h3 class="text-2xl font-bold text-white mb-2">Créez votre profil d'acheteur.</h3>
+   244→                    <div class="flex gap-4 mb-8">
+   245→                        <button @click="accountType = 'individual'" :class="accountType === 'individual' ? 'text-emerald-400' : 'text-slate-500'" class="text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-colors">
+   246→                            <span :class="accountType === 'individual' ? 'bg-emerald-500' : 'bg-slate-700'" class="w-2 h-2 rounded-full"></span> Solo
+   247→                        </button>
+   248→                        <button @click="accountType = 'couple'" :class="accountType === 'couple' ? 'text-indigo-400' : 'text-slate-500'" class="text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-colors">
+   249→                            <span :class="accountType === 'couple' ? 'bg-indigo-500' : 'bg-slate-700'" class="w-2 h-2 rounded-full"></span> Couple / Orga
+   250→                        </button>
+   251→                    </div>
+   252→
+   253→                    <form @submit.prevent="submitForm" class="space-y-4">
+   254→                        <div class="grid grid-cols-2 gap-4">
+   255→                            <div class="space-y-2">
+   256→                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-500">Prénom</label>
+   257→                                <input type="text" placeholder="Jean" class="w-full bg-brand-deep border border-white/5 rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500/50 transition-all placeholder:text-slate-800">
+   258→                            </div>
+   259→                            <div class="space-y-2">
+   260→                                <label class="text-[10px] font-black uppercase tracking-widest text-slate-500">Nom</label>
+   261→                                <input type="text" placeholder="Dupont" class="w-full bg-brand-deep border border-white/5 rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500/50 transition-all placeholder:text-slate-800">
+   262→                            </div>
+   263→                        </div>
+   264→                        <div class="space-y-2">
+   265→                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-500">Email</label>
+   266→                            <input type="email" placeholder="jean@dupont.fr" class="w-full bg-brand-deep border border-white/5 rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500/50 transition-all">
+   267→                        </div>
+   268→                        <div class="space-y-2">
+   269→                            <label class="text-[10px] font-black uppercase tracking-widest text-slate-500">Mot de passe</label>
+   270→                            <input type="password" placeholder="Minimum 8 caractères" class="w-full bg-brand-deep border border-white/5 rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500/50 transition-all">
+   271→                        </div>
+   272→
+   273→                        <button type="submit" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-brand-deep font-black rounded-xl transition-all shadow-lg shadow-emerald-500/20 active:scale-[0.98] italic mt-4 uppercase tracking-tighter">
+   274→                            Créer mon compte expert
+   275→                        </button>
+   276→                    </form>
+   277→                </div>
+   278→
+   279→                <!-- Divider -->
+   280→                <div class="relative my-10">
+   281→                    <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-white/5"></div></div>
+   282→                    <div class="relative flex justify-center text-[10px] uppercase tracking-[0.3em] font-bold text-slate-600"><span class="bg-brand-surface px-4">Ou continuer avec</span></div>
+   283→                </div>
+   284→
+   285→                <!-- Social Logins -->
+   286→                <div class="grid grid-cols-2 gap-4">
+   287→                    <button class="flex items-center justify-center gap-3 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl transition-all group">
+   288→                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+   289→                        <span class="text-xs font-bold text-white italic">GitHub</span>
+   290→                    </button>
+   291→                    <button class="flex items-center justify-center gap-3 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl transition-all group">
+   292→                        <svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.79-.07-1.54-.19-2.27h-11.3v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/><path fill="#34A853" d="M12.255 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96h-3.98v3.09c1.97 3.92 6.02 6.62 10.71 6.62z"/><path fill="#FBBC05" d="M5.525 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62h-3.98c-.81 1.61-1.27 3.41-1.27 5.38s.46 3.77 1.27 5.38l3.98-3.09z"/><path fill="#EA4335" d="M12.255 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C18.205 1.19 15.495 0 12.255 0c-4.69 0-8.74 2.7-10.71 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
+   293→                        <span class="text-xs font-bold text-white italic">Google</span>
+   294→                    </button>
+   295→                </div>
+   296→
+   297→                <!-- Footer Link (Mobile) -->
+   298→                <p class="mt-10 text-center text-[10px] text-slate-600 uppercase tracking-widest lg:hidden">
+   299→                    ChooseWisely &copy; 2025 • Données Sécurisées
+   300→                </p>
+   301→            </div>
+   302→        </div>
+   303→    </main>
+   304→
+   305→    <!-- Footer -->
+   306→    <footer class="py-12 border-t border-white/5">
+   307→        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+   308→            <div class="flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-600">
+   309→                <a href="#" class="hover:text-indigo-400 transition-colors">Politique de Confidentialité</a>
+   310→                <a href="#" class="hover:text-indigo-400 transition-colors">Conditions Générales</a>
+   311→                <a href="#" class="hover:text-indigo-400 transition-colors">Support</a>
+   312→            </div>
+   313→            <div class="text-[10px] font-bold text-slate-500 italic">
+   314→                Propulsé par <span class="text-white">Better Auth</span> & <span class="text-white">MoteurImmo</span>
+   315→            </div>
+   316→        </div>
+   317→    </footer>
+   318→
+   319→    <script>
+   320→        // Interactive "Focus" effect for inputs
+   321→        document.querySelectorAll('input').forEach(input => {
+   322→            input.addEventListener('focus', () => {
+   323→                const scanline = document.querySelector('.scanline');
+   324→                if (scanline) {
+   325→                    scanline.style.animationDuration = '1.5s';
+   326→                    scanline.style.background = 'linear-gradient(90deg, transparent, var(--brand-accent), transparent)';
+   327→                }
+   328→            });
+   329→            input.addEventListener('blur', () => {
+   330→                const scanline = document.querySelector('.scanline');
+   331→                if (scanline) {
+   332→                    scanline.style.animationDuration = '4s';
+   333→                    scanline.style.background = 'linear-gradient(90deg, transparent, var(--brand-highlight), transparent)';
+   334→                }
+   335→            });
+   336→        });
+   337→    </script>
+   338→</body>
+   339→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

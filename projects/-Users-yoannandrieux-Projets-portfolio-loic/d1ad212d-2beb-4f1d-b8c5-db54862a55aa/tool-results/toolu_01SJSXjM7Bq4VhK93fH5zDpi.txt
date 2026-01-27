@@ -1,0 +1,665 @@
+5:    "services": "Services",
+6-    "albums": "Albums",
+7-    "videos": "Vidéos",
+8-    "contact": "Contact",
+9-    "subtitle": "Compositeur et producteur de musique",
+10-    "admin": "Admin",
+11-    "dashboard": "Tableau de bord",
+12-    "logout": "Déconnexion",
+13-    "close": "Fermer"
+14-  },
+15-  "home": {
+16-    "title": "Loïc Ghanem",
+17-    "subtitle": "Compositeur & Producteur Musical",
+18-    "description": "Compositeur et producteur musical passionné, créant des univers sonores uniques pour vos projets audiovisuels depuis",
+19-    "yearsExperience": "plus de {years} ans",
+20-    "stats": {
+21-      "albums": "Albums",
+22-      "audiovisualProjects": "Projets Audiovisuels",
+23-      "collaborations": "Collaborations"
+24-    },
+25-    "cta": {
+26-      "listenAlbums": "Écouter mes albums",
+27-      "workTogether": "Travailler ensemble"
+28-    },
+29-    "scroll": "Scroll",
+30-    "marquee": {
+31-      "items": [
+32-        "BANDE-SON",
+33-        "MUSIQUE ORIGINALE",
+34-        "IDENTITÉ SONORE",
+35-        "MIXAGE",
+36-        "MASTERING",
+37-        "SOUND DESIGN",
+38-        "DIRECTION VOIX",
+39-        "SUPERVISION MUSICALE",
+40-        "POST-PRODUCTION AUDIO",
+41-        "PRODUCTION PODCAST",
+42-        "ORCHESTRATION",
+43-        "BRUITAGES FOLEY",
+44-        "MONTAGE MUSICAL"
+45-      ]
+46-    },
+47-    "featuredAlbums": {
+48-      "title": "Derniers Albums",
+49-      "description": "Découvrez mes dernières créations musicales couvrant différents genres, du Metal au Hip-Hop en passant par l'Ambient et l'Electronic.",
+50-      "viewAll": "Voir tous les albums ({count})"
+51-    },
+52-    "latestVideos": {
+53-      "badge": "Sync Placements",
+54-      "title": "Dernières Vidéos",
+55-      "description": "Mes compositions utilisées dans des productions professionnelles : sports, TV, publicités et plus encore.",
+56-      "viewAll": "Voir toutes les vidéos ({count})",
+57-      "notablePlacements": "Placements Notables"
+58-    },
+59-    "hero": {
+60-      "subtitle": "COMPOSITEUR & PRODUCTEUR MUSICAL",
+61-      "title": "BANDES<br />ORIGINALES",
+62-      "description": "Compositeur et producteur musical primé basé à Paris. Je crée de la musique pour le cinéma, la publicité et les jeux vidéo.",
+63-      "listenShowreel": "Écouter le Showreel",
+64-      "downloadResume": "Télécharger le CV",
+65-      "cyclicTitles": {
+66-        "musicProduction": "PRODUCTION\nMUSICALE",
+67-        "filmScoring": "MUSIQUE\nDE FILM",
+68-        "soundDesign": "DESIGN\nSONORE",
+69-        "immersiveAudio": "AUDIO\nIMMERSIF"
+70-      },
+71-      "basedIn": "BASÉ À PARIS",
+72-      "music": "Compositeur",
+73-      "producer": "Musical",
+74-      "composer": "& Producteur",
+75-      "tagline": "Compositeur primé. Je crée des univers sonores immersifs pour l'audio visuel, les artistes et la librairie musicale.",
+76-      "showreel": "Showreel",
+77-      "downloadCV": "CV (PDF)",
+78-      "scrollDown": "Défiler"
+79-    },
+80-    "sections": {
+81-      "albums": "DERNIERS <span class=\"text-neon-cyan\">ALBUMS</span>",
+82-      "albumsSubtitle": "01 / DISCOGRAPHIE",
+83-      "albumsTitle": "Discographie",
+84-      "albumsSection": "Derniers Albums",
+85-      "viewAllAlbums": "Voir tous les albums",
+--
+96:      "services": "SERVICES <span class=\"text-neon-purple\">SONORES</span>",
+97-      "servicesSubtitle": "04 / EXPERTISE",
+98-      "servicesTitle": "Expertise",
+99-      "servicesSection": "Services Sonores",
+100-      "viewAllServices": "Voir tous les services",
+101-      "learnMore": "En savoir plus",
+102-      "contact": "CRÉONS <br/><span class=\"text-neon-lime\">ENSEMBLE</span>",
+103-      "contactText": "Une idée ? Un projet musical ? Transformons votre vision en réalité sonore.",
+104-      "getInTouch": "Me Contacter"
+105-    },
+106-    "soundcloud": {
+107-      "title": "ÉCOUTEZ <span class=\"text-neon-green\">MES PRODS</span>",
+108-      "subtitle": "02 / STREAMING",
+109-      "follow": "Suivre sur SoundCloud"
+110-    },
+111-    "streaming": {
+112-      "title": "STREAMING",
+113-      "subtitle": "ÉCOUTEZ MES PRODS",
+114-      "playerTitle": "LOÏC GHANEM PRODUCTIONS",
+115-      "soundcloud": "Suivre sur SoundCloud",
+116-      "spotify": "Écouter sur Spotify",
+117-      "description": "Retrouvez toutes mes productions sur les plateformes de streaming. De la composition orchestrale au Metal en passant par l'Electronic et l'Ambient."
+118-    },
+119-    "banners": {
+120-      "partners": "Ils m'ont fait confiance",
+121-      "productions": "Mes productions"
+122-    },
+123-    "splitHero": {
+124-      "basedIn": "BASÉ À PARIS",
+125-      "title": {
+126-        "line1": "Compositeur",
+127-        "line2": "& Producteur",
+128-        "line3": "Musical"
+129-      },
+130-      "tagline": "Compositeur primé. Je crée des univers sonores immersifs pour l'audio visuel, les artistes et la librairie musicale.",
+131-      "scrollDown": "Défiler",
+132-      "player": {
+133-        "title": "LOÏC GHANEM PRODUCTIONS",
+134-        "soundcloud": "SoundCloud",
+135-        "spotify": "Spotify",
+136-        "appleMusic": "Apple Music",
+137-        "deezer": "Deezer",
+138-        "tidal": "Tidal",
+139-        "youtube": "YouTube",
+140-        "followSoundcloud": "Suivre sur SoundCloud",
+141-        "listenSpotify": "Écouter sur Spotify"
+142-      }
+143-    }
+144-  },
+145-  "about": {
+146-    "pageTitle": "À Propos",
+147-    "pageDescription": "Compositeur et producteur musical passionné, créant des univers sonores uniques pour vos projets audiovisuels depuis plus de 15 ans.",
+148-    "title": "À propos",
+149-    "intro": "Hello !",
+150-    "bio": {
+151-      "paragraph1": "Je suis Loïc Ghanem, compositeur et producteur musical basé à Paris, passionné par la création de paysages sonores narratifs. Mon parcours dans le monde de la musique a commencé dès mon plus jeune âge, et depuis plus d'une décennie, c'est devenu ma vocation et ma profession.",
+152-      "paragraph2": "De la création de morceaux originaux à la composition de musiques pour médias visuels et l'édition musicale, j'ai apporté ma signature sonore à divers projets, les enrichissant de profondeur et d'émotion. L'une de mes forces réside dans ma capacité à transformer une idée brute en une expérience auditive complète. Mon travail n'existe pas simplement en arrière-plan ; il amplifie l'histoire, définit le ton et enrichit l'expérience du spectateur.",
+153-      "paragraph3": "Je suis fier de livrer des paysages sonores uniques, contemporains et engageants qui résonnent et créent des impressions durables. En exploitant ma compréhension approfondie des mécanismes complexes de la production musicale, j'excelle à créer des compositions qui nécessitent un entretien minimal, tout en offrant des performances impeccables dans le temps.",
+154-      "paragraph4": "Je vous invite à explorer mon portfolio et à vous immerger dans les divers univers musicaux que j'ai eu le plaisir de créer. J'ai hâte de collaborer avec vous sur votre prochain projet, en l'élevant avec ma musique."
+155-    },
+156-    "contactInfo": {
+157-      "title": "Informations de Contact",
+158-      "address": "Adresse",
+159-      "location": "Paris, France",
+160-      "email": "Email",
+161-      "languages": "Langues",
+162-      "languageList": "Anglais, Français"
+163-    },
+164-    "achievements": {
+165-      "title": "Réalisations",
+166-      "albums": "Albums Produits",
+167-      "labels": "Labels",
+168-      "publishers": "Éditeurs",
+169-      "years": "Années d'Expérience"
+170-    },
+171-    "contactSection": {
+172-      "title": "Travaillons Ensemble",
+173-      "labels": "Labels & Publishers"
+174-    },
+175-    "tools": {
+176-      "title": "Mes outils de prédilection"
+--
+374:  "services": {
+375-    "detail": {
+376-      "notFound": "Service non trouvé",
+377-      "about": "À propos",
+378-      "offeredOn": "Service offert le",
+379-      "relatedServices": "Autres Services",
+380-      "whatYouGet": "Ce que vous obtenez",
+381-      "process": "Processus",
+382-      "examples": "Exemples",
+383-      "listen": "Écouter",
+384-      "backToServices": "Retour aux services",
+385-      "requestQuote": "Demander un devis",
+386-      "step": "Étape",
+387-      "pricing": "Tarification",
+388-      "startingFrom": "À partir de",
+389-      "onQuote": "Sur devis",
+390-      "customizable": "Chaque projet est unique. Discutons de vos besoins pour une offre personnalisée.",
+391-      "contact": "Contact",
+392-      "responseTime": "Réponse",
+393-      "readyToStart": "Prêt ?",
+394-      "also": "AUSSI",
+395-      "examplesDescription": "Découvrez mes réalisations dans la section albums et vidéos.",
+396-      "viewAlbums": "Voir les albums",
+397-      "viewVideos": "Voir les vidéos",
+398-      "discoverWork": "Découvrir mon travail",
+399-      "discoverWorkDescription": "Explorez mes compositions à travers mes albums et vidéos de synchronisation.",
+400-      "previousService": "Service précédent",
+401-      "nextService": "Service suivant",
+402-      "whatYouGetItems": {
+403-        "item1": "Musique originale 100% sur mesure",
+404-        "item2": "Livraison rapide",
+405-        "item3": "Révisions illimitées",
+406-        "item4": "Qualité professionnelle",
+407-        "item5": "Droits complets inclus"
+408-      }
+409-    },
+410-    "pageTitle": "Services",
+411-    "pageDescription": "De la composition à la post-production, je vous accompagne à chaque étape de votre projet musical avec expertise et passion.",
+412-    "noServices": "Aucun service disponible pour le moment",
+413-    "totalServices": "Services",
+414-    "satisfaction": "Satisfaction Client",
+415-    "availability": "Disponibilité",
+416-    "seeMore": "En savoir plus",
+417-    "writtenBy": "Écrit par",
+418-    "hero": {
+419-      "badge": "EXPERTISE SONORE",
+420-      "title": "L'Univers de la Création Musicale",
+421-      "description": "De la composition à la post-production, explorez mes services pour donner vie à vos projets audiovisuels avec créativité et professionnalisme.",
+422-      "cta": "Explorer mes services",
+423-      "ctaSecondary": "Me contacter"
+424-    },
+425-    "stats": {
+426:      "services": "Services",
+427-      "experience": "Années d'expérience",
+428-      "projects": "Projets réalisés",
+429-      "satisfaction": "Satisfaction"
+430-    },
+431-    "process": {
+432-      "title": "Comment je travaille",
+433-      "subtitle": "PROCESSUS",
+434-      "brief": {
+435-        "title": "Brief",
+436-        "description": "Comprendre votre vision et vos objectifs"
+437-      },
+438-      "composition": {
+439-        "title": "Composition",
+440-        "description": "Créer l'univers sonore unique"
+441-      },
+442-      "production": {
+443-        "title": "Production",
+444-        "description": "Donner vie à la musique"
+445-      },
+446-      "mixing": {
+447-        "title": "Mix & Master",
+448-        "description": "Peaufiner chaque détail"
+449-      },
+450-      "delivery": {
+451-        "title": "Livraison",
+452-        "description": "Votre projet finalisé"
+453-      }
+454-    },
+455-    "cosmicCta": {
+456-      "title": "Prêt à créer ensemble ?",
+457-      "description": "Chaque projet mérite une identité sonore unique. Transformons votre vision en musique.",
+458-      "button": "Parlons de votre projet"
+459-    },
+460-    "cta": {
+461-      "title": "Prêt à démarrer votre projet ?",
+462-      "description": "Contactez-moi pour discuter de votre vision musicale et découvrir comment je peux donner vie à vos idées.",
+463-      "button": "Contactez-moi",
+464-      "discuss": "Discutons de votre projet"
+465-    },
+466-    "composition": {
+467-      "title": "Composition",
+468-      "description": "Création de musiques originales sur mesure pour vos projets de film, TV, publicités et jeux vidéo.",
+469-      "largeTitle": "Composition : Créer des Mélodies Uniques et Captivantes",
+470-[Omitted long context line]
+471-      "details": {
+472-        "intro": "Je crée des **musiques originales** pour donner vie à vos projets audiovisuels. Que ce soit pour un film, une série TV, une publicité ou un jeu vidéo, je compose des bandes originales qui racontent votre histoire.",
+473-        "approach": "Mon approche allie **sensibilité artistique** et **vision narrative**, en créant des univers sonores uniques adaptés à chaque projet, du Metal au Hip-Hop, en passant par l'Ambient et l'Electronic.",
+474:        "services": [
+475-          "Composition orchestrale et hybride",
+476-          "Thèmes musicaux sur mesure",
+477-          "Direction artistique sonore",
+478-          "Adaptation tous genres musicaux"
+479-        ]
+480-      }
+481-    },
+482-    "production": {
+483-      "title": "Production",
+484-      "description": "Production musicale complète de A à Z, de l'arrangement à la post-production.",
+485-      "largeTitle": "Production Musicale : Du Concept au Mix Final",
+486-      "fullDescription": "Mes services de production musicale englobent chaque étape du processus. Avec une compréhension approfondie de la théorie musicale, une oreille attentive aux détails, et une maîtrise des derniers logiciels de production, je suis équipé pour concrétiser vos idées musicales. Que vous ayez besoin d'aide pour l'arrangement, l'enregistrement, le mixage ou le mastering, je fournis une solution complète adaptée aux besoins de votre projet.",
+487-      "details": {
+488-        "intro": "Je prends en charge la **production complète** de vos projets musicaux, de la conception à la réalisation finale. Mon expertise couvre tous les aspects de la production moderne.",
+489-        "approach": "Avec un studio équipé des dernières technologies et une connaissance approfondie de multiples genres musicaux, je transforme vos idées en productions professionnelles prêtes pour la diffusion.",
+490:        "services": [
+491-          "Production multi-genres (Metal, Hip-Hop, Electronic, Ambient)",
+492-          "Programmation et sound design",
+493-          "Enregistrement et direction artistique",
+494-          "Mastering pour tous supports"
+495-        ]
+496-      }
+497-    },
+498-    "arranging": {
+499-      "title": "Arranging",
+500-      "description": "Arrangements orchestraux et instrumentaux pour sublimer vos compositions.",
+501-      "largeTitle": "Arrangement : Sublimer Vos Compositions",
+502-      "fullDescription": "Mes compétences en arrangement ajouteront profondeur et complexité à votre musique. Avec ma connaissance approfondie de l'orchestration et de l'harmonie, je créerai des arrangements qui révèlent le meilleur de vos compositions. Que vous ayez une composition complète ou une simple mélodie, je peux la transformer en un morceau riche et pleinement réalisé.",
+503-      "details": {
+504-        "intro": "L'**arrangement** est l'art de structurer et d'habiller une composition pour en révéler tout le potentiel. Je travaille sur l'orchestration, l'harmonie et la texture sonore pour créer des arrangements riches et cohérents.",
+505-        "approach": "De l'orchestration symphonique aux arrangements électroniques modernes, je maîtrise une large palette de techniques pour donner vie à vos idées musicales.",
+506:        "services": [
+507-          "Orchestration symphonique et moderne",
+508-          "Arrangements pour ensembles acoustiques",
+509-          "Réharmonisation et adaptation",
+510-          "Création de textures hybrides"
+511-        ]
+512-      }
+513-    },
+514-    "vocalProducer": {
+515-      "title": "Vocal Producer",
+516-      "description": "Direction et production vocale pour des performances exceptionnelles.",
+517-      "largeTitle": "Production Vocale : Sublimer Vos Performances Vocales",
+518-[Omitted long context line]
+519-      "details": {
+520-        "intro": "En tant que **vocal producer**, je guide les artistes pour capturer les meilleures performances vocales. Mon rôle est d'extraire l'émotion et la puissance de chaque voix.",
+521-        "approach": "De la préproduction à l'enregistrement, j'accompagne les chanteurs dans leur processus créatif, en apportant une direction artistique précise et bienveillante.",
+522:        "services": [
+523-          "Direction artistique vocale",
+524-          "Préparation et coaching avant session",
+525-          "Enregistrement et editing vocal",
+526-          "Traitement et production des voix"
+527-        ]
+528-      }
+529-    },
+530-    "mixing": {
+531-      "title": "Mixing",
+532-      "description": "Mixage professionnel pour un son équilibré et percutant.",
+533-      "largeTitle": "Mixage : Peaufiner Votre Musique à la Perfection",
+534-      "fullDescription": "Le mixage est une étape critique du processus de production musicale, et c'est un domaine dans lequel j'excelle. Je vais équilibrer les éléments de votre morceau, m'assurant qu'aucun instrument ou voix n'est trop fort ou trop doux. Mes techniques de mixage ajouteront également profondeur et dimension à votre musique, créant un paysage sonore riche et engageant.",
+535-      "details": {
+536-        "intro": "Le **mixage** est l'étape cruciale qui transforme des pistes brutes en une production cohérente et professionnelle. Je balance, équilibre et façonne chaque élément pour créer un mix impactant.",
+537-        "approach": "Avec une approche analytique et créative, j'optimise la clarté, la profondeur et la dynamique de vos morceaux pour qu'ils sonnent parfaitement sur tous les supports d'écoute.",
+538:        "services": [
+539-          "Mixage stéréo et surround",
+540-          "Traitement dynamique et fréquentiel",
+541-          "Spatialisation et effets créatifs",
+542-          "Optimisation pour streaming et broadcast"
+543-        ]
+544-      }
+545-    },
+546-    "mastering": {
+547-      "title": "Mastering",
+548-      "description": "Mastering de haute qualité pour une finalisation optimale de vos productions.",
+549-      "largeTitle": "Mastering : La Touche Finale pour Votre Musique",
+550-      "fullDescription": "Le mastering est la dernière étape du processus de production musicale, et c'est une étape que je prends très au sérieux. Je m'assurerai que vos morceaux sont prêts pour la distribution, en les optimisant pour tous les systèmes de lecture. Mes services de mastering donneront à votre musique le polish final dont elle a besoin, garantissant qu'elle sonne professionnelle et rivalise avec les autres sorties commerciales.",
+551-      "details": {
+552-        "intro": "Le **mastering** est la touche finale qui donne à votre musique son éclat professionnel. Je prépare vos morceaux pour la diffusion en optimisant le niveau, la balance spectrale et la cohérence entre les pistes.",
+553-        "approach": "Mon approche du mastering garantit que votre musique sonne de manière optimale sur tous les systèmes d'écoute, des écouteurs aux systèmes hi-fi, en respectant les standards de l'industrie.",
+554:        "services": [
+555-          "Mastering pour tous formats (streaming, CD, vinyl)",
+556-          "Optimisation spectrale et dynamique",
+557-          "Cohérence entre les morceaux d'un album",
+558-          "Préparation pour distribution digitale"
+559-        ]
+560-      }
+561-    }
+562-  },
+563-  "albums": {
+564-    "pageTitle": "Albums & Projets",
+565-    "pageDescription": "Découvrez ma discographie complète, des productions Metal et Metalcore aux créations Hip-Hop, Electronic et Ambient.",
+566-    "filterAll": "Tous les Albums",
+567-    "sortBy": "Trier par",
+568-    "sortNewest": "Plus récent",
+569-    "sortOldest": "Plus ancien",
+570-    "listen": "Écouter",
+571-    "collaboration": "En collaboration avec",
+572-    "releaseDate": "Date de sortie",
+573-    "genre": "Genre",
+574-    "hero": {
+575-      "badge": "DISCOGRAPHIE",
+576-      "title": "Mes Créations Musicales",
+577-      "description": "Explorez ma discographie complète : productions Metal, Hip-Hop, Ambient, Electronic et bien plus. Chaque album raconte une histoire unique.",
+578-      "cta": "Explorer les albums",
+579-      "ctaSecondary": "Me contacter"
+580-    },
+581-    "stats": {
+582-      "total": "Albums",
+583-      "genres": "Genres",
+584-      "collaborations": "Collaborations",
+585-      "period": "Période"
+586-    },
+587-    "albumsCta": {
+588-      "title": "Envie d'écouter ?",
+589-      "description": "Découvrez l'ensemble de ma discographie sur les plateformes de streaming. Chaque album est une nouvelle aventure sonore.",
+590-      "button": "Écouter sur Spotify",
+591-      "buttonSecondary": "Me contacter"
+592-    },
+593-    "card": {
+594-      "listen": "Écouter",
+595-      "viewMore": "Voir plus"
+596-    },
+597-    "noAlbums": "Aucun album ne correspond à vos filtres.",
+598-    "featured": "Favori",
+599-    "detail": {
+600-      "notFound": "Album non trouvé",
+601-      "listen": "Écouter l'album",
+602-      "about": "À propos de l'album",
+603-      "ctaTitle": "Prêt à découvrir cet album ?",
+604-      "ctaText": "Écoutez \"{title}\" sur toutes les plateformes de streaming.",
+605-      "ctaButton": "Écouter maintenant",
+606-      "backToAlbums": "Retour aux albums",
+607-      "relatedAlbums": "Albums similaires",
+608-      "photoCount": "photos",
+609-      "viewGallery": "Voir la galerie",
+610-      "albumPhotos": "Photos de l'album",
+611-      "openFullscreen": "Ouvrir en plein écran",
+612-      "player": "Lecteur",
+613-      "nowPlaying": "En lecture",
+614-      "listenOnPlatforms": "Écouter sur vos plateformes préférées",
+615-      "listenDescription": "Cet album est disponible sur plusieurs plateformes de streaming. Cliquez ci-dessous pour l'écouter.",
+616-      "previousAlbum": "Album précédent",
+617-      "nextAlbum": "Album suivant",
+618-      "alsoAvailable": "Aussi disponible",
+619-      "otherPlatformsDescription": "Retrouvez cet album sur toutes vos plateformes de streaming préférées : Spotify, Apple Music, Deezer, Tidal et plus encore.",
+620-      "allPlatforms": "Toutes les plateformes"
+621-    }
+622-  },
+623-  "videos": {
+624-    "pageTitle": "Projets Vidéo",
+625-    "pageDescription": "Explorez ma musique en action à travers des projets audiovisuels, synchronisations et compositions originales.",
+626-    "filterAll": "Tous les types",
+627-    "filterOriginalMusic": "Musique Originale",
+628-    "filterSync": "Synchronisation",
+629-    "filterMusicToPicture": "Music to Picture",
+630-    "watchOn": "Voir sur",
+631-    "date": "Date",
+632-    "categories": "Catégories",
+633-    "placements": "Placements Sync",
+634-    "noVideos": "Aucune vidéo disponible pour le moment",
+--
+1106:      "services": "Services",
+1107-      "settings": "Paramètres",
+1108-      "viewSite": "Voir le site",
+1109-      "viewsToday": "Vues aujourd'hui",
+1110-      "published": "Publié"
+1111-    },
+1112-    "header": {
+1113-      "profile": "Profil",
+1114-      "settings": "Paramètres",
+1115-      "signOut": "Déconnexion",
+1116-      "searchPlaceholder": "Rechercher..."
+1117-    },
+1118-    "table": {
+1119-      "preview": "Aperçu",
+1120-      "title": "Titre",
+1121-      "type": "Type",
+1122-      "date": "Date",
+1123-      "status": "Statut",
+1124-      "actions": "Actions",
+1125-      "number": "N°"
+1126-    },
+1127-    "common": {
+1128-      "save": "Enregistrer",
+1129-      "saving": "Sauvegarde...",
+1130-      "saved": "Sauvegardé",
+1131-      "cancel": "Annuler",
+1132-      "delete": "Supprimer",
+1133-      "error": "Erreur",
+1134-      "success": "Succès",
+1135-      "loading": "Chargement...",
+1136-      "actions": "Actions",
+1137-      "back": "Retour",
+1138-      "preview": "Prévisualiser",
+1139-      "upload": "Upload",
+1140-      "dirtyWarning": "Vous avez des modifications non enregistrées.",
+1141-      "created": "créé",
+1142-      "updated": "modifié"
+1143-    },
+1144-    "settings": {
+1145-      "title": "Paramètres",
+1146-      "description": "Gérez les paramètres et les exports de votre portfolio",
+1147-      "tabs": {
+1148-        "profile": "Profil",
+1149-        "general": "Général",
+1150-        "social": "Réseaux",
+1151-        "content": "Contenu",
+1152-        "export": "Export"
+1153-      },
+1154-      "export": {
+1155-        "title": "Export de Données",
+1156-        "description": "Téléchargez vos données dans différents formats pour backup ou analyse",
+1157-        "success": "Export réussi",
+1158-        "error": "Erreur d'export",
+1159-        "successDesc": "Les {type} ont été exportés en {format}",
+1160-        "formats": {
+1161-          "csv": { "label": "CSV", "desc": "Format tableur" },
+1162-          "json": { "label": "JSON", "desc": "Format structuré" },
+1163-          "txt": { "label": "TXT", "desc": "Texte lisible" }
+1164-        },
+1165-        "info": {
+1166-          "title": "À propos des formats d'export",
+1167-          "csv": "Idéal pour Excel, Google Sheets, ou analyses de données",
+1168-          "json": "Format structuré pour développeurs et APIs",
+1169-          "txt": "Texte brut lisible, parfait pour archivage"
+1170-        }
+1171-      },
+1172-      "general": {
+1173-        "title": "Informations Générales",
+1174-        "siteTitle": "Titre du site",
+1175-        "description": "Description",
+1176-        "footerBio": "Bio courte pour le footer (optionnel)",
+1177-        "contactEmail": "Email de contact",
+1178-        "contactPhone": "Téléphone de contact",
+1179-        "location": "Localisation"
+1180-      },
+1181-      "social": {
+1182-        "title": "Réseaux Sociaux",
+1183-        "description": "Gérez les liens vers vos profils sociaux",
+1184-        "platforms": "Plateformes",
+1185-        "tip": "💡 Laissez vide les champs des réseaux que vous n'utilisez pas."
+1186-      },
+--
+1202:          "services": "Services par page"
+1203-        },
+1204-        "sorting": "Tri par défaut",
+1205-        "sortLabel": {
+1206-          "albums": "Albums",
+1207-          "videos": "Vidéos"
+1208-        },
+1209-        "sortOptions": {
+1210-          "date_desc": "Plus récent d'abord",
+1211-          "date_asc": "Plus ancien d'abord",
+1212-          "title_asc": "Titre A-Z",
+1213-          "title_desc": "Titre Z-A"
+1214-        }
+1215-      },
+1216-      "profile": {
+1217-        "title": "Profil Administrateur",
+1218-        "description": "Informations de votre compte admin",
+1219-        "name": "Nom",
+1220-        "currentEmail": "Email actuel",
+1221-        "role": "Rôle",
+1222-        "newEmail": "Nouvel email",
+1223-        "currentPassword": "Mot de passe actuel",
+1224-        "newPassword": "Nouveau mot de passe",
+1225-        "confirmPassword": "Confirmer le nouveau mot de passe",
+1226-        "updateEmail": "Mettre à jour l'email",
+1227-        "updatePassword": "Mettre à jour le mot de passe",
+1228-        "successEmail": "Votre email a été mis à jour avec succès",
+1229-        "successPassword": "Votre mot de passe a été mis à jour avec succès",
+1230-        "errorEmail": "Erreur lors du changement d'email",
+1231-        "errorPassword": "Erreur lors du changement de mot de passe",
+1232-        "changeEmail": "Changer l'Email",
+1233-        "changeEmailDesc": "Modifiez l'adresse email de connexion",
+1234-        "changePassword": "Changer le Mot de Passe",
+1235-        "changePasswordDesc": "Modifiez votre mot de passe de connexion",
+1236-        "updating": "Modification...",
+1237-        "minChars": "Minimum 8 caractères",
+1238-        "invalidEmail": "Email invalide",
+1239-        "enterValidEmail": "Veuillez entrer un email valide",
+1240-        "enterDifferentEmail": "Veuillez entrer un nouvel email différent",
+1241-        "requiredFields": "Champs requis",
+1242-        "fillAllFields": "Veuillez remplir tous les champs",
+1243-        "passwordTooShort": "Mot de passe trop court",
+1244-        "passwordShortDesc": "Le mot de passe doit contenir au moins 8 caractères",
+1245-        "passwordMismatch": "Mots de passe différents",
+1246-        "passwordMismatchDesc": "Les nouveaux mots de passe ne correspondent pas"
+1247-      }
+1248-    },
+1249-    "media": {
+1250-      "dropzone": "Glissez-déposez une image ou cliquez pour sélectionner",
+1251-      "dropzoneDrag": "Déposez l'image ici",
+1252-      "maxSize": "max 5MB",
+1253-      "currentUrl": "URL actuelle",
+1254-      "uploading": "Upload en cours...",
+1255-      "success": "Image uploadée",
+1256-      "error": "Erreur d'upload"
+1257-    },
+1258-    "albums": {
+1259-      "create": "Créer un album",
+1260-      "edit": "Modifier l'album",
+1261-      "delete": {
+1262-        "title": "Supprimer l'album",
+1263-        "confirm": "Êtes-vous sûr de vouloir supprimer l'album \"{title}\" ? Cette action est irréversible.",
+1264-        "success": "Album supprimé"
+1265-      },
+1266-      "form": {
+1267-        "generalInfo": "Informations générales",
+1268-        "title": "Titre",
+1269-        "titlePlaceholder": "Nom de l'album",
+1270-        "style": "Style",
+1271-        "date": "Date affichée",
+1272-        "datePlaceholder": "Ex: Septembre 2024",
+1273-        "sortedDate": "Date de tri",
+1274-        "sortedDatePlaceholder": "MM-YYYY",
+1275-        "coverImage": "Image de couverture",
+1276-        "poster": "Poster",
+1277-        "listenLink": "Lien d'écoute",
+1278-        "collabName": "Nom de la collaboration",
+1279-        "collabNamePlaceholder": "Nom de l'artiste",
+1280-        "collabLink": "Lien de la collaboration",
+1281-        "collabLinkPlaceholder": "https://...",
+1282-        "order": "Ordre d'affichage",
+--
+1322:    "services": {
+1323-      "create": "Créer un service",
+1324-      "edit": "Modifier le service",
+1325-      "listTitle": "Services",
+1326-      "delete": {
+1327-        "title": "Supprimer le service",
+1328-        "confirm": "Êtes-vous sûr de vouloir supprimer le service \"{title}\" ? Cette action est irréversible.",
+1329-        "success": "Service supprimé"
+1330-      },
+1331-      "form": {
+1332-        "generalInfo": "Informations générales",
+1333-        "number": "Numéro",
+1334-        "numberPlaceholder": "01",
+1335-        "title": "Titre",
+1336-        "titlePlaceholder": "Nom du service",
+1337-        "largeTitle": "Titre large",
+1338-        "largeTitlePlaceholder": "Titre de la section",
+1339-        "shortDesc": "Description courte",
+1340-        "shortDescPlaceholder": "Description courte visible sur la carte",
+1341-        "fullDesc": "Description complète",
+1342-        "fullDescPlaceholder": "Description détaillée du service",
+1343-        "author": "Auteur",
+1344-        "authorPlaceholder": "Nom de l'auteur",
+1345-        "date": "Date",
+1346-        "datePlaceholder": "Ex: Janvier 2024",
+1347-        "order": "Ordre d'affichage",
+1348-        "published": "Statut",
+1349-        "descFr": "Description détaillée en français",
+1350-        "descFrPlaceholder": "Description détaillée en français...",
+1351-        "descEn": "Description détaillée en anglais",
+1352-        "descEnPlaceholder": "Detailed description in English...",
+1353-        "successCreate": "Service créé",
+1354-        "successUpdate": "Service modifié",
+1355-        "successDesc": "Le service \"{title}\" a été {action} avec succès."
+1356-      }
+1357-    }
+1358-  },
+1359-  "musicPlayer": {
+1360-    "controls": {
+1361-      "play": "Lecture",
+1362-      "pause": "Pause",
+1363-      "previous": "Précédent",
+1364-      "next": "Suivant",
+1365-      "volume": "Volume",
+1366-      "mute": "Couper le son",
+1367-      "unmute": "Rétablir le son",
+1368-      "openOnSoundcloud": "Ouvrir sur SoundCloud",
+1369-      "open": "Ouvrir",
+1370-      "collapse": "Réduire",
+1371-      "expand": "Agrandir",
+1372-      "close": "Fermer le player",
+1373-      "showPlayer": "Afficher le player"
+1374-    },
+1375-    "status": {
+1376-      "soundcloud": "SoundCloud",
+1377-      "noTrack": "Aucune piste",
+1378-      "mediaDisabled": "Médias désactivés",
+1379-      "unavailable": "Player indisponible",
+1380-      "loading": "Chargement du player",
+1381-      "playing": "Lecture en cours",
+1382-      "paused": "En pause",
+1383-      "waveformLoading": "Chargement waveform",
+1384-      "waveformReady": "Waveform",
+1385-      "errorHint": "Si le player ne charge pas, il est peut-être bloqué par un ad blocker."
+1386-    },
+1387-    "tracklist": {
+1388-      "title": "Titres",
+1389-      "loading": "Chargement des titres…",
+1390-      "empty": "Aucun titre."
+1391-    },
+1392-    "hints": {
+1393-      "persistent": "La musique continue pendant votre navigation sur le site."
+1394-    }
+1395-  }
+1396-}

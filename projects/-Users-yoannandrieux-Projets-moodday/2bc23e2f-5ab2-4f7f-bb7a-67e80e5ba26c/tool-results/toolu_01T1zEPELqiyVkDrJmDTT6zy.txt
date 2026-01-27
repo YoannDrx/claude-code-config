@@ -1,0 +1,266 @@
+     1→"use server";
+     2→
+     3→import { authAction } from "@/lib/actions/safe-actions";
+     4→import { ActionError } from "@/lib/errors/action-error";
+     5→import { prisma } from "@/lib/prisma";
+     6→import { z } from "zod";
+     7→
+     8→// ===== Exercise Actions =====
+     9→
+    10→const createExerciseSchema = z.object({
+    11→  name: z.string().min(1, "Le nom est requis"),
+    12→  description: z.string().optional(),
+    13→});
+    14→
+    15→const updateExerciseSchema = z.object({
+    16→  id: z.string(),
+    17→  name: z.string().min(1, "Le nom est requis"),
+    18→  description: z.string().optional().nullable(),
+    19→});
+    20→
+    21→const getExercisesSchema = z.object({
+    22→  includeArchived: z.boolean().optional().default(false),
+    23→});
+    24→
+    25→export const createExercise = authAction
+    26→  .inputSchema(createExerciseSchema)
+    27→  .action(async ({ parsedInput: { name, description }, ctx: { user } }) => {
+    28→    const exercise = await prisma.exercise.create({
+    29→      data: {
+    30→        userId: user.id,
+    31→        name,
+    32→        description,
+    33→        syncStatus: "synced",
+    34→      },
+    35→    });
+    36→
+    37→    return exercise;
+    38→  });
+    39→
+    40→export const updateExercise = authAction
+    41→  .inputSchema(updateExerciseSchema)
+    42→  .action(async ({ parsedInput: { id, name, description }, ctx: { user } }) => {
+    43→    // Verify ownership
+    44→    const existing = await prisma.exercise.findUnique({
+    45→      where: { id },
+    46→      select: { userId: true },
+    47→    });
+    48→
+    49→    if (!existing) {
+    50→      throw new ActionError("Exercise not found");
+    51→    }
+    52→
+    53→    if (existing.userId !== user.id) {
+    54→      throw new ActionError("You can only edit your own exercises");
+    55→    }
+    56→
+    57→    const exercise = await prisma.exercise.update({
+    58→      where: { id },
+    59→      data: { name, description },
+    60→    });
+    61→
+    62→    return exercise;
+    63→  });
+    64→
+    65→export const archiveExercise = authAction
+    66→  .inputSchema(z.object({ id: z.string() }))
+    67→  .action(async ({ parsedInput: { id }, ctx: { user } }) => {
+    68→    // Verify ownership
+    69→    const existing = await prisma.exercise.findUnique({
+    70→      where: { id },
+    71→      select: { userId: true },
+    72→    });
+    73→
+    74→    if (!existing) {
+    75→      throw new ActionError("Exercise not found");
+    76→    }
+    77→
+    78→    if (existing.userId !== user.id) {
+    79→      throw new ActionError("You can only archive your own exercises");
+    80→    }
+    81→
+    82→    const exercise = await prisma.exercise.update({
+    83→      where: { id },
+    84→      data: { isArchived: true },
+    85→    });
+    86→
+    87→    return exercise;
+    88→  });
+    89→
+    90→export const unarchiveExercise = authAction
+    91→  .inputSchema(z.object({ id: z.string() }))
+    92→  .action(async ({ parsedInput: { id }, ctx: { user } }) => {
+    93→    // Verify ownership
+    94→    const existing = await prisma.exercise.findUnique({
+    95→      where: { id },
+    96→      select: { userId: true },
+    97→    });
+    98→
+    99→    if (!existing) {
+   100→      throw new ActionError("Exercise not found");
+   101→    }
+   102→
+   103→    if (existing.userId !== user.id) {
+   104→      throw new ActionError("You can only unarchive your own exercises");
+   105→    }
+   106→
+   107→    const exercise = await prisma.exercise.update({
+   108→      where: { id },
+   109→      data: { isArchived: false },
+   110→    });
+   111→
+   112→    return exercise;
+   113→  });
+   114→
+   115→export const getExercises = authAction
+   116→  .inputSchema(getExercisesSchema)
+   117→  .action(async ({ parsedInput: { includeArchived }, ctx: { user } }) => {
+   118→    const startOfDay = new Date();
+   119→    startOfDay.setHours(0, 0, 0, 0);
+   120→
+   121→    const exercises = await prisma.exercise.findMany({
+   122→      where: {
+   123→        userId: user.id,
+   124→        ...(includeArchived ? {} : { isArchived: false }),
+   125→      },
+   126→      include: {
+   127→        logs: {
+   128→          where: {
+   129→            completedAt: { gte: startOfDay },
+   130→          },
+   131→          orderBy: { completedAt: "desc" },
+   132→        },
+   133→      },
+   134→      orderBy: { name: "asc" },
+   135→    });
+   136→
+   137→    return exercises;
+   138→  });
+   139→
+   140→export const getExerciseById = authAction
+   141→  .inputSchema(z.object({ id: z.string() }))
+   142→  .action(async ({ parsedInput: { id }, ctx: { user } }) => {
+   143→    const exercise = await prisma.exercise.findUnique({
+   144→      where: { id },
+   145→      include: {
+   146→        logs: {
+   147→          orderBy: { completedAt: "desc" },
+   148→          take: 30,
+   149→        },
+   150→      },
+   151→    });
+   152→
+   153→    if (!exercise) {
+   154→      throw new ActionError("Exercise not found");
+   155→    }
+   156→
+   157→    if (exercise.userId !== user.id) {
+   158→      throw new ActionError("You can only view your own exercises");
+   159→    }
+   160→
+   161→    return exercise;
+   162→  });
+   163→
+   164→// ===== Exercise Log Actions =====
+   165→
+   166→const logExerciseSchema = z.object({
+   167→  exerciseId: z.string(),
+   168→  note: z.string().optional(),
+   169→});
+   170→
+   171→export const logExerciseCompletion = authAction
+   172→  .inputSchema(logExerciseSchema)
+   173→  .action(async ({ parsedInput: { exerciseId, note }, ctx: { user } }) => {
+   174→    // Verify ownership
+   175→    const exercise = await prisma.exercise.findUnique({
+   176→      where: { id: exerciseId },
+   177→      select: { userId: true },
+   178→    });
+   179→
+   180→    if (!exercise) {
+   181→      throw new ActionError("Exercise not found");
+   182→    }
+   183→
+   184→    if (exercise.userId !== user.id) {
+   185→      throw new ActionError("You can only log your own exercises");
+   186→    }
+   187→
+   188→    const log = await prisma.exerciseLog.create({
+   189→      data: {
+   190→        exerciseId,
+   191→        completedAt: new Date(),
+   192→        note,
+   193→      },
+   194→    });
+   195→
+   196→    return log;
+   197→  });
+   198→
+   199→export const deleteExerciseLog = authAction
+   200→  .inputSchema(z.object({ logId: z.string() }))
+   201→  .action(async ({ parsedInput: { logId }, ctx: { user } }) => {
+   202→    // Verify ownership through exercise
+   203→    const log = await prisma.exerciseLog.findUnique({
+   204→      where: { id: logId },
+   205→      include: {
+   206→        exercise: {
+   207→          select: { userId: true },
+   208→        },
+   209→      },
+   210→    });
+   211→
+   212→    if (!log) {
+   213→      throw new ActionError("Log not found");
+   214→    }
+   215→
+   216→    if (log.exercise.userId !== user.id) {
+   217→      throw new ActionError("You can only delete your own exercise logs");
+   218→    }
+   219→
+   220→    await prisma.exerciseLog.delete({
+   221→      where: { id: logId },
+   222→    });
+   223→
+   224→    return { success: true };
+   225→  });
+   226→
+   227→export const getExerciseHistory = authAction
+   228→  .inputSchema(
+   229→    z.object({
+   230→      exerciseId: z.string(),
+   231→      days: z.number().optional().default(30),
+   232→    }),
+   233→  )
+   234→  .action(async ({ parsedInput: { exerciseId, days }, ctx: { user } }) => {
+   235→    // Verify ownership
+   236→    const exercise = await prisma.exercise.findUnique({
+   237→      where: { id: exerciseId },
+   238→      select: { userId: true },
+   239→    });
+   240→
+   241→    if (!exercise) {
+   242→      throw new ActionError("Exercise not found");
+   243→    }
+   244→
+   245→    if (exercise.userId !== user.id) {
+   246→      throw new ActionError("You can only view your own exercise history");
+   247→    }
+   248→
+   249→    const since = new Date();
+   250→    since.setDate(since.getDate() - days);
+   251→
+   252→    const logs = await prisma.exerciseLog.findMany({
+   253→      where: {
+   254→        exerciseId,
+   255→        completedAt: { gte: since },
+   256→      },
+   257→      orderBy: { completedAt: "desc" },
+   258→    });
+   259→
+   260→    return logs;
+   261→  });
+   262→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

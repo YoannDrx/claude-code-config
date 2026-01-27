@@ -1,0 +1,11 @@
+The file /Users/yoannandrieux/.claude/plans/misty-squishing-rainbow.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   109→6. `npm run build` - vérifier qu'il n'y a pas d'erreurs
+   110→
+   111→---
+   112→
+   113→## Choix validés
+   114→
+   115→- **Titre** : Aucun (la bannière parle d'elle-même)
+   116→- **Vitesse** : Lente (~40s par boucle) - élégant, permet de voir les détails
+   117→- **Placement** : Après le Marquee logos partenaires
+   118→

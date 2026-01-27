@@ -1,0 +1,213 @@
+     1→/* ChooseWisely Design System - Animations */
+     2→
+     3→@keyframes scanline {
+     4→  0% {
+     5→    transform: translateX(-100%);
+     6→  }
+     7→  100% {
+     8→    transform: translateX(100%);
+     9→  }
+    10→}
+    11→
+    12→@keyframes shimmer {
+    13→  0% {
+    14→    background-position: -200% 0;
+    15→  }
+    16→  100% {
+    17→    background-position: 200% 0;
+    18→  }
+    19→}
+    20→
+    21→@keyframes pulse-glow {
+    22→  0%,
+    23→  100% {
+    24→    opacity: 0.4;
+    25→    transform: scale(1);
+    26→  }
+    27→  50% {
+    28→    opacity: 0.8;
+    29→    transform: scale(1.05);
+    30→  }
+    31→}
+    32→
+    33→@keyframes radar-ping {
+    34→  0% {
+    35→    transform: scale(0.8);
+    36→    opacity: 1;
+    37→  }
+    38→  80%,
+    39→  100% {
+    40→    transform: scale(2);
+    41→    opacity: 0;
+    42→  }
+    43→}
+    44→
+    45→@keyframes float {
+    46→  0%,
+    47→  100% {
+    48→    transform: translateY(0);
+    49→  }
+    50→  50% {
+    51→    transform: translateY(-10px);
+    52→  }
+    53→}
+    54→
+    55→@keyframes fade-in {
+    56→  from {
+    57→    opacity: 0;
+    58→  }
+    59→  to {
+    60→    opacity: 1;
+    61→  }
+    62→}
+    63→
+    64→@keyframes fade-in-up {
+    65→  from {
+    66→    opacity: 0;
+    67→    transform: translateY(20px);
+    68→  }
+    69→  to {
+    70→    opacity: 1;
+    71→    transform: translateY(0);
+    72→  }
+    73→}
+    74→
+    75→@keyframes slide-in-right {
+    76→  from {
+    77→    opacity: 0;
+    78→    transform: translateX(20px);
+    79→  }
+    80→  to {
+    81→    opacity: 1;
+    82→    transform: translateX(0);
+    83→  }
+    84→}
+    85→
+    86→@keyframes scale-in {
+    87→  from {
+    88→    opacity: 0;
+    89→    transform: scale(0.95);
+    90→  }
+    91→  to {
+    92→    opacity: 1;
+    93→    transform: scale(1);
+    94→  }
+    95→}
+    96→
+    97→@keyframes border-gradient {
+    98→  0% {
+    99→    background-position: 0% 50%;
+   100→  }
+   101→  50% {
+   102→    background-position: 100% 50%;
+   103→  }
+   104→  100% {
+   105→    background-position: 0% 50%;
+   106→  }
+   107→}
+   108→
+   109→@keyframes glow-pulse {
+   110→  0%,
+   111→  100% {
+   112→    box-shadow:
+   113→      0 0 20px rgba(52, 211, 153, 0.2),
+   114→      0 0 40px rgba(52, 211, 153, 0.1);
+   115→  }
+   116→  50% {
+   117→    box-shadow:
+   118→      0 0 30px rgba(52, 211, 153, 0.3),
+   119→      0 0 60px rgba(52, 211, 153, 0.15);
+   120→  }
+   121→}
+   122→
+   123→/* Animation utilities */
+   124→.animate-scanline {
+   125→  animation: scanline 2s ease-in-out infinite;
+   126→}
+   127→
+   128→.animate-shimmer {
+   129→  animation: shimmer 2s linear infinite;
+   130→  background-size: 200% 100%;
+   131→}
+   132→
+   133→.animate-pulse-glow {
+   134→  animation: pulse-glow 2s ease-in-out infinite;
+   135→}
+   136→
+   137→.animate-radar-ping {
+   138→  animation: radar-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+   139→}
+   140→
+   141→.animate-float {
+   142→  animation: float 3s ease-in-out infinite;
+   143→}
+   144→
+   145→.animate-fade-in {
+   146→  animation: fade-in 0.5s ease-out forwards;
+   147→}
+   148→
+   149→.animate-fade-in-up {
+   150→  animation: fade-in-up 0.5s ease-out forwards;
+   151→}
+   152→
+   153→.animate-slide-in-right {
+   154→  animation: slide-in-right 0.5s ease-out forwards;
+   155→}
+   156→
+   157→.animate-scale-in {
+   158→  animation: scale-in 0.3s ease-out forwards;
+   159→}
+   160→
+   161→.animate-border-gradient {
+   162→  animation: border-gradient 3s ease infinite;
+   163→  background-size: 200% 200%;
+   164→}
+   165→
+   166→.animate-glow-pulse {
+   167→  animation: glow-pulse 2s ease-in-out infinite;
+   168→}
+   169→
+   170→/* Animation delays */
+   171→.animation-delay-100 {
+   172→  animation-delay: 100ms;
+   173→}
+   174→.animation-delay-200 {
+   175→  animation-delay: 200ms;
+   176→}
+   177→.animation-delay-300 {
+   178→  animation-delay: 300ms;
+   179→}
+   180→.animation-delay-400 {
+   181→  animation-delay: 400ms;
+   182→}
+   183→.animation-delay-500 {
+   184→  animation-delay: 500ms;
+   185→}
+   186→.animation-delay-700 {
+   187→  animation-delay: 700ms;
+   188→}
+   189→.animation-delay-1000 {
+   190→  animation-delay: 1000ms;
+   191→}
+   192→
+   193→/* Respect user preferences */
+   194→@media (prefers-reduced-motion: reduce) {
+   195→  .animate-scanline,
+   196→  .animate-shimmer,
+   197→  .animate-pulse-glow,
+   198→  .animate-radar-ping,
+   199→  .animate-float,
+   200→  .animate-fade-in,
+   201→  .animate-fade-in-up,
+   202→  .animate-slide-in-right,
+   203→  .animate-scale-in,
+   204→  .animate-border-gradient,
+   205→  .animate-glow-pulse {
+   206→    animation: none;
+   207→  }
+   208→}
+   209→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

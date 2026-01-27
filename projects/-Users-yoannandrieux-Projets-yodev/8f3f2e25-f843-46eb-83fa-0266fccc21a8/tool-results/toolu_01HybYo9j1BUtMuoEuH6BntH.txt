@@ -1,0 +1,1 @@
+/Users/yoannandrieux/Projets/yodev/src/app/[locale]/contact/page.tsx

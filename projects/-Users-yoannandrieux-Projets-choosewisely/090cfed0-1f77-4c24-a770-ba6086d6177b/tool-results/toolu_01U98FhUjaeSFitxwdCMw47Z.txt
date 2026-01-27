@@ -1,0 +1,151 @@
+     1→"use client";
+     2→
+     3→import { logger } from "@/lib/logger";
+     4→import { useState, useEffect } from "react";
+     5→import { Button } from "@/components/ui/button";
+     6→import { Plus, Bell } from "lucide-react";
+     7→import { AlertCard } from "./alert-card";
+     8→import { CreateAlertDialog } from "./create-alert-dialog";
+     9→import type { PropertyAlert, CreateAlertRequest } from "./types";
+    10→import {
+    11→  createAlertAction,
+    12→  deleteAlertAction,
+    13→  toggleAlertAction,
+    14→  getAlertsAction,
+    15→} from "./alerts.action";
+    16→import { toast } from "sonner";
+    17→
+    18→export function AlertsList() {
+    19→  const [alerts, setAlerts] = useState<PropertyAlert[]>([]);
+    20→  const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
+    21→  const [isLoading, setIsLoading] = useState(false);
+    22→  const [isInitialLoading, setIsInitialLoading] = useState(true);
+    23→
+    24→  // Load alerts on component mount
+    25→  useEffect(() => {
+    26→    const loadAlerts = async () => {
+    27→      try {
+    28→        const userAlerts = await getAlertsAction();
+    29→        setAlerts(userAlerts);
+    30→      } catch (error) {
+    31→        logger.debug("Failed to load alerts:", error);
+    32→      } finally {
+    33→        setIsInitialLoading(false);
+    34→      }
+    35→    };
+    36→
+    37→    void loadAlerts();
+    38→  }, []);
+    39→
+    40→  const handleCreateAlert = async (request: CreateAlertRequest) => {
+    41→    setIsLoading(true);
+    42→    try {
+    43→      const newAlert = await createAlertAction(request);
+    44→      setAlerts((prev) => [...prev, newAlert]);
+    45→      toast.success("Alerte créée avec succès");
+    46→    } catch (error) {
+    47→      logger.debug("Failed to create alert:", error);
+    48→      toast.error("Erreur lors de la création de l'alerte");
+    49→    } finally {
+    50→      setIsLoading(false);
+    51→    }
+    52→  };
+    53→
+    54→  const handleToggleActive = async (alertId: string, isActive: boolean) => {
+    55→    try {
+    56→      const updatedAlert = await toggleAlertAction(alertId, isActive);
+    57→      setAlerts((prev) =>
+    58→        prev.map((alert) => (alert.id === alertId ? updatedAlert : alert)),
+    59→      );
+    60→      toast.success(isActive ? "Alerte activée" : "Alerte désactivée");
+    61→    } catch (error) {
+    62→      logger.debug("Failed to toggle alert:", error);
+    63→      toast.error("Erreur lors de la modification de l'alerte");
+    64→    }
+    65→  };
+    66→
+    67→  const handleDeleteAlert = async (alertId: string) => {
+    68→    try {
+    69→      await deleteAlertAction(alertId);
+    70→      setAlerts((prev) => prev.filter((alert) => alert.id !== alertId));
+    71→      toast.success("Alerte supprimée");
+    72→    } catch (error) {
+    73→      logger.debug("Failed to delete alert:", error);
+    74→      toast.error("Erreur lors de la suppression de l'alerte");
+    75→    }
+    76→  };
+    77→
+    78→  if (isInitialLoading) {
+    79→    return (
+    80→      <div className="space-y-4">
+    81→        <div className="flex items-center justify-between">
+    82→          <div className="bg-muted h-8 w-48 animate-pulse rounded" />
+    83→          <div className="bg-muted h-10 w-32 animate-pulse rounded" />
+    84→        </div>
+    85→        <div className="space-y-4">
+    86→          {Array.from({ length: 3 }).map((_, i) => (
+    87→            <div key={i} className="bg-muted h-48 animate-pulse rounded-lg" />
+    88→          ))}
+    89→        </div>
+    90→      </div>
+    91→    );
+    92→  }
+    93→
+    94→  return (
+    95→    <div className="space-y-6">
+    96→      <div className="flex items-center justify-between">
+    97→        <div>
+    98→          <h2 className="text-2xl font-bold">Mes alertes</h2>
+    99→          <p className="text-muted-foreground">
+   100→            Recevez des notifications quand de nouveaux biens correspondent à
+   101→            vos critères
+   102→          </p>
+   103→        </div>
+   104→        <Button onClick={() => setIsCreateDialogOpen(true)}>
+   105→          <Plus className="mr-2 h-4 w-4" />
+   106→          Nouvelle alerte
+   107→        </Button>
+   108→      </div>
+   109→
+   110→      {alerts.length === 0 ? (
+   111→        <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
+   112→          <Bell className="text-muted-foreground mb-4 size-16" />
+   113→          <h3 className="mb-2 text-xl font-semibold">
+   114→            Aucune alerte configurée
+   115→          </h3>
+   116→          <p className="text-muted-foreground mb-6 max-w-md">
+   117→            Créez votre première alerte pour être notifié quand de nouveaux
+   118→            biens correspondent à vos critères de recherche.
+   119→          </p>
+   120→          <Button onClick={() => setIsCreateDialogOpen(true)}>
+   121→            <Plus className="mr-2 h-4 w-4" />
+   122→            Créer ma première alerte
+   123→          </Button>
+   124→        </div>
+   125→      ) : (
+   126→        <div className="grid gap-4">
+   127→          {alerts.map((alert) => (
+   128→            <AlertCard
+   129→              key={alert.id}
+   130→              alert={alert}
+   131→              onToggleActive={handleToggleActive}
+   132→              onDelete={handleDeleteAlert}
+   133→            />
+   134→          ))}
+   135→        </div>
+   136→      )}
+   137→
+   138→      <CreateAlertDialog
+   139→        open={isCreateDialogOpen}
+   140→        onOpenChange={setIsCreateDialogOpen}
+   141→        onCreateAlert={handleCreateAlert}
+   142→        isLoading={isLoading}
+   143→      />
+   144→    </div>
+   145→  );
+   146→}
+   147→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

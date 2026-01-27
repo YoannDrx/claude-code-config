@@ -1,0 +1,66 @@
+     1→"use client";
+     2→
+     3→import React from "react";
+     4→import { motion, useScroll, useSpring } from "framer-motion";
+     5→import { CustomCursor } from "./ui/CustomCursor";
+     6→import { Marquee } from "./ui/Marquee";
+     7→import { FilmBanner } from "./FilmBanner";
+     8→import { NeoNavbar } from "./NeoNavbar";
+     9→import { NeoSplitHero } from "./NeoSplitHero";
+    10→import { NeoFooter } from "./NeoFooter";
+    11→
+    12→// Partner logos for the marquee
+    13→const partnerLogos = [
+    14→  { src: "/img/partners/cezame-logo.png", alt: "Cezame Music Agency", size: "large" as const },
+    15→  { src: "/img/partners/gum-logo.png", alt: "GUM", size: "large" as const },
+    16→  { src: "/img/partners/myma-logo.png", alt: "MYMA", size: "normal" as const },
+    17→  { src: "/img/partners/superpitch-logo.png", alt: "Superpitch", size: "normal" as const },
+    18→  {
+    19→    src: "/img/partners/universal-production.png",
+    20→    alt: "Universal Production Music",
+    21→    size: "large" as const,
+    22→  },
+    23→  { src: "/img/partners/infinity-scores.jpeg", alt: "Infinity Scores", size: "normal" as const },
+    24→  { src: "/img/partners/superama-records.jpg", alt: "Superama Records", size: "normal" as const },
+    25→];
+    26→
+    27→export default function NeoHome() {
+    28→  const { scrollYProgress } = useScroll();
+    29→  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+    30→
+    31→  return (
+    32→    <div className="min-h-screen bg-neo-bg text-neo-text font-sans selection:bg-neo-text selection:text-neo-accent overflow-x-hidden">
+    33→      <CustomCursor />
+    34→
+    35→      {/* Top Progress Bar */}
+    36→      <motion.div
+    37→        className="fixed top-0 left-0 right-0 h-1 bg-neo-accent origin-left z-50"
+    38→        style={{ scaleX }}
+    39→      />
+    40→
+    41→      {/* Grid Overlay */}
+    42→      <div
+    43→        className="fixed inset-0 pointer-events-none z-0 opacity-[0.05]"
+    44→        style={{
+    45→          backgroundImage:
+    46→            "linear-gradient(var(--neo-border) 1px, transparent 1px), linear-gradient(90deg, var(--neo-border) 1px, transparent 1px)",
+    47→          backgroundSize: "60px 60px",
+    48→        }}
+    49→      />
+    50→
+    51→      <NeoNavbar />
+    52→
+    53→      <main className="relative z-10 pt-16 md:pt-20">
+    54→        <NeoSplitHero />
+    55→        <Marquee logos={partnerLogos} />
+    56→        <FilmBanner />
+    57→        <NeoFooter />
+    58→      </main>
+    59→    </div>
+    60→  );
+    61→}
+    62→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

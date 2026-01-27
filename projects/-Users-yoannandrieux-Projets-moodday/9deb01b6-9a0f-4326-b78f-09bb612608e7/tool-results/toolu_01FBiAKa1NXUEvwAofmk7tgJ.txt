@@ -1,0 +1,1 @@
+completed	failure	I18	Frontend CI	i18	pull_request	20853546716	1m3s	2026-01-09T13:32:29Z

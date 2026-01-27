@@ -1,0 +1,148 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 Frontend CI YoannDrx/light-ts#1 · 20861639037
+Triggered via pull_request less than a minute ago
+
+JOBS
+* typescript (22.x) (ID 59942554601)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run TypeScript check
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 59942554619)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* unit-test (22.x) (ID 59942554620)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Test
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 Frontend CI YoannDrx/light-ts#1 · 20861639037
+Triggered via pull_request less than a minute ago
+
+JOBS
+* typescript (22.x) (ID 59942554601)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run TypeScript check
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+* eslint (22.x) (ID 59942554619)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+✓ unit-test (22.x) in 49s (ID 59942554620)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  ✓ Test
+  ✓ Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 Frontend CI YoannDrx/light-ts#1 · 20861639037
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ typescript (22.x) in 55s (ID 59942554601)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  ✓ Run TypeScript check
+  ✓ Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+* eslint (22.x) (ID 59942554619)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  * Run linter
+  * Post Use Node.js 22.x
+  * Post Run actions/checkout@v3
+  * Post Run pnpm/action-setup@v2
+✓ unit-test (22.x) in 49s (ID 59942554620)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  ✓ Test
+  ✓ Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+✓ i18 Frontend CI YoannDrx/light-ts#1 · 20861639037
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ typescript (22.x) in 55s (ID 59942554601)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  ✓ Run TypeScript check
+  ✓ Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+✓ eslint (22.x) in 1m0s (ID 59942554619)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  ✓ Run linter
+  ✓ Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job
+✓ unit-test (22.x) in 49s (ID 59942554620)
+  ✓ Set up job
+  ✓ Run pnpm/action-setup@v2
+  ✓ Run actions/checkout@v3
+  ✓ Use Node.js 22.x
+  ✓ Install
+  ✓ Test
+  ✓ Post Use Node.js 22.x
+  ✓ Post Run actions/checkout@v3
+  ✓ Post Run pnpm/action-setup@v2
+  ✓ Complete job

@@ -1,0 +1,10 @@
+The file /Users/yoannandrieux/Projets/moodday/app/admin/_components/admin-stats-section.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    26→      subscriptions.map(async (sub) => {
+    27→        if (!sub.stripeSubscriptionId) return null;
+    28→
+    29→        try {
+    30→          const stripeSub = await getStripe().subscriptions.retrieve(
+    31→            sub.stripeSubscriptionId,
+    32→          );
+    33→          return stripeSub;
+    34→        } catch {

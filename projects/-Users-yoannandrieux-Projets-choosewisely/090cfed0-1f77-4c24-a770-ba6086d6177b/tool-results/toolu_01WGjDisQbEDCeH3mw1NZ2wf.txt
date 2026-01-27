@@ -1,0 +1,67 @@
+     1→"use client";
+     2→
+     3→import {
+     4→  Dialog,
+     5→  DialogContent,
+     6→  DialogDescription,
+     7→  DialogHeader,
+     8→  DialogTitle,
+     9→} from "@/components/ui/dialog";
+    10→import { useComparisonStore } from "./comparison-store";
+    11→import { ComparisonTable } from "./comparison-table";
+    12→import { comparisonPdfExportService } from "./services/comparison-pdf-export.service";
+    13→import { toast } from "sonner";
+    14→
+    15→type ComparisonDialogProps = {
+    16→  open: boolean;
+    17→  onOpenChange: (open: boolean) => void;
+    18→};
+    19→
+    20→export function ComparisonDialog({
+    21→  open,
+    22→  onOpenChange,
+    23→}: ComparisonDialogProps) {
+    24→  const { properties, removeProperty, clearAll } = useComparisonStore();
+    25→
+    26→  const handleExportPDF = () => {
+    27→    if (properties.length === 0) {
+    28→      toast.error("Aucun bien à exporter");
+    29→      return;
+    30→    }
+    31→
+    32→    try {
+    33→      comparisonPdfExportService.generatePDF(properties, {
+    34→        title: "Comparaison de biens immobiliers",
+    35→      });
+    36→      toast.success("PDF généré avec succès");
+    37→    } catch {
+    38→      toast.error("Erreur lors de la génération du PDF");
+    39→    }
+    40→  };
+    41→
+    42→  return (
+    43→    <Dialog open={open} onOpenChange={onOpenChange}>
+    44→      <DialogContent className="max-h-[90vh] w-full max-w-[95vw] overflow-y-auto">
+    45→        <DialogHeader>
+    46→          <DialogTitle>Comparaison de biens immobiliers</DialogTitle>
+    47→          <DialogDescription>
+    48→            Analysez les caractéristiques de vos biens sélectionnés pour faire
+    49→            le bon choix.
+    50→          </DialogDescription>
+    51→        </DialogHeader>
+    52→
+    53→        <ComparisonTable
+    54→          properties={properties}
+    55→          onRemoveProperty={removeProperty}
+    56→          onClearAll={clearAll}
+    57→          onExportPDF={handleExportPDF}
+    58→        />
+    59→      </DialogContent>
+    60→    </Dialog>
+    61→  );
+    62→}
+    63→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

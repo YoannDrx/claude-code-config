@@ -1,0 +1,15 @@
+The file /Users/yoannandrieux/Projets/portfolio-loic/components/neo-brutalist/FilmBanner.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     7→  src: string;
+     8→  alt: string;
+     9→}
+    10→
+    11→interface FilmBannerProps {
+    12→  images?: FilmImage[];
+    13→  topSpeed?: number;
+    14→  bottomSpeed?: number;
+    15→  pauseOnHover?: boolean;
+    16→}
+    17→
+    18→// Film collages data
+    19→const filmCollages: FilmImage[] = [
+    20→  { src: "/img/films/collage-2022.jpg", alt: "Productions 2022 - America, I Want You Back, Magic for Humans, Divorce, Trust Me" },

@@ -1,0 +1,11 @@
+The file /Users/yoannandrieux/Projets/moodday/e2e/admin.spec.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     8→      callbackURL: "/app",
+     9→      admin: true,
+    10→    });
+    11→
+    12→    await page.goto("/admin");
+    13→    await page.waitForLoadState("networkidle");
+    14→
+    15→    // i18n: "Users" (EN) / "Utilisateurs" (FR)
+    16→    await expect(
+    17→      page.getByRole("link", { name: /Users|Utilisateurs/i }),

@@ -1,0 +1,7 @@
+total 9496
+drwxr-xr-x@  6 yoannandrieux  staff      192 Jan  9 17:54 .
+drwxr-xr-x  17 yoannandrieux  staff      544 Jan  9 17:54 ..
+-rw-r--r--@  1 yoannandrieux  staff   391175 Jan  9 17:54 collage-2022.jpg
+-rw-r--r--@  1 yoannandrieux  staff  1495904 Jan  9 17:54 collage-2023.png
+-rw-r--r--@  1 yoannandrieux  staff  1434113 Jan  9 17:54 collage-2024.png
+-rw-r--r--@  1 yoannandrieux  staff  1531021 Jan  9 17:54 collage-2025.png

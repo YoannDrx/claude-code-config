@@ -1,0 +1,1604 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  * Install dependencies
+  * Generate Prisma client
+  * Deploy database migrations
+  * Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  * Install dependencies
+  * Generate Prisma client
+  * Deploy database migrations
+  * Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  * Install dependencies
+  * Generate Prisma client
+  * Deploy database migrations
+  * Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  * Generate Prisma client
+  * Deploy database migrations
+  * Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  * Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  * Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  * Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  * Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  * Run Playwright tests
+  * Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* Playwright Tests (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  X Run Playwright tests
+  ✓ Upload Playwright report
+  * Upload test results
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+X Playwright Tests in 4m27s (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  X Run Playwright tests
+  ✓ Upload Playwright report
+  ✓ Upload test results
+  - Post Cache Next.js build
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+
+ANNOTATIONS
+X Process completed with exit code 1.
+Playwright Tests: .github#404
+
+X i18 E2E Playwright Tests YoannDrx/light-ts#1 · 20853359347
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+X Playwright Tests in 4m27s (ID 59913549793)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Cache Next.js build
+  ✓ Install dependencies
+  ✓ Generate Prisma client
+  ✓ Deploy database migrations
+  ✓ Verify database schema
+  ✓ Build application
+  ✓ Install Playwright browsers
+  ✓ Start application
+  ✓ Wait for application to be ready
+  X Run Playwright tests
+  ✓ Upload Playwright report
+  ✓ Upload test results
+  - Post Cache Next.js build
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+
+ANNOTATIONS
+X Process completed with exit code 1.
+Playwright Tests: .github#404

@@ -1,0 +1,16 @@
+The file /Users/yoannandrieux/Projets/portfolio-loic/components/neo-brutalist/ui/Marquee.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     8→  alt: string;
+     9→  size?: "normal" | "large";
+    10→}
+    11→
+    12→interface MarqueeProps {
+    13→  items?: string[];
+    14→  logos?: LogoItem[];
+    15→  direction?: 1 | -1;
+    16→  speed?: number;
+    17→  title?: string;
+    18→}
+    19→
+    20→export const Marquee: React.FC<MarqueeProps> = ({ items, logos, direction = 1, speed = 30 }) => {
+    21→  // If logos are provided, use logo mode
+    22→  if (logos && logos.length > 0) {

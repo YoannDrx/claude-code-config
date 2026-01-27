@@ -1,0 +1,6 @@
+409:export type Property = z.infer<typeof PropertySchema>;
+410-
+411-// MoteurImmo API Search Response Schema
+412-export const MoteurImmoSearchResponseSchema = z.object({
+413-  count: z.number().nonnegative(),
+414-  ads: z.array(MoteurImmoPropertySchema),

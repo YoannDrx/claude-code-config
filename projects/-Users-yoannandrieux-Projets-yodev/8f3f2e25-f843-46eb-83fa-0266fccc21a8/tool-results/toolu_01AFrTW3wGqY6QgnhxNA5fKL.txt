@@ -1,0 +1,552 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Scalable Architecture Deep-Dive | Yodev Expertise</title>
+     7→    <meta name="description" content="Découvrez comment Yodev conçoit des architectures microservices et cloud-native pour une croissance sur 10 ans. Performance, résilience et scalabilité infinie.">
+     8→    
+     9→    <!-- Tailwind CSS -->
+    10→    <script src="https://cdn.tailwindcss.com"></script>
+    11→    <!-- Alpine.js -->
+    12→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    13→    <!-- Google Fonts -->
+    14→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    15→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    16→    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    17→
+    18→    <script>
+    19→        tailwind.config = {
+    20→            theme: {
+    21→                extend: {
+    22→                    colors: {
+    23→                        primary: '#1BA896', // Teal
+    24→                        secondary: '#FF6B35', // Orange
+    25→                        dark: '#0F1111', // Deep Charcoal
+    26→                        card: 'rgba(31, 33, 33, 0.6)',
+    27→                        border: 'rgba(167, 169, 169, 0.2)',
+    28→                    },
+    29→                    fontFamily: {
+    30→                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+    31→                        display: ['DM Sans', 'sans-serif'],
+    32→                        mono: ['Fira Code', 'monospace'],
+    33→                    },
+    34→                    animation: {
+    35→                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+    36→                        'float': 'float 3s ease-in-out infinite',
+    37→                        'spin-slow': 'spin 12s linear infinite',
+    38→                        'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+    39→                    },
+    40→                    keyframes: {
+    41→                        float: {
+    42→                            '0%, 100%': { transform: 'translateY(0)' },
+    43→                            '50%': { transform: 'translateY(-10px)' },
+    44→                        }
+    45→                    }
+    46→                }
+    47→            }
+    48→        }
+    49→    </script>
+    50→
+    51→    <style>
+    52→        [x-cloak] { display: none !important; }
+    53→        
+    54→        body {
+    55→            background-color: #0F1111;
+    56→            color: #FFFBF8;
+    57→            overflow-x: hidden;
+    58→        }
+    59→
+    60→        .mesh-gradient {
+    61→            background: radial-gradient(at 0% 0%, rgba(27, 168, 150, 0.15) 0px, transparent 50%),
+    62→                        radial-gradient(at 100% 100%, rgba(255, 107, 53, 0.1) 0px, transparent 50%),
+    63→                        radial-gradient(at 50% 50%, rgba(15, 17, 17, 1) 0px, transparent 100%);
+    64→        }
+    65→
+    66→        .glass-panel {
+    67→            background: rgba(255, 255, 255, 0.03);
+    68→            backdrop-filter: blur(12px);
+    69→            border: 1px solid rgba(255, 255, 255, 0.08);
+    70→            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    71→        }
+    72→
+    73→        .text-gradient {
+    74→            background: linear-gradient(135deg, #FFF 0%, rgba(255,255,255,0.7) 100%);
+    75→            -webkit-background-clip: text;
+    76→            -webkit-text-fill-color: transparent;
+    77→        }
+    78→
+    79→        .hero-glow {
+    80→            position: absolute;
+    81→            width: 600px;
+    82→            height: 600px;
+    83→            background: radial-gradient(circle, rgba(27, 168, 150, 0.2) 0%, transparent 70%);
+    84→            filter: blur(60px);
+    85→            z-index: -1;
+    86→        }
+    87→
+    88→        .line-draw {
+    89→            stroke-dasharray: 100;
+    90→            stroke-dashoffset: 100;
+    91→            animation: dash 4s linear infinite;
+    92→        }
+    93→        @keyframes dash {
+    94→            to { stroke-dashoffset: 0; }
+    95→        }
+    96→
+    97→        .no-scrollbar::-webkit-scrollbar { display: none; }
+    98→        
+    99→        .code-window {
+   100→            background: #161b22;
+   101→            border: 1px solid #30363d;
+   102→            border-radius: 12px;
+   103→            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+   104→        }
+   105→
+   106→        .active-dot {
+   107→            box-shadow: 0 0 15px #1BA896;
+   108→        }
+   109→    </style>
+   110→</head>
+   111→<body class="min-h-screen flex flex-col font-sans selection:bg-primary selection:text-white" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+   112→
+   113→    <!-- Navigation -->
+   114→    <header :class="scrolled ? 'glass-panel py-3' : 'bg-transparent py-6'" class="fixed top-0 w-full z-50 transition-all duration-300">
+   115→        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+   116→            <a href="/" class="flex items-center space-x-2 group">
+   117→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform duration-300">
+   118→                    <span class="text-dark font-black text-xl">Y</span>
+   119→                </div>
+   120→                <span class="text-2xl font-display font-bold tracking-tight">yodev</span>
+   121→            </a>
+   122→
+   123→            <!-- Desktop Nav -->
+   124→            <nav class="hidden md:flex items-center space-x-8">
+   125→                <div class="relative group" x-data="{ open: false }">
+   126→                    <button @mouseenter="open = true" @mouseleave="open = false" class="flex items-center space-x-1 hover:text-primary transition-colors py-2">
+   127→                        <span>Services</span>
+   128→                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+   129→                    </button>
+   130→                    <div x-show="open" x-cloak @mouseenter="open = true" @mouseleave="open = false" class="absolute top-full -left-4 w-64 glass-panel rounded-2xl p-4 space-y-2 mt-2 shadow-2xl">
+   131→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   132→                            <p class="font-semibold text-sm">Développement Web & Mobile</p>
+   133→                            <p class="text-xs text-gray-400">Applications haute performance Next.js</p>
+   134→                        </a>
+   135→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   136→                            <p class="font-semibold text-sm text-primary">Intelligence Artificielle & LLM</p>
+   137→                            <p class="text-xs text-gray-400">RAG, Chatbots & Automatisation IA</p>
+   138→                        </a>
+   139→                        <a href="#" class="block p-3 hover:bg-white/5 rounded-xl transition-all">
+   140→                            <p class="font-semibold text-sm text-secondary">Modernisation Legacy</p>
+   141→                            <p class="text-xs text-gray-400">Migration Cloud & Refonte architecture</p>
+   142→                        </a>
+   143→                    </div>
+   144→                </div>
+   145→                <a href="#architecture" class="text-primary font-bold">Expertise</a>
+   146→                <a href="#projets" class="hover:text-primary transition-colors">Projets</a>
+   147→                <a href="#blog" class="hover:text-primary transition-colors">Blog</a>
+   148→            </nav>
+   149→
+   150→            <div class="hidden md:flex items-center space-x-4">
+   151→                <a href="/contact" class="px-6 py-2.5 bg-primary text-dark font-bold rounded-full hover:bg-white hover:scale-105 transition-all duration-300">
+   152→                    Consultation Stratégique
+   153→                </a>
+   154→            </div>
+   155→
+   156→            <!-- Mobile Toggle -->
+   157→            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white">
+   158→                <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+   159→                <svg x-show="mobileMenuOpen" x-cloak class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+   160→            </button>
+   161→        </div>
+   162→
+   163→        <!-- Mobile Menu -->
+   164→        <div x-show="mobileMenuOpen" x-cloak class="md:hidden glass-panel fixed inset-0 top-20 z-40 p-6 flex flex-col space-y-6">
+   165→            <a href="#" class="text-2xl font-bold">Services</a>
+   166→            <a href="#" class="text-2xl font-bold text-primary">Expertise</a>
+   167→            <a href="#" class="text-2xl font-bold">Projets</a>
+   168→            <a href="#" class="text-2xl font-bold">Contact</a>
+   169→            <div class="pt-6 border-t border-white/10">
+   170→                <button class="w-full py-4 bg-primary text-dark font-bold rounded-xl">Prendre RDV</button>
+   171→            </div>
+   172→        </div>
+   173→    </header>
+   174→
+   175→    <main class="flex-grow">
+   176→        <!-- Hero Deep Dive -->
+   177→        <section class="relative pt-32 pb-20 mesh-gradient overflow-hidden">
+   178→            <div class="hero-glow -top-20 -left-20"></div>
+   179→            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+   180→                <div class="space-y-8 z-10">
+   181→                    <div class="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full backdrop-blur-sm">
+   182→                        <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+   183→                        <span class="text-xs font-bold uppercase tracking-widest text-primary">Expertise : Architecture Scalable</span>
+   184→                    </div>
+   185→
+   186→                    <h1 class="text-5xl lg:text-7xl font-display font-extrabold leading-[1.1] text-gradient">
+   187→                        Bâtir pour les <br>
+   188→                        <span class="text-primary">10 prochaines années.</span>
+   189→                    </h1>
+   190→
+   191→                    <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed">
+   192→                        Nous concevons des systèmes capables de supporter des millions d'utilisateurs sans sourciller. Microservices, Event-Driven et Infrastructure as Code sont au cœur de notre approche.
+   193→                    </p>
+   194→
+   195→                    <div class="flex flex-wrap gap-4">
+   196→                        <div class="flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
+   197→                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+   198→                            <span class="text-sm font-mono">Uptime 99.99%</span>
+   199→                        </div>
+   200→                        <div class="flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
+   201→                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+   202→                            <span class="text-sm font-mono">&lt; 50ms Latency</span>
+   203→                        </div>
+   204→                        <div class="flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-lg">
+   205→                            <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+   206→                            <span class="text-sm font-mono">Auto-Scaling</span>
+   207→                        </div>
+   208→                    </div>
+   209→                </div>
+   210→
+   211→                <!-- Technical Teaser Visual -->
+   212→                <div class="relative lg:h-[500px] flex items-center justify-center">
+   213→                    <div class="absolute inset-0 bg-primary/5 rounded-full blur-[120px] animate-pulse-slow"></div>
+   214→                    <div class="relative z-10 w-full max-w-md">
+   215→                        <!-- Simplified Kubernetes Pod Animation -->
+   216→                        <div class="grid grid-cols-3 gap-4" x-data="{ active: 0 }" x-init="setInterval(() => active = (active + 1) % 6, 2000)">
+   217→                            <template x-for="i in [0,1,2,3,4,5]">
+   218→                                <div class="h-24 glass-panel rounded-2xl flex items-center justify-center transition-all duration-500 transform" 
+   219→                                     :class="active === i ? 'border-primary scale-110 shadow-[0_0_30px_rgba(27,168,150,0.3)] bg-primary/10' : 'opacity-40'">
+   220→                                    <div class="text-center">
+   221→                                        <div class="w-8 h-8 mx-auto mb-2 text-primary">
+   222→                                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+   223→                                        </div>
+   224→                                        <p class="text-[10px] font-mono uppercase">Pod-0x<span x-text="i"></span></p>
+   225→                                    </div>
+   226→                                </div>
+   227→                            </template>
+   228→                        </div>
+   229→                        <!-- Traffic Simulator -->
+   230→                        <div class="mt-8 bg-dark/80 backdrop-blur border border-white/10 p-4 rounded-2xl">
+   231→                            <div class="flex items-center justify-between mb-2">
+   232→                                <span class="text-xs text-gray-400">Incoming Requests</span>
+   233→                                <span class="text-xs font-mono text-primary">12.4k/sec</span>
+   234→                            </div>
+   235→                            <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+   236→                                <div class="h-full bg-primary animate-[progress_3s_ease-in-out_infinite]" style="width: 65%"></div>
+   237→                            </div>
+   238→                        </div>
+   239→                    </div>
+   240→                </div>
+   241→            </div>
+   242→        </section>
+   243→
+   244→        <!-- Interactive Architecture Explorer -->
+   245→        <section id="architecture" class="py-24 bg-dark/50 relative border-y border-white/5" x-data="{ currentLayer: 'api' }">
+   246→            <div class="max-w-7xl mx-auto px-6">
+   247→                <div class="text-center mb-16">
+   248→                    <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">L'anatomie d'un système résilient</h2>
+   249→                    <p class="text-gray-400 max-w-2xl mx-auto">Explorez les différentes couches de notre architecture type pour comprendre comment nous gérons la charge et la haute disponibilité.</p>
+   250→                </div>
+   251→
+   252→                <div class="grid lg:grid-cols-2 gap-16 items-center">
+   253→                    <!-- Explorer Visual -->
+   254→                    <div class="relative bg-black/40 rounded-[2.5rem] border border-white/10 p-8 h-[500px] flex items-center justify-center">
+   255→                        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#FFF 1px, transparent 1px); background-size: 30px 30px;"></div>
+   256→                        
+   257→                        <div class="flex flex-col space-y-4 w-full max-w-xs transition-all duration-500">
+   258→                            <!-- Layer: Load Balancer -->
+   259→                            <div @click="currentLayer = 'lb'" :class="currentLayer === 'lb' ? 'scale-105 border-primary bg-primary/10' : 'opacity-40 hover:opacity-70'" class="glass-panel p-4 rounded-xl border cursor-pointer transition-all">
+   260→                                <div class="flex items-center space-x-3">
+   261→                                    <div class="p-2 bg-secondary/20 rounded-lg text-secondary">
+   262→                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+   263→                                    </div>
+   264→                                    <span class="font-bold text-sm">Edge / Load Balancing</span>
+   265→                                </div>
+   266→                            </div>
+   267→                            <!-- Layer: API Gateway -->
+   268→                            <div @click="currentLayer = 'api'" :class="currentLayer === 'api' ? 'scale-105 border-primary bg-primary/10' : 'opacity-40 hover:opacity-70'" class="glass-panel p-4 rounded-xl border cursor-pointer transition-all">
+   269→                                <div class="flex items-center space-x-3">
+   270→                                    <div class="p-2 bg-primary/20 rounded-lg text-primary">
+   271→                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+   272→                                    </div>
+   273→                                    <span class="font-bold text-sm">API Gateway & Auth</span>
+   274→                                </div>
+   275→                            </div>
+   276→                            <!-- Layer: Microservices -->
+   277→                            <div @click="currentLayer = 'ms'" :class="currentLayer === 'ms' ? 'scale-105 border-primary bg-primary/10' : 'opacity-40 hover:opacity-70'" class="glass-panel p-4 rounded-xl border cursor-pointer transition-all">
+   278→                                <div class="flex items-center space-x-3">
+   279→                                    <div class="p-2 bg-blue-500/20 rounded-lg text-blue-400">
+   280→                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+   281→                                    </div>
+   282→                                    <span class="font-bold text-sm">Service Mesh (K8s)</span>
+   283→                                </div>
+   284→                            </div>
+   285→                            <!-- Layer: Data -->
+   286→                            <div @click="currentLayer = 'db'" :class="currentLayer === 'db' ? 'scale-105 border-primary bg-primary/10' : 'opacity-40 hover:opacity-70'" class="glass-panel p-4 rounded-xl border cursor-pointer transition-all">
+   287→                                <div class="flex items-center space-x-3">
+   288→                                    <div class="p-2 bg-purple-500/20 rounded-lg text-purple-400">
+   289→                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4m0 5c0 2.21-3.58 4-8 4s-8-1.79-8-4"></path></svg>
+   290→                                    </div>
+   291→                                    <span class="font-bold text-sm">Distributed Persistence</span>
+   292→                                </div>
+   293→                            </div>
+   294→                        </div>
+   295→
+   296→                        <!-- Animated Lines based on selection -->
+   297→                        <div class="absolute inset-0 pointer-events-none">
+   298→                            <svg class="w-full h-full" overflow="visible">
+   299→                                <defs>
+   300→                                    <linearGradient id="grad-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+   301→                                        <stop offset="0%" stop-color="#1BA896" stop-opacity="0" />
+   302→                                        <stop offset="100%" stop-color="#1BA896" stop-opacity="0.5" />
+   303→                                    </linearGradient>
+   304→                                </defs>
+   305→                                <!-- Connections would go here - simplified for brevity -->
+   306→                            </svg>
+   307→                        </div>
+   308→                    </div>
+   309→
+   310→                    <!-- Layer Content -->
+   311→                    <div class="space-y-6">
+   312→                        <div x-show="currentLayer === 'lb'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-x-10">
+   313→                            <h3 class="text-3xl font-bold text-secondary mb-4 italic">Load Balancing Intelligent</h3>
+   314→                            <p class="text-gray-400 leading-relaxed mb-6">Utilisation de Cloudflare Workers ou AWS CloudFront pour distribuer le trafic au plus proche de l'utilisateur. Protection DDoS native et routage intelligent basé sur la latence.</p>
+   315→                            <div class="grid grid-cols-2 gap-4">
+   316→                                <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+   317→                                    <p class="text-xs text-gray-500 mb-1">Stack recommandée</p>
+   318→                                    <p class="text-sm font-bold">Nginx, HAProxy, Envoy</p>
+   319→                                </div>
+   320→                                <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+   321→                                    <p class="text-xs text-gray-500 mb-1">Bénéfice clé</p>
+   322→                                    <p class="text-sm font-bold">Global Availability</p>
+   323→                                </div>
+   324→                            </div>
+   325→                        </div>
+   326→
+   327→                        <div x-show="currentLayer === 'api'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-x-10">
+   328→                            <h3 class="text-3xl font-bold text-primary mb-4 italic">Gateway & Zero Trust</h3>
+   329→                            <p class="text-gray-400 leading-relaxed mb-6">Une couche d'abstraction robuste gérant l'authentification (OAuth2/OIDC), le rate-limiting par client et la transformation des requêtes avant d'atteindre les microservices.</p>
+   330→                            <div class="grid grid-cols-2 gap-4">
+   331→                                <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+   332→                                    <p class="text-xs text-gray-500 mb-1">Stack recommandée</p>
+   333→                                    <p class="text-sm font-bold">Kong, Traefik, Tyk</p>
+   334→                                </div>
+   335→                                <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+   336→                                    <p class="text-xs text-gray-500 mb-1">Bénéfice clé</p>
+   337→                                    <p class="text-sm font-bold">Unified Security</p>
+   338→                                </div>
+   339→                            </div>
+   340→                        </div>
+   341→
+   342→                        <div x-show="currentLayer === 'ms'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-x-10">
+   343→                            <h3 class="text-3xl font-bold text-blue-400 mb-4 italic">Orchestration Microservices</h3>
+   344→                            <p class="text-gray-400 leading-relaxed mb-6">Déploiement conteneurisé sur Kubernetes. Chaque service est isolé, auto-réparable (self-healing) et capable de scaler indépendamment selon la consommation CPU/RAM.</p>
+   345→                            <div class="grid grid-cols-2 gap-4">
+   346→                                <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+   347→                                    <p class="text-xs text-gray-500 mb-1">Stack recommandée</p>
+   348→                                    <p class="text-sm font-bold">K8s, Docker, Istio</p>
+   349→                                </div>
+   350→                                <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+   351→                                    <p class="text-xs text-gray-500 mb-1">Bénéfice clé</p>
+   352→                                    <p class="text-sm font-bold">Fault Tolerance</p>
+   353→                                </div>
+   354→                            </div>
+   355→                        </div>
+   356→
+   357→                        <div x-show="currentLayer === 'db'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-x-10">
+   358→                            <h3 class="text-3xl font-bold text-purple-400 mb-4 italic">Persistence Distribuée</h3>
+   359→                            <p class="text-gray-400 leading-relaxed mb-6">Stratégies de base de données polyglottes : PostgreSQL pour le relationnel, Redis pour le caching ultra-rapide et Elasticsearch pour la recherche full-text.</p>
+   360→                            <div class="grid grid-cols-2 gap-4">
+   361→                                <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+   362→                                    <p class="text-xs text-gray-500 mb-1">Stack recommandée</p>
+   363→                                    <p class="text-sm font-bold">RDS, MongoDB, Kafka</p>
+   364→                                </div>
+   365→                                <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+   366→                                    <p class="text-xs text-gray-500 mb-1">Bénéfice clé</p>
+   367→                                    <p class="text-sm font-bold">Data Integrity</p>
+   368→                                </div>
+   369→                            </div>
+   370→                        </div>
+   371→
+   372→                        <div class="pt-8">
+   373→                            <button class="px-8 py-4 bg-primary text-dark font-bold rounded-xl hover:scale-105 transition-all">
+   374→                                Recevoir le Livre Blanc Architecture
+   375→                            </button>
+   376→                        </div>
+   377→                    </div>
+   378→                </div>
+   379→            </div>
+   380→        </section>
+   381→
+   382→        <!-- Monolith vs Microservices Section -->
+   383→        <section class="py-24 max-w-7xl mx-auto px-6">
+   384→            <div class="grid lg:grid-cols-2 gap-16 items-center">
+   385→                <div class="order-2 lg:order-1">
+   386→                    <div class="code-window overflow-hidden">
+   387→                        <div class="bg-dark/50 px-4 py-2 border-b border-white/10 flex items-center justify-between">
+   388→                            <div class="flex space-x-1.5">
+   389→                                <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
+   390→                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
+   391→                                <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+   392→                            </div>
+   393→                            <span class="text-[10px] font-mono text-gray-500">infrastructure.tf</span>
+   394→                        </div>
+   395→                        <div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto">
+   396→                            <pre class="text-white/80">
+   397→<span class="text-purple-400">resource</span> <span class="text-green-400">"aws_eks_cluster"</span> <span class="text-blue-400">"yodev_prod"</span> {
+   398→  <span class="text-blue-400">name</span>     = <span class="text-orange-400">"production-cluster"</span>
+   399→  <span class="text-blue-400">role_arn</span> = aws_iam_role.eks.arn
+   400→
+   401→  <span class="text-blue-400">vpc_config</span> {
+   402→    <span class="text-blue-400">subnet_ids</span> = [aws_subnet.p1.id, aws_subnet.p2.id]
+   403→  }
+   404→
+   405→  <span class="text-gray-500"># Auto-scaling config</span>
+   406→  <span class="text-blue-400">scaling_config</span> {
+   407→    <span class="text-blue-400">desired_size</span> = <span class="text-orange-400">10</span>
+   408→    <span class="text-blue-400">max_size</span>     = <span class="text-orange-400">100</span>
+   409→    <span class="text-blue-400">min_size</span>     = <span class="text-orange-400">5</span>
+   410→  }
+   411→}</pre>
+   412→                        </div>
+   413→                    </div>
+   414→                </div>
+   415→                <div class="space-y-8 order-1 lg:order-2">
+   416→                    <h2 class="text-4xl font-display font-bold">Pourquoi migrer vers une architecture distribuée ?</h2>
+   417→                    <div class="space-y-6">
+   418→                        <div class="flex items-start space-x-4">
+   419→                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+   420→                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+   421→                            </div>
+   422→                            <div>
+   423→                                <h4 class="font-bold text-lg mb-1">Scalabilité Granulaire</h4>
+   424→                                <p class="text-gray-400 text-sm">Ne payez que pour ce que vous utilisez. Scalez uniquement le module de paiement lors des soldes, pas l'intégralité du site.</p>
+   425→                            </div>
+   426→                        </div>
+   427→                        <div class="flex items-start space-x-4">
+   428→                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+   429→                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+   430→                            </div>
+   431→                            <div>
+   432→                                <h4 class="font-bold text-lg mb-1">Résilience (Blast Radius)</h4>
+   433→                                <p class="text-gray-400 text-sm">Si le service de recommandation tombe, votre tunnel de vente reste opérationnel. L'isolement évite la cascade de pannes.</p>
+   434→                            </div>
+   435→                        </div>
+   436→                        <div class="flex items-start space-x-4">
+   437→                            <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+   438→                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+   439→                            </div>
+   440→                            <div>
+   441→                                <h4 class="font-bold text-lg mb-1">Vélocité de Développement</h4>
+   442→                                <p class="text-gray-400 text-sm">Plusieurs équipes travaillent en parallèle sur des stacks différentes sans se marcher sur les pieds. Déploiements continus (CI/CD) simplifiés.</p>
+   443→                            </div>
+   444→                        </div>
+   445→                    </div>
+   446→                </div>
+   447→            </div>
+   448→        </section>
+   449→
+   450→        <!-- Metrics / Proof Section -->
+   451→        <section class="py-24 bg-primary text-dark overflow-hidden">
+   452→            <div class="max-w-7xl mx-auto px-6">
+   453→                <div class="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+   454→                    <div>
+   455→                        <p class="text-5xl font-black mb-2">99.9%</p>
+   456→                        <p class="text-sm font-bold uppercase tracking-wider opacity-80">Disponibilité garantie</p>
+   457→                    </div>
+   458→                    <div>
+   459→                        <p class="text-5xl font-black mb-2">-70%</p>
+   460→                        <p class="text-sm font-bold uppercase tracking-wider opacity-80">Coûts infra (optimisés)</p>
+   461→                    </div>
+   462→                    <div>
+   463→                        <p class="text-5xl font-black mb-2">150ms</p>
+   464→                        <p class="text-sm font-bold uppercase tracking-wider opacity-80">Temps de réponse p95</p>
+   465→                    </div>
+   466→                    <div>
+   467→                        <p class="text-5xl font-black mb-2">10x</p>
+   468→                        <p class="text-sm font-bold uppercase tracking-wider opacity-80">Fréquence de déploiement</p>
+   469→                    </div>
+   470→                </div>
+   471→            </div>
+   472→        </section>
+   473→
+   474→        <!-- CTA Final -->
+   475→        <section class="py-32 relative overflow-hidden">
+   476→            <div class="hero-glow bottom-0 right-0 opacity-20"></div>
+   477→            <div class="max-w-4xl mx-auto px-6 text-center">
+   478→                <h2 class="text-4xl md:text-6xl font-display font-bold mb-8">Prêt à construire <br> pour le futur ?</h2>
+   479→                <p class="text-xl text-gray-400 mb-12">Ne laissez pas votre architecture technique devenir votre principal frein à la croissance. Discutons de votre migration.</p>
+   480→                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+   481→                    <a href="#" class="px-10 py-5 bg-primary text-dark font-black text-lg rounded-full hover:scale-105 transition-all">
+   482→                        Audit Architecture (Gratuit)
+   483→                    </a>
+   484→                    <a href="#" class="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-all">
+   485→                        Voir nos cas d'études
+   486→                    </a>
+   487→                </div>
+   488→            </div>
+   489→        </section>
+   490→    </main>
+   491→
+   492→    <!-- Footer (Identical to reference for consistency) -->
+   493→    <footer class="bg-dark border-t border-white/5 pt-20 pb-10">
+   494→        <div class="max-w-7xl mx-auto px-6">
+   495→            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+   496→                <div class="space-y-6">
+   497→                    <a href="/" class="flex items-center space-x-2 group">
+   498→                        <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-12 transition-transform">
+   499→                            <span class="text-dark font-black text-lg">Y</span>
+   500→                        </div>
+   501→                        <span class="text-xl font-display font-bold tracking-tight">yodev</span>
+   502→                    </a>
+   503→                    <p class="text-gray-500 text-sm leading-relaxed">
+   504→                        Agence de transformation digitale 360°. <br> Spécialiste Web, Mobile & IA basée à Paris.
+   505→                    </p>
+   506→                </div>
+   507→
+   508→                <div>
+   509→                    <h4 class="font-bold mb-6">Services</h4>
+   510→                    <ul class="space-y-4 text-sm text-gray-500">
+   511→                        <li><a href="#" class="hover:text-primary transition-colors">Modernisation IT</a></li>
+   512→                        <li><a href="#" class="hover:text-primary transition-colors">Intégration LLM / IA</a></li>
+   513→                        <li><a href="#" class="hover:text-primary transition-colors">Architecture Cloud</a></li>
+   514→                        <li><a href="#" class="hover:text-primary transition-colors">Développement SaaS</a></li>
+   515→                    </ul>
+   516→                </div>
+   517→
+   518→                <div>
+   519→                    <h4 class="font-bold mb-6">Agence</h4>
+   520→                    <ul class="space-y-4 text-sm text-gray-500">
+   521→                        <li><a href="#" class="hover:text-primary transition-colors">Nos Réalisations</a></li>
+   522→                        <li><a href="#" class="hover:text-primary transition-colors">Équipe & Culture</a></li>
+   523→                        <li><a href="#" class="hover:text-primary transition-colors">Expertise</a></li>
+   524→                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+   525→                    </ul>
+   526→                </div>
+   527→
+   528→                <div>
+   529→                    <h4 class="font-bold mb-6">Newsletter</h4>
+   530→                    <form class="flex flex-col space-y-2">
+   531→                        <input type="email" placeholder="Votre email" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary">
+   532→                        <button class="bg-primary text-dark font-bold py-3 rounded-xl hover:bg-white transition-colors">S'abonner</button>
+   533→                    </form>
+   534→                </div>
+   535→            </div>
+   536→
+   537→            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500">
+   538→                <p>© 2026 YODEV SAS - Tous droits réservés.</p>
+   539→                <div class="flex space-x-6">
+   540→                    <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+   541→                    <a href="#" class="hover:text-white transition-colors">Confidentialité</a>
+   542→                </div>
+   543→            </div>
+   544→        </div>
+   545→    </footer>
+   546→
+   547→</body>
+   548→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

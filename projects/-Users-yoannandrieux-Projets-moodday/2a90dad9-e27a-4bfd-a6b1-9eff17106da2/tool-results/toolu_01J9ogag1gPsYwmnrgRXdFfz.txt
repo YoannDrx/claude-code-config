@@ -1,0 +1,44 @@
+The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/prd.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    17→  complexity: "medium"
+    18→  projectContext: "greenfield"
+    19→---
+    20→
+    21→# Product Requirements Document - Moodday
+    22→
+    23→**Author:** Yoannandrieux
+    24→**Date:** 2026-01-20
+    25→
+    26→## Executive Summary
+    27→
+    28→### Vision Produit
+    29→
+    30→**Moodday** est un journal clinique digital (PWA) pour les personnes vivant avec des troubles psychiatriques ou en psychothérapie. L'app répond à une question fondamentale : *"Mon traitement fonctionne-t-il ?"*
+    31→
+    32→### Différenciateur Clé
+    33→
+    34→> **"Le témoin objectif et bienveillant"** — Quand le cerveau ment, l'app dit la vérité. Quand la mémoire flanche, l'app se souvient.
+    35→
+    36→Contrairement aux trackers wellness génériques (Daylio, Bearable), Moodday se positionne comme un **carnet de psy digital** avec :
+    37→- Corrélation explicite médicaments ↔ humeur ↔ exercices thérapie
+    38→- Cycle de séance psy (avant/pendant/après)
+    39→- Export PDF pour consultations médicales
+    40→- Philosophie bienveillante (zéro streak guilt)
+    41→
+    42→### Scope MVP
+    43→
+    44→10-12 screens, 8 semaines de développement. Features core : Quick Mood Check, Medication Tracker, Therapy Notes, Exercise Tracker, Courbe 30j, Export PDF.
+    45→
+    46→### Personas Cibles
+    47→
+    48→- **Marie** (34 ans) : Patiente multi-suivis, 3 médicaments, veut voir si son traitement marche
+    49→- **Lucas** (28 ans) : Thérapie seule, veut tracker ses exercices d'exposition et montrer sa progression
+    50→
+    51→*Détails complets : voir [User Journeys](#user-journeys) et [Product Scope](#product-scope)*
+    52→
+    53→---
+    54→
+    55→## Success Criteria
+    56→
+    57→### User Success
+    58→
+    59→**Pour Marie (patiente multi-suivis):**

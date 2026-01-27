@@ -1,0 +1,54 @@
+    85→                  style={{ maxWidth: logo.size === "large" ? "350px" : "220px" }}
+    86→                />
+    87→              </span>
+    88→              <span className="w-2 h-2 md:w-3 md:h-3 bg-neo-accent block rounded-full shrink-0" />
+    89→            </span>
+    90→          ))}
+    91→        </div>
+    92→      </div>
+    93→    );
+    94→  }
+    95→
+    96→  // Original text mode
+    97→  const displayItems = items?.length ? items : [""];
+    98→
+    99→  return (
+   100→    <div className="relative flex overflow-hidden border-y-4 border-neo-border bg-neo-surface py-4 select-none">
+   101→      <div
+   102→        className="flex animate-marquee font-black text-4xl md:text-8xl uppercase tracking-tighter text-neo-text"
+   103→        style={{
+   104→          animationDirection: direction === 1 ? "normal" : "reverse",
+   105→          animationDuration: `${speed}s`,
+   106→        }}
+   107→      >
+   108→        {displayItems.map((item, index) => (
+   109→          <span key={`first-${item}-${index}`} className="flex items-center shrink-0">
+   110→            <span className="mx-4 md:mx-8 whitespace-nowrap">{item}</span>
+   111→            <span className="w-4 h-4 md:w-8 md:h-8 bg-neo-accent block rounded-full shrink-0" />
+   112→          </span>
+   113→        ))}
+   114→      </div>
+   115→      {/* Duplicate for seamless loop */}
+   116→      <div
+   117→        className="flex animate-marquee font-black text-4xl md:text-8xl uppercase tracking-tighter text-neo-text"
+   118→        aria-hidden="true"
+   119→        style={{
+   120→          animationDirection: direction === 1 ? "normal" : "reverse",
+   121→          animationDuration: `${speed}s`,
+   122→        }}
+   123→      >
+   124→        {displayItems.map((item, index) => (
+   125→          <span key={`second-${item}-${index}`} className="flex items-center shrink-0">
+   126→            <span className="mx-4 md:mx-8 whitespace-nowrap">{item}</span>
+   127→            <span className="w-4 h-4 md:w-8 md:h-8 bg-neo-accent block rounded-full shrink-0" />
+   128→          </span>
+   129→        ))}
+   130→      </div>
+   131→    </div>
+   132→  );
+   133→};
+   134→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

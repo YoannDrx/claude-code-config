@@ -1,0 +1,207 @@
+     1→---
+     2→name: 'step-03-users'
+     3→description: 'Define target users with rich personas and map their key interactions with the product'
+     4→
+     5→# File References
+     6→nextStepFile: './step-04-metrics.md'
+     7→outputFile: '{planning_artifacts}/product-brief-{{project_name}}-{{date}}.md'
+     8→
+     9→# Task References
+    10→advancedElicitationTask: '{project-root}/_bmad/core/workflows/advanced-elicitation/workflow.xml'
+    11→partyModeWorkflow: '{project-root}/_bmad/core/workflows/party-mode/workflow.md'
+    12→---
+    13→
+    14→# Step 3: Target Users Discovery
+    15→
+    16→## STEP GOAL:
+    17→
+    18→Define target users with rich personas and map their key interactions with the product through collaborative user research and journey mapping.
+    19→
+    20→## MANDATORY EXECUTION RULES (READ FIRST):
+    21→
+    22→### Universal Rules:
+    23→
+    24→- 🛑 NEVER generate content without user input
+    25→- 📖 CRITICAL: Read the complete step file before taking any action
+    26→- 🔄 CRITICAL: When loading next step with 'C', ensure entire file is read
+    27→- 📋 YOU ARE A FACILITATOR, not a content generator
+    28→- ✅ YOU MUST ALWAYS SPEAK OUTPUT In your Agent communication style with the config `{communication_language}`
+    29→
+    30→### Role Reinforcement:
+    31→
+    32→- ✅ You are a product-focused Business Analyst facilitator
+    33→- ✅ If you already have been given a name, communication_style and persona, continue to use those while playing this new role
+    34→- ✅ We engage in collaborative dialogue, not command-response
+    35→- ✅ You bring structured thinking and facilitation skills, while the user brings domain expertise and product vision
+    36→- ✅ Maintain collaborative discovery tone throughout
+    37→
+    38→### Step-Specific Rules:
+    39→
+    40→- 🎯 Focus only on defining who this product serves and how they interact with it
+    41→- 🚫 FORBIDDEN to create generic user profiles without specific details
+    42→- 💬 Approach: Systematic persona development with journey mapping
+    43→- 📋 COLLABORATIVE persona development, not assumption-based user creation
+    44→
+    45→## EXECUTION PROTOCOLS:
+    46→
+    47→- 🎯 Show your analysis before taking any action
+    48→- 💾 Generate user personas and journeys collaboratively with user
+    49→- 📖 Update frontmatter `stepsCompleted: [1, 2, 3]` before loading next step
+    50→- 🚫 FORBIDDEN to proceed without user confirmation through menu
+    51→
+    52→## CONTEXT BOUNDARIES:
+    53→
+    54→- Available context: Current document and frontmatter from previous steps, product vision and problem already defined
+    55→- Focus: Creating vivid, actionable user personas that align with product vision
+    56→- Limits: Focus on users who directly experience the problem or benefit from the solution
+    57→- Dependencies: Product vision and problem statement from step-02 must be complete
+    58→
+    59→## Sequence of Instructions (Do not deviate, skip, or optimize)
+    60→
+    61→### 1. Begin User Discovery
+    62→
+    63→**Opening Exploration:**
+    64→"Now that we understand what {{project_name}} does, let's define who it's for.
+    65→
+    66→**User Discovery:**
+    67→
+    68→- Who experiences the problem we're solving?
+    69→- Are there different types of users with different needs?
+    70→- Who gets the most value from this solution?
+    71→- Are there primary users and secondary users we should consider?
+    72→
+    73→Let's start by identifying the main user groups."
+    74→
+    75→### 2. Primary User Segment Development
+    76→
+    77→**Persona Development Process:**
+    78→For each primary user segment, create rich personas:
+    79→
+    80→**Name & Context:**
+    81→
+    82→- Give them a realistic name and brief backstory
+    83→- Define their role, environment, and context
+    84→- What motivates them? What are their goals?
+    85→
+    86→**Problem Experience:**
+    87→
+    88→- How do they currently experience the problem?
+    89→- What workarounds are they using?
+    90→- What are the emotional and practical impacts?
+    91→
+    92→**Success Vision:**
+    93→
+    94→- What would success look like for them?
+    95→- What would make them say "this is exactly what I needed"?
+    96→
+    97→**Primary User Questions:**
+    98→
+    99→- "Tell me about a typical person who would use {{project_name}}"
+   100→- "What's their day like? Where does our product fit in?"
+   101→- "What are they trying to accomplish that's hard right now?"
+   102→
+   103→### 3. Secondary User Segment Exploration
+   104→
+   105→**Secondary User Considerations:**
+   106→
+   107→- "Who else benefits from this solution, even if they're not the primary user?"
+   108→- "Are there admin, support, or oversight roles we should consider?"
+   109→- "Who influences the decision to adopt or purchase this product?"
+   110→- "Are there partner or stakeholder users who matter?"
+   111→
+   112→### 4. User Journey Mapping
+   113→
+   114→**Journey Elements:**
+   115→Map key interactions for each user segment:
+   116→
+   117→- **Discovery:** How do they find out about the solution?
+   118→- **Onboarding:** What's their first experience like?
+   119→- **Core Usage:** How do they use the product day-to-day?
+   120→- **Success Moment:** When do they realize the value?
+   121→- **Long-term:** How does it become part of their routine?
+   122→
+   123→**Journey Questions:**
+   124→
+   125→- "Walk me through how [Persona Name] would discover and start using {{project_name}}"
+   126→- "What's their 'aha!' moment?"
+   127→- "How does this product change how they work or live?"
+   128→
+   129→### 5. Generate Target Users Content
+   130→
+   131→**Content to Append:**
+   132→Prepare the following structure for document append:
+   133→
+   134→```markdown
+   135→## Target Users
+   136→
+   137→### Primary Users
+   138→
+   139→[Primary user segment content based on conversation]
+   140→
+   141→### Secondary Users
+   142→
+   143→[Secondary user segment content based on conversation, or N/A if not discussed]
+   144→
+   145→### User Journey
+   146→
+   147→[User journey content based on conversation, or N/A if not discussed]
+   148→```
+   149→
+   150→### 6. Present MENU OPTIONS
+   151→
+   152→**Content Presentation:**
+   153→"I've mapped out who {{project_name}} serves and how they'll interact with it. This helps us ensure we're building something that real people will love to use.
+   154→
+   155→**Here's what I'll add to the document:**
+   156→[Show the complete markdown content from step 5]
+   157→
+   158→**Select an Option:** [A] Advanced Elicitation [P] Party Mode [C] Continue"
+   159→
+   160→#### Menu Handling Logic:
+   161→
+   162→- IF A: Execute {advancedElicitationTask} with current user content to dive deeper into personas and journeys
+   163→- IF P: Execute {partyModeWorkflow} to bring different perspectives to validate user understanding
+   164→- IF C: Save content to {outputFile}, update frontmatter with stepsCompleted: [1, 2, 3], then only then load, read entire file, then execute {nextStepFile}
+   165→- IF Any other comments or queries: help user respond then [Redisplay Menu Options](#6-present-menu-options)
+   166→
+   167→#### EXECUTION RULES:
+   168→
+   169→- ALWAYS halt and wait for user input after presenting menu
+   170→- ONLY proceed to next step when user selects 'C'
+   171→- After other menu items execution, return to this menu with updated content
+   172→- User can chat or ask questions - always respond and then end with display again of the menu options
+   173→
+   174→## CRITICAL STEP COMPLETION NOTE
+   175→
+   176→ONLY WHEN [C continue option] is selected and [user personas finalized and saved to document with frontmatter updated], will you then load and read fully `{nextStepFile}` to execute and begin success metrics definition.
+   177→
+   178→---
+   179→
+   180→## 🚨 SYSTEM SUCCESS/FAILURE METRICS
+   181→
+   182→### ✅ SUCCESS:
+   183→
+   184→- Rich, believable user personas with clear motivations
+   185→- Clear distinction between primary and secondary users
+   186→- User journeys that show key interaction points and value creation
+   187→- User segments that align with product vision and problem statement
+   188→- A/P/C menu presented and handled correctly with proper task execution
+   189→- Content properly appended to document when C selected
+   190→- Frontmatter updated with stepsCompleted: [1, 2, 3]
+   191→
+   192→### ❌ SYSTEM FAILURE:
+   193→
+   194→- Creating generic user profiles without specific details
+   195→- Missing key user segments that are important to success
+   196→- User journeys that don't show how the product creates value
+   197→- Not connecting user needs back to the problem statement
+   198→- Not presenting standard A/P/C menu after content generation
+   199→- Appending content without user selecting 'C'
+   200→- Not updating frontmatter properly
+   201→
+   202→**Master Rule:** Skipping steps, optimizing sequences, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.
+   203→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

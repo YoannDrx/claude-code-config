@@ -1,0 +1,302 @@
+     1→import { AUTH_PLANS } from "@/lib/auth/stripe/auth-plans";
+     2→import { env } from "@/lib/env";
+     3→import { logger } from "@/lib/logger";
+     4→import { prisma } from "@/lib/prisma";
+     5→import { stripe } from "@/lib/stripe";
+     6→import { headers } from "next/headers";
+     7→import type { NextRequest } from "next/server";
+     8→import { NextResponse } from "next/server";
+     9→import type Stripe from "stripe";
+    10→export const maxDuration = 300;
+    11→
+    12→// Utility function to get plan from subscription metadata
+    13→const getPlanFromSubscription = (subscription: Stripe.Subscription) => {
+    14→  const planName = subscription.metadata.plan;
+    15→  if (!planName) return null;
+    16→
+    17→  return AUTH_PLANS.find((p) => p.name === planName);
+    18→};
+    19→
+    20→export const POST = async (req: NextRequest) => {
+    21→  const headerList = await headers();
+    22→  const body = await req.text();
+    23→
+    24→  const stripeSignature = headerList.get("stripe-signature");
+    25→
+    26→  let event: Stripe.Event | null = null;
+    27→  try {
+    28→    event = stripe.webhooks.constructEvent(
+    29→      body,
+    30→      stripeSignature ?? "",
+    31→      env.STRIPE_WEBHOOK_SECRET ?? "",
+    32→    );
+    33→  } catch (err: unknown) {
+    34→    logger.error("Stripe webhook signature verification failed:", err);
+    35→    return NextResponse.json(
+    36→      { error: "Invalid Stripe webhook signature", details: err },
+    37→      { status: 400 },
+    38→    );
+    39→  }
+    40→
+    41→  try {
+    42→    switch (event.type) {
+    43→      case "checkout.session.completed":
+    44→        await checkoutSessionCompleted(event.data.object, req);
+    45→        break;
+    46→      case "customer.subscription.updated":
+    47→        await customerSubscriptionUpdated(event.data.object, req);
+    48→        break;
+    49→      case "customer.subscription.deleted":
+    50→        await customerSubscriptionDeleted(event.data.object, req);
+    51→        break;
+    52→      default:
+    53→        logger.error(`Unhandled event type: ${event.type}`);
+    54→        break;
+    55→    }
+    56→  } catch (error) {
+    57→    logger.error(`Error handling webhook event ${event.type}:`, error);
+    58→    return NextResponse.json(
+    59→      { error: "Webhook handler failed", eventType: event.type },
+    60→      { status: 500 },
+    61→    );
+    62→  }
+    63→
+    64→  return NextResponse.json({
+    65→    ok: true,
+    66→  });
+    67→};
+    68→
+    69→const checkoutSessionCompleted = async (
+    70→  sessionData: Stripe.Checkout.Session,
+    71→  req: NextRequest,
+    72→) => {
+    73→  const session = sessionData;
+    74→
+    75→  if (!session.customer || !session.subscription) {
+    76→    logger.warn("Missing customer or subscription in checkout session");
+    77→    return;
+    78→  }
+    79→
+    80→  const customerId =
+    81→    typeof session.customer === "string"
+    82→      ? session.customer
+    83→      : session.customer.id;
+    84→  const subscriptionId =
+    85→    typeof session.subscription === "string"
+    86→      ? session.subscription
+    87→      : session.subscription.id;
+    88→
+    89→  // Find user by Stripe customer ID
+    90→  const user = await prisma.user.findFirst({
+    91→    where: { stripeCustomerId: customerId },
+    92→  });
+    93→
+    94→  if (!user) {
+    95→    logger.error(`User not found for customer ID: ${customerId}`);
+    96→    return;
+    97→  }
+    98→
+    99→  // Get the subscription from Stripe to get the price details
+   100→  const stripeSubscription =
+   101→    await stripe.subscriptions.retrieve(subscriptionId);
+   102→  const priceId = stripeSubscription.items.data[0]?.price.id;
+   103→
+   104→  if (!priceId) {
+   105→    logger.error(`No price ID found for subscription: ${subscriptionId}`);
+   106→    return;
+   107→  }
+   108→
+   109→  // Get plan from subscription metadata
+   110→  const plan = getPlanFromSubscription(stripeSubscription);
+   111→  if (!plan) {
+   112→    logger.error(`Plan not found in subscription metadata: ${subscriptionId}`);
+   113→    return;
+   114→  }
+   115→
+   116→  // Create or update subscription
+   117→  const existingSubscription = await prisma.subscription.findFirst({
+   118→    where: { referenceId: user.id },
+   119→  });
+   120→
+   121→  let dbSubscription;
+   122→  if (existingSubscription) {
+   123→    dbSubscription = await prisma.subscription.update({
+   124→      where: { id: existingSubscription.id },
+   125→      data: {
+   126→        plan: plan.name,
+   127→        stripeCustomerId: customerId,
+   128→        stripeSubscriptionId: subscriptionId,
+   129→        status: stripeSubscription.status,
+   130→        periodStart: new Date(
+   131→          stripeSubscription.items.data[0].current_period_start * 1000,
+   132→        ),
+   133→        periodEnd: new Date(
+   134→          stripeSubscription.items.data[0].current_period_end * 1000,
+   135→        ),
+   136→        cancelAtPeriodEnd: stripeSubscription.cancel_at_period_end,
+   137→      },
+   138→    });
+   139→  } else {
+   140→    dbSubscription = await prisma.subscription.create({
+   141→      data: {
+   142→        id: `sub_${Date.now()}`,
+   143→        plan: plan.name,
+   144→        referenceId: user.id,
+   145→        stripeCustomerId: customerId,
+   146→        stripeSubscriptionId: subscriptionId,
+   147→        status: stripeSubscription.status,
+   148→        periodStart: new Date(
+   149→          stripeSubscription.items.data[0].current_period_start * 1000,
+   150→        ),
+   151→        periodEnd: new Date(
+   152→          stripeSubscription.items.data[0].current_period_end * 1000,
+   153→        ),
+   154→        cancelAtPeriodEnd: stripeSubscription.cancel_at_period_end,
+   155→      },
+   156→    });
+   157→  }
+   158→
+   159→  // Call onTrialStart if this is a trial subscription
+   160→  if (
+   161→    stripeSubscription.status === "trialing" &&
+   162→    plan.freeTrial?.onTrialStart
+   163→  ) {
+   164→    await plan.freeTrial.onTrialStart(dbSubscription, {
+   165→      req,
+   166→      userId: user.id,
+   167→      stripeCustomerId: customerId,
+   168→      subscriptionId: subscriptionId,
+   169→    });
+   170→  }
+   171→
+   172→  logger.info(
+   173→    `Subscription created/updated for user: ${user.id}, plan: ${plan.name}`,
+   174→  );
+   175→};
+   176→
+   177→const customerSubscriptionUpdated = async (
+   178→  subscriptionData: Stripe.Subscription,
+   179→  req: NextRequest,
+   180→) => {
+   181→  const subscription = subscriptionData;
+   182→
+   183→  logger.info("Processing customer.subscription.updated:", subscription.id);
+   184→
+   185→  // Find the subscription in our database
+   186→  const dbSubscription = await prisma.subscription.findFirst({
+   187→    where: { stripeSubscriptionId: subscription.id },
+   188→  });
+   189→
+   190→  if (!dbSubscription) {
+   191→    logger.error(`Subscription not found in database: ${subscription.id}`);
+   192→    return;
+   193→  }
+   194→
+   195→  // Get plan from subscription metadata
+   196→  const plan = getPlanFromSubscription(subscription);
+   197→  const planName = plan?.name ?? dbSubscription.plan; // Keep current plan as fallback
+   198→
+   199→  // Update subscription details
+   200→  const updatedSubscription = await prisma.subscription.update({
+   201→    where: { id: dbSubscription.id },
+   202→    data: {
+   203→      plan: planName,
+   204→      status: subscription.status,
+   205→      periodStart: new Date(
+   206→        subscription.items.data[0].current_period_start * 1000,
+   207→      ),
+   208→      periodEnd: new Date(subscription.items.data[0].current_period_end * 1000),
+   209→      cancelAtPeriodEnd: subscription.cancel_at_period_end,
+   210→    },
+   211→  });
+   212→
+   213→  // Handle trial transitions
+   214→  if (plan?.freeTrial) {
+   215→    // Trial ended and became active
+   216→    if (
+   217→      subscription.status === "active" &&
+   218→      dbSubscription.status === "trialing" &&
+   219→      plan.freeTrial.onTrialEnd
+   220→    ) {
+   221→      await plan.freeTrial.onTrialEnd(
+   222→        { subscription: updatedSubscription },
+   223→        {
+   224→          req,
+   225→          userId: updatedSubscription.referenceId,
+   226→          stripeCustomerId: subscription.customer as string,
+   227→          subscriptionId: subscription.id,
+   228→        },
+   229→      );
+   230→    }
+   231→
+   232→    // Trial expired
+   233→    if (
+   234→      subscription.status === "incomplete_expired" &&
+   235→      dbSubscription.status === "trialing" &&
+   236→      plan.freeTrial.onTrialExpired
+   237→    ) {
+   238→      await plan.freeTrial.onTrialExpired(updatedSubscription, {
+   239→        req,
+   240→        userId: updatedSubscription.referenceId,
+   241→        stripeCustomerId: subscription.customer as string,
+   242→        subscriptionId: subscription.id,
+   243→      });
+   244→    }
+   245→  }
+   246→
+   247→  logger.info(
+   248→    `Subscription updated: ${subscription.id}, status: ${subscription.status}, plan: ${planName}`,
+   249→  );
+   250→};
+   251→
+   252→const customerSubscriptionDeleted = async (
+   253→  subscriptionData: Stripe.Subscription,
+   254→  req: NextRequest,
+   255→) => {
+   256→  const subscription = subscriptionData;
+   257→
+   258→  logger.info("Processing customer.subscription.deleted:", subscription.id);
+   259→
+   260→  // Find and update the subscription status
+   261→  const dbSubscription = await prisma.subscription.findFirst({
+   262→    where: { stripeSubscriptionId: subscription.id },
+   263→  });
+   264→
+   265→  if (!dbSubscription) {
+   266→    logger.error(`Subscription not found in database: ${subscription.id}`);
+   267→    return;
+   268→  }
+   269→
+   270→  // Get plan from subscription metadata
+   271→  const plan = getPlanFromSubscription(subscription);
+   272→
+   273→  // Update subscription to canceled/free plan
+   274→  const updatedSubscription = await prisma.subscription.update({
+   275→    where: { id: dbSubscription.id },
+   276→    data: {
+   277→      plan: "free",
+   278→      status: "canceled",
+   279→      cancelAtPeriodEnd: false,
+   280→      periodEnd: new Date(), // Set to current time since it's canceled
+   281→    },
+   282→  });
+   283→
+   284→  // Call onSubscriptionCanceled if available
+   285→  if (plan?.onSubscriptionCanceled) {
+   286→    await plan.onSubscriptionCanceled(updatedSubscription, {
+   287→      req,
+   288→      userId: updatedSubscription.referenceId,
+   289→      stripeCustomerId: subscription.customer as string,
+   290→      subscriptionId: subscription.id,
+   291→    });
+   292→  }
+   293→
+   294→  logger.info(
+   295→    `Subscription canceled and reverted to free plan: ${subscription.id}`,
+   296→  );
+   297→};
+   298→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

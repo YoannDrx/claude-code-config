@@ -1,0 +1,39 @@
+     1→import type { NavigationGroup } from "@/features/navigation/navigation.type";
+     2→import { Home, MessageSquare, Users } from "lucide-react";
+     3→
+     4→const ADMIN_PATH = `/admin`;
+     5→
+     6→type Translator = (
+     7→  key: string,
+     8→  values?: Record<string, string | number>,
+     9→) => string;
+    10→
+    11→export const getAdminNavigation = (t: Translator): NavigationGroup[] => {
+    12→  return [
+    13→    {
+    14→      title: t("admin.nav.section"),
+    15→      links: [
+    16→        {
+    17→          href: ADMIN_PATH,
+    18→          Icon: Home,
+    19→          label: t("nav.dashboard"),
+    20→        },
+    21→        {
+    22→          href: `${ADMIN_PATH}/users`,
+    23→          Icon: Users,
+    24→          label: t("admin.users.title"),
+    25→        },
+    26→        {
+    27→          href: `${ADMIN_PATH}/feedback`,
+    28→          Icon: MessageSquare,
+    29→          label: t("admin.feedback.title"),
+    30→        },
+    31→      ],
+    32→    },
+    33→  ];
+    34→};
+    35→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

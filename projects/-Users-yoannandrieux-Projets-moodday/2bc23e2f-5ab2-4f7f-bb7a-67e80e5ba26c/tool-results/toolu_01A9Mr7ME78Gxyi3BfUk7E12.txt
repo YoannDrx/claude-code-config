@@ -1,0 +1,138 @@
+     1→# BMM Workflow Status - Moodday
+     2→# Generated: 2026-01-20
+     3→# Track: BMad Method (Greenfield)
+     4→
+     5→generated: "2026-01-20"
+     6→project: "moodday"
+     7→project_type: "Micro-SaaS santé mentale - Mood & Medication Tracker"
+     8→selected_track: "bmad-method"
+     9→field_type: "greenfield"
+    10→workflow_path: "method-greenfield.yaml"
+    11→
+    12→# Project Context (from user input)
+    13→project_description: |
+    14→  Moodday est un journal clinique-friendly (PWA) pour les personnes vivant avec
+    15→  des troubles psychiatriques (TDAH, bipolarité, dépression, anxiété).
+    16→
+    17→  Fonctionnalités clés:
+    18→  - Suivi quotidien humeur (0-10) + énergie + sommeil
+    19→  - Gestion médicamenteuse (régulier + PRN)
+    20→  - Collaboration aidant/professionnel avec permissions granulaires
+    21→  - Export PDF pour consultations psy
+    22→  - IA pour détecter les patterns (sans diagnostic)
+    23→  - 18 screens planifiés pour MVP (12 semaines)
+    24→
+    25→# Workflow Status Tracking
+    26→workflow_status:
+    27→
+    28→  # ═══════════════════════════════════════════════════════════════
+    29→  # PHASE 1: ANALYSIS (Optional - User Selected)
+    30→  # ═══════════════════════════════════════════════════════════════
+    31→  phase_1_analysis:
+    32→    name: "Analysis"
+    33→    status: "pending"
+    34→
+    35→    workflows:
+    36→      - id: "brainstorm-project"
+    37→        name: "Brainstorming"
+    38→        status: "_bmad-output/analysis/brainstorming-session-2026-01-20.md"
+    39→        agent: "analyst"
+    40→        command: "/bmad:core:workflows:brainstorming"
+    41→        note: "✅ Complété - 40 idées, 5 concepts MVP, cadre validé"
+    42→
+    43→      - id: "research"
+    44→        name: "Research"
+    45→        status: "optional"  # User selected: included
+    46→        agent: "analyst"
+    47→        command: "/bmad:bmm:workflows:research"
+    48→        note: "Analyse technique/concurrentielle"
+    49→
+    50→      - id: "product-brief"
+    51→        name: "Product Brief"
+    52→        status: "_bmad-output/planning-artifacts/product-brief-moodday-2026-01-20.md"
+    53→        agent: "analyst"
+    54→        command: "/bmad:bmm:workflows:create-product-brief"
+    55→        note: "✅ Complété - Vision, Personas, Métriques, Scope MVP définis"
+    56→
+    57→  # ═══════════════════════════════════════════════════════════════
+    58→  # PHASE 2: PLANNING (Required)
+    59→  # ═══════════════════════════════════════════════════════════════
+    60→  phase_2_planning:
+    61→    name: "Planning"
+    62→    status: "pending"
+    63→
+    64→    workflows:
+    65→      - id: "prd"
+    66→        name: "Product Requirements Document"
+    67→        status: "_bmad-output/planning-artifacts/prd.md"
+    68→        agent: "pm"
+    69→        command: "/bmad:bmm:workflows:prd"
+    70→        note: "✅ Complété - Executive Summary, 44 FRs, 23 NFRs, 4 User Journeys"
+    71→
+    72→      - id: "create-ux-design"
+    73→        name: "UX Design"
+    74→        status: "_bmad-output/planning-artifacts/ux-design-specification.md"
+    75→        agent: "ux-designer"
+    76→        command: "/bmad:bmm:workflows:create-ux-design"
+    77→        note: "✅ Complété - 14 étapes, Glass-morphism, WCAG AA, Mobile-first PWA"
+    78→
+    79→  # ═══════════════════════════════════════════════════════════════
+    80→  # PHASE 3: SOLUTIONING (Required)
+    81→  # ═══════════════════════════════════════════════════════════════
+    82→  phase_3_solutioning:
+    83→    name: "Solutioning"
+    84→    status: "pending"
+    85→
+    86→    workflows:
+    87→      - id: "create-architecture"
+    88→        name: "System Architecture"
+    89→        status: "_bmad-output/planning-artifacts/architecture.md"
+    90→        agent: "architect"
+    91→        command: "/bmad:bmm:workflows:create-architecture"
+    92→        note: "✅ Complété - 8 étapes, Stack validée, 100% coverage"
+    93→
+    94→      - id: "create-epics-and-stories"
+    95→        name: "Epics & Stories"
+    96→        status: "_bmad-output/planning-artifacts/epics.md"
+    97→        agent: "pm"
+    98→        command: "/bmad:bmm:workflows:create-epics-and-stories"
+    99→        note: "✅ Complété - 8 Epics, 42 Stories, 100% FR coverage"
+   100→
+   101→      - id: "test-design"
+   102→        name: "Test Design"
+   103→        status: "optional"
+   104→        agent: "tea"
+   105→        command: "/bmad:bmm:workflows:testarch-test-design"
+   106→        output: "Review testabilité système"
+   107→
+   108→      - id: "implementation-readiness"
+   109→        name: "Implementation Readiness Check"
+   110→        status: "_bmad-output/planning-artifacts/implementation-readiness-report.md"
+   111→        agent: "architect"
+   112→        command: "/bmad:bmm:workflows:check-implementation-readiness"
+   113→        note: "✅ Complété - READY, 0 critical, 0 major, 5 minor issues"
+   114→
+   115→  # ═══════════════════════════════════════════════════════════════
+   116→  # PHASE 4: IMPLEMENTATION (Required)
+   117→  # ═══════════════════════════════════════════════════════════════
+   118→  phase_4_implementation:
+   119→    name: "Implementation"
+   120→    status: "pending"
+   121→
+   122→    workflows:
+   123→      - id: "sprint-planning"
+   124→        name: "Sprint Planning"
+   125→        status: "required"
+   126→        agent: "sm"
+   127→        command: "/bmad:bmm:workflows:sprint-planning"
+   128→        note: "Crée le sprint plan - suivi dans sprint-status.yaml"
+   129→
+   130→# Next Action
+   131→next_workflow: "sprint-planning"
+   132→next_agent: "sm"
+   133→next_command: "/bmad:bmm:workflows:sprint-planning"
+   134→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

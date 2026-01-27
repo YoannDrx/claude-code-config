@@ -1,0 +1,52 @@
+     1→import { auth } from "@/lib/auth";
+     2→import { SiteConfig } from "@/site-config";
+     3→import { getSessionCookie } from "better-auth/cookies";
+     4→import type { NextRequest } from "next/server";
+     5→import { NextResponse } from "next/server";
+     6→
+     7→export const handleRootRedirect = (request: NextRequest) => {
+     8→  if (!SiteConfig.features.enableLandingRedirection) return null;
+     9→
+    10→  const session = getSessionCookie(request, {
+    11→    cookiePrefix: SiteConfig.appId,
+    12→  });
+    13→
+    14→  if (!session) return null;
+    15→
+    16→  const url = request.nextUrl.clone();
+    17→  url.pathname = "/app";
+    18→  return NextResponse.redirect(url);
+    19→};
+    20→
+    21→export const isAppRoute = (pathname: string) => {
+    22→  return pathname.startsWith("/app/app");
+    23→};
+    24→
+    25→export const isAdminRoute = (pathname: string) => {
+    26→  return pathname.startsWith("/app/admin");
+    27→};
+    28→
+    29→export const validateSession = async (request: NextRequest) => {
+    30→  const session = await auth.api.getSession({ headers: request.headers });
+    31→
+    32→  if (!session?.session.userId) return null;
+    33→
+    34→  return session;
+    35→};
+    36→
+    37→export const redirectToSignIn = (request: NextRequest) => {
+    38→  const url = request.nextUrl.clone();
+    39→  url.pathname = "/auth/signin";
+    40→  return NextResponse.redirect(url);
+    41→};
+    42→
+    43→export const redirectToUnauthorized = (request: NextRequest) => {
+    44→  const url = request.nextUrl.clone();
+    45→  url.pathname = "/unauthorized";
+    46→  return NextResponse.redirect(url);
+    47→};
+    48→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

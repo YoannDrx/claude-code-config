@@ -1,0 +1,60 @@
+### Epic 5: Insights & Visualization
+Les utilisateurs peuvent visualiser leur courbe d'humeur sur 30 jours avec les marqueurs de changement de dosage, et voir les patterns/tendances.
+
+**FRs covered:** FR28, FR29, FR30, FR31
+**Includes:** MoodChart (Recharts), Dashboard agrégé, InsightCard
+
+---
+
+### Epic 6: Export for Consultation
+Les utilisateurs peuvent générer un PDF optimisé pour montrer à leur psychiatre/psychologue lors des consultations.
+
+**FRs covered:** FR32, FR33, FR34
+**Includes:** @react-pdf/renderer, date range selector
+
+---
+
+### Epic 7: Personalization & Onboarding
+Les utilisateurs peuvent personnaliser leurs préférences (notifications, affichage) et découvrir l'app via un onboarding bienveillant avec setup médicaments.
+
+**FRs covered:** FR35, FR36, FR37, FR42, FR43, FR44
+**Includes:** Settings page, Onboarding wizard
+
+---
+
+### Epic 8: PWA & Offline Experience
+Les utilisateurs peuvent installer l'app sur leur home screen et l'utiliser complètement hors ligne avec synchronisation automatique au retour.
+
+**FRs covered:** FR38, FR39, FR40, FR41
+**Includes:** Serwist setup, Dexie.js offline store, SyncIndicator
+
+---
+
+## Stories
+
+### Epic 1: Foundation & Authentication
+
+#### Story 1.1: Project Setup from Boilerplate
+**En tant qu'** équipe de développement,
+**Je veux** initialiser le projet Moodday à partir du boilerplate light-ts existant,
+**Afin de** disposer d'une base solide avec auth, DB et design system déjà configurés.
+
+**FRs:** Prérequis pour FR1-FR6
+**Points:** 2
+
+**Acceptance Criteria:**
+- [ ] Projet cloné et renommé "moodday"
+- [ ] Variables d'environnement configurées (DATABASE_URL, AUTH secrets)
+- [ ] `pnpm install` et `pnpm dev` fonctionnent
+- [ ] Page d'accueil accessible sur localhost:3000
+- [ ] Better Auth configuré avec providers (Email, Google, GitHub)
+
+--
+### Epic 5: Insights & Visualization
+
+#### Story 5.1: MoodChart Component (30 Days)
+**En tant qu'** utilisateur,
+**Je veux** voir une courbe de mon humeur sur les 30 derniers jours,
+**Afin de** visualiser les tendances et patterns.
+
+**FRs:** FR28

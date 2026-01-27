@@ -1,0 +1,260 @@
+eslint (22.x)	Run linter	﻿2026-01-26T13:45:01.8902005Z ##[group]Run pnpm lint:ci
+eslint (22.x)	Run linter	2026-01-26T13:45:01.8902328Z [36;1mpnpm lint:ci[0m
+eslint (22.x)	Run linter	2026-01-26T13:45:01.8934797Z shell: /usr/bin/bash -e {0}
+eslint (22.x)	Run linter	2026-01-26T13:45:01.8935028Z env:
+eslint (22.x)	Run linter	2026-01-26T13:45:01.8935257Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+eslint (22.x)	Run linter	2026-01-26T13:45:01.8935547Z   CI: true
+eslint (22.x)	Run linter	2026-01-26T13:45:01.8935709Z ##[endgroup]
+eslint (22.x)	Run linter	2026-01-26T13:45:02.4639662Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:02.4695181Z > nowts@0.1.0 lint:ci /home/runner/work/choosewisely/choosewisely
+eslint (22.x)	Run linter	2026-01-26T13:45:02.4697491Z > eslint .
+eslint (22.x)	Run linter	2026-01-26T13:45:02.4705330Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4548553Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4549641Z /home/runner/work/choosewisely/choosewisely/__tests__/features/map/hooks/useTravelTime.test.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4588345Z ##[error]  111:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4613686Z ##[error]  156:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4616061Z ##[error]  192:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4618894Z ##[error]  234:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4621137Z ##[error]  281:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4623674Z ##[error]  306:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4625962Z ##[error]  377:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4627201Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4627836Z /home/runner/work/choosewisely/choosewisely/__tests__/lib/services/dpe/client.test.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4631110Z ##[warning]   6:3   warning  'DPE' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                 @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4634782Z ##[warning]   7:3   warning  'EnergyClass' is defined but never used. Allowed unused vars must match /^_|^err|^error/u         @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4637944Z ##[warning]   8:3   warning  'GesClass' is defined but never used. Allowed unused vars must match /^_|^err|^error/u            @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4641216Z ##[warning]  11:3   warning  'DPEValidationError' is defined but never used. Allowed unused vars must match /^_|^err|^error/u  @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4644692Z ##[warning]  12:3   warning  'DPESchema' is defined but never used. Allowed unused vars must match /^_|^err|^error/u           @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4647604Z ##[error]  20:18  error    Unexpected any. Specify a different type                                                          @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4650460Z ##[error]  29:26  error    Unexpected any. Specify a different type                                                          @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4652344Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4653032Z /home/runner/work/choosewisely/choosewisely/__tests__/lib/services/dpe/index.test.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4655116Z ##[warning]    3:10  warning  'DPEClient' is defined but never used. Allowed unused vars must match /^_|^err|^error/u    @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4658282Z ##[warning]    5:10  warning  'DPEAnalysis' is defined but never used. Allowed unused vars must match /^_|^err|^error/u  @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4661402Z ##[warning]    5:23  warning  'DPESchema' is defined but never used. Allowed unused vars must match /^_|^err|^error/u    @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4664665Z ##[error]   30:37  error    Unexpected any. Specify a different type                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4667558Z ##[error]  413:39  error    Unexpected any. Specify a different type                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4669545Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4670157Z /home/runner/work/choosewisely/choosewisely/__tests__/lib/services/dpe/utils.test.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4672370Z ##[warning]   1:32  warning  'beforeEach' is defined but never used. Allowed unused vars must match /^_|^err|^error/u   @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4675574Z ##[warning]   1:44  warning  'vi' is defined but never used. Allowed unused vars must match /^_|^err|^error/u           @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4678685Z ##[warning]  16:10  warning  'EnergyClass' is defined but never used. Allowed unused vars must match /^_|^err|^error/u  @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4681975Z ##[warning]  16:23  warning  'GesClass' is defined but never used. Allowed unused vars must match /^_|^err|^error/u     @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4684990Z ##[error]  77:60  error    Unexpected any. Specify a different type                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4686884Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4687658Z /home/runner/work/choosewisely/choosewisely/__tests__/lib/services/favorites/enrichment.test.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4689850Z ##[error]   25:25  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4693092Z ##[error]   26:23  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4696232Z ##[error]   32:27  error  A `require()` style import is forbidden                                                                              @typescript-eslint/no-require-imports
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4699526Z ##[error]   36:5   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4703189Z ##[error]   36:5   error  Use "@ts-expect-error" to ensure an error is actually being suppressed                                               @typescript-eslint/prefer-ts-expect-error
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4706705Z ##[error]  195:7   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4710269Z ##[error]  195:7   error  Use "@ts-expect-error" to ensure an error is actually being suppressed                                               @typescript-eslint/prefer-ts-expect-error
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4713853Z ##[error]  206:7   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4717356Z ##[error]  206:7   error  Use "@ts-expect-error" to ensure an error is actually being suppressed                                               @typescript-eslint/prefer-ts-expect-error
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4720817Z ##[error]  213:7   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4724145Z ##[error]  213:7   error  Use "@ts-expect-error" to ensure an error is actually being suppressed                                               @typescript-eslint/prefer-ts-expect-error
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4727045Z ##[error]  230:7   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4730091Z ##[error]  230:7   error  Use "@ts-expect-error" to ensure an error is actually being suppressed                                               @typescript-eslint/prefer-ts-expect-error
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4733886Z ##[error]  241:7   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4737714Z ##[error]  241:7   error  Use "@ts-expect-error" to ensure an error is actually being suppressed                                               @typescript-eslint/prefer-ts-expect-error
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4741283Z ##[error]  253:7   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4745030Z ##[error]  253:7   error  Use "@ts-expect-error" to ensure an error is actually being suppressed                                               @typescript-eslint/prefer-ts-expect-error
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4746857Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4747478Z /home/runner/work/choosewisely/choosewisely/__tests__/lib/services/isochrone.test.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4748974Z ##[error]   76:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4751373Z ##[error]   98:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4754227Z ##[error]  114:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4756581Z ##[error]  123:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4758909Z ##[error]  141:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4761261Z ##[error]  272:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4763840Z ##[error]  288:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4766267Z ##[error]  310:17  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4768641Z ##[error]  335:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4770147Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4770771Z /home/runner/work/choosewisely/choosewisely/src/app/api/favorites/enrich-dpe/route.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4773407Z ##[error]   1:1   error    Imports "NextRequest" are only used as type                                                                @typescript-eslint/consistent-type-imports
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4776645Z ##[error]  11:23  error    Unnecessary optional chain on a non-nullish value                                                          @typescript-eslint/no-unnecessary-condition
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4779688Z ##[error]  26:9   error    Unexpected lexical declaration in case block                                                               no-case-declarations
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4782799Z ##[error]  27:9   error    Unexpected lexical declaration in case block                                                               no-case-declarations
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4785747Z ##[error]  28:9   error    Unexpected lexical declaration in case block                                                               no-case-declarations
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4788675Z ##[error]  39:9   error    Unexpected lexical declaration in case block                                                               no-case-declarations
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4791587Z ##[error]  43:9   error    Unexpected lexical declaration in case block                                                               no-case-declarations
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4795275Z ##[error]  43:37  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4798476Z ##[error]  50:9   error    Unexpected lexical declaration in case block                                                               no-case-declarations
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4801421Z ##[error]  65:9   error    Unexpected lexical declaration in case block                                                               no-case-declarations
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4804946Z ##[warning]  78:5   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4806682Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4807255Z /home/runner/work/choosewisely/choosewisely/src/components/energy/dpe-card.tsx
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4809561Z ##[warning]   13:3   warning  'Zap' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                          @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4813186Z ##[warning]   16:3   warning  'TrendingUp' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                   @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4816640Z ##[warning]   17:3   warning  'TrendingDown' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                 @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4819808Z ##[error]   25:18  error    Use a `type` instead of an `interface`                                                                     @typescript-eslint/consistent-type-definitions
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4823193Z ##[error]   34:20  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4826217Z ##[error]   37:11  error    Use a `type` instead of an `interface`                                                                     @typescript-eslint/consistent-type-definitions
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4829545Z ##[error]  187:50  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4833329Z ##[error]  189:34  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4836877Z ##[error]  282:88  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4840394Z ##[error]  283:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4844121Z ##[error]  301:71  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4847656Z ##[error]  303:49  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4850882Z ##[error]  334:64  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4852726Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4853253Z /home/runner/work/choosewisely/choosewisely/src/components/ui/toaster.tsx
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4855304Z ##[warning]  3:10  warning  'useEffect' is defined but never used. Allowed unused vars must match /^_|^err|^error/u  @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4858440Z ##[warning]  3:21  warning  'useState' is defined but never used. Allowed unused vars must match /^_|^err|^error/u   @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4860168Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4860778Z /home/runner/work/choosewisely/choosewisely/src/features/favorites/favorite-card.tsx
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4862894Z ##[warning]  52:7  warning  Unexpected console statement. Only these console methods are allowed: debug  no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4868693Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4869157Z /home/runner/work/choosewisely/choosewisely/src/hooks/use-dpe.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4871317Z ##[error]    5:1   error    All imports in the declaration are only used as types. Use `import type`                                   @typescript-eslint/consistent-type-imports
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4874969Z ##[error]    7:11  error    Use a `type` instead of an `interface`                                                                     @typescript-eslint/consistent-type-definitions
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4878261Z ##[warning]   13:11  warning  'autoRefresh' is assigned a value but never used. Allowed unused vars must match /^_|^err|^error/u         @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4881884Z ##[warning]   13:32  warning  'refreshInterval' is assigned a value but never used. Allowed unused vars must match /^_|^err|^error/u     @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4885459Z ##[error]   32:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4888684Z ##[error]   40:31  error    Unexpected empty method 'onOpenChange'                                                                     @typescript-eslint/no-empty-function
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4892337Z ##[error]   44:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4895699Z ##[warning]   47:7   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4898797Z ##[error]   53:29  error    Unexpected empty method 'onOpenChange'                                                                     @typescript-eslint/no-empty-function
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4902257Z ##[error]   76:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4905499Z ##[error]   84:31  error    Unexpected empty method 'onOpenChange'                                                                     @typescript-eslint/no-empty-function
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4908829Z ##[error]   88:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4961150Z ##[warning]   91:7   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4964637Z ##[error]   97:29  error    Unexpected empty method 'onOpenChange'                                                                     @typescript-eslint/no-empty-function
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4967719Z ##[error]  105:36  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4971053Z ##[error]  129:28  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4975070Z ##[error]  149:50  error    Type string trivially inferred from a string literal, remove type annotation                               @typescript-eslint/no-inferrable-types
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4976921Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4977400Z /home/runner/work/choosewisely/choosewisely/src/hooks/use-toast.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4979498Z ##[warning]    3:20  warning  'useCallback' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                    @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4983143Z ##[warning]   31:7   warning  'actionTypes' is assigned a value but only used as a type. Allowed unused vars must match /^_|^err|^error/u  @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4986409Z ##[error]   65:11  error    Use a `type` instead of an `interface`                                                                       @typescript-eslint/consistent-type-definitions
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4989539Z ##[error]  140:18  error    Array type using 'Array<T>' is forbidden. Use 'T[]' instead                                                  @typescript-eslint/array-type
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4991480Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4992423Z /home/runner/work/choosewisely/choosewisely/src/lib/actions/favorites/enrichment.action.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4994905Z ##[error]   24:23  error    Unnecessary optional chain on a non-nullish value                                                          @typescript-eslint/no-unnecessary-condition
+eslint (22.x)	Run linter	2026-01-26T13:45:31.4998144Z ##[warning]   54:5   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5001352Z ##[error]   70:23  error    Unnecessary optional chain on a non-nullish value                                                          @typescript-eslint/no-unnecessary-condition
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5004966Z ##[error]   75:33  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5008504Z ##[warning]   93:5   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5011677Z ##[error]  109:23  error    Unnecessary optional chain on a non-nullish value                                                          @typescript-eslint/no-unnecessary-condition
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5015062Z ##[warning]  124:5   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5016802Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5017323Z /home/runner/work/choosewisely/choosewisely/src/lib/services/dpe/client.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5019581Z ##[warning]    6:3   warning  'DPEError' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                     @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5022882Z ##[error]   24:14  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5034829Z ##[error]   44:35  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5038462Z ##[error]   46:35  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5042162Z ##[error]   47:41  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5045710Z ##[error]   48:49  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5048926Z ##[error]  306:73  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5053597Z ##[error]  327:20  error    Unexpected `await` inside a loop                                                                           no-await-in-loop
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5056426Z ##[error]  338:9   error    Unexpected `await` inside a loop                                                                           no-await-in-loop
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5059651Z ##[error]  363:41  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5063381Z ##[error]  364:37  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5066995Z ##[error]  364:64  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5070566Z ##[warning]  379:9   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5073981Z ##[error]  395:39  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5077313Z ##[error]  397:60  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5080839Z ##[error]  425:3   error    Member healthCheck should be declared before all private instance method definitions                       @typescript-eslint/member-ordering
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5084409Z ##[warning]  430:7   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5087971Z ##[error]  438:3   error    Member getStats should be declared before all private instance method definitions                          @typescript-eslint/member-ordering
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5091494Z ##[error]  442:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5095248Z ##[error]  443:49  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5097134Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5097651Z /home/runner/work/choosewisely/choosewisely/src/lib/services/dpe/index.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5099771Z ##[warning]   10:3   warning  'DPEAPIError' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                  @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5103351Z ##[warning]   11:3   warning  'GesClass' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                     @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5106560Z ##[error]   40:52  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5109862Z ##[error]   43:33  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5113698Z ##[error]   44:43  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5117232Z ##[error]   46:37  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5120459Z ##[error]   70:31  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5123528Z ##[error]  186:28  error    Unexpected `await` inside a loop                                                                           no-await-in-loop
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5126586Z ##[warning]  189:11  warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5129695Z ##[error]  316:31  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5132888Z ##[error]  439:45  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5136223Z ##[error]  447:3   error    Member clearCache should be declared before all private instance method definitions                        @typescript-eslint/member-ordering
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5139914Z ##[error]  454:3   error    Member getCacheStats should be declared before all private instance method definitions                     @typescript-eslint/member-ordering
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5143588Z ##[error]  464:3   error    Member healthCheck should be declared before all private instance method definitions                       @typescript-eslint/member-ordering
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5146909Z ##[warning]  468:7   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5148626Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5149156Z /home/runner/work/choosewisely/choosewisely/src/lib/services/dpe/types.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5150552Z ##[error]  219:22  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5153227Z ##[error]  234:77  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5155794Z ##[error]  241:58  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5157303Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5157840Z /home/runner/work/choosewisely/choosewisely/src/lib/services/dpe/utils.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5159975Z ##[warning]    6:3   warning  'DPEAnalysis' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                  @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5163615Z ##[warning]    7:3   warning  'DPESearchRequest' is defined but never used. Allowed unused vars must match /^_|^err|^error/u             @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5168058Z ##[warning]    8:3   warning  'DPESearchResponse' is defined but never used. Allowed unused vars must match /^_|^err|^error/u            @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5171512Z ##[warning]    9:3   warning  'DPEServiceError' is defined but never used. Allowed unused vars must match /^_|^err|^error/u              @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5175195Z ##[warning]   10:3   warning  'DPENotFoundError' is defined but never used. Allowed unused vars must match /^_|^err|^error/u             @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5178584Z ##[warning]   11:3   warning  'DPEAPIError' is defined but never used. Allowed unused vars must match /^_|^err|^error/u                  @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5181988Z ##[error]   86:23  error    Unnecessary conditional, value is always truthy                                                            @typescript-eslint/no-unnecessary-condition
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5186490Z ##[warning]  128:30  warning  'gesEmission' is assigned a value but never used. Allowed unused vars must match /^_|^err|^error/u         @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5190035Z ##[warning]  128:55  warning  'equipment' is assigned a value but never used. Allowed unused vars must match /^_|^err|^error/u           @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5193810Z ##[error]  229:27  error    Unnecessary conditional, comparison is always true, since `"G" === "G"` is true                            @typescript-eslint/no-unnecessary-condition
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5197293Z ##[error]  246:39  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5200505Z ##[error]  253:39  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5203699Z ##[error]  288:18  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5206706Z ##[error]  298:46  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5210247Z ##[error]  300:20  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5213944Z ##[error]  300:42  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5217437Z ##[error]  301:30  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5220940Z ##[error]  302:36  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5224662Z ##[error]  303:24  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5228348Z ##[error]  304:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5232116Z ##[error]  306:40  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5235662Z ##[error]  306:65  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5239130Z ##[error]  307:30  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5242774Z ##[error]  308:34  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5246292Z ##[error]  309:36  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5249752Z ##[error]  311:50  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5253421Z ##[error]  311:82  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5256925Z ##[error]  312:49  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5260396Z ##[error]  312:77  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5264081Z ##[error]  314:44  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5267629Z ##[error]  315:50  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5271100Z ##[error]  315:75  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5274890Z ##[error]  318:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5278418Z ##[error]  318:62  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5282255Z ##[error]  319:41  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5285784Z ##[error]  319:67  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5289270Z ##[error]  321:47  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5292930Z ##[error]  322:44  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5296426Z ##[error]  322:66  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5300073Z ##[error]  325:44  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5303744Z ##[error]  325:79  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5307229Z ##[error]  327:30  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5310714Z ##[error]  328:38  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5314505Z ##[error]  329:36  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5316373Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5316999Z /home/runner/work/choosewisely/choosewisely/src/lib/services/favorites/enrichment.ts
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5319083Z ##[error]    5:18  error    Use a `type` instead of an `interface`                                                                     @typescript-eslint/consistent-type-definitions
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5322273Z ##[error]    8:13  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5325448Z ##[error]   13:3   error    Member 'dpeService' is never reassigned; mark it as `readonly`                                             @typescript-eslint/prefer-readonly
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5328856Z ##[error]   46:44  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5332605Z ##[warning]   52:13  warning  'coordinates' is assigned a value but never used. Allowed unused vars must match /^_|^err|^error/u         @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5336113Z ##[warning]   58:13  warning  'updatedFavorite' is assigned a value but never used. Allowed unused vars must match /^_|^err|^error/u     @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5339418Z ##[warning]   81:7   warning  Unexpected console statement. Only these console methods are allowed: debug                                no-console
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5343119Z ##[warning]  108:16  warning  'mockError' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5346224Z ##[error]  122:41  error    Functions that return promises must be async                                                               @typescript-eslint/promise-function-async
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5349465Z ##[error]  137:42  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5352669Z ##[error]  143:43  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5355749Z ##[error]  155:38  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5358776Z ##[error]  159:43  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5361604Z ##[error]  165:28  error    Unexpected `await` inside a loop                                                                           no-await-in-loop
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5364987Z ##[error]  170:9   error    Unexpected `await` inside a loop                                                                           no-await-in-loop
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5367925Z ##[error]  180:70  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5371257Z ##[error]  191:47  error    Prefer using nullish coalescing operator (`??`) instead of a logical or (`||`), as it is a safer operator  @typescript-eslint/prefer-nullish-coalescing
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5374673Z ##[error]  262:49  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5377701Z ##[error]  325:43  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5380682Z ##[error]  350:61  error    Unexpected any. Specify a different type                                                                   @typescript-eslint/no-explicit-any
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5382536Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5383110Z ✖ 207 problems (160 errors, 47 warnings)
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5383836Z   18 errors and 0 warnings potentially fixable with the `--fix` option.
+eslint (22.x)	Run linter	2026-01-26T13:45:31.5384313Z 
+eslint (22.x)	Run linter	2026-01-26T13:45:31.8301013Z  ELIFECYCLE  Command failed with exit code 1.
+eslint (22.x)	Run linter	2026-01-26T13:45:31.8722689Z ##[error]Process completed with exit code 1.

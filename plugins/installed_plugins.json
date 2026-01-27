@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "plugins": {
+    "frontend-design@claude-code-plugins": [
+      {
+        "scope": "user",
+        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-code-plugins/frontend-design/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-13T11:38:44.599Z",
+        "lastUpdated": "2025-12-13T11:38:44.599Z",
+        "gitCommitSha": "eb872450105745e9489c6f6d73fa2fb4ff5a1e9a"
+      }
+    ],
+    "ralph-loop@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/ralph-loop/e30768372b41",
+        "version": "e30768372b41",
+        "installedAt": "2026-01-21T10:34:12.409Z",
+        "lastUpdated": "2026-01-21T10:34:12.409Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      }
+    ],
+    "context7@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/context7/e30768372b41",
+        "version": "e30768372b41",
+        "installedAt": "2026-01-21T10:45:40.701Z",
+        "lastUpdated": "2026-01-21T10:45:40.701Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/frontend-design/e30768372b41",
+        "version": "e30768372b41",
+        "installedAt": "2026-01-22T16:25:01.561Z",
+        "lastUpdated": "2026-01-22T16:25:01.561Z",
+        "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      }
+    ]
+  }
+}

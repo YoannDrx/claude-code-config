@@ -1,0 +1,1 @@
+.claude/commands/db.md:22:pnpm prisma migrate reset --force

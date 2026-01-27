@@ -1,0 +1,168 @@
+The file /Users/yoannandrieux/.claude/plans/misty-squishing-rainbow.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→# Plan : Ajout de Titres aux Bannières
+     2→
+     3→## Contexte
+     4→
+     5→Ajouter des titres élégants aux deux bannières :
+     6→1. **Marquee logos** (partenaires)
+     7→2. **FilmBanner** (pochettes de films/séries)
+     8→
+     9→## Options de Design Proposées
+    10→
+    11→### Option A - Stamps Flottants (Style Hero)
+    12→
+    13→```
+    14→         ┌─────────────────────┐
+    15→         │ ILS M'ONT FAIT      │ ← Stamp avec rotation -3deg
+    16→         │ CONFIANCE           │   + ombre décalée
+    17→         └─────────────────────┘
+    18→╔════════════════════════════════════════════════╗
+    19→│  [LOGO] • [LOGO] • [LOGO] →  (Marquee)         │
+    20→╚════════════════════════════════════════════════╝
+    21→```
+    22→
+    23→**Caractéristiques :**
+    24→- Badge en position absolute, légèrement au-dessus du bandeau
+    25→- Rotation subtile (-3deg) comme le hero
+    26→- Bordure épaisse (4px) + ombre décalée
+    27→- `bg-neo-accent text-neo-text-inverse`
+    28→- Très visuel, style "tampon"
+    29→
+    30→**Code :**
+    31→```tsx
+    32→<div className="relative">
+    33→  {/* Stamp Title */}
+    34→  <div className="absolute -top-6 left-8 z-10">
+    35→    <span className="inline-block px-4 py-2 bg-neo-accent text-neo-text-inverse
+    36→      border-4 border-neo-text shadow-[6px_6px_0px_0px_var(--neo-text)]
+    37→      font-black text-sm md:text-base uppercase tracking-wider
+    38→      transform -rotate-3">
+    39→      ILS M'ONT FAIT CONFIANCE
+    40→    </span>
+    41→  </div>
+    42→  {/* Banner content */}
+    43→</div>
+    44→```
+    45→
+    46→---
+    47→
+    48→### Option B - Header Inline (Style Section)
+    49→
+    50→```
+    51→ILS M'ONT FAIT CONFIANCE
+    52→════════════════════════════════════════════════
+    53→│  [LOGO] • [LOGO] • [LOGO] →  (Marquee)       │
+    54→════════════════════════════════════════════════
+    55→```
+    56→
+    57→**Caractéristiques :**
+    58→- Titre centré ou aligné à gauche
+    59→- `font-black uppercase tracking-tighter`
+    60→- Intégré dans le flux, au-dessus du bandeau
+    61→- Plus sobre, professionnel
+    62→
+    63→**Code :**
+    64→```tsx
+    65→<section>
+    66→  <div className="py-4 px-6 border-b-4 border-neo-border bg-neo-bg">
+    67→    <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter text-center">
+    68→      Ils m'ont fait confiance
+    69→    </h2>
+    70→  </div>
+    71→  {/* Banner content */}
+    72→</section>
+    73→```
+    74→
+    75→---
+    76→
+    77→### Option C - Badge Monospace (Style Code)
+    78→
+    79→```
+    80→┌─────────────┐
+    81→│ 01 // PARTENAIRES
+    82→└─────────────┘
+    83→╔════════════════════════════════════════════════╗
+    84→│  [LOGO] • [LOGO] • [LOGO] →                    │
+    85→╚════════════════════════════════════════════════╝
+    86→```
+    87→
+    88→**Caractéristiques :**
+    89→- Petit label monospace avec numéro de section
+    90→- `bg-neo-text text-neo-accent` + commentaire `//`
+    91→- Style technique, dev-friendly
+    92→- Cohérent avec les autres sections du site
+    93→
+    94→**Code :**
+    95→```tsx
+    96→<div className="py-3 px-6 bg-neo-bg">
+    97→  <div className="font-mono font-bold text-neo-accent flex items-center gap-2">
+    98→    <span className="bg-neo-text text-neo-text-inverse px-2 py-1 text-xs">
+    99→      01
+   100→    </span>
+   101→    <span className="text-sm uppercase tracking-wider">
+   102→      // Partenaires
+   103→    </span>
+   104→  </div>
+   105→</div>
+   106→```
+   107→
+   108→---
+   109→
+   110→### Option D - Titre Overlay (Style Cinéma)
+   111→
+   112→```
+   113→╔════════════════════════════════════════════════╗
+   114→│                                                │
+   115→│  [FILM1] [FILM2] →                             │
+   116→│                                                │
+   117→│  ┌──────────────────────────────┐              │
+   118→│  │     MES PRODUCTIONS          │ ← Badge     │
+   119→│  └──────────────────────────────┘   overlayé  │
+   120→╚════════════════════════════════════════════════╝
+   121→```
+   122→
+   123→**Caractéristiques :**
+   124→- Badge positionné en overlay au centre ou en bas du bandeau
+   125→- Semi-transparent ou avec fond solide
+   126→- Effet "ticket de cinéma"
+   127→
+   128→**Code :**
+   129→```tsx
+   130→<section className="relative">
+   131→  {/* Banner content */}
+   132→  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10">
+   133→    <span className="px-6 py-2 bg-neo-text text-neo-accent
+   134→      font-black text-lg uppercase tracking-wider">
+   135→      Mes Productions
+   136→    </span>
+   137→  </div>
+   138→</section>
+   139→```
+   140→
+   141→---
+   142→
+   143→## Recommandation
+   144→
+   145→**Option A (Stamps Flottants)** pour les deux bannières :
+   146→- **FilmBanner** : "MES PRODUCTIONS" ou "VU À LA TÉLÉ"
+   147→- **Marquee logos** : "ILS M'ONT FAIT CONFIANCE"
+   148→
+   149→C'est la plus cohérente avec le style neo-brutaliste du hero et la plus impactante visuellement.
+   150→
+   151→---
+   152→
+   153→## Fichiers à modifier
+   154→
+   155→1. `components/neo-brutalist/FilmBanner.tsx` - Ajouter prop `title` + stamp
+   156→2. `components/neo-brutalist/ui/Marquee.tsx` - Ajouter prop `title` + stamp
+   157→3. `components/neo-brutalist/NeoHome.tsx` - Passer les titres aux composants
+   158→
+   159→---
+   160→
+   161→## Vérification
+   162→
+   163→1. `npm run dev`
+   164→2. Vérifier le positionnement des stamps sur desktop et mobile
+   165→3. Tester les différentes palettes de couleurs
+   166→4. S'assurer que les titres ne gênent pas le défilement
+   167→

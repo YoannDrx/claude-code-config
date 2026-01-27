@@ -1,0 +1,51 @@
+     1→import * as React from "react";
+     2→import { Slot } from "@radix-ui/react-slot";
+     3→import { cva, type VariantProps } from "class-variance-authority";
+     4→
+     5→import { cn } from "@/lib/utils";
+     6→
+     7→const badgeVariants = cva(
+     8→  "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap rounded-md border px-2 py-0.5 text-xs font-medium transition-[color,box-shadow] focus-visible:ring [&>svg]:pointer-events-none [&>svg]:size-3",
+     9→  {
+    10→    variants: {
+    11→      variant: {
+    12→        default:
+    13→          "bg-primary text-primary-foreground [a&]:hover:bg-primary/90 border-transparent",
+    14→        secondary:
+    15→          "bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90 border-transparent",
+    16→        destructive:
+    17→          "bg-destructive [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/70 border-transparent text-white",
+    18→        outline:
+    19→          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+    20→      },
+    21→    },
+    22→    defaultVariants: {
+    23→      variant: "default",
+    24→    },
+    25→  },
+    26→);
+    27→
+    28→function Badge({
+    29→  className,
+    30→  variant,
+    31→  asChild = false,
+    32→  ...props
+    33→}: React.ComponentProps<"span"> &
+    34→  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
+    35→  const Comp = asChild ? Slot : "span";
+    36→
+    37→  return (
+    38→    <Comp
+    39→      data-slot="badge"
+    40→      className={cn(badgeVariants({ variant }), className)}
+    41→      {...props}
+    42→    />
+    43→  );
+    44→}
+    45→
+    46→export { Badge, badgeVariants };
+    47→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

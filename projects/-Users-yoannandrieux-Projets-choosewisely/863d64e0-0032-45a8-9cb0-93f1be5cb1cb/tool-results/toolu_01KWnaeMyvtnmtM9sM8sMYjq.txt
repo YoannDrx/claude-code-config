@@ -1,0 +1,100 @@
+The file /Users/yoannandrieux/Projets/choosewisely/src/styles/context-themes.css has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→/* Context-based theming for B2C and B2B interfaces - Dark First */
+     2→
+     3→/* B2C Theme - Emotional, warm, consumer-friendly */
+     4→.theme-b2c {
+     5→  /* Color variants for B2C - Dark theme adapted */
+     6→  --accent-primary: var(--brand-accent);
+     7→  --accent-secondary: var(--brand-highlight);
+     8→  --surface-elevated: var(--brand-elevated);
+     9→  --surface-card: var(--brand-surface);
+    10→
+    11→  /* Status colors with glow */
+    12→  --status-success: #34d399;
+    13→  --status-warning: #fbbf24;
+    14→  --status-danger: #f43f5e;
+    15→  --status-info: #6366f1;
+    16→
+    17→  /* B2C specific spacing and layout - More spacious */
+    18→  --spacing-card: 1.5rem;
+    19→  --spacing-section: 3rem;
+    20→  --radius-card: 1.5rem;
+    21→  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4),
+    22→    0 0 40px rgba(52, 211, 153, 0.05);
+    23→}
+    24→
+    25→/* B2B Theme - Professional, compact, data-dense */
+    26→.theme-b2b {
+    27→  /* Color variants for B2B - Dark theme adapted */
+    28→  --accent-primary: var(--brand-highlight);
+    29→  --accent-secondary: var(--brand-accent);
+    30→  --surface-elevated: var(--brand-elevated);
+    31→  --surface-card: var(--brand-surface);
+    32→
+    33→  /* Status colors - More muted */
+    34→  --status-success: #22c55e;
+    35→  --status-warning: #eab308;
+    36→  --status-danger: #ef4444;
+    37→  --status-info: #3b82f6;
+    38→
+    39→  /* B2B specific spacing and layout - More compact */
+    40→  --spacing-card: 1rem;
+    41→  --spacing-section: 2rem;
+    42→  --radius-card: 0.75rem;
+    43→  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.3);
+    44→}
+    45→
+    46→/* Responsive theme adjustments */
+    47→@media (max-width: 768px) {
+    48→  .theme-b2c {
+    49→    --spacing-card: 1rem;
+    50→    --spacing-section: 2rem;
+    51→  }
+    52→
+    53→  .theme-b2b {
+    54→    --spacing-card: 0.75rem;
+    55→    --spacing-section: 1.5rem;
+    56→  }
+    57→}
+    58→
+    59→/* Animation preferences based on context */
+    60→.theme-b2c * {
+    61→  transition-duration: 200ms;
+    62→}
+    63→
+    64→.theme-b2b * {
+    65→  transition-duration: 150ms;
+    66→}
+    67→
+    68→/* Font weight adjustments */
+    69→.theme-b2c h1,
+    70→.theme-b2c h2,
+    71→.theme-b2c h3 {
+    72→  font-weight: 600;
+    73→  letter-spacing: -0.02em;
+    74→}
+    75→
+    76→.theme-b2b h1,
+    77→.theme-b2b h2,
+    78→.theme-b2b h3 {
+    79→  font-weight: 700;
+    80→  letter-spacing: -0.01em;
+    81→}
+    82→
+    83→/* B2C decorative elements */
+    84→.theme-b2c .decorative-heading {
+    85→  font-style: italic;
+    86→  background: linear-gradient(135deg, var(--brand-accent), var(--brand-highlight));
+    87→  -webkit-background-clip: text;
+    88→  background-clip: text;
+    89→  color: transparent;
+    90→}
+    91→
+    92→/* B2B professional elements */
+    93→.theme-b2b .data-label {
+    94→  font-size: 0.75rem;
+    95→  text-transform: uppercase;
+    96→  letter-spacing: 0.05em;
+    97→  color: var(--text-muted);
+    98→}
+    99→

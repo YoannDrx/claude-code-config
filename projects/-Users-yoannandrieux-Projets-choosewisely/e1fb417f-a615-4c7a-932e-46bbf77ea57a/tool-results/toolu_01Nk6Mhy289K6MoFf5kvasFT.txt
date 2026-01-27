@@ -1,0 +1,424 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Alertes & Recherches | ChooseWisely Intelligence</title>
+     7→    <!-- Fonts -->
+     8→    <link rel="preconnect" href="https://fonts.googleapis.com">
+     9→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    11→    
+    12→    <!-- Frameworks -->
+    13→    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    14→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    15→    
+    16→    <style>
+    17→        :root {
+    18→            --brand-deep: #050810;
+    19→            --brand-surface: #0D121F;
+    20→            --brand-accent: #34D399; 
+    21→            --brand-highlight: #6366F1;
+    22→            --brand-danger: #F43F5E;
+    23→        }
+    24→
+    25→        body {
+    26→            font-family: 'IBM Plex Sans', sans-serif;
+    27→            background-color: var(--brand-deep);
+    28→            color: #E2E8F0;
+    29→            overflow-x: hidden;
+    30→        }
+    31→
+    32→        .grain {
+    33→            position: fixed;
+    34→            top: 0; left: 0; width: 100%; height: 100%;
+    35→            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    36→            opacity: 0.04;
+    37→            pointer-events: none;
+    38→            z-index: 9999;
+    39→        }
+    40→
+    41→        .mesh-gradient {
+    42→            background: 
+    43→                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+    44→                radial-gradient(at 100% 0%, rgba(52, 211, 153, 0.08) 0px, transparent 50%),
+    45→                radial-gradient(at 50% 100%, rgba(13, 18, 31, 1) 0px, transparent 100%);
+    46→        }
+    47→
+    48→        .glass {
+    49→            background: rgba(13, 18, 31, 0.6);
+    50→            backdrop-filter: blur(16px);
+    51→            border: 1px solid rgba(255, 255, 255, 0.06);
+    52→        }
+    53→
+    54→        .glass-dark {
+    55→            background: rgba(5, 8, 16, 0.8);
+    56→            backdrop-filter: blur(10px);
+    57→            border: 1px solid rgba(255, 255, 255, 0.03);
+    58→        }
+    59→
+    60→        .alert-card-active {
+    61→            border-left: 4px solid var(--brand-accent);
+    62→            box-shadow: -10px 0 30px -10px rgba(52, 211, 153, 0.2);
+    63→        }
+    64→
+    65→        /* Radar Animation */
+    66→        .radar-ping {
+    67→            position: relative;
+    68→        }
+    69→        .radar-ping::after {
+    70→            content: '';
+    71→            position: absolute;
+    72→            width: 100%;
+    73→            height: 100%;
+    74→            background: var(--brand-accent);
+    75→            border-radius: 50%;
+    76→            opacity: 0.6;
+    77→            animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    78→        }
+    79→
+    80→        @keyframes ping {
+    81→            75%, 100% {
+    82→                transform: scale(2.5);
+    83→                opacity: 0;
+    84→            }
+    85→        }
+    86→
+    87→        .shimmer {
+    88→            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    89→            background-size: 200% 100%;
+    90→            animation: shimmer 3s infinite linear;
+    91→        }
+    92→
+    93→        @keyframes shimmer {
+    94→            0% { background-position: -200% 0; }
+    95→            100% { background-position: 200% 0; }
+    96→        }
+    97→
+    98→        [x-cloak] { display: none !important; }
+    99→
+   100→        /* Custom Toggle */
+   101→        .toggle-dot {
+   102→            transition: all 0.3s ease-in-out;
+   103→        }
+   104→        input:checked ~ .toggle-bg {
+   105→            background-color: var(--brand-accent);
+   106→        }
+   107→        input:checked ~ .toggle-dot {
+   108→            transform: translateX(100%);
+   109→        }
+   110→    </style>
+   111→</head>
+   112→<body class="min-h-screen flex flex-col mesh-gradient" 
+   113→      x-data="{ 
+   114→        scrolled: false, 
+   115→        showAlertModal: false,
+   116→        activeAlertId: 1,
+   117→        alerts: [
+   118→            { id: 1, name: 'Loft industriel Lyon', zone: 'Lyon (69001, 69002)', price: '400k - 650k', frequency: 'REALTIME', active: true, matches: 12 },
+   119→            { id: 2, name: 'Maison jardin Bordeaux', zone: 'Bordeaux + 10km', price: 'Max 800k', frequency: 'DAILY', active: true, matches: 45 },
+   120→            { id: 3, name: 'Investissement T2 Paris', zone: 'Paris (10e, 11e, 18e)', price: '300k - 450k', frequency: 'REALTIME', active: false, matches: 8 }
+   121→        ],
+   122→        matches: [
+   123→            { id: 101, alertId: 1, title: 'Loft Canut rénové', price: '585 000 €', location: 'Lyon 1er', time: 'Il y a 12 min', img: 'https://images.unsplash.com/photo-1560448204-61dc36dc98c8?auto=format&fit=crop&q=80&w=400', source: 'LeBonCoin' },
+   124→            { id: 102, alertId: 1, title: 'Atelier d\'artiste avec verrière', price: '620 000 €', location: 'Lyon 2ème', time: 'Il y a 3h', img: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=400', source: 'SeLoger' },
+   125→            { id: 103, alertId: 2, title: 'Échoppe Bordelaise avec patio', price: '745 000 €', location: 'Bordeaux Chartrons', time: 'Hier', img: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80&w=400', source: 'Pap.fr' }
+   126→        ]
+   127→      }" 
+   128→      @scroll.window="scrolled = (window.pageYOffset > 20)">
+   129→    
+   130→    <div class="grain"></div>
+   131→
+   132→    <!-- Header (Consistent with Home) -->
+   133→    <header :class="scrolled ? 'glass py-3' : 'bg-transparent py-6'" class="fixed w-full z-50 transition-all duration-500 ease-in-out">
+   134→        <div class="container mx-auto px-6 flex justify-between items-center">
+   135→            <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.reload()">
+   136→                <div class="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-bold text-white italic shadow-lg shadow-indigo-500/20">CW</div>
+   137→                <span class="text-xl font-bold tracking-tight text-white">ChooseWisely</span>
+   138→            </div>
+   139→            
+   140→            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+   141→                <a href="#" class="hover:text-emerald-400 transition-colors">Recherche</a>
+   142→                <a href="#" class="text-white border-b-2 border-emerald-500 pb-1">Alertes</a>
+   143→                <a href="#" class="hover:text-emerald-400 transition-colors">Comparateur</a>
+   144→                <a href="#" class="hover:text-emerald-400 transition-colors">Finance</a>
+   145→            </nav>
+   146→
+   147→            <div class="flex items-center gap-4">
+   148→                <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/50 border border-white/5">
+   149→                    <div class="w-2 h-2 rounded-full bg-emerald-500 radar-ping"></div>
+   150→                    <span class="text-xs font-bold text-slate-300">LIVE FEED</span>
+   151→                </div>
+   152→                <button class="w-10 h-10 rounded-full glass flex items-center justify-center border border-white/10 hover:border-indigo-500 transition-all">
+   153→                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Avatar" class="w-8 h-8 rounded-full">
+   154→                </button>
+   155→            </div>
+   156→        </div>
+   157→    </header>
+   158→
+   159→    <main class="flex-grow pt-32 pb-24">
+   160→        <div class="container mx-auto px-6">
+   161→            
+   162→            <!-- Dashboard Header -->
+   163→            <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+   164→                <div>
+   165→                    <nav class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">
+   166→                        <span class="hover:text-slate-300 cursor-pointer">Tableau de bord</span>
+   167→                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+   168→                        <span class="text-indigo-400">Alertes Webhooks</span>
+   169→                    </nav>
+   170→                    <h1 class="text-4xl font-bold text-white italic">Surveillance du Marché <span class="text-slate-600 text-2xl not-italic ml-2">(MoteurImmo v2)</span></h1>
+   171→                </div>
+   172→                <button @click="showAlertModal = true" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all shadow-xl shadow-indigo-600/20 group">
+   173→                    <svg class="w-5 h-5 group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /></svg>
+   174→                    Nouvelle Recherche Sauvegardée
+   175→                </button>
+   176→            </div>
+   177→
+   178→            <div class="grid lg:grid-cols-12 gap-8">
+   179→                
+   180→                <!-- Left Column: Alerts List -->
+   181→                <div class="lg:col-span-4 space-y-4">
+   182→                    <div class="flex items-center justify-between mb-2">
+   183→                        <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Mes Alertes Actives</h2>
+   184→                        <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded" x-text="alerts.length + ' configurées'"></span>
+   185→                    </div>
+   186→
+   187→                    <template x-for="alert in alerts" :key="alert.id">
+   188→                        <div @click="activeAlertId = alert.id" 
+   189→                             :class="activeAlertId === alert.id ? 'alert-card-active bg-indigo-500/5' : 'hover:bg-white/5'"
+   190→                             class="glass p-5 rounded-2xl cursor-pointer transition-all duration-300 group">
+   191→                            <div class="flex justify-between items-start mb-3">
+   192→                                <div class="flex items-center gap-2">
+   193→                                    <div :class="alert.active ? 'bg-emerald-500 shadow-[0_0_10px_rgba(52,211,153,0.5)]' : 'bg-slate-600'" class="w-2 h-2 rounded-full"></div>
+   194→                                    <h3 class="font-bold text-white group-hover:text-indigo-400 transition-colors" x-text="alert.name"></h3>
+   195→                                </div>
+   196→                                <span class="text-[10px] font-bold px-2 py-1 rounded bg-white/5 text-slate-400" x-text="alert.frequency"></span>
+   197→                            </div>
+   198→                            <div class="space-y-1 mb-4">
+   199→                                <p class="text-xs text-slate-400 flex items-center gap-2">
+   200→                                    <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+   201→                                    <span x-text="alert.zone"></span>
+   202→                                </p>
+   203→                                <p class="text-xs text-slate-400 flex items-center gap-2">
+   204→                                    <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/></svg>
+   205→                                    <span x-text="alert.price"></span>
+   206→                                </p>
+   207→                            </div>
+   208→                            <div class="flex items-center justify-between pt-4 border-t border-white/5">
+   209→                                <span class="text-[10px] text-indigo-400 font-bold italic" x-text="alert.matches + ' correspondances'"></span>
+   210→                                <div class="flex gap-2">
+   211→                                    <button class="p-1.5 hover:bg-white/10 rounded transition-colors text-slate-500 hover:text-white">
+   212→                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+   213→                                    </button>
+   214→                                    <button class="p-1.5 hover:bg-brand-danger/20 rounded transition-colors text-slate-500 hover:text-rose-400">
+   215→                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+   216→                                    </button>
+   217→                                </div>
+   218→                            </div>
+   219→                        </div>
+   220→                    </template>
+   221→                </div>
+   222→
+   223→                <!-- Right Column: Results Feed -->
+   224→                <div class="lg:col-span-8">
+   225→                    <div class="glass rounded-[2rem] overflow-hidden flex flex-col h-full border-white/10 shadow-2xl">
+   226→                        
+   227→                        <!-- Details Tab Header -->
+   228→                        <div class="px-8 py-6 bg-white/5 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+   229→                            <div>
+   230→                                <h3 class="text-xl font-bold text-white flex items-center gap-3">
+   231→                                    <span x-text="alerts.find(a => a.id === activeAlertId)?.name"></span>
+   232→                                    <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold italic tracking-wider">MOTEURIMMO ACTIF</span>
+   233→                                </h3>
+   234→                                <p class="text-sm text-slate-400 mt-1">Historique des 30 derniers jours</p>
+   235→                            </div>
+   236→                            <div class="flex items-center gap-4">
+   237→                                <label class="flex items-center cursor-pointer gap-3">
+   238→                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Webhook Status</span>
+   239→                                    <div class="relative">
+   240→                                        <input type="checkbox" checked class="sr-only">
+   241→                                        <div class="toggle-bg w-10 h-5 bg-slate-700 rounded-full"></div>
+   242→                                        <div class="toggle-dot absolute left-1 top-1 bg-white w-3 h-3 rounded-full shadow-md"></div>
+   243→                                    </div>
+   244→                                </label>
+   245→                            </div>
+   246→                        </div>
+   247→
+   248→                        <!-- Match List -->
+   249→                        <div class="p-8 space-y-6 overflow-y-auto max-h-[700px]">
+   250→                            <template x-for="match in matches.filter(m => m.alertId === activeAlertId)" :key="match.id">
+   251→                                <div class="group flex flex-col md:flex-row gap-6 p-4 rounded-2xl border border-white/5 hover:bg-white/[0.02] hover:border-indigo-500/30 transition-all duration-500 relative">
+   252→                                    <div class="absolute top-4 right-4 text-[10px] font-bold text-slate-500 italic" x-text="match.time"></div>
+   253→                                    
+   254→                                    <div class="w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0 relative">
+   255→                                        <img :src="match.img" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+   256→                                        <div class="absolute bottom-2 left-2 px-2 py-0.5 bg-brand-deep/80 backdrop-blur text-[10px] font-bold text-white rounded" x-text="match.source"></div>
+   257→                                    </div>
+   258→
+   259→                                    <div class="flex-grow flex flex-col justify-between">
+   260→                                        <div>
+   261→                                            <div class="flex justify-between items-start mb-1">
+   262→                                                <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors" x-text="match.title"></h4>
+   263→                                                <span class="text-xl font-bold text-emerald-400 tracking-tighter" x-text="match.price"></span>
+   264→                                            </div>
+   265→                                            <p class="text-sm text-slate-500 italic mb-4" x-text="match.location"></p>
+   266→                                        </div>
+   267→                                        
+   268→                                        <div class="flex items-center gap-3">
+   269→                                            <button class="px-4 py-2 rounded-lg bg-indigo-500/10 hover:bg-indigo-500 text-indigo-400 hover:text-white text-xs font-bold transition-all border border-indigo-500/20 active:scale-95">
+   270→                                                Voir l'annonce
+   271→                                            </button>
+   272→                                            <button class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700 text-slate-400 hover:text-white transition-all">
+   273→                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+   274→                                            </button>
+   275→                                            <button class="p-2 rounded-lg bg-slate-800/50 hover:bg-slate-700 text-slate-400 hover:text-white transition-all">
+   276→                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+   277→                                            </button>
+   278→                                        </div>
+   279→                                    </div>
+   280→                                </div>
+   281→                            </template>
+   282→
+   283→                            <!-- Empty State if no matches -->
+   284→                            <div x-show="matches.filter(m => m.alertId === activeAlertId).length === 0" class="py-20 text-center space-y-4">
+   285→                                <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto text-slate-600">
+   286→                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+   287→                                </div>
+   288→                                <p class="text-slate-400 font-medium">Aucun nouveau bien ne correspond à ces critères pour le moment.</p>
+   289→                                <p class="text-xs text-slate-600">Dès qu'une annonce apparaît sur MoteurImmo, elle s'affichera ici en temps réel.</p>
+   290→                            </div>
+   291→                        </div>
+   292→
+   293→                        <!-- Stats Footer -->
+   294→                        <div class="mt-auto px-8 py-4 bg-white/[0.02] border-t border-white/5 flex justify-between items-center text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+   295→                            <span>Dernière synchronisation : Il y a 45 secondes</span>
+   296→                            <span class="flex items-center gap-1"><span class="w-1 h-1 rounded-full bg-emerald-500"></span> Serveur Opérationnel</span>
+   297→                        </div>
+   298→                    </div>
+   299→                </div>
+   300→            </div>
+   301→        </div>
+   302→    </main>
+   303→
+   304→    <!-- Create Alert Modal (Alpine.js) -->
+   305→    <div x-show="showAlertModal" 
+   306→         x-transition:enter="transition ease-out duration-300"
+   307→         x-transition:enter-start="opacity-0 scale-95"
+   308→         x-transition:enter-end="opacity-100 scale-100"
+   309→         x-transition:leave="transition ease-in duration-200"
+   310→         x-transition:leave-start="opacity-100 scale-100"
+   311→         x-transition:leave-end="opacity-0 scale-95"
+   312→         class="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12" x-cloak>
+   313→        
+   314→        <div class="absolute inset-0 bg-brand-deep/90 backdrop-blur-sm" @click="showAlertModal = false"></div>
+   315→        
+   316→        <div class="glass w-full max-w-2xl rounded-[2.5rem] shadow-2xl relative overflow-hidden flex flex-col max-h-full">
+   317→            <div class="shimmer absolute top-0 left-0 w-full h-1"></div>
+   318→            
+   319→            <div class="p-8 md:p-12">
+   320→                <div class="flex justify-between items-center mb-8">
+   321→                    <h2 class="text-3xl font-bold text-white italic">Configuration de l'Alerte</h2>
+   322→                    <button @click="showAlertModal = false" class="text-slate-500 hover:text-white transition-colors">
+   323→                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+   324→                    </button>
+   325→                </div>
+   326→
+   327→                <div class="space-y-6 overflow-y-auto pr-2">
+   328→                    <!-- Nom -->
+   329→                    <div>
+   330→                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Nom de la recherche</label>
+   331→                        <input type="text" placeholder="Ex: Loft centre Lyon" class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-indigo-500 transition-colors">
+   332→                    </div>
+   333→
+   334→                    <div class="grid md:grid-cols-2 gap-6">
+   335→                        <!-- Localisation -->
+   336→                        <div>
+   337→                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Ville ou Code Postal</label>
+   338→                            <div class="relative">
+   339→                                <input type="text" placeholder="Rechercher une zone..." class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 pl-10 text-white outline-none focus:border-indigo-500 transition-colors">
+   340→                                <svg class="absolute left-3 top-3.5 w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+   341→                            </div>
+   342→                        </div>
+   343→                        <!-- Rayon -->
+   344→                        <div>
+   345→                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Rayon (km)</label>
+   346→                            <select class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-indigo-500 transition-colors appearance-none">
+   347→                                <option>0 km (Ville exacte)</option>
+   348→                                <option>5 km</option>
+   349→                                <option>10 km</option>
+   350→                                <option>25 km</option>
+   351→                            </select>
+   352→                        </div>
+   353→                    </div>
+   354→
+   355→                    <div class="grid md:grid-cols-2 gap-6">
+   356→                        <!-- Prix -->
+   357→                        <div>
+   358→                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Budget Max</label>
+   359→                            <input type="number" placeholder="Sans limite" class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-indigo-500 transition-colors">
+   360→                        </div>
+   361→                        <!-- Fréquence -->
+   362→                        <div>
+   363→                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Fréquence Webhook</label>
+   364→                            <div class="flex gap-2 p-1 bg-slate-900/50 border border-white/10 rounded-xl">
+   365→                                <button class="flex-grow py-2 text-xs font-bold rounded-lg bg-indigo-500 text-white shadow-lg">TEMPS RÉEL</button>
+   366→                                <button class="flex-grow py-2 text-xs font-bold rounded-lg text-slate-500 hover:text-white">DIGEST QUOTIDIEN</button>
+   367→                            </div>
+   368→                        </div>
+   369→                    </div>
+   370→
+   371→                    <div class="pt-6 border-t border-white/10 flex justify-end gap-4">
+   372→                        <button @click="showAlertModal = false" class="px-6 py-3 rounded-xl font-bold text-slate-400 hover:text-white transition-all">Annuler</button>
+   373→                        <button @click="showAlertModal = false" class="bg-gradient-to-r from-indigo-600 to-emerald-600 text-white px-8 py-3 rounded-xl font-bold shadow-xl shadow-indigo-600/20 active:scale-95 transition-all italic">
+   374→                            Activer le Webhook
+   375→                        </button>
+   376→                    </div>
+   377→                </div>
+   378→            </div>
+   379→        </div>
+   380→    </div>
+   381→
+   382→    <!-- Footer -->
+   383→    <footer class="bg-brand-deep border-t border-white/5 py-12 relative z-10">
+   384→        <div class="container mx-auto px-6">
+   385→            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+   386→                <div class="flex items-center gap-2">
+   387→                    <div class="w-6 h-6 bg-slate-700 rounded flex items-center justify-center font-bold text-white text-xs">CW</div>
+   388→                    <span class="text-sm font-semibold text-slate-300">ChooseWisely © 2025</span>
+   389→                </div>
+   390→                
+   391→                <div class="flex gap-8 text-xs font-medium text-slate-500 uppercase tracking-widest">
+   392→                    <a href="#" class="hover:text-white transition-colors">Documentation API</a>
+   393→                    <a href="#" class="hover:text-white transition-colors">RGPD</a>
+   394→                    <a href="#" class="hover:text-white transition-colors">Statut Service</a>
+   395→                </div>
+   396→
+   397→                <div class="flex gap-4">
+   398→                    <a href="#" class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:border-indigo-500 hover:text-indigo-400 transition-all">
+   399→                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+   400→                    </a>
+   401→                </div>
+   402→            </div>
+   403→        </div>
+   404→    </footer>
+   405→
+   406→    <script>
+   407→        // Smooth cursor glow for the cards
+   408→        document.addEventListener('mousemove', e => {
+   409→            const glassCards = document.querySelectorAll('.glass');
+   410→            glassCards.forEach(card => {
+   411→                const rect = card.getBoundingClientRect();
+   412→                const x = e.clientX - rect.left;
+   413→                const y = e.clientY - rect.top;
+   414→                card.style.setProperty('--mouse-x', `${x}px`);
+   415→                card.style.setProperty('--mouse-y', `${y}px`);
+   416→            });
+   417→        });
+   418→    </script>
+   419→</body>
+   420→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

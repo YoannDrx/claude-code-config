@@ -1,0 +1,30 @@
+     1→import { getRequiredUser } from "@/lib/auth/auth-user";
+     2→import { combineWithParentMetadata } from "@/lib/metadata";
+     3→import { getI18n } from "@/i18n/server";
+     4→import { AccountLayout } from "../account-layout";
+     5→import { EditProfileCardForm } from "./edit-profile-form";
+     6→
+     7→export const generateMetadata = combineWithParentMetadata(async () => {
+     8→  const { t } = await getI18n();
+     9→  return {
+    10→    title: t("account.profile.editTitle"),
+    11→    description: t("account.profile.editDescription"),
+    12→  };
+    13→});
+    14→
+    15→export default async function EditProfilePage() {
+    16→  const user = await getRequiredUser();
+    17→
+    18→  return (
+    19→    <AccountLayout>
+    20→      <div className="flex flex-col gap-4 lg:gap-8">
+    21→        <EditProfileCardForm defaultValues={user} />
+    22→      </div>
+    23→    </AccountLayout>
+    24→  );
+    25→}
+    26→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

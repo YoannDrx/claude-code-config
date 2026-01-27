@@ -1,0 +1,35 @@
+The file /Users/yoannandrieux/Projets/yodev/src/messages/en.json has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+    59→    ],
+    60→    "rights": "© 2025 Yodev. All rights reserved."
+    61→  },
+    62→  "Home": {
+    63→    "hero": {
+    64→      "eyebrow": "PRODUCT STUDIO FOR TECH-FIRST FOUNDERS",
+    65→      "title": "From prototype to production. Without tech debt.",
+    66→      "subtitle": "Product studio for ambitious founders. We build apps that last — from the first line of code to the first million users.",
+    67→      "primary": "Run the diagnostic",
+    68→      "secondary": "Explore together",
+    69→      "chips": [
+    70→        "MVP & rapid prototyping",
+    71→        "Web & SaaS",
+    72→        "Mobile iOS/Android",
+    73→        "AI & automations",
+    74→        "Brand & UX",
+    75→        "Security & scale"
+    76→      ],
+    77→      "proof": [
+    78→        "Zero tech debt",
+    79→        "Production-ready",
+    80→        "Full ownership"
+    81→      ],
+    82→      "signals": {
+    83→        "studioEyebrow": "Capacity",
+    84→        "studioBody": "2 projects in parallel. Kickoff within 2 weeks.",
+    85→        "outputEyebrow": "How we work",
+    86→        "outputBody": "You talk to the builders, not sales. Shared Slack, full transparency."
+    87→      }
+    88→    },
+    89→    "story": {
+    90→      "eyebrow": "Positioning",
+    91→      "title": "No-code for speed, engineering for durability.",
+    92→      "subtitle": "We use AI/no-code to accelerate, then secure the product trajectory.",

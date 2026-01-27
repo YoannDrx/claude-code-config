@@ -1,0 +1,42 @@
+The file /Users/yoannandrieux/Projets/choosewisely/src/lib/actions/safe-actions.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→"use server";
+     2→
+     3→import { createSafeActionClient } from "next-safe-action";
+     4→import { getRequiredUser } from "../auth/auth-user";
+     5→import { logger } from "../logger";
+     6→
+     7→export class ActionError extends Error {}
+     8→
+     9→type handleServerError = (e: Error) => string;
+    10→
+    11→const handleServerError: handleServerError = (e) => {
+    12→  if (e instanceof ActionError) {
+    13→    logger.debug("[DEV] - Action Error", e.message);
+    14→    return e.message;
+    15→  }
+    16→
+    17→  logger.info("Unknown Error", e);
+    18→
+    19→  if (process.env.NODE_ENV === "development") {
+    20→    return e.message;
+    21→  }
+    22→
+    23→  return "An unexpected error occurred.";
+    24→};
+    25→
+    26→export const action = createSafeActionClient({
+    27→  handleServerError,
+    28→});
+    29→
+    30→export const authAction = createSafeActionClient({
+    31→  handleServerError,
+    32→}).use(async ({ next }) => {
+    33→  const user = await getRequiredUser();
+    34→
+    35→  return next({
+    36→    ctx: {
+    37→      user: user,
+    38→    },
+    39→  });
+    40→});
+    41→

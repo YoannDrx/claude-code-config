@@ -1,0 +1,14 @@
+   225→      namePlaceholder: "ex: Respiration profonde, Méditation, Marche",
+   226→      description: "Description (optionnel)",
+   227→      descriptionPlaceholder: "Comment faire cet exercice...",
+   228→    },
+   229→    list: {
+   230→      title: "Mes exercices",
+   231→      empty:
+   232→        "Pas encore d'exercices. Ajoute ton premier exercice de bien-être !",
+   233→      addNew: "Ajouter un exercice",
+   234→      archived: "Exercices archivés",
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

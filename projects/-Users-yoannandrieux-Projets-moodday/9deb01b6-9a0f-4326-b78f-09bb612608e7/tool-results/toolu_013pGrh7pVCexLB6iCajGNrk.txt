@@ -1,0 +1,2 @@
+/Users/yoannandrieux/Projets/moodday/.github/workflows/code-quality.yml
+/Users/yoannandrieux/Projets/moodday/.github/workflows/playwright.yml

@@ -1,0 +1,69 @@
+The file /Users/yoannandrieux/Projets/choosewisely/app/layout.tsx has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
+     2→import { FloatingLegalFooter } from "@/features/legal/floating-legal-footer";
+     3→import { NextTopLoader } from "@/features/page/next-top-loader";
+     4→import { ServerToaster } from "@/features/server-sonner/server-toaster";
+     5→import { getServerUrl } from "@/lib/server-url";
+     6→import { cn } from "@/lib/utils";
+     7→import { SiteConfig } from "@/site-config";
+     8→import type { LayoutParams } from "@/types/next";
+     9→import type { Metadata } from "next";
+    10→import { Geist_Mono, IBM_Plex_Sans } from "next/font/google";
+    11→import { NuqsAdapter } from "nuqs/adapters/next/app";
+    12→import { type ReactNode, Suspense } from "react";
+    13→import "./globals.css";
+    14→import { Providers } from "./providers";
+    15→
+    16→export const metadata: Metadata = {
+    17→  title: SiteConfig.title,
+    18→  description: SiteConfig.description,
+    19→  metadataBase: new URL(getServerUrl()),
+    20→};
+    21→
+    22→const IBMPlexSans = IBM_Plex_Sans({
+    23→  subsets: ["latin"],
+    24→  weight: ["400", "500", "600", "700"],
+    25→  variable: "--font-geist-sans",
+    26→});
+    27→
+    28→const GeistMono = Geist_Mono({
+    29→  subsets: ["latin"],
+    30→  variable: "--font-geist-mono",
+    31→});
+    32→
+    33→export default function RootLayout({
+    34→  children,
+    35→  modal,
+    36→}: LayoutParams & { modal?: ReactNode }) {
+    37→  return (
+    38→    <html lang="fr" className="dark h-full" suppressHydrationWarning>
+    39→      <body
+    40→        suppressHydrationWarning
+    41→        className={cn(
+    42→          "bg-background h-full font-sans antialiased",
+    43→          GeistMono.variable,
+    44→          IBMPlexSans.variable,
+    45→        )}
+    46→      >
+    47→        <div className="grain pointer-events-none fixed inset-0 z-50" />
+    48→        <NuqsAdapter>
+    49→          <Providers>
+    50→            <NextTopLoader
+    51→              delay={100}
+    52→              showSpinner={false}
+    53→              color="var(--brand-accent)"
+    54→            />
+    55→            {children}
+    56→            {modal}
+    57→            <TailwindIndicator />
+    58→            <FloatingLegalFooter />
+    59→            <Suspense>
+    60→              <ServerToaster />
+    61→            </Suspense>
+    62→          </Providers>
+    63→        </NuqsAdapter>
+    64→      </body>
+    65→    </html>
+    66→  );
+    67→}
+    68→

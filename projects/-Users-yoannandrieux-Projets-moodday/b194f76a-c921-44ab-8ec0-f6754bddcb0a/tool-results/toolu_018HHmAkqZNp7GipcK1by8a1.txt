@@ -1,0 +1,933 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Moodday | Inventaire des Médicaments</title>
+     7→    <!-- Fonts: Inter -->
+     8→    <link rel="preconnect" href="https://fonts.googleapis.com">
+     9→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    11→    <!-- Scripts -->
+    12→    <script src="https://cdn.tailwindcss.com"></script>
+    13→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    14→    <script src="https://unpkg.com/lucide@latest"></script>
+    15→    <script>
+    16→        tailwind.config = {
+    17→            theme: {
+    18→                extend: {
+    19→                    colors: {
+    20→                        primary: {
+    21→                            DEFAULT: '#2BA09F',
+    22→                            dark: '#2A8FA8',
+    23→                            light: '#3DA5B8',
+    24→                            darkest: '#1D7680',
+    25→                        },
+    26→                        sage: {
+    27→                            DEFAULT: '#48A878',
+    28→                            dark: '#3A956E',
+    29→                            light: '#6FBD94',
+    30→                        },
+    31→                        lavender: '#D4C5E8',
+    32→                        warm: {
+    33→                            bg: '#F8F7F3',
+    34→                            panel: '#F4F1ED',
+    35→                        }
+    36→                    },
+    37→                    fontFamily: {
+    38→                        sans: ['Inter', 'sans-serif'],
+    39→                    },
+    40→                    borderRadius: {
+    41→                        'xl': '12px',
+    42→                        '2xl': '24px',
+    43→                        '3xl': '32px',
+    44→                    },
+    45→                    boxShadow: {
+    46→                        'soft': '0 10px 25px -5px rgba(43, 160, 159, 0.1), 0 8px 10px -6px rgba(43, 160, 159, 0.05)',
+    47→                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
+    48→                    }
+    49→                }
+    50→            }
+    51→        }
+    52→    </script>
+    53→    <style>
+    54→        [x-cloak] { display: none !important; }
+    55→        
+    56→        body {
+    57→            background-color: #F8F7F3;
+    58→            color: #1F2937;
+    59→            overflow-x: hidden;
+    60→            font-family: 'Inter', sans-serif;
+    61→        }
+    62→
+    63→        .blob {
+    64→            position: absolute;
+    65→            width: 600px;
+    66→            height: 600px;
+    67→            background: linear-gradient(180deg, rgba(43, 160, 159, 0.08) 0%, rgba(212, 197, 232, 0.08) 100%);
+    68→            filter: blur(100px);
+    69→            border-radius: 50%;
+    70→            z-index: -1;
+    71→        }
+    72→
+    73→        .glass-card {
+    74→            background: rgba(255, 255, 255, 0.7);
+    75→            backdrop-filter: blur(16px);
+    76→            border: 1px solid rgba(255, 255, 255, 0.6);
+    77→        }
+    78→
+    79→        .med-card-active {
+    80→            border-left: 4px solid #2BA09F;
+    81→        }
+    82→
+    83→        .custom-scrollbar::-webkit-scrollbar {
+    84→            width: 6px;
+    85→        }
+    86→        .custom-scrollbar::-webkit-scrollbar-track {
+    87→            background: transparent;
+    88→        }
+    89→        .custom-scrollbar::-webkit-scrollbar-thumb {
+    90→            background: #E5E7EB;
+    91→            border-radius: 10px;
+    92→        }
+    93→
+    94→        .timeline-line::before {
+    95→            content: '';
+    96→            position: absolute;
+    97→            left: 20px;
+    98→            top: 0;
+    99→            bottom: 0;
+   100→            width: 2px;
+   101→            background: #E5E7EB;
+   102→            z-index: 0;
+   103→        }
+   104→    </style>
+   105→</head>
+   106→<body class="min-h-screen flex flex-col" x-data="{ 
+   107→    mobileMenu: false, 
+   108→    scrolled: false, 
+   109→    activeTab: 'actifs',
+   110→    showAddModal: false,
+   111→    showHistory: false,
+   112→    meds: [
+   113→        { id: 1, name: 'Lamictal', dosage: '200mg', freq: '1x/jour', time: '08:00', status: 'taken', since: '15 Oct 2025', archived: false, history: ['Dose augmentée de 100mg à 200mg (20 Oct 2025)', 'Début du traitement (15 Oct 2025)'] },
+   114→        { id: 2, name: 'Abilify', dosage: '5mg', freq: '1x/jour', time: '20:00', status: 'pending', since: '02 Nov 2025', archived: false, history: ['Début du traitement (02 Nov 2025)'] },
+   115→        { id: 3, name: 'Vitamine D', dosage: '1000UI', freq: '1x/jour', time: '12:00', status: 'taken', since: '01 Jan 2025', archived: false, history: [] }
+   116→    ],
+   117→    archivedMeds: [
+   118→        { id: 4, name: 'Sertraline', dosage: '50mg', freq: '1x/jour', stopped: '14 Oct 2025', reason: 'Changement de protocole', history: ['Arrêt du traitement (14 Oct 2025)', 'Début du traitement (12 Fév 2024)'] }
+   119→    ],
+   120→    archiveMed(id) {
+   121→        const index = this.meds.findIndex(m => m.id === id);
+   122→        if (index !== -1) {
+   123→            const med = this.meds.splice(index, 1)[0];
+   124→            med.archived = true;
+   125→            med.stopped = new Date().toLocaleDateString('fr-FR');
+   126→            this.archivedMeds.unshift(med);
+   127→        }
+   128→    },
+   129→    toggleTaken(id) {
+   130→        const med = this.meds.find(m => m.id === id);
+   131→        if (med) med.status = med.status === 'taken' ? 'pending' : 'taken';
+   132→    }
+   133→}" @scroll.window="scrolled = (window.pageYOffset > 20)">
+   134→
+   135→    <!-- Background Decorations -->
+   136→    <div class="blob top-[-150px] left-[-150px]"></div>
+   137→    <div class="blob bottom-[-150px] right-[-150px] bg-sage-light/10"></div>
+   138→
+   139→    <!-- Navigation (Sync with Reference DNA) -->
+   140→    <nav :class="scrolled ? 'glass-card py-3 shadow-sm' : 'bg-transparent py-6'" class="fixed w-full z-50 transition-all duration-300 px-6 lg:px-12">
+   141→        <div class="max-w-7xl mx-auto flex justify-between items-center">
+   142→            <a href="#" class="flex items-center gap-2 group">
+   143→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-soft transform group-hover:rotate-6 transition-transform">
+   144→                    <i data-lucide="calendar-heart" class="text-white w-6 h-6"></i>
+   145→                </div>
+   146→                <span class="text-2xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   147→            </a>
+   148→
+   149→            <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+   150→                <a href="#" class="hover:text-primary transition-colors flex items-center gap-2">
+   151→                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard
+   152→                </a>
+   153→                <a href="#" class="text-primary font-bold flex items-center gap-2">
+   154→                    <i data-lucide="pill" class="w-4 h-4"></i> Médicaments
+   155→                </a>
+   156→                <a href="#" class="hover:text-primary transition-colors flex items-center gap-2">
+   157→                    <i data-lucide="users" class="w-4 h-4"></i> Aidants
+   158→                </a>
+   159→                <div class="h-6 w-px bg-gray-200"></div>
+   160→                <button class="w-10 h-10 bg-warm-panel rounded-full flex items-center justify-center text-primary-darkest hover:bg-primary/10 transition-colors">
+   161→                    <i data-lucide="user" class="w-5 h-5"></i>
+   162→                </button>
+   163→            </div>
+   164→
+   165→            <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2 text-gray-600">
+   166→                <i data-lucide="menu" x-show="!mobileMenu"></i>
+   167→                <i data-lucide="x" x-show="mobileMenu"></i>
+   168→            </button>
+   169→        </div>
+   170→
+   171→        <!-- Mobile Menu -->
+   172→        <div x-show="mobileMenu" x-transition x-cloak class="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col gap-4 shadow-xl">
+   173→            <a href="#" class="text-lg font-medium flex items-center gap-3"><i data-lucide="layout-dashboard" class="w-5 h-5"></i> Dashboard</a>
+   174→            <a href="#" class="text-lg font-bold text-primary flex items-center gap-3"><i data-lucide="pill" class="w-5 h-5"></i> Médicaments</a>
+   175→            <a href="#" class="text-lg font-medium flex items-center gap-3"><i data-lucide="users" class="w-5 h-5"></i> Aidants</a>
+   176→            <hr>
+   177→            <a href="#" class="bg-primary text-white text-center py-3 rounded-xl font-semibold">Profil</a>
+   178→        </div>
+   179→    </nav>
+   180→
+   181→    <!-- Main Content -->
+   182→    <main class="flex-grow pt-32 pb-24 px-6 lg:px-12">
+   183→        <div class="max-w-5xl mx-auto">
+   184→            
+   185→            <!-- Page Header -->
+   186→            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+   187→                <div>
+   188→                    <h1 class="text-4xl font-bold text-gray-900 mb-2">Votre Traitement</h1>
+   189→                    <p class="text-gray-500 max-w-md">Gérez votre inventaire médical, suivez vos changements de dosage et gardez un historique précis pour vos consultations.</p>
+   190→                </div>
+   191→                <div class="flex gap-3">
+   192→                    <button @click="showHistory = !showHistory" class="bg-white hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-2xl font-semibold border border-gray-200 transition-all flex items-center gap-2">
+   193→                        <i data-lucide="history" class="w-5 h-5 text-primary"></i>
+   194→                        <span x-text="showHistory ? 'Cacher l\'historique' : 'Historique complet'"></span>
+   195→                    </button>
+   196→                    <button @click="showAddModal = true" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-2xl font-bold shadow-soft transition-all flex items-center gap-2 active:scale-95">
+   197→                        <i data-lucide="plus" class="w-5 h-5"></i>
+   198→                        Ajouter
+   199→                    </button>
+   200→                </div>
+   201→            </div>
+   202→
+   203→            <div class="grid lg:grid-cols-3 gap-8">
+   204→                
+   205→                <!-- Main Medication List (Left 2 Columns) -->
+   206→                <div class="lg:col-span-2 space-y-8">
+   207→                    
+   208→                    <!-- Tabs Selection -->
+   209→                    <div class="flex p-1 bg-warm-panel rounded-2xl w-fit">
+   210→                        <button @click="activeTab = 'actifs'" :class="activeTab === 'actifs' ? 'bg-white shadow-sm text-primary-darkest' : 'text-gray-400'" class="px-8 py-2.5 rounded-xl font-bold transition-all">Actifs</button>
+   211→                        <button @click="activeTab = 'archives'" :class="activeTab === 'archives' ? 'bg-white shadow-sm text-primary-darkest' : 'text-gray-400'" class="px-8 py-2.5 rounded-xl font-bold transition-all">Archivés</button>
+   212→                    </div>
+   213→
+   214→                    <!-- List Container -->
+   215→                    <div class="space-y-4">
+   216→                        
+   217→                        <!-- Active Meds -->
+   218→                        <template x-if="activeTab === 'actifs'">
+   219→                            <div class="space-y-4">
+   220→                                <template x-for="med in meds" :key="med.id">
+   221→                                    <div class="glass-card p-6 rounded-3xl shadow-soft med-card-active hover:shadow-md transition-all group">
+   222→                                        <div class="flex items-start justify-between">
+   223→                                            <div class="flex gap-5">
+   224→                                                <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+   225→                                                    <i data-lucide="pill" class="text-primary w-8 h-8"></i>
+   226→                                                </div>
+   227→                                                <div>
+   228→                                                    <h3 class="text-xl font-bold text-gray-900" x-text="med.name"></h3>
+   229→                                                    <div class="flex flex-wrap gap-2 mt-1">
+   230→                                                        <span class="bg-warm-panel text-gray-600 px-2.5 py-0.5 rounded-lg text-sm font-semibold" x-text="med.dosage"></span>
+   231→                                                        <span class="bg-lavender/30 text-primary-darkest px-2.5 py-0.5 rounded-lg text-sm font-semibold" x-text="med.freq"></span>
+   232→                                                        <span class="text-gray-400 text-sm flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> <span x-text="med.time"></span></span>
+   233→                                                    </div>
+   234→                                                </div>
+   235→                                            </div>
+   236→                                            <div class="flex flex-col items-end gap-3">
+   237→                                                <div class="flex items-center gap-2">
+   238→                                                    <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Aujourd'hui</span>
+   239→                                                    <button @click="toggleTaken(med.id)" :class="med.status === 'taken' ? 'bg-sage/10 text-sage' : 'bg-gray-100 text-gray-400'" class="flex items-center gap-2 px-3 py-1.5 rounded-full transition-all hover:scale-105">
+   240→                                                        <i :data-lucide="med.status === 'taken' ? 'check-circle-2' : 'circle'" class="w-5 h-5"></i>
+   241→                                                        <span class="text-xs font-bold" x-text="med.status === 'taken' ? 'PRIS' : 'À PRENDRE'"></span>
+   242→                                                    </button>
+   243→                                                </div>
+   244→                                                <div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+   245→                                                    <button class="p-2 text-gray-400 hover:text-primary transition-colors"><i data-lucide="edit-3" class="w-4 h-4"></i></button>
+   246→                                                    <button @click="archiveMed(med.id)" class="p-2 text-gray-400 hover:text-red-500 transition-colors"><i data-lucide="archive" class="w-4 h-4"></i></button>
+   247→                                                </div>
+   248→                                            </div>
+   249→                                        </div>
+   250→                                        <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between text-sm">
+   251→                                            <p class="text-gray-400">Débuté le <span class="font-medium text-gray-600" x-text="med.since"></span></p>
+   252→                                            <div class="flex -space-x-1">
+   253→                                                <div class="w-6 h-6 rounded-full bg-sage flex items-center justify-center border-2 border-white text-[8px] text-white">✓</div>
+   254→                                                <div class="w-6 h-6 rounded-full bg-sage flex items-center justify-center border-2 border-white text-[8px] text-white">✓</div>
+   255→                                                <div class="w-6 h-6 rounded-full bg-sage flex items-center justify-center border-2 border-white text-[8px] text-white">✓</div>
+   256→                                                <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center border-2 border-white text-[8px] text-gray-400">○</div>
+   257→                                            </div>
+   258→                                        </div>
+   259→                                    </div>
+   260→                                </template>
+   261→                                <div x-show="meds.length === 0" class="text-center py-20 bg-white/50 rounded-3xl border-2 border-dashed border-gray-200">
+   262→                                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+   263→                                        <i data-lucide="pill-bottle" class="text-gray-400 w-8 h-8"></i>
+   264→                                    </div>
+   265→                                    <p class="text-gray-500 font-medium">Aucun traitement actif pour le moment.</p>
+   266→                                    <button @click="showAddModal = true" class="mt-4 text-primary font-bold">Ajouter votre premier médicament</button>
+   267→                                </div>
+   268→                            </div>
+   269→                        </template>
+   270→
+   271→                        <!-- Archived Meds -->
+   272→                        <template x-if="activeTab === 'archives'">
+   273→                            <div class="space-y-4">
+   274→                                <template x-for="med in archivedMeds" :key="med.id">
+   275→                                    <div class="glass-card p-6 rounded-3xl opacity-75 grayscale hover:grayscale-0 hover:opacity-100 transition-all border-dashed border-2 border-gray-300">
+   276→                                        <div class="flex items-start justify-between">
+   277→                                            <div class="flex gap-5">
+   278→                                                <div class="w-14 h-14 bg-gray-200 rounded-2xl flex items-center justify-center">
+   279→                                                    <i data-lucide="archive" class="text-gray-500 w-8 h-8"></i>
+   280→                                                </div>
+   281→                                                <div>
+   282→                                                    <h3 class="text-xl font-bold text-gray-600" x-text="med.name"></h3>
+   283→                                                    <p class="text-sm text-gray-400 font-medium"><span x-text="med.dosage"></span> — Arrêté le <span x-text="med.stopped"></span></p>
+   284→                                                    <p class="text-xs mt-2 italic text-gray-500" x-text="'Raison : ' + (med.reason || 'Non spécifiée')"></p>
+   285→                                                </div>
+   286→                                            </div>
+   287→                                            <button class="bg-primary/10 text-primary-darkest px-4 py-2 rounded-xl text-sm font-bold hover:bg-primary/20 transition-all">Réactiver</button>
+   288→                                        </div>
+   289→                                    </div>
+   290→                                </template>
+   291→                            </div>
+   292→                        </template>
+   293→                    </div>
+   294→
+   295→                    <!-- Timeline of Changes (Collapsible) -->
+   296→                    <div x-show="showHistory" x-transition class="bg-white rounded-3xl p-8 border border-gray-100 shadow-soft">
+   297→                        <h2 class="text-2xl font-bold mb-8 flex items-center gap-2">
+   298→                            <i data-lucide="git-branch" class="text-primary w-6 h-6"></i>
+   299→                            Journal des modifications
+   300→                        </h2>
+   301→                        <div class="relative timeline-line space-y-10">
+   302→                            <!-- Flatten all history into timeline -->
+   303→                            <template x-for="med in [...meds, ...archivedMeds]">
+   304→                                <template x-for="event in med.history">
+   305→                                    <div class="relative z-10 pl-12">
+   306→                                        <div class="absolute left-0 top-1 w-10 h-10 bg-white border-2 border-primary rounded-full flex items-center justify-center">
+   307→                                            <i data-lucide="check" class="text-primary w-4 h-4"></i>
+   308→                                        </div>
+   309→                                        <div class="bg-warm-panel/50 p-4 rounded-2xl border border-gray-100">
+   310→                                            <p class="font-bold text-gray-900" x-text="med.name"></p>
+   311→                                            <p class="text-gray-600" x-text="event"></p>
+   312→                                        </div>
+   313→                                    </div>
+   314→                                </template>
+   315→                            </template>
+   316→                        </div>
+   317→                    </div>
+   318→                </div>
+   319→
+   320→                <!-- Sidebar / Summary (Right 1 Column) -->
+   321→                <div class="space-y-6">
+   322→                    <!-- Adherence Card -->
+   323→                    <div class="bg-primary-darkest text-white p-8 rounded-[32px] shadow-2xl relative overflow-hidden">
+   324→                        <div class="absolute -right-4 -top-4 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+   325→                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+   326→                            <i data-lucide="trending-up" class="w-5 h-5"></i> Adhérence
+   327→                        </h3>
+   328→                        <div class="flex items-end gap-2 mb-2">
+   329→                            <span class="text-5xl font-bold">94%</span>
+   330→                            <span class="text-sage-light text-sm font-medium mb-2">+2% vs mois dernier</span>
+   331→                        </div>
+   332→                        <p class="text-white/70 text-sm mb-6">Vous avez pris 26 doses sur 28 prévues cette semaine. Excellent travail !</p>
+   333→                        <div class="w-full h-2 bg-white/20 rounded-full overflow-hidden">
+   334→                            <div class="h-full bg-sage w-[94%] rounded-full"></div>
+   335→                        </div>
+   336→                    </div>
+   337→
+   338→                    <!-- Pro Tip -->
+   339→                    <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+   340→                        <div class="w-10 h-10 bg-lavender/40 rounded-xl flex items-center justify-center mb-4">
+   341→                            <i data-lucide="lightbulb" class="text-primary-darkest w-5 h-5"></i>
+   342→                        </div>
+   343→                        <h4 class="font-bold mb-2">Le saviez-vous ?</h4>
+   344→                        <p class="text-sm text-gray-500 leading-relaxed">
+   345→                            Suivre vos changements de dosage aide votre psychiatre à ajuster votre traitement plus précisément en observant l'impact sur vos courbes d'humeur.
+   346→                        </p>
+   347→                    </div>
+   348→
+   349→                    <!-- Scanner (Placeholder for V1) -->
+   350→                    <div class="bg-sage/5 p-6 rounded-3xl border border-sage/20 border-dashed">
+   351→                        <div class="flex items-center gap-4 mb-4">
+   352→                            <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-sage">
+   353→                                <i data-lucide="scan" class="w-6 h-6"></i>
+   354→                            </div>
+   355→                            <h4 class="font-bold text-sage-dark">Scan Ordonnance</h4>
+   356→                        </div>
+   357→                        <p class="text-xs text-sage-dark/70 mb-4">Ajoutez automatiquement vos nouveaux médicaments en prenant votre ordonnance en photo.</p>
+   358→                        <button class="w-full py-2.5 bg-white border border-sage/30 rounded-xl text-sage font-bold text-sm hover:bg-sage/10 transition-all">Lancer le scanner</button>
+   359→                    </div>
+   360→                </div>
+   361→            </div>
+   362→        </div>
+   363→    </main>
+   364→
+   365→    <!-- Modal: Add Medication -->
+   366→    <div x-show="showAddModal" x-transition x-cloak class="fixed inset-0 z-[100] flex items-center justify-center p-6">
+   367→        <div @click="showAddModal = false" class="absolute inset-0 bg-primary-darkest/20 backdrop-blur-sm"></div>
+   368→        <div class="glass-card w-full max-w-lg rounded-3xl p-8 relative shadow-2xl" @click.stop>
+   369→            <div class="flex justify-between items-center mb-8">
+   370→                <h3 class="text-2xl font-bold text-gray-900">Nouveau Traitement</h3>
+   371→                <button @click="showAddModal = false" class="text-gray-400 hover:text-gray-600"><i data-lucide="x"></i></button>
+   372→            </div>
+   373→            
+   374→            <form @submit.prevent="showAddModal = false" class="space-y-6">
+   375→                <div class="space-y-2">
+   376→                    <label class="text-sm font-bold text-gray-700 ml-1">Nom du médicament</label>
+   377→                    <input type="text" placeholder="Ex: Lamictal, Sertraline..." class="w-full px-4 py-3 rounded-xl bg-warm-panel border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
+   378→                </div>
+   379→                
+   380→                <div class="grid grid-cols-2 gap-4">
+   381→                    <div class="space-y-2">
+   382→                        <label class="text-sm font-bold text-gray-700 ml-1">Dosage</label>
+   383→                        <input type="text" placeholder="Ex: 200mg" class="w-full px-4 py-3 rounded-xl bg-warm-panel border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
+   384→                    </div>
+   385→                    <div class="space-y-2">
+   386→                        <label class="text-sm font-bold text-gray-700 ml-1">Heure de prise</label>
+   387→                        <input type="time" class="w-full px-4 py-3 rounded-xl bg-warm-panel border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
+   388→                    </div>
+   389→                </div>
+   390→
+   391→                <div class="space-y-2">
+   392→                    <label class="text-sm font-bold text-gray-700 ml-1">Fréquence</label>
+   393→                    <select class="w-full px-4 py-3 rounded-xl bg-warm-panel border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
+   394→                        <option>1 fois par jour</option>
+   395→                        <option>2 fois par jour</option>
+   396→                        <option>Tous les deux jours</option>
+   397→                        <option>Personnalisé...</option>
+   398→                    </select>
+   399→                </div>
+   400→
+   401→                <div class="pt-4 flex gap-3">
+   402→                    <button type="button" @click="showAddModal = false" class="flex-1 py-4 rounded-2xl text-gray-500 font-bold hover:bg-gray-100 transition-all">Annuler</button>
+   403→                    <button type="submit" class="flex-1 py-4 rounded-2xl bg-primary text-white font-bold shadow-soft hover:bg-primary-dark transition-all">Enregistrer</button>
+   404→                </div>
+   405→            </form>
+   406→        </div>
+   407→    </div>
+   408→
+   409→    <!-- Footer (Sync with Reference DNA) -->
+   410→    <footer class="bg-white border-t border-gray-100 pt-16 pb-8 px-6 lg:px-12">
+   411→        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+   412→            <div>
+   413→                <a href="#" class="flex items-center gap-2 mb-6">
+   414→                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+   415→                        <i data-lucide="calendar-heart" class="text-white w-5 h-5"></i>
+   416→                    </div>
+   417→                    <span class="text-xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   418→                </a>
+   419→                <p class="text-gray-500 mb-6 leading-relaxed text-sm">
+   420→                    Une approche bienveillante et technologique pour le suivi de la santé mentale.
+   421→                </p>
+   422→                <div class="flex gap-4">
+   423→                    <a href="#" class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-primary transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+   424→                    <a href="#" class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-primary transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+   425→                </div>
+   426→            </div>
+   427→            <div>
+   428→                <h4 class="font-bold mb-6 text-gray-900">Santé</h4>
+   429→                <ul class="space-y-4 text-gray-500 text-sm">
+   430→                    <li><a href="#" class="hover:text-primary transition-colors">Médicaments</a></li>
+   431→                    <li><a href="#" class="hover:text-primary transition-colors">Analyses de phases</a></li>
+   432→                    <li><a href="#" class="hover:text-primary transition-colors">Symptômes</a></li>
+   433→                </ul>
+   434→            </div>
+   435→            <div>
+   436→                <h4 class="font-bold mb-6 text-gray-900">Confidentialité</h4>
+   437→                <ul class="space-y-4 text-gray-500 text-sm">
+   438→                    <li><a href="#" class="hover:text-primary transition-colors">Données médicales</a></li>
+   439→                    <li><a href="#" class="hover:text-primary transition-colors">Hébergement HDS</a></li>
+   440→                    <li><a href="#" class="hover:text-primary transition-colors">Droit à l'oubli</a></li>
+   441→                </ul>
+   442→            </div>
+   443→            <div class="bg-red-50 p-6 rounded-2xl border border-red-100 h-fit">
+   444→                <h4 class="font-bold mb-3 text-red-700 flex items-center gap-2">
+   445→                    <i data-lucide="alert-circle" class="w-5 h-5"></i> Aide d'urgence
+   446→                </h4>
+   447→                <a href="tel:3114" class="block w-full text-center bg-red-600 text-white py-2 rounded-lg font-bold hover:bg-red-700 transition-all mb-2">3114</a>
+   448→                <p class="text-[10px] text-center text-red-500 uppercase font-bold tracking-wider">Gratuit, 24h/24, 7j/7</p>
+   449→            </div>
+   450→        </div>
+   451→        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+   452→            <p>© 2026 Moodday SAS. Tous droits réservés.</p>
+   453→            <p>Le contenu de cette application ne remplace pas l'avis d'un professionnel de santé.</p>
+   454→        </div>
+   455→    </footer>
+   456→
+   457→    <!-- Initialize Lucide Icons -->
+   458→    <script>
+   459→        lucide.createIcons();
+   460→    </script>
+   461→</body>
+   462→</html><!DOCTYPE html>
+   463→<html lang="fr" class="scroll-smooth">
+   464→<head>
+   465→    <meta charset="UTF-8">
+   466→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   467→    <title>Moodday | Inventaire des Médicaments</title>
+   468→    <!-- Fonts: Inter -->
+   469→    <link rel="preconnect" href="https://fonts.googleapis.com">
+   470→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   471→    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   472→    <!-- Scripts -->
+   473→    <script src="https://cdn.tailwindcss.com"></script>
+   474→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+   475→    <script src="https://unpkg.com/lucide@latest"></script>
+   476→    <script>
+   477→        tailwind.config = {
+   478→            theme: {
+   479→                extend: {
+   480→                    colors: {
+   481→                        primary: {
+   482→                            DEFAULT: '#2BA09F',
+   483→                            dark: '#2A8FA8',
+   484→                            light: '#3DA5B8',
+   485→                            darkest: '#1D7680',
+   486→                        },
+   487→                        sage: {
+   488→                            DEFAULT: '#48A878',
+   489→                            dark: '#3A956E',
+   490→                            light: '#6FBD94',
+   491→                        },
+   492→                        lavender: '#D4C5E8',
+   493→                        warm: {
+   494→                            bg: '#F8F7F3',
+   495→                            panel: '#F4F1ED',
+   496→                        }
+   497→                    },
+   498→                    fontFamily: {
+   499→                        sans: ['Inter', 'sans-serif'],
+   500→                    },
+   501→                    borderRadius: {
+   502→                        'xl': '12px',
+   503→                        '2xl': '24px',
+   504→                        '3xl': '32px',
+   505→                    },
+   506→                    boxShadow: {
+   507→                        'soft': '0 10px 25px -5px rgba(43, 160, 159, 0.1), 0 8px 10px -6px rgba(43, 160, 159, 0.05)',
+   508→                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
+   509→                    }
+   510→                }
+   511→            }
+   512→        }
+   513→    </script>
+   514→    <style>
+   515→        [x-cloak] { display: none !important; }
+   516→        
+   517→        body {
+   518→            background-color: #F8F7F3;
+   519→            color: #1F2937;
+   520→            overflow-x: hidden;
+   521→            font-family: 'Inter', sans-serif;
+   522→        }
+   523→
+   524→        .blob {
+   525→            position: absolute;
+   526→            width: 600px;
+   527→            height: 600px;
+   528→            background: linear-gradient(180deg, rgba(43, 160, 159, 0.08) 0%, rgba(212, 197, 232, 0.08) 100%);
+   529→            filter: blur(100px);
+   530→            border-radius: 50%;
+   531→            z-index: -1;
+   532→        }
+   533→
+   534→        .glass-card {
+   535→            background: rgba(255, 255, 255, 0.7);
+   536→            backdrop-filter: blur(16px);
+   537→            border: 1px solid rgba(255, 255, 255, 0.6);
+   538→        }
+   539→
+   540→        .med-card-active {
+   541→            border-left: 4px solid #2BA09F;
+   542→        }
+   543→
+   544→        .custom-scrollbar::-webkit-scrollbar {
+   545→            width: 6px;
+   546→        }
+   547→        .custom-scrollbar::-webkit-scrollbar-track {
+   548→            background: transparent;
+   549→        }
+   550→        .custom-scrollbar::-webkit-scrollbar-thumb {
+   551→            background: #E5E7EB;
+   552→            border-radius: 10px;
+   553→        }
+   554→
+   555→        .timeline-line::before {
+   556→            content: '';
+   557→            position: absolute;
+   558→            left: 20px;
+   559→            top: 0;
+   560→            bottom: 0;
+   561→            width: 2px;
+   562→            background: #E5E7EB;
+   563→            z-index: 0;
+   564→        }
+   565→    </style>
+   566→</head>
+   567→<body class="min-h-screen flex flex-col" x-data="{ 
+   568→    mobileMenu: false, 
+   569→    scrolled: false, 
+   570→    activeTab: 'actifs',
+   571→    showAddModal: false,
+   572→    showHistory: false,
+   573→    meds: [
+   574→        { id: 1, name: 'Lamictal', dosage: '200mg', freq: '1x/jour', time: '08:00', status: 'taken', since: '15 Oct 2025', archived: false, history: ['Dose augmentée de 100mg à 200mg (20 Oct 2025)', 'Début du traitement (15 Oct 2025)'] },
+   575→        { id: 2, name: 'Abilify', dosage: '5mg', freq: '1x/jour', time: '20:00', status: 'pending', since: '02 Nov 2025', archived: false, history: ['Début du traitement (02 Nov 2025)'] },
+   576→        { id: 3, name: 'Vitamine D', dosage: '1000UI', freq: '1x/jour', time: '12:00', status: 'taken', since: '01 Jan 2025', archived: false, history: [] }
+   577→    ],
+   578→    archivedMeds: [
+   579→        { id: 4, name: 'Sertraline', dosage: '50mg', freq: '1x/jour', stopped: '14 Oct 2025', reason: 'Changement de protocole', history: ['Arrêt du traitement (14 Oct 2025)', 'Début du traitement (12 Fév 2024)'] }
+   580→    ],
+   581→    archiveMed(id) {
+   582→        const index = this.meds.findIndex(m => m.id === id);
+   583→        if (index !== -1) {
+   584→            const med = this.meds.splice(index, 1)[0];
+   585→            med.archived = true;
+   586→            med.stopped = new Date().toLocaleDateString('fr-FR');
+   587→            this.archivedMeds.unshift(med);
+   588→        }
+   589→    },
+   590→    toggleTaken(id) {
+   591→        const med = this.meds.find(m => m.id === id);
+   592→        if (med) med.status = med.status === 'taken' ? 'pending' : 'taken';
+   593→    }
+   594→}" @scroll.window="scrolled = (window.pageYOffset > 20)">
+   595→
+   596→    <!-- Background Decorations -->
+   597→    <div class="blob top-[-150px] left-[-150px]"></div>
+   598→    <div class="blob bottom-[-150px] right-[-150px] bg-sage-light/10"></div>
+   599→
+   600→    <!-- Navigation (Sync with Reference DNA) -->
+   601→    <nav :class="scrolled ? 'glass-card py-3 shadow-sm' : 'bg-transparent py-6'" class="fixed w-full z-50 transition-all duration-300 px-6 lg:px-12">
+   602→        <div class="max-w-7xl mx-auto flex justify-between items-center">
+   603→            <a href="#" class="flex items-center gap-2 group">
+   604→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-soft transform group-hover:rotate-6 transition-transform">
+   605→                    <i data-lucide="calendar-heart" class="text-white w-6 h-6"></i>
+   606→                </div>
+   607→                <span class="text-2xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   608→            </a>
+   609→
+   610→            <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+   611→                <a href="#" class="hover:text-primary transition-colors flex items-center gap-2">
+   612→                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard
+   613→                </a>
+   614→                <a href="#" class="text-primary font-bold flex items-center gap-2">
+   615→                    <i data-lucide="pill" class="w-4 h-4"></i> Médicaments
+   616→                </a>
+   617→                <a href="#" class="hover:text-primary transition-colors flex items-center gap-2">
+   618→                    <i data-lucide="users" class="w-4 h-4"></i> Aidants
+   619→                </a>
+   620→                <div class="h-6 w-px bg-gray-200"></div>
+   621→                <button class="w-10 h-10 bg-warm-panel rounded-full flex items-center justify-center text-primary-darkest hover:bg-primary/10 transition-colors">
+   622→                    <i data-lucide="user" class="w-5 h-5"></i>
+   623→                </button>
+   624→            </div>
+   625→
+   626→            <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2 text-gray-600">
+   627→                <i data-lucide="menu" x-show="!mobileMenu"></i>
+   628→                <i data-lucide="x" x-show="mobileMenu"></i>
+   629→            </button>
+   630→        </div>
+   631→
+   632→        <!-- Mobile Menu -->
+   633→        <div x-show="mobileMenu" x-transition x-cloak class="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col gap-4 shadow-xl">
+   634→            <a href="#" class="text-lg font-medium flex items-center gap-3"><i data-lucide="layout-dashboard" class="w-5 h-5"></i> Dashboard</a>
+   635→            <a href="#" class="text-lg font-bold text-primary flex items-center gap-3"><i data-lucide="pill" class="w-5 h-5"></i> Médicaments</a>
+   636→            <a href="#" class="text-lg font-medium flex items-center gap-3"><i data-lucide="users" class="w-5 h-5"></i> Aidants</a>
+   637→            <hr>
+   638→            <a href="#" class="bg-primary text-white text-center py-3 rounded-xl font-semibold">Profil</a>
+   639→        </div>
+   640→    </nav>
+   641→
+   642→    <!-- Main Content -->
+   643→    <main class="flex-grow pt-32 pb-24 px-6 lg:px-12">
+   644→        <div class="max-w-5xl mx-auto">
+   645→            
+   646→            <!-- Page Header -->
+   647→            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+   648→                <div>
+   649→                    <h1 class="text-4xl font-bold text-gray-900 mb-2 text-primary-darkest">Votre Traitement</h1>
+   650→                    <p class="text-gray-500 max-w-md">Gérez votre inventaire médical, suivez vos changements de dosage et gardez un historique précis pour vos consultations.</p>
+   651→                </div>
+   652→                <div class="flex gap-3">
+   653→                    <button @click="showHistory = !showHistory" class="bg-white hover:bg-gray-50 text-gray-700 px-6 py-3 rounded-2xl font-semibold border border-gray-200 transition-all flex items-center gap-2">
+   654→                        <i data-lucide="history" class="w-5 h-5 text-primary"></i>
+   655→                        <span x-text="showHistory ? 'Cacher l\'historique' : 'Historique complet'"></span>
+   656→                    </button>
+   657→                    <button @click="showAddModal = true" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-2xl font-bold shadow-soft transition-all flex items-center gap-2 active:scale-95">
+   658→                        <i data-lucide="plus" class="w-5 h-5"></i>
+   659→                        Ajouter
+   660→                    </button>
+   661→                </div>
+   662→            </div>
+   663→
+   664→            <div class="grid lg:grid-cols-3 gap-8">
+   665→                
+   666→                <!-- Main Medication List (Left 2 Columns) -->
+   667→                <div class="lg:col-span-2 space-y-8">
+   668→                    
+   669→                    <!-- Tabs Selection -->
+   670→                    <div class="flex p-1 bg-warm-panel rounded-2xl w-fit">
+   671→                        <button @click="activeTab = 'actifs'" :class="activeTab === 'actifs' ? 'bg-white shadow-sm text-primary-darkest' : 'text-gray-400'" class="px-8 py-2.5 rounded-xl font-bold transition-all">Actifs</button>
+   672→                        <button @click="activeTab = 'archives'" :class="activeTab === 'archives' ? 'bg-white shadow-sm text-primary-darkest' : 'text-gray-400'" class="px-8 py-2.5 rounded-xl font-bold transition-all">Archivés</button>
+   673→                    </div>
+   674→
+   675→                    <!-- List Container -->
+   676→                    <div class="space-y-4">
+   677→                        
+   678→                        <!-- Active Meds -->
+   679→                        <div x-show="activeTab === 'actifs'" class="space-y-4">
+   680→                            <template x-for="med in meds" :key="med.id">
+   681→                                <div class="glass-card p-6 rounded-3xl shadow-soft med-card-active hover:shadow-md transition-all group">
+   682→                                    <div class="flex items-start justify-between">
+   683→                                        <div class="flex gap-5">
+   684→                                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
+   685→                                                <i data-lucide="pill" class="text-primary w-8 h-8"></i>
+   686→                                            </div>
+   687→                                            <div>
+   688→                                                <h3 class="text-xl font-bold text-gray-900" x-text="med.name"></h3>
+   689→                                                <div class="flex flex-wrap gap-2 mt-1">
+   690→                                                    <span class="bg-warm-panel text-gray-600 px-2.5 py-0.5 rounded-lg text-sm font-semibold" x-text="med.dosage"></span>
+   691→                                                    <span class="bg-lavender/30 text-primary-darkest px-2.5 py-0.5 rounded-lg text-sm font-semibold" x-text="med.freq"></span>
+   692→                                                    <span class="text-gray-400 text-sm flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> <span x-text="med.time"></span></span>
+   693→                                                </div>
+   694→                                            </div>
+   695→                                        </div>
+   696→                                        <div class="flex flex-col items-end gap-3">
+   697→                                            <div class="flex items-center gap-2">
+   698→                                                <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Aujourd'hui</span>
+   699→                                                <button @click="toggleTaken(med.id)" :class="med.status === 'taken' ? 'bg-sage/10 text-sage' : 'bg-gray-100 text-gray-400'" class="flex items-center gap-2 px-3 py-1.5 rounded-full transition-all hover:scale-105">
+   700→                                                    <i :data-lucide="med.status === 'taken' ? 'check-circle-2' : 'circle'" class="w-5 h-5"></i>
+   701→                                                    <span class="text-[10px] font-bold" x-text="med.status === 'taken' ? 'PRIS' : 'À PRENDRE'"></span>
+   702→                                                </button>
+   703→                                            </div>
+   704→                                            <div class="flex gap-2 md:opacity-0 group-hover:opacity-100 transition-opacity">
+   705→                                                <button class="p-2 text-gray-400 hover:text-primary transition-colors"><i data-lucide="edit-3" class="w-4 h-4"></i></button>
+   706→                                                <button @click="archiveMed(med.id)" class="p-2 text-gray-400 hover:text-red-500 transition-colors"><i data-lucide="archive" class="w-4 h-4"></i></button>
+   707→                                            </div>
+   708→                                        </div>
+   709→                                    </div>
+   710→                                    <div class="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between text-sm">
+   711→                                        <p class="text-gray-400 text-xs">Débuté le <span class="font-medium text-gray-600" x-text="med.since"></span></p>
+   712→                                        <div class="flex -space-x-1">
+   713→                                            <div class="w-6 h-6 rounded-full bg-sage flex items-center justify-center border-2 border-white text-[8px] text-white shadow-sm">✓</div>
+   714→                                            <div class="w-6 h-6 rounded-full bg-sage flex items-center justify-center border-2 border-white text-[8px] text-white shadow-sm">✓</div>
+   715→                                            <div class="w-6 h-6 rounded-full bg-sage flex items-center justify-center border-2 border-white text-[8px] text-white shadow-sm">✓</div>
+   716→                                            <div class="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center border-2 border-white text-[8px] text-gray-400">○</div>
+   717→                                        </div>
+   718→                                    </div>
+   719→                                </div>
+   720→                            </template>
+   721→                            <div x-show="meds.length === 0" class="text-center py-20 bg-white/50 rounded-3xl border-2 border-dashed border-gray-200">
+   722→                                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+   723→                                    <i data-lucide="pill-bottle" class="text-gray-400 w-8 h-8"></i>
+   724→                                </div>
+   725→                                <p class="text-gray-500 font-medium">Aucun traitement actif pour le moment.</p>
+   726→                                <button @click="showAddModal = true" class="mt-4 text-primary font-bold">Ajouter votre premier médicament</button>
+   727→                            </div>
+   728→                        </div>
+   729→
+   730→                        <!-- Archived Meds -->
+   731→                        <div x-show="activeTab === 'archives'" class="space-y-4">
+   732→                            <template x-for="med in archivedMeds" :key="med.id">
+   733→                                <div class="glass-card p-6 rounded-3xl opacity-75 grayscale hover:grayscale-0 hover:opacity-100 transition-all border-dashed border-2 border-gray-300">
+   734→                                    <div class="flex items-start justify-between">
+   735→                                        <div class="flex gap-5">
+   736→                                            <div class="w-14 h-14 bg-gray-200 rounded-2xl flex items-center justify-center">
+   737→                                                <i data-lucide="archive" class="text-gray-500 w-8 h-8"></i>
+   738→                                            </div>
+   739→                                            <div>
+   740→                                                <h3 class="text-xl font-bold text-gray-600" x-text="med.name"></h3>
+   741→                                                <p class="text-sm text-gray-400 font-medium"><span x-text="med.dosage"></span> — Arrêté le <span x-text="med.stopped"></span></p>
+   742→                                                <p class="text-xs mt-2 italic text-gray-500" x-text="'Raison : ' + (med.reason || 'Non spécifiée')"></p>
+   743→                                            </div>
+   744→                                        </div>
+   745→                                        <button class="bg-primary/10 text-primary-darkest px-4 py-2 rounded-xl text-xs font-bold hover:bg-primary/20 transition-all">Réactiver</button>
+   746→                                    </div>
+   747→                                </div>
+   748→                            </template>
+   749→                            <div x-show="archivedMeds.length === 0" class="text-center py-12 text-gray-400">
+   750→                                Aucun médicament dans vos archives.
+   751→                            </div>
+   752→                        </div>
+   753→                    </div>
+   754→
+   755→                    <!-- Timeline of Changes -->
+   756→                    <div x-show="showHistory" x-transition class="bg-white rounded-3xl p-8 border border-gray-100 shadow-soft">
+   757→                        <h2 class="text-2xl font-bold mb-8 flex items-center gap-2 text-primary-darkest">
+   758→                            <i data-lucide="git-branch" class="text-primary w-6 h-6"></i>
+   759→                            Journal des modifications
+   760→                        </h2>
+   761→                        <div class="relative timeline-line space-y-10">
+   762→                            <template x-for="med in [...meds, ...archivedMeds]">
+   763→                                <template x-for="event in med.history">
+   764→                                    <div class="relative z-10 pl-12">
+   765→                                        <div class="absolute left-0 top-1 w-10 h-10 bg-white border-2 border-primary rounded-full flex items-center justify-center shadow-sm">
+   766→                                            <i data-lucide="check" class="text-primary w-4 h-4"></i>
+   767→                                        </div>
+   768→                                        <div class="bg-warm-panel/50 p-4 rounded-2xl border border-gray-100">
+   769→                                            <p class="font-bold text-gray-900" x-text="med.name"></p>
+   770→                                            <p class="text-sm text-gray-600" x-text="event"></p>
+   771→                                        </div>
+   772→                                    </div>
+   773→                                </template>
+   774→                            </template>
+   775→                        </div>
+   776→                    </div>
+   777→                </div>
+   778→
+   779→                <!-- Sidebar / Summary (Right 1 Column) -->
+   780→                <div class="space-y-6">
+   781→                    <!-- Adherence Card -->
+   782→                    <div class="bg-primary-darkest text-white p-8 rounded-[32px] shadow-2xl relative overflow-hidden group">
+   783→                        <div class="absolute -right-4 -top-4 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+   784→                        <h3 class="text-sm font-bold mb-4 flex items-center gap-2 text-primary-light">
+   785→                            <i data-lucide="trending-up" class="w-4 h-4"></i> ADHÉRENCE 30J
+   786→                        </h3>
+   787→                        <div class="flex items-end gap-2 mb-2">
+   788→                            <span class="text-5xl font-bold tracking-tighter">94%</span>
+   789→                            <span class="text-sage-light text-sm font-medium mb-2">+2% <i data-lucide="arrow-up-right" class="w-3 h-3 inline"></i></span>
+   790→                        </div>
+   791→                        <p class="text-white/70 text-sm mb-6 leading-relaxed">26 doses sur 28 cette semaine. Vous maintenez un rythme stable !</p>
+   792→                        <div class="w-full h-2.5 bg-white/20 rounded-full overflow-hidden shadow-inner-soft">
+   793→                            <div class="h-full bg-sage w-[94%] rounded-full shadow-lg"></div>
+   794→                        </div>
+   795→                    </div>
+   796→
+   797→                    <!-- Side Stats -->
+   798→                    <div class="grid grid-cols-2 gap-4">
+   799→                        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+   800→                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Actifs</p>
+   801→                            <p class="text-2xl font-bold text-primary-darkest" x-text="meds.length"></p>
+   802→                        </div>
+   803→                        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+   804→                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Archivés</p>
+   805→                            <p class="text-2xl font-bold text-gray-400" x-text="archivedMeds.length"></p>
+   806→                        </div>
+   807→                    </div>
+   808→
+   809→                    <!-- Pro Tip -->
+   810→                    <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
+   811→                        <div class="w-10 h-10 bg-lavender/40 rounded-xl flex items-center justify-center mb-4">
+   812→                            <i data-lucide="lightbulb" class="text-primary-darkest w-5 h-5"></i>
+   813→                        </div>
+   814→                        <h4 class="font-bold text-gray-900 mb-2">Conseil Moodday</h4>
+   815→                        <p class="text-sm text-gray-500 leading-relaxed">
+   816→                            N'oubliez pas d'indiquer les effets secondaires dans vos notes quotidiennes pour mieux corréler vos dosages avec votre bien-être.
+   817→                        </p>
+   818→                    </div>
+   819→
+   820→                    <!-- Scanner (Placeholder for V1) -->
+   821→                    <div class="bg-sage/5 p-6 rounded-3xl border border-sage/20 border-dashed">
+   822→                        <div class="flex items-center gap-4 mb-4">
+   823→                            <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-sage">
+   824→                                <i data-lucide="scan" class="w-6 h-6"></i>
+   825→                            </div>
+   826→                            <h4 class="font-bold text-sage-dark">Scan Ordonnance</h4>
+   827→                        </div>
+   828→                        <p class="text-xs text-sage-dark/70 mb-4 leading-relaxed">Ajoutez automatiquement vos traitements en prenant votre ordonnance en photo.</p>
+   829→                        <button class="w-full py-3 bg-white border border-sage/30 rounded-2xl text-sage font-bold text-xs hover:bg-sage/10 transition-all shadow-sm">Lancer le scanner (Beta)</button>
+   830→                    </div>
+   831→                </div>
+   832→            </div>
+   833→        </div>
+   834→    </main>
+   835→
+   836→    <!-- Modal: Add Medication -->
+   837→    <div x-show="showAddModal" x-transition x-cloak class="fixed inset-0 z-[100] flex items-center justify-center p-6">
+   838→        <div @click="showAddModal = false" class="absolute inset-0 bg-primary-darkest/30 backdrop-blur-md"></div>
+   839→        <div class="glass-card w-full max-w-lg rounded-3xl p-8 relative shadow-2xl overflow-hidden" @click.stop>
+   840→            <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+   841→            
+   842→            <div class="flex justify-between items-center mb-8">
+   843→                <h3 class="text-2xl font-bold text-gray-900">Nouveau Traitement</h3>
+   844→                <button @click="showAddModal = false" class="text-gray-400 hover:text-gray-600 transition-colors"><i data-lucide="x" class="w-6 h-6"></i></button>
+   845→            </div>
+   846→            
+   847→            <form @submit.prevent="showAddModal = false" class="space-y-6">
+   848→                <div class="space-y-2">
+   849→                    <label class="text-sm font-bold text-gray-700 ml-1">Nom du médicament</label>
+   850→                    <input type="text" placeholder="Ex: Lamictal, Sertraline..." class="w-full px-4 py-4 rounded-2xl bg-warm-panel border border-gray-200 focus:outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all shadow-inner-soft">
+   851→                </div>
+   852→                
+   853→                <div class="grid grid-cols-2 gap-4">
+   854→                    <div class="space-y-2">
+   855→                        <label class="text-sm font-bold text-gray-700 ml-1">Dosage</label>
+   856→                        <input type="text" placeholder="Ex: 200mg" class="w-full px-4 py-4 rounded-2xl bg-warm-panel border border-gray-200 focus:outline-none focus:ring-4 focus:ring-primary/10 transition-all shadow-inner-soft">
+   857→                    </div>
+   858→                    <div class="space-y-2">
+   859→                        <label class="text-sm font-bold text-gray-700 ml-1">Heure de prise</label>
+   860→                        <input type="time" class="w-full px-4 py-4 rounded-2xl bg-warm-panel border border-gray-200 focus:outline-none focus:ring-4 focus:ring-primary/10 transition-all shadow-inner-soft">
+   861→                    </div>
+   862→                </div>
+   863→
+   864→                <div class="space-y-2">
+   865→                    <label class="text-sm font-bold text-gray-700 ml-1">Fréquence</label>
+   866→                    <div class="grid grid-cols-2 gap-2">
+   867→                        <button type="button" class="py-3 px-4 rounded-xl border-2 border-primary bg-primary/5 text-primary font-bold text-sm">1x par jour</button>
+   868→                        <button type="button" class="py-3 px-4 rounded-xl border-2 border-gray-100 bg-white text-gray-500 font-bold text-sm hover:border-primary/30">2x par jour</button>
+   869→                    </div>
+   870→                </div>
+   871→
+   872→                <div class="pt-6 flex gap-3">
+   873→                    <button type="button" @click="showAddModal = false" class="flex-1 py-4 rounded-2xl text-gray-400 font-bold hover:bg-gray-100 transition-all">Annuler</button>
+   874→                    <button type="submit" class="flex-1 py-4 rounded-2xl bg-primary text-white font-bold shadow-soft hover:bg-primary-dark transition-all transform active:scale-95">Enregistrer</button>
+   875→                </div>
+   876→            </form>
+   877→        </div>
+   878→    </div>
+   879→
+   880→    <!-- Footer -->
+   881→    <footer class="bg-white border-t border-gray-100 pt-16 pb-8 px-6 lg:px-12 mt-auto">
+   882→        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+   883→            <div>
+   884→                <a href="#" class="flex items-center gap-2 mb-6">
+   885→                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+   886→                        <i data-lucide="calendar-heart" class="text-white w-5 h-5"></i>
+   887→                    </div>
+   888→                    <span class="text-xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   889→                </a>
+   890→                <p class="text-gray-500 mb-6 leading-relaxed text-sm">
+   891→                    Votre inventaire médical structuré pour une santé mentale apaisée. Développé avec soin pour la vie réelle.
+   892→                </p>
+   893→            </div>
+   894→            <div>
+   895→                <h4 class="font-bold mb-6 text-gray-900">Application</h4>
+   896→                <ul class="space-y-4 text-gray-500 text-sm">
+   897→                    <li><a href="#" class="hover:text-primary transition-colors">Traitement</a></li>
+   898→                    <li><a href="#" class="hover:text-primary transition-colors">Humeur</a></li>
+   899→                    <li><a href="#" class="hover:text-primary transition-colors">Analytique</a></li>
+   900→                </ul>
+   901→            </div>
+   902→            <div>
+   903→                <h4 class="font-bold mb-6 text-gray-900">Aide</h4>
+   904→                <ul class="space-y-4 text-gray-500 text-sm">
+   905→                    <li><a href="#" class="hover:text-primary transition-colors">Guide d'utilisation</a></li>
+   906→                    <li><a href="#" class="hover:text-primary transition-colors">FAQ Traitement</a></li>
+   907→                    <li><a href="#" class="hover:text-primary transition-colors">Contact Support</a></li>
+   908→                </ul>
+   909→            </div>
+   910→            <div class="bg-red-50 p-6 rounded-3xl border border-red-100 h-fit">
+   911→                <h4 class="font-bold mb-3 text-red-700 flex items-center gap-2">
+   912→                    <i data-lucide="alert-circle" class="w-5 h-5"></i> Aide d'urgence
+   913→                </h4>
+   914→                <a href="tel:3114" class="block w-full text-center bg-red-600 text-white py-3 rounded-2xl font-bold hover:bg-red-700 transition-all mb-2 shadow-sm">Appeler le 3114</a>
+   915→                <p class="text-[10px] text-center text-red-400 font-bold uppercase tracking-wider">Ligne nationale de prévention</p>
+   916→            </div>
+   917→        </div>
+   918→        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-gray-400">
+   919→            <p>© 2026 Moodday SAS. Certifié conforme GDPR.</p>
+   920→            <p>Ce tableau de bord est un outil de suivi personnel, parlez-en à votre médecin.</p>
+   921→        </div>
+   922→    </footer>
+   923→
+   924→    <!-- Initialize Lucide Icons -->
+   925→    <script>
+   926→        lucide.createIcons();
+   927→    </script>
+   928→</body>
+   929→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

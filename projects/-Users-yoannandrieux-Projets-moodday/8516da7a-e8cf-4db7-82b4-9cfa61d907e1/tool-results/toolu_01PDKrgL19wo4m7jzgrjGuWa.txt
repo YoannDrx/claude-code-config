@@ -1,0 +1,40 @@
+     1→export const SiteConfig = {
+     2→  title: "NOW.TS",
+     3→  description: "Collect and showcase powerful video and text testimonials",
+     4→  prodUrl: "https://demo.nowts.app",
+     5→  appId: "nowts",
+     6→  domain: "demo.nowts.app",
+     7→  appIcon: "/images/icon.png",
+     8→  company: {
+     9→    name: "NOW.TS LLC",
+    10→    address: "421 Rue de Paris, France", // Remove if not needed
+    11→  },
+    12→  brand: {
+    13→    primary: "#007291", // You can adjust this to your brand color
+    14→  },
+    15→  team: {
+    16→    image: "https://melvynx.com/images/me/twitter-en.jpg",
+    17→    website: "https://melvynx.com",
+    18→    twitter: "https://twitter.com/melvyn_me",
+    19→    name: "Melvynx",
+    20→  },
+    21→  features: {
+    22→    /**
+    23→     * If enable, you need to specify the logic of upload here : src/features/images/uploadImageAction.tsx
+    24→     * You can use Vercel Blob Storage : https://vercel.com/docs/storage/vercel-blob
+    25→     * Or you can use Cloudflare R2 : https://mlv.sh/cloudflare-r2-tutorial
+    26→     * Or you can use AWS S3 : https://mlv.sh/aws-s3-tutorial
+    27→     */
+    28→    enableImageUpload: false as boolean,
+    29→    /**
+    30→     * If enable, the user will be redirected to `/orgs` when he visits the landing page at `/`
+    31→     * The logic is located in middleware.ts
+    32→     */
+    33→    enableLandingRedirection: true as boolean,
+    34→  },
+    35→};
+    36→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

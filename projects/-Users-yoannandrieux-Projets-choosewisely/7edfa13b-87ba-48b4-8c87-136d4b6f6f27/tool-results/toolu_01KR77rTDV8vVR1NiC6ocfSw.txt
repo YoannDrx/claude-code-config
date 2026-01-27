@@ -1,0 +1,4 @@
+/Users/yoannandrieux/Projets/choosewisely/src/lib/organizations/get-org.ts
+/Users/yoannandrieux/Projets/choosewisely/src/lib/organizations/is-in-roles.ts
+/Users/yoannandrieux/Projets/choosewisely/src/lib/organizations/get-org-subscription.ts
+/Users/yoannandrieux/Projets/choosewisely/src/lib/organizations/reserved-slugs.ts

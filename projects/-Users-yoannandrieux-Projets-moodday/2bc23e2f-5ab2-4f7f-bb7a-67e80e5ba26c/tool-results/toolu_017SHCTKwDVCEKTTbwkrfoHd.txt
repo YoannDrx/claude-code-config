@@ -1,0 +1,104 @@
+   777→#### Story 5.1: MoodChart Component (30 Days)
+   778→**En tant qu'** utilisateur,
+   779→**Je veux** voir une courbe de mon humeur sur les 30 derniers jours,
+   780→**Afin de** visualiser les tendances et patterns.
+   781→
+   782→**FRs:** FR28
+   783→**Points:** 3
+   784→
+   785→**Acceptance Criteria:**
+   786→- [ ] Graphique linéaire avec Recharts
+   787→- [ ] Axe X: dates (30 jours)
+   788→- [ ] Axe Y: humeur (0-10)
+   789→- [ ] Points interactifs (tap pour détails)
+   790→- [ ] Ligne de tendance optionnelle
+   791→- [ ] Style glass-morphism cohérent
+   792→- [ ] Responsive mobile
+   793→
+   794→**Technical Notes:**
+   795→- Composant: `src/components/nowts/mood-chart.tsx`
+   796→- Utiliser Recharts `<LineChart>`
+   797→- Couleurs de la palette UX
+   798→
+   799→---
+   800→
+   801→#### Story 5.2: Dosage Markers on Chart
+   802→**En tant qu'** utilisateur,
+   803→**Je veux** voir les changements de dosage marqués sur ma courbe d'humeur,
+   804→**Afin de** corréler traitement et humeur visuellement.
+   805→
+   806→**FRs:** FR29
+   807→**Points:** 2
+   808→
+   809→**Acceptance Criteria:**
+   810→- [ ] Marqueurs verticaux aux dates de changement de dosage
+   811→- [ ] Info-bulle au tap: "Lamictal: 100mg → 150mg"
+   812→- [ ] Couleur distincte des points d'humeur
+   813→- [ ] Légende explicative
+   814→
+   815→**Technical Notes:**
+   816→- Utiliser Recharts `<ReferenceLine>` ou custom markers
+   817→- Query: join MoodEntry + MedicationHistory
+   818→
+   819→---
+   820→
+   821→#### Story 5.3: Aggregated Dashboard
+   822→**En tant qu'** utilisateur,
+   823→**Je veux** un dashboard central montrant humeur, médicaments et thérapie,
+   824→**Afin de** avoir une vue 360° de ma santé mentale.
+   825→
+   826→**FRs:** FR30
+   827→**Points:** 3
+   828→
+   829→**Acceptance Criteria:**
+   830→- [ ] Section humeur: moyenne semaine, mini-courbe
+   831→- [ ] Section médicaments: observance %, prises du jour
+   832→- [ ] Section thérapie: dernière séance, prochain RDV (si noté)
+   833→- [ ] Section exercices: activité récente
+   834→- [ ] Design GlassCard cohérent
+   835→- [ ] Chargement rapide (LCP < 2.5s - NFR-P2)
+   836→
+   837→**Technical Notes:**
+   838→- Page: `app/(dashboard)/page.tsx`
+   839→- Composant: `DashboardSummary`
+   840→- Parallel data fetching pour performance
+   841→
+   842→---
+   843→
+   844→#### Story 5.4: Pattern Insights
+   845→**En tant qu'** utilisateur,
+   846→**Je veux** voir des insights sur mes patterns et tendances,
+   847→**Afin de** mieux comprendre mon fonctionnement.
+   848→
+   849→**FRs:** FR31
+   850→**Points:** 3
+   851→
+   852→**Acceptance Criteria:**
+   853→- [ ] Insights générés automatiquement (pas d'IA pour MVP)
+   854→- [ ] Exemples: "Humeur moyenne plus haute le weekend"
+   855→- [ ] "Observance médicaments: 85% ce mois"
+   856→- [ ] "3 séances de thérapie ce mois (vs 2 le mois dernier)"
+   857→- [ ] Ton positif et encourageant
+   858→- [ ] Pas de jugement sur les "mauvais" patterns
+   859→
+   860→**Technical Notes:**
+   861→- Composant: `InsightCard`
+   862→- Calculs côté serveur (Server Components)
+   863→- Logique simple basée sur moyennes/comparaisons
+   864→
+   865→---
+   866→
+   867→### Epic 6: Export for Consultation
+   868→
+   869→#### Story 6.1: Date Range Selector
+   870→**En tant qu'** utilisateur,
+   871→**Je veux** sélectionner une période pour mon export PDF,
+   872→**Afin de** choisir les données pertinentes pour ma consultation.
+   873→
+   874→**FRs:** FR33
+   875→**Points:** 1
+   876→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

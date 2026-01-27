@@ -1,0 +1,3867 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  * Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  * Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  * Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  * Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  * Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request less than a minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  * Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  * Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  * Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* Lint & TypeScript Check (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  * Complete job
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+* Exchange Native Services Tests (ID 61480723533)
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Run Exchange Native Services tests
+  * Test Results Summary
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Run Exchange Native Services tests
+  * Test Results Summary
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Run Exchange Native Services tests
+  * Test Results Summary
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Run Exchange Native Services tests
+  * Test Results Summary
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Run Exchange Native Services tests
+  * Test Results Summary
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Run Exchange Native Services tests
+  * Test Results Summary
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Run Exchange Native Services tests
+  * Test Results Summary
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run Exchange Native Services tests
+  * Test Results Summary
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+* Exchange Native Services Tests (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Unit Tests (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  * Upload coverage reports
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Generate Prisma Client
+  * Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  * Build application
+  * Check build output
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+* Build Application (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  ✓ Build application
+  ✓ Check build output
+  ✓ Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+  * Stop containers
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Build Application in 3m27s (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  ✓ Build application
+  ✓ Check build output
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+- CI Success in 0s (ID 61481207439)
+- E2E Tests (Playwright) in 0s (ID 61481207741)
+X feature/portfolio-tracking-refactor CI/CD Pipeline YoannDrx/mycryptopilot#86 · 21361153623
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ Lint & TypeScript Check in 1m30s (ID 61480546824)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Generate Next.js types
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+X Unit Tests in 1m17s (ID 61480723532)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  X Run unit tests
+  ✓ Upload coverage reports
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Exchange Native Services Tests in 36s (ID 61480723533)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Run Exchange Native Services tests
+  ✓ Test Results Summary
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Build Application in 3m27s (ID 61480801308)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run database migrations
+  ✓ Build application
+  ✓ Check build output
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+- CI Success in 0s (ID 61481207439)
+- E2E Tests (Playwright) in 0s (ID 61481207741)

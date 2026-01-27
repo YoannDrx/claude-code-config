@@ -1,0 +1,3 @@
+Exit code 127
+(eval):1: command not found: upstash
+(eval):1: command not found: upstash

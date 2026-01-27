@@ -1,0 +1,110 @@
+     1→"use client";
+     2→
+     3→import type { NavigationGroup } from "@/features/navigation/navigation.type";
+     4→import {
+     5→  Collapsible,
+     6→  CollapsibleContent,
+     7→  CollapsibleTrigger,
+     8→} from "@radix-ui/react-collapsible";
+     9→import { ChevronRight } from "lucide-react";
+    10→import Link from "next/link";
+    11→import { usePathname } from "next/navigation";
+    12→import type { ComponentProps } from "react";
+    13→import type { SidebarMenuButtonProps } from "./sidebar";
+    14→import {
+    15→  SidebarMenu,
+    16→  SidebarMenuButton,
+    17→  SidebarMenuItem,
+    18→  SidebarMenuSub,
+    19→  SidebarMenuSubButton,
+    20→  SidebarMenuSubItem,
+    21→} from "./sidebar";
+    22→
+    23→export const SidebarMenuButtonLink = ({
+    24→  href,
+    25→  children,
+    26→  ...props
+    27→}: SidebarMenuButtonProps & { href: string }) => {
+    28→  const pathname = usePathname();
+    29→
+    30→  return (
+    31→    <SidebarMenuButton {...props} asChild isActive={pathname === href}>
+    32→      <Link prefetch={true} href={href}>
+    33→        {children}
+    34→      </Link>
+    35→    </SidebarMenuButton>
+    36→  );
+    37→};
+    38→
+    39→export const SidebarSubButtonLink = ({
+    40→  href,
+    41→  children,
+    42→  ...props
+    43→}: ComponentProps<typeof SidebarMenuSubButton> & { href: string }) => {
+    44→  const pathname = usePathname();
+    45→
+    46→  return (
+    47→    <SidebarMenuSubButton {...props} asChild isActive={pathname === href}>
+    48→      <Link prefetch={true} href={href}>
+    49→        {children}
+    50→      </Link>
+    51→    </SidebarMenuSubButton>
+    52→  );
+    53→};
+    54→
+    55→export const SidebarNavigationMenu = (props: { link: NavigationGroup }) => {
+    56→  const { link } = props;
+    57→
+    58→  return (
+    59→    <SidebarMenu>
+    60→      {link.links.map((item) => {
+    61→        if (item.links) {
+    62→          return (
+    63→            <Collapsible
+    64→              defaultOpen
+    65→              key={item.label}
+    66→              className="group/collapsible"
+    67→            >
+    68→              <SidebarMenuItem>
+    69→                <SidebarMenuButtonLink href={item.href}>
+    70→                  <item.Icon />
+    71→                  <span>{item.label}</span>
+    72→                  <CollapsibleTrigger className="ml-auto">
+    73→                    <ChevronRight className="text-muted-foreground ml-auto size-4 transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+    74→                  </CollapsibleTrigger>
+    75→                </SidebarMenuButtonLink>
+    76→
+    77→                <CollapsibleContent>
+    78→                  <SidebarMenuSub>
+    79→                    {item.links.map((subItem) => (
+    80→                      <SidebarMenuSubItem key={subItem.label}>
+    81→                        <SidebarSubButtonLink href={subItem.href}>
+    82→                          <subItem.Icon />
+    83→                          <span>{subItem.label}</span>
+    84→                        </SidebarSubButtonLink>
+    85→                      </SidebarMenuSubItem>
+    86→                    ))}
+    87→                  </SidebarMenuSub>
+    88→                </CollapsibleContent>
+    89→              </SidebarMenuItem>
+    90→            </Collapsible>
+    91→          );
+    92→        }
+    93→
+    94→        return (
+    95→          <SidebarMenuItem key={item.label}>
+    96→            <SidebarMenuButtonLink href={item.href}>
+    97→              <item.Icon />
+    98→              <span>{item.label}</span>
+    99→            </SidebarMenuButtonLink>
+   100→          </SidebarMenuItem>
+   101→        );
+   102→      })}
+   103→    </SidebarMenu>
+   104→  );
+   105→};
+   106→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

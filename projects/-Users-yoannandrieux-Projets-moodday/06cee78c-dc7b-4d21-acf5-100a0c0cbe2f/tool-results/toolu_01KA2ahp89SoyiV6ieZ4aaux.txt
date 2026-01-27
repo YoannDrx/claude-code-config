@@ -1,0 +1,1 @@
+Command running in background with ID: bf4c053. Output is being written to: /tmp/claude/-Users-yoannandrieux-Projets-moodday/tasks/bf4c053.output

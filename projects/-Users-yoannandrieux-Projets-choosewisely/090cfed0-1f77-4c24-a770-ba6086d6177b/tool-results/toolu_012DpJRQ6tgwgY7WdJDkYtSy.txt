@@ -1,0 +1,329 @@
+     1→"use client";
+     2→
+     3→import { BentoGrid, BentoGridItem } from "@/components/nowts/bentoo";
+     4→import { Loader } from "@/components/nowts/loader";
+     5→import { Typography } from "@/components/nowts/typography";
+     6→import { Alert, AlertTitle } from "@/components/ui/alert";
+     7→import { cn } from "@/lib/utils";
+     8→import {
+     9→  BarChart3,
+    10→  Search,
+    11→  CheckCircle,
+    12→  Home,
+    13→  TrendingDown,
+    14→  Zap,
+    15→} from "lucide-react";
+    16→import type { Variants } from "motion/react";
+    17→import { motion } from "motion/react";
+    18→import { SectionLayout } from "./section-layout";
+    19→
+    20→export function BentoGridSection() {
+    21→  return (
+    22→    <SectionLayout
+    23→      size="lg"
+    24→      sectionTitle="Fonctionnalités"
+    25→      title={
+    26→        <>
+    27→          Tout ce dont vous avez besoin pour{" "}
+    28→          <span className="text-gradient-brand">investir sereinement</span>
+    29→        </>
+    30→      }
+    31→      subtitle="Des outils puissants pour analyser le marché immobilier et prendre les meilleures décisions."
+    32→    >
+    33→      <BentoGrid className="mx-auto max-w-5xl md:auto-rows-[22rem]">
+    34→        {items.map((item, i) => (
+    35→          <BentoGridItem
+    36→            key={i}
+    37→            title={item.title}
+    38→            description={item.description}
+    39→            header={item.header}
+    40→            className={cn("[&>p:text-lg] glass-card", item.className)}
+    41→            icon={item.icon}
+    42→          />
+    43→        ))}
+    44→      </BentoGrid>
+    45→    </SectionLayout>
+    46→  );
+    47→}
+    48→
+    49→const Skeleton1 = () => {
+    50→  const variants: Variants = {
+    51→    initial: { opacity: 0 },
+    52→    animate: { opacity: 1 },
+    53→  };
+    54→
+    55→  return (
+    56→    <motion.div
+    57→      initial="initial"
+    58→      whileHover="animate"
+    59→      className="flex h-full flex-col gap-2"
+    60→    >
+    61→      <motion.div className="glass flex flex-row items-start gap-2 rounded-xl p-3">
+    62→        <Search className="text-primary size-6 shrink-0" />
+    63→        <div>
+    64→          <p className="text-xs text-muted-foreground">
+    65→            Rechercher un appartement à Paris 11ème
+    66→          </p>
+    67→        </div>
+    68→      </motion.div>
+    69→      <motion.div
+    70→        variants={variants}
+    71→        className="glass flex flex-row items-start justify-end gap-2 rounded-xl p-3"
+    72→      >
+    73→        <p className="text-xs text-muted-foreground">
+    74→          127 biens trouvés correspondant à vos critères. Prix moyen : 485
+    75→          000€. Meilleures opportunités identifiées.
+    76→        </p>
+    77→        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-[var(--brand-accent)] to-[var(--brand-highlight)]" />
+    78→      </motion.div>
+    79→    </motion.div>
+    80→  );
+    81→};
+    82→
+    83→const Skeleton2 = () => {
+    84→  const variants: Variants = {
+    85→    initial: { opacity: 0, y: -10 },
+    86→    animate: { opacity: 1, y: 0 },
+    87→  };
+    88→  return (
+    89→    <motion.div
+    90→      initial="initial"
+    91→      whileHover="animate"
+    92→      className="flex h-full flex-col gap-2"
+    93→    >
+    94→      <motion.div>
+    95→        <Alert variant="default" className="glass border-[var(--border-subtle)]">
+    96→          <Loader size={20} />
+    97→          <AlertTitle className="text-foreground">Analyse des données DVF en cours...</AlertTitle>
+    98→        </Alert>
+    99→      </motion.div>
+   100→      <motion.div variants={variants}>
+   101→        <Alert variant="success" className="glass border-success/20">
+   102→          <CheckCircle size={20} className="text-success" />
+   103→          <AlertTitle className="text-success">
+   104→            Ce bien est 12% en dessous du prix du marché !
+   105→          </AlertTitle>
+   106→        </Alert>
+   107→      </motion.div>
+   108→    </motion.div>
+   109→  );
+   110→};
+   111→
+   112→const Skeleton3 = () => {
+   113→  const variants = {
+   114→    initial: {
+   115→      backgroundPosition: "0 50%",
+   116→    },
+   117→    animate: {
+   118→      backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
+   119→    },
+   120→  };
+   121→  return (
+   122→    <motion.div
+   123→      initial="initial"
+   124→      animate="animate"
+   125→      variants={variants}
+   126→      transition={{
+   127→        duration: 5,
+   128→        repeat: Infinity,
+   129→        repeatType: "reverse",
+   130→      }}
+   131→      className="flex size-full min-h-24 flex-1 flex-col space-y-2 rounded-xl"
+   132→      style={{
+   133→        background:
+   134→          "linear-gradient(-45deg, var(--brand-accent), var(--brand-highlight), #06b6d4, #a78bfa)",
+   135→        backgroundSize: "400% 400%",
+   136→      }}
+   137→    >
+   138→      <motion.div className="size-full rounded-xl"></motion.div>
+   139→    </motion.div>
+   140→  );
+   141→};
+   142→
+   143→const Skeleton4 = () => {
+   144→  const first = {
+   145→    initial: {
+   146→      x: 20,
+   147→      rotate: -5,
+   148→    },
+   149→    hover: {
+   150→      x: 0,
+   151→      rotate: 0,
+   152→    },
+   153→  };
+   154→  const second = {
+   155→    initial: {
+   156→      x: -20,
+   157→      rotate: 5,
+   158→    },
+   159→    hover: {
+   160→      x: 0,
+   161→      rotate: 0,
+   162→    },
+   163→  };
+   164→  return (
+   165→    <motion.div
+   166→      initial="initial"
+   167→      animate="animate"
+   168→      whileHover="hover"
+   169→      className="flex flex-1 flex-row gap-4"
+   170→    >
+   171→      <motion.div
+   172→        variants={first}
+   173→        className="glass flex h-full w-1/3 flex-col items-center justify-center rounded-xl p-4"
+   174→      >
+   175→        <Typography variant="large" className="text-foreground">485 000€</Typography>
+   176→        <Typography variant={"muted"}>Prix médian</Typography>
+   177→        <Typography variant={"muted"} className="text-destructive">
+   178→          +8% /an
+   179→        </Typography>
+   180→      </motion.div>
+   181→      <motion.div className="glass flex h-full w-1/3 flex-col items-center justify-center rounded-xl p-4">
+   182→        <Typography variant="large" className="text-foreground">127 biens</Typography>
+   183→        <Typography variant={"muted"}>Disponibles</Typography>
+   184→        <Typography variant={"muted"} className="text-success">
+   185→          +15 cette semaine
+   186→        </Typography>
+   187→      </motion.div>
+   188→      <motion.div
+   189→        variants={second}
+   190→        className="glass flex h-full w-1/3 flex-col items-center justify-center rounded-xl p-4"
+   191→      >
+   192→        <Typography variant="large" className="text-foreground">DPE C</Typography>
+   193→        <Typography variant="large" className="text-foreground">32 kgCO2/m²</Typography>
+   194→        <Typography variant={"muted"}>Moyenne quartier</Typography>
+   195→      </motion.div>
+   196→    </motion.div>
+   197→  );
+   198→};
+   199→
+   200→const Skeleton5 = () => {
+   201→  const variants = {
+   202→    initial: {
+   203→      x: 0,
+   204→    },
+   205→    animate: {
+   206→      x: 10,
+   207→      rotate: 5,
+   208→      transition: {
+   209→        duration: 0.2,
+   210→      },
+   211→    },
+   212→  };
+   213→  const variantsSecond = {
+   214→    initial: {
+   215→      x: 0,
+   216→    },
+   217→    animate: {
+   218→      x: -10,
+   219→      rotate: -5,
+   220→      transition: {
+   221→        duration: 0.2,
+   222→      },
+   223→    },
+   224→  };
+   225→
+   226→  return (
+   227→    <motion.div
+   228→      initial="initial"
+   229→      whileHover="animate"
+   230→      className="flex flex-col gap-2"
+   231→    >
+   232→      <motion.div
+   233→        variants={variants}
+   234→        className="glass flex flex-row items-start gap-2 rounded-xl p-3"
+   235→      >
+   236→        <Home className="text-primary size-10" />
+   237→        <p className="text-xs text-muted-foreground">
+   238→          Ce bien vaut-il vraiment 520 000€ ?
+   239→        </p>
+   240→      </motion.div>
+   241→      <motion.div
+   242→        variants={variantsSecond}
+   243→        className="glass flex flex-row items-start justify-end gap-2 rounded-xl p-3"
+   244→      >
+   245→        <div>
+   246→          <p className="text-xs text-muted-foreground">Analyse en cours...</p>
+   247→          <motion.p
+   248→            className="text-xs text-muted-foreground"
+   249→            variants={{
+   250→              initial: {
+   251→                opacity: 0,
+   252→              },
+   253→              animate: {
+   254→                opacity: 1,
+   255→              },
+   256→            }}
+   257→          >
+   258→            Selon les ventes DVF récentes, le prix de négociation recommandé
+   259→            est de 485 000€ (-7%). Marge de négociation : forte.
+   260→          </motion.p>
+   261→        </div>
+   262→        <div className="size-6 shrink-0 rounded-full bg-gradient-to-r from-[var(--brand-accent)] to-[var(--brand-highlight)]" />
+   263→      </motion.div>
+   264→    </motion.div>
+   265→  );
+   266→};
+   267→
+   268→const items = [
+   269→  {
+   270→    title: "Recherche intelligente",
+   271→    description: (
+   272→      <span className="text-sm text-muted-foreground">
+   273→        Agrégez toutes les annonces immobilières françaises en un seul endroit.
+   274→      </span>
+   275→    ),
+   276→    header: <Skeleton1 />,
+   277→    className: "md:col-span-1",
+   278→    icon: <Search size={20} className="text-primary" />,
+   279→  },
+   280→  {
+   281→    title: "Analyse DVF instantanée",
+   282→    description: (
+   283→      <span className="text-sm text-muted-foreground">
+   284→        Comparez chaque bien aux ventes réelles du quartier.
+   285→      </span>
+   286→    ),
+   287→    header: <Skeleton2 />,
+   288→    className: "md:col-span-1",
+   289→    icon: <TrendingDown size={20} className="text-primary" />,
+   290→  },
+   291→  {
+   292→    title: "Données DPE complètes",
+   293→    description: (
+   294→      <span className="text-sm text-muted-foreground">
+   295→        Anticipez les coûts énergétiques et les restrictions locatives.
+   296→      </span>
+   297→    ),
+   298→    header: <Skeleton3 />,
+   299→    className: "md:col-span-1",
+   300→    icon: <Zap size={20} className="text-primary" />,
+   301→  },
+   302→  {
+   303→    title: "Tableau de bord marché",
+   304→    description: (
+   305→      <span className="text-sm text-muted-foreground">
+   306→        Suivez les tendances de prix et les opportunités en temps réel.
+   307→      </span>
+   308→    ),
+   309→    header: <Skeleton4 />,
+   310→    className: "md:col-span-2",
+   311→    icon: <BarChart3 size={20} className="text-primary" />,
+   312→  },
+   313→  {
+   314→    title: "Aide à la négociation",
+   315→    description: (
+   316→      <span className="text-sm text-muted-foreground">
+   317→        Obtenez des recommandations de prix basées sur les données réelles.
+   318→      </span>
+   319→    ),
+   320→    header: <Skeleton5 />,
+   321→    className: "md:col-span-1",
+   322→    icon: <Home className="size-5 text-primary" />,
+   323→  },
+   324→];
+   325→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

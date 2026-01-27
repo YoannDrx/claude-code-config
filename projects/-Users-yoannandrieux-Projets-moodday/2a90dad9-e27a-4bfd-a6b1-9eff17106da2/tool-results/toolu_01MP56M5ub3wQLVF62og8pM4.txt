@@ -1,0 +1,31 @@
+The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/prd.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   431→> Minimum viable pour que Marie dise "Je vois que mon traitement marche" et que Lucas dise "J'ai des preuves de ma progression"
+   432→
+   433→**Scope Classification:** Medium (10-12 screens, 7 features core)
+   434→
+   435→### MVP Feature Set (Phase 1)
+   436→
+   437→*Détails des features MVP : voir section [Product Scope](#product-scope).*
+   438→
+   439→**Core User Journeys Supported:**
+   440→- ✅ Marie - Check-in quotidien + Export PDF consultation
+   441→- ✅ Lucas - Exercices thérapie + Évaluation efficacité
+   442→
+   443→**Explicitly OUT of MVP:**
+   444→- ❌ Système Aidants (complexité permissions)
+   445→- ❌ Tracking énergie/sommeil (scope creep)
+   446→- ❌ Tags événements
+   447→- ❌ IA corrélations
+   448→- ❌ Intégrations externes
+   449→
+   450→### Phased Roadmap
+   451→
+   452→| Phase | Timeline | Features |
+   453→|-------|----------|----------|
+   454→| **MVP** | 8 semaines | Quick Mood, Meds, Therapy Notes, Exercices, Courbe, PDF |
+   455→| **V1** | +2-3 mois | Système Aidants, Énergie/Sommeil, Tags, Calendrier RDV |
+   456→| **V2** | +6 mois | IA patterns, Signaux passifs, Mode Pro psychiatres |
+   457→
+   458→### Risk Mitigation Strategy
+   459→
+   460→| Type | Risque | Mitigation |

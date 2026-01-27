@@ -1,0 +1,108 @@
+     1→"use client";
+     2→
+     3→import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+     4→import { Button } from "@/components/ui/button";
+     5→import {
+     6→  Card,
+     7→  CardDescription,
+     8→  CardFooter,
+     9→  CardHeader,
+    10→} from "@/components/ui/card";
+    11→import { LoadingButton } from "@/features/form/submit-button";
+    12→import { useI18n } from "@/i18n/provider";
+    13→import { authClient } from "@/lib/auth-client";
+    14→import { unwrapSafePromise } from "@/lib/promises";
+    15→import { useMutation } from "@tanstack/react-query";
+    16→import { Trash2 } from "lucide-react";
+    17→import { useRouter } from "next/navigation";
+    18→import { useState } from "react";
+    19→import { toast } from "sonner";
+    20→
+    21→export function ConfirmDeletePage({
+    22→  token,
+    23→  callbackUrl = "/auth/goodbye",
+    24→}: {
+    25→  token?: string;
+    26→  callbackUrl?: string;
+    27→}) {
+    28→  const router = useRouter();
+    29→  const { t } = useI18n();
+    30→  const [isLoading, setIsLoading] = useState(false);
+    31→  const [error, setError] = useState<string | null>(null);
+    32→
+    33→  const confirmDeleteMutation = useMutation({
+    34→    mutationFn: async () => {
+    35→      if (!token) {
+    36→        throw new Error(t("auth.confirmDelete.invalidToken"));
+    37→      }
+    38→      return unwrapSafePromise(
+    39→        authClient.deleteUser({
+    40→          token,
+    41→        }),
+    42→      );
+    43→    },
+    44→    onError: (error) => {
+    45→      setError(error.message);
+    46→      toast.error(error.message);
+    47→    },
+    48→    onSuccess: () => {
+    49→      router.push(callbackUrl);
+    50→    },
+    51→  });
+    52→
+    53→  const handleConfirmDelete = () => {
+    54→    setIsLoading(true);
+    55→    confirmDeleteMutation.mutate();
+    56→  };
+    57→
+    58→  const handleCancel = () => {
+    59→    router.push("/account");
+    60→  };
+    61→
+    62→  if (!token) {
+    63→    router.push("/account");
+    64→    return null;
+    65→  }
+    66→
+    67→  return (
+    68→    <Card className="mx-auto w-full max-w-md">
+    69→      <CardHeader>
+    70→        <div className="flex justify-center">
+    71→          <Avatar className="size-16">
+    72→            <AvatarFallback>
+    73→              <Trash2 />
+    74→            </AvatarFallback>
+    75→          </Avatar>
+    76→        </div>
+    77→        <CardHeader className="text-center">
+    78→          {t("auth.confirmDelete.title")}
+    79→        </CardHeader>
+    80→
+    81→        <CardDescription className="text-center">
+    82→          {t("auth.confirmDelete.description")}
+    83→        </CardDescription>
+    84→      </CardHeader>
+    85→      <CardFooter className="border-t pt-6">
+    86→        {error && <div className="mb-4 text-red-500">{error}</div>}
+    87→        <div className="flex w-full gap-4">
+    88→          <LoadingButton
+    89→            loading={isLoading || confirmDeleteMutation.isPending}
+    90→            variant="destructive"
+    91→            onClick={handleConfirmDelete}
+    92→            className="flex-1"
+    93→          >
+    94→            {t("auth.confirmDelete.confirm")}
+    95→          </LoadingButton>
+    96→          <Button variant="outline" onClick={handleCancel} className="flex-1">
+    97→            {t("actions.cancel")}
+    98→          </Button>
+    99→        </div>
+   100→      </CardFooter>
+   101→    </Card>
+   102→  );
+   103→}
+   104→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

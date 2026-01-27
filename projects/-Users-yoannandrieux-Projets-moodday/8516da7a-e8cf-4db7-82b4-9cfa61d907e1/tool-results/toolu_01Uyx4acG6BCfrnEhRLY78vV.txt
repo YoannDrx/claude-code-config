@@ -1,0 +1,16 @@
+Vercel CLI 46.0.2
+Fetching projects in yoanndrxs-projects
+> Projects found under yoanndrxs-projects  [974ms]
+
+  Project Name      Latest Production URL                                 Updated   Node Version   
+  moodday           https://moodday-yoanndrxs-projects.vercel.app         22h       24.x           
+  parigo            https://parigo-ten.vercel.app                         12d       24.x           
+  yodev             https://www.yodev.fr                                  12d       24.x           
+  moodtrace         https://moodtrace-yoanndrxs-projects.vercel.app       16d       24.x           
+  portfolio-loic    https://www.loic-ghanem.com                           20d       22.x           
+  portfolio-yoann   https://www.yoann-andrieux.fr                         23d       24.x           
+  portfolio-caro    https://synck-psi.vercel.app                          24d       22.x           
+  eggscuse-me       https://eggscuseme.app                                24d       24.x           
+  choosewisely      https://choosewisely-yoanndrxs-projects.vercel.app    24d       22.x           
+  mycryptopilot     https://mycryptopilot-yoanndrxs-projects.vercel.app   25d       22.x           
+  wa-front          https://www.weil-paris.fr                             63d       22.x

@@ -1,0 +1,4 @@
+/Users/yoannandrieux/Projets/portfolio-loic/.next/dev/server/app/[locale]/albums/page.js
+/Users/yoannandrieux/Projets/portfolio-loic/.next/dev/server/app/[locale]/albums/[id]/page_client-reference-manifest.js
+/Users/yoannandrieux/Projets/portfolio-loic/.next/dev/server/app/[locale]/albums/[id]/page.js
+/Users/yoannandrieux/Projets/portfolio-loic/.next/dev/server/app/[locale]/albums/page_client-reference-manifest.js

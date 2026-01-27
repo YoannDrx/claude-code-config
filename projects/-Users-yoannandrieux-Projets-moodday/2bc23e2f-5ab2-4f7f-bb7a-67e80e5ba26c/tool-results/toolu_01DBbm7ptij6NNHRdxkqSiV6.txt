@@ -1,0 +1,12 @@
+The file /Users/yoannandrieux/Projets/moodday/src/i18n/messages/fr.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   223→    form: {
+   224→      name: "Nom de l'exercice",
+   225→      namePlaceholder: "ex: Respiration profonde, Méditation, Marche",
+   226→      description: "Description (optionnel)",
+   227→      descriptionPlaceholder: "Comment faire cet exercice...",
+   228→      descriptionHint: "Optionnel - décris comment réaliser cet exercice",
+   229→    },
+   230→    list: {
+   231→      title: "Mes exercices",
+   232→      empty:
+   233→        "Pas encore d'exercices. Ajoute ton premier exercice de bien-être !",

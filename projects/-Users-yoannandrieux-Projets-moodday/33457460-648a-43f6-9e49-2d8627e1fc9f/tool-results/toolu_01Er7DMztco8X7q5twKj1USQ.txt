@@ -1,0 +1,524 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Moodday | Votre compagnon de santé mentale au quotidien</title>
+     7→    <!-- Fonts: Inter -->
+     8→    <link rel="preconnect" href="https://fonts.googleapis.com">
+     9→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    11→    <!-- Scripts -->
+    12→    <script src="https://cdn.tailwindcss.com"></script>
+    13→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    14→    <script src="https://unpkg.com/lucide@latest"></script>
+    15→    <script>
+    16→        tailwind.config = {
+    17→            theme: {
+    18→                extend: {
+    19→                    colors: {
+    20→                        primary: {
+    21→                            DEFAULT: '#2BA09F',
+    22→                            dark: '#2A8FA8',
+    23→                            light: '#3DA5B8',
+    24→                            darkest: '#1D7680',
+    25→                        },
+    26→                        sage: {
+    27→                            DEFAULT: '#48A878',
+    28→                            dark: '#3A956E',
+    29→                            light: '#6FBD94',
+    30→                        },
+    31→                        lavender: '#D4C5E8',
+    32→                        warm: {
+    33→                            bg: '#F8F7F3',
+    34→                            panel: '#F4F1ED',
+    35→                        }
+    36→                    },
+    37→                    fontFamily: {
+    38→                        sans: ['Inter', 'sans-serif'],
+    39→                    },
+    40→                    borderRadius: {
+    41→                        'xl': '12px',
+    42→                        '2xl': '24px',
+    43→                    },
+    44→                    boxShadow: {
+    45→                        'soft': '0 10px 25px -5px rgba(43, 160, 159, 0.1), 0 8px 10px -6px rgba(43, 160, 159, 0.05)',
+    46→                    }
+    47→                }
+    48→            }
+    49→        }
+    50→    </script>
+    51→    <style>
+    52→        [x-cloak] { display: none !important; }
+    53→        
+    54→        body {
+    55→            background-color: #F8F7F3;
+    56→            color: #1F2937;
+    57→            overflow-x: hidden;
+    58→        }
+    59→
+    60→        .blob {
+    61→            position: absolute;
+    62→            width: 500px;
+    63→            height: 500px;
+    64→            background: linear-gradient(180deg, rgba(43, 160, 159, 0.1) 0%, rgba(212, 197, 232, 0.1) 100%);
+    65→            filter: blur(80px);
+    66→            border-radius: 50%;
+    67→            z-index: -1;
+    68→        }
+    69→
+    70→        .glass-card {
+    71→            background: rgba(255, 255, 255, 0.7);
+    72→            backdrop-filter: blur(12px);
+    73→            border: 1px solid rgba(255, 255, 255, 0.5);
+    74→        }
+    75→
+    76→        .mood-slider::-webkit-slider-thumb {
+    77→            -webkit-appearance: none;
+    78→            appearance: none;
+    79→            width: 24px;
+    80→            height: 24px;
+    81→            background: #2BA09F;
+    82→            cursor: pointer;
+    83→            border-radius: 50%;
+    84→            border: 4px solid white;
+    85→            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    86→        }
+    87→
+    88→        .animate-float {
+    89→            animation: float 6s ease-in-out infinite;
+    90→        }
+    91→
+    92→        @keyframes float {
+    93→            0% { transform: translateY(0px); }
+    94→            50% { transform: translateY(-20px); }
+    95→            100% { transform: translateY(0px); }
+    96→        }
+    97→
+    98→        .gradient-text {
+    99→            background: linear-gradient(90deg, #1D7680, #48A878);
+   100→            -webkit-background-clip: text;
+   101→            -webkit-text-fill-color: transparent;
+   102→        }
+   103→    </style>
+   104→</head>
+   105→<body class="min-h-screen flex flex-col" x-data="{ mobileMenu: false, scrolled: false, activeTab: 'patient' }" @scroll.window="scrolled = (window.pageYOffset > 20)">
+   106→
+   107→    <!-- Background Decorations -->
+   108→    <div class="blob top-[-100px] right-[-100px]"></div>
+   109→    <div class="blob bottom-[-100px] left-[-100px] bg-sage-light/10"></div>
+   110→
+   111→    <!-- Navigation -->
+   112→    <nav :class="scrolled ? 'glass-card py-3' : 'bg-transparent py-6'" class="fixed w-full z-50 transition-all duration-300 px-6 lg:px-12">
+   113→        <div class="max-w-7xl mx-auto flex justify-between items-center">
+   114→            <!-- Logo -->
+   115→            <a href="#" class="flex items-center gap-2 group">
+   116→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-soft transform group-hover:rotate-6 transition-transform">
+   117→                    <i data-lucide="calendar-heart" class="text-white w-6 h-6"></i>
+   118→                </div>
+   119→                <span class="text-2xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   120→            </a>
+   121→
+   122→            <!-- Desktop Links -->
+   123→            <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+   124→                <a href="#features" class="hover:text-primary transition-colors">Fonctionnalités</a>
+   125→                <a href="#caregivers" class="hover:text-primary transition-colors">Aidants</a>
+   126→                <a href="#pricing" class="hover:text-primary transition-colors">Tarifs</a>
+   127→                <div class="h-6 w-px bg-gray-200"></div>
+   128→                <a href="#" class="hover:text-primary transition-colors">Connexion</a>
+   129→                <a href="#" class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-xl shadow-soft transition-all active:scale-95">
+   130→                    Essayer gratuitement
+   131→                </a>
+   132→            </div>
+   133→
+   134→            <!-- Mobile Toggle -->
+   135→            <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2 text-gray-600">
+   136→                <i data-lucide="menu" x-show="!mobileMenu"></i>
+   137→                <i data-lucide="x" x-show="mobileMenu"></i>
+   138→            </button>
+   139→        </div>
+   140→
+   141→        <!-- Mobile Menu -->
+   142→        <div x-show="mobileMenu" x-transition x-cloak class="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 p-6 flex flex-col gap-4 shadow-xl">
+   143→            <a href="#features" @click="mobileMenu = false" class="text-lg font-medium">Fonctionnalités</a>
+   144→            <a href="#caregivers" @click="mobileMenu = false" class="text-lg font-medium">Aidants</a>
+   145→            <a href="#pricing" @click="mobileMenu = false" class="text-lg font-medium">Tarifs</a>
+   146→            <hr>
+   147→            <a href="#" class="text-lg font-medium">Connexion</a>
+   148→            <a href="#" class="bg-primary text-white text-center py-3 rounded-xl font-semibold">Commencer</a>
+   149→        </div>
+   150→    </nav>
+   151→
+   152→    <!-- Main Content -->
+   153→    <main class="flex-grow pt-32">
+   154→        
+   155→        <!-- Hero Section -->
+   156→        <section class="px-6 lg:px-12 max-w-7xl mx-auto mb-24 overflow-hidden">
+   157→            <div class="grid lg:grid-cols-2 gap-16 items-center">
+   158→                <div class="relative z-10">
+   159→                    <div class="inline-flex items-center gap-2 bg-primary/10 text-primary-darkest px-4 py-2 rounded-full text-sm font-semibold mb-6">
+   160→                        <span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+   161→                        Version 2.0 disponible : Plus proche de votre réalité
+   162→                    </div>
+   163→                    <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900">
+   164→                        Le mood tracker pensé pour la <span class="gradient-text">vraie vie</span>.
+   165→                    </h1>
+   166→                    <p class="text-xl text-gray-600 mb-10 leading-relaxed max-w-lg">
+   167→                        Suivez votre humeur, vos traitements et vos routines sans culpabilisation. Un outil conçu pour objectiver vos phases et mieux collaborer avec vos soignants.
+   168→                    </p>
+   169→                    <div class="flex flex-col sm:flex-row gap-4">
+   170→                        <a href="#" class="bg-primary hover:bg-primary-dark text-white text-center px-8 py-4 rounded-2xl text-lg font-bold shadow-soft transition-all flex items-center justify-center gap-2 group">
+   171→                            Commencer le suivi
+   172→                            <i data-lucide="chevron-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+   173→                        </a>
+   174→                        <a href="#demo" class="bg-white hover:bg-gray-50 text-gray-700 text-center px-8 py-4 rounded-2xl text-lg font-semibold border border-gray-200 transition-all flex items-center justify-center gap-2">
+   175→                            <i data-lucide="play-circle" class="w-5 h-5 text-primary"></i>
+   176→                            Voir la démo
+   177→                        </a>
+   178→                    </div>
+   179→                    <div class="mt-12 flex items-center gap-6">
+   180→                        <div class="flex -space-x-3">
+   181→                            <img src="https://i.pravatar.cc/150?u=1" class="w-10 h-10 rounded-full border-2 border-warm-bg" alt="user">
+   182→                            <img src="https://i.pravatar.cc/150?u=2" class="w-10 h-10 rounded-full border-2 border-warm-bg" alt="user">
+   183→                            <img src="https://i.pravatar.cc/150?u=3" class="w-10 h-10 rounded-full border-2 border-warm-bg" alt="user">
+   184→                        </div>
+   185→                        <p class="text-sm text-gray-500 font-medium">
+   186→                            Rejoignez plus de <span class="text-primary-darkest font-bold">12,000+</span> utilisateurs
+   187→                        </p>
+   188→                    </div>
+   189→                </div>
+   190→
+   191→                <!-- Interactive Mockup (Alpine State) -->
+   192→                <div class="relative flex justify-center lg:justify-end" x-data="{ mood: 7 }">
+   193→                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-lavender/30 rounded-full blur-3xl -z-10 animate-pulse"></div>
+   194→                    <div class="glass-card w-full max-w-[380px] rounded-[40px] p-6 shadow-2xl border-[8px] border-white animate-float">
+   195→                        <div class="flex justify-between items-center mb-8">
+   196→                            <div>
+   197→                                <h3 class="font-bold text-gray-400 text-xs uppercase tracking-widest">Aujourd'hui</h3>
+   198→                                <p class="text-xl font-bold">Bonjour John !</p>
+   199→                            </div>
+   200→                            <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+   201→                                <i data-lucide="user" class="w-5 h-5 text-primary"></i>
+   202→                            </div>
+   203→                        </div>
+   204→
+   205→                        <!-- Mini Tracker Demo -->
+   206→                        <div class="space-y-6">
+   207→                            <div class="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+   208→                                <p class="text-center font-medium mb-4">Comment ça va ?</p>
+   209→                                <div class="flex justify-between px-2 mb-2 text-2xl">
+   210→                                    <span :class="mood <= 3 ? 'scale-125 grayscale-0' : 'grayscale opacity-40'" class="transition-all">😔</span>
+   211→                                    <span :class="mood > 3 && mood <= 7 ? 'scale-125 grayscale-0' : 'grayscale opacity-40'" class="transition-all">😐</span>
+   212→                                    <span :class="mood > 7 ? 'scale-125 grayscale-0' : 'grayscale opacity-40'" class="transition-all">😊</span>
+   213→                                </div>
+   214→                                <input type="range" min="1" max="10" x-model="mood" class="w-full h-2 bg-gray-100 rounded-lg appearance-none cursor-pointer mood-slider">
+   215→                                <div class="text-center mt-3">
+   216→                                    <span class="text-primary font-bold text-lg" x-text="mood + '/10'"></span>
+   217→                                </div>
+   218→                            </div>
+   219→
+   220→                            <div class="bg-primary/5 rounded-2xl p-4 border border-primary/10 flex items-center gap-4">
+   221→                                <div class="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center">
+   222→                                    <i data-lucide="pill" class="w-5 h-5 text-primary"></i>
+   223→                                </div>
+   224→                                <div class="flex-1">
+   225→                                    <p class="text-sm font-bold">Lamictal 200mg</p>
+   226→                                    <p class="text-xs text-gray-500">Pris à 08:30</p>
+   227→                                </div>
+   228→                                <i data-lucide="check-circle-2" class="text-sage w-6 h-6"></i>
+   229→                            </div>
+   230→
+   231→                            <div class="grid grid-cols-2 gap-3">
+   232→                                <div class="bg-lavender/10 rounded-2xl p-4 border border-lavender/20">
+   233→                                    <p class="text-xs font-semibold text-gray-500">Sommeil</p>
+   234→                                    <p class="text-lg font-bold">7.5h</p>
+   235→                                </div>
+   236→                                <div class="bg-sage/10 rounded-2xl p-4 border border-sage/20">
+   237→                                    <p class="text-xs font-semibold text-gray-500">Streak</p>
+   238→                                    <p class="text-lg font-bold">🔥 23j</p>
+   239→                                </div>
+   240→                            </div>
+   241→                        </div>
+   242→                    </div>
+   243→                </div>
+   244→            </div>
+   245→        </section>
+   246→
+   247→        <!-- Trust / Partners -->
+   248→        <section class="bg-warm-panel py-12 px-6 border-y border-gray-200/50">
+   249→            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 grayscale opacity-60">
+   250→                <span class="font-bold text-gray-400 text-sm uppercase tracking-widest">En collaboration avec</span>
+   251→                <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+   252→                    <div class="flex items-center gap-2 font-bold text-xl"><i data-lucide="shield-check" class="w-6 h-6"></i> Docteurs Sans Honte</div>
+   253→                    <div class="flex items-center gap-2 font-bold text-xl"><i data-lucide="activity" class="w-6 h-6"></i> PsyConnect</div>
+   254→                    <div class="flex items-center gap-2 font-bold text-xl"><i data-lucide="heart" class="w-6 h-6"></i> Bipolarité France</div>
+   255→                </div>
+   256→            </div>
+   257→        </section>
+   258→
+   259→        <!-- Value Proposition / Features Grid -->
+   260→        <section id="features" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+   261→            <div class="text-center mb-16">
+   262→                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Conçu pour votre équilibre</h2>
+   263→                <p class="text-gray-500 max-w-2xl mx-auto text-lg">
+   264→                    Moodday n'est pas qu'un simple calendrier. C'est un outil d'analyse structuré pour vous aider à comprendre les mécanismes de votre santé mentale.
+   265→                </p>
+   266→            </div>
+   267→
+   268→            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+   269→                <!-- Feature 1 -->
+   270→                <div class="glass-card p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform">
+   271→                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+   272→                        <i data-lucide="bar-chart-2" class="text-primary w-8 h-8"></i>
+   273→                    </div>
+   274→                    <h3 class="text-xl font-bold mb-3">Analyses Corrélationnelles</h3>
+   275→                    <p class="text-gray-600 leading-relaxed">
+   276→                        Visualisez l'impact réel de votre sommeil, de votre activité et de vos dosages sur votre humeur. Identifiez les signaux faibles avant qu'ils ne deviennent des crises.
+   277→                    </p>
+   278→                </div>
+   279→                <!-- Feature 2 -->
+   280→                <div class="glass-card p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform">
+   281→                    <div class="w-14 h-14 bg-sage/10 rounded-2xl flex items-center justify-center mb-6">
+   282→                        <i data-lucide="pill" class="text-sage w-8 h-8"></i>
+   283→                    </div>
+   284→                    <h3 class="text-xl font-bold mb-3">Gestion de Traitement</h3>
+   285→                    <p class="text-gray-600 leading-relaxed">
+   286→                        Un historique complet de vos médications. Suivez les changements de posologie et notez les effets secondaires pour préparer vos consultations psychiatriques.
+   287→                    </p>
+   288→                </div>
+   289→                <!-- Feature 3 -->
+   290→                <div class="glass-card p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform">
+   291→                    <div class="w-14 h-14 bg-lavender/30 rounded-2xl flex items-center justify-center mb-6">
+   292→                        <i data-lucide="users" class="text-primary w-8 h-8"></i>
+   293→                    </div>
+   294→                    <h3 class="text-xl font-bold mb-3">Soutien des Aidants</h3>
+   295→                    <p class="text-gray-600 leading-relaxed">
+   296→                        Invitez vos proches à observer votre état. Ils peuvent ajouter des notes sur des comportements que vous ne voyez pas toujours, créant ainsi un filet de sécurité.
+   297→                    </p>
+   298→                </div>
+   299→                <!-- Feature 4 -->
+   300→                <div class="glass-card p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform">
+   301→                    <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mb-6">
+   302→                        <i data-lucide="file-text" class="text-orange-600 w-8 h-8"></i>
+   303→                    </div>
+   304→                    <h3 class="text-xl font-bold mb-3">Exports Cliniques</h3>
+   305→                    <p class="text-gray-600 leading-relaxed">
+   306→                        Générez des rapports PDF en un clic pour votre médecin. Finis les "je ne sais pas trop comment c'était il y a deux semaines". Soyez factuel.
+   307→                    </p>
+   308→                </div>
+   309→                <!-- Feature 5 -->
+   310→                <div class="glass-card p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform">
+   311→                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+   312→                        <i data-lucide="cloud-off" class="text-blue-600 w-8 h-8"></i>
+   313→                    </div>
+   314→                    <h3 class="text-xl font-bold mb-3">Fonctionnement Hors-Ligne</h3>
+   315→                    <p class="text-gray-600 leading-relaxed">
+   316→                        Moodday est une PWA. Saisissez vos données même sans réseau (métro, hôpital). La synchronisation se fait automatiquement dès que vous retrouvez une connexion.
+   317→                    </p>
+   318→                </div>
+   319→                <!-- Feature 6 -->
+   320→                <div class="glass-card p-8 rounded-2xl shadow-soft hover:-translate-y-2 transition-transform">
+   321→                    <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center mb-6">
+   322→                        <i data-lucide="alert-triangle" class="text-red-600 w-8 h-8"></i>
+   323→                    </div>
+   324→                    <h3 class="text-xl font-bold mb-3">Kit de Crise Intégré</h3>
+   325→                    <p class="text-gray-600 leading-relaxed">
+   326→                        Accès immédiat aux ressources d'urgence (3114, SAMU) et à votre plan de sécurité personnalisé lorsque les choses deviennent trop difficiles.
+   327→                    </p>
+   328→                </div>
+   329→            </div>
+   330→        </section>
+   331→
+   332→        <!-- Role Selector / Tabs Preview -->
+   333→        <section id="caregivers" class="bg-primary/5 py-24 px-6 lg:px-12">
+   334→            <div class="max-w-7xl mx-auto">
+   335→                <div class="grid lg:grid-cols-2 gap-16 items-center">
+   336→                    <div>
+   337→                        <h2 class="text-4xl font-bold mb-6">Un outil, deux perspectives.</h2>
+   338→                        <div class="flex gap-4 mb-8">
+   339→                            <button @click="activeTab = 'patient'" :class="activeTab === 'patient' ? 'bg-primary text-white' : 'bg-white text-gray-500'" class="px-6 py-2 rounded-full font-bold shadow-sm transition-all">Patient</button>
+   340→                            <button @click="activeTab = 'caregiver'" :class="activeTab === 'caregiver' ? 'bg-primary text-white' : 'bg-white text-gray-500'" class="px-6 py-2 rounded-full font-bold shadow-sm transition-all">Aidant</button>
+   341→                        </div>
+   342→
+   343→                        <!-- Patient View Content -->
+   344→                        <div x-show="activeTab === 'patient'" x-transition>
+   345→                            <h3 class="text-2xl font-bold mb-4 text-primary-darkest italic">"Je reprends le contrôle de mon parcours."</h3>
+   346→                            <ul class="space-y-4">
+   347→                                <li class="flex items-start gap-3">
+   348→                                    <div class="mt-1 bg-sage rounded-full p-1"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+   349→                                    <p class="text-gray-700 font-medium">Auto-monitoring précis et rapide (< 60s par jour)</p>
+   350→                                </li>
+   351→                                <li class="flex items-start gap-3">
+   352→                                    <div class="mt-1 bg-sage rounded-full p-1"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+   353→                                    <p class="text-gray-700 font-medium">Historique d'adhérence au traitement</p>
+   354→                                </li>
+   355→                                <li class="flex items-start gap-3">
+   356→                                    <div class="mt-1 bg-sage rounded-full p-1"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+   357→                                    <p class="text-gray-700 font-medium">Préparation des RDV médicaux facilitée</p>
+   358→                                </li>
+   359→                            </ul>
+   360→                        </div>
+   361→
+   362→                        <!-- Caregiver View Content -->
+   363→                        <div x-show="activeTab === 'caregiver'" x-transition x-cloak>
+   364→                            <h3 class="text-2xl font-bold mb-4 text-primary-darkest italic">"Je ne suis plus spectateur impuissant."</h3>
+   365→                            <ul class="space-y-4">
+   366→                                <li class="flex items-start gap-3">
+   367→                                    <div class="mt-1 bg-sage rounded-full p-1"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+   368→                                    <p class="text-gray-700 font-medium">Ajout d'observations objectives sur le comportement</p>
+   369→                                </li>
+   370→                                <li class="flex items-start gap-3">
+   371→                                    <div class="mt-1 bg-sage rounded-full p-1"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+   372→                                    <p class="text-gray-700 font-medium">Réception d'alertes en cas de changement brusque</p>
+   373→                                </li>
+   374→                                <li class="flex items-start gap-3">
+   375→                                    <div class="mt-1 bg-sage rounded-full p-1"><i data-lucide="check" class="w-3 h-3 text-white"></i></div>
+   376→                                    <p class="text-gray-700 font-medium">Communication apaisée via les données partagées</p>
+   377→                                </li>
+   378→                            </ul>
+   379→                        </div>
+   380→                    </div>
+   381→
+   382→                    <!-- Image/Mockup corresponding to role -->
+   383→                    <div class="relative">
+   384→                        <div class="aspect-square bg-gradient-to-br from-primary/20 to-lavender/20 rounded-[48px] flex items-center justify-center p-8 overflow-hidden shadow-inner">
+   385→                            <img x-show="activeTab === 'patient'" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=600" class="rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500" alt="Patient App">
+   386→                            <img x-show="activeTab === 'caregiver'" x-cloak src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600" class="rounded-3xl shadow-2xl -rotate-3 hover:rotate-0 transition-transform duration-500" alt="Caregiver App">
+   387→                        </div>
+   388→                    </div>
+   389→                </div>
+   390→            </div>
+   391→        </section>
+   392→
+   393→        <!-- Pricing -->
+   394→        <section id="pricing" class="py-24 px-6 lg:px-12">
+   395→            <div class="max-w-7xl mx-auto text-center mb-16">
+   396→                <h2 class="text-4xl font-bold mb-4">Un tarif simple et accessible</h2>
+   397→                <p class="text-gray-500 text-lg">Investissez dans votre sérénité. Sans engagement.</p>
+   398→            </div>
+   399→
+   400→            <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-8">
+   401→                <!-- Free Tier -->
+   402→                <div class="glass-card p-10 rounded-3xl border border-gray-100 flex flex-col">
+   403→                    <h3 class="text-2xl font-bold mb-2">Gratuit</h3>
+   404→                    <p class="text-gray-500 mb-6">Pour démarrer sereinement</p>
+   405→                    <div class="text-4xl font-bold mb-8">0€<span class="text-lg text-gray-400 font-normal">/mois</span></div>
+   406→                    <ul class="space-y-4 mb-10 flex-grow">
+   407→                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-sage w-5 h-5"></i> Suivi humeur & sommeil</li>
+   408→                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-sage w-5 h-5"></i> Jusqu'à 3 médicaments</li>
+   409→                        <li class="flex items-center gap-3"><i data-lucide="check" class="text-sage w-5 h-5"></i> 30 jours d'historique</li>
+   410→                        <li class="flex items-center gap-3 text-gray-300"><i data-lucide="x" class="w-5 h-5"></i> Rapports PDF détaillés</li>
+   411→                    </ul>
+   412→                    <a href="#" class="w-full py-4 rounded-2xl border-2 border-primary text-primary font-bold text-center hover:bg-primary/5 transition-all">Commencer</a>
+   413→                </div>
+   414→
+   415→                <!-- Pro Tier -->
+   416→                <div class="bg-white p-10 rounded-3xl border-4 border-primary shadow-2xl relative flex flex-col scale-105">
+   417→                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-white px-6 py-1 rounded-full text-sm font-bold uppercase tracking-widest">Recommandé</div>
+   418→                    <h3 class="text-2xl font-bold mb-2">Moodday Pro</h3>
+   419→                    <p class="text-gray-500 mb-6">L'expérience complète</p>
+   420→                    <div class="text-4xl font-bold mb-8">4.99€<span class="text-lg text-gray-400 font-normal">/mois</span></div>
+   421→                    <ul class="space-y-4 mb-10 flex-grow">
+   422→                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check" class="text-sage w-5 h-5"></i> Tout le plan Gratuit</li>
+   423→                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check" class="text-sage w-5 h-5"></i> Médicaments illimités</li>
+   424→                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check" class="text-sage w-5 h-5"></i> Historique à vie</li>
+   425→                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check" class="text-sage w-5 h-5"></i> Exports PDF illimités</li>
+   426→                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check" class="text-sage w-5 h-5"></i> Accès Aidants & Clinique</li>
+   427→                        <li class="flex items-center gap-3 font-medium"><i data-lucide="check" class="text-sage w-5 h-5"></i> Analyses IA avancées</li>
+   428→                    </ul>
+   429→                    <a href="#" class="w-full py-4 rounded-2xl bg-primary text-white font-bold text-center shadow-soft hover:bg-primary-dark transition-all">S'abonner maintenant</a>
+   430→                </div>
+   431→            </div>
+   432→        </section>
+   433→
+   434→        <!-- CTA Final -->
+   435→        <section class="py-24 px-6 lg:px-12 text-center relative overflow-hidden">
+   436→            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 rounded-full blur-3xl -z-10"></div>
+   437→            <div class="max-w-3xl mx-auto">
+   438→                <h2 class="text-4xl font-bold mb-8">Prêt à mieux vous comprendre ?</h2>
+   439→                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+   440→                    Rejoignez des milliers de personnes qui ont fait de Moodday leur allié quotidien. L'installation prend moins de 5 minutes.
+   441→                </p>
+   442→                <div class="flex flex-col sm:flex-row justify-center gap-4">
+   443→                    <a href="#" class="bg-primary text-white px-10 py-5 rounded-2xl text-xl font-bold shadow-soft hover:scale-105 transition-all">
+   444→                        Créer mon compte gratuit
+   445→                    </a>
+   446→                </div>
+   447→                <p class="mt-6 text-sm text-gray-400 italic">Pas de carte bancaire requise pour le plan gratuit.</p>
+   448→            </div>
+   449→        </section>
+   450→
+   451→    </main>
+   452→
+   453→    <!-- Footer -->
+   454→    <footer class="bg-white border-t border-gray-100 pt-16 pb-8 px-6 lg:px-12">
+   455→        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+   456→            <div>
+   457→                <a href="#" class="flex items-center gap-2 mb-6">
+   458→                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+   459→                        <i data-lucide="calendar-heart" class="text-white w-5 h-5"></i>
+   460→                    </div>
+   461→                    <span class="text-xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   462→                </a>
+   463→                <p class="text-gray-500 mb-6 leading-relaxed">
+   464→                    Une approche bienveillante et technologique pour le suivi de la santé mentale. Développé en France avec amour.
+   465→                </p>
+   466→                <div class="flex gap-4">
+   467→                    <a href="#" class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-primary transition-colors">
+   468→                        <i data-lucide="twitter" class="w-5 h-5"></i>
+   469→                    </a>
+   470→                    <a href="#" class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-primary transition-colors">
+   471→                        <i data-lucide="instagram" class="w-5 h-5"></i>
+   472→                    </a>
+   473→                    <a href="#" class="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-gray-400 hover:text-primary transition-colors">
+   474→                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+   475→                    </a>
+   476→                </div>
+   477→            </div>
+   478→            <div>
+   479→                <h4 class="font-bold mb-6 text-gray-900">Produit</h4>
+   480→                <ul class="space-y-4 text-gray-500">
+   481→                    <li><a href="#" class="hover:text-primary transition-colors">Fonctionnalités</a></li>
+   482→                    <li><a href="#" class="hover:text-primary transition-colors">Version Aidant</a></li>
+   483→                    <li><a href="#" class="hover:text-primary transition-colors">Application PWA</a></li>
+   484→                    <li><a href="#" class="hover:text-primary transition-colors">Rapports Médicaux</a></li>
+   485→                </ul>
+   486→            </div>
+   487→            <div>
+   488→                <h4 class="font-bold mb-6 text-gray-900">Légal & Sécurité</h4>
+   489→                <ul class="space-y-4 text-gray-500">
+   490→                    <li><a href="#" class="hover:text-primary transition-colors">Confidentialité</a></li>
+   491→                    <li><a href="#" class="hover:text-primary transition-colors">Conditions d'Utilisation</a></li>
+   492→                    <li><a href="#" class="hover:text-primary transition-colors">Hébergement Santé (HDS)</a></li>
+   493→                    <li><a href="#" class="hover:text-primary transition-colors">Mentions Légales</a></li>
+   494→                </ul>
+   495→            </div>
+   496→            <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+   497→                <h4 class="font-bold mb-4 text-red-700 flex items-center gap-2">
+   498→                    <i data-lucide="alert-circle" class="w-5 h-5"></i> Aide d'urgence
+   499→                </h4>
+   500→                <p class="text-sm text-red-600 mb-4">
+   501→                    Moodday n'est pas un dispositif d'urgence. Si vous êtes en danger immédiat :
+   502→                </p>
+   503→                <div class="space-y-2">
+   504→                    <a href="tel:3114" class="block w-full text-center bg-red-600 text-white py-2 rounded-lg font-bold hover:bg-red-700 transition-all">Appeler le 3114</a>
+   505→                    <p class="text-xs text-center text-red-500">24h/24, 7j/7 - Gratuit</p>
+   506→                </div>
+   507→            </div>
+   508→        </div>
+   509→        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+   510→            <p>© 2026 Moodday SAS. Tous droits réservés.</p>
+   511→            <p>Conçu pour accompagner, jamais pour diagnostiquer.</p>
+   512→        </div>
+   513→    </footer>
+   514→
+   515→    <!-- Initialize Lucide Icons -->
+   516→    <script>
+   517→        lucide.createIcons();
+   518→    </script>
+   519→</body>
+   520→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

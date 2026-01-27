@@ -1,0 +1,20 @@
+For admin routes, a middleware performs the following checks:
+
+1.  **Session Validation:** If the route is an admin route, it validates the user session. If no session exists, it redirects the user to sign in.<cite i="0"/>
+2.  **Role Check (Admin Access Guard):** If a session exists, it checks if the user's role is `"admin"`. If the user's role is not `"admin"`, it redirects the user to an unauthorized page.<cite i="0"/>
+
+Additionally, for server actions requiring admin privileges, the `adminAction` client is used, which:
+
+*   Validates the user session and admin role using `getRequiredUser()`.<cite i="1"/>
+*   Throws an `ActionError` if the user is not authenticated or not an admin.<cite i="1"/>
+*   Ensures all actions require admin privileges by checking `if (user.role !== "admin")`.<cite i="1"/>
+
+The utility function `getRequiredAdmin()` also enforces admin access by:
+
+1.  Getting the required user.<cite i="3"/>
+2.  Checking if `user.role` is `"admin"`.<cite i="3"/>
+3.  Calling `unauthorized()` if the user is not an admin.<cite i="3"/>
+
+0: ./proxy.ts:1-53 (96.38% match)
+1: ./src/lib/actions/safe-actions.ts:73-114 (88.72% match)
+3: ./src/lib/auth/auth-user.ts:1-44 (73.11% match)

@@ -1,0 +1,7 @@
+The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/prd.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+     1→---
+     2→stepsCompleted: ["step-01-init", "step-02-discovery", "step-03-success", "step-04-journeys", "step-05-domain", "step-06-innovation", "step-07-project-type", "step-08-scoping", "step-09-functional", "step-10-nonfunctional", "step-11-polish"]
+     3→inputDocuments:
+     4→  - "_bmad-output/planning-artifacts/product-brief-moodday-2026-01-20.md"
+     5→  - "_bmad-output/analysis/brainstorming-session-2026-01-20.md"
+     6→workflowType: 'prd'

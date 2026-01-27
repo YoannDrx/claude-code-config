@@ -1,0 +1,39 @@
+     1→import { expect, test } from "@playwright/test";
+     2→import { createTestAccount } from "./utils/auth-test";
+     3→
+     4→test.describe("admin", () => {
+     5→  test("verify admin dashboard work", async ({ page }) => {
+     6→    await createTestAccount({
+     7→      page,
+     8→      callbackURL: "/app",
+     9→      admin: true,
+    10→    });
+    11→
+    12→    await page.goto("/admin");
+    13→
+    14→    // i18n: "Users" (EN) / "Utilisateurs" (FR)
+    15→    await expect(
+    16→      page.getByRole("link", { name: /Users|Utilisateurs/i }),
+    17→    ).toBeVisible();
+    18→
+    19→    // i18n: "Feedback" (EN) / "Retours" (FR)
+    20→    await expect(
+    21→      page.getByRole("link", { name: /Feedback|Retours/i }).first(),
+    22→    ).toBeVisible();
+    23→
+    24→    await page.getByRole("link", { name: /Users|Utilisateurs/i }).click();
+    25→
+    26→    await expect(page).toHaveURL("/admin/users");
+    27→
+    28→    await page
+    29→      .getByRole("link", { name: /Feedback|Retours/i })
+    30→      .first()
+    31→      .click();
+    32→    await expect(page).toHaveURL("/admin/feedback");
+    33→  });
+    34→});
+    35→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,24 @@
+The file /Users/yoannandrieux/Projets/portfolio-loic/tailwind.config.ts has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
+   388→        "gradient-glow-center":
+   389→          "radial-gradient(ellipse 50% 50% at 50% 50%, rgba(213, 255, 10, 0.08), transparent)",
+   390→      },
+   391→
+   392→      animation: {
+   393→        morph: "morph 8s ease-in-out infinite",
+   394→        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+   395→        "glow-pulse-primary": "glow-pulse-primary 2s ease-in-out infinite",
+   396→        float: "float 3s ease-in-out infinite",
+   397→        shimmer: "shimmer 2s linear infinite",
+   398→        "spin-slow": "spin 20s linear infinite",
+   399→        "fade-in": "fade-in 0.5s ease-out",
+   400→        "fade-in-up": "fade-in-up 0.5s ease-out",
+   401→        "fade-in-down": "fade-in-down 0.5s ease-out",
+   402→        "scale-in": "scale-in 0.3s ease-out",
+   403→        marquee: "marquee 30s linear infinite",
+   404→        "marquee-left": "marquee-left linear infinite",
+   405→        "marquee-right": "marquee-right linear infinite",
+   406→      },
+   407→
+   408→      keyframes: {
+   409→        marquee: {
+   410→          "0%": { transform: "translateX(0)" },

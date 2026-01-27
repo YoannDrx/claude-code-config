@@ -1,0 +1,148 @@
+     1→
+     2→import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+     3→import { getI18n } from "@/i18n/server";
+     4→import { AUTH_PLANS } from "@/lib/auth/stripe/auth-plans";
+     5→import { prisma } from "@/lib/prisma";
+     6→import { stripe } from "@/lib/stripe";
+     7→import { Crown, DollarSign, Users } from "lucide-react";
+     8→import { cacheLife } from "next/dist/server/use-cache/cache-life";
+     9→
+    10→async function calculateTotalMRR() {
+    11→  const subscriptions = await prisma.subscription.findMany({
+    12→    where: {
+    13→      status: { in: ["active", "trialing", "past_due"] },
+    14→      stripeSubscriptionId: { not: null },
+    15→    },
+    16→    select: {
+    17→      stripeSubscriptionId: true,
+    18→    },
+    19→  });
+    20→
+    21→  if (subscriptions.length === 0) {
+    22→    return 0;
+    23→  }
+    24→
+    25→  const stripeSubscriptions = (
+    26→    await Promise.all(
+    27→      subscriptions.map(async (sub) => {
+    28→        if (!sub.stripeSubscriptionId) return null;
+    29→
+    30→        try {
+    31→          const stripeSub = await stripe.subscriptions.retrieve(
+    32→            sub.stripeSubscriptionId,
+    33→          );
+    34→          return stripeSub;
+    35→        } catch {
+    36→          return null;
+    37→        }
+    38→      }),
+    39→    )
+    40→  ).filter((sub) => sub !== null);
+    41→
+    42→  let totalMRR = 0;
+    43→
+    44→  for (const stripeSub of stripeSubscriptions) {
+    45→    for (const item of stripeSub.items.data) {
+    46→      const price = item.price;
+    47→      if (!price.unit_amount || !price.recurring) continue;
+    48→
+    49→      const { unit_amount } = price;
+    50→      const { interval, interval_count } = price.recurring;
+    51→
+    52→      let monthlyAmount = 0;
+    53→      switch (interval) {
+    54→        case "month":
+    55→          monthlyAmount = unit_amount / interval_count;
+    56→          break;
+    57→        case "year":
+    58→          monthlyAmount = unit_amount / (12 * interval_count);
+    59→          break;
+    60→        case "week":
+    61→          monthlyAmount = (unit_amount * 4.33) / interval_count;
+    62→          break;
+    63→        case "day":
+    64→          monthlyAmount = (unit_amount * 30) / interval_count;
+    65→          break;
+    66→      }
+    67→
+    68→      totalMRR += monthlyAmount * (item.quantity ?? 1);
+    69→    }
+    70→  }
+    71→
+    72→  return totalMRR;
+    73→}
+    74→
+    75→export async function AdminStatsSection() {
+    76→  cacheLife("hours");
+    77→  const { locale, t } = await getI18n();
+    78→
+    79→  const premiumPlanNames = AUTH_PLANS.filter((p) => p.price > 0).map(
+    80→    (p) => p.name,
+    81→  );
+    82→
+    83→  const [totalUsers, premiumUsers, mrrInCents] = await Promise.all([
+    84→    prisma.user.count(),
+    85→    prisma.subscription.count({
+    86→      where: {
+    87→        plan: { in: premiumPlanNames },
+    88→        status: { in: ["active", "trialing", "past_due"] },
+    89→      },
+    90→    }),
+    91→    calculateTotalMRR(),
+    92→  ]);
+    93→
+    94→  const mrrFormatted = new Intl.NumberFormat(locale, {
+    95→    style: "currency",
+    96→    currency: "USD",
+    97→  }).format(mrrInCents / 100);
+    98→
+    99→  const stats = [
+   100→    {
+   101→      title: t("admin.stats.totalUsers"),
+   102→      value: totalUsers.toLocaleString(locale),
+   103→      description: t("admin.stats.totalUsersDescription"),
+   104→      icon: Users,
+   105→    },
+   106→    {
+   107→      title: t("admin.stats.premiumUsers"),
+   108→      value: premiumUsers.toLocaleString(locale),
+   109→      description: t("admin.stats.premiumUsersDescription"),
+   110→      icon: Crown,
+   111→    },
+   112→    {
+   113→      title: t("admin.stats.mrr"),
+   114→      value: mrrFormatted,
+   115→      description: t("admin.stats.mrrDescription"),
+   116→      icon: DollarSign,
+   117→    },
+   118→  ];
+   119→
+   120→  return (
+   121→    <>
+   122→      {stats.map((stat) => {
+   123→        const Icon = stat.icon;
+   124→        return (
+   125→          <Card key={stat.title}>
+   126→            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+   127→              <CardTitle className="text-muted-foreground text-xs font-medium">
+   128→                {stat.title}
+   129→              </CardTitle>
+   130→              <Icon className="text-muted-foreground size-4" />
+   131→            </CardHeader>
+   132→            <CardContent>
+   133→              <div className="text-2xl font-bold">{stat.value}</div>
+   134→              <p className="text-muted-foreground text-xs">
+   135→                {stat.description}
+   136→              </p>
+   137→            </CardContent>
+   138→          </Card>
+   139→        );
+   140→      })}
+   141→    </>
+   142→  );
+   143→}
+   144→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

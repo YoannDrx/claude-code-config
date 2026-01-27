@@ -1,0 +1,53 @@
+     1→"use client";
+     2→
+     3→import React from "react";
+     4→import { motion, useScroll, useSpring } from "framer-motion";
+     5→import { useTranslations } from "next-intl";
+     6→import { CustomCursor } from "./ui/CustomCursor";
+     7→import { Marquee } from "./ui/Marquee";
+     8→import { NeoNavbar } from "./NeoNavbar";
+     9→import { NeoSplitHero } from "./NeoSplitHero";
+    10→import { NeoFooter } from "./NeoFooter";
+    11→
+    12→export default function NeoHome() {
+    13→  const { scrollYProgress } = useScroll();
+    14→  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+    15→  const marqueeTranslations = useTranslations("home.marquee");
+    16→  const marqueeItems = marqueeTranslations.raw("items");
+    17→  const marqueeContent = Array.isArray(marqueeItems) ? marqueeItems : [];
+    18→
+    19→  return (
+    20→    <div className="min-h-screen bg-neo-bg text-neo-text font-sans selection:bg-neo-text selection:text-neo-accent overflow-x-hidden">
+    21→      <CustomCursor />
+    22→
+    23→      {/* Top Progress Bar */}
+    24→      <motion.div
+    25→        className="fixed top-0 left-0 right-0 h-1 bg-neo-accent origin-left z-50"
+    26→        style={{ scaleX }}
+    27→      />
+    28→
+    29→      {/* Grid Overlay */}
+    30→      <div
+    31→        className="fixed inset-0 pointer-events-none z-0 opacity-[0.05]"
+    32→        style={{
+    33→          backgroundImage:
+    34→            "linear-gradient(var(--neo-border) 1px, transparent 1px), linear-gradient(90deg, var(--neo-border) 1px, transparent 1px)",
+    35→          backgroundSize: "60px 60px",
+    36→        }}
+    37→      />
+    38→
+    39→      <NeoNavbar />
+    40→
+    41→      <main className="relative z-10 pt-16 md:pt-20">
+    42→        <NeoSplitHero />
+    43→        <Marquee items={marqueeContent} />
+    44→        <NeoFooter />
+    45→      </main>
+    46→    </div>
+    47→  );
+    48→}
+    49→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

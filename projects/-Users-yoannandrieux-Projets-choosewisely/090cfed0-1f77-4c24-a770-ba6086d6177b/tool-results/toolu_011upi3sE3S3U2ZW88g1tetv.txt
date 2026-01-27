@@ -1,0 +1,64 @@
+     1→"use client";
+     2→
+     3→import { Typography } from "@/components/nowts/typography";
+     4→import {
+     5→  Accordion,
+     6→  AccordionContent,
+     7→  AccordionItem,
+     8→  AccordionTrigger,
+     9→} from "@/components/ui/accordion";
+    10→import { ClientMarkdown } from "../markdown/client-markdown";
+    11→import { SectionLayout } from "./section-layout";
+    12→
+    13→type Faq = {
+    14→  question: string;
+    15→  answer: string;
+    16→};
+    17→
+    18→type FeaturesPreviewProps = {
+    19→  faq: Faq[];
+    20→};
+    21→
+    22→export const FAQSection = (props: FeaturesPreviewProps) => {
+    23→  return (
+    24→    <SectionLayout size="lg" className="flex gap-12 max-lg:flex-col">
+    25→      <div className="flex-1 space-y-4 lg:sticky lg:top-24 lg:self-start">
+    26→        <Typography className="text-primary text-sm font-semibold uppercase tracking-wider">
+    27→          FAQ
+    28→        </Typography>
+    29→        <Typography variant="h2" className="text-4xl font-bold lg:text-5xl">
+    30→          Questions{" "}
+    31→          <span className="text-gradient-brand">fréquentes</span>
+    32→        </Typography>
+    33→        <Typography variant="muted" className="text-lg">
+    34→          Tout ce que vous devez savoir pour bien démarrer avec ChooseWisely.
+    35→        </Typography>
+    36→      </div>
+    37→      <div className="flex-1">
+    38→        <Accordion type="single" collapsible className="space-y-4">
+    39→          {props.faq.map((e, i) => {
+    40→            return (
+    41→              <AccordionItem
+    42→                value={`item-${i}`}
+    43→                key={i}
+    44→                className="glass rounded-xl border-none px-6"
+    45→              >
+    46→                <AccordionTrigger className="text-left text-base font-medium text-foreground hover:text-primary hover:no-underline">
+    47→                  {e.question}
+    48→                </AccordionTrigger>
+    49→                <AccordionContent className="text-muted-foreground">
+    50→                  <ClientMarkdown>{e.answer}</ClientMarkdown>
+    51→                </AccordionContent>
+    52→              </AccordionItem>
+    53→            );
+    54→          })}
+    55→        </Accordion>
+    56→      </div>
+    57→    </SectionLayout>
+    58→  );
+    59→};
+    60→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

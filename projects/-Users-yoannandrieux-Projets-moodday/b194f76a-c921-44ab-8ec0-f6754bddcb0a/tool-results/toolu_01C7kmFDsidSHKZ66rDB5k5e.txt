@@ -1,0 +1,587 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Paramètres & Confidentialité | Moodday</title>
+     7→    <!-- Fonts: Inter -->
+     8→    <link rel="preconnect" href="https://fonts.googleapis.com">
+     9→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    11→    <!-- Scripts -->
+    12→    <script src="https://cdn.tailwindcss.com"></script>
+    13→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    14→    <script src="https://unpkg.com/lucide@latest"></script>
+    15→    <script>
+    16→        tailwind.config = {
+    17→            theme: {
+    18→                extend: {
+    19→                    colors: {
+    20→                        primary: {
+    21→                            DEFAULT: '#2BA09F',
+    22→                            dark: '#2A8FA8',
+    23→                            light: '#3DA5B8',
+    24→                            darkest: '#1D7680',
+    25→                        },
+    26→                        sage: {
+    27→                            DEFAULT: '#48A878',
+    28→                            dark: '#3A956E',
+    29→                            light: '#6FBD94',
+    30→                        },
+    31→                        lavender: {
+    32→                            DEFAULT: '#D4C5E8',
+    33→                            dark: '#B8A5D1',
+    34→                        },
+    35→                        warm: {
+    36→                            bg: '#F8F7F3',
+    37→                            panel: '#F4F1ED',
+    38→                        }
+    39→                    },
+    40→                    fontFamily: {
+    41→                        sans: ['Inter', 'sans-serif'],
+    42→                    },
+    43→                    borderRadius: {
+    44→                        'xl': '12px',
+    45→                        '2xl': '24px',
+    46→                        '3xl': '32px',
+    47→                    },
+    48→                    boxShadow: {
+    49→                        'soft': '0 10px 25px -5px rgba(43, 160, 159, 0.1), 0 8px 10px -6px rgba(43, 160, 159, 0.05)',
+    50→                        'card': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+    51→                    }
+    52→                }
+    53→            }
+    54→        }
+    55→    </script>
+    56→    <style>
+    57→        [x-cloak] { display: none !important; }
+    58→        
+    59→        body {
+    60→            background-color: #F8F7F3;
+    61→            color: #1F2937;
+    62→            font-family: 'Inter', sans-serif;
+    63→            overflow-x: hidden;
+    64→        }
+    65→
+    66→        .blob {
+    67→            position: fixed;
+    68→            width: 600px;
+    69→            height: 600px;
+    70→            background: linear-gradient(180deg, rgba(43, 160, 159, 0.08) 0%, rgba(212, 197, 232, 0.08) 100%);
+    71→            filter: blur(100px);
+    72→            border-radius: 50%;
+    73→            z-index: -1;
+    74→        }
+    75→
+    76→        .glass-card {
+    77→            background: rgba(255, 255, 255, 0.7);
+    78→            backdrop-filter: blur(12px);
+    79→            border: 1px solid rgba(255, 255, 255, 0.5);
+    80→        }
+    81→
+    82→        .custom-toggle {
+    83→            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    84→        }
+    85→
+    86→        /* Custom Scrollbar */
+    87→        ::-webkit-scrollbar {
+    88→            width: 6px;
+    89→        }
+    90→        ::-webkit-scrollbar-track {
+    91→            background: #F8F7F3;
+    92→        }
+    93→        ::-webkit-scrollbar-thumb {
+    94→            background: #D1D5DB;
+    95→            border-radius: 10px;
+    96→        }
+    97→        ::-webkit-scrollbar-thumb:hover {
+    98→            background: #2BA09F;
+    99→        }
+   100→
+   101→        .nav-item-active {
+   102→            background: #2BA09F;
+   103→            color: white !important;
+   104→            box-shadow: 0 4px 12px rgba(43, 160, 159, 0.2);
+   105→        }
+   106→    </style>
+   107→</head>
+   108→<body class="min-h-screen flex flex-col md:flex-row" x-data="{ 
+   109→    activeTab: 'general',
+   110→    isDarkMode: false,
+   111→    notifications: {
+   112→        mood: true,
+   113→        meds: true,
+   114→        summary: false,
+   115→        caregiver: true
+   116→    },
+   117→    exportStatus: 'idle',
+   118→    showRevokeModal: false
+   119→}">
+   120→
+   121→    <!-- Background Decorations -->
+   122→    <div class="blob -top-20 -right-20"></div>
+   123→    <div class="blob bottom-0 -left-20 bg-sage-light/5"></div>
+   124→
+   125→    <!-- Desktop Sidebar Navigation -->
+   126→    <aside class="hidden md:flex flex-col w-72 bg-white/80 backdrop-blur-md border-r border-gray-100 h-screen sticky top-0 p-6 z-40">
+   127→        <div class="flex items-center gap-3 mb-12 px-2">
+   128→            <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-soft">
+   129→                <i data-lucide="calendar-heart" class="text-white w-6 h-6"></i>
+   130→            </div>
+   131→            <span class="text-2xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   132→        </div>
+   133→
+   134→        <nav class="flex-grow space-y-2">
+   135→            <a href="#" class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:text-primary transition-all rounded-xl hover:bg-primary/5 group">
+   136→                <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+   137→                <span class="font-medium">Dashboard</span>
+   138→            </a>
+   139→            <a href="#" class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:text-primary transition-all rounded-xl hover:bg-primary/5">
+   140→                <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+   141→                <span class="font-medium">Analyses</span>
+   142→            </a>
+   143→            <a href="#" class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:text-primary transition-all rounded-xl hover:bg-primary/5">
+   144→                <i data-lucide="pill" class="w-5 h-5"></i>
+   145→                <span class="font-medium">Traitements</span>
+   146→            </a>
+   147→            <a href="#" class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:text-primary transition-all rounded-xl hover:bg-primary/5">
+   148→                <i data-lucide="users" class="w-5 h-5"></i>
+   149→                <span class="font-medium">Aidants</span>
+   150→            </a>
+   151→            <div class="pt-4 mt-4 border-t border-gray-50">
+   152→                <a href="#" class="flex items-center gap-4 px-4 py-3 rounded-xl nav-item-active">
+   153→                    <i data-lucide="settings" class="w-5 h-5"></i>
+   154→                    <span class="font-medium">Paramètres</span>
+   155→                </a>
+   156→            </div>
+   157→        </nav>
+   158→
+   159→        <div class="mt-auto space-y-4">
+   160→            <div class="bg-primary/5 rounded-2xl p-4 border border-primary/10">
+   161→                <p class="text-xs font-bold text-primary-darkest uppercase tracking-widest mb-1">Plan Actuel</p>
+   162→                <div class="flex items-center justify-between">
+   163→                    <span class="font-bold text-gray-900 text-lg">Moodday Pro</span>
+   164→                    <i data-lucide="sparkles" class="text-primary w-5 h-5"></i>
+   165→                </div>
+   166→            </div>
+   167→            <button class="flex items-center gap-4 px-4 py-3 text-red-500 hover:bg-red-50 transition-all rounded-xl w-full">
+   168→                <i data-lucide="log-out" class="w-5 h-5"></i>
+   169→                <span class="font-medium">Déconnexion</span>
+   170→            </button>
+   171→        </div>
+   172→    </aside>
+   173→
+   174→    <!-- Mobile Top Bar -->
+   175→    <header class="md:hidden flex items-center justify-between p-4 bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+   176→        <div class="flex items-center gap-2">
+   177→            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+   178→                <i data-lucide="calendar-heart" class="text-white w-5 h-5"></i>
+   179→            </div>
+   180→            <span class="font-bold text-primary-darkest">Moodday</span>
+   181→        </div>
+   182→        <button class="p-2 text-gray-600">
+   183→            <i data-lucide="menu" class="w-6 h-6"></i>
+   184→        </button>
+   185→    </header>
+   186→
+   187→    <!-- Main Content Area -->
+   188→    <main class="flex-grow p-4 md:p-10 lg:p-16 max-w-6xl mx-auto w-full">
+   189→        
+   190→        <!-- Header Section -->
+   191→        <div class="mb-10">
+   192→            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Paramètres & Vie Privée</h1>
+   193→            <p class="text-gray-500">Gérez vos préférences, vos données et la sécurité de votre compte.</p>
+   194→        </div>
+   195→
+   196→        <!-- Settings Grid Layout -->
+   197→        <div class="grid lg:grid-cols-12 gap-8">
+   198→            
+   199→            <!-- Navigation Tabs (Internal) -->
+   200→            <div class="lg:col-span-3">
+   201→                <div class="flex lg:flex-col overflow-x-auto gap-2 lg:gap-1 no-scrollbar pb-2 lg:pb-0">
+   202→                    <button @click="activeTab = 'general'" :class="activeTab === 'general' ? 'bg-white shadow-soft text-primary' : 'text-gray-500 hover:bg-white/50'" class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all whitespace-nowrap font-semibold">
+   203→                        <i data-lucide="user-circle" class="w-5 h-5"></i> Profil
+   204→                    </button>
+   205→                    <button @click="activeTab = 'notifications'" :class="activeTab === 'notifications' ? 'bg-white shadow-soft text-primary' : 'text-gray-500 hover:bg-white/50'" class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all whitespace-nowrap font-semibold">
+   206→                        <i data-lucide="bell" class="w-5 h-5"></i> Notifications
+   207→                    </button>
+   208→                    <button @click="activeTab = 'privacy'" :class="activeTab === 'privacy' ? 'bg-white shadow-soft text-primary' : 'text-gray-500 hover:bg-white/50'" class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all whitespace-nowrap font-semibold">
+   209→                        <i data-lucide="shield-check" class="w-5 h-5"></i> Confidentialité
+   210→                    </button>
+   211→                    <button @click="activeTab = 'subscription'" :class="activeTab === 'subscription' ? 'bg-white shadow-soft text-primary' : 'text-gray-500 hover:bg-white/50'" class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all whitespace-nowrap font-semibold">
+   212→                        <i data-lucide="credit-card" class="w-5 h-5"></i> Abonnement
+   213→                    </button>
+   214→                    <button @click="activeTab = 'appearance'" :class="activeTab === 'appearance' ? 'bg-white shadow-soft text-primary' : 'text-gray-500 hover:bg-white/50'" class="flex items-center gap-3 px-5 py-3 rounded-2xl transition-all whitespace-nowrap font-semibold">
+   215→                        <i data-lucide="palette" class="w-5 h-5"></i> Apparence
+   216→                    </button>
+   217→                </div>
+   218→            </div>
+   219→
+   220→            <!-- Content Panels -->
+   221→            <div class="lg:col-span-9 space-y-6">
+   222→                
+   223→                <!-- Section: Profil -->
+   224→                <div x-show="activeTab === 'general'" x-transition class="space-y-6">
+   225→                    <div class="glass-card rounded-3xl p-8 shadow-card">
+   226→                        <div class="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
+   227→                            <div class="relative group">
+   228→                                <img src="https://i.pravatar.cc/150?u=moodday-john" class="w-24 h-24 rounded-3xl shadow-lg object-cover border-4 border-white" alt="Avatar">
+   229→                                <button class="absolute -bottom-2 -right-2 bg-primary text-white p-2 rounded-xl shadow-lg hover:scale-110 transition-transform">
+   230→                                    <i data-lucide="camera" class="w-4 h-4"></i>
+   231→                                </button>
+   232→                            </div>
+   233→                            <div class="flex-grow">
+   234→                                <h3 class="text-xl font-bold text-gray-900">John Doe</h3>
+   235→                                <p class="text-gray-500 mb-2">john.doe@example.com</p>
+   236→                                <div class="flex gap-2">
+   237→                                    <span class="bg-sage/10 text-sage text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Bipolarité Type II</span>
+   238→                                    <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">TDAH</span>
+   239→                                </div>
+   240→                            </div>
+   241→                            <button class="bg-warm-panel hover:bg-gray-200 text-gray-700 font-semibold px-6 py-2.5 rounded-xl transition-all">
+   242→                                Modifier
+   243→                            </button>
+   244→                        </div>
+   245→
+   246→                        <div class="grid md:grid-cols-2 gap-6">
+   247→                            <div class="space-y-1">
+   248→                                <label class="text-sm font-semibold text-gray-500 px-1">Prénom / Pseudo</label>
+   249→                                <input type="text" value="John" class="w-full bg-warm-bg border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+   250→                            </div>
+   251→                            <div class="space-y-1">
+   252→                                <label class="text-sm font-semibold text-gray-500 px-1">Fuseau Horaire</label>
+   253→                                <select class="w-full bg-warm-bg border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+   254→                                    <option>Europe/Paris (GMT+1)</option>
+   255→                                    <option>Europe/London (GMT+0)</option>
+   256→                                    <option>America/New_York (GMT-5)</option>
+   257→                                </select>
+   258→                            </div>
+   259→                        </div>
+   260→                    </div>
+   261→
+   262→                    <div class="glass-card rounded-3xl p-8 shadow-card">
+   263→                        <div class="flex items-center justify-between mb-6">
+   264→                            <h3 class="text-lg font-bold text-gray-900">Conditions de santé</h3>
+   265→                            <button class="text-primary hover:text-primary-dark font-semibold text-sm flex items-center gap-1">
+   266→                                <i data-lucide="plus-circle" class="w-4 h-4"></i> Ajouter
+   267→                            </button>
+   268→                        </div>
+   269→                        <div class="space-y-4">
+   270→                            <div class="flex items-center justify-between p-4 bg-warm-panel rounded-2xl border border-gray-100">
+   271→                                <div class="flex items-center gap-4">
+   272→                                    <div class="w-10 h-10 bg-sage/10 rounded-xl flex items-center justify-center">
+   273→                                        <i data-lucide="activity" class="text-sage w-5 h-5"></i>
+   274→                                    </div>
+   275→                                    <div>
+   276→                                        <p class="font-bold text-gray-900 text-sm md:text-base">Trouble Bipolaire Type II</p>
+   277→                                        <p class="text-xs text-gray-500 italic">Depuis Octobre 2021</p>
+   278→                                    </div>
+   279→                                </div>
+   280→                                <button class="text-gray-400 hover:text-red-500 p-2"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+   281→                            </div>
+   282→                            <div class="flex items-center justify-between p-4 bg-warm-panel rounded-2xl border border-gray-100">
+   283→                                <div class="flex items-center gap-4">
+   284→                                    <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+   285→                                        <i data-lucide="brain" class="text-primary w-5 h-5"></i>
+   286→                                    </div>
+   287→                                    <div>
+   288→                                        <p class="font-bold text-gray-900 text-sm md:text-base">TDAH (Inattentif)</p>
+   289→                                        <p class="text-xs text-gray-500 italic">Depuis Janvier 2023</p>
+   290→                                    </div>
+   291→                                </div>
+   292→                                <button class="text-gray-400 hover:text-red-500 p-2"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+   293→                            </div>
+   294→                        </div>
+   295→                    </div>
+   296→                </div>
+   297→
+   298→                <!-- Section: Notifications -->
+   299→                <div x-show="activeTab === 'notifications'" x-transition class="space-y-6">
+   300→                    <div class="glass-card rounded-3xl p-8 shadow-card">
+   301→                        <h3 class="text-xl font-bold text-gray-900 mb-6">Préférences de rappels</h3>
+   302→                        <div class="space-y-6">
+   303→                            <!-- Toggle 1 -->
+   304→                            <div class="flex items-center justify-between">
+   305→                                <div class="flex gap-4">
+   306→                                    <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0">
+   307→                                        <i data-lucide="smile" class="text-primary w-6 h-6"></i>
+   308→                                    </div>
+   309→                                    <div>
+   310→                                        <p class="font-bold text-gray-900">Check-in d'humeur</p>
+   311→                                        <p class="text-sm text-gray-500">Rappels quotidiens pour saisir votre état.</p>
+   312→                                    </div>
+   313→                                </div>
+   314→                                <button @click="notifications.mood = !notifications.mood" :class="notifications.mood ? 'bg-primary' : 'bg-gray-200'" class="relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none">
+   315→                                    <span :class="notifications.mood ? 'translate-x-6' : 'translate-x-1'" class="inline-block h-5 w-5 transform rounded-full bg-white transition-transform"></span>
+   316→                                </button>
+   317→                            </div>
+   318→                            
+   319→                            <div x-show="notifications.mood" x-transition class="ml-16 flex flex-wrap gap-2">
+   320→                                <button class="bg-primary text-white px-4 py-1.5 rounded-full text-xs font-bold">09:00</button>
+   321→                                <button class="bg-white border border-gray-200 text-gray-500 px-4 py-1.5 rounded-full text-xs font-bold hover:border-primary">20:00</button>
+   322→                                <button class="bg-warm-panel text-gray-400 p-1.5 rounded-full"><i data-lucide="plus" class="w-4 h-4"></i></button>
+   323→                            </div>
+   324→
+   325→                            <hr class="border-gray-50">
+   326→
+   327→                            <!-- Toggle 2 -->
+   328→                            <div class="flex items-center justify-between">
+   329→                                <div class="flex gap-4">
+   330→                                    <div class="w-12 h-12 bg-sage/10 rounded-2xl flex items-center justify-center shrink-0">
+   331→                                        <i data-lucide="pill" class="text-sage w-6 h-6"></i>
+   332→                                    </div>
+   333→                                    <div>
+   334→                                        <p class="font-bold text-gray-900">Traitement médical</p>
+   335→                                        <p class="text-sm text-gray-500">Alerte lors des heures de prise prévues.</p>
+   336→                                    </div>
+   337→                                </div>
+   338→                                <button @click="notifications.meds = !notifications.meds" :class="notifications.meds ? 'bg-sage' : 'bg-gray-200'" class="relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none">
+   339→                                    <span :class="notifications.meds ? 'translate-x-6' : 'translate-x-1'" class="inline-block h-5 w-5 transform rounded-full bg-white transition-transform"></span>
+   340→                                </button>
+   341→                            </div>
+   342→
+   343→                            <hr class="border-gray-50">
+   344→
+   345→                            <!-- Toggle 3 -->
+   346→                            <div class="flex items-center justify-between">
+   347→                                <div class="flex gap-4">
+   348→                                    <div class="w-12 h-12 bg-lavender/30 rounded-2xl flex items-center justify-center shrink-0">
+   349→                                        <i data-lucide="mail" class="text-primary w-6 h-6"></i>
+   350→                                    </div>
+   351→                                    <div>
+   352→                                        <p class="font-bold text-gray-900">Résumé hebdomadaire</p>
+   353→                                        <p class="text-sm text-gray-500">Un rapport par email chaque dimanche soir.</p>
+   354→                                    </div>
+   355→                                </div>
+   356→                                <button @click="notifications.summary = !notifications.summary" :class="notifications.summary ? 'bg-primary' : 'bg-gray-200'" class="relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none">
+   357→                                    <span :class="notifications.summary ? 'translate-x-6' : 'translate-x-1'" class="inline-block h-5 w-5 transform rounded-full bg-white transition-transform"></span>
+   358→                                </button>
+   359→                            </div>
+   360→                        </div>
+   361→                    </div>
+   362→                </div>
+   363→
+   364→                <!-- Section: Privacy -->
+   365→                <div x-show="activeTab === 'privacy'" x-transition class="space-y-6">
+   366→                    <div class="glass-card rounded-3xl p-8 shadow-card">
+   367→                        <h3 class="text-xl font-bold text-gray-900 mb-6">Gestion des accès</h3>
+   368→                        <p class="text-sm text-gray-500 mb-6 leading-relaxed">Les personnes suivantes ont accès à certaines de vos données. Vous pouvez révoquer ces accès instantanément.</p>
+   369→                        
+   370→                        <div class="space-y-4">
+   371→                            <div class="flex flex-col md:flex-row md:items-center justify-between p-5 bg-white rounded-2xl border border-gray-100 shadow-sm gap-4">
+   372→                                <div class="flex items-center gap-4">
+   373→                                    <img src="https://i.pravatar.cc/100?u=mom" class="w-12 h-12 rounded-2xl object-cover" alt="Mom">
+   374→                                    <div>
+   375→                                        <p class="font-bold text-gray-900">Maman (Marie)</p>
+   376→                                        <p class="text-xs font-bold text-sage">Rôle : Aidant principal</p>
+   377→                                    </div>
+   378→                                </div>
+   379→                                <div class="flex items-center gap-2">
+   380→                                    <span class="text-xs bg-gray-100 px-3 py-1 rounded-full font-medium text-gray-600">Humeur, Traitement</span>
+   381→                                    <button @click="showRevokeModal = true" class="text-red-500 hover:bg-red-50 px-3 py-1.5 rounded-lg text-sm font-bold transition-all">Révoquer</button>
+   382→                                </div>
+   383→                            </div>
+   384→
+   385→                            <div class="flex flex-col md:flex-row md:items-center justify-between p-5 bg-white rounded-2xl border border-gray-100 shadow-sm gap-4">
+   386→                                <div class="flex items-center gap-4">
+   387→                                    <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+   388→                                        <i data-lucide="stethoscope" class="w-6 h-6"></i>
+   389→                                    </div>
+   390→                                    <div>
+   391→                                        <p class="font-bold text-gray-900">Dr. Alexandre Dupont</p>
+   392→                                        <p class="text-xs font-bold text-primary">Rôle : Psychiatre</p>
+   393→                                    </div>
+   394→                                </div>
+   395→                                <div class="flex items-center gap-2">
+   396→                                    <span class="text-xs bg-gray-100 px-3 py-1 rounded-full font-medium text-gray-600">Tout sauf Notes Privées</span>
+   397→                                    <button class="text-gray-400 hover:text-primary px-3 py-1.5 rounded-lg text-sm font-bold transition-all">Gérer</button>
+   398→                                </div>
+   399→                            </div>
+   400→                        </div>
+   401→
+   402→                        <button class="mt-8 w-full border-2 border-dashed border-gray-200 hover:border-primary hover:bg-primary/5 text-gray-500 hover:text-primary transition-all py-4 rounded-2xl font-bold flex items-center justify-center gap-2">
+   403→                            <i data-lucide="user-plus" class="w-5 h-5"></i> Inviter une nouvelle personne
+   404→                        </button>
+   405→                    </div>
+   406→
+   407→                    <div class="glass-card rounded-3xl p-8 shadow-card">
+   408→                        <h3 class="text-xl font-bold text-gray-900 mb-6">Vos Données (RGPD)</h3>
+   409→                        <div class="grid md:grid-cols-2 gap-4">
+   410→                            <div class="p-6 bg-warm-panel rounded-2xl border border-gray-100 flex flex-col items-center text-center">
+   411→                                <i data-lucide="download" class="text-primary w-8 h-8 mb-4"></i>
+   412→                                <h4 class="font-bold mb-2">Exporter mes données</h4>
+   413→                                <p class="text-xs text-gray-500 mb-6">Téléchargez l'intégralité de vos entrées au format JSON ou PDF.</p>
+   414→                                <button @click="exportStatus = 'loading'; setTimeout(() => exportStatus = 'done', 2000)" class="mt-auto w-full bg-white border border-primary text-primary hover:bg-primary hover:text-white font-bold py-2 rounded-xl transition-all">
+   415→                                    <span x-show="exportStatus === 'idle'">Demander l'export</span>
+   416→                                    <span x-show="exportStatus === 'loading'" class="flex items-center justify-center gap-2"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Préparation...</span>
+   417→                                    <span x-show="exportStatus === 'done'">✓ Prêt ! Télécharger</span>
+   418→                                </button>
+   419→                            </div>
+   420→                            <div class="p-6 bg-red-50 rounded-2xl border border-red-100 flex flex-col items-center text-center">
+   421→                                <i data-lucide="trash-2" class="text-red-500 w-8 h-8 mb-4"></i>
+   422→                                <h4 class="font-bold mb-2 text-red-900">Supprimer mon compte</h4>
+   423→                                <p class="text-xs text-red-600 mb-6">Action irréversible. Toutes vos données seront effacées sous 30 jours.</p>
+   424→                                <button class="mt-auto w-full border border-red-200 text-red-500 hover:bg-red-500 hover:text-white font-bold py-2 rounded-xl transition-all">
+   425→                                    Supprimer définitivement
+   426→                                </button>
+   427→                            </div>
+   428→                        </div>
+   429→                    </div>
+   430→                </div>
+   431→
+   432→                <!-- Section: Subscription -->
+   433→                <div x-show="activeTab === 'subscription'" x-transition class="space-y-6">
+   434→                    <div class="bg-gradient-to-br from-primary-darkest to-primary-dark rounded-3xl p-8 shadow-2xl text-white relative overflow-hidden">
+   435→                        <i data-lucide="sparkles" class="absolute -top-10 -right-10 w-48 h-48 opacity-10 rotate-12"></i>
+   436→                        <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+   437→                            <div>
+   438→                                <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Membre Pro</span>
+   439→                                <h3 class="text-2xl md:text-3xl font-bold mb-2">Moodday Pro</h3>
+   440→                                <p class="text-primary-light font-medium">Prochain prélèvement le 15 Janvier 2026</p>
+   441→                            </div>
+   442→                            <div class="text-right">
+   443→                                <div class="text-4xl font-bold">4.99€<span class="text-sm font-normal opacity-70">/mois</span></div>
+   444→                                <button class="mt-4 bg-white text-primary-darkest px-6 py-2 rounded-xl font-bold hover:bg-warm-bg transition-all">
+   445→                                    Gérer sur Stripe
+   446→                                </button>
+   447→                            </div>
+   448→                        </div>
+   449→                        <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-8">
+   450→                            <div class="text-center">
+   451→                                <p class="text-xs opacity-60 uppercase mb-1">Membres</p>
+   452→                                <p class="font-bold">Individuel</p>
+   453→                            </div>
+   454→                            <div class="text-center">
+   455→                                <p class="text-xs opacity-60 uppercase mb-1">Paiement</p>
+   456→                                <p class="font-bold">Mensuel</p>
+   457→                            </div>
+   458→                            <div class="text-center">
+   459→                                <p class="text-xs opacity-60 uppercase mb-1">Status</p>
+   460→                                <p class="font-bold flex items-center justify-center gap-1"><span class="w-2 h-2 bg-sage rounded-full animate-pulse"></span> Actif</p>
+   461→                            </div>
+   462→                            <div class="text-center">
+   463→                                <p class="text-xs opacity-60 uppercase mb-1">Historique</p>
+   464→                                <p class="font-bold">Illimité</p>
+   465→                            </div>
+   466→                        </div>
+   467→                    </div>
+   468→
+   469→                    <div class="glass-card rounded-3xl p-8 shadow-card">
+   470→                        <h3 class="text-xl font-bold text-gray-900 mb-6">Moyens de paiement</h3>
+   471→                        <div class="flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-100">
+   472→                            <div class="flex items-center gap-4">
+   473→                                <div class="w-12 h-8 bg-gray-50 rounded flex items-center justify-center border border-gray-100">
+   474→                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" class="h-4" alt="Mastercard">
+   475→                                </div>
+   476→                                <div>
+   477→                                    <p class="font-bold text-gray-900">•••• •••• •••• 4242</p>
+   478→                                    <p class="text-xs text-gray-500 uppercase">Expire 12/28</p>
+   479→                                </div>
+   480→                            </div>
+   481→                            <button class="text-primary font-bold text-sm">Modifier</button>
+   482→                        </div>
+   483→                    </div>
+   484→                </div>
+   485→
+   486→                <!-- Section: Appearance -->
+   487→                <div x-show="activeTab === 'appearance'" x-transition class="space-y-6">
+   488→                    <div class="glass-card rounded-3xl p-8 shadow-card">
+   489→                        <h3 class="text-xl font-bold text-gray-900 mb-6">Thème visuel</h3>
+   490→                        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+   491→                            <button @click="isDarkMode = false" :class="!isDarkMode ? 'ring-4 ring-primary ring-offset-4' : 'opacity-70'" class="group relative overflow-hidden rounded-2xl bg-warm-bg border border-gray-200 transition-all p-1">
+   492→                                <div class="aspect-video bg-[#F8F7F3] rounded-xl flex items-center justify-center">
+   493→                                    <i data-lucide="sun" class="w-8 h-8 text-primary"></i>
+   494→                                </div>
+   495→                                <div class="p-3 text-center font-bold text-sm text-gray-900">Sérénité (Clair)</div>
+   496→                            </button>
+   497→                            <button @click="isDarkMode = true" :class="isDarkMode ? 'ring-4 ring-primary ring-offset-4' : 'opacity-70'" class="group relative overflow-hidden rounded-2xl bg-[#1A1A1A] border border-gray-800 transition-all p-1">
+   498→                                <div class="aspect-video bg-[#2D2D2D] rounded-xl flex items-center justify-center">
+   499→                                    <i data-lucide="moon" class="w-8 h-8 text-white"></i>
+   500→                                </div>
+   501→                                <div class="p-3 text-center font-bold text-sm text-white">Nocturne (Sombre)</div>
+   502→                            </button>
+   503→                            <button class="opacity-50 cursor-not-allowed group relative overflow-hidden rounded-2xl bg-lavender/20 border border-lavender/30 transition-all p-1">
+   504→                                <div class="aspect-video bg-lavender/40 rounded-xl flex items-center justify-center italic text-primary font-bold">Soon</div>
+   505→                                <div class="p-3 text-center font-bold text-sm text-gray-400">Zen (Pastel)</div>
+   506→                            </button>
+   507→                        </div>
+   508→                    </div>
+   509→
+   510→                    <div class="glass-card rounded-3xl p-8 shadow-card">
+   511→                        <h3 class="text-xl font-bold text-gray-900 mb-6">Paramètres d'accessibilité</h3>
+   512→                        <div class="space-y-6">
+   513→                            <div class="flex items-center justify-between">
+   514→                                <div>
+   515→                                    <p class="font-bold text-gray-900">Contraste élevé</p>
+   516→                                    <p class="text-sm text-gray-500">Améliore la lisibilité des textes critiques.</p>
+   517→                                </div>
+   518→                                <button class="bg-gray-200 relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none">
+   519→                                    <span class="translate-x-1 inline-block h-5 w-5 transform rounded-full bg-white transition-transform"></span>
+   520→                                </button>
+   521→                            </div>
+   522→                            <div class="flex items-center justify-between">
+   523→                                <div>
+   524→                                    <p class="font-bold text-gray-900">Police d'écriture "Dyslexie"</p>
+   525→                                    <p class="text-sm text-gray-500">Utilise OpenDyslexic pour faciliter la lecture.</p>
+   526→                                </div>
+   527→                                <button class="bg-gray-200 relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none">
+   528→                                    <span class="translate-x-1 inline-block h-5 w-5 transform rounded-full bg-white transition-transform"></span>
+   529→                                </button>
+   530→                            </div>
+   531→                        </div>
+   532→                    </div>
+   533→                </div>
+   534→            </div>
+   535→        </div>
+   536→    </main>
+   537→
+   538→    <!-- Modal: Revoke Access Confirmation -->
+   539→    <div x-show="showRevokeModal" x-transition.opacity x-cloak class="fixed inset-0 z-[100] flex items-center justify-center bg-primary-darkest/40 backdrop-blur-sm p-4">
+   540→        <div @click.away="showRevokeModal = false" class="bg-white rounded-[32px] p-8 max-w-md w-full shadow-2xl animate-float">
+   541→            <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6 text-red-600">
+   542→                <i data-lucide="alert-triangle" class="w-8 h-8"></i>
+   543→            </div>
+   544→            <h3 class="text-2xl font-bold text-gray-900 mb-4">Révoquer l'accès ?</h3>
+   545→            <p class="text-gray-500 mb-8 leading-relaxed">
+   546→                Êtes-vous sûr de vouloir révoquer l'accès de <span class="font-bold text-gray-900">Maman (Marie)</span> ? Elle ne pourra plus consulter votre historique ni recevoir d'alertes en cas de crise.
+   547→            </p>
+   548→            <div class="grid grid-cols-2 gap-4">
+   549→                <button @click="showRevokeModal = false" class="py-4 bg-warm-panel rounded-2xl font-bold text-gray-600 hover:bg-gray-200 transition-all">Annuler</button>
+   550→                <button @click="showRevokeModal = false" class="py-4 bg-red-500 rounded-2xl font-bold text-white shadow-lg hover:bg-red-600 active:scale-95 transition-all">Oui, révoquer</button>
+   551→            </div>
+   552→        </div>
+   553→    </div>
+   554→
+   555→    <!-- Mobile Bottom Navigation -->
+   556→    <nav class="md:hidden flex items-center justify-around bg-white border-t border-gray-100 py-3 fixed bottom-0 left-0 w-full z-40">
+   557→        <button class="flex flex-col items-center gap-1 text-gray-400">
+   558→            <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+   559→            <span class="text-[10px] font-bold uppercase">Home</span>
+   560→        </button>
+   561→        <button class="flex flex-col items-center gap-1 text-gray-400">
+   562→            <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+   563→            <span class="text-[10px] font-bold uppercase">Stats</span>
+   564→        </button>
+   565→        <button class="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white shadow-soft -mt-8 border-4 border-warm-bg active:scale-90 transition-transform">
+   566→            <i data-lucide="plus" class="w-6 h-6"></i>
+   567→        </button>
+   568→        <button class="flex flex-col items-center gap-1 text-gray-400">
+   569→            <i data-lucide="users" class="w-6 h-6"></i>
+   570→            <span class="text-[10px] font-bold uppercase">Aidants</span>
+   571→        </button>
+   572→        <button class="flex flex-col items-center gap-1 text-primary">
+   573→            <i data-lucide="settings" class="w-6 h-6"></i>
+   574→            <span class="text-[10px] font-bold uppercase">Settings</span>
+   575→        </button>
+   576→    </nav>
+   577→
+   578→    <!-- Initialize Lucide Icons -->
+   579→    <script>
+   580→        lucide.createIcons();
+   581→    </script>
+   582→</body>
+   583→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

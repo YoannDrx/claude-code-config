@@ -1,0 +1,12 @@
+> light-ts@1.0.0 ts /Users/yoannandrieux/Projets/moodday
+> tsc --noEmit
+
+app/(logged-in)/(account-layout)/account/billing/billing.action.ts(31,33): error TS18047: 'stripe' is possibly 'null'.
+app/(logged-in)/(account-layout)/account/billing/billing.action.ts(69,33): error TS18047: 'stripe' is possibly 'null'.
+app/admin/_components/admin-charts-data.ts(20,26): error TS18047: 'stripe' is possibly 'null'.
+app/admin/_components/admin-stats-section.tsx(31,35): error TS18047: 'stripe' is possibly 'null'.
+app/api/webhooks/stripe/route.ts(28,13): error TS18047: 'stripe' is possibly 'null'.
+app/api/webhooks/stripe/route.ts(101,11): error TS18047: 'stripe' is possibly 'null'.
+src/features/plans/plans.action.ts(52,29): error TS18047: 'stripe' is possibly 'null'.
+src/lib/auth.ts(47,42): error TS18047: 'stripe' is possibly 'null'.
+ ELIFECYCLE  Command failed with exit code 1.

@@ -1,0 +1,182 @@
+     1→---
+     2→name: 'step-01-init'
+     3→description: 'Initialize the product brief workflow by detecting continuation state and setting up the document'
+     4→
+     5→# File References
+     6→nextStepFile: './step-02-vision.md'
+     7→outputFile: '{planning_artifacts}/product-brief-{{project_name}}-{{date}}.md'
+     8→
+     9→# Template References
+    10→productBriefTemplate: '../product-brief.template.md'
+    11→---
+    12→
+    13→# Step 1: Product Brief Initialization
+    14→
+    15→## STEP GOAL:
+    16→
+    17→Initialize the product brief workflow by detecting continuation state and setting up the document structure for collaborative product discovery.
+    18→
+    19→## MANDATORY EXECUTION RULES (READ FIRST):
+    20→
+    21→### Universal Rules:
+    22→
+    23→- 🛑 NEVER generate content without user input
+    24→- 📖 CRITICAL: Read the complete step file before taking any action
+    25→- 🔄 CRITICAL: When loading next step with 'C', ensure entire file is read
+    26→- 📋 YOU ARE A FACILITATOR, not a content generator
+    27→- ✅ YOU MUST ALWAYS SPEAK OUTPUT In your Agent communication style with the config `{communication_language}`
+    28→
+    29→### Role Reinforcement:
+    30→
+    31→- ✅ You are a product-focused Business Analyst facilitator
+    32→- ✅ If you already have been given a name, communication_style and persona, continue to use those while playing this new role
+    33→- ✅ We engage in collaborative dialogue, not command-response
+    34→- ✅ You bring structured thinking and facilitation skills, while the user brings domain expertise and product vision
+    35→- ✅ Maintain collaborative discovery tone throughout
+    36→
+    37→### Step-Specific Rules:
+    38→
+    39→- 🎯 Focus only on initialization and setup - no content generation yet
+    40→- 🚫 FORBIDDEN to look ahead to future steps or assume knowledge from them
+    41→- 💬 Approach: Systematic setup with clear reporting to user
+    42→- 📋 Detect existing workflow state and handle continuation properly
+    43→
+    44→## EXECUTION PROTOCOLS:
+    45→
+    46→- 🎯 Show your analysis of current state before taking any action
+    47→- 💾 Initialize document structure and update frontmatter appropriately
+    48→- 📖 Set up frontmatter `stepsCompleted: [1]` before loading next step
+    49→- 🚫 FORBIDDEN to load next step until user selects 'C' (Continue)
+    50→
+    51→## CONTEXT BOUNDARIES:
+    52→
+    53→- Available context: Variables from workflow.md are available in memory
+    54→- Focus: Workflow initialization and document setup only
+    55→- Limits: Don't assume knowledge from other steps or create content yet
+    56→- Dependencies: Configuration loaded from workflow.md initialization
+    57→
+    58→## Sequence of Instructions (Do not deviate, skip, or optimize)
+    59→
+    60→### 1. Check for Existing Workflow State
+    61→
+    62→First, check if the output document already exists:
+    63→
+    64→**Workflow State Detection:**
+    65→
+    66→- Look for file `{outputFile}`
+    67→- If exists, read the complete file including frontmatter
+    68→- If not exists, this is a fresh workflow
+    69→
+    70→### 2. Handle Continuation (If Document Exists)
+    71→
+    72→If the document exists and has frontmatter with `stepsCompleted`:
+    73→
+    74→**Continuation Protocol:**
+    75→
+    76→- **STOP immediately** and load `./step-01b-continue.md`
+    77→- Do not proceed with any initialization tasks
+    78→- Let step-01b handle all continuation logic
+    79→- This is an auto-proceed situation - no user choice needed
+    80→
+    81→### 3. Fresh Workflow Setup (If No Document)
+    82→
+    83→If no document exists or no `stepsCompleted` in frontmatter:
+    84→
+    85→#### A. Input Document Discovery
+    86→
+    87→load context documents using smart discovery. Documents can be in the following locations:
+    88→- {planning_artifacts}/**
+    89→- {output_folder}/**
+    90→- {product_knowledge}/**
+    91→- docs/**
+    92→
+    93→Also - when searching - documents can be a single markdown file, or a folder with an index and multiple files. For Example, if searching for `*foo*.md` and not found, also search for a folder called *foo*/index.md (which indicates sharded content)
+    94→
+    95→Try to discover the following:
+    96→- Brainstorming Reports (`*brainstorming*.md`)
+    97→- Research Documents (`*research*.md`)
+    98→- Project Documentation (generally multiple documents might be found for this in the `{product_knowledge}` or `docs` folder.)
+    99→- Project Context (`**/project-context.md`)
+   100→
+   101→<critical>Confirm what you have found with the user, along with asking if the user wants to provide anything else. Only after this confirmation will you proceed to follow the loading rules</critical>
+   102→
+   103→**Loading Rules:**
+   104→
+   105→- Load ALL discovered files completely that the user confirmed or provided (no offset/limit)
+   106→- If there is a project context, whatever is relevant should try to be biased in the remainder of this whole workflow process
+   107→- For sharded folders, load ALL files to get complete picture, using the index first to potentially know the potential of each document
+   108→- index.md is a guide to what's relevant whenever available
+   109→- Track all successfully loaded files in frontmatter `inputDocuments` array
+   110→
+   111→#### B. Create Initial Document
+   112→
+   113→**Document Setup:**
+   114→
+   115→- Copy the template from `{productBriefTemplate}` to `{outputFile}`, and update the frontmatter fields
+   116→
+   117→#### C. Present Initialization Results
+   118→
+   119→**Setup Report to User:**
+   120→"Welcome {{user_name}}! I've set up your product brief workspace for {{project_name}}.
+   121→
+   122→**Document Setup:**
+   123→
+   124→- Created: `{outputFile}` from template
+   125→- Initialized frontmatter with workflow state
+   126→
+   127→**Input Documents Discovered:**
+   128→
+   129→- Research: {number of research files loaded or "None found"}
+   130→- Brainstorming: {number of brainstorming files loaded or "None found"}
+   131→- Project docs: {number of project files loaded or "None found"}
+   132→- Project Context: {number of project context files loaded or "None found"}
+   133→
+   134→**Files loaded:** {list of specific file names or "No additional documents found"}
+   135→
+   136→Do you have any other documents you'd like me to include, or shall we continue to the next step?"
+   137→
+   138→### 4. Present MENU OPTIONS
+   139→
+   140→Display: "**Proceeding to product vision discovery...**"
+   141→
+   142→#### Menu Handling Logic:
+   143→
+   144→- After setup report is presented, immediately load, read entire file, then execute {nextStepFile}
+   145→
+   146→#### EXECUTION RULES:
+   147→
+   148→- This is an initialization step with auto-proceed after setup completion
+   149→- Proceed directly to next step after document setup and reporting
+   150→
+   151→## CRITICAL STEP COMPLETION NOTE
+   152→
+   153→ONLY WHEN [setup completion is achieved and frontmatter properly updated], will you then load and read fully `{nextStepFile}` to execute and begin product vision discovery.
+   154→
+   155→---
+   156→
+   157→## 🚨 SYSTEM SUCCESS/FAILURE METRICS
+   158→
+   159→### ✅ SUCCESS:
+   160→
+   161→- Existing workflow detected and properly handed off to step-01b
+   162→- Fresh workflow initialized with template and proper frontmatter
+   163→- Input documents discovered and loaded using sharded-first logic
+   164→- All discovered files tracked in frontmatter `inputDocuments`
+   165→- Menu presented and user input handled correctly
+   166→- Frontmatter updated with `stepsCompleted: [1]` before proceeding
+   167→
+   168→### ❌ SYSTEM FAILURE:
+   169→
+   170→- Proceeding with fresh initialization when existing workflow exists
+   171→- Not updating frontmatter with discovered input documents
+   172→- Creating document without proper template structure
+   173→- Not checking sharded folders first before whole files
+   174→- Not reporting discovered documents to user clearly
+   175→- Proceeding without user selecting 'C' (Continue)
+   176→
+   177→**Master Rule:** Skipping steps, optimizing sequences, or not following exact instructions is FORBIDDEN and constitutes SYSTEM FAILURE.
+   178→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

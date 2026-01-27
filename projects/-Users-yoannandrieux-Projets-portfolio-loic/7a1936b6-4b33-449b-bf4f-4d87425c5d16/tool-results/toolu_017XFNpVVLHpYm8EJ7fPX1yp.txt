@@ -1,0 +1,13 @@
+Found 12 files
+app/[locale]/layout-content.tsx
+components/neo-brutalist/contact/NeoContact.tsx
+components/neo-brutalist/NeoSplitHero.tsx
+components/neo-brutalist/videos/NeoVideosPage.tsx
+components/neo-brutalist/ui/NeoHeroSection.tsx
+components/neo-brutalist/NeoHome.tsx
+components/neo-brutalist/albums/NeoAlbumsPage.tsx
+components/neo-brutalist/services/NeoServicesPage.tsx
+components/neo-brutalist/legal/NeoLegalPage.tsx
+components/neo-brutalist/NeoHero.tsx
+lib/animations.ts
+components/ui/heading.tsx

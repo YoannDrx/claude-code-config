@@ -1,0 +1,1 @@
+File created successfully at: /Users/yoannandrieux/Projets/moodday/src/features/insights/insights.action.ts

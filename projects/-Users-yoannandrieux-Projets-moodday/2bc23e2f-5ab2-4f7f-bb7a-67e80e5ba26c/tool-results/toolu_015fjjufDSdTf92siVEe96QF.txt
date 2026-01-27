@@ -1,0 +1,124 @@
+   928→### Epic 7: Personalization & Onboarding
+   929→
+   930→#### Story 7.1: Onboarding Welcome Flow
+   931→**En tant que** nouvel utilisateur,
+   932→**Je veux** un onboarding bienveillant qui m'accueille,
+   933→**Afin de** comprendre comment utiliser l'app sans pression.
+   934→
+   935→**FRs:** FR42
+   936→**Points:** 2
+   937→
+   938→**Acceptance Criteria:**
+   939→- [ ] 3-4 écrans d'introduction maximum
+   940→- [ ] Ton chaleureux et rassurant
+   941→- [ ] Explication de la valeur: "Voir si votre traitement fonctionne"
+   942→- [ ] Pas de promesses médicales
+   943→- [ ] Navigation: Next / Skip
+   944→
+   945→**Technical Notes:**
+   946→- Pages: `app/(auth)/onboarding/[step]/page.tsx`
+   947→- Stocker progression onboarding dans User
+   948→
+   949→---
+   950→
+   951→#### Story 7.2: Initial Medication Setup
+   952→**En tant que** nouvel utilisateur,
+   953→**Je veux** configurer mes médicaments pendant l'onboarding,
+   954→**Afin de** démarrer mon suivi immédiatement.
+   955→
+   956→**FRs:** FR43
+   957→**Points:** 2
+   958→
+   959→**Acceptance Criteria:**
+   960→- [ ] Étape dédiée dans l'onboarding
+   961→- [ ] Ajout rapide de médicaments (nom + dosage)
+   962→- [ ] "Ajouter un autre" ou "Continuer"
+   963→- [ ] Option "Je n'en prends pas" ou "Plus tard"
+   964→- [ ] Pas obligatoire
+   965→
+   966→**Technical Notes:**
+   967→- Réutiliser composants de Epic 3
+   968→
+   969→---
+   970→
+   971→#### Story 7.3: Skip Onboarding Option
+   972→**En tant que** nouvel utilisateur pressé,
+   973→**Je veux** pouvoir sauter l'onboarding,
+   974→**Afin d'** accéder directement à l'app.
+   975→
+   976→**FRs:** FR44
+   977→**Points:** 1
+   978→
+   979→**Acceptance Criteria:**
+   980→- [ ] Bouton "Passer" visible mais discret
+   981→- [ ] Confirmation douce ("Vous pourrez configurer plus tard")
+   982→- [ ] Redirection vers dashboard
+   983→- [ ] Onboarding marqué comme complété
+   984→
+   985→---
+   986→
+   987→#### Story 7.4: Notification Preferences
+   988→**En tant qu'** utilisateur,
+   989→**Je veux** configurer mes préférences de notifications,
+   990→**Afin de** choisir quand et comment être rappelé.
+   991→
+   992→**FRs:** FR35
+   993→**Points:** 2
+   994→
+   995→**Acceptance Criteria:**
+   996→- [ ] Toggle global notifications on/off
+   997→- [ ] Rappel check-in quotidien (heure configurable)
+   998→- [ ] Rappels médicaments (par médicament)
+   999→- [ ] Choix: Push uniquement (pas d'email/SMS)
+  1000→- [ ] Demande permission notification browser
+  1001→
+  1002→**Technical Notes:**
+  1003→- Stocker dans User preferences (JSON field ou table dédiée)
+  1004→
+  1005→---
+  1006→
+  1007→#### Story 7.5: Display Preferences
+  1008→**En tant qu'** utilisateur,
+  1009→**Je veux** personnaliser l'affichage de l'app,
+  1010→**Afin de** l'adapter à mes préférences visuelles.
+  1011→
+  1012→**FRs:** FR36
+  1013→**Points:** 1
+  1014→
+  1015→**Acceptance Criteria:**
+  1016→- [ ] Mode clair / Mode sombre
+  1017→- [ ] Période par défaut pour la courbe (7j, 30j, 90j)
+  1018→- [ ] Sauvegarde en localStorage + User profile
+  1019→
+  1020→**Technical Notes:**
+  1021→- Utiliser next-themes si pas déjà présent
+  1022→- Préférence système par défaut
+  1023→
+  1024→---
+  1025→
+  1026→#### Story 7.6: Account Management
+  1027→**En tant qu'** utilisateur,
+  1028→**Je veux** gérer les informations de mon compte,
+  1029→**Afin de** garder mon profil à jour.
+  1030→
+  1031→**FRs:** FR37
+  1032→**Points:** 2
+  1033→
+  1034→**Acceptance Criteria:**
+  1035→- [ ] Modifier email (avec re-vérification)
+  1036→- [ ] Modifier mot de passe
+  1037→- [ ] Voir providers connectés
+  1038→- [ ] Lien vers suppression compte (Story 1.5)
+  1039→- [ ] Lien vers export données (Story 1.6)
+  1040→
+  1041→**Technical Notes:**
+  1042→- Page: `app/(dashboard)/settings/account/page.tsx`
+  1043→
+  1044→---
+  1045→
+  1046→### Epic 8: PWA & Offline Experience
+  1047→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,106 @@
+     1→"use client";
+     2→
+     3→import { Typography } from "@/components/nowts/typography";
+     4→import { NavigationWrapper } from "@/features/navigation/navigation-wrapper";
+     5→import { ComparisonTable } from "@/features/comparison/comparison-table";
+     6→import { useComparisonStore } from "@/features/comparison/comparison-store";
+     7→import { Heart, Search, TrendingUp, Bell, Scale } from "lucide-react";
+     8→import Link from "next/link";
+     9→
+    10→export default function ComparisonsPage() {
+    11→  const { properties, removeProperty, clearAll } = useComparisonStore();
+    12→
+    13→  const handleExportPDF = () => {
+    14→    // TODO: Implement PDF export
+    15→    console.debug("Export PDF not implemented yet");
+    16→  };
+    17→
+    18→  return (
+    19→    <NavigationWrapper
+    20→      logoChildren={
+    21→        <Typography variant="large" className="font-semibold">
+    22→          Comparaisons
+    23→        </Typography>
+    24→      }
+    25→      navigationChildren={
+    26→        <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
+    27→          <Link
+    28→            href="/dashboard"
+    29→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    30→          >
+    31→            <TrendingUp className="size-4" />
+    32→            Tableau de bord
+    33→          </Link>
+    34→          <Link
+    35→            href="/properties"
+    36→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    37→          >
+    38→            <Search className="size-4" />
+    39→            Recherche
+    40→          </Link>
+    41→          <Link
+    42→            href="/favorites"
+    43→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    44→          >
+    45→            <Heart className="size-4" />
+    46→            Favoris
+    47→          </Link>
+    48→          <Link
+    49→            href="/comparisons"
+    50→            className="bg-muted text-primary hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    51→          >
+    52→            <Scale className="size-4" />
+    53→            Comparaisons
+    54→          </Link>
+    55→          <Link
+    56→            href="/alerts"
+    57→            className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2 transition-all"
+    58→          >
+    59→            <Bell className="size-4" />
+    60→            Alertes
+    61→          </Link>
+    62→        </nav>
+    63→      }
+    64→      topBarChildren={
+    65→        <div className="flex items-center gap-2">
+    66→          <Typography variant="h2" className="text-lg font-semibold">
+    67→            Mes comparaisons
+    68→          </Typography>
+    69→        </div>
+    70→      }
+    71→    >
+    72→      <div className="p-6">
+    73→        {properties.length === 0 ? (
+    74→          <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
+    75→            <Scale className="text-muted-foreground mb-4 size-16" />
+    76→            <Typography variant="h3" className="mb-2">
+    77→              Aucune comparaison pour le moment
+    78→            </Typography>
+    79→            <Typography variant="muted" className="mb-6 max-w-md">
+    80→              Parcourez les biens immobiliers et ajoutez-les à la comparaison
+    81→              pour analyser leurs avantages et inconvénients.
+    82→            </Typography>
+    83→            <Link
+    84→              href="/properties"
+    85→              className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors"
+    86→            >
+    87→              Rechercher des biens
+    88→            </Link>
+    89→          </div>
+    90→        ) : (
+    91→          <ComparisonTable
+    92→            properties={properties}
+    93→            onRemoveProperty={removeProperty}
+    94→            onClearAll={clearAll}
+    95→            onExportPDF={handleExportPDF}
+    96→          />
+    97→        )}
+    98→      </div>
+    99→    </NavigationWrapper>
+   100→  );
+   101→}
+   102→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

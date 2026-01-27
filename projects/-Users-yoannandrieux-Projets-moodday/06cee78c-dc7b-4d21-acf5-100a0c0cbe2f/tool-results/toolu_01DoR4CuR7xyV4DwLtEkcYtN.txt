@@ -1,0 +1,27 @@
+     1→import { SiteConfig } from "@/site-config";
+     2→import type { PageParams } from "@/types/next";
+     3→import type { Metadata } from "next";
+     4→import { getI18n } from "@/i18n/server";
+     5→import { ConfirmDeletePage } from "./confirm-delete-page";
+     6→
+     7→export async function generateMetadata(): Promise<Metadata> {
+     8→  const { t } = await getI18n();
+     9→
+    10→  return {
+    11→    title: t("auth.confirmDelete.metaTitle", { app: SiteConfig.title }),
+    12→    description: t("auth.confirmDelete.metaDescription"),
+    13→  };
+    14→}
+    15→
+    16→export default async function ConfirmDelete(props: PageParams) {
+    17→  const searchParams = await props.searchParams;
+    18→  const token = searchParams.token as string | undefined;
+    19→  const callbackUrl = searchParams.callbackUrl as string | undefined;
+    20→
+    21→  return <ConfirmDeletePage token={token} callbackUrl={callbackUrl} />;
+    22→}
+    23→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

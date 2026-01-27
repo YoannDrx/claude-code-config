@@ -1,0 +1,64 @@
+     1→"use client";
+     2→
+     3→import React from "react";
+     4→import { motion, useScroll, useSpring } from "framer-motion";
+     5→import { CustomCursor } from "./ui/CustomCursor";
+     6→import { Marquee } from "./ui/Marquee";
+     7→import { NeoNavbar } from "./NeoNavbar";
+     8→import { NeoSplitHero } from "./NeoSplitHero";
+     9→import { NeoFooter } from "./NeoFooter";
+    10→
+    11→// Partner logos for the marquee
+    12→const partnerLogos = [
+    13→  { src: "/img/partners/cezame-logo.png", alt: "Cezame Music Agency", size: "large" as const },
+    14→  { src: "/img/partners/gum-logo.png", alt: "GUM", size: "large" as const },
+    15→  { src: "/img/partners/myma-logo.png", alt: "MYMA", size: "normal" as const },
+    16→  { src: "/img/partners/superpitch-logo.png", alt: "Superpitch", size: "normal" as const },
+    17→  {
+    18→    src: "/img/partners/universal-production.png",
+    19→    alt: "Universal Production Music",
+    20→    size: "large" as const,
+    21→  },
+    22→  { src: "/img/partners/infinity-scores.jpeg", alt: "Infinity Scores", size: "normal" as const },
+    23→  { src: "/img/partners/superama-records.jpg", alt: "Superama Records", size: "normal" as const },
+    24→];
+    25→
+    26→export default function NeoHome() {
+    27→  const { scrollYProgress } = useScroll();
+    28→  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
+    29→
+    30→  return (
+    31→    <div className="min-h-screen bg-neo-bg text-neo-text font-sans selection:bg-neo-text selection:text-neo-accent overflow-x-hidden">
+    32→      <CustomCursor />
+    33→
+    34→      {/* Top Progress Bar */}
+    35→      <motion.div
+    36→        className="fixed top-0 left-0 right-0 h-1 bg-neo-accent origin-left z-50"
+    37→        style={{ scaleX }}
+    38→      />
+    39→
+    40→      {/* Grid Overlay */}
+    41→      <div
+    42→        className="fixed inset-0 pointer-events-none z-0 opacity-[0.05]"
+    43→        style={{
+    44→          backgroundImage:
+    45→            "linear-gradient(var(--neo-border) 1px, transparent 1px), linear-gradient(90deg, var(--neo-border) 1px, transparent 1px)",
+    46→          backgroundSize: "60px 60px",
+    47→        }}
+    48→      />
+    49→
+    50→      <NeoNavbar />
+    51→
+    52→      <main className="relative z-10 pt-16 md:pt-20">
+    53→        <NeoSplitHero />
+    54→        <Marquee logos={partnerLogos} />
+    55→        <NeoFooter />
+    56→      </main>
+    57→    </div>
+    58→  );
+    59→}
+    60→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

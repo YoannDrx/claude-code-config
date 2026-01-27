@@ -1,0 +1,373 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Connexion | Moodday - Votre espace de sérénité</title>
+     7→    <!-- Fonts: Inter -->
+     8→    <link rel="preconnect" href="https://fonts.googleapis.com">
+     9→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    11→    <!-- Scripts -->
+    12→    <script src="https://cdn.tailwindcss.com"></script>
+    13→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    14→    <script src="https://unpkg.com/lucide@latest"></script>
+    15→    <script>
+    16→        tailwind.config = {
+    17→            theme: {
+    18→                extend: {
+    19→                    colors: {
+    20→                        primary: {
+    21→                            DEFAULT: '#2BA09F',
+    22→                            dark: '#2A8FA8',
+    23→                            light: '#3DA5B8',
+    24→                            darkest: '#1D7680',
+    25→                        },
+    26→                        sage: {
+    27→                            DEFAULT: '#48A878',
+    28→                            dark: '#3A956E',
+    29→                            light: '#6FBD94',
+    30→                        },
+    31→                        lavender: '#D4C5E8',
+    32→                        warm: {
+    33→                            bg: '#F8F7F3',
+    34→                            panel: '#F4F1ED',
+    35→                        }
+    36→                    },
+    37→                    fontFamily: {
+    38→                        sans: ['Inter', 'sans-serif'],
+    39→                    },
+    40→                    borderRadius: {
+    41→                        'xl': '12px',
+    42→                        '2xl': '24px',
+    43→                        '3xl': '32px',
+    44→                    },
+    45→                    boxShadow: {
+    46→                        'soft': '0 10px 25px -5px rgba(43, 160, 159, 0.1), 0 8px 10px -6px rgba(43, 160, 159, 0.05)',
+    47→                        'premium': '0 20px 50px rgba(0, 0, 0, 0.03)',
+    48→                    }
+    49→                }
+    50→            }
+    51→        }
+    52→    </script>
+    53→    <style>
+    54→        [x-cloak] { display: none !important; }
+    55→        
+    56→        body {
+    57→            background-color: #F8F7F3;
+    58→            color: #1F2937;
+    59→            overflow-x: hidden;
+    60→            font-family: 'Inter', sans-serif;
+    61→        }
+    62→
+    63→        .blob {
+    64→            position: absolute;
+    65→            width: 600px;
+    66→            height: 600px;
+    67→            background: linear-gradient(180deg, rgba(43, 160, 159, 0.08) 0%, rgba(212, 197, 232, 0.08) 100%);
+    68→            filter: blur(90px);
+    69→            border-radius: 50%;
+    70→            z-index: -1;
+    71→        }
+    72→
+    73→        .glass-card {
+    74→            background: rgba(255, 255, 255, 0.75);
+    75→            backdrop-filter: blur(16px);
+    76→            border: 1px solid rgba(255, 255, 255, 0.6);
+    77→        }
+    78→
+    79→        .input-focus-ring:focus {
+    80→            outline: none;
+    81→            border-color: #2BA09F;
+    82→            box-shadow: 0 0 0 4px rgba(43, 160, 159, 0.1);
+    83→        }
+    84→
+    85→        .animate-subtle-float {
+    86→            animation: subtleFloat 8s ease-in-out infinite;
+    87→        }
+    88→
+    89→        @keyframes subtleFloat {
+    90→            0%, 100% { transform: translateY(0px) rotate(0deg); }
+    91→            50% { transform: translateY(-15px) rotate(1deg); }
+    92→        }
+    93→
+    94→        .transition-form {
+    95→            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    96→        }
+    97→
+    98→        /* Custom Checkbox */
+    99→        .custom-checkbox:checked {
+   100→            background-color: #2BA09F;
+   101→            border-color: #2BA09F;
+   102→        }
+   103→    </style>
+   104→</head>
+   105→<body class="min-h-screen flex flex-col" x-data="{ 
+   106→    loading: false, 
+   107→    email: '', 
+   108→    password: '', 
+   109→    showPass: false,
+   110→    errorMessage: '',
+   111→    rememberMe: false,
+   112→    handleLogin() {
+   113→        if(!this.email || !this.password) {
+   114→            this.errorMessage = 'Veuillez remplir tous les champs.';
+   115→            return;
+   116→        }
+   117→        this.loading = true;
+   118→        this.errorMessage = '';
+   119→        setTimeout(() => {
+   120→            this.loading = false;
+   121→            // Simulated success or error
+   122→            if(this.email.includes('error')) {
+   123→                this.errorMessage = 'Identifiants incorrects. Veuillez réessayer.';
+   124→            } else {
+   125→                window.location.href = '#dashboard';
+   126→            }
+   127→        }, 1500);
+   128→    }
+   129→}">
+   130→
+   131→    <!-- Background Elements -->
+   132→    <div class="blob -top-20 -left-20"></div>
+   133→    <div class="blob top-1/2 -right-20 bg-sage-light/5"></div>
+   134→    <div class="blob -bottom-20 left-1/3 bg-lavender/10"></div>
+   135→
+   136→    <!-- Navigation (Simplified for Login) -->
+   137→    <nav class="absolute top-0 w-full z-50 px-6 py-8 lg:px-12">
+   138→        <div class="max-w-7xl mx-auto flex justify-between items-center">
+   139→            <a href="#" class="flex items-center gap-2 group">
+   140→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-soft transform group-hover:rotate-6 transition-transform">
+   141→                    <i data-lucide="calendar-heart" class="text-white w-6 h-6"></i>
+   142→                </div>
+   143→                <span class="text-2xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   144→            </a>
+   145→            <a href="#" class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors flex items-center gap-2">
+   146→                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+   147→                Retour au site
+   148→            </a>
+   149→        </div>
+   150→    </nav>
+   151→
+   152→    <main class="flex-grow flex items-center justify-center px-6 py-24">
+   153→        <div class="max-w-6xl w-full grid lg:grid-cols-2 gap-16 items-center">
+   154→            
+   155→            <!-- Left Side: Content & Inspiration (Desktop Only) -->
+   156→            <div class="hidden lg:block space-y-10">
+   157→                <div class="animate-subtle-float">
+   158→                    <div class="inline-flex items-center gap-2 bg-sage/10 text-sage-dark px-4 py-2 rounded-full text-sm font-semibold mb-6">
+   159→                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+   160→                        Espace sécurisé & bienveillant
+   161→                    </div>
+   162→                    <h1 class="text-5xl font-bold leading-tight text-gray-900 mb-6">
+   163→                        Heureux de vous revoir sur <span class="text-primary">Moodday</span>.
+   164→                    </h1>
+   165→                    <p class="text-xl text-gray-600 leading-relaxed max-w-md">
+   166→                        Reprenez le fil de votre bien-être. Vos données vous attendent pour continuer votre parcours de soin.
+   167→                    </p>
+   168→                </div>
+   169→
+   170→                <!-- Testimonial / Quote Card -->
+   171→                <div class="glass-card p-8 rounded-3xl shadow-premium border-l-4 border-l-primary relative overflow-hidden">
+   172→                    <div class="absolute -right-4 -top-4 opacity-5">
+   173→                        <i data-lucide="quote" class="w-24 h-24"></i>
+   174→                    </div>
+   175→                    <p class="text-lg italic text-gray-700 mb-6 relative z-10">
+   176→                        "Moodday m'a aidé à mettre des mots et des chiffres sur mes émotions. C'est devenu mon rituel de fin de journée."
+   177→                    </p>
+   178→                    <div class="flex items-center gap-4">
+   179→                        <img src="https://i.pravatar.cc/150?u=lucie" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" alt="Portrait">
+   180→                        <div>
+   181→                            <p class="font-bold text-gray-900">Lucie D.</p>
+   182→                            <p class="text-sm text-gray-500">Utilisatrice depuis 8 mois</p>
+   183→                        </div>
+   184→                    </div>
+   185→                </div>
+   186→
+   187→                <!-- App Stats/Health Info -->
+   188→                <div class="grid grid-cols-2 gap-6">
+   189→                    <div class="bg-white/40 p-5 rounded-2xl border border-white/60">
+   190→                        <div class="flex items-center gap-3 mb-2">
+   191→                            <i data-lucide="shield-check" class="text-primary w-5 h-5"></i>
+   192→                            <span class="text-sm font-bold text-gray-800">Données cryptées</span>
+   193→                        </div>
+   194→                        <p class="text-xs text-gray-500 leading-snug">Vos informations de santé sont protégées par les plus hauts standards de sécurité.</p>
+   195→                    </div>
+   196→                    <div class="bg-white/40 p-5 rounded-2xl border border-white/60">
+   197→                        <div class="flex items-center gap-3 mb-2">
+   198→                            <i data-lucide="heart-handshake" class="text-sage w-5 h-5"></i>
+   199→                            <span class="text-sm font-bold text-gray-800">HDS Compliance</span>
+   200→                        </div>
+   201→                        <p class="text-xs text-gray-500 leading-snug">Hébergement certifié Données de Santé pour votre tranquillité d'esprit.</p>
+   202→                    </div>
+   203→                </div>
+   204→            </div>
+   205→
+   206→            <!-- Right Side: Login Form -->
+   207→            <div class="w-full max-w-md mx-auto">
+   208→                <div class="glass-card p-10 lg:p-12 rounded-3xl shadow-premium border border-white/80 relative transition-form">
+   209→                    
+   210→                    <!-- Mobile Logo (Shown only on small screens) -->
+   211→                    <div class="lg:hidden flex justify-center mb-8">
+   212→                        <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-soft">
+   213→                            <i data-lucide="calendar-heart" class="text-white w-10 h-10"></i>
+   214→                        </div>
+   215→                    </div>
+   216→
+   217→                    <div class="text-center lg:text-left mb-10">
+   218→                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Connexion</h2>
+   219→                        <p class="text-gray-500">Ravis de vous revoir parmi nous</p>
+   220→                    </div>
+   221→
+   222→                    <!-- Social Login -->
+   223→                    <div class="grid grid-cols-2 gap-4 mb-8">
+   224→                        <button class="flex items-center justify-center gap-3 py-3 px-4 bg-white border border-gray-200 rounded-2xl hover:bg-gray-50 transition-all text-sm font-semibold text-gray-700">
+   225→                            <svg class="w-5 h-5" viewBox="0 0 24 24">
+   226→                                <path fill="#EA4335" d="M24 12.273c0-.877-.078-1.72-.224-2.531H12.273v4.787h6.582c-.284 1.531-1.144 2.827-2.441 3.696v3.073h3.953C22.68 19.145 24 15.93 24 12.273z"/>
+   227→                                <path fill="#FBBC05" d="M12.273 24c3.24 0 5.957-1.074 7.942-2.912l-3.953-3.073c-1.096.734-2.497 1.168-3.989 1.168-3.068 0-5.664-2.073-6.591-4.858H1.67v3.167C3.655 21.41 7.685 24 12.273 24z"/>
+   228→                                <path fill="#34A853" d="M5.682 14.325c-.244-.734-.383-1.516-.383-2.325s.139-1.591.383-2.325V6.508H1.67C.605 8.63 0 10.245 0 12s.605 3.37 1.67 5.492l4.012-3.167z"/>
+   229→                                <path fill="#4285F4" d="M12.273 4.818c1.764 0 3.346.605 4.591 1.795l3.44-3.44C18.225 1.173 15.51 0 12.273 0 7.685 0 3.655 2.59 1.67 6.508l4.012 3.167c.927-2.785 3.523-4.857 6.591-4.857z"/>
+   230→                            </svg>
+   231→                            Google
+   232→                        </button>
+   233→                        <button class="flex items-center justify-center gap-3 py-3 px-4 bg-white border border-gray-200 rounded-2xl hover:bg-gray-50 transition-all text-sm font-semibold text-gray-700">
+   234→                            <i data-lucide="apple" class="w-5 h-5 fill-current"></i>
+   235→                            Apple
+   236→                        </button>
+   237→                    </div>
+   238→
+   239→                    <div class="relative mb-8">
+   240→                        <div class="absolute inset-0 flex items-center">
+   241→                            <div class="w-full border-t border-gray-200"></div>
+   242→                        </div>
+   243→                        <div class="relative flex justify-center text-sm">
+   244→                            <span class="px-4 bg-warm-bg text-gray-400 font-medium">ou avec votre email</span>
+   245→                        </div>
+   246→                    </div>
+   247→
+   248→                    <!-- Main Form -->
+   249→                    <form @submit.prevent="handleLogin" class="space-y-6">
+   250→                        <div x-show="errorMessage" x-cloak x-transition class="p-4 bg-red-50 border border-red-100 rounded-2xl text-red-600 text-sm flex items-center gap-3">
+   251→                            <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0"></i>
+   252→                            <span x-text="errorMessage"></span>
+   253→                        </div>
+   254→
+   255→                        <div>
+   256→                            <label class="block text-sm font-bold text-gray-700 mb-2 px-1">Adresse email</label>
+   257→                            <div class="relative group">
+   258→                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+   259→                                    <i data-lucide="mail" class="w-5 h-5"></i>
+   260→                                </div>
+   261→                                <input 
+   262→                                    type="email" 
+   263→                                    x-model="email"
+   264→                                    placeholder="nom@exemple.com"
+   265→                                    class="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-2xl input-focus-ring transition-all placeholder:text-gray-300"
+   266→                                    required
+   267→                                >
+   268→                            </div>
+   269→                        </div>
+   270→
+   271→                        <div>
+   272→                            <div class="flex justify-between items-center mb-2 px-1">
+   273→                                <label class="block text-sm font-bold text-gray-700">Mot de passe</label>
+   274→                                <a href="#" class="text-sm font-semibold text-primary hover:text-primary-dark transition-colors">Oublié ?</a>
+   275→                            </div>
+   276→                            <div class="relative group">
+   277→                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+   278→                                    <i data-lucide="lock" class="w-5 h-5"></i>
+   279→                                </div>
+   280→                                <input 
+   281→                                    :type="showPass ? 'text' : 'password'" 
+   282→                                    x-model="password"
+   283→                                    placeholder="••••••••"
+   284→                                    class="w-full pl-12 pr-12 py-4 bg-white border border-gray-200 rounded-2xl input-focus-ring transition-all placeholder:text-gray-300"
+   285→                                    required
+   286→                                >
+   287→                                <button 
+   288→                                    type="button" 
+   289→                                    @click="showPass = !showPass"
+   290→                                    class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 transition-colors"
+   291→                                >
+   292→                                    <i :data-lucide="showPass ? 'eye-off' : 'eye'" class="w-5 h-5"></i>
+   293→                                </button>
+   294→                            </div>
+   295→                        </div>
+   296→
+   297→                        <div class="flex items-center gap-3 px-1">
+   298→                            <input 
+   299→                                type="checkbox" 
+   300→                                id="remember" 
+   301→                                x-model="rememberMe"
+   302→                                class="w-5 h-5 border-2 border-gray-300 rounded-lg bg-white checked:bg-primary checked:border-primary focus:ring-primary/20 transition-all cursor-pointer"
+   303→                            >
+   304→                            <label for="remember" class="text-sm font-medium text-gray-600 cursor-pointer">Rester connecté</label>
+   305→                        </div>
+   306→
+   307→                        <button 
+   308→                            type="submit" 
+   309→                            :disabled="loading"
+   310→                            class="w-full py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl shadow-soft transition-all transform active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3 text-lg"
+   311→                        >
+   312→                            <template x-if="!loading">
+   313→                                <span>Se connecter</span>
+   314→                            </template>
+   315→                            <template x-if="loading">
+   316→                                <svg class="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+   317→                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+   318→                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+   319→                                </svg>
+   320→                            </template>
+   321→                        </button>
+   322→                    </form>
+   323→
+   324→                    <!-- Footer Link -->
+   325→                    <div class="mt-10 text-center">
+   326→                        <p class="text-gray-500 font-medium">
+   327→                            Pas encore de compte ? 
+   328→                            <a href="#" class="text-primary font-bold hover:underline ml-1">Inscrivez-vous gratuitement</a>
+   329→                        </p>
+   330→                    </div>
+   331→                </div>
+   332→
+   333→                <!-- Emergency Resources (Subtle Footer) -->
+   334→                <div class="mt-8 text-center px-4">
+   335→                    <p class="text-xs text-gray-400 uppercase tracking-widest font-bold mb-4">Besoin d'aide urgente ?</p>
+   336→                    <div class="flex flex-wrap justify-center gap-4">
+   337→                        <a href="tel:3114" class="inline-flex items-center gap-1.5 text-xs font-bold text-red-400 hover:text-red-500 transition-colors">
+   338→                            <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
+   339→                            Urgence Psychiatrie (3114)
+   340→                        </a>
+   341→                        <span class="text-gray-300">•</span>
+   342→                        <a href="tel:15" class="text-xs font-bold text-gray-400 hover:text-primary transition-colors">SAMU (15)</a>
+   343→                        <span class="text-gray-300">•</span>
+   344→                        <a href="#" class="text-xs font-bold text-gray-400 hover:text-primary transition-colors">Plan de Sécurité</a>
+   345→                    </div>
+   346→                </div>
+   347→            </div>
+   348→        </div>
+   349→    </main>
+   350→
+   351→    <!-- Simple Footer -->
+   352→    <footer class="py-8 px-6 text-center text-sm text-gray-400 border-t border-gray-100 bg-white/30 backdrop-blur-sm">
+   353→        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+   354→            <p>© 2026 Moodday SAS. Tous droits réservés.</p>
+   355→            <div class="flex gap-6">
+   356→                <a href="#" class="hover:text-primary transition-colors">Confidentialité</a>
+   357→                <a href="#" class="hover:text-primary transition-colors">CGU</a>
+   358→                <a href="#" class="hover:text-primary transition-colors">Support</a>
+   359→            </div>
+   360→            <p class="italic text-[10px] md:text-xs">Moodday n'est pas un dispositif médical de diagnostic.</p>
+   361→        </div>
+   362→    </footer>
+   363→
+   364→    <!-- Initialize Lucide Icons -->
+   365→    <script>
+   366→        lucide.createIcons();
+   367→    </script>
+   368→</body>
+   369→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

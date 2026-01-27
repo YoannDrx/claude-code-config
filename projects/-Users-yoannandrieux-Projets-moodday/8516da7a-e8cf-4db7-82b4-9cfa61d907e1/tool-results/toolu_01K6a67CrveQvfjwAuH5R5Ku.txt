@@ -1,0 +1,1109 @@
+     1→const en = {
+     2→  meta: {
+     3→    title: "NOW.TS",
+     4→    description: "Collect and showcase powerful video and text testimonials",
+     5→  },
+     6→  language: {
+     7→    toggleLabel: "Toggle language",
+     8→    current: "Current language",
+     9→    fr: "FR",
+    10→    en: "EN",
+    11→  },
+    12→  nav: {
+    13→    docs: "Docs",
+    14→    about: "About",
+    15→    contact: "Contact",
+    16→    features: "Features",
+    17→    pricing: "Pricing",
+    18→    blog: "Blog",
+    19→    changelog: "Changelog",
+    20→    menu: "Menu",
+    21→    toggleMenu: "Toggle navigation menu",
+    22→    logoAlt: "App logo",
+    23→    home: "Home",
+    24→    analytics: "Analytics",
+    25→    dashboard: "Dashboard",
+    26→    organization: "Organization",
+    27→    account: "Account",
+    28→    app: "App",
+    29→  },
+    30→  footer: {
+    31→    description: "Collect and showcase powerful video and text testimonials.",
+    32→    product: "Product",
+    33→    blog: "Blog",
+    34→    documentation: "Documentation",
+    35→    dashboard: "Dashboard",
+    36→    account: "Account",
+    37→    company: "Company",
+    38→    about: "About",
+    39→    contact: "Contact",
+    40→    legal: "Legal",
+    41→    terms: "Terms",
+    42→    privacy: "Privacy",
+    43→    rights: "© {year} {company}. All rights reserved.",
+    44→  },
+    45→  actions: {
+    46→    close: "Close",
+    47→    toggleTheme: "Toggle theme",
+    48→    cancel: "Cancel",
+    49→    tryAgain: "Try again",
+    50→    save: "Save",
+    51→  },
+    52→  common: {
+    53→    error: "An error occurred",
+    54→  },
+    55→  debug: {
+    56→    title: "Debug Panel",
+    57→    info: "Info",
+    58→    actions: "Actions",
+    59→    noActions: "No actions registered",
+    60→    user: "User",
+    61→    session: "Session",
+    62→    notLoggedIn: "Not logged in",
+    63→    null: "null",
+    64→  },
+    65→  theme: {
+    66→    title: "Theme",
+    67→    dark: "Dark",
+    68→    light: "Light",
+    69→    system: "System",
+    70→  },
+    71→  sidebar: {
+    72→    title: "Sidebar",
+    73→    description: "Displays the mobile sidebar.",
+    74→    toggle: "Toggle sidebar",
+    75→  },
+    76→  breadcrumb: {
+    77→    label: "Breadcrumb",
+    78→    more: "More",
+    79→  },
+    80→  pagination: {
+    81→    label: "Pagination",
+    82→    previous: "Previous",
+    83→    next: "Next",
+    84→    previousAria: "Go to previous page",
+    85→    nextAria: "Go to next page",
+    86→    more: "More pages",
+    87→  },
+    88→  months: {
+    89→    january: "January",
+    90→    february: "February",
+    91→    march: "March",
+    92→    april: "April",
+    93→    may: "May",
+    94→    june: "June",
+    95→    july: "July",
+    96→    august: "August",
+    97→    september: "September",
+    98→    october: "October",
+    99→    november: "November",
+   100→    december: "December",
+   101→  },
+   102→  images: {
+   103→    dropHere: "Drop here",
+   104→    upload: "Upload",
+   105→    onlyAccept: "Only accepts: {types}",
+   106→    errors: {
+   107→      uploadFailed: "Upload failed",
+   108→      invalidType: "Invalid file type",
+   109→      invalidTypeDescription: "Only png, jpg, jpeg are allowed",
+   110→      fileTooLarge: "File too large (max 1 MB)",
+   111→      fileTooLargeDescription: "Use https://tinypng.com/ to compress the image",
+   112→    },
+   113→  },
+   114→  feedback: {
+   115→    button: "Feedback",
+   116→    message: "Message",
+   117→    send: "Send",
+   118→    sent: "Feedback sent",
+   119→  },
+   120→  support: {
+   121→    contact: "Contact support",
+   122→    title: "Contact support",
+   123→    descriptionPrefix: "You can reach us at ",
+   124→    descriptionSuffix: " and we will reply as soon as possible.",
+   125→    subject: "Subject",
+   126→    message: "Message",
+   127→    send: "Send",
+   128→    sent: "Message sent",
+   129→  },
+   130→  pricing: {
+   131→    title: "Simple, transparent pricing",
+   132→    description: "Choose the plan that fits your needs.",
+   133→    monthly: "Monthly",
+   134→    yearly: "Yearly",
+   135→    save: "Save {percent}",
+   136→    footer: "Cancel anytime. No hidden fees.",
+   137→    customPlan: "Need a custom plan?",
+   138→    contact: "Contact us",
+   139→    dialog: {
+   140→      title: "Choose a plan and start growing",
+   141→      description: "Unlock full access to our features and grow your business.",
+   142→    },
+   143→  },
+   144→  pricingCard: {
+   145→    mostPopular: "Most popular",
+   146→    perMonth: "/mo",
+   147→    save: "Save {percent}",
+   148→    billedYearly: "Billed yearly: {amount}",
+   149→    freeTrial: "{days}-day free trial",
+   150→    includes: "Includes",
+   151→    signInRequired: "Please sign in to upgrade",
+   152→    upgradeError: "Unable to start checkout",
+   153→    ctaFree: "Start for free",
+   154→    ctaMonthly: "Choose monthly",
+   155→    ctaYearly: "Choose yearly",
+   156→  },
+   157→  plans: {
+   158→    names: {
+   159→      free: "Free",
+   160→      pro: "Pro",
+   161→      ultra: "Ultra",
+   162→    },
+   163→    descriptions: {
+   164→      free: "Perfect for individuals and small projects",
+   165→      pro: "Ideal for growing teams with advanced needs",
+   166→      ultra: "Enterprise-grade for large teams and complex workflows",
+   167→    },
+   168→    limits: {
+   169→      projects: {
+   170→        label: "{value} projects",
+   171→        description: "Create and manage projects",
+   172→      },
+   173→      storage: {
+   174→        label: "{value} GB storage",
+   175→        description: "Cloud storage for your files",
+   176→      },
+   177→      members: {
+   178→        label: "{value} team members",
+   179→        description: "Invite team members to collaborate",
+   180→      },
+   181→    },
+   182→    additionalFeatures: {
+   183→      free: [
+   184→        {
+   185→          label: "Basic security",
+   186→          description: "Standard protection for your data",
+   187→        },
+   188→      ],
+   189→      pro: [
+   190→        {
+   191→          label: "Priority support",
+   192→          description: "Get help when you need it most",
+   193→        },
+   194→        {
+   195→          label: "24/7 customer service",
+   196→          description: "Round-the-clock assistance",
+   197→        },
+   198→        {
+   199→          label: "Advanced analytics",
+   200→          description: "Detailed insights and reporting",
+   201→        },
+   202→      ],
+   203→      ultra: [
+   204→        {
+   205→          label: "Priority support",
+   206→          description: "Get help when you need it most",
+   207→        },
+   208→      ],
+   209→    },
+   210→  },
+   211→  app: {
+   212→    searchPlaceholder: "Search...",
+   213→    commandTitle: "Command Palette",
+   214→    commandDescription: "Search for a command to run...",
+   215→    commandPlaceholder: "Type a command or search...",
+   216→    commandEmpty: "No results found.",
+   217→    analytics: {
+   218→      title: "Analytics overview",
+   219→      description: "Track your performance and understand your audience.",
+   220→    },
+   221→    cards: {
+   222→      totalLikes: "Total likes",
+   223→      totalLikesDelta: "+12% from last month",
+   224→      totalThreads: "Total threads",
+   225→      totalThreadsDelta: "+8% from last month",
+   226→      newSubscribers: "New subscribers",
+   227→      newSubscribersDelta: "+5% from last month",
+   228→      impressions: "Impressions",
+   229→      impressionsDelta: "+18% from last month",
+   230→    },
+   231→    subscribers: {
+   232→      title: "Subscribers",
+   233→      description: "New subscribers over time",
+   234→      trending: "Trending up by {value} this month",
+   235→      range: "January - June {year}",
+   236→    },
+   237→    upgrade: {
+   238→      title: "Upgrade your plan",
+   239→      description: "Unlock more features for your account.",
+   240→      cta: "Upgrade now",
+   241→    },
+   242→  },
+   243→  admin: {
+   244→    panel: "Admin Panel",
+   245→    nav: {
+   246→      section: "Admin",
+   247→    },
+   248→    dashboard: {
+   249→      title: "Admin Dashboard",
+   250→    },
+   251→    stats: {
+   252→      totalUsers: "Total users",
+   253→      totalUsersDescription: "All registered accounts",
+   254→      premiumUsers: "Premium users",
+   255→      premiumUsersDescription: "Active paid subscriptions",
+   256→      mrr: "Monthly recurring revenue",
+   257→      mrrDescription: "Estimated monthly revenue",
+   258→      newUsersThisMonth: "+{count} this month",
+   259→    },
+   260→    feedback: {
+   261→      title: "Feedback",
+   262→      description: "Review feedback from your users.",
+   263→      searchPlaceholder: "Search feedback...",
+   264→      empty: "No feedback found.",
+   265→      detailTitle: "Feedback details",
+   266→      submitted: "Submitted",
+   267→      viewDetails: "View details",
+   268→      noRating: "No rating",
+   269→      ratings: {
+   270→        extremelyDissatisfied: "Extremely dissatisfied",
+   271→        somewhatDissatisfied: "Somewhat dissatisfied",
+   272→        neutral: "Neutral",
+   273→        satisfied: "Satisfied",
+   274→      },
+   275→      reply: {
+   276→        button: "Reply",
+   277→        title: "Reply to feedback",
+   278→        description: "Send a reply to {name}.",
+   279→        message: "Message",
+   280→        placeholder: "Write your reply...",
+   281→        send: "Send reply",
+   282→        sent: "Reply sent",
+   283→        failed: "Failed to send reply",
+   284→      },
+   285→    },
+   286→    users: {
+   287→      title: "Users",
+   288→      searchPlaceholder: "Search users...",
+   289→      empty: "No users found.",
+   290→      actionsMenu: "Open actions menu",
+   291→      actions: {
+   292→        impersonate: "Impersonate",
+   293→        makeAdmin: "Make admin",
+   294→        makeUser: "Make user",
+   295→        unban: "Unban",
+   296→        ban: "Ban",
+   297→      },
+   298→      status: {
+   299→        active: "Active",
+   300→        banned: "Banned",
+   301→      },
+   302→      roles: {
+   303→        admin: "Admin",
+   304→        user: "User",
+   305→      },
+   306→      banReason: "Violation of terms",
+   307→      banConfirm: "Ban {name}?",
+   308→      banFailed: "Failed to ban user: {error}",
+   309→      banned: "User banned",
+   310→      unbanFailed: "Failed to unban user: {error}",
+   311→      unbanned: "User unbanned",
+   312→      impersonating: "Impersonating user",
+   313→      impersonateFailed: "Failed to impersonate user: {error}",
+   314→      roleUpdated: "Role updated",
+   315→      roleUpdateFailed: "Failed to update role: {error}",
+   316→      stopImpersonating: "Stop impersonating",
+   317→      anonymous: "Anonymous",
+   318→      noEmail: "No email",
+   319→      unverified: "Unverified",
+   320→      table: {
+   321→        user: "User",
+   322→        role: "Role",
+   323→        status: "Status",
+   324→        joined: "Joined",
+   325→        created: "Created",
+   326→        actions: "Actions",
+   327→      },
+   328→    },
+   329→    userDetails: {
+   330→      title: "User details",
+   331→      description: "Manage account information and sessions.",
+   332→      subscriptionTitle: "Subscription",
+   333→      subscriptionStatus: {
+   334→        active: "Active",
+   335→        canceled: "Canceled",
+   336→        trialing: "Trialing",
+   337→        past_due: "Past due",
+   338→        unpaid: "Unpaid",
+   339→        incomplete: "Incomplete",
+   340→      },
+   341→      noSubscription: "No subscription found.",
+   342→      noName: "Unnamed user",
+   343→      created: "Created",
+   344→      providers: {
+   345→        title: "Connected providers",
+   346→        description: "External accounts linked to this user.",
+   347→        empty: "No providers connected.",
+   348→        emailPassword: "Email/password",
+   349→        status: {
+   350→          active: "Active",
+   351→          connected: "Connected",
+   352→          inactive: "Inactive",
+   353→        },
+   354→        table: {
+   355→          provider: "Provider",
+   356→          status: "Status",
+   357→          connected: "Connected on",
+   358→          accountId: "Account ID",
+   359→        },
+   360→      },
+   361→      sessions: {
+   362→        title: "Sessions",
+   363→        description: "Active sessions for this user.",
+   364→        loading: "Loading sessions...",
+   365→        loadFailed: "Failed to load sessions: {error}",
+   366→        empty: "No sessions found.",
+   367→        revokeAllTitle: "Revoke all sessions",
+   368→        revokeAllDescription: "This will sign the user out everywhere.",
+   369→        revokeAllAction: "Revoke all",
+   370→        revokeAllFailed: "Failed to revoke sessions: {error}",
+   371→        revokedAll: "All sessions revoked",
+   372→        revokeFailed: "Failed to revoke session: {error}",
+   373→        revoked: "Session revoked",
+   374→        table: {
+   375→          device: "Device",
+   376→          ip: "IP address",
+   377→          status: "Status",
+   378→          created: "Created",
+   379→          expires: "Expires",
+   380→          actions: "Actions",
+   381→        },
+   382→        status: {
+   383→          active: "Active",
+   384→          expired: "Expired",
+   385→          impersonated: "Impersonated",
+   386→        },
+   387→        unknownDevice: "Unknown device",
+   388→        unknownBrowser: "Unknown browser",
+   389→        unknownOs: "Unknown OS",
+   390→        unknownIp: "Unknown IP",
+   391→        deviceFormat: "{browser} on {os}",
+   392→      },
+   393→    },
+   394→  },
+   395→  account: {
+   396→    title: "Account",
+   397→    metaTitle: "Account",
+   398→    metaDescription: "Manage your account settings",
+   399→    settings: {
+   400→      title: "Account settings",
+   401→      signOut: "Sign out",
+   402→    },
+   403→    profile: {
+   404→      section: "Your profile",
+   405→      profile: "Profile",
+   406→      mail: "Email",
+   407→      danger: "Danger",
+   408→      updated: "Profile updated",
+   409→      verifySent: "Verification email sent",
+   410→      verifyEmail: "Verify email",
+   411→      verifiedTooltip: "Email verified",
+   412→      changeEmail: "Change email",
+   413→      changePassword: "Change password",
+   414→      editTitle: "Settings",
+   415→      editDescription: "Update your profile.",
+   416→    },
+   417→    password: {
+   418→      title: "Change password",
+   419→      description: "Update your password to keep your account secure.",
+   420→      currentRequired: "Current password is required",
+   421→      minLength: "Password must be at least 8 characters",
+   422→      mismatch: "Passwords do not match",
+   423→      currentLabel: "Current password",
+   424→      newLabel: "New password",
+   425→      confirmLabel: "Confirm password",
+   426→      revokeLabel: "Sign out of other devices",
+   427→      revokeDescription: "End all other active sessions.",
+   428→      submit: "Update password",
+   429→      success: "Password updated",
+   430→    },
+   431→    email: {
+   432→      metaTitle: "Email preferences",
+   433→      metaDescription: "Manage your email preferences.",
+   434→      title: "Email preferences",
+   435→      description: "Choose what emails you want to receive.",
+   436→      changeTitle: "Change email",
+   437→      changeDescription: "Update your email address.",
+   438→      newLabel: "New email",
+   439→      newPlaceholder: "you@example.com",
+   440→      changeSubmit: "Send verification link",
+   441→      invalid: "Enter a valid email address",
+   442→      verifySent: "Verification email sent",
+   443→      unsubscribeLabel: "Unsubscribe",
+   444→      unsubscribeDescription: "Stop receiving product updates.",
+   445→      updated: "Preferences updated",
+   446→      errorTitle: "Email settings unavailable",
+   447→      errorDescription: "We could not load your email preferences.",
+   448→    },
+   449→    billing: {
+   450→      metaTitle: "Billing",
+   451→      metaDescription: "Manage your subscription and billing details.",
+   452→      title: "Billing",
+   453→      freeTitle: "You are on the free plan",
+   454→      freeDescription: "Upgrade to unlock premium features.",
+   455→      manage: "Manage subscription",
+   456→      cancel: "Cancel subscription",
+   457→      reactivate: "Reactivate",
+   458→      cancelTitle: "Cancel subscription",
+   459→      cancelDescription: "Tell us why you're leaving so we can improve.",
+   460→      cancelReasonLabel: "Reason for cancellation",
+   461→      cancelDetailsLabel: "Additional details",
+   462→      cancelDetailsPlaceholder: "Tell us more...",
+   463→      cancelDetailsMin: "Please add more details",
+   464→      cancelConfirm: "Confirm cancellation",
+   465→      cancelBack: "Keep subscription",
+   466→      cancelError: "Unable to cancel subscription",
+   467→      cancelRedirect: "Redirecting to billing portal...",
+   468→      cancelReasons: {
+   469→        tooExpensive: "Too expensive",
+   470→        notUsing: "Not using enough",
+   471→        missingFeatures: "Missing features",
+   472→        bugs: "Too many bugs",
+   473→        competitor: "Switching to a competitor",
+   474→        other: "Other",
+   475→      },
+   476→      detailsTitle: "Billing details",
+   477→      limitsTitle: "Plan limits",
+   478→      plan: "Plan",
+   479→      startDate: "Start date",
+   480→      renewAt: "Renews on",
+   481→      endsOn: "Ends on",
+   482→      trialRemaining: "{days} days remaining in trial",
+   483→      noStripeCustomer: "Missing Stripe customer ID",
+   484→      success: {
+   485→        metaTitle: "Payment success",
+   486→        metaDescription: "Your subscription is active.",
+   487→        title: "Payment successful",
+   488→        description: "Your subscription is now active. Thank you!",
+   489→      },
+   490→      goDashboard: "Go to dashboard",
+   491→      status: {
+   492→        trialing: "Trialing",
+   493→        trialingDescription: "Trial active",
+   494→        active: "Active",
+   495→        activeDescription: "Subscription active",
+   496→        canceled: "Canceled",
+   497→        canceledDescription: "Subscription canceled",
+   498→        pastDue: "Past due",
+   499→        pastDueDescription: "Payment past due",
+   500→        unpaid: "Unpaid",
+   501→        unpaidDescription: "Payment failed",
+   502→        incomplete: "Incomplete",
+   503→        incompleteDescription: "Payment incomplete",
+   504→      },
+   505→    },
+   506→    danger: {
+   507→      title: "Delete account",
+   508→      description: "Permanently delete your account and all associated data.",
+   509→      personalTitle: "Personal account",
+   510→      personalDescription: "Delete your personal data and profile.",
+   511→      orgTitle: "Organization data",
+   512→      orgDescription: "Delete shared organization data.",
+   513→      confirmTitle: "Confirm deletion",
+   514→      confirmDescription: "This action cannot be undone.",
+   515→      confirmText: "Delete account",
+   516→      requestedTitle: "Deletion requested",
+   517→      requestedDescription: "We have received your request.",
+   518→      delete: "Delete account",
+   519→    },
+   520→  },
+   521→  auth: {
+   522→    form: {
+   523→      name: "Name",
+   524→      email: "Email",
+   525→      emailPlaceholder: "you@example.com",
+   526→      password: "Password",
+   527→    },
+   528→    signIn: {
+   529→      metaTitle: "Sign in to {app}",
+   530→      metaDescription: "Access your account to manage testimonials.",
+   531→      description: "Sign in to continue to your dashboard.",
+   532→      emailPlaceholder: "you@example.com",
+   533→      forgotPassword: "Forgot password?",
+   534→      submit: "Sign in",
+   535→      magicLinkSubmit: "Send magic link",
+   536→      magicLinkPrompt: "Prefer a magic link?",
+   537→      magicLinkAction: "Use magic link",
+   538→      passwordPrompt: "Prefer a password?",
+   539→      passwordAction: "Use password",
+   540→      noAccount: "Don't have an account?",
+   541→      signUp: "Sign up",
+   542→      or: "or",
+   543→      lastUsed: "Last used",
+   544→      provider: "Continue with {provider}",
+   545→    },
+   546→    signUp: {
+   547→      metaTitle: "Create your {app} account",
+   548→      metaDescription: "Start collecting testimonials today.",
+   549→      title: "Create your {app} account",
+   550→      description: "Get started in minutes with a free account.",
+   551→      namePlaceholder: "Your name",
+   552→      emailPlaceholder: "you@example.com",
+   553→      verifyPassword: "Confirm password",
+   554→      passwordMismatch: "Passwords do not match",
+   555→      submit: "Create account",
+   556→      hasAccount: "Already have an account?",
+   557→      signIn: "Sign in",
+   558→    },
+   559→    forgetPassword: {
+   560→      metaTitle: "Reset your {app} password",
+   561→      metaDescription: "We will send you a reset link.",
+   562→      title: "Forgot your password?",
+   563→      description: "Enter your email to receive a reset link.",
+   564→      submit: "Send reset link",
+   565→    },
+   566→    resetPassword: {
+   567→      metaTitle: "Choose a new password",
+   568→      metaDescription: "Set a new password for your account.",
+   569→      title: "Set a new password",
+   570→      description: "Choose a strong password to secure your account.",
+   571→      newPassword: "New password",
+   572→      passwordPlaceholder: "At least 8 characters",
+   573→      passwordMin: "Password must be at least 8 characters",
+   574→      submit: "Update password",
+   575→      success: "Password updated",
+   576→    },
+   577→    confirmDelete: {
+   578→      metaTitle: "Confirm account deletion",
+   579→      metaDescription: "Confirm deletion of your account.",
+   580→      title: "Confirm account deletion",
+   581→      description: "This action cannot be undone.",
+   582→      confirm: "Delete account",
+   583→      invalidToken: "Invalid or expired token",
+   584→    },
+   585→    newUser: {
+   586→      metaTitle: "Welcome to {app}",
+   587→      metaDescription: "Your account is ready.",
+   588→      title: "You're all set!",
+   589→      description: "Your account is ready to use.",
+   590→      cta: "Go to dashboard",
+   591→    },
+   592→    goodbye: {
+   593→      metaTitle: "Signed out of {app}",
+   594→      metaDescription: "You have been signed out.",
+   595→      title: "You're signed out",
+   596→      description: "We hope to see you again soon.",
+   597→      detailOne: "You can sign back in anytime.",
+   598→      detailTwo: "Need a new account? Create one in a few clicks.",
+   599→      cta: "Create an account",
+   600→    },
+   601→    verify: {
+   602→      metaTitle: "Verify your email",
+   603→      metaDescription: "Check your inbox to verify your email.",
+   604→      title: "Check your email",
+   605→      description: "We sent you a verification link.",
+   606→      checkInbox: "Check your inbox",
+   607→      instructions: "Click the link in the email to verify your address.",
+   608→      spamHelp: "If you don't see it, check your spam folder.",
+   609→      support: "Need help? Contact support.",
+   610→    },
+   611→    error: {
+   612→      message: "Something went wrong",
+   613→    },
+   614→    logout: "Log out",
+   615→  },
+   616→  landing: {
+   617→    hero: {
+   618→      titlePrefix: "Collect testimonials",
+   619→      titleHighlight: "that convert",
+   620→      description:
+   621→        "Turn customer stories into social proof and grow trust with beautifully crafted testimonials.",
+   622→      ctaPrimary: "Get started",
+   623→      ctaSecondary: "See pricing",
+   624→      imageAlt: "Product screenshot",
+   625→    },
+   626→    stats: {
+   627→      one: "Testimonials collected",
+   628→      two: "Active creators",
+   629→      three: "Monthly impressions",
+   630→      four: "Avg. response time",
+   631→    },
+   632→    bento: {
+   633→      avatarAlt: "Avatar",
+   634→      items: {
+   635→        ai: {
+   636→          title: "AI writing assistant",
+   637→          description: "Generate testimonial prompts and posts in seconds.",
+   638→        },
+   639→        schedule: {
+   640→          title: "Smart scheduling",
+   641→          description: "Queue your posts once and forget it.",
+   642→        },
+   643→        calendar: {
+   644→          title: "Calendar overview",
+   645→          description: "See what is scheduled at a glance.",
+   646→        },
+   647→        analytics: {
+   648→          title: "Performance analytics",
+   649→          description: "Track likes, replies, and reach over time.",
+   650→        },
+   651→        research: {
+   652→          title: "Audience research",
+   653→          description: "Discover what your audience wants next.",
+   654→        },
+   655→      },
+   656→      skeleton: {
+   657→        threadPrompt: "Create a Thread to announce Now.TS",
+   658→        threadResponse:
+   659→          "Today I announced my new project, Now.TS, the perfect way to create professional Next.js apps in days.",
+   660→        schedulePending: "Scheduling your threads...",
+   661→        scheduleSuccess: "Your threads are now scheduled for 7:00 AM",
+   662→        researchQuestion: "What should I do to get more followers?",
+   663→        searching: "Searching...",
+   664→        researchAnswer:
+   665→          "Based on Threads activity over the past 30 days, you should focus on Next.js content.",
+   666→      },
+   667→      stats: {
+   668→        followers: "+{count} followers",
+   669→        views: "+{count} views",
+   670→        likes: "{count} likes",
+   671→        replies: "{count} replies",
+   672→        last30Days: "In the last 30 days",
+   673→      },
+   674→    },
+   675→    features: {
+   676→      badge: "The features you need.",
+   677→      title: "More than a post scheduler, we help you",
+   678→      titleEmphasis: "grow",
+   679→      description:
+   680→        "Everything you need to create, schedule, and publish with confidence.",
+   681→      items: [
+   682→        {
+   683→          badge: "⏰ Schedule",
+   684→          title: "Schedule your post",
+   685→          description: "Schedule your post on Threader in a few clicks.",
+   686→        },
+   687→        {
+   688→          badge: "📅 Calendar",
+   689→          title: "See what you scheduled",
+   690→          description:
+   691→            "With the calendar view, you can see what you scheduled and when.",
+   692→        },
+   693→        {
+   694→          badge: "👁️ Preview",
+   695→          title: "Preview your post",
+   696→          description:
+   697→            "Preview your post before scheduling it to see how it will look.",
+   698→        },
+   699→        {
+   700→          badge: "🔄 Repost",
+   701→          title: "Schedule repost",
+   702→          description:
+   703→            "Automatically repost your post after a certain amount of time.",
+   704→        },
+   705→      ],
+   706→    },
+   707→    pain: {
+   708→      title: "I love posting on Threads...",
+   709→      subtitle: "But I lose time publishing every day",
+   710→      without: {
+   711→        title: "😞 Posting without Threader",
+   712→        items: [
+   713→          "Opening Threads every day to post",
+   714→          "Getting distracted when I open the app",
+   715→          "Losing track of my posts",
+   716→          "Inconsistent",
+   717→        ],
+   718→      },
+   719→      with: {
+   720→        title: "😎 Posting with Threader",
+   721→        items: [
+   722→          "Schedule your posts in Threader",
+   723→          "Avoid opening the app every day",
+   724→          "See exactly what you have scheduled",
+   725→          "Be consistent",
+   726→        ],
+   727→      },
+   728→    },
+   729→    cta: {
+   730→      title: "Ready to start posting?",
+   731→      subtitle: "It's time to start.",
+   732→      button: "Get started",
+   733→    },
+   734→    ctaCard: {
+   735→      title: "Boost your productivity today",
+   736→      description: "Create an account and start posting today.",
+   737→      primaryCta: "Get started",
+   738→      secondaryCta: "Learn more",
+   739→    },
+   740→    ctaImage: {
+   741→      title: "Start getting a lot of followers",
+   742→      description: "By posting every day with Threader!",
+   743→      cta: "Get started",
+   744→    },
+   745→    faq: {
+   746→      titleShort: "FAQ",
+   747→      title: "Frequently Asked Questions",
+   748→      items: [
+   749→        {
+   750→          question: "What is Threader?",
+   751→          answer:
+   752→            "Threader is an innovative platform designed to help you write, schedule, and publish content with AI assistance, enhancing your online presence.",
+   753→        },
+   754→        {
+   755→          question: "How does AI Content Generation work?",
+   756→          answer:
+   757→            "Our AI feature leverages artificial intelligence to create unique and engaging content for your Threads, making creation faster and easier.",
+   758→        },
+   759→        {
+   760→          question: "Can I schedule my threads in advance?",
+   761→          answer:
+   762→            "Yes, Threader lets you schedule threads for a specific time so you can stay consistent without posting every day.",
+   763→        },
+   764→        {
+   765→          question: "What is the Now.TS project?",
+   766→          answer:
+   767→            "Now.TS is a project announced on our platform that enables users to build professional Next.js apps in days.",
+   768→        },
+   769→        {
+   770→          question: "How can I get more followers?",
+   771→          answer:
+   772→            "Focus on creating content around Next.js. Our research tools help you understand trends and improve your strategy.",
+   773→        },
+   774→        {
+   775→          question: "What are the benefits of posting with Threader?",
+   776→          answer:
+   777→            "Threader helps you schedule posts, avoid daily manual posting, track your content, and stay consistent.",
+   778→        },
+   779→        {
+   780→          question: "What pricing plans does Threader offer?",
+   781→          answer:
+   782→            "Threader offers Free and Premium plans. Free lets you schedule 1 post in advance, while Premium adds unlimited scheduling, post previews, and auto-reposting.",
+   783→        },
+   784→      ],
+   785→    },
+   786→    reviews: {
+   787→      at: "at",
+   788→      avatarAlt: "Avatar of {name}",
+   789→      avatarAltGeneric: "Avatar",
+   790→      triple: [
+   791→        {
+   792→          image: "https://i.pravatar.cc/300?u=a1",
+   793→          name: "Sophie",
+   794→          review:
+   795→            "Threader **has completely transformed the way I manage my social media** content. The ability to schedule posts and use AI for content suggestions has saved me hours each week.",
+   796→          role: "Digital Marketer",
+   797→        },
+   798→        {
+   799→          image: "https://i.pravatar.cc/300?u=a2",
+   800→          name: "Alex",
+   801→          review:
+   802→            "Using Threader has significantly boosted my online engagement. **The analytics tool helps me understand what works**, allowing me to refine my strategy and grow my follower base.",
+   803→          role: "Social Media Influencer",
+   804→        },
+   805→        {
+   806→          image: "https://i.pravatar.cc/300?u=a3",
+   807→          name: "Jordan",
+   808→          review:
+   809→            "The ease of scheduling and the AI-generated content features are game-changers. **Threader's user-friendly interface** makes it perfect for anyone looking to enhance their online presence.",
+   810→          role: "Entrepreneur",
+   811→        },
+   812→      ],
+   813→      single: {
+   814→        image: "https://i.pravatar.cc/300?u=5",
+   815→        name: "Michel",
+   816→        review:
+   817→          "Threader **has completely transformed** the way I manage my social media content. The ability to schedule posts and use AI for content suggestions **has saved me hours each week.**",
+   818→        role: "Digital Marketer",
+   819→        compagnyImage:
+   820→          "https://1000logos.net/wp-content/uploads/2017/03/McDonalds-Logo-2003.png",
+   821→      },
+   822→      grid: [
+   823→        {
+   824→          image: "https://i.pravatar.cc/300?u=b1",
+   825→          name: "Eva",
+   826→          review:
+   827→            "Since I started using Threader, my content creation process has been streamlined. The AI suggestions are spot on, helping me connect better with my audience.",
+   828→          role: "Content Creator",
+   829→        },
+   830→        {
+   831→          image: "https://i.pravatar.cc/300?u=b2",
+   832→          name: "Lucas",
+   833→          review:
+   834→            "Threader's scheduling feature is a lifesaver. It lets me plan my content calendar efficiently and never miss optimal posting times.",
+   835→          role: "Social Media Manager",
+   836→        },
+   837→        {
+   838→          image: "https://i.pravatar.cc/300?u=b3",
+   839→          name: "Mia",
+   840→          review:
+   841→            "The analytics provided by Threader are invaluable. They doubled my engagement rate in just a few months.",
+   842→          role: "Digital Marketer",
+   843→        },
+   844→        {
+   845→          image: "https://i.pravatar.cc/300?u=b4",
+   846→          name: "Noah",
+   847→          review:
+   848→            "I was skeptical about AI-generated content, but Threader changed my mind. It feels personal and boosts interaction rates.",
+   849→          role: "Blogger",
+   850→        },
+   851→        {
+   852→          image: "https://i.pravatar.cc/300?u=b5",
+   853→          name: "Isabella",
+   854→          review:
+   855→            "Threader's interface is incredibly user-friendly. We onboarded our team in no time and improved performance fast.",
+   856→          role: "Team Leader",
+   857→        },
+   858→        {
+   859→          image: "https://i.pravatar.cc/300?u=b6",
+   860→          name: "Oliver",
+   861→          review:
+   862→            "Auto-reposting is the feature I didn't know I needed. It gets more mileage out of my best content.",
+   863→          role: "Freelancer",
+   864→        },
+   865→        {
+   866→          image: "https://i.pravatar.cc/300?u=b7",
+   867→          name: "Sophia",
+   868→          review:
+   869→            "Joining the Threader community opened networking opportunities with fellow creators. It's more than a tool.",
+   870→          role: "Influencer",
+   871→        },
+   872→        {
+   873→          image: "https://i.pravatar.cc/300?u=b8",
+   874→          name: "Elijah",
+   875→          review:
+   876→            "The calendar view helps me visualize my monthly strategy. It's a game changer for planning.",
+   877→          role: "Strategist",
+   878→        },
+   879→        {
+   880→          image: "https://i.pravatar.cc/300?u=b9",
+   881→          name: "Charlotte",
+   882→          review:
+   883→            "Threader's pricing is flexible for creators at every stage, from beginners to established influencers.",
+   884→          role: "Entrepreneur",
+   885→        },
+   886→        {
+   887→          image: "https://i.pravatar.cc/300?u=b10",
+   888→          name: "James",
+   889→          review:
+   890→            "The customer support team is fantastic. Quick responses and helpful answers every time.",
+   891→          role: "Customer",
+   892→        },
+   893→      ],
+   894→    },
+   895→  },
+   896→  email: {
+   897→    section: {
+   898→      title: "Get notified when we're launching",
+   899→      description:
+   900→        "Be the first to use Threader. Get early access, exclusive content, and more.",
+   901→      submit: "Notify me",
+   902→      success: "Thank you for joining the waiting list",
+   903→    },
+   904→    submit: "Subscribe",
+   905→    success: "You have subscribed to our newsletter.",
+   906→    placeholder: "Your email",
+   907→    invalid: "Enter a valid email address",
+   908→    errorDescription: "Try another email address or contact us.",
+   909→  },
+   910→  form: {
+   911→    unsavedWarning: "You have unsaved changes. Are you sure you want to leave?",
+   912→  },
+   913→  docs: {
+   914→    metaTitle: "Documentation | {app}",
+   915→    metaDescription: "Everything you need to know about using {app}",
+   916→    title: "Documentation",
+   917→    description: "Everything you need to know about using {app}",
+   918→    readMore: "Read more",
+   919→    onThisPage: "On this page",
+   920→    requestExamples: "Request examples",
+   921→    responseExamples: "Response examples",
+   922→    general: "General",
+   923→    copy: {
+   924→      copyPage: "Copy page",
+   925→      viewMarkdown: "View as Markdown",
+   926→      openV0: "Open in v0",
+   927→      openChatGpt: "Open in ChatGPT",
+   928→      openClaude: "Open in Claude",
+   929→      prompt:
+   930→        "I'm looking at this {app} documentation: {url}.\nHelp me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.",
+   931→    },
+   932→  },
+   933→  posts: {
+   934→    metaTitle: "{app} Blog",
+   935→    metaDescription: "Updates, tips, and stories from the team.",
+   936→    title: "Blog",
+   937→    emptyTitle: "No posts found",
+   938→    viewAll: "View all posts",
+   939→    back: "Back",
+   940→    draft: "Draft",
+   941→    publishedBy: "Published {date}",
+   942→    readingTime: "Reading time {minutes} min",
+   943→    createdBy: "Created by",
+   944→    category: {
+   945→      title: "Blog posts about {category}",
+   946→      metaTitle: "{app} Blog about {category}",
+   947→    },
+   948→    notFound: {
+   949→      title: "404 - Not Found",
+   950→      description: "The post you are looking for doesn't exist.",
+   951→    },
+   952→    error: {
+   953→      title: "Error with post",
+   954→      description:
+   955→        "Sorry, the post you are looking for doesn't work as expected. Please try again later.",
+   956→    },
+   957→  },
+   958→  changelog: {
+   959→    metaTitle: "Changelog - {app}",
+   960→    metaDescription:
+   961→      "Stay up to date with the latest features, improvements, and bug fixes.",
+   962→    title: "Changelog",
+   963→    description:
+   964→      "Stay up to date with the latest features, improvements, and bug fixes.",
+   965→    emptyTitle: "No changelog entries yet",
+   966→    emptyDescription: "Check back soon for updates.",
+   967→    latest: "Latest",
+   968→    newUpdate: "New update",
+   969→    backToChangelog: "Back to Changelog",
+   970→    detail: {
+   971→      metaTitle: "{title} - Changelog - {app}",
+   972→      metaTitleShort: "{title} - Changelog",
+   973→      metaDescription: "Release notes for {title}",
+   974→    },
+   975→  },
+   976→  payment: {
+   977→    success: {
+   978→      title: "Thank you for your purchase!",
+   979→      description:
+   980→        "Your payment was successful. You now have full access to premium resources. If you have any questions, we're here to help.",
+   981→      cta: "Get started",
+   982→    },
+   983→    cancel: {
+   984→      badge: "Payment failed",
+   985→      title: "We couldn't process your payment",
+   986→      lineOne: "We encountered an issue processing your payment.",
+   987→      lineTwo: "Please check your payment details and try again.",
+   988→      lineThree:
+   989→        "If the problem persists, don't hesitate to contact us for assistance.",
+   990→      lineFour: "We're here to help you resolve this smoothly.",
+   991→    },
+   992→  },
+   993→  about: {
+   994→    metaTitle: "About {app}",
+   995→    metaDescription:
+   996→      "Learn about NOW.TS, our mission to empower content creators with powerful testimonial collection, and meet the founder behind the platform.",
+   997→    hero: {
+   998→      kicker: "About us",
+   999→      title: "Building trust through authentic testimonials",
+  1000→      description:
+  1001→        "A platform you can trust, built by a dedicated founder committed to continuous innovation, regular updates, and transparent communication with our community.",
+  1002→    },
+  1003→    commitment: {
+  1004→      title: "Our commitment to you",
+  1005→      paragraphOne:
+  1006→        "NOW.TS is built with a long-term vision and unwavering commitment to our users. We understand that choosing a platform means trusting us with your most valuable asset - your reputation and relationships with clients.",
+  1007→      paragraphTwo:
+  1008→        "That's why we guarantee regular updates, continuous feature improvements, and transparent communication about every change. You'll never be left wondering about the future of your testimonials or our platform. We're here to grow with you, not abandon you.",
+  1009→    },
+  1010→    gallery: {
+  1011→      altOne: "Content creator recording testimonial",
+  1012→      altTwo: "Team collaboration on testimonials",
+  1013→      altThree: "Digital testimonial showcase",
+  1014→      altFour: "Creator success story",
+  1015→    },
+  1016→    reliability: {
+  1017→      title: "Our reliability promise",
+  1018→      items: [
+  1019→        {
+  1020→          label: "Weekly updates",
+  1021→          value: "100",
+  1022→          suffix: "%",
+  1023→        },
+  1024→        {
+  1025→          label: "Uptime guarantee",
+  1026→          value: "99.9",
+  1027→          suffix: "%",
+  1028→        },
+  1029→        {
+  1030→          label: "Response time",
+  1031→          value: "<24",
+  1032→          suffix: "h",
+  1033→        },
+  1034→        {
+  1035→          label: "Years committed",
+  1036→          value: "10",
+  1037→          suffix: "+",
+  1038→        },
+  1039→      ],
+  1040→    },
+  1041→  },
+  1042→  contact: {
+  1043→    metaTitle: "Contact {app}",
+  1044→    metaDescription:
+  1045→      "Get in touch with the NOW.TS team. We're here to help with any questions about testimonials, platform features, or technical support.",
+  1046→    title: "Get in touch",
+  1047→    description:
+  1048→      "Have questions about NOW.TS? Need help with testimonial collection or want to share feedback? We're here to help and always excited to hear from our community.",
+  1049→    details: {
+  1050→      location: "Location",
+  1051→      email: "Email",
+  1052→      responseTime: "Response time",
+  1053→      responseLineOne: "Usually respond within 24 hours",
+  1054→      responseLineTwo: "Monday - Friday, 9 AM - 6 PM ICT",
+  1055→    },
+  1056→    form: {
+  1057→      firstName: "First name",
+  1058→      lastName: "Last name",
+  1059→      email: "Email",
+  1060→      subject: "Subject",
+  1061→      message: "Message",
+  1062→      submit: "Send message",
+  1063→      success: "Your message has been sent",
+  1064→      invalid: "Invalid input",
+  1065→    },
+  1066→  },
+  1067→  legal: {
+  1068→    terms: {
+  1069→      metaTitle: "{app} - Terms",
+  1070→      metaDescription: "Terms of service",
+  1071→      title: "Terms",
+  1072→      content: "Terms demo",
+  1073→    },
+  1074→    privacy: {
+  1075→      metaTitle: "{app} - Privacy",
+  1076→      metaDescription: "Privacy policy",
+  1077→      title: "Privacy",
+  1078→      content: "Privacy demo",
+  1079→    },
+  1080→  },
+  1081→  error: {
+  1082→    notFound: {
+  1083→      title: "Page not found",
+  1084→      description: "Sorry, we couldn't find the page you're looking for.",
+  1085→      explainerTitle: "What might have happened?",
+  1086→      explainerDescription:
+  1087→        "The page may have been moved, deleted, or you might have mistyped the URL. If you believe you should have access to this resource, please contact your administrator.",
+  1088→      cta: "Go back home",
+  1089→    },
+  1090→    badRequest: {
+  1091→      title: "Bad request",
+  1092→      description:
+  1093→        "It seems we're experiencing some technical difficulties. Not to worry, our team is working on it. In the meantime, try refreshing the page or visiting us a bit later.",
+  1094→      cta: "Go back home",
+  1095→    },
+  1096→    unauthorized: {
+  1097→      title: "Unauthorized",
+  1098→      description:
+  1099→        "You don't have permission to access this resource. Please sign in or contact your administrator if you believe this is a mistake.",
+  1100→    },
+  1101→  },
+  1102→};
+  1103→
+  1104→export default en;
+  1105→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

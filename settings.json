@@ -1,0 +1,65 @@
+{
+  "env": {
+    "ENABLE_TOOL_SEARCH": "auto:5"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Bash(ccusage --help)",
+      "Bash(bunx:*)",
+      "Bash(chmod:*)",
+      "Bash(bun x ccusage:*)",
+      "Bash(volta:*)",
+      "Bash(pod:*)",
+      "Bash(watchman:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun /Users/yoannandrieux/.claude/scripts/validate-command.js"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay -v 0.1 /Users/yoannandrieux/.claude/song/finish.mp3"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay -v 0.1 /Users/yoannandrieux/.claude/song/need-human.mp3"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bun /Users/yoannandrieux/.claude/scripts/statusline/src/index.ts",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-code-plugins": true,
+    "ralph-loop@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true
+  }
+}

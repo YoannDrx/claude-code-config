@@ -1,0 +1,21 @@
+     1→import { cn } from "@/lib/utils";
+     2→
+     3→function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
+     4→  return (
+     5→    <div
+     6→      data-slot="skeleton"
+     7→      className={cn(
+     8→        "rounded-lg bg-white/5 shimmer",
+     9→        className,
+    10→      )}
+    11→      {...props}
+    12→    />
+    13→  );
+    14→}
+    15→
+    16→export { Skeleton };
+    17→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

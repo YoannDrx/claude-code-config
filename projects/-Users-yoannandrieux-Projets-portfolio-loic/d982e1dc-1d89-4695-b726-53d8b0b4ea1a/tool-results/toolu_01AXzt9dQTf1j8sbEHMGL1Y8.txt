@@ -1,0 +1,1401 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request less than a minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request less than a minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request less than a minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  * Checkout
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  * Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 1 minute ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  * Build Next.js
+  * Post Cache Next.js build
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+* Build (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  X Build Next.js
+  - Post Cache Next.js build
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  * Post Checkout
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+X improve-perf CI YoannDrx/portfolio-loic#12 · 21257167928
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+✓ Lint & TypeScript in 40s (ID 61174857500)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ TypeScript Check
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+✓ Prisma Validation in 39s (ID 61174857511)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Apply migrations to test DB
+  ✓ Validate schema
+  ✓ Format check
+  ✓ Check for schema drift
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Stop containers
+  ✓ Complete job
+X Build in 1m28s (ID 61174940862)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Cache Next.js build
+  X Build Next.js
+  - Post Cache Next.js build
+  - Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout
+  ✓ Complete job
+- CI Success in 0s (ID 61175124137)
+
+ANNOTATIONS
+! 'NeoTag' is defined but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/services/NeoServicesPage.tsx#13
+
+! 'glitchKeyframes' is assigned a value but never used. Allowed unused vars must match /^_/u
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#84
+
+! 'useTransform' is defined but never used. Allowed unused vars must match /^_/u            
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useSpring' is defined but never used. Allowed unused vars must match /^_/u               
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+! 'useMotionValue' is defined but never used. Allowed unused vars must match /^_/u          
+Lint & TypeScript: components/neo-brutalist/NeoSplitHero.tsx#4
+
+X Process completed with exit code 1.
+Build: .github#47

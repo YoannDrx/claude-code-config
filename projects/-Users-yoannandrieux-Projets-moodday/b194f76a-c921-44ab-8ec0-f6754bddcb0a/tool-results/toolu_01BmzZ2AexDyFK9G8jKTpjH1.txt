@@ -1,0 +1,606 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>Cercle d'Aidants | Moodday</title>
+     7→    <!-- Fonts: Inter -->
+     8→    <link rel="preconnect" href="https://fonts.googleapis.com">
+     9→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    10→    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    11→    <!-- Scripts -->
+    12→    <script src="https://cdn.tailwindcss.com"></script>
+    13→    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    14→    <script src="https://unpkg.com/lucide@latest"></script>
+    15→    <script>
+    16→        tailwind.config = {
+    17→            theme: {
+    18→                extend: {
+    19→                    colors: {
+    20→                        primary: {
+    21→                            DEFAULT: '#2BA09F',
+    22→                            dark: '#2A8FA8',
+    23→                            light: '#3DA5B8',
+    24→                            darkest: '#1D7680',
+    25→                        },
+    26→                        sage: {
+    27→                            DEFAULT: '#48A878',
+    28→                            dark: '#3A956E',
+    29→                            light: '#6FBD94',
+    30→                        },
+    31→                        lavender: {
+    32→                            DEFAULT: '#D4C5E8',
+    33→                            light: '#EBE4F5',
+    34→                            dark: '#B8A5D6',
+    35→                        },
+    36→                        warm: {
+    37→                            bg: '#F8F7F3',
+    38→                            panel: '#F4F1ED',
+    39→                        },
+    40→                        softRed: '#EF4444',
+    41→                    },
+    42→                    fontFamily: {
+    43→                        sans: ['Inter', 'sans-serif'],
+    44→                    },
+    45→                    borderRadius: {
+    46→                        'xl': '12px',
+    47→                        '2xl': '24px',
+    48→                        '3xl': '32px',
+    49→                    },
+    50→                    boxShadow: {
+    51→                        'soft': '0 10px 25px -5px rgba(43, 160, 159, 0.1), 0 8px 10px -6px rgba(43, 160, 159, 0.05)',
+    52→                        'float': '0 20px 40px -10px rgba(0,0,0,0.05)',
+    53→                    }
+    54→                }
+    55→            }
+    56→        }
+    57→    </script>
+    58→    <style>
+    59→        [x-cloak] { display: none !important; }
+    60→        
+    61→        body {
+    62→            background-color: #F8F7F3;
+    63→            color: #1F2937;
+    64→            overflow-x: hidden;
+    65→            font-family: 'Inter', sans-serif;
+    66→        }
+    67→
+    68→        .blob {
+    69→            position: absolute;
+    70→            width: 600px;
+    71→            height: 600px;
+    72→            background: linear-gradient(180deg, rgba(43, 160, 159, 0.08) 0%, rgba(212, 197, 232, 0.08) 100%);
+    73→            filter: blur(100px);
+    74→            border-radius: 50%;
+    75→            z-index: -1;
+    76→        }
+    77→
+    78→        .glass-card {
+    79→            background: rgba(255, 255, 255, 0.75);
+    80→            backdrop-filter: blur(16px);
+    81→            border: 1px solid rgba(255, 255, 255, 0.6);
+    82→        }
+    83→
+    84→        .organic-shape {
+    85→            border-radius: 60% 40% 70% 30% / 40% 50% 60% 40%;
+    86→        }
+    87→
+    88→        .custom-scrollbar::-webkit-scrollbar {
+    89→            width: 6px;
+    90→        }
+    91→        .custom-scrollbar::-webkit-scrollbar-track {
+    92→            background: transparent;
+    93→        }
+    94→        .custom-scrollbar::-webkit-scrollbar-thumb {
+    95→            background: #E5E7EB;
+    96→            border-radius: 10px;
+    97→        }
+    98→
+    99→        .tab-active {
+   100→            position: relative;
+   101→        }
+   102→        .tab-active::after {
+   103→            content: '';
+   104→            position: absolute;
+   105→            bottom: -2px;
+   106→            left: 0;
+   107→            width: 100%;
+   108→            height: 3px;
+   109→            background: #2BA09F;
+   110→            border-radius: 3px;
+   111→        }
+   112→
+   113→        @keyframes fadeInScale {
+   114→            from { opacity: 0; transform: scale(0.95); }
+   115→            to { opacity: 1; transform: scale(1); }
+   116→        }
+   117→        .animate-modal {
+   118→            animation: fadeInScale 0.3s ease-out forwards;
+   119→        }
+   120→    </style>
+   121→</head>
+   122→<body class="min-h-screen flex flex-col" 
+   123→      x-data="{ 
+   124→        mobileMenu: false, 
+   125→        scrolled: false, 
+   126→        showInviteModal: false, 
+   127→        showDetailModal: false,
+   128→        activeFilter: 'all',
+   129→        selectedAidant: null,
+   130→        aidants: [
+   131→            { id: 1, name: 'Marie (Maman)', email: 'marie.doe@gmail.com', relation: 'Famille', status: 'Actif', lastActive: 'Il y a 2h', avatar: 'https://i.pravatar.cc/150?u=marie', permissions: { mood: true, meds: true, sleep: true, obs: true }, observations: 12 },
+   132→            { id: 2, name: 'Dr. Lucas B.', email: 'lucas.psy@clinic.fr', relation: 'Professionnel', status: 'Actif', lastActive: 'Hier', avatar: 'https://i.pravatar.cc/150?u=lucas', permissions: { mood: true, meds: true, sleep: true, obs: false }, observations: 0 },
+   133→            { id: 3, name: 'Thomas', email: 'thomas.j@outlook.com', relation: 'Conjoint', status: 'En attente', lastActive: 'Jamais', avatar: 'https://i.pravatar.cc/150?u=thomas', permissions: { mood: true, meds: false, sleep: false, obs: true }, observations: 0 }
+   134→        ],
+   135→        recentObservations: [
+   136→            { id: 1, author: 'Marie (Maman)', date: '12 Décembre 2025', time: '18:30', content: 'John semblait très énergique ce soir, il a beaucoup parlé pendant le dîner. Sommeil un peu agité selon lui.', tags: ['Énergie haute', 'Discours rapide'], private: false },
+   137→            { id: 2, author: 'Marie (Maman)', date: '10 Décembre 2025', time: '09:15', content: 'Semble un peu fatigué ce matin mais l\'humeur reste stable. A bien pris son traitement.', tags: ['Fatigue'], private: false }
+   138→        ]
+   139→      }" 
+   140→      @scroll.window="scrolled = (window.pageYOffset > 20)">
+   141→
+   142→    <!-- Background Decorations -->
+   143→    <div class="blob top-[-150px] left-[-150px]"></div>
+   144→    <div class="blob bottom-[-150px] right-[-150px] bg-sage-light/10"></div>
+   145→
+   146→    <!-- Navigation -->
+   147→    <nav :class="scrolled ? 'glass-card py-3 shadow-soft' : 'bg-transparent py-6'" class="fixed w-full z-50 transition-all duration-300 px-6 lg:px-12">
+   148→        <div class="max-w-7xl mx-auto flex justify-between items-center">
+   149→            <a href="#" class="flex items-center gap-2 group">
+   150→                <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-soft transform group-hover:rotate-6 transition-transform">
+   151→                    <i data-lucide="calendar-heart" class="text-white w-6 h-6"></i>
+   152→                </div>
+   153→                <span class="text-2xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   154→            </a>
+   155→
+   156→            <div class="hidden md:flex items-center gap-8 font-medium text-gray-600">
+   157→                <a href="#" class="hover:text-primary transition-colors">Tableau de bord</a>
+   158→                <a href="#" class="hover:text-primary transition-colors">Calendrier</a>
+   159→                <a href="#" class="text-primary font-bold tab-active">Aidants</a>
+   160→                <a href="#" class="hover:text-primary transition-colors">Analyses</a>
+   161→                <div class="h-6 w-px bg-gray-200 mx-2"></div>
+   162→                <button class="w-10 h-10 rounded-full border-2 border-primary/20 p-0.5 overflow-hidden hover:border-primary transition-all">
+   163→                    <img src="https://i.pravatar.cc/150?u=me" alt="Profile" class="w-full h-full rounded-full object-cover">
+   164→                </button>
+   165→            </div>
+   166→
+   167→            <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2 text-gray-600">
+   168→                <i data-lucide="menu" x-show="!mobileMenu"></i>
+   169→                <i data-lucide="x" x-show="mobileMenu"></i>
+   170→            </button>
+   171→        </div>
+   172→    </nav>
+   173→
+   174→    <!-- Main Content -->
+   175→    <main class="flex-grow pt-28 lg:pt-36 pb-20 px-6 lg:px-12">
+   176→        <div class="max-w-7xl mx-auto">
+   177→            
+   178→            <!-- Page Header -->
+   179→            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+   180→                <div>
+   181→                    <div class="inline-flex items-center gap-2 bg-lavender/40 text-primary-darkest px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+   182→                        <i data-lucide="users" class="w-3.5 h-3.5"></i>
+   183→                        Cercle de soutien
+   184→                    </div>
+   185→                    <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">Cercle d'Aidants</h1>
+   186→                    <p class="text-lg text-gray-500 mt-2 max-w-xl">
+   187→                        Gérez les personnes qui vous accompagnent. Vous contrôlez exactement ce qu'ils voient.
+   188→                    </p>
+   189→                </div>
+   190→                <button @click="showInviteModal = true" class="bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-2xl font-bold shadow-soft transition-all active:scale-95 flex items-center justify-center gap-3">
+   191→                    <i data-lucide="user-plus" class="w-5 h-5"></i>
+   192→                    Inviter un aidant
+   193→                </button>
+   194→            </div>
+   195→
+   196→            <!-- Stats Overview -->
+   197→            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+   198→                <div class="glass-card p-6 rounded-3xl shadow-soft">
+   199→                    <div class="flex items-center gap-4 mb-2">
+   200→                        <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+   201→                            <i data-lucide="user-check" class="text-primary w-5 h-5"></i>
+   202→                        </div>
+   203→                        <span class="text-sm font-semibold text-gray-500">Aidants Actifs</span>
+   204→                    </div>
+   205→                    <div class="text-3xl font-bold">2</div>
+   206→                </div>
+   207→                <div class="glass-card p-6 rounded-3xl shadow-soft">
+   208→                    <div class="flex items-center gap-4 mb-2">
+   209→                        <div class="w-10 h-10 bg-sage/10 rounded-xl flex items-center justify-center">
+   210→                            <i data-lucide="message-square" class="text-sage w-5 h-5"></i>
+   211→                        </div>
+   212→                        <span class="text-sm font-semibold text-gray-500">Observations (30j)</span>
+   213→                    </div>
+   214→                    <div class="text-3xl font-bold">14</div>
+   215→                </div>
+   216→                <div class="glass-card p-6 rounded-3xl shadow-soft">
+   217→                    <div class="flex items-center gap-4 mb-2">
+   218→                        <div class="w-10 h-10 bg-lavender/30 rounded-xl flex items-center justify-center">
+   219→                            <i data-lucide="bell" class="text-primary w-5 h-5"></i>
+   220→                        </div>
+   221→                        <span class="text-sm font-semibold text-gray-500">Alertes partagées</span>
+   222→                    </div>
+   223→                    <div class="text-3xl font-bold">3</div>
+   224→                </div>
+   225→                <div class="glass-card p-6 rounded-3xl shadow-soft">
+   226→                    <div class="flex items-center gap-4 mb-2">
+   227→                        <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+   228→                            <i data-lucide="shield-check" class="text-orange-600 w-5 h-5"></i>
+   229→                        </div>
+   230→                        <span class="text-sm font-semibold text-gray-500">Confidentialité</span>
+   231→                    </div>
+   232→                    <div class="text-sm font-bold text-gray-700">Contrôle Total</div>
+   233→                </div>
+   234→            </div>
+   235→
+   236→            <div class="grid lg:grid-cols-3 gap-12">
+   237→                
+   238→                <!-- Caregivers List (Left/Main Column) -->
+   239→                <div class="lg:col-span-2 space-y-8">
+   240→                    <div class="flex items-center justify-between mb-2">
+   241→                        <h2 class="text-2xl font-bold flex items-center gap-3">
+   242→                            Vos accompagnateurs
+   243→                            <span class="bg-gray-200 text-gray-600 text-xs px-2.5 py-1 rounded-full font-bold" x-text="aidants.length"></span>
+   244→                        </h2>
+   245→                        <div class="flex bg-gray-100 p-1 rounded-xl">
+   246→                            <button @click="activeFilter = 'all'" :class="activeFilter === 'all' ? 'bg-white shadow-sm' : ''" class="px-4 py-1.5 rounded-lg text-sm font-bold transition-all">Tous</button>
+   247→                            <button @click="activeFilter = 'pending'" :class="activeFilter === 'pending' ? 'bg-white shadow-sm' : ''" class="px-4 py-1.5 rounded-lg text-sm font-bold transition-all">Attente</button>
+   248→                        </div>
+   249→                    </div>
+   250→
+   251→                    <div class="grid gap-6">
+   252→                        <template x-for="aidant in aidants" :key="aidant.id">
+   253→                            <div x-show="activeFilter === 'all' || (activeFilter === 'pending' && aidant.status === 'En attente')" 
+   254→                                 class="glass-card p-6 rounded-3xl shadow-soft hover:shadow-float transition-all group">
+   255→                                <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+   256→                                    <div class="relative">
+   257→                                        <img :src="aidant.avatar" class="w-20 h-20 rounded-2xl object-cover shadow-sm border-4 border-white">
+   258→                                        <div :class="aidant.status === 'Actif' ? 'bg-sage' : 'bg-orange-400'" class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full border-2 border-white"></div>
+   259→                                    </div>
+   260→                                    <div class="flex-1">
+   261→                                        <div class="flex items-center justify-between mb-1">
+   262→                                            <h3 class="text-xl font-bold text-gray-900" x-text="aidant.name"></h3>
+   263→                                            <span :class="aidant.status === 'Actif' ? 'bg-sage/10 text-sage' : 'bg-orange-50 text-orange-600'" 
+   264→                                                  class="text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider" x-text="aidant.status"></span>
+   265→                                        </div>
+   266→                                        <p class="text-gray-500 font-medium text-sm flex items-center gap-2 mb-4">
+   267→                                            <span x-text="aidant.relation"></span> • <span x-text="aidant.email"></span>
+   268→                                        </p>
+   269→                                        <div class="flex flex-wrap gap-2">
+   270→                                            <span class="text-[10px] font-bold uppercase tracking-tighter px-2 py-0.5 rounded-md border border-gray-200 text-gray-400">Accès :</span>
+   271→                                            <template x-if="aidant.permissions.mood">
+   272→                                                <span class="bg-primary/5 text-primary text-[10px] font-bold px-2 py-0.5 rounded-md border border-primary/20">Humeur</span>
+   273→                                            </template>
+   274→                                            <template x-if="aidant.permissions.meds">
+   275→                                                <span class="bg-sage/5 text-sage text-[10px] font-bold px-2 py-0.5 rounded-md border border-sage/20">Meds</span>
+   276→                                            </template>
+   277→                                            <template x-if="aidant.permissions.sleep">
+   278→                                                <span class="bg-lavender/30 text-primary-darkest text-[10px] font-bold px-2 py-0.5 rounded-md border border-lavender/40">Sommeil</span>
+   279→                                            </template>
+   280→                                        </div>
+   281→                                    </div>
+   282→                                    <div class="flex sm:flex-col gap-2">
+   283→                                        <button @click="selectedAidant = aidant; showDetailModal = true" class="flex-1 sm:flex-none p-3 rounded-xl bg-primary/5 text-primary hover:bg-primary hover:text-white transition-all">
+   284→                                            <i data-lucide="settings-2" class="w-5 h-5"></i>
+   285→                                        </button>
+   286→                                        <button class="flex-1 sm:flex-none p-3 rounded-xl bg-red-50 text-red-400 hover:bg-red-500 hover:text-white transition-all">
+   287→                                            <i data-lucide="trash-2" class="w-5 h-5"></i>
+   288→                                        </button>
+   289→                                    </div>
+   290→                                </div>
+   291→                                <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between text-xs text-gray-400">
+   292→                                    <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5"></i> Dernier accès : <span x-text="aidant.lastActive" class="text-gray-600 font-medium"></span></span>
+   293→                                    <span class="flex items-center gap-1.5"><i data-lucide="edit-3" class="w-3.5 h-3.5"></i> <span x-text="aidant.observations"></span> observations partagées</span>
+   294→                                </div>
+   295→                            </div>
+   296→                        </template>
+   297→
+   298→                        <!-- Empty State Fallback -->
+   299→                        <div x-show="aidants.length === 0" class="py-20 text-center glass-card rounded-[40px] border-dashed border-2 border-gray-200">
+   300→                            <div class="w-20 h-20 bg-gray-50 organic-shape flex items-center justify-center mx-auto mb-6">
+   301→                                <i data-lucide="users" class="text-gray-300 w-10 h-10"></i>
+   302→                            </div>
+   303→                            <h3 class="text-xl font-bold text-gray-400">Aucun aidant pour le moment</h3>
+   304→                            <p class="text-gray-400 mt-2">Invitez un proche pour partager votre parcours.</p>
+   305→                        </div>
+   306→                    </div>
+   307→                </div>
+   308→
+   309→                <!-- Recent Observations Feed (Right Column) -->
+   310→                <div class="space-y-8">
+   311→                    <h2 class="text-2xl font-bold flex items-center gap-3">
+   312→                        Dernières notes
+   313→                        <i data-lucide="sparkles" class="text-primary w-5 h-5"></i>
+   314→                    </h2>
+   315→                    
+   316→                    <div class="space-y-6">
+   317→                        <template x-for="obs in recentObservations" :key="obs.id">
+   318→                            <div class="bg-white p-6 rounded-[32px] shadow-sm border border-gray-100 relative overflow-hidden">
+   319→                                <div class="absolute top-0 right-0 w-24 h-24 organic-shape bg-lavender/10 -mr-8 -mt-8 -z-10"></div>
+   320→                                
+   321→                                <div class="flex items-center gap-3 mb-4">
+   322→                                    <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs" x-text="obs.author.charAt(0)"></div>
+   323→                                    <div>
+   324→                                        <p class="text-sm font-bold text-gray-900" x-text="obs.author"></p>
+   325→                                        <p class="text-[10px] text-gray-400 font-medium" x-text="obs.date + ' • ' + obs.time"></p>
+   326→                                    </div>
+   327→                                </div>
+   328→                                <p class="text-gray-600 text-sm leading-relaxed italic mb-4" x-text="'« ' + obs.content + ' »'"></p>
+   329→                                <div class="flex flex-wrap gap-1.5">
+   330→                                    <template x-for="tag in obs.tags">
+   331→                                        <span class="bg-gray-50 text-gray-500 text-[10px] font-bold px-2 py-0.5 rounded-full" x-text="'#' + tag"></span>
+   332→                                    </template>
+   333→                                </div>
+   334→                            </div>
+   335→                        </template>
+   336→                        
+   337→                        <button class="w-full py-4 text-sm font-bold text-primary hover:bg-primary/5 rounded-2xl transition-all border border-primary/20 border-dashed">
+   338→                            Voir tout l'historique
+   339→                        </button>
+   340→                    </div>
+   341→
+   342→                    <!-- Informational Box -->
+   343→                    <div class="bg-primary/5 p-8 rounded-3xl border border-primary/10">
+   344→                        <h4 class="font-bold text-primary-darkest mb-3 flex items-center gap-2">
+   345→                            <i data-lucide="info" class="w-4 h-4"></i>
+   346→                            Pourquoi inviter un aidant ?
+   347→                        </h4>
+   348→                        <p class="text-sm text-gray-600 leading-relaxed">
+   349→                            Un regard extérieur aide à identifier les <span class="font-bold">signaux faibles</span> (changement de sommeil, irritabilité) que l'on ne perçoit pas toujours soi-même. 
+   350→                            <br><br>
+   351→                            Cela permet une <span class="font-bold text-primary">meilleure communication</span> avec votre psychiatre lors des rendez-vous.
+   352→                        </p>
+   353→                    </div>
+   354→                </div>
+   355→            </div>
+   356→        </div>
+   357→    </main>
+   358→
+   359→    <!-- Modal: Invite Caregiver -->
+   360→    <div x-show="showInviteModal" 
+   361→         x-transition:enter="transition ease-out duration-300"
+   362→         x-transition:enter-start="opacity-0"
+   363→         x-transition:enter-end="opacity-100"
+   364→         x-transition:leave="transition ease-in duration-200"
+   365→         x-transition:leave-start="opacity-100"
+   366→         x-transition:leave-end="opacity-0"
+   367→         class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-primary-darkest/20 backdrop-blur-md" x-cloak>
+   368→        
+   369→        <div @click.away="showInviteModal = false" class="bg-white w-full max-w-lg rounded-[40px] shadow-2xl overflow-hidden animate-modal">
+   370→            <div class="p-8 lg:p-10">
+   371→                <div class="flex justify-between items-center mb-8">
+   372→                    <h2 class="text-3xl font-bold text-gray-900">Nouvel Aidant</h2>
+   373→                    <button @click="showInviteModal = false" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+   374→                        <i data-lucide="x" class="w-6 h-6 text-gray-400"></i>
+   375→                    </button>
+   376→                </div>
+   377→
+   378→                <form class="space-y-6">
+   379→                    <div>
+   380→                        <label class="block text-sm font-bold text-gray-700 mb-2">Email de l'aidant</label>
+   381→                        <input type="email" placeholder="exemple@mail.com" class="w-full bg-warm-bg border border-gray-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all">
+   382→                    </div>
+   383→
+   384→                    <div>
+   385→                        <label class="block text-sm font-bold text-gray-700 mb-2">Relation</label>
+   386→                        <select class="w-full bg-warm-bg border border-gray-200 rounded-2xl px-5 py-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all appearance-none">
+   387→                            <option>Famille</option>
+   388→                            <option>Conjoint</option>
+   389→                            <option>Ami proche</option>
+   390→                            <option>Professionnel de santé</option>
+   391→                            <option>Autre</option>
+   392→                        </select>
+   393→                    </div>
+   394→
+   395→                    <div class="bg-gray-50 p-6 rounded-3xl space-y-4">
+   396→                        <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Permissions granulaires</p>
+   397→                        
+   398→                        <label class="flex items-center justify-between cursor-pointer group">
+   399→                            <span class="text-sm font-semibold text-gray-700">Voir mon humeur & énergie</span>
+   400→                            <div class="relative inline-flex items-center cursor-pointer">
+   401→                                <input type="checkbox" checked class="sr-only peer">
+   402→                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+   403→                            </div>
+   404→                        </label>
+   405→                        
+   406→                        <label class="flex items-center justify-between cursor-pointer group">
+   407→                            <span class="text-sm font-semibold text-gray-700">Voir mes prises de traitement</span>
+   408→                            <div class="relative inline-flex items-center cursor-pointer">
+   409→                                <input type="checkbox" checked class="sr-only peer">
+   410→                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+   411→                            </div>
+   412→                        </label>
+   413→
+   414→                        <label class="flex items-center justify-between cursor-pointer group">
+   415→                            <span class="text-sm font-semibold text-gray-700">Ajouter des observations</span>
+   416→                            <div class="relative inline-flex items-center cursor-pointer">
+   417→                                <input type="checkbox" checked class="sr-only peer">
+   418→                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+   419→                            </div>
+   420→                        </label>
+   421→                    </div>
+   422→
+   423→                    <button type="button" @click="showInviteModal = false" class="w-full bg-primary text-white py-5 rounded-2xl font-bold shadow-soft hover:bg-primary-dark transition-all active:scale-95 flex items-center justify-center gap-3">
+   424→                        Envoyer l'invitation
+   425→                        <i data-lucide="send" class="w-5 h-5"></i>
+   426→                    </button>
+   427→                    <p class="text-center text-[10px] text-gray-400">L'aidant recevra un lien sécurisé pour créer son compte.</p>
+   428→                </form>
+   429→            </div>
+   430→        </div>
+   431→    </div>
+   432→
+   433→    <!-- Modal: Caregiver Detail / Edit -->
+   434→    <div x-show="showDetailModal" 
+   435→         x-transition:enter="transition ease-out duration-300"
+   436→         x-transition:enter-start="opacity-0"
+   437→         x-transition:enter-end="opacity-100"
+   438→         class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-primary-darkest/20 backdrop-blur-md" x-cloak>
+   439→        
+   440→        <div @click.away="showDetailModal = false" class="bg-white w-full max-w-2xl rounded-[40px] shadow-2xl overflow-hidden animate-modal">
+   441→            <div class="flex flex-col md:flex-row h-full">
+   442→                <!-- Left: Profile Info -->
+   443→                <div class="w-full md:w-2/5 bg-primary/5 p-10 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-gray-100">
+   444→                    <img :src="selectedAidant?.avatar" class="w-32 h-32 rounded-[40px] organic-shape object-cover shadow-lg border-4 border-white mb-6">
+   445→                    <h2 class="text-2xl font-bold text-gray-900" x-text="selectedAidant?.name"></h2>
+   446→                    <p class="text-primary font-bold text-sm mb-6" x-text="selectedAidant?.relation"></p>
+   447→                    
+   448→                    <div class="w-full space-y-3 mt-auto">
+   449→                        <div class="bg-white p-4 rounded-2xl shadow-sm text-left">
+   450→                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-1">Dernière obs.</p>
+   451→                            <p class="text-sm font-semibold">12 Déc. 2025</p>
+   452→                        </div>
+   453→                        <div class="bg-white p-4 rounded-2xl shadow-sm text-left">
+   454→                            <p class="text-[10px] text-gray-400 uppercase font-bold mb-1">Statut</p>
+   455→                            <div class="flex items-center gap-2">
+   456→                                <div class="w-2 h-2 rounded-full bg-sage"></div>
+   457→                                <p class="text-sm font-semibold">Accès autorisé</p>
+   458→                            </div>
+   459→                        </div>
+   460→                    </div>
+   461→                </div>
+   462→
+   463→                <!-- Right: Settings -->
+   464→                <div class="w-full md:w-3/5 p-10">
+   465→                    <div class="flex justify-between items-center mb-8">
+   466→                        <h3 class="text-xl font-bold">Paramètres d'accès</h3>
+   467→                        <button @click="showDetailModal = false" class="text-gray-400 hover:text-gray-600">
+   468→                            <i data-lucide="x" class="w-6 h-6"></i>
+   469→                        </button>
+   470→                    </div>
+   471→
+   472→                    <div class="space-y-6">
+   473→                        <div class="space-y-4">
+   474→                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl">
+   475→                                <div class="flex items-center gap-3">
+   476→                                    <i data-lucide="eye" class="w-5 h-5 text-gray-400"></i>
+   477→                                    <span class="font-semibold text-gray-700">Visibilité des notes</span>
+   478→                                </div>
+   479→                                <select class="bg-transparent text-sm font-bold text-primary focus:outline-none">
+   480→                                    <option>Toujours visible</option>
+   481→                                    <option>Sur demande</option>
+   482→                                    <option>Masqué</option>
+   483→                                </select>
+   484→                            </div>
+   485→
+   486→                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-2xl">
+   487→                                <div class="flex items-center gap-3">
+   488→                                    <i data-lucide="bell-ring" class="w-5 h-5 text-gray-400"></i>
+   489→                                    <span class="font-semibold text-gray-700">Alertes critiques</span>
+   490→                                </div>
+   491→                                <div class="relative inline-flex items-center cursor-pointer">
+   492→                                    <input type="checkbox" checked class="sr-only peer">
+   493→                                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+   494→                                </div>
+   495→                            </div>
+   496→                        </div>
+   497→
+   498→                        <div class="pt-6 border-t border-gray-100">
+   499→                            <h4 class="text-sm font-bold text-gray-900 mb-4">Actions de sécurité</h4>
+   500→                            <div class="grid grid-cols-1 gap-3">
+   501→                                <button class="w-full py-4 px-6 rounded-2xl border-2 border-gray-100 font-bold text-gray-600 hover:bg-gray-50 transition-all flex items-center justify-between">
+   502→                                    Désactiver temporairement
+   503→                                    <i data-lucide="pause-circle" class="w-5 h-5"></i>
+   504→                                </button>
+   505→                                <button class="w-full py-4 px-6 rounded-2xl border-2 border-softRed/20 text-softRed font-bold hover:bg-softRed/5 transition-all flex items-center justify-between">
+   506→                                    Révoquer tout accès
+   507→                                    <i data-lucide="shield-off" class="w-5 h-5"></i>
+   508→                                </button>
+   509→                            </div>
+   510→                        </div>
+   511→                    </div>
+   512→                </div>
+   513→            </div>
+   514→        </div>
+   515→    </div>
+   516→
+   517→    <!-- Mobile Tab Bar (Floating) -->
+   518→    <div class="md:hidden fixed bottom-6 left-6 right-6 z-50">
+   519→        <div class="glass-card flex justify-around items-center p-4 rounded-3xl shadow-xl border border-white/40">
+   520→            <button class="text-gray-400 hover:text-primary transition-colors">
+   521→                <i data-lucide="home" class="w-6 h-6"></i>
+   522→            </button>
+   523→            <button class="text-gray-400 hover:text-primary transition-colors">
+   524→                <i data-lucide="bar-chart-2" class="w-6 h-6"></i>
+   525→            </button>
+   526→            <button class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shadow-soft transform -translate-y-4">
+   527→                <i data-lucide="plus" class="w-8 h-8"></i>
+   528→            </button>
+   529→            <button class="text-primary transition-colors">
+   530→                <i data-lucide="users" class="w-6 h-6"></i>
+   531→            </button>
+   532→            <button class="text-gray-400 hover:text-primary transition-colors">
+   533→                <i data-lucide="settings" class="w-6 h-6"></i>
+   534→            </button>
+   535→        </div>
+   536→    </div>
+   537→
+   538→    <!-- Footer -->
+   539→    <footer class="bg-white border-t border-gray-100 pt-16 pb-12 px-6 lg:px-12 mt-auto">
+   540→        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+   541→            <div>
+   542→                <a href="#" class="flex items-center gap-2 mb-6">
+   543→                    <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+   544→                        <i data-lucide="calendar-heart" class="text-white w-5 h-5"></i>
+   545→                    </div>
+   546→                    <span class="text-xl font-bold tracking-tight text-primary-darkest">Moodday</span>
+   547→                </a>
+   548→                <p class="text-gray-500 mb-6 leading-relaxed">
+   549→                    Plateforme collaborative pour le suivi de la santé psychiatrique. Conçu pour objectiver, partager et mieux soigner.
+   550→                </p>
+   551→                <div class="flex gap-4 text-gray-400">
+   552→                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+   553→                    <span class="text-xs font-semibold uppercase tracking-widest">Données Sécurisées HDS</span>
+   554→                </div>
+   555→            </div>
+   556→            <div>
+   557→                <h4 class="font-bold mb-6 text-gray-900">Espace Patient</h4>
+   558→                <ul class="space-y-4 text-gray-500 text-sm">
+   559→                    <li><a href="#" class="hover:text-primary transition-colors">Mon Tableau de bord</a></li>
+   560→                    <li><a href="#" class="hover:text-primary transition-colors">Suivi Médicament</a></li>
+   561→                    <li><a href="#" class="hover:text-primary transition-colors">Analyse des Cycles</a></li>
+   562→                    <li><a href="#" class="hover:text-primary transition-colors">Exporter Rapport PDF</a></li>
+   563→                </ul>
+   564→            </div>
+   565→            <div>
+   566→                <h4 class="font-bold mb-6 text-gray-900">Aide & Support</h4>
+   567→                <ul class="space-y-4 text-gray-500 text-sm">
+   568→                    <li><a href="#" class="hover:text-primary transition-colors">Guide des Aidants</a></li>
+   569→                    <li><a href="#" class="hover:text-primary transition-colors">FAQ Sécurité</a></li>
+   570→                    <li><a href="#" class="hover:text-primary transition-colors">Centre de ressources</a></li>
+   571→                    <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+   572→                </ul>
+   573→            </div>
+   574→            <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+   575→                <h4 class="font-bold mb-4 text-red-700 flex items-center gap-2">
+   576→                    <i data-lucide="alert-circle" class="w-5 h-5"></i> URGENCE
+   577→                </h4>
+   578→                <p class="text-xs text-red-600 mb-4">
+   579→                    Moodday n'est pas un service d'urgence. En cas de crise immédiate :
+   580→                </p>
+   581→                <div class="space-y-2">
+   582→                    <a href="tel:3114" class="block w-full text-center bg-red-600 text-white py-2 rounded-lg font-bold hover:bg-red-700 transition-all text-sm">Appeler le 3114</a>
+   583→                    <p class="text-[10px] text-center text-red-400">Centre national de prévention du suicide</p>
+   584→                </div>
+   585→            </div>
+   586→        </div>
+   587→        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-400">
+   588→            <p>© 2026 Moodday. Fabriqué avec soin en France.</p>
+   589→            <div class="flex gap-6">
+   590→                <a href="#" class="hover:text-primary">Confidentialité</a>
+   591→                <a href="#" class="hover:text-primary">CGU</a>
+   592→                <a href="#" class="hover:text-primary">Mentions légales</a>
+   593→            </div>
+   594→        </div>
+   595→    </footer>
+   596→
+   597→    <!-- Initialize Lucide Icons -->
+   598→    <script>
+   599→        lucide.createIcons();
+   600→    </script>
+   601→</body>
+   602→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

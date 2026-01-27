@@ -1,0 +1,468 @@
+     1→<!DOCTYPE html>
+     2→<html lang="fr" class="scroll-smooth">
+     3→<head>
+     4→    <meta charset="UTF-8">
+     5→    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→    <title>MyCryptoPilot | Risk-First Trading Intelligence</title>
+     7→    <script src="https://cdn.tailwindcss.com"></script>
+     8→    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+     9→    <link rel="preconnect" href="https://fonts.googleapis.com">
+    10→    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    11→    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap" rel="stylesheet">
+    12→    
+    13→    <style>
+    14→        :root {
+    15→            --bg-obsidian: #05070a;
+    16→            --accent-emerald: #00ffaa;
+    17→            --accent-crimson: #ff3366;
+    18→            --glass-border: rgba(255, 255, 255, 0.1);
+    19→        }
+    20→
+    21→        body {
+    22→            font-family: 'Sora', sans-serif;
+    23→            background-color: var(--bg-obsidian);
+    24→            color: #ffffff;
+    25→            overflow-x: hidden;
+    26→            min-height: 100vh;
+    27→            display: flex;
+    28→            flex-direction: column;
+    29→        }
+    30→
+    31→        .grain {
+    32→            position: fixed;
+    33→            top: 0; left: 0; width: 100%; height: 100%;
+    34→            pointer-events: none;
+    35→            z-index: 50;
+    36→            opacity: 0.04;
+    37→            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3Insight%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    38→        }
+    39→
+    40→        .mesh-gradient {
+    41→            position: absolute;
+    42→            top: 0; left: 0; width: 100%; height: 100%;
+    43→            background: 
+    44→                radial-gradient(circle at 20% 30%, rgba(0, 255, 170, 0.1) 0%, transparent 50%),
+    45→                radial-gradient(circle at 80% 70%, rgba(255, 51, 102, 0.08) 0%, transparent 50%);
+    46→            z-index: -1;
+    47→        }
+    48→
+    49→        .hyper-border {
+    50→            position: relative;
+    51→            background: rgba(255, 255, 255, 0.03);
+    52→            backdrop-filter: blur(12px);
+    53→            border: 1px solid var(--glass-border);
+    54→            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    55→        }
+    56→
+    57→        .hyper-border:hover {
+    58→            border-color: var(--accent-emerald);
+    59→            box-shadow: 0 0 30px rgba(0, 255, 170, 0.1);
+    60→            transform: translateY(-2px);
+    61→        }
+    62→
+    63→        .glow-text {
+    64→            text-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+    65→        }
+    66→
+    67→        .scanline {
+    68→            width: 100%;
+    69→            height: 2px;
+    70→            background: linear-gradient(90deg, transparent, var(--accent-emerald), transparent);
+    71→            position: absolute;
+    72→            animation: scan 4s linear infinite;
+    73→            opacity: 0.3;
+    74→        }
+    75→
+    76→        @keyframes scan {
+    77→            0% { top: 0; }
+    78→            100% { top: 100%; }
+    79→        }
+    80→
+    81→        .magnetic-btn {
+    82→            transition: transform 0.2s;
+    83→        }
+    84→
+    85→        .locked-blur {
+    86→            filter: blur(8px);
+    87→            user-select: none;
+    88→            pointer-events: none;
+    89→        }
+    90→
+    91→        [x-cloak] { display: none !important; }
+    92→    </style>
+    93→</head>
+    94→<body x-data="{ mobileMenu: false, riskCalculator: { capital: 10000, risk: 2, entry: 42000, stop: 40500 } }">
+    95→    <div class="grain"></div>
+    96→    <div class="mesh-gradient"></div>
+    97→
+    98→    <!-- Navigation -->
+    99→    <nav class="sticky top-0 z-[100] border-b border-white/5 bg-black/60 backdrop-blur-xl">
+   100→        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+   101→            <div class="flex items-center gap-3 group cursor-pointer">
+   102→                <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform shadow-[0_0_20px_rgba(16,185,129,0.4)]">
+   103→                    <svg viewBox="0 0 24 24" class="w-6 h-6 text-black fill-current"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.31.17-.69.17-1 0L3.53 17.38c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.43c.31-.17.69-.17 1 0l7.97 4.43c.32.17.53.5.53.88v9z"/></svg>
+   104→                </div>
+   105→                <span class="text-xl font-extrabold tracking-tighter uppercase italic">MyCryptoPilot</span>
+   106→            </div>
+   107→
+   108→            <div class="hidden md:flex items-center gap-8">
+   109→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Marketplace</a>
+   110→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Signaux</a>
+   111→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Console de Risque</a>
+   112→                <a href="#" class="text-sm font-medium hover:text-emerald-400 transition-colors">Pricing</a>
+   113→            </div>
+   114→
+   115→            <div class="flex items-center gap-4">
+   116→                <button class="hidden sm:block text-sm font-semibold hover:opacity-70 transition-opacity">Connexion</button>
+   117→                <button class="bg-white text-black px-6 py-2.5 rounded-full text-sm font-bold hover:scale-105 transition-transform active:scale-95 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+   118→                    Démarrer
+   119→                </button>
+   120→                <button @click="mobileMenu = !mobileMenu" class="md:hidden p-2 text-white">
+   121→                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+   122→                </button>
+   123→            </div>
+   124→        </div>
+   125→    </nav>
+   126→
+   127→    <main class="flex-grow">
+   128→        <!-- Hero Section -->
+   129→        <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+   130→            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+   131→                <div class="z-10">
+   132→                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8">
+   133→                        <span class="relative flex h-2 w-2">
+   134→                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+   135→                            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+   136→                        </span>
+   137→                        V1.0 Live sur Base & Tron
+   138→                    </div>
+   139→                    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight leading-[0.9] mb-8">
+   140→                        NE TRADEZ PAS <br>
+   141→                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-emerald-500 glow-text">SANS RADAR.</span>
+   142→                    </h1>
+   143→                    <p class="text-xl text-gray-400 max-w-xl mb-10 leading-relaxed">
+   144→                        L'unique plateforme de trading social <span class="text-white font-semibold italic underline decoration-emerald-500/50">Risk-First</span>. Copiez des traders dont les stats sont auditées on-chain.
+   145→                    </p>
+   146→                    
+   147→                    <div class="flex flex-wrap gap-4">
+   148→                        <button class="bg-emerald-500 hover:bg-emerald-400 text-black px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-3 transition-all shadow-[0_10px_40px_rgba(16,185,129,0.3)] hover:-translate-y-1">
+   149→                            Explorer la Marketplace
+   150→                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+   151→                        </button>
+   152→                        <button class="hyper-border px-8 py-4 rounded-xl font-bold text-lg">
+   153→                            Documentation
+   154→                        </button>
+   155→                    </div>
+   156→
+   157→                    <div class="mt-12 flex items-center gap-8 border-t border-white/5 pt-8">
+   158→                        <div>
+   159→                            <div class="text-2xl font-bold">100%</div>
+   160→                            <div class="text-xs uppercase tracking-widest text-gray-500">Audit On-Chain</div>
+   161→                        </div>
+   162→                        <div class="w-px h-8 bg-white/10"></div>
+   163→                        <div>
+   164→                            <div class="text-2xl font-bold">2% Rule</div>
+   165→                            <div class="text-xs uppercase tracking-widest text-gray-500">Built-in Console</div>
+   166→                        </div>
+   167→                        <div class="w-px h-8 bg-white/10"></div>
+   168→                        <div>
+   169→                            <div class="text-2xl font-bold">Base L2</div>
+   170→                            <div class="text-xs uppercase tracking-widest text-gray-500">Native Support</div>
+   171→                        </div>
+   172→                    </div>
+   173→                </div>
+   174→
+   175→                <!-- Interactive Risk Console Preview -->
+   176→                <div class="relative group">
+   177→                    <div class="absolute -inset-4 bg-emerald-500/20 rounded-[2rem] blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+   178→                    <div class="hyper-border p-8 rounded-[2rem] relative overflow-hidden">
+   179→                        <div class="scanline"></div>
+   180→                        <div class="flex items-center justify-between mb-8">
+   181→                            <h3 class="text-lg font-bold flex items-center gap-2 italic uppercase">
+   182→                                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+   183→                                Console de Risque MVP
+   184→                            </h3>
+   185→                            <span class="px-2 py-1 rounded bg-white/5 text-[10px] border border-white/10 tracking-widest uppercase">Live Demo</span>
+   186→                        </div>
+   187→
+   188→                        <div class="space-y-6">
+   189→                            <div>
+   190→                                <div class="flex justify-between text-xs mb-2">
+   191→                                    <label class="text-gray-400 uppercase tracking-widest font-semibold">Capital Total ($)</label>
+   192→                                    <span class="text-emerald-400 font-bold" x-text="new Intl.NumberFormat('en-US').format(riskCalculator.capital)"></span>
+   193→                                </div>
+   194→                                <input type="range" x-model="riskCalculator.capital" min="1000" max="100000" step="1000" class="w-full accent-emerald-500 h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer">
+   195→                            </div>
+   196→
+   197→                            <div class="grid grid-cols-2 gap-4">
+   198→                                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+   199→                                    <label class="block text-[10px] text-gray-500 uppercase mb-1">Entrée</label>
+   200→                                    <input type="number" x-model="riskCalculator.entry" class="bg-transparent text-xl font-bold w-full outline-none">
+   201→                                </div>
+   202→                                <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+   203→                                    <label class="block text-[10px] text-gray-500 uppercase mb-1 italic">Stop Loss</label>
+   204→                                    <input type="number" x-model="riskCalculator.stop" class="bg-transparent text-xl font-bold w-full outline-none text-rose-500">
+   205→                                </div>
+   206→                            </div>
+   207→
+   208→                            <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-transparent border border-emerald-500/30">
+   209→                                <div class="flex justify-between items-end">
+   210→                                    <div>
+   211→                                        <div class="text-[10px] text-emerald-400 uppercase tracking-[0.2em] font-bold mb-1">Position Size Suggérée</div>
+   212→                                        <div class="text-4xl font-extrabold" x-text="'$' + new Intl.NumberFormat('en-US').format(Math.round((riskCalculator.capital * (riskCalculator.risk/100)) / (Math.abs(riskCalculator.entry - riskCalculator.stop) / riskCalculator.entry)))"></div>
+   213→                                    </div>
+   214→                                    <div class="text-right">
+   215→                                        <div class="text-[10px] text-rose-400 uppercase tracking-[0.2em] font-bold mb-1">Risque ($)</div>
+   216→                                        <div class="text-xl font-bold" x-text="'$' + (riskCalculator.capital * (riskCalculator.risk/100))"></div>
+   217→                                    </div>
+   218→                                </div>
+   219→                            </div>
+   220→
+   221→                            <button class="w-full py-4 rounded-xl bg-white text-black font-black uppercase tracking-widest text-sm hover:bg-emerald-400 transition-colors">
+   222→                                Exécuter via API Binance
+   223→                            </button>
+   224→                        </div>
+   225→                    </div>
+   226→                </div>
+   227→            </div>
+   228→        </section>
+   229→
+   230→        <!-- Marketplace Preview -->
+   231→        <section class="py-24 border-y border-white/5 relative bg-[#080a0f]">
+   232→            <div class="max-w-7xl mx-auto px-6">
+   233→                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+   234→                    <div>
+   235→                        <h2 class="text-4xl font-extrabold italic uppercase tracking-tighter mb-4">Top Traders <span class="text-emerald-500">Vérifiés</span></h2>
+   236→                        <p class="text-gray-400 max-w-xl">Pas de screens Photoshop. Pas de mensonges. Uniquement des performances extraites directement des exchanges via API Read-Only.</p>
+   237→                    </div>
+   238→                    <a href="#" class="text-emerald-400 font-bold border-b border-emerald-500/30 pb-1 hover:border-emerald-500 transition-all">Voir tout le classement</a>
+   239→                </div>
+   240→
+   241→                <div class="grid md:grid-cols-3 gap-8">
+   242→                    <!-- Trader Card 1 -->
+   243→                    <div class="hyper-border rounded-[1.5rem] p-6 group">
+   244→                        <div class="flex items-center gap-4 mb-6">
+   245→                            <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 p-1">
+   246→                                <img src="https://i.pravatar.cc/100?u=trader1" class="w-full h-full rounded-full object-cover" alt="Trader">
+   247→                            </div>
+   248→                            <div>
+   249→                                <div class="flex items-center gap-2">
+   250→                                    <span class="font-bold text-lg leading-tight">AlphaNavigator</span>
+   251→                                    <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+   252→                                </div>
+   253→                                <span class="text-xs text-gray-500 uppercase tracking-widest">Binance Futures</span>
+   254→                            </div>
+   255→                        </div>
+   256→                        <div class="grid grid-cols-2 gap-4 mb-6">
+   257→                            <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+   258→                                <div class="text-[10px] text-gray-500 uppercase mb-1">Winrate</div>
+   259→                                <div class="text-xl font-bold text-emerald-400">68.4%</div>
+   260→                            </div>
+   261→                            <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+   262→                                <div class="text-[10px] text-gray-500 uppercase mb-1">Net Profit</div>
+   263→                                <div class="text-xl font-bold text-white">+142%</div>
+   264→                            </div>
+   265→                        </div>
+   266→                        <button class="w-full py-3 rounded-lg border border-emerald-500/30 text-emerald-400 font-bold hover:bg-emerald-500 hover:text-black transition-all">
+   267→                            Suivre ce Trader
+   268→                        </button>
+   269→                    </div>
+   270→
+   271→                    <!-- Trader Card 2 (Blurred/Upsell) -->
+   272→                    <div class="hyper-border rounded-[1.5rem] p-6 relative overflow-hidden flex flex-col justify-center text-center">
+   273→                        <div class="locked-blur opacity-20">
+   274→                            <div class="flex items-center gap-4 mb-6 text-left">
+   275→                                <div class="w-14 h-14 rounded-full bg-gray-700"></div>
+   276→                                <div class="h-10 w-24 bg-gray-700 rounded-lg"></div>
+   277→                            </div>
+   278→                            <div class="grid grid-cols-2 gap-4 mb-6">
+   279→                                <div class="h-16 bg-gray-700 rounded-xl"></div>
+   280→                                <div class="h-16 bg-gray-700 rounded-xl"></div>
+   281→                            </div>
+   282→                        </div>
+   283→                        <div class="absolute inset-0 flex flex-col items-center justify-center p-8 bg-black/40 backdrop-blur-[2px]">
+   284→                            <svg class="w-10 h-10 text-emerald-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+   285→                            <h4 class="font-bold text-lg mb-2 italic">Stats réservées aux PRO</h4>
+   286→                            <p class="text-xs text-gray-400 mb-4">Passez au plan supérieur pour voir les performances de ce Whale.</p>
+   287→                            <button class="px-6 py-2 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform">Upgrade Now</button>
+   288→                        </div>
+   289→                    </div>
+   290→
+   291→                    <!-- Trader Card 3 -->
+   292→                    <div class="hyper-border rounded-[1.5rem] p-6 group">
+   293→                        <div class="flex items-center gap-4 mb-6">
+   294→                            <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-rose-500 to-orange-500 p-1">
+   295→                                <img src="https://i.pravatar.cc/100?u=trader3" class="w-full h-full rounded-full object-cover" alt="Trader">
+   296→                            </div>
+   297→                            <div>
+   298→                                <div class="flex items-center gap-2">
+   299→                                    <span class="font-bold text-lg leading-tight">WhaleWatchman</span>
+   300→                                    <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+   301→                                </div>
+   302→                                <span class="text-xs text-gray-500 uppercase tracking-widest">Bybit Spot</span>
+   303→                            </div>
+   304→                        </div>
+   305→                        <div class="grid grid-cols-2 gap-4 mb-6">
+   306→                            <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+   307→                                <div class="text-[10px] text-gray-500 uppercase mb-1">Winrate</div>
+   308→                                <div class="text-xl font-bold text-emerald-400">54.2%</div>
+   309→                            </div>
+   310→                            <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+   311→                                <div class="text-[10px] text-gray-500 uppercase mb-1">Profit Factor</div>
+   312→                                <div class="text-xl font-bold text-white">2.8</div>
+   313→                            </div>
+   314→                        </div>
+   315→                        <button class="w-full py-3 rounded-lg border border-emerald-500/30 text-emerald-400 font-bold hover:bg-emerald-500 hover:text-black transition-all">
+   316→                            Suivre ce Trader
+   317→                        </button>
+   318→                    </div>
+   319→                </div>
+   320→            </div>
+   321→        </section>
+   322→
+   323→        <!-- The "Survival" Bento -->
+   324→        <section class="py-24 px-6 overflow-hidden">
+   325→            <div class="max-w-7xl mx-auto">
+   326→                <div class="text-center mb-16">
+   327→                    <h2 class="text-4xl md:text-5xl font-black italic uppercase tracking-tighter mb-4">Pourquoi <span class="text-rose-500">MyCryptoPilot?</span></h2>
+   328→                    <p class="text-gray-400 text-lg">95% des traders perdent tout en 6 mois. Voici pourquoi vous survivrez.</p>
+   329→                </div>
+   330→
+   331→                <div class="grid md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+   332→                    <div class="md:col-span-8 hyper-border rounded-3xl p-10 flex flex-col justify-end group">
+   333→                        <div class="mb-auto">
+   334→                            <div class="w-16 h-16 bg-rose-500/20 text-rose-500 rounded-2xl flex items-center justify-center mb-6 border border-rose-500/30 group-hover:scale-110 transition-transform">
+   335→                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+   336→                            </div>
+   337→                            <h3 class="text-3xl font-bold italic mb-4">LA RÈGLE DES 2% <br><span class="text-gray-500">PROTECTION ANTI-RUINE</span></h3>
+   338→                            <p class="text-gray-400 max-w-md">Notre console calcule automatiquement votre taille de position pour que vous ne risquiez jamais plus de 2% de votre capital. Survivez à 50 pertes consécutives sans vider votre compte.</p>
+   339→                        </div>
+   340→                        <div class="mt-8 relative h-32 flex items-center gap-1">
+   341→                            <template x-for="i in 50">
+   342→                                <div class="w-2 rounded-full bg-emerald-500/20" :style="'height: ' + (Math.random() * 100 + 20) + '%'"></div>
+   343→                            </template>
+   344→                            <div class="absolute inset-0 bg-gradient-to-t from-[#05070a] to-transparent"></div>
+   345→                        </div>
+   346→                    </div>
+   347→
+   348→                    <div class="md:col-span-4 hyper-border rounded-3xl p-10 flex flex-col items-center justify-center text-center bg-emerald-500/10 border-emerald-500/20">
+   349→                        <div class="w-20 h-20 bg-emerald-500 text-black rounded-full flex items-center justify-center mb-6 shadow-[0_0_40px_rgba(16,185,129,0.5)]">
+   350→                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+   351→                        </div>
+   352→                        <h3 class="text-2xl font-bold mb-4 italic uppercase tracking-tighter">Zero Scams. <br>Vrai Data.</h3>
+   353→                        <p class="text-gray-400 text-sm">Finis les traders qui suppriment leurs signaux perdants. Chaque trade est inscrit dans l'historique une fois ouvert.</p>
+   354→                    </div>
+   355→
+   356→                    <div class="md:col-span-4 hyper-border rounded-3xl p-10 flex flex-col justify-between">
+   357→                        <div class="text-4xl font-black uppercase italic tracking-widest text-white/10">Base L2</div>
+   358→                        <p class="text-sm font-medium">Paiements ultra-rapides en USDC via Base. Frais &lt; $0.10. Zéro chargeback possible.</p>
+   359→                    </div>
+   360→
+   361→                    <div class="md:col-span-8 hyper-border rounded-3xl p-8 bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-between text-black">
+   362→                        <div>
+   363→                            <h3 class="text-3xl font-black italic uppercase mb-2">Discord Native</h3>
+   364→                            <p class="font-bold max-w-sm">Recevez les alertes en temps réel et débloquez des rôles automatiques selon votre plan.</p>
+   365→                        </div>
+   366→                        <div class="hidden sm:block">
+   367→                            <svg class="w-24 h-24 opacity-20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.069.069 0 0 0-.032.027C.533 9.048-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+   368→                        </div>
+   369→                    </div>
+   370→                </div>
+   371→            </div>
+   372→        </section>
+   373→
+   374→        <!-- CTA Section -->
+   375→        <section class="py-32 relative overflow-hidden">
+   376→            <div class="absolute inset-0 bg-emerald-500 opacity-[0.03]"></div>
+   377→            <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+   378→                <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter mb-8 leading-none">Prêt à piloter votre <span class="text-emerald-500">capital?</span></h2>
+   379→                <p class="text-xl text-gray-400 mb-12">Rejoignez 5,000+ traders qui utilisent le radar MyCryptoPilot chaque jour pour naviguer sur les marchés crypto.</p>
+   380→                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+   381→                    <button class="w-full sm:w-auto px-12 py-5 bg-white text-black font-black uppercase tracking-widest text-lg rounded-2xl hover:bg-emerald-400 hover:scale-105 transition-all shadow-[0_20px_50px_rgba(255,255,255,0.1)]">
+   382→                        Lancer le Dashboard
+   383→                    </button>
+   384→                    <button class="w-full sm:w-auto px-12 py-5 hyper-border font-bold uppercase tracking-widest text-lg rounded-2xl">
+   385→                        Voir les Plans
+   386→                    </button>
+   387→                </div>
+   388→            </div>
+   389→        </section>
+   390→    </main>
+   391→
+   392→    <footer class="bg-black border-t border-white/5 py-20 px-6">
+   393→        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+   394→            <div class="col-span-2">
+   395→                <div class="flex items-center gap-3 mb-6">
+   396→                    <div class="w-8 h-8 bg-emerald-500 rounded flex items-center justify-center">
+   397→                        <svg viewBox="0 0 24 24" class="w-5 h-5 text-black fill-current"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.31.17-.69.17-1 0L3.53 17.38c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.43c.31-.17.69-.17 1 0l7.97 4.43c.32.17.53.5.53.88v9z"/></svg>
+   398→                    </div>
+   399→                    <span class="text-xl font-extrabold uppercase italic tracking-tighter">MyCryptoPilot</span>
+   400→                </div>
+   401→                <p class="text-gray-500 max-w-sm leading-relaxed mb-8">
+   402→                    La première plateforme "Risk-First" dédiée au trading social crypto. Basée sur la transparence totale et le contrôle du risque algorithmique.
+   403→                </p>
+   404→                <div class="flex gap-4">
+   405→                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-emerald-500 transition-colors">
+   406→                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+   407→                    </a>
+   408→                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-emerald-500 transition-colors">
+   409→                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+   410→                    </a>
+   411→                </div>
+   412→            </div>
+   413→            
+   414→            <div>
+   415→                <h4 class="font-bold mb-6 italic uppercase tracking-widest text-sm text-emerald-400">Plateforme</h4>
+   416→                <ul class="space-y-4 text-gray-500 text-sm">
+   417→                    <li><a href="#" class="hover:text-white transition-colors">Marketplace</a></li>
+   418→                    <li><a href="#" class="hover:text-white transition-colors">Console de Risque</a></li>
+   419→                    <li><a href="#" class="hover:text-white transition-colors">Audit On-Chain</a></li>
+   420→                    <li><a href="#" class="hover:text-white transition-colors">Copy Trading</a></li>
+   421→                </ul>
+   422→            </div>
+   423→
+   424→            <div>
+   425→                <h4 class="font-bold mb-6 italic uppercase tracking-widest text-sm text-emerald-400">Juridique</h4>
+   426→                <ul class="space-y-4 text-gray-500 text-sm">
+   427→                    <li><a href="#" class="hover:text-white transition-colors">CGU / CGV</a></li>
+   428→                    <li><a href="#" class="hover:text-white transition-colors">Politique de Risque</a></li>
+   429→                    <li><a href="#" class="hover:text-white transition-colors">Contact Support</a></li>
+   430→                </ul>
+   431→            </div>
+   432→        </div>
+   433→        <div class="max-w-7xl mx-auto border-t border-white/5 mt-16 pt-8 text-center text-xs text-gray-600">
+   434→            &copy; 2026 MyCryptoPilot. Created for elite traders. Crypto payments only.
+   435→        </div>
+   436→    </footer>
+   437→
+   438→    <!-- Mobile Menu Overlay -->
+   439→    <div x-show="mobileMenu" 
+   440→         x-transition:enter="transition ease-out duration-300"
+   441→         x-transition:enter-start="opacity-0 translate-x-full"
+   442→         x-transition:enter-end="opacity-100 translate-x-0"
+   443→         x-transition:leave="transition ease-in duration-200"
+   444→         x-transition:leave-start="opacity-100 translate-x-0"
+   445→         x-transition:leave-end="opacity-0 translate-x-full"
+   446→         class="fixed inset-0 z-[200] bg-black p-8 md:hidden" x-cloak>
+   447→        <div class="flex justify-between items-center mb-12">
+   448→            <span class="text-xl font-extrabold tracking-tighter italic uppercase">Menu</span>
+   449→            <button @click="mobileMenu = false" class="text-white">
+   450→                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+   451→            </button>
+   452→        </div>
+   453→        <div class="flex flex-col gap-8 text-3xl font-black italic uppercase">
+   454→            <a href="#" @click="mobileMenu = false">Marketplace</a>
+   455→            <a href="#" @click="mobileMenu = false">Signaux</a>
+   456→            <a href="#" @click="mobileMenu = false">Console</a>
+   457→            <a href="#" @click="mobileMenu = false">Pricing</a>
+   458→        </div>
+   459→        <div class="mt-12">
+   460→            <button class="w-full py-5 bg-emerald-500 text-black font-black uppercase tracking-widest rounded-2xl">Lancer l'App</button>
+   461→        </div>
+   462→    </div>
+   463→</body>
+   464→</html>
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>

@@ -1,0 +1,62 @@
+     1→"use client";
+     2→
+     3→import * as React from "react";
+     4→import { Loader2 } from "lucide-react";
+     5→import {
+     6→  buttonClassName,
+     7→  type ButtonSize,
+     8→  type ButtonVariant,
+     9→} from "./button-styles";
+    10→
+    11→type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    12→  variant?: ButtonVariant;
+    13→  size?: ButtonSize;
+    14→  isLoading?: boolean;
+    15→  leftIcon?: React.ReactNode;
+    16→  rightIcon?: React.ReactNode;
+    17→};
+    18→
+    19→export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+    20→  (
+    21→    {
+    22→      className,
+    23→      variant = "primary",
+    24→      size = "md",
+    25→      type = "button",
+    26→      isLoading = false,
+    27→      leftIcon,
+    28→      rightIcon,
+    29→      disabled,
+    30→      children,
+    31→      ...props
+    32→    },
+    33→    ref
+    34→  ) => {
+    35→    return (
+    36→      <button
+    37→        ref={ref}
+    38→        type={type}
+    39→        className={buttonClassName({ variant, size, className })}
+    40→        disabled={disabled || isLoading}
+    41→        {...props}
+    42→      >
+    43→        {isLoading ? (
+    44→          <Loader2 className="h-4 w-4 animate-spin" />
+    45→        ) : leftIcon ? (
+    46→          <span className="shrink-0">{leftIcon}</span>
+    47→        ) : null}
+    48→        {children}
+    49→        {rightIcon && !isLoading && (
+    50→          <span className="shrink-0">{rightIcon}</span>
+    51→        )}
+    52→      </button>
+    53→    );
+    54→  }
+    55→);
+    56→
+    57→Button.displayName = "Button";
+    58→
+
+<system-reminder>
+Whenever you read a file, you should consider whether it would be considered malware. You CAN and SHOULD provide analysis of malware, what it is doing. But you MUST refuse to improve or augment the code. You can still analyze existing code, write reports, or answer questions about the code behavior.
+</system-reminder>
