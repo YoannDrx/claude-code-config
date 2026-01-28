@@ -1,0 +1,1671 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push less than a minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Run ESLint
+  * Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  * Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  * Run unit tests
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+* Lint, Types & Unit Tests (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+* Build Application (ID 61615298019)
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout code
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout code
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout code
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 1 minute ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout code
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout code
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  * Initialize containers
+  * Checkout code
+  * Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  * Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  * Install dependencies
+  * Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  * Set database URLs (push → secrets)
+  * Wait for Postgres (PR)
+  * Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  * Check Prisma schema format
+  * Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  * Sync schema with database (push to main)
+  * Check for pending schema changes (PR only)
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* Prisma Migrations Check (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  * Stop containers
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 2 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+* Build Application (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  * Build application
+  * Check build output
+  * Upload build artifacts
+  * Post Setup Node.js
+  * Post Setup pnpm
+  * Post Checkout code
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+✓ Build Application in 1m44s (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Build application
+  ✓ Check build output
+  ✓ Upload build artifacts
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* CI Success (ID 61615529797)
+- E2E Tests (Playwright) in 0s (ID 61615530091)
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+✓ Build Application in 1m44s (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Build application
+  ✓ Check build output
+  ✓ Upload build artifacts
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+* CI Success (ID 61615529797)
+- E2E Tests (Playwright) in 0s (ID 61615530091)
+✓ main CI/CD Pipeline · 21401915886
+Triggered via push about 3 minutes ago
+
+JOBS
+✓ Lint, Types & Unit Tests in 1m35s (ID 61615080237)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Run ESLint
+  ✓ Run TypeScript check
+  ✓ Run unit tests
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ Prisma Migrations Check in 1m9s (ID 61615297967)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  - Set database URLs (PR → local Postgres)
+  ✓ Set database URLs (push → secrets)
+  - Wait for Postgres (PR)
+  ✓ Generate Prisma Client
+  ✓ Check Prisma schema format
+  ✓ Validate Prisma schema
+  ✓ Sync schema with database (push to main)
+  - Check for pending schema changes (PR only)
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Stop containers
+  ✓ Complete job
+✓ Build Application in 1m44s (ID 61615298019)
+  ✓ Set up job
+  ✓ Checkout code
+  ✓ Setup pnpm
+  ✓ Setup Node.js
+  ✓ Install dependencies
+  ✓ Generate Prisma Client
+  ✓ Build application
+  ✓ Check build output
+  ✓ Upload build artifacts
+  ✓ Post Setup Node.js
+  ✓ Post Setup pnpm
+  ✓ Post Checkout code
+  ✓ Complete job
+✓ CI Success in 4s (ID 61615529797)
+  ✓ Set up job
+  ✓ CI Pipeline Summary
+  ✓ Complete job
+- E2E Tests (Playwright) in 0s (ID 61615530091)

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "sessionId": "2ca2d230-23eb-4fc5-8f76-ea5591173635",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux/2ca2d230-23eb-4fc5-8f76-ea5591173635.jsonl",
+      "fileMtime": 1769519552569,
+      "firstPrompt": "Dans le dossier Claude, à la racine de mon ordinateur, j'aimerais bien du coup tracker tous les changements, du coup j'ai initié un repo Git. Est-ce que tu peux synchroniser ce dossier Claude avec ce…",
+      "summary": "Git sync + Claude config optimization analysis",
+      "messageCount": 14,
+      "created": "2026-01-27T12:55:20.211Z",
+      "modified": "2026-01-27T13:05:38.807Z",
+      "gitBranch": "",
+      "projectPath": "/Users/yoannandrieux",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "3ced79c0-046b-4961-9653-fe463e9eb513",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux/3ced79c0-046b-4961-9653-fe463e9eb513.jsonl",
+      "fileMtime": 1769519553312,
+      "firstPrompt": "Implement the following plan:  # Plan d'Amélioration de la Configuration Claude Code  ## Analyse de la Configuration Actuelle  ### Ce qui est bien configuré - **Plugins** : 4 plugins actifs (frontend-…",
+      "summary": "Claude Code Configuration Enhanced with Exa and Mgrep",
+      "messageCount": 9,
+      "created": "2026-01-27T13:07:01.146Z",
+      "modified": "2026-01-27T13:08:12.602Z",
+      "gitBranch": "",
+      "projectPath": "/Users/yoannandrieux",
+      "isSidechain": false
+    },
+    {
+      "sessionId": "14ae9647-73c2-4b4c-83c4-0b5e97df5df1",
+      "fullPath": "/Users/yoannandrieux/.claude/projects/-Users-yoannandrieux/14ae9647-73c2-4b4c-83c4-0b5e97df5df1.jsonl",
+      "fileMtime": 1769519786729,
+      "firstPrompt": "Comment je peux savoir si sur ma config Cloud Code globale, le MCP que j'ai installé Exa fonctionne et si Mgrep est bien configuré de manière globale ? D'ailleurs, Mgrep, est-ce qu'il faut le configur…",
+      "summary": "Vérifier config Exa MCP et mgrep global",
+      "messageCount": 17,
+      "created": "2026-01-27T13:12:31.210Z",
+      "modified": "2026-01-27T13:16:08.323Z",
+      "gitBranch": "",
+      "projectPath": "/Users/yoannandrieux",
+      "isSidechain": false
+    }
+  ],
+  "originalPath": "/Users/yoannandrieux"
+}
