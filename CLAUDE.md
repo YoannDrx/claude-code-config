@@ -6,52 +6,53 @@
 
 ---
 
-## mgrep - Recherche Sémantique de Code
+## grepai - Recherche Sémantique de Code (Gratuit & Local)
 
-**mgrep est l'outil principal pour explorer n'importe quel codebase.** Il retourne une réponse en langage naturel + les sources pertinentes.
+**grepai est l'outil principal pour explorer n'importe quel codebase.** Il utilise des embeddings locaux (Ollama) - 100% gratuit et privé.
 
-### Store
+### Prérequis
 
-Le nom du store = **le nom du dossier du projet**. Par exemple, pour `/Users/yoannandrieux/Projets/moodday`, le store s'appelle `moodday`.
+- Ollama doit tourner : `brew services start ollama`
+- Modèle d'embedding installé : `ollama pull nomic-embed-text`
 
-### Lancer le watch (indexation)
-
-Avant d'utiliser mgrep sur un projet, lance le watcher dans un terminal séparé :
+### Initialiser un projet (une seule fois)
 
 ```bash
 cd ~/Projets/<nom-projet>
-mgrep watch --store "<nom-projet>"
+~/.local/bin/grepai init
+```
+
+### Lancer le watch (indexation)
+
+Avant d'utiliser grepai sur un projet, lance le watcher :
+
+```bash
+cd ~/Projets/<nom-projet>
+~/.local/bin/grepai watch
 ```
 
 ### Commande de recherche
 
 ```bash
-mgrep "ta question en langage naturel" --store "<nom-projet>" -a -m 20
+~/.local/bin/grepai search "ta question en langage naturel"
 ```
 
-### Paramètres
+### Commandes disponibles
 
-| Paramètre              | Description                                   |
-| ---------------------- | --------------------------------------------- |
-| `--store "<nom>"`      | **Obligatoire** - nom du store (= dossier)    |
-| `-a`                   | Réponse en langage naturel                    |
-| `-m <n>`               | Nombre de résultats (10-50 selon complexité)  |
-
-### Ajuster `-m` selon la complexité
-
-| Type de requête                         | `-m` recommandé |
-| --------------------------------------- | --------------- |
-| Question simple (1-2 fichiers)          | 10              |
-| Question moyenne (flow, feature)        | 20-30           |
-| Question complexe (debug, architecture) | 30-50           |
+| Commande | Description |
+|----------|-------------|
+| `grepai search "<query>"` | Recherche sémantique dans le code |
+| `grepai trace callers "<function>"` | Voir qui appelle une fonction |
+| `grepai trace callees "<function>"` | Voir ce qu'une fonction appelle |
+| `grepai watch` | Indexation en temps réel |
 
 ### Règles
 
-- **OBLIGATOIRE** : Utilise mgrep pour TOUTE recherche de code
-- **Langage naturel** : Parle à mgrep comme à un collègue
+- **OBLIGATOIRE** : Utilise grepai pour TOUTE recherche de code
+- **Langage naturel** : Parle à grepai comme à un collègue
   - ❌ `"auth token session"` (mots-clés)
   - ✅ `"Comment fonctionne l'authentification et la gestion des sessions ?"` (question naturelle)
-- Pour les questions complexes, lance **plusieurs mgrep en parallèle**
+- Pour les questions complexes, lance **plusieurs grepai en parallèle**
 
 ---
 
@@ -68,4 +69,4 @@ Utilise les outils Exa MCP pour :
 
 **Les subagents n'héritent PAS de ces instructions.**
 
-Quand tu lances un subagent, copie-colle les instructions pertinentes (notamment mgrep) dans le prompt du subagent.
+Quand tu lances un subagent, copie-colle les instructions pertinentes (notamment grepai) dans le prompt du subagent.
