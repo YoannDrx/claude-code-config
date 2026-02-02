@@ -6,68 +6,42 @@
 
 ---
 
-## grepai - Recherche Sémantique de Code (Gratuit & Local)
+## grepai - Recherche Sémantique de Code (via MCP)
 
-**grepai est l'outil principal pour explorer n'importe quel codebase.** Il utilise des embeddings locaux (Ollama) - 100% gratuit et privé.
+### RÈGLE OBLIGATOIRE
 
-### ⚡ AUTO-START (à faire automatiquement au début de chaque session)
+**Tu DOIS utiliser grepai (via MCP) pour TOUTE recherche de code.** C'est NON-NÉGOCIABLE.
 
-**Dès que tu commences à travailler sur un projet, lance ce script :**
+- ❌ **INTERDIT** : `Grep`, `Glob`, `grep`, `find`, `rg`, ou toute autre méthode de recherche
+- ✅ **OBLIGATOIRE** : `mcp__grepai__grepai_search` pour toutes les recherches
 
-```bash
-# Script auto-start grepai (v2 - détection par projet)
-GREPAI_BIN="$HOME/.local/bin/grepai"
-PROJECT_DIR="$(pwd)"
-PROJECT_NAME="$(basename "$PROJECT_DIR")"
+### Outils MCP disponibles
 
-if [[ ! -f "$GREPAI_BIN" ]]; then
-  echo "⚠️ grepai n'est pas installé"
-elif [[ ! -d ".grepai" ]]; then
-  echo "⚠️ Projet non initialisé - lance: grepai init"
-else
-  # Vérifier si un watch tourne POUR CE PROJET spécifiquement
-  WATCH_PID=$(lsof -c grepai 2>/dev/null | grep "$PROJECT_DIR" | awk '{print $2}' | head -1)
+| Outil MCP | Usage |
+|-----------|-------|
+| `mcp__grepai__grepai_search` | Recherche sémantique (TOUJOURS utiliser) |
+| `mcp__grepai__grepai_trace_callers` | Qui appelle une fonction |
+| `mcp__grepai__grepai_trace_callees` | Ce qu'une fonction appelle |
+| `mcp__grepai__grepai_trace_graph` | Graphe d'appels complet |
+| `mcp__grepai__grepai_index_status` | Status de l'index |
 
-  if [[ -n "$WATCH_PID" ]]; then
-    echo "✅ grepai watch actif pour $PROJECT_NAME (PID: $WATCH_PID)"
-  else
-    echo "🚀 Lancement grepai watch pour $PROJECT_NAME..."
-    "$GREPAI_BIN" watch --background
-    sleep 1
-    echo "✅ grepai watch lancé"
-  fi
-fi
-```
+### Comment chercher
 
-> Lance ce script UNE SEULE FOIS au début de la session. Il détecte si un watch tourne **pour ce projet spécifiquement** (pas un autre).
+**Langage naturel uniquement** - parle à grepai comme à un collègue :
+- ❌ `"auth token session"` (mots-clés)
+- ✅ `"Comment fonctionne l'authentification et la gestion des sessions ?"` (question naturelle)
 
-### Prérequis
+Pour les questions complexes, lance **plusieurs recherches en parallèle**.
 
-- Ollama doit tourner : `brew services start ollama`
-- Modèle d'embedding installé : `ollama pull nomic-embed-text`
+### Auto-start
 
-### Commande de recherche
+Le watch grepai se lance automatiquement via le hook `UserPromptSubmit`.
 
-```bash
-~/.local/bin/grepai search "ta question en langage naturel"
-```
+### Prérequis (pour l'utilisateur)
 
-### Commandes disponibles
-
-| Commande | Description |
-|----------|-------------|
-| `grepai search "<query>"` | Recherche sémantique dans le code |
-| `grepai trace callers "<function>"` | Voir qui appelle une fonction |
-| `grepai trace callees "<function>"` | Voir ce qu'une fonction appelle |
-| `grepai watch` | Indexation en temps réel |
-
-### Règles
-
-- **OBLIGATOIRE** : Utilise grepai pour TOUTE recherche de code. N'utilise JAMAIS grep, Grep tool, ou Glob.
-- **Langage naturel** : Parle à grepai comme à un collègue
-  - ❌ `"auth token session"` (mots-clés)
-  - ✅ `"Comment fonctionne l'authentification et la gestion des sessions ?"` (question naturelle)
-- Pour les questions complexes, lance **plusieurs grepai en parallèle**
+- Ollama : `brew services start ollama`
+- Modèle : `ollama pull nomic-embed-text`
+- Init projet : `~/.local/bin/grepai init` (une fois par projet, dans un terminal)
 
 ---
 

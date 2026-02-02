@@ -19,6 +19,8 @@
       "Bash(volta:*)",
       "Bash(pod:*)",
       "Bash(watchman:*)",
+      "Bash(grepai:*)",
+      "Bash(~/.local/bin/grepai:*)",
       "Edit(**)",
       "WebFetch(domain:*)",
       "mcp__context7",
@@ -28,6 +30,19 @@
     "ask": []
   },
   "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/yoannandrieux/.claude/hooks/grepai-autostart.sh",
+            "async": true,
+            "timeout": 5
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Bash",
