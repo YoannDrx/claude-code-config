@@ -202,6 +202,7 @@ const SAFE_COMMANDS = [
   "touch",
   "ln",
   "mgrep", // AI code search tool - allows UTF-8 queries
+  "grepai", // AI code search tool (successor to mgrep)
 ];
 
 class CommandValidator {
@@ -231,9 +232,9 @@ class CommandValidator {
     const cmdParts = normalizedCmd.split(/\s+/);
     const mainCommand = cmdParts[0];
 
-    // Allow source, python, and mgrep commands unconditionally
-    // mgrep needs UTF-8 support for French queries
-    if (mainCommand === "source" || mainCommand === "python" || mainCommand === "mgrep") {
+    // Allow source, python, mgrep and grepai commands unconditionally
+    // These tools need UTF-8 support for French queries
+    if (mainCommand === "source" || mainCommand === "python" || mainCommand === "mgrep" || mainCommand === "grepai" || command.includes("/.local/bin/grepai")) {
       return result; // Always allow
     }
 
@@ -397,8 +398,8 @@ class CommandValidator {
     const cmdParts = normalizedCmd.split(/\s+/);
     const mainCommand = cmdParts[0];
 
-    // Allow source, python, and mgrep commands unconditionally in single command validation too
-    if (mainCommand === "source" || mainCommand === "python" || mainCommand === "mgrep") {
+    // Allow source, python, mgrep and grepai commands unconditionally in single command validation too
+    if (mainCommand === "source" || mainCommand === "python" || mainCommand === "mgrep" || mainCommand === "grepai" || command.includes("/.local/bin/grepai")) {
       return result; // Always allow
     }
 
