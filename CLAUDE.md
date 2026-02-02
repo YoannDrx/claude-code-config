@@ -10,26 +10,41 @@
 
 **grepai est l'outil principal pour explorer n'importe quel codebase.** Il utilise des embeddings locaux (Ollama) - 100% gratuit et privé.
 
+### ⚡ AUTO-START (à faire automatiquement au début de chaque session)
+
+**Dès que tu commences à travailler sur un projet, lance ce script :**
+
+```bash
+# Script auto-start grepai (v2 - détection par projet)
+GREPAI_BIN="$HOME/.local/bin/grepai"
+PROJECT_DIR="$(pwd)"
+PROJECT_NAME="$(basename "$PROJECT_DIR")"
+
+if [[ ! -f "$GREPAI_BIN" ]]; then
+  echo "⚠️ grepai n'est pas installé"
+elif [[ ! -d ".grepai" ]]; then
+  echo "⚠️ Projet non initialisé - lance: grepai init"
+else
+  # Vérifier si un watch tourne POUR CE PROJET spécifiquement
+  WATCH_PID=$(lsof -c grepai 2>/dev/null | grep "$PROJECT_DIR" | awk '{print $2}' | head -1)
+
+  if [[ -n "$WATCH_PID" ]]; then
+    echo "✅ grepai watch actif pour $PROJECT_NAME (PID: $WATCH_PID)"
+  else
+    echo "🚀 Lancement grepai watch pour $PROJECT_NAME..."
+    "$GREPAI_BIN" watch --background
+    sleep 1
+    echo "✅ grepai watch lancé"
+  fi
+fi
+```
+
+> Lance ce script UNE SEULE FOIS au début de la session. Il détecte si un watch tourne **pour ce projet spécifiquement** (pas un autre).
+
 ### Prérequis
 
 - Ollama doit tourner : `brew services start ollama`
 - Modèle d'embedding installé : `ollama pull nomic-embed-text`
-
-### Initialiser un projet (une seule fois)
-
-```bash
-cd ~/Projets/<nom-projet>
-~/.local/bin/grepai init
-```
-
-### Lancer le watch (indexation)
-
-Avant d'utiliser grepai sur un projet, lance le watcher :
-
-```bash
-cd ~/Projets/<nom-projet>
-~/.local/bin/grepai watch
-```
 
 ### Commande de recherche
 
@@ -48,7 +63,7 @@ cd ~/Projets/<nom-projet>
 
 ### Règles
 
-- **OBLIGATOIRE** : Utilise grepai pour TOUTE recherche de code
+- **OBLIGATOIRE** : Utilise grepai pour TOUTE recherche de code. N'utilise JAMAIS grep, Grep tool, ou Glob.
 - **Langage naturel** : Parle à grepai comme à un collègue
   - ❌ `"auth token session"` (mots-clés)
   - ✅ `"Comment fonctionne l'authentification et la gestion des sessions ?"` (question naturelle)
