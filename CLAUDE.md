@@ -6,32 +6,45 @@
 
 ---
 
-## grepai - Recherche Sémantique de Code (via MCP)
+## grepai - Recherche Sémantique de Code (via CLI)
 
 ### RÈGLE OBLIGATOIRE
 
-**Tu DOIS utiliser grepai (via MCP) pour TOUTE recherche de code.** C'est NON-NÉGOCIABLE.
+**Tu DOIS utiliser les commandes CLI grepai pour TOUTE recherche de code.** C'est NON-NÉGOCIABLE.
 
-- ❌ **INTERDIT** : `Grep`, `Glob`, `grep`, `find`, `rg`, ou toute autre méthode de recherche
-- ✅ **OBLIGATOIRE** : `mcp__grepai__grepai_search` pour toutes les recherches
+- ❌ **INTERDIT** : `Grep`, `Glob`, `grep`, `find`, `rg`, ou outils MCP grepai
+- ✅ **OBLIGATOIRE** : Commandes `grepai` via Bash
 
-### Outils MCP disponibles
+### Commandes disponibles
 
-| Outil MCP | Usage |
-|-----------|-------|
-| `mcp__grepai__grepai_search` | Recherche sémantique (TOUJOURS utiliser) |
-| `mcp__grepai__grepai_trace_callers` | Qui appelle une fonction |
-| `mcp__grepai__grepai_trace_callees` | Ce qu'une fonction appelle |
-| `mcp__grepai__grepai_trace_graph` | Graphe d'appels complet |
-| `mcp__grepai__grepai_index_status` | Status de l'index |
+| Commande | Usage |
+|----------|-------|
+| `grepai search "query" --limit 10` | Recherche sémantique |
+| `grepai trace-callers "FunctionName"` | Qui appelle cette fonction |
+| `grepai trace-callees "FunctionName"` | Ce que cette fonction appelle |
+| `grepai trace-graph "FunctionName"` | Graphe d'appels complet |
+| `grepai status` | Status de l'index |
 
 ### Comment chercher
 
-**Langage naturel uniquement** - parle à grepai comme à un collègue :
-- ❌ `"auth token session"` (mots-clés)
-- ✅ `"Comment fonctionne l'authentification et la gestion des sessions ?"` (question naturelle)
+**Langage naturel** - décris l'intention :
+- ❌ `grepai search "auth token"` (mots-clés)
+- ✅ `grepai search "Comment fonctionne l'authentification ?"` (question)
 
 Pour les questions complexes, lance **plusieurs recherches en parallèle**.
+
+### Options utiles
+
+```bash
+# Limiter les résultats
+grepai search "query" --limit 5
+
+# Format JSON (pour parsing)
+grepai search "query" --json
+
+# Mode compact
+grepai search "query" --compact
+```
 
 ### Auto-start
 
@@ -41,7 +54,7 @@ Le watch grepai se lance automatiquement via le hook `UserPromptSubmit`.
 
 - Ollama : `brew services start ollama`
 - Modèle : `ollama pull nomic-embed-text`
-- Init projet : `~/.local/bin/grepai init` (une fois par projet, dans un terminal)
+- Init projet : `grepai init && grepai watch` (une fois par projet)
 
 ---
 
