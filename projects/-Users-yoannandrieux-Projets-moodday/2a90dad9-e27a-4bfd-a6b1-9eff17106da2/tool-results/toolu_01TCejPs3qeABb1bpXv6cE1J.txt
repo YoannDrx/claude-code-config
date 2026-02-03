@@ -1,9 +1,0 @@
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/product-brief.template.md
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/steps/step-01-init.md
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/steps/step-01b-continue.md
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/steps/step-02-vision.md
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/steps/step-03-users.md
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/steps/step-04-metrics.md
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/steps/step-05-scope.md
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/steps/step-06-complete.md
-/Users/yoannandrieux/Projets/moodday/_bmad/bmm/workflows/1-analysis/create-product-brief/workflow.md

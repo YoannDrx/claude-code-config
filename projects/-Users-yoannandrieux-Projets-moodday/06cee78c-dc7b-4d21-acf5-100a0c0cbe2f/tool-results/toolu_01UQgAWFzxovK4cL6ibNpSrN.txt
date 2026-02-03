@@ -1,5 +1,0 @@
-completed	success	I18	Frontend CI	i18	pull_request	20862200709	1m12s	2026-01-09T18:51:57Z
-completed	failure	I18	E2E Playwright Tests	i18	pull_request	20862200689	3m28s	2026-01-09T18:51:57Z
-completed	success	I18	Frontend CI	i18	pull_request	20862031455	1m3s	2026-01-09T18:45:03Z
-completed	failure	I18	E2E Playwright Tests	i18	pull_request	20862031451	3m36s	2026-01-09T18:45:03Z
-completed	success	I18	Frontend CI	i18	pull_request	20861813538	1m4s	2026-01-09T18:36:43Z

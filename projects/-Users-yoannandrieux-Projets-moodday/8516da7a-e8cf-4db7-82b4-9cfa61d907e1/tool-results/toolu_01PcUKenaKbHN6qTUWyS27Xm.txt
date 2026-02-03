@@ -1,2 +1,0 @@
-Exit code 1
-Failed to search: 404 Stores with identifiers 'light-ts' not found

@@ -1,9 +1,0 @@
-The file /Users/yoannandrieux/Projets/yodev/src/messages/en.json has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
-     1→{
-     2→  "Common": {
-     3→    "tagline": "Tech-first product studio",
-     4→    "cta": "Talk product",
-     5→    "menu": "Menu",
-     6→    "available": "Available",
-     7→    "readyToStart": "Kickoff within 2 weeks",
-     8→    "menuOpen": "Open menu",

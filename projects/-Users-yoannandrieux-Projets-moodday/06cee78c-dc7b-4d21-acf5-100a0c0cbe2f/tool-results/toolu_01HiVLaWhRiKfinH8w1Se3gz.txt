@@ -1,1 +1,0 @@
-completed	success	I18	Frontend CI	i18	pull_request	20862200709	1m12s	2026-01-09T18:51:57Z

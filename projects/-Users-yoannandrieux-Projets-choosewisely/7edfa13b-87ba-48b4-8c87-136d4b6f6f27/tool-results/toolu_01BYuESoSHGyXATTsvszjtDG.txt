@@ -1,1 +1,0 @@
-/Users/yoannandrieux/Projets/choosewisely/app/api/orgs/[orgId]/route.ts

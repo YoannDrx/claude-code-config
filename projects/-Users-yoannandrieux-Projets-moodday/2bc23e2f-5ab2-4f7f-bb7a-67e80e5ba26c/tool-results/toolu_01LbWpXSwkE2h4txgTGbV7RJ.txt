@@ -1,4 +1,0 @@
-777:#### Story 5.1: MoodChart Component (30 Days)
-801:#### Story 5.2: Dosage Markers on Chart
-821:#### Story 5.3: Aggregated Dashboard
-844:#### Story 5.4: Pattern Insights

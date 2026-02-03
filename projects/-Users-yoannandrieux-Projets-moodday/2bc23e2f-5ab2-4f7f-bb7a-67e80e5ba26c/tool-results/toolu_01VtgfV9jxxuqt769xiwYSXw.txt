@@ -1,6 +1,0 @@
-/Users/yoannandrieux/Projets/moodday/src/features/auth/auth-button-client.tsx
-/Users/yoannandrieux/Projets/moodday/src/features/auth/auth-button.tsx
-/Users/yoannandrieux/Projets/moodday/src/features/auth/sign-in-button.tsx
-/Users/yoannandrieux/Projets/moodday/src/features/auth/user-dropdown-logout.tsx
-/Users/yoannandrieux/Projets/moodday/src/features/auth/user-dropdown-stop-impersonating.tsx
-/Users/yoannandrieux/Projets/moodday/src/features/auth/user-dropdown.tsx

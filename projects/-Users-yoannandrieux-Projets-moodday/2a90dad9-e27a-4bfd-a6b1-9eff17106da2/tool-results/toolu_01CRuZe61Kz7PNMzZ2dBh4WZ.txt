@@ -1,7 +1,0 @@
-The file /Users/yoannandrieux/Projets/moodday/_bmad-output/planning-artifacts/product-brief-moodday-2026-01-20.md has been updated. Here's the result of running `cat -n` on a snippet of the edited file:
-     1→---
-     2→stepsCompleted: [1, 2, 3, 4]
-     3→inputDocuments:
-     4→  - "_bmad-output/analysis/brainstorming-session-2026-01-20.md"
-     5→  - "chatgpt-context (user-provided)"
-     6→date: 2026-01-20

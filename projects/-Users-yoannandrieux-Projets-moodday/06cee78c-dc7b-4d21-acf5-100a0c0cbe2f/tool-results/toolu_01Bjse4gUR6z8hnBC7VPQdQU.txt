@@ -1,3 +1,0 @@
-The context mentions a test case where a button with the name "Yes, Delete My Account" is clicked on a page, followed by a redirection to `/auth/goodbye`.<cite i="8"/>
-
-8: ./e2e/account.spec.ts:54-84 (91.49% match)

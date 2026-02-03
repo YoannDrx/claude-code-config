@@ -1,2 +1,0 @@
-> light-ts@1.0.0 ts /Users/yoannandrieux/Projets/moodday
-> tsc --noEmit

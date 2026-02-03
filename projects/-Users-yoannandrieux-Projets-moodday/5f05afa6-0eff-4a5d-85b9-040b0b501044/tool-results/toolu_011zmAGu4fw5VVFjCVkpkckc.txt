@@ -1,8 +1,0 @@
-> light-ts@1.0.0 lint /Users/yoannandrieux/Projets/moodday
-> eslint . --fix
-
-
-/Users/yoannandrieux/Projets/moodday/scripts/mgrep-watch.ts
-  14:1  warning  Unexpected console statement  no-console
-
-✖ 1 problem (0 errors, 1 warning)

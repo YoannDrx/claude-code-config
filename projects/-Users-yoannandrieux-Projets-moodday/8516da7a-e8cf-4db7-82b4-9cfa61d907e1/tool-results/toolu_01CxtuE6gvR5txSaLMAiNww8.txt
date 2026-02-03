@@ -1,2 +1,0 @@
-Vercel CLI 46.0.2
-yoanndrx

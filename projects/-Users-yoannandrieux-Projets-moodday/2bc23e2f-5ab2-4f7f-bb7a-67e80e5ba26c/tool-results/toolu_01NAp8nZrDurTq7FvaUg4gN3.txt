@@ -1,8 +1,0 @@
-Exit code 1
-
-> moodday@1.0.0 ts /Users/yoannandrieux/Projets/moodday
-> tsc --noEmit
-
-app/(logged-in)/dashboard/_components/dashboard-summary.tsx(31,48): error TS2345: Argument of type '{}' is not assignable to parameter of type 'void'.
-app/(logged-in)/dashboard/_components/dashboard-summary.tsx(49,47): error TS2345: Argument of type '{}' is not assignable to parameter of type 'void'.
- ELIFECYCLE  Command failed with exit code 1.

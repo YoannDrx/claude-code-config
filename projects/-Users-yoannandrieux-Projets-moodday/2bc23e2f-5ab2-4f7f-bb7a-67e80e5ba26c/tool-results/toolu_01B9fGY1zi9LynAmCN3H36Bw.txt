@@ -1,1 +1,0 @@
-File created successfully at: /Users/yoannandrieux/Projets/moodday/app/(logged-in)/onboarding/page.tsx

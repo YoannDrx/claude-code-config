@@ -1,1 +1,0 @@
-The file /Users/yoannandrieux/Projets/choosewisely/src/features/properties/property-mapbox-location.tsx has been updated successfully.

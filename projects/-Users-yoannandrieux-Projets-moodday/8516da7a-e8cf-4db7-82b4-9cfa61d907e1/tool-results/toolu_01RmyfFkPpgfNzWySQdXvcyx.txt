@@ -1,1 +1,0 @@
-{"name":"light-ts","url":"https://github.com/YoannDrx/light-ts"}

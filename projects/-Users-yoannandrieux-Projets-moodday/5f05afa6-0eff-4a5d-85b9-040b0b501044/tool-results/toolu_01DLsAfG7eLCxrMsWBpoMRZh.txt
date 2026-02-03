@@ -1,2 +1,0 @@
-To github.com:YoannDrx/light-ts.git
-   b1b919a..1ccfa6a  i18 -> i18

@@ -23,3 +23,9 @@ downloads/
 
 # IDE specific
 ide/
+
+# Historique des conversations par projet
+projects/
+
+# Tâches de sessions
+tasks/
