@@ -14,31 +14,41 @@
     "ralph-loop@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/ralph-loop/e30768372b41",
-        "version": "e30768372b41",
+        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/ralph-loop/27d2b86d72da",
+        "version": "27d2b86d72da",
         "installedAt": "2026-01-21T10:34:12.409Z",
-        "lastUpdated": "2026-01-21T10:34:12.409Z",
+        "lastUpdated": "2026-01-30T11:21:12.443Z",
         "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
       }
     ],
     "context7@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/context7/e30768372b41",
-        "version": "e30768372b41",
+        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/context7/27d2b86d72da",
+        "version": "27d2b86d72da",
         "installedAt": "2026-01-21T10:45:40.701Z",
-        "lastUpdated": "2026-01-21T10:45:40.701Z",
+        "lastUpdated": "2026-01-30T11:21:12.445Z",
         "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
       }
     ],
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/frontend-design/e30768372b41",
-        "version": "e30768372b41",
+        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/frontend-design/27d2b86d72da",
+        "version": "27d2b86d72da",
         "installedAt": "2026-01-22T16:25:01.561Z",
-        "lastUpdated": "2026-01-22T16:25:01.561Z",
+        "lastUpdated": "2026-01-30T11:21:12.447Z",
         "gitCommitSha": "e30768372b4150ca1bc0839d93283e8edc30d60d"
+      }
+    ],
+    "swift-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/yoannandrieux/.claude/plugins/cache/claude-plugins-official/swift-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-02-02T14:48:11.670Z",
+        "lastUpdated": "2026-02-02T14:48:11.670Z",
+        "gitCommitSha": "27d2b86d72da27c64585150857cee8472ad47abb"
       }
     ]
   }
